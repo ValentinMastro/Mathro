@@ -1,59 +1,48 @@
-<script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
-</script>
-
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Accueil</title>
+	<meta name="description" content="Cours et exercices de mathématiques" />
 </svelte:head>
 
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
+<div id="accueil">
+	<div id="sigma">Σ</div>
+	<div id="menu" data-sveltekit-reload>
+		<div id="4eme" class="niveau"><a href="/cours/4eme">4ème</a></div>
+		<div id="6eme" class="niveau"><a href="/cours/6eme">6ème</a></div>
+	</div>
+</div>
 
 <style>
-	section {
+	div#accueil {
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		flex-direction: row;
 		align-items: center;
-		flex: 0.6;
+		justify-content: center;
+		height: 100vh;
 	}
-
-	h1 {
-		width: 100%;
+	div#sigma {
+		font-size: 30vw;
 	}
-
-	.welcome {
+	div#sigma:hover + div#menu {
 		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
+	}
+	div.niveau {
+		font-size: 5vw;
+		margin-left: 1em;
+	}
+	a {
+		text-decoration: none;
 	}
 
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
+	@media (max-aspect-ratio: 1) {
+		div#accueil {
+			flex-direction: column;
+		}
+		div#sigma {
+			font-size: 30vh;
+		}
+		div.niveau {
+			margin: 0;
+			font-size: 5vh;
+		}
 	}
 </style>

@@ -1,6 +1,10 @@
-use exercices::nombre::{Nombre,Generateur};
+use exercices::interface::{requete, Requete, envoyer_json};
+use std::env;
 
+/// Exemples d'utilisations :
+///     cargo run -- vraifaux 4 1
 fn main() {
-    let x = Nombre::premier(100).valeur();
-    println!("{}", x);
+    let config: Requete = requete(env::args().collect());
+    let data = envoyer_json(config);
+    println!("{}", data);
 }

@@ -1,0 +1,361 @@
+\documentclass["../Cours.tex"]{subfiles}
+\usepackage{etoolbox}
+
+\begin{document}
+\chapitre{Fractions et proportionnalité}
+
+\partie{Calculs fractionnaires}
+
+\definition{Soient deux nombres $a$ et $b$, avec $b \neq 0$. Le quotient de $a$ par $b$ est le nombre qui, lorsqu'il est multiplié par $b$, donne $a$. $$\dfrac{a}{b} \times b = a$$}
+
+\notation{On le note $\dfrac{a}{b}$. (écriture fractionnaire)}
+
+\begin{listedexemples}
+    \item $\dfrac{3}{4} \times 4 = \dfrac{3}{\cancel{4}} \times \cancel{4} = 3$
+    \item $\dfrac{7,2}{5,8} \times 5,8 = \dfrac{7,2}{\cancel{5,8}} \times \cancel{5,8} = 7,2$
+\end{listedexemples}
+
+
+\propriete{Soit deux nombres $a$ et $b$ avec $b \neq 0$. Soit $k$ avec $k \neq 0$. 
+$$\dfrac{a}{b} = \dfrac{ka}{kb}$$
+}
+
+\begin{listedexemples}
+    \item $\dfrac{16}{20} = \dfrac{16 \times 4}{20 \times 4} = \dfrac{64}{80}$
+    \item $\dfrac{35}{75} = \dfrac{35 \div 5}{75 \div 5} = \dfrac{7}{15}$
+\end{listedexemples}
+
+\definition{Simplifier une fraction, c'est trouver une autre fraction qui lui est égale avec un numérateur et un dénominateur plus petits.}
+
+\propriete{Pour additionner deux fractions, il faut qu'elles aient le même dénominateur.}
+
+\propriete{Soient deux nombres $a$ et $b$, $b \neq 0$ et deux nombres $c$ et $d$, $d \neq 0$. $$ \dfrac{a}{b} + \dfrac{c}{d} = \dfrac{ad+cb}{bd}$$}
+
+\begin{listedexemples}
+    \item $\dfrac{3}{7} + \dfrac{12}{8} = \dfrac{3 \times 8}{7 \times 8} + \dfrac{12 \times 7}{8 \times 7}$ 
+\end{listedexemples}
+
+\propriete{Soient $a$ et $b$ deux nombres, $b \neq 0$.\\ Soient $c$ et $d$ deux nombres, $d \neq 0$. $$\dfrac{a}{b} \times \dfrac{c}{d} = \dfrac{a \times c}{b \times d}$$}
+
+\exemple{$$\dfrac{7}{5} \times \dfrac{3}{4} = \dfrac{7 \times 3}{5 \times 4} = \dfrac{21}{20}$$}
+
+\propriete{Diviser par un nombre revient à multiplier par son inverse.}
+
+\exemple{
+\begin{center}
+\begin{tikzpicture}
+    \node at (0,0) {$\dfrac{2}{3} \div \dfrac{4}{5} = \dfrac{2}{3} \times \dfrac{5}{4} = \dfrac{10}{12}$};
+    \draw[rouge] (0.1,-0.6) rectangle (1.1,0.6);
+    \draw[rouge] (-1.85,-0.6) rectangle (-0.85,0.6);
+    \draw[rouge,thick,-latex] (-1.35,-0.65) arc (-180:0:1 and 0.5);
+    \node at (0,-1.5) {la fraction est inversée};
+    \node at (0,-2) {et le $\div$ devient $\times$};
+\end{tikzpicture}
+\end{center}
+}
+
+\clearpage
+\partie{Pourcentages}
+
+\souspartie{Le pourcentage d'un nombre}
+
+\definition{Calculer $p~\%$ d'un nombre $n$, c'est multiplier $\dfrac{p}{100}$ par $n$.}
+
+\renewcommand\CancelColor{\color{rouge}}
+
+\begin{listedexemples}
+    \item $25~\%$ de $12 = \dfrac{25}{100} \times 12 = \dfrac{\cancel{25} \times 1}{\cancel{25} \times \cancel{4}} \times 3 \times \cancel{4} = 3$
+    \item $25~\%$ de $100 = \dfrac{25}{\cancel{100}} \times \cancel{100} = 25$
+    \item $75~\%$ de $32 = \dfrac{75}{100} \times 32 = \dfrac{3 \times \cancel{25}}{\cancel{4} \times \cancel{25}} \times 8 \times \cancel{4} = 3 \times 8 = 24$
+\end{listedexemples}
+
+\regle{Pour calculer une proportion sous forme de pourcentage, il faut que le dénominateur soit égal à 100.}
+
+\exemple{%
+    \begin{center}
+    \begin{tikzpicture}
+        \definecolor{bleuRF}{RGB}{05, 20, 64}
+        \definecolor{blancRF}{RGB}{255, 255, 255}
+        \definecolor{rougeRF}{RGB}{236, 25, 32}
+        \draw[white, fill=bleuRF] (0,0) rectangle (1,2);
+        \draw[white, fill=blancRF] (1,0) rectangle (2,2);
+        \draw[white, fill=rougeRF] (2,0) rectangle (3,2);
+    \end{tikzpicture}
+    \end{center}
+Dans le drapeau français, il y a 1 morceau sur 3 qui est bleu. Donc, la proportion de bleu dans le drapeau est de $\dfrac{1}{3}$. Pour la mettre sous forme de pourcentage, je peux multiplier au numérateur et au dénominateur par 100 :
+$$\dfrac{1}{3} = \dfrac{1 \times 100}{3 \times 100} = \dfrac{1 \times 100}{3}~\% \approx 33,3 ~\% = \dfrac{33{,}3}{100}$$
+}
+
+\clearpage
+\souspartie{Augmentation et diminution par un pourcentage}
+
+\regle{\begin{itemize}\vspace{-1em}
+    \item Augmenter une quantité de $x~\%$, c'est multiplier cette quantité par $\dfrac{100+x}{100}$.
+    \item Diminuer une quantité de $x~\%$, c'est multiplier cette quantité par $\dfrac{100-x}{100}$.
+\end{itemize}}
+
+\begin{listedexemples}
+    \item \fbox{$\qty{20}{\EURO} + 10~\%$ :} \hspace{2cm} $\qty{20}{\EURO} \times \dfrac{100 + 10}{100} = \qty{20}{\EURO} \times \dfrac{110}{100} = \qty{22}{\EURO}$ 
+    \item \fbox{$\qty{150}{\EURO} - 30~\%$ :} \hspace{2cm} $\qty{150}{\EURO} \times \dfrac{100 - 30}{100} = \qty{150}{\EURO} \times \dfrac{70}{100} = \qty{105}{\EURO} $
+\end{listedexemples}
+
+\regle{Le pourcentage d'augmentation ou de diminution entre une valeur de départ et une valeur d'arrivée est :}
+
+$$ \mbox{valeur d'arrivée} - \mbox{valeur de départ} $$
+
+\partie{Échelle}
+
+\definition{Dans un plan, l'échelle est le coefficient de proportionnalité tel que : $$\mbox{échelle} = \dfrac{\mbox{distance sur le plan}}{\mbox{distance réelle}}$$}
+
+\remarque{Il faut la même unité pour les deux distances dans le calcul de l'échelle.}
+
+\exemple{Sur un plan, \qty{1}{cm} sur le plan correspond à \qty{50}{km} dans la réalité. $$\mbox{échelle} = \dfrac{\qty{1}{cm}}{\qty{50}{km}}$$}
+
+\propriete{Si les longueurs d'une figure sont multipliées par un facteur $k$, les aires sont multipliées par un facteur $k^2$ et les volumes par un facteur $k^3 = k \times k \times k$.}
+
+\exemple{Si les longueurs sont multipliées par 5, alors les aires sont multipliées par $5^2 = 5 \times 5 = 25$, et les volumes sont multipliés par $5^3 = 5 \times 5 \times 5 = 125$.}
+
+\clearpage
+\EXERCICES
+
+\begin{questions}   
+
+    \exercicetitre{Additionner des fractions}
+        \newcommand{\exAdditionFraction}[4]{
+            $\dfrac{\mathstrut#1}{\mathstrut#2} + \dfrac{\mathstrut#3}{\mathstrut#4} = $
+        }
+        \begin{multicols}{3}
+            \question \exAdditionFraction{20}{4}{2}{4}
+            \question \exAdditionFraction{19}{12}{10}{8}
+            \question \exAdditionFraction{17}{3}{5}{5}
+            \question \exAdditionFraction{20}{5}{6}{14}
+            \question \exAdditionFraction{9}{16}{6}{16}
+            \question \exAdditionFraction{20}{18}{17}{14}
+            \question \exAdditionFraction{15}{7}{7}{8}
+            \question \exAdditionFraction{5}{4}{3}{5}
+            \question \exAdditionFraction{7}{4}{9}{6}
+            \question \exAdditionFraction{16}{19}{14}{12}
+            \question \exAdditionFraction{1}{19}{17}{20}
+            \question \exAdditionFraction{3}{2}{14}{11}
+            \question \exAdditionFraction{18}{19}{7}{18}
+            \question \exAdditionFraction{17}{3}{12}{12}
+            \question \exAdditionFraction{9}{19}{19}{14}
+        \end{multicols}
+    
+    \exercicetitre{Trouver une fraction égale à une autre}
+        \newcommand{\exFractionEgale}[3]{
+            $\dfrac{\mathstrut#1}{\mathstrut#2} = \dfrac{\mathstrut#3}{\mathstrut ?}$
+        }
+        \begin{multicols}{3}
+            \question \exFractionEgale{3}{5}{9}
+            \question \exFractionEgale{9}{17}{63}
+            \question \exFractionEgale{5}{13}{45}
+            \question \exFractionEgale{17}{6}{136}
+            \question \exFractionEgale{7}{18}{28}
+            \question \exFractionEgale{16}{8}{64}
+            \question \exFractionEgale{9}{20}{72}
+            \question \exFractionEgale{20}{11}{80}
+            \question \exFractionEgale{10}{12}{90}
+            \question \exFractionEgale{2}{20}{12}
+            \question \exFractionEgale{6}{2}{48}
+            \question \exFractionEgale{12}{11}{72}
+            \question \exFractionEgale{6}{15}{18}
+            \question \exFractionEgale{6}{12}{30}
+            \question \exFractionEgale{3}{18}{12}
+            \question \exFractionEgale{10}{14}{70}
+            \question \exFractionEgale{18}{3}{126}
+            \question \exFractionEgale{16}{2}{48}
+            \question \exFractionEgale{2}{12}{16}
+            \question \exFractionEgale{20}{13}{160}
+            \question \exFractionEgale{12}{19}{108}
+        \end{multicols}
+
+    \exercicetitre{Multiplications de fractions}
+        \newcommand{\exMultiplicationFractions}[4]{
+            $\dfrac{\mathstrut#1}{\mathstrut#2} \times \dfrac{\mathstrut#3}{\mathstrut#4} = $
+        }
+        \begin{multicols}{3}
+            \question \exMultiplicationFractions{4}{5}{2}{8}
+            \question \exMultiplicationFractions{12}{5}{3}{11}
+            \question \exMultiplicationFractions{9}{8}{7}{9}
+            \question \exMultiplicationFractions{8}{15}{1}{3}
+            \question \exMultiplicationFractions{3}{6}{4}{11}
+            \question \exMultiplicationFractions{13}{12}{1}{11}
+            \question \exMultiplicationFractions{6}{12}{1}{2}
+            \question \exMultiplicationFractions{12}{5}{6}{4}
+            \question \exMultiplicationFractions{15}{12}{2}{10}
+            \question \exMultiplicationFractions{14}{10}{15}{3}
+            \question \exMultiplicationFractions{1}{5}{1}{1}
+            \question \exMultiplicationFractions{15}{7}{4}{15}
+            \question \exMultiplicationFractions{12}{11}{11}{5}
+            \question \exMultiplicationFractions{11}{15}{15}{1}
+            \question \exMultiplicationFractions{8}{6}{2}{4}
+        \end{multicols}
+
+    \clearpage
+    \exercicetitre{Divisions de fractions}
+        \newcommand{\exDivisionFractions}[4]{
+            $\dfrac{\mathstrut#1}{\mathstrut#2} \div \dfrac{\mathstrut#3}{\mathstrut#4} = $
+        }
+        \begin{multicols}{3}
+            \question \exDivisionFractions{3}{9}{2}{9}
+            \question \exDivisionFractions{12}{5}{1}{1}
+            \question \exDivisionFractions{2}{1}{10}{3}
+            \question \exDivisionFractions{15}{10}{12}{15}
+            \question \exDivisionFractions{5}{5}{10}{2}
+            \question \exDivisionFractions{5}{2}{1}{3}
+            \question \exDivisionFractions{1}{2}{1}{14}
+            \question \exDivisionFractions{4}{10}{5}{6}
+            \question \exDivisionFractions{2}{8}{12}{7}
+            \question \exDivisionFractions{8}{6}{12}{10}
+            \question \exDivisionFractions{1}{10}{7}{10}
+            \question \exDivisionFractions{15}{6}{11}{11}
+            \question \exDivisionFractions{6}{12}{9}{1}
+            \question \exDivisionFractions{6}{15}{10}{10}
+        \end{multicols}
+\end{questions}
+
+\clearpage
+\CORRECTIONS
+
+\begin{questions}
+    \exercicetitre{Additionner des fractions}
+        \newcommand{\corAdditionFraction}[4]{%
+            % notation : a/b + c/d
+            % si les dénominateurs sont égaux
+            \ifnumcomp{#2}{=}{#4}{
+                $\dfrac{\mathstrut#1}{\mathstrut#2} + \dfrac{\mathstrut#3}{\mathstrut#4} = \dfrac{\pgfmathparse{int(#1+#3)}\pgfmathresult}{#2}$
+            }{%
+                % si b > d et b % d = 0
+                \pgfmathsetmacro{\modulo}{int(mod(#2,#4))}%
+                \ifboolexpr{
+                    test {\ifnumgreater{#2}{#4}}
+                    and
+                    test {\ifnumequal{\modulo}{0}}
+                }{%
+                    $\dfrac{\mathstrut#1}{\mathstrut#2} + \dfrac{\mathstrut#3}{\mathstrut#4} 
+                    = \dfrac{\mathstrut#1}{\mathstrut#2} + \dfrac{\mathstrut\pgfmathparse{int(#3*#2/#4)}}{\mathstrut#2} 
+                    = \dfrac{\pgfmathparse{int(#1+#3*#2/#4)}\pgfmathresult}{#2}$
+                }{}%
+                % si d > b et d % b = 0
+                \pgfmathsetmacro{\modulo}{int(mod(#4,#2))}%
+                \ifboolexpr{
+                    test {\ifnumgreater{#4}{#2}}
+                    and
+                    test {\ifnumequal{\modulo}{0}}
+                }{
+                    $\dfrac{\mathstrut#1}{\mathstrut#2} + \dfrac{\mathstrut#3}{\mathstrut#4} 
+                    = \dfrac{\mathstrut\pgfmathparse{int(#1*#4/#2)}\pgfmathresult}{\mathstrut#4} + \dfrac{\mathstrut#3}{\mathstrut#4} 
+                    = \dfrac{\pgfmathparse{int(#1*#4/#2+#3)}\pgfmathresult}{#4}$
+                }{}%
+                % cas général
+                \pgfmathsetmacro{\moduloA}{int(mod(#2,#4))}%
+                \pgfmathsetmacro{\moduloB}{int(mod(#4,#2))}%
+                \ifboolexpr{
+                    not ( test {\ifnumequal{\moduloA}{0}} )
+                    and
+                    not ( test {\ifnumequal{\moduloB}{0}} )
+                }{
+                    $\dfrac{\mathstrut#1}{\mathstrut#2} + \dfrac{\mathstrut#3}{\mathstrut#4}
+                    = \dfrac{\pgfmathparse{int(#1*#4)}\pgfmathresult}{\pgfmathparse{int(#2*#4)}\pgfmathresult} + \dfrac{\pgfmathparse{int(#2*#3)}\pgfmathresult}{\pgfmathparse{int(#2*#4)}\pgfmathresult}
+                    = \dfrac{\pgfmathparse{int(#1*#4+#2*#3)}\pgfmathresult}{\pgfmathparse{int(#2*#4)}\pgfmathresult}$
+                }{}%
+            }
+        }
+        \begin{multicols}{2}
+            \question \corAdditionFraction{20}{4}{2}{4}
+            \question \corAdditionFraction{19}{12}{10}{8}
+            \question \corAdditionFraction{17}{3}{5}{5}
+            \question \corAdditionFraction{20}{5}{6}{14}
+            \question \corAdditionFraction{9}{16}{6}{16}
+            \question \corAdditionFraction{20}{18}{17}{14}
+            \question \corAdditionFraction{15}{7}{7}{8}
+            \question \corAdditionFraction{5}{4}{3}{5}
+            \question \corAdditionFraction{7}{4}{9}{6}
+            \question \corAdditionFraction{16}{19}{14}{12}
+            \question \corAdditionFraction{1}{19}{17}{20}
+            \question \corAdditionFraction{3}{2}{14}{11}
+            \question \corAdditionFraction{18}{19}{7}{18}
+            \question \corAdditionFraction{17}{3}{12}{12}
+            \question \corAdditionFraction{9}{19}{19}{14}
+        \end{multicols}
+
+    \exercicetitre{Trouver une fraction égale à une autre}
+        \newcommand{\corFractionEgale}[3]{
+            \begin{tikzpicture}[baseline]
+                \node at (0,0) {$\dfrac{\mathstrut#1}{\mathstrut#2} = \dfrac{\mathstrut#3}{\mathstrut \textcolor{rouge}{\pgfmathparse{int(#2*#3/#1)}\pgfmathresult}}$};
+                \draw[rouge,-Latex] (-0.45,0.6) arc(180:0:0.5 and 0.15) node[midway,above]{\small $\times\pgfmathparse{int(#3/#1)}\pgfmathresult$};
+            \end{tikzpicture}
+        }
+        \begin{multicols}{3}
+            \question \corFractionEgale{3}{5}{9}
+            \question \corFractionEgale{9}{17}{63}
+            \question \corFractionEgale{5}{13}{45}
+            \question \corFractionEgale{17}{6}{136}
+            \question \corFractionEgale{7}{18}{28}
+            \question \corFractionEgale{16}{8}{64}
+            \question \corFractionEgale{9}{20}{72}
+            \question \corFractionEgale{20}{11}{80}
+            \question \corFractionEgale{10}{12}{90}
+            \question \corFractionEgale{2}{20}{12}
+            \question \corFractionEgale{6}{2}{48}
+            \question \corFractionEgale{12}{11}{72}
+            \question \corFractionEgale{6}{15}{18}
+            \question \corFractionEgale{6}{12}{30}
+            \question \corFractionEgale{3}{18}{12}
+            \question \corFractionEgale{10}{14}{70}
+            \question \corFractionEgale{18}{3}{126}
+            \question \corFractionEgale{16}{2}{48}
+            \question \corFractionEgale{2}{12}{16}
+            \question \corFractionEgale{20}{13}{160}
+            \question \corFractionEgale{12}{19}{108}
+        \end{multicols}
+
+
+    \exercicetitre{Multiplication de fractions}
+        \newcommand{\corMultiplicationFractions}[4]{
+            $\dfrac{\mathstrut#1}{\mathstrut#2} \times \dfrac{\mathstrut#3}{\mathstrut#4} = \dfrac{#1 \times #3}{#2 \times #4} = \dfrac{\pgfmathparse{int(#1*#3)}\pgfmathresult}{\pgfmathparse{int(#2*#4)}\pgfmathresult}$
+        }
+        \begin{multicols}{2}
+            \question \corMultiplicationFractions{4}{5}{2}{8}
+            \question \corMultiplicationFractions{12}{5}{3}{11}
+            \question \corMultiplicationFractions{9}{8}{7}{9}
+            \question \corMultiplicationFractions{8}{15}{1}{3}
+            \question \corMultiplicationFractions{3}{6}{4}{11}
+            \question \corMultiplicationFractions{13}{12}{1}{11}
+            \question \corMultiplicationFractions{6}{12}{1}{2}
+            \question \corMultiplicationFractions{12}{5}{6}{4}
+            \question \corMultiplicationFractions{15}{12}{2}{10}
+            \question \corMultiplicationFractions{14}{10}{15}{3}
+            \question \corMultiplicationFractions{1}{5}{1}{1}
+            \question \corMultiplicationFractions{15}{7}{4}{15}
+            \question \corMultiplicationFractions{12}{11}{11}{5}
+            \question \corMultiplicationFractions{11}{15}{15}{1}
+            \question \corMultiplicationFractions{8}{6}{2}{4}
+        \end{multicols}
+
+    \exercicetitre{Divisions de fractions}
+        \newcommand{\corDivisionFractions}[4]{
+            $\dfrac{\mathstrut#1}{\mathstrut#2} \div \dfrac{\mathstrut#3}{\mathstrut#4} = \dfrac{\mathstrut#1}{\mathstrut#2} \times \dfrac{\mathstrut#4}{\mathstrut#3} = \dfrac{#1 \times #4}{#2 \times #3} = \dfrac{\pgfmathparse{int(#1*#4)}\pgfmathresult}{\pgfmathparse{int(#2*#3)}\pgfmathresult}$
+        }
+        \begin{multicols}{2}
+            \questionX \corDivisionFractions{3}{9}{2}{9}
+            \questionX \corDivisionFractions{12}{5}{1}{1}
+            \questionX \corDivisionFractions{2}{1}{10}{3}
+            \questionX \corDivisionFractions{15}{10}{12}{15}
+            \questionX \corDivisionFractions{5}{5}{10}{2}
+            \questionX \corDivisionFractions{5}{2}{1}{3}
+            \questionX \corDivisionFractions{1}{2}{1}{14}
+            \questionX \corDivisionFractions{4}{10}{5}{6}
+            \questionX \corDivisionFractions{2}{8}{12}{7}
+            \questionX \corDivisionFractions{8}{6}{12}{10}
+            \questionX \corDivisionFractions{1}{10}{7}{10}
+            \questionX \corDivisionFractions{15}{6}{11}{11}
+            \questionX \corDivisionFractions{6}{12}{9}{1}
+            \questionX \corDivisionFractions{6}{15}{10}{10}
+        \end{multicols}
+
+\end{questions}
+
+
+\end{document}

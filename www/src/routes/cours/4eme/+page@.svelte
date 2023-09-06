@@ -1,0 +1,172 @@
+<script lang="ts">
+	import MenuChapitre from "$lib/MenuChapitre.svelte";
+</script>
+
+<svelte:head>
+	<title>Cours : 4ème</title>
+	<meta name="description" content="Cours de quatrième" />
+</svelte:head>
+
+<div id="menu">
+    <MenuChapitre   index={0} 
+                    titre="Opérations" 
+                    url="/cours/4eme/chapitre00"
+                    cats={["Nombres et calculs"]}
+                    img="/images/Euclide.jpg" >
+        <ol>
+            <li>Natures des nombres</li>
+            <li>Les 5 opérations de bases</li>
+            <li>La priorité des opérations</li>
+        </ol>
+    </MenuChapitre>
+    <MenuChapitre   index={1} 
+                    titre="Théorème de Pythagore" 
+                    url="/cours/4eme/chapitre01"
+                    cats={["Espace et géométrie", "Grandeurs et mesures"]}
+                    img="/images/Pythagoras.jpg" >
+        <ol>
+            <li>Carré et racine carrée</li>
+            <li>Triangle rectangle et hypoténuse</li>
+            <li>Énoncé et application du théorème</li>
+        </ol>
+    </MenuChapitre>
+    <MenuChapitre   index={2} 
+                    titre="Fractions et proportionnalité" 
+                    url="/cours/4eme/chapitre00"
+                    cats={["Nombres et calculs"]}
+                    img="/images/gateau.png" >
+        <ol>
+            <li>Calculs fractionnaires</li>
+            <li>Pourcentages</li>
+            <li>Échelle</li>
+        </ol>
+    </MenuChapitre>
+    <MenuChapitre   index={3}  
+                    titre="Solides de l'espace" 
+                    url="/cours/4eme/chapitre00"
+                    cats={["Espace et géométrie", "Grandeurs et mesures"]} >
+        <ol>
+            <li>Volume et contenance</li>
+            <li>Solides de l'espace</li>
+        </ol>
+    </MenuChapitre>
+    <MenuChapitre   index={4} 
+                    titre="Calcul littéral" 
+                    url="/cours/4eme/chapitre00"
+                    cats={["Nombres et calculs"]} >
+        <ol>
+            <li>Expression littérale</li>
+            <li>Développer, factoriser et réduire</li>
+        </ol>
+    </MenuChapitre>
+    <MenuChapitre   index={5} 
+                    titre="Théorème de Thalès" 
+                    url="/cours/4eme/chapitre00"
+                    cats={["Espace et géométrie", "Grandeurs et calculs"]} >
+        <ol>
+            <li>Angles et parallélisme</li>
+            <li>Énoncé</li>
+        </ol>
+    </MenuChapitre>
+    <MenuChapitre   index={6} 
+                    titre="Puissances" 
+                    url="/cours/4eme/chapitre00"
+                    cats={["Nombres et calculs"]} >
+        <ol>
+            <li>Les puissances de 10</li>
+            <li>Puissances à base quelconque</li>
+        </ol>
+    </MenuChapitre>
+    <MenuChapitre   index={7} 
+                    titre="Statistiques" 
+                    url="/cours/4eme/chapitre00"
+                    cats={["Organisation et gestion de données"]} >
+        <ol>
+            <li>Indicateurs de position</li>
+            <li>Diagrammes et graphiques</li>
+            <li>Fréquences</li>
+        </ol>
+    </MenuChapitre>
+    <MenuChapitre   index={8} 
+                    titre="Cosinus" 
+                    url="/cours/4eme/chapitre00"
+                    cats={["Espace et géométrie", "Grandeurs et mesures"]} >
+        <ol>
+            <li>Les côtés dans un triangle rectangle</li>
+            <li>Cosinus d'un angle</li>
+        </ol>
+    </MenuChapitre>
+    <MenuChapitre   index={9} 
+                    titre="Équation" 
+                    url="/cours/4eme/chapitre00"
+                    cats={["Nombres et calculs"]} >
+        <ol>
+            <li>Concept</li>
+            <li>Résolutions d'équations du premier degré</li>
+        </ol>
+    </MenuChapitre>
+    <MenuChapitre   index={10} 
+                    titre="Probabilités" 
+                    url="/cours/4eme/chapitre00"
+                    cats={["Organisation et gestion de données"]} >
+        
+    </MenuChapitre>
+    <MenuChapitre   index={11} 
+                    titre="Transformations du plan" 
+                    url="/cours/4eme/chapitre00"
+                    cats={["Espace et géométrie"]} >
+        <ol>
+            <li>Symétrie axiale</li>
+            <li>Symétrie centrale</li>
+            <li>Translation</li>
+        </ol>
+    </MenuChapitre>
+    <MenuChapitre   index={12} 
+                    titre="Décompositions en facteurs premiers" 
+                    url="/cours/4eme/chapitre00"
+                    cats={["Nombres et calculs"]} >
+        <ol>
+            <li>Les nombres premiers</li>
+            <li>Théorème fondamental de l'arithmétique</li>
+        </ol>
+    </MenuChapitre>
+    <MenuChapitre   index={13} 
+                    titre="Repérage sur un pavé droit" 
+                    url="/cours/4eme/chapitre00"
+                    cats={["Espace et géométrie"]} >
+        <ol>
+            <li>Sur une droite (1 dimension)</li>
+            <li>Sur un plan (2 dimensions)</li>
+            <li>Dans l'espace, sur un pavé droit (3 dimensions)</li>
+        </ol>
+    </MenuChapitre>
+    <MenuChapitre   index={14}
+                    titre="Réciproques"
+                    url="cours/4eme/chapitre14"
+                    cats={["Espace et géométrie", "Grandeurs et mesures"]} >
+        <ol>
+            <li>Réciproque du théorème de Thalès</li>
+            <li>Réciproque du théorème de Pythagore</li>
+        </ol>
+    </MenuChapitre>
+</div>
+
+<style>
+    div#menu {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        row-gap: 50px;
+    }
+    ol {
+        padding: 10px;
+    }
+    ol li {
+        list-style-type: none;
+        counter-increment: step-counter;
+    }
+    ol li:before {
+        content: counter(step-counter, upper-roman) " - ";
+    }
+</style>
