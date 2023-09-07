@@ -70,8 +70,8 @@
         <Exemple nombre={0} exercice={undefined}>
             Avec les chiffres 1, 5 et 8, il est possible de former les nombres : 
             <ul>
-                <li>158 : cinq cinquante-huit</li>
-                <li>185 : cinq quatre-vingt-cinq</li>
+                <li>158 : cent cinquante-huit</li>
+                <li>185 : cent quatre-vingt-cinq</li>
                 <li>518 : cinq cent dix-huit</li>
                 <li>581 : cinq cent quatre-ving-un</li>
                 <li>815 : huit cent quinze</li>
