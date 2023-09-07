@@ -9,6 +9,7 @@
     import Remarque from "$lib/chapitrage/sections/Remarque.svelte";
     import Schema from "$lib/chapitrage/sections/Schema.svelte";
     import Propriete from "$lib/chapitrage/sections/Propriete.svelte";
+    import Exemples from "$lib/chapitrage/sections/Exemples.svelte"
 
     import {
         EstEntierNaturel, 
@@ -24,12 +25,17 @@
                 Un nombre <i>entier naturel</i> permet de compter des éléments. 
                 Il est positif et n'a pas de partie décimale.
             </Definition>
-            <Exemple exercice={new EstEntierNaturel()} nombre={3} />
+            <Exemples>
+                <ul>
+                    <li>5 est un nombre entier naturel </li>
+                    <li>-5 n'est pas un nombre entier naturel </li>
+                    <li>5,5 n'est pas un nombre entier naturel </li>
+                </ul>
+            </Exemples>
             <Definition>
                 Un nombre <i>entier relatif</i> n'a pas de partie décimale et 
                 peut être positif comme négatif.
             </Definition>
-            <Exemple exercice={new EstEntierRelatif()} nombre={3} />
             <Remarque>
                 0 est considéré comme un nombre négatif <u>et</u> positif.
             </Remarque>
@@ -82,20 +88,15 @@
             }} />
             <Definition>
                 S'il existe une division entre deux nombres entiers 
-                égale à un nombre,
-                alors ce nombre est <i>rationnel</i>.
+                égale à un nombre, alors ce nombre est <i>rationnel</i>.
             </Definition>
-            <Exemple exercice={new EstNombreRationnel()} nombre={3} />
-        </SousPartie>
-        <SousPartie numero={3} titre={"Les nombres décimaux"}>
-            <Definition>
-                Une fraction décimale est une fraction 
-                dont le dénominateur est égal à 1, 10, 100, 1000, etc.
-            </Definition>
-            <Definition>
-                Un nombre décimal est un nombre qui peut s'écrire 
-                sous forme d'une fraction décimale.
-            </Definition>
+            <Exemples>
+                <ul>
+                    <li><Katex>{"0{,}75"}</Katex> est rationnel car <Katex>{"0{,}75 = \\frac{3}{4}"}</Katex></li>
+                    <li><Katex>{"0{,}17"}</Katex> est rationnel car <Katex>{"0{,}17 = \\frac{17}{100}"}</Katex></li>
+                    <li><Katex>\pi</Katex> n'est pas un nombre rationnel</li>
+                </ul>
+            </Exemples>
         </SousPartie>
     </Partie>
     <Partie numero={2} titre={"Les 5 opérations de base"}>
@@ -122,6 +123,14 @@
                         et on soustrait les distances à zéro.</li>
                 </ul>
             </Propriete>
+            <Exemples>
+                <ul>
+                    <li><Katex>{"17+5="}</Katex></li>
+                    <li><Katex>{"12+(-4)="}</Katex></li>
+                    <li><Katex>{"(-3)+(-6)="}</Katex></li>
+                    <li><Katex>{"(-5)+(+14)="}</Katex></li>
+                </ul>
+            </Exemples>
         </SousPartie>
         <SousPartie numero={2} titre="Soustraction">
             <Definition>
@@ -133,6 +142,14 @@
             <Propriete>
                 Soustraire un nombre revient à ajouter son opposé.
             </Propriete>
+            <Exemples>
+                <ul>
+                    <li><Katex>{"124-95="}</Katex></li>
+                    <li><Katex>{"12-(-4)="}</Katex></li>
+                    <li><Katex>{"(-12)-(+6)="}</Katex></li>
+                    <li><Katex>{"(-89)-(-51)="}</Katex></li>
+                </ul>
+            </Exemples>
         </SousPartie>
         <SousPartie numero={3} titre="Multiplication">
             <Definition>
