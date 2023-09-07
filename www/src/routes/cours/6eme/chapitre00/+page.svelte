@@ -10,6 +10,7 @@
     import Schema from "$lib/chapitrage/sections/Schema.svelte";
     import Propriete from "$lib/chapitrage/sections/Propriete.svelte";
     import Paragraphe from "$lib/chapitrage/sections/Paragraphe.svelte";
+    import Exemples from "$lib/chapitrage/sections/Exemples.svelte"
 </script>
 
 <Chapitre numero={0} titre="Notation positionnelle des nombres">
@@ -103,6 +104,16 @@
                     {/each}
                 </tr>
             </table>
+
+            <Exemples>
+                Dans le nombre 12 045 398 :
+                <ul>
+                    <li>le chiffre des dizaines de milliers : 4</li>
+                    <li>le nombre de dizaines de milliers : 1204</li>
+                    <li>le chiffre des centaines : 3</li>
+                    <li>le nombre de centaines : 120 453</li>
+                </ul>
+            </Exemples>
         </SousPartie>
         <SousPartie numero={2} titre="Décomposition d'un nombre">
             <Propriete>
@@ -112,7 +123,7 @@
                 <tr><td><Katex>45 =</Katex> 4 dizaines et 5 unités</td></tr>
                 <tr><td><Katex>765 =</Katex> 7 centaines, 6 dizaines et 5 unités</td></tr>
                 <tr><td><Katex>1~350 =</Katex> 1 millier, 3 centaines et 5 dizaines</td></tr>
-                <tr><td><Katex>29~543 =</Katex> 2 dizaines de milliers, 9 milliers, 5 centaines, 4 dizaines et 3 dizaines</td></tr>
+                <tr><td><Katex>29~543 =</Katex> 2 dizaines de milliers, 9 milliers, 5 centaines, 4 dizaines et 3 unités</td></tr>
             </Exemple>
         </SousPartie>
     </Partie>
