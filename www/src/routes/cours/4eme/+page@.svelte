@@ -44,7 +44,8 @@
     <MenuChapitre   index={3}  
                     titre="Solides de l'espace" 
                     url="/cours/4eme/chapitre00"
-                    cats={["Espace et géométrie", "Grandeurs et mesures"]} >
+                    cats={["Espace et géométrie", "Grandeurs et mesures"]}
+                    img="/images/rubik.jpg" >
         <ol>
             <li>Volume et contenance</li>
             <li>Solides de l'espace</li>
@@ -53,7 +54,8 @@
     <MenuChapitre   index={4} 
                     titre="Calcul littéral" 
                     url="/cours/4eme/chapitre00"
-                    cats={["Nombres et calculs"]} >
+                    cats={["Nombres et calculs"]}
+                    img="/images/inconnue.jpg" >
         <ol>
             <li>Expression littérale</li>
             <li>Développer, factoriser et réduire</li>
@@ -62,7 +64,8 @@
     <MenuChapitre   index={5} 
                     titre="Théorème de Thalès" 
                     url="/cours/4eme/chapitre00"
-                    cats={["Espace et géométrie", "Grandeurs et calculs"]} >
+                    cats={["Espace et géométrie", "Grandeurs et calculs"]}
+                    img="/images/thales.jpg" >
         <ol>
             <li>Angles et parallélisme</li>
             <li>Énoncé</li>
@@ -71,7 +74,8 @@
     <MenuChapitre   index={6} 
                     titre="Puissances" 
                     url="/cours/4eme/chapitre00"
-                    cats={["Nombres et calculs"]} >
+                    cats={["Nombres et calculs"]}
+                    img="/images/echecs.jpg" >
         <ol>
             <li>Les puissances de 10</li>
             <li>Puissances à base quelconque</li>
@@ -80,7 +84,8 @@
     <MenuChapitre   index={7} 
                     titre="Statistiques" 
                     url="/cours/4eme/chapitre00"
-                    cats={["Organisation et gestion de données"]} >
+                    cats={["Organisation et gestion de données"]}
+                    img="/images/diagramme.png" >
         <ol>
             <li>Indicateurs de position</li>
             <li>Diagrammes et graphiques</li>
@@ -90,7 +95,8 @@
     <MenuChapitre   index={8} 
                     titre="Cosinus" 
                     url="/cours/4eme/chapitre00"
-                    cats={["Espace et géométrie", "Grandeurs et mesures"]} >
+                    cats={["Espace et géométrie", "Grandeurs et mesures"]}
+                    img="/images/cosinus.png" >
         <ol>
             <li>Les côtés dans un triangle rectangle</li>
             <li>Cosinus d'un angle</li>
@@ -99,7 +105,8 @@
     <MenuChapitre   index={9} 
                     titre="Équation" 
                     url="/cours/4eme/chapitre00"
-                    cats={["Nombres et calculs"]} >
+                    cats={["Nombres et calculs"]}
+                    img="/images/equation.png" >
         <ol>
             <li>Concept</li>
             <li>Résolutions d'équations du premier degré</li>
@@ -108,13 +115,15 @@
     <MenuChapitre   index={10} 
                     titre="Probabilités" 
                     url="/cours/4eme/chapitre00"
-                    cats={["Organisation et gestion de données"]} >
+                    cats={["Organisation et gestion de données"]}
+                    img="/images/des.jpg" >
         
     </MenuChapitre>
     <MenuChapitre   index={11} 
                     titre="Transformations du plan" 
                     url="/cours/4eme/chapitre00"
-                    cats={["Espace et géométrie"]} >
+                    cats={["Espace et géométrie"]}
+                    img="/images/symetrie_axiale.jpg" >
         <ol>
             <li>Symétrie axiale</li>
             <li>Symétrie centrale</li>
@@ -124,7 +133,8 @@
     <MenuChapitre   index={12} 
                     titre="Décompositions en facteurs premiers" 
                     url="/cours/4eme/chapitre00"
-                    cats={["Nombres et calculs"]} >
+                    cats={["Nombres et calculs"]}
+                    img="/images/tesla-map.jpg" >
         <ol>
             <li>Les nombres premiers</li>
             <li>Théorème fondamental de l'arithmétique</li>
@@ -133,7 +143,8 @@
     <MenuChapitre   index={13} 
                     titre="Repérage sur un pavé droit" 
                     url="/cours/4eme/chapitre00"
-                    cats={["Espace et géométrie"]} >
+                    cats={["Espace et géométrie"]}
+                    img="/images/repere_3d.jpg" >
         <ol>
             <li>Sur une droite (1 dimension)</li>
             <li>Sur un plan (2 dimensions)</li>
@@ -143,7 +154,8 @@
     <MenuChapitre   index={14}
                     titre="Réciproques"
                     url="cours/4eme/chapitre14"
-                    cats={["Espace et géométrie", "Grandeurs et mesures"]} >
+                    cats={["Espace et géométrie", "Grandeurs et mesures"]}
+                    img="/images/double_fleche.png" >
         <ol>
             <li>Réciproque du théorème de Thalès</li>
             <li>Réciproque du théorème de Pythagore</li>
