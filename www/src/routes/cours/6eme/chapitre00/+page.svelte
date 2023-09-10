@@ -98,6 +98,17 @@
                     <td>Dizaines</td>
                     <td>Unités</td>
                 </tr>
+                <tr style="text-align: center; color: red;">
+                    <td></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>9</td>
+                    <td>8</td>
+                </tr>
                 <tr class="ligneblanche">
                     {#each Array(9) as _}
                         <td></td>
@@ -119,16 +130,68 @@
             <Propriete>
                 Il est possible de décomposer un nombre selon la position de ses chiffres.
             </Propriete>
-            <Exemple exercice={undefined} nombre={0}>
-                <tr><td><Katex>45 =</Katex> 4 dizaines et 5 unités</td></tr>
-                <tr><td><Katex>765 =</Katex> 7 centaines, 6 dizaines et 5 unités</td></tr>
-                <tr><td><Katex>1~350 =</Katex> 1 millier, 3 centaines et 5 dizaines</td></tr>
-                <tr><td><Katex>29~543 =</Katex> 2 dizaines de milliers, 9 milliers, 5 centaines, 4 dizaines et 3 unités</td></tr>
-            </Exemple>
+            <Exemples>
+                <ul style="list-style-type: none">
+                    <li><Katex displayMode>{`
+                        \\begin{align*} 
+                            45 &= \\text{4 dizaines et 5 unités} \\\\ 
+                            &= 40 + 5 \\\\
+                            &= 4 \\times 10 + 5 \\times 1
+                        \\end{align*}`}</Katex></li>
+                    <li><Katex displayMode>{`
+                        \\begin{align*} 
+                            765 &= \\text{7 centaines, 6 dizaines et 5 unités} \\\\ 
+                            &= 700+60+5 \\\\
+                            &= 7 \\times 100 + 6 \\times 10 + 5 \\times 1
+                        \\end{align*}`}</Katex></li>
+                    <li><Katex displayMode>{`
+                        \\begin{align*} 
+                            1~350 &= \\text{1 millier, 3 centaines et 5 dizaines} \\\\ 
+                            &= 1000+300+50 \\\\
+                            &= 1 \\times 1~000 + 3 \\times 100 + 5 \\times 10
+                        \\end{align*}`}</Katex></li>
+                    <li><Katex displayMode>{`
+                        \\begin{align*} 
+                        29~543 &= \\text{2 dizaines de milliers, 9 milliers, 5 centaines, 4 dizaines et 3 unités} \\\\ 
+                            &= 20~000+9~000+500+40+3 \\\\
+                            &= 2 \\times 10~000 + 9 \\times 1~000 + 5 \\times 100 + 4 \\times 10 + 3 \\times 1
+                        \\end{align*}`}</Katex></li>
+                </ul>
+            </Exemples>
         </SousPartie>
     </Partie>
     <Partie numero={2} titre="Comparaison">
-        
+        <Definition>
+            Comparer deux nombres consite à dire lequel est le plus grand ou le plus petit.<br>
+            Pour cela, on utilise les symboles :
+            <ul>
+                <li>&lt; (plus petit que)</li>
+                <li>&gt; (plus grand que)</li>
+                <li>= (égal)</li>
+                <li>&le; (plus petit ou égal à)</li>
+                <li>&ge; (plus grand ou égal à)</li>
+            </ul>
+        </Definition>
+        <Exemples>
+            <Katex displayMode>{`
+                \\begin{align*} 
+                    35 &\\lt 40 \\\\
+                    5{,}4 &\\gt 5{,}2 \\\\
+                    98 &= 3+95 \\\\ 
+                    3{,}2 + 0{,}2 &\\leq 3{,}4 \\\\
+                    65 &\\geq 54 + 11
+                \\end{align*}`}</Katex>
+        </Exemples>
+        <Definition>
+            Ordre croissant : du plus petit au plus grand <br>
+            Ordre décroissant : du plus grand au plus petit
+        </Definition>
+        <Exemples>
+            <ul>
+                <li><Katex> 1 \lt 2 \lt 7 \lt 12</Katex></li>
+                <li><Katex> 19 \gt 18 \gt 15 \gt 8</Katex></li>
+            </ul>
+        </Exemples>
     </Partie>
 </Chapitre>
 
