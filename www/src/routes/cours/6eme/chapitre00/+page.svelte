@@ -11,6 +11,7 @@
     import Propriete from "$lib/chapitrage/sections/Propriete.svelte";
     import Paragraphe from "$lib/chapitrage/sections/Paragraphe.svelte";
     import Exemples from "$lib/chapitrage/sections/Exemples.svelte"
+	import AnimationComparaison from "./AnimationComparaison.svelte";
 </script>
 
 <Chapitre numero={0} titre="Notation positionnelle des nombres">
@@ -172,6 +173,7 @@
                 <li>&ge; (plus grand ou égal à)</li>
             </ul>
         </Definition>
+        <!-- <AnimationComparaison /> -->
         <Exemples>
             <Katex displayMode>{`
                 \\begin{align*} 
