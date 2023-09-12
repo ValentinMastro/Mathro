@@ -1,21 +1,22 @@
 #[derive(Debug)]
 pub enum Requete {
-    QCM { niveau: u8, id_exercice: usize },
-    VraiFaux { niveau: u8, id_exercice: usize }
+    QCM { niveau: u8, id_exercice: usize, graine: u64 },
+    VraiFaux { niveau: u8, id_exercice: usize, graine: u64 }
 }
 
 pub fn requete(args: Vec<String>) -> Requete {
-    if args.len() != 4 {
+    if args.len() != 5 {
         panic!("Nombre d'arguments incorrects");
     }
 
     let type_requete: &str = &args[1];
     let niveau: u8 = args[2].parse::<u8>().unwrap();
     let id_exercice: usize = args[3].parse::<usize>().unwrap();
+    let graine: u64 = args[4].parse::<u64>().unwrap();
 
     match type_requete {
-        "vraifaux" => Requete::VraiFaux { niveau, id_exercice },
-        "qcm" => Requete::QCM { niveau, id_exercice },
+        "vraifaux" => Requete::VraiFaux { niveau, id_exercice, graine },
+        "qcm" => Requete::QCM { niveau, id_exercice, graine },
         &_ => panic!("Requete incorrecte")
     }
 }
@@ -35,13 +36,13 @@ pub fn envoyer_json(requete: Requete) -> String {
 // 6EME
 pub fn envoyer_exercice_6eme(requete: Requete) -> String {
     let exercice = match requete {
-        Requete::QCM { niveau , id_exercice } => {
+        Requete::QCM { niveau , id_exercice, graine } => {
             use crate::{Exercice, ExerciceQCM};
             match id_exercice {
                 _ => todo!()
             }
         },
-        Requete::VraiFaux { niveau, id_exercice } => {
+        Requete::VraiFaux { niveau, id_exercice, graine } => {
 
         }
     };
@@ -51,7 +52,7 @@ pub fn envoyer_exercice_6eme(requete: Requete) -> String {
 // 4EME
 pub fn envoyer_exercice_4eme(requete: Requete) -> String {
     let exercice: String = match requete {
-        Requete::QCM { niveau, id_exercice } => {
+        Requete::QCM { niveau, id_exercice, graine } => {
             use crate::{Exercice, ExerciceQCM};
             match id_exercice {
                 1 => {
@@ -61,7 +62,7 @@ pub fn envoyer_exercice_4eme(requete: Requete) -> String {
                 _ => todo!()
             }
         },
-        Requete::VraiFaux { niveau, id_exercice } => {
+        Requete::VraiFaux { niveau, id_exercice, graine } => {
             use crate::{Exercice, ExerciceVraiFaux};
             match id_exercice {
                 1 => {
