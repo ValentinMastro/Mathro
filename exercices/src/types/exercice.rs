@@ -1,12 +1,15 @@
 pub mod exercice {
     pub trait Exercice {
+        fn generer_variables(&mut self) {
+            self.variables();
+        }
         fn variables(&mut self);
     }
     pub trait ExerciceVraiFaux: Exercice {
         fn enonce(&self) -> String;
         fn bonne_reponse(&self) -> bool;
         fn afficher_exercice(&mut self) -> String {
-            self.variables();
+            self.generer_variables();
             format!(
                 "{{ \"type\": \"VraiFaux\", \"enonce\": \"{}\", \"reponse\": {} }}", 
                     self.enonce(),
@@ -20,7 +23,7 @@ pub mod exercice {
         fn bonne_reponse(&self) -> String;
         fn mauvaise_reponse(&self) -> String;
         fn afficher_exercice(&mut self, reponses: usize) -> String {
-            self.variables();
+            self.generer_variables();
             
             let mut s = self.enonce();
             let mut set: HashSet<String> = HashSet::new();
