@@ -138,6 +138,7 @@ name = "exercices"
 version = "0.1.0"
 dependencies = [
  "fraction",
+ "lazy_static",
  "rand",
  "rust_decimal",
  "rust_decimal_macros",

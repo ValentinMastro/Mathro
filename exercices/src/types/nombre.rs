@@ -3,10 +3,39 @@ pub mod nombre {
     use rust_decimal::Decimal;
     // Génération aléatoire
     use rand::Rng;
+    use rand::SeedableRng;
+    use rand::rngs::StdRng;
     // Lire un fichier texte
     use std::fs::File;
     use std::io::Read;
+    // Récupération des paramètres CLI
+    use std::env;
 
+
+    pub struct GenerateurAleatoire {
+        rng: StdRng
+    }
+
+    impl GenerateurAleatoire {
+        pub fn creer(graine: u8) -> Self {
+            let rng = StdRng::from_seed([graine; 32]);
+            GenerateurAleatoire { rng }
+        }
+        pub fn random_i64(&mut self, minimum: i64, maximum: i64) -> i64 {
+            self.rng.gen_range(minimum..=maximum)
+        }
+        pub fn random_usize(&mut self, maximum: usize) -> usize {
+            self.rng.gen_range(0..maximum)
+        }
+    }
+
+    lazy_static::lazy_static! {
+        pub static ref RNG: std::sync::Mutex<GenerateurAleatoire> = {
+            let args: Vec<String> = env::args().collect();
+            let graine: u8 = args[4].parse::<u8>().unwrap();
+            std::sync::Mutex::new(GenerateurAleatoire::creer(graine))
+        };
+    }
 
     #[derive(Clone)]
     pub enum Entier {
@@ -44,10 +73,12 @@ pub mod nombre {
         pub fn valeur(self) -> i64 {
             match self {
                 Entier::Parmi { valeurs_possibles } => {
-                    valeurs_possibles[rand::thread_rng().gen_range(0..(valeurs_possibles.len()))]
+                    let mut rng = RNG.lock().unwrap();
+                    valeurs_possibles[rng.random_usize(valeurs_possibles.len())]
                 }
                 Entier::Entre { minimum, maximum } => {
-                    rand::thread_rng().gen_range(minimum..(maximum+1))
+                    let mut rng = RNG.lock().unwrap();
+                    rng.random_i64(minimum, maximum)
                 }
             }
             
@@ -70,11 +101,13 @@ pub mod nombre {
         pub fn valeur(self) -> Decimal {
             match self {
                 NombreDecimal::Entre { minimum, maximum, scale } => {
-                    let num = rand::thread_rng().gen_range(minimum..(maximum+1));
+                    let mut rng = RNG.lock().unwrap();
+                    let num: i64 = rng.random_i64(minimum, maximum);
                     Decimal::new(num, scale)
                 }
                 NombreDecimal::Parmi { valeurs_possibles } => {
-                    valeurs_possibles[rand::thread_rng().gen_range(0..(valeurs_possibles.len()))]
+                    let mut rng = RNG.lock().unwrap();
+                    valeurs_possibles[rng.random_usize(valeurs_possibles.len())]
                 }
             }
         }
@@ -96,7 +129,8 @@ pub mod nombre {
         pub fn valeur(self) -> F {
             match self {
                 Rationnel::Parmi { valeurs_possibles } => {
-                    valeurs_possibles[rand::thread_rng().gen_range(0..(valeurs_possibles.len()))]
+                    let mut rng = RNG.lock().unwrap();
+                    valeurs_possibles[rng.random_usize(valeurs_possibles.len())]
                 }
             }
         }
