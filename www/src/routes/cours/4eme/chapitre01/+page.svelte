@@ -16,29 +16,6 @@
         Calculer_la_racine_carree_d_un_nombre,
         Egalite_de_pythagore
     } from "$lib/exercices/4eme/ch01";
-	import { onMount } from "svelte";
-
-    /*
-    let a = 3;
-    let b = 5;
-    let total = 0;
-
-    onMount(() => {
-        async function add() {
-            const response = await fetch('/api', {
-                method: 'POST',
-                body: JSON.stringify({ a, b }),
-                headers: {
-                    'content-type': 'application/json',
-                },
-            });
-            var reponse = await response.json()
-            console.log(reponse)
-            total = reponse.enonce
-        }
-        add()
-    })
-    */
 </script>
 
 <Chapitre numero={1} titre="Théorème de Pythagore">
