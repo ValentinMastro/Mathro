@@ -26,6 +26,7 @@
         <Schema fonctionAnimation={(ctx) => {
             ctx.font = "50px serif"
 
+            // @ts-ignore
             function chiffre(digit, x1, y1, x2, y2, t) {
                 ctx.fillText(digit, x1*(1-t) + x2*t, y1*(1-t) + y2*t)
             }
@@ -69,7 +70,7 @@
             }
             update()
         }} />
-        <Exemple nombre={0} exercice={undefined}>
+        <Exemples>
             Avec les chiffres 1, 5 et 8, il est possible de former les nombres : 
             <ul>
                 <li>158 : cent cinquante-huit</li>
@@ -79,7 +80,7 @@
                 <li>815 : huit cent quinze</li>
                 <li>851 : huit cent cinquante-et-un</li>
             </ul>
-        </Exemple>
+        </Exemples>
 
         <SousPartie numero={1} titre="Tableau de numération">
             <table class="tableau">
@@ -192,6 +193,19 @@
             <ul>
                 <li><Katex> 1 \lt 2 \lt 7 \lt 12</Katex></li>
                 <li><Katex> 19 \gt 18 \gt 15 \gt 8</Katex></li>
+            </ul>
+        </Exemples>
+    </Partie>
+    <Partie numero={3} titre="Encadrement">
+        <Definition>
+            Encadrer un nombre, c'est le placer entre deux autres nombres, le premier lui est inférieur, 
+            le deuxième lui est supérieur.<br>
+        </Definition>
+        <Exemples>
+            <ul>
+                <li><Katex>3 \lt 6 \lt 9</Katex></li>
+                <li><Katex>40 \lt 47 \lt 50 ~~</Katex>(encadrement à la dizaine)</li>
+                <li><Katex>{"83{,}2 \\lt 83{,}27 \\lt 83{,}3"}~~</Katex>(encadrement au dixième)</li>
             </ul>
         </Exemples>
     </Partie>
