@@ -7,6 +7,14 @@
 	<meta name="description" content="Cours de quatrième" />
 </svelte:head>
 
+<a href="/evaluations/4eme/01">
+    <div id="menu_eval">
+        <div id="evaluation">
+            Évaluation
+        </div>
+    </div>
+</a>
+
 <div id="menu">
     <MenuChapitre   index={0} 
                     titre="Opérations" 
@@ -164,6 +172,19 @@
 </div>
 
 <style>
+    div#menu_eval {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    div#evaluation {
+        background-color: white;
+        color: black;
+        width: 28vw;
+        font-size: 3ex;
+        text-align: center;
+    }
     div#menu {
         display: flex;
         flex-direction: row;
@@ -180,5 +201,11 @@
     }
     ol li:before {
         content: counter(step-counter, upper-roman) " - ";
+    }
+
+    @media (max-width: 1050px) {
+        div#evaluation {
+            width: 90vw;
+        }
     }
 </style>

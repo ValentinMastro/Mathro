@@ -71,17 +71,17 @@ pub mod nombre {
             Entier::Entre { minimum, maximum }
         }
         pub fn valeur(self) -> i64 {
+            let mut rng = RNG.lock().unwrap();
+            
             match self {
                 Entier::Parmi { valeurs_possibles } => {
-                    let mut rng = RNG.lock().unwrap();
-                    valeurs_possibles[rng.random_usize(valeurs_possibles.len())]
+                    let len: usize = valeurs_possibles.len();
+                    valeurs_possibles[rng.random_usize(len)]
                 }
                 Entier::Entre { minimum, maximum } => {
-                    let mut rng = RNG.lock().unwrap();
                     rng.random_i64(minimum, maximum)
                 }
             }
-            
         }
     }
 
