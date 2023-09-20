@@ -10,7 +10,7 @@
 <a href="/evaluations/4eme/01">
     <div id="menu_eval">
         <div id="evaluation">
-            Évaluation
+            Évaluations
         </div>
     </div>
 </a>
