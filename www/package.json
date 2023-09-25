@@ -37,6 +37,7 @@
 		"@types/mathjax": "^0.0.37",
 		"execa": "^8.0.1",
 		"katex": "^0.16.8",
-		"svelte-katex": "^0.1.2"
+		"svelte-katex": "^0.1.2",
+		"tex2svg": "^1.0.2"
 	}
 }

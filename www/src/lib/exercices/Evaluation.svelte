@@ -92,7 +92,7 @@
 <div class="tout">
 {#each TABLEAU as evaluation, graine_index}
 <!-- Seule une seule évaluation (identifiée par sa graine) est affichée -->
-{#if graine_selectionnee == graine_index}
+{#if graine_index == graine_selectionnee}
     <table>
         <tr>
             <th>#{graine_index}</th>
@@ -122,6 +122,7 @@
             {/if}
         {/each}
     </table>
+    <div class="finpage"></div>
 {/if}
 {/each}
 </div>
@@ -131,7 +132,6 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        row-gap: 100px;
     }
     table {
         width: 100%;
@@ -153,5 +153,20 @@
         align-items: center;
         margin-bottom: 10px;
         column-gap: 10px;
+    }
+    @media print {
+        .tout {
+            display: block;
+        }
+        .finpage {
+            break-before: page;
+            clear: both;
+        }
+        div.boutons {
+            display: none;
+        }
+        tr {
+            height: fit-content;
+        }
     }
 </style>

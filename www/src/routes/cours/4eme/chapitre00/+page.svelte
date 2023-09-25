@@ -7,7 +7,7 @@
     import Definition from "$lib/chapitrage/sections/Definition.svelte";
     import Exemple from "$lib/chapitrage/sections/Exemple.svelte";
     import Remarque from "$lib/chapitrage/sections/Remarque.svelte";
-    import Schema from "$lib/chapitrage/sections/Schema.svelte";
+    import Animation from "$lib/chapitrage/sections/Animation.svelte";
     import Propriete from "$lib/chapitrage/sections/Propriete.svelte";
     import Exemples from "$lib/chapitrage/sections/Exemples.svelte"
 
@@ -45,7 +45,7 @@
                 Une fraction est un moyen d'écrire le résultat d'une division entre 
                 deux nombres entiers : le numérateur et le dénominateur.
             </Definition>
-            <Schema fonctionAnimation={(context) => {
+            <Animation fonctionAnimation={(context) => {
                 context.scale(2, 2)
                 context.font = "16px sans-serif"
                 context.textBaseline = "middle"

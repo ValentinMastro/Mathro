@@ -7,7 +7,7 @@
     import Definition from "$lib/chapitrage/sections/Definition.svelte";
     import Exemple from "$lib/chapitrage/sections/Exemple.svelte";
     import Remarque from "$lib/chapitrage/sections/Remarque.svelte";
-    import Schema from "$lib/chapitrage/sections/Schema.svelte";
+    import Animation from "$lib/chapitrage/sections/Animation.svelte";
     import Propriete from "$lib/chapitrage/sections/Propriete.svelte";
     import Theoreme from "$lib/chapitrage/sections/Theoreme.svelte";
 
@@ -25,7 +25,7 @@
                 Le carré d'un nombre est égal à ce nombre multiplié par lui-même.
                 On le note avec un « 2 » en exposant (en petit, en haut à droite).
             </Definition>
-            <Schema fonctionAnimation={(context) => {
+            <Animation fonctionAnimation={(context) => {
                 context.font = "48px serif"
                 context.textBaseline = "middle"
 
