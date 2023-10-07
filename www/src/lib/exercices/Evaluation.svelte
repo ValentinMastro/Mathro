@@ -20,7 +20,7 @@
     const KATEX_REPONSES: boolean[] = Array(20).fill(true)
 
     interface EvaluationInterface {
-        questions_graine: {
+        evaluations: {
             questions: {
                 type: "QCM",
                 enonce: string,
@@ -44,7 +44,7 @@
             }
         });
         let evaluation: EvaluationInterface = await REQUETE_API.json();
-        evaluation.questions_graine.forEach((liste_questions, graine: number) => {
+        evaluation.evaluations.forEach((liste_questions, graine: number) => {
             liste_questions.questions.forEach((question, numero_question: number) => {
                 TABLEAU[graine][numero_question] = [question.enonce, ...reponses_melangees(question.reponse, graine, numero_question), question.explication]
                 if (graine == 0) {
@@ -82,6 +82,7 @@
 <div class="boutons">
     <BoutonRafraichir clique={changer_graine}/>
     <Switch bind:afficher_reponses />
+    <input bind:value={graine_selectionnee}  type="number" />
 </div>
 
 
@@ -97,11 +98,15 @@
         <tr>
             <th>#{graine_index}</th>
             <th>Question</th>
-            <th>A</th>
-            <th>B</th>
-            <th>C</th>
-            <th>D</th>
-            <th>E</th>
+            {#if afficher_reponses}
+                <th>Réponse</th>
+            {:else}
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+                <th>E</th>
+            {/if}
         </tr>
         <!-- evaluation contient toutes les questions (en général 20) -->
         {#each evaluation as cellules_question, numero_question }
@@ -115,7 +120,7 @@
                     numero_reponse={indexes[graine_index][numero_question]}
                     bind:afficher_reponses
                     />
-            {#if afficher_reponses}
+            {#if false}
                 <Explication 
                     explication={cellules_question[6]}
                 />

@@ -51,6 +51,9 @@
     .bonne {
         background-color: lightgreen;
     }
+    .mauvaise {
+        display: none;
+    }
     tr {
         height: 48px;
         border-style: solid;

@@ -11,16 +11,19 @@
     <MenuChapitre   index={0} 
                     titre="Notation positionnelle des nombres" 
                     url="/cours/6eme/chapitre00"
-                    cats={["Nombres et calculs"]} >
+                    cats={["Nombres et calculs"]}
+                    img="/images/tableau_de_numeration.png" >
         <ol>
             <li>Chiffres et nombres</li>
             <li>Comparaison</li>
+            <li>Encadrement</li>
         </ol>
     </MenuChapitre>
     <MenuChapitre   index={1} 
                     titre="Notation géométrique" 
                     url="/cours/6eme/chapitre01"
-                    cats={["Espace et géométrie"]} >
+                    cats={["Espace et géométrie"]}
+                    img="/images/droiteAB.svg" >
         <ol>
             <li>Droite, demi-droite, segment</li>
             <li>Polygones</li>

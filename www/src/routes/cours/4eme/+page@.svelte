@@ -40,7 +40,7 @@
     </MenuChapitre>
     <MenuChapitre   index={2} 
                     titre="Fractions et proportionnalité" 
-                    url="/cours/4eme/chapitre00"
+                    url="/cours/4eme/chapitre02"
                     cats={["Nombres et calculs"]}
                     img="/images/gateau.png" >
         <ol>
@@ -51,7 +51,7 @@
     </MenuChapitre>
     <MenuChapitre   index={3}  
                     titre="Solides de l'espace" 
-                    url="/cours/4eme/chapitre00"
+                    url="/cours/4eme/chapitre03"
                     cats={["Espace et géométrie", "Grandeurs et mesures"]}
                     img="/images/rubik.jpg" >
         <ol>
@@ -61,7 +61,7 @@
     </MenuChapitre>
     <MenuChapitre   index={4} 
                     titre="Calcul littéral" 
-                    url="/cours/4eme/chapitre00"
+                    url="/cours/4eme/chapitre04"
                     cats={["Nombres et calculs"]}
                     img="/images/inconnue.jpg" >
         <ol>
@@ -71,7 +71,7 @@
     </MenuChapitre>
     <MenuChapitre   index={5} 
                     titre="Théorème de Thalès" 
-                    url="/cours/4eme/chapitre00"
+                    url="/cours/4eme/chapitre05"
                     cats={["Espace et géométrie", "Grandeurs et calculs"]}
                     img="/images/thales.jpg" >
         <ol>
@@ -81,7 +81,7 @@
     </MenuChapitre>
     <MenuChapitre   index={6} 
                     titre="Puissances" 
-                    url="/cours/4eme/chapitre00"
+                    url="/cours/4eme/chapitre06"
                     cats={["Nombres et calculs"]}
                     img="/images/echecs.jpg" >
         <ol>
@@ -91,7 +91,7 @@
     </MenuChapitre>
     <MenuChapitre   index={7} 
                     titre="Statistiques" 
-                    url="/cours/4eme/chapitre00"
+                    url="/cours/4eme/chapitre07"
                     cats={["Organisation et gestion de données"]}
                     img="/images/diagramme.png" >
         <ol>
@@ -102,7 +102,7 @@
     </MenuChapitre>
     <MenuChapitre   index={8} 
                     titre="Cosinus" 
-                    url="/cours/4eme/chapitre00"
+                    url="/cours/4eme/chapitre08"
                     cats={["Espace et géométrie", "Grandeurs et mesures"]}
                     img="/images/cosinus.png" >
         <ol>
@@ -112,7 +112,7 @@
     </MenuChapitre>
     <MenuChapitre   index={9} 
                     titre="Équation" 
-                    url="/cours/4eme/chapitre00"
+                    url="/cours/4eme/chapitre09"
                     cats={["Nombres et calculs"]}
                     img="/images/equation.png" >
         <ol>
@@ -122,14 +122,14 @@
     </MenuChapitre>
     <MenuChapitre   index={10} 
                     titre="Probabilités" 
-                    url="/cours/4eme/chapitre00"
+                    url="/cours/4eme/chapitre10"
                     cats={["Organisation et gestion de données"]}
                     img="/images/des.jpg" >
         
     </MenuChapitre>
     <MenuChapitre   index={11} 
                     titre="Transformations du plan" 
-                    url="/cours/4eme/chapitre00"
+                    url="/cours/4eme/chapitre11"
                     cats={["Espace et géométrie"]}
                     img="/images/symetrie_axiale.jpg" >
         <ol>
@@ -140,7 +140,7 @@
     </MenuChapitre>
     <MenuChapitre   index={12} 
                     titre="Décompositions en facteurs premiers" 
-                    url="/cours/4eme/chapitre00"
+                    url="/cours/4eme/chapitre12"
                     cats={["Nombres et calculs"]}
                     img="/images/tesla-map.jpg" >
         <ol>
@@ -150,7 +150,7 @@
     </MenuChapitre>
     <MenuChapitre   index={13} 
                     titre="Repérage sur un pavé droit" 
-                    url="/cours/4eme/chapitre00"
+                    url="/cours/4eme/chapitre13"
                     cats={["Espace et géométrie"]}
                     img="/images/repere_3d.jpg" >
         <ol>
