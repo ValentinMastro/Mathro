@@ -1,4 +1,4 @@
-use crate::{Entier, NombreDecimal, Rationnel};
+use crate::NombreDecimal;
 use crate::{Exercice, ExerciceVraiFaux};
 use rust_decimal::Decimal;
 

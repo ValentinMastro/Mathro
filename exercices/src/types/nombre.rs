@@ -8,9 +8,6 @@ pub mod nombre {
     // Lire un fichier texte
     use std::fs::File;
     use std::io::Read;
-    // Récupération des paramètres CLI
-    use std::env;
-
 
     pub struct GenerateurAleatoire {
         rng: StdRng
@@ -30,9 +27,9 @@ pub mod nombre {
     }
 
     lazy_static::lazy_static! {
+        pub static ref GRAINE: std::sync::Mutex<u8> = 0.into();
         pub static ref RNG: std::sync::Mutex<GenerateurAleatoire> = {
-            let args: Vec<String> = env::args().collect();
-            let graine: u8 = args[4].parse::<u8>().unwrap();
+            let graine: u8 = *GRAINE.lock().unwrap();
             std::sync::Mutex::new(GenerateurAleatoire::creer(graine))
         };
     }
@@ -70,7 +67,7 @@ pub mod nombre {
         pub fn entre(minimum: i64, maximum: i64) -> Entier {
             Entier::Entre { minimum, maximum }
         }
-        pub fn valeur(self) -> i64 {
+        pub fn valeur(&self) -> i64 {
             let mut rng = RNG.lock().unwrap();
             
             match self {
@@ -79,9 +76,16 @@ pub mod nombre {
                     valeurs_possibles[rng.random_usize(len)]
                 }
                 Entier::Entre { minimum, maximum } => {
-                    rng.random_i64(minimum, maximum)
+                    rng.random_i64(*minimum, *maximum)
                 }
             }
+        }
+        pub fn valeur_sauf(&self, valeurs_interdites: Vec<i64>) -> i64 {
+            let mut x: i64 = self.valeur();
+            while valeurs_interdites.contains(&x) {
+                x = self.valeur();
+            }
+            x
         }
     }
 

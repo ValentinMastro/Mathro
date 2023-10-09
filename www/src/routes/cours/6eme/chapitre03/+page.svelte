@@ -14,7 +14,7 @@
                     src="/tikz/6ch3_addition_schema.svg">
         </Definition>
         <Exemples>
-            <img    style="height: 7em;"
+            <img    style="height: 8em;"
                     alt="Exemple d'addition"
                     src="/tikz/6ch3_addition_exemples.svg">
         </Exemples>
@@ -27,7 +27,7 @@
                     src="/tikz/6ch3_soustraction_schema.svg">
         </Definition>
         <Exemples>
-            <img    style="height: 7em;"
+            <img    style="height: 6em;"
                     alt="Exemple d'addition"
                     src="/tikz/6ch3_soustraction_exemples.svg">
         </Exemples>

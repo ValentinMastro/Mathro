@@ -1,0 +1,15 @@
+\documentclass[tikz]{standalone}
+\usetikzlibrary{calc,arrows}
+\usepackage{frenchmath}
+
+\begin{document}
+\begin{tikzpicture}
+    \coordinate (U) at (0,0);
+    \coordinate (V) at (4,1);
+    \draw (U) -- (V);
+    \node at (U) {|};
+    \node at (V) {|};
+    \node[below right] at (U) {$U$};
+    \node[below right] at (V) {$V$};
+\end{tikzpicture}
+\end{document}

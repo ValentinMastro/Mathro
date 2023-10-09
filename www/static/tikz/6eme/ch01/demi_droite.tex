@@ -1,0 +1,22 @@
+\documentclass[tikz]{standalone}
+\usetikzlibrary{calc,arrows}
+\usepackage{frenchmath}
+
+\begin{document}
+\begin{tikzpicture}
+    \coordinate (A) at (-1,2);
+    \coordinate (x) at (3,1);
+    \draw (A) -- (x);
+    \node at (A) {|};
+    \node[above right] at (A) {$A$};
+    \node[above] at (x) {$x$};
+
+    \coordinate (B) at (4,0);
+    \coordinate (O) at (8,1);
+    \draw (B) -- (O) -- ($(B)!1.2!(O)$);
+    \node at (B) {|};
+    \node at (O) {|};
+    \node[above right] at (B) {$B$};
+    \node[above left] at (O) {$O$};
+\end{tikzpicture}
+\end{document}

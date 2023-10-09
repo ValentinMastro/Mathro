@@ -15,7 +15,7 @@ impl Exercice for Addition2relatifs {
 
 impl ExerciceQCM for Addition2relatifs {
     fn enonce(&self) -> String {
-        format!("({})+({})=", self.a, self.b)
+        format!("({:+})+({:+})=", self.a, self.b)
     }
     /// ```
     /// use exercices::{Exercice, ExerciceQCM};
@@ -47,6 +47,31 @@ impl ExerciceQCM for Addition2relatifs {
         ];
         format!("{}", Entier::parmi(valeurs_possibles).valeur())
     }
+    fn explication(&self) -> String{
+        if self.a * self.b > 0 {
+            let signe: &str = 
+                if self.a > 0 {
+                    "positif"
+                } else {
+                    "négatif"
+                };
+            format!("<Katex>
+            \\text{{Les deux nombres sont {}s, donc la somme est du même signe.}} \\\\
+            \\text{{On additionne les distances à zéro : }} {} + {} = {} \\\\
+            \\text{{D'où : }} {} + {} = {}
+            </Katex>", signe, self.a.abs(), self.b.abs(), self.a.abs() + self.b.abs(), self.a, self.b, self.a + self.b)
+        } else if self.a * self.b < 0 {
+            let max = if self.a.abs() > self.b.abs() {self.a} else {self.b};
+            let min = if self.a.abs() > self.b.abs() {self.b} else {self.a};
+            let ligne1: String = format!("\\text{{En cachant les signes, }} {} > {} \\\\", max.abs(), min.abs());
+            let ligne2: String = format!("\\text{{donc le résultat est du même signe que {:+}, c'est-à-dire \\textcolor{{red}}{{{}}} }} \\\\", max, if max > 0 {"positif"} else {"négatif"});
+            let ligne3: String = format!("\\text{{Les signes étant différents, on calcule la différence : }} {} - {} = \\color{{red}} {} \\color{{black}} \\\\", max.abs(), min.abs(), max.abs() - min.abs());
+            let ligne4: String = format!("\\text{{D'où : }} ({:+}) + ({:+}) = \\color{{red}} {:+} \\color{{black}}", self.a, self.b, self.a+self.b);
+            format!("<Katex>{}{}{}{}</Katex>", ligne1, ligne2, ligne3, ligne4)
+        } else {
+            format!("\\text{{Un des deux nombres est égal à 0.}}")
+        } 
+    }
 }
 
 #[derive(Clone, Default)]
@@ -64,7 +89,7 @@ impl Exercice for Soustraction2relatifs {
 
 impl ExerciceQCM for Soustraction2relatifs {
     fn enonce(&self) -> String {
-        format!("({})-({})=", self.a, self.b)
+        format!("({:+})-({:+})=", self.a, self.b)
     }
     fn bonne_reponse(&self) -> String {
         format!("{}", self.a-self.b)
@@ -79,6 +104,11 @@ impl ExerciceQCM for Soustraction2relatifs {
             -1*(self.a + self.b)
         ];
         format!("{}", Entier::parmi(valeurs_possibles).valeur())
+    }
+    fn explication(&self) -> String {
+        format!("<Katex>
+            ({:+}) - ({:+}) = ({:+}) \\color{{red}} + ({:+}) \\color{{black}} = {:+}
+        </Katex>", self.a, self.b, self.a, -1*self.b, self.a - self.b)
     }
 }
 
@@ -97,7 +127,7 @@ impl Exercice for Multiplication2relatifs {
 
 impl ExerciceQCM for Multiplication2relatifs {
     fn enonce(&self) -> String {
-        format!("({}) \\times ({})=", self.a, self.b)
+        format!("({:+}) \\times ({:+})=", self.a, self.b)
     }
     fn bonne_reponse(&self) -> String {
         format!("{}", self.a*self.b)
@@ -117,6 +147,17 @@ impl ExerciceQCM for Multiplication2relatifs {
             -1*(self.a + self.b)
         ];
         format!("{}", Entier::parmi(valeurs_possibles).valeur())
+    }
+    fn explication(&self) -> String {
+        let mut nombre_de_facteurs_negatifs: u8 = 0;
+        if self.a < 0 { nombre_de_facteurs_negatifs += 1}
+        if self.b < 0 { nombre_de_facteurs_negatifs += 1}
+
+        format!("<Katex>
+            \\text{{Il y a {} facteur(s) négatif(s) ({}), donc le résultat est {}}} \\\\
+            \\text{{D'où : }} ({:+}) \\times ({:+}) = {:+}
+        </Katex>", nombre_de_facteurs_negatifs, if nombre_de_facteurs_negatifs % 2 == 0 {"pair"} else {"impair"},
+         if nombre_de_facteurs_negatifs % 2 == 0 {"positif"} else {"négatif"}, self.a, self.b, self.a * self.b)
     }
 }
 
@@ -158,3 +199,4 @@ impl ExerciceQCM for AdditionMultiplication3relatifs {
         format!("{}", Entier::parmi(valeurs_possibles).valeur())
     }
 }
+
