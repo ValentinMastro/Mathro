@@ -18,7 +18,7 @@
         {#if katex_enonce}
             <Katex>{enonce}</Katex>
         {:else}
-            {enonce}
+            {@html enonce}
         {/if}
     </td>
     {#each question as cellule, numero_cellule}
@@ -52,7 +52,7 @@
         background-color: lightgreen;
     }
     .mauvaise {
-        display: none;
+        
     }
     tr {
         height: 48px;

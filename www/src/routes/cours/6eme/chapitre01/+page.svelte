@@ -19,7 +19,7 @@
         </Notation>
         <Exemples>
             <img    alt="la droite (AB)" 
-                    src="/tikz/6ch1_droite.svg" />
+                    src="/tikz/6eme/ch01/droite.svg" />
         </Exemples>
         <Definition>
             Une demi-droite est un morceau de droite délimité 
@@ -34,7 +34,7 @@
         <Exemples>
             <img    style="width: 60ex;"
                     alt="demi-droites"
-                    src="/tikz/6ch1_demi_droite.svg" />
+                    src="/tikz/6eme/ch01/demi_droite.svg" />
         </Exemples>
         <Definition>
             Un segment est une portion de droite délimitée par 
@@ -45,7 +45,7 @@
         </Notation>
         <Exemples>
             <img    alt="segment"
-                    src="/tikz/6ch1_segment.svg" 
+                    src="/tikz/6eme/ch01/segment.svg" 
             />
         </Exemples>
     </Partie>
@@ -90,7 +90,7 @@
         <Exemples>
             <img    style="width: 60ex;"
                     alt="Plusieurs points et leurs appartenances"
-                    src="/tikz/6ch1_points.svg" />
+                    src="/tikz/6eme/ch01/points.svg" />
         </Exemples>
     </Partie>
 </Chapitre>

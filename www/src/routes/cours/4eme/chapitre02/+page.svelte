@@ -3,7 +3,6 @@
     import Partie from "$lib/chapitrage/Partie.svelte";
     import SousPartie from "$lib/chapitrage/SousPartie.svelte";
     import Definition from "$lib/chapitrage/sections/Definition.svelte";
-	import Exemple from "$lib/chapitrage/sections/Exemple.svelte";
 	import Exemples from "$lib/chapitrage/sections/Exemples.svelte";
 	import Notation from "$lib/chapitrage/sections/Notation.svelte";
 	import Propriete from "$lib/chapitrage/sections/Propriete.svelte";
@@ -72,7 +71,79 @@
                 Diviser par un nombre revient à multiplier par son inverse.
             </Propriete>
             <Exemples>
-                <img src="/tikz/4ch2_division_fraction.svg"/>
+                <img    alt="Schéma expliquant les divisions de fractions"
+                        src="/tikz/4eme/ch02/divisions_de_fractions.svg"/>
+            </Exemples>
+        </SousPartie>
+    </Partie>
+    <Partie numero={2} titre="Pourcentages">
+        <SousPartie numero={1} titre="Le pourcentage d'un nombre">
+            <Definition>
+                Calculer <Katex>p \%</Katex> d'un nombre <Katex>n</Katex>,
+                c'est multiplier <Katex>{"\\dfrac{p}{100}"}</Katex> par <Katex>n</Katex>.
+            </Definition>
+            <Exemples>
+                <ul>
+                    <li>
+                        <Katex>
+                            {"25~\\% ~\\text{de}~ 12 =  \\dfrac{25}{100} \\times 12 = 3"}
+                        </Katex>
+                    </li>
+                    <li>
+                        <Katex>
+                            {"25~\\% ~\\text{de}~ 100 = \\dfrac{25}{100} \\times 100 = 25"}
+                        </Katex>
+                    </li>
+                    <li>
+                        <Katex>
+                            {"75~\\% ~\\text{de}~ 32 = \\dfrac{75}{100} \\times 32  = 24"}
+                        </Katex>
+                    </li>
+                </ul>
+            </Exemples>
+            <Propriete>
+                Pour calculer une proportion sous forme de pourcentage,
+                il faut que le dénominateur soit égal à 100.
+            </Propriete>
+            <Exemples>
+                <div style="display:flex; justify-content: center;">
+                <svg viewBox="0 0 300 200"
+                     style="width: 30ex;"   >
+                    <rect x={0} y={0} width={100} height={200} 
+                        style="fill: rgb(05,20,64); border: 0px;" />
+                    <rect x={100} y={0} width={100} height={200} 
+                        style="fill: rgb(255,255,255); border: 0px;" />
+                    <rect x={200} y={0} width={100} height={200} 
+                        style="fill: rgb(236,25,32); border: 0px;" />
+                </svg>
+                </div>
+                Dans le drapeau français, il y a 1 morceau sur 3 
+                qui est bleu. <br>Donc, la proportion de bleu dans le 
+                drapeau est de <Katex>{"\\frac{1}{3}"}</Katex>. <br>
+                Pour la mettre sous forme de pourcentage, 
+                je peux multiplier au numérateur et au dénominateur 
+                par 100 :
+                <Katex displayMode>
+                    {"\\dfrac{1}{3} = \\dfrac{1 \\times 100}{3 \\times 100} = \\dfrac{1 \\times 100}{3}~\\% \\approx 33,3 ~\\% = \\dfrac{33{,}3}{100}"}
+                </Katex>
+            </Exemples>
+        </SousPartie>
+        <SousPartie numero={2} titre="Augmentation et diminution par un pourcentage">
+            <Propriete>
+                Pour augmenter une valeur de <Katex>x</Katex> % :
+                <ul>
+                    <li>je calcule <Katex>x</Katex> % et je l'ajoute à ma valeur de base</li>
+                    <li><u>OU</u> je calcule <Katex>100+x</Katex> % de la valeur</li>
+                    <li><u>OU</u> je multiplie par <Katex>{"\\dfrac{100+x}{100}"}</Katex></li>
+                </ul>
+            </Propriete>
+            <Exemples>
+                <Katex>50 € + 20 \%</Katex> :
+                <ul>
+                    <li><Katex>{"20\\% ~\\text{de}~ 50€ = \\underline{10€} \\longrightarrow 50€+\\underline{10€}=\\boxed{60€}"}</Katex></li>
+                    <li><Katex>{"120\\% ~\\text{de}~ 50€ = \\boxed{60€}"}</Katex></li>
+                    <li><Katex>{"50€ \\times \\dfrac{100+20}{100} = 50€ \\times 1{,}2 = \\boxed{60€}"}</Katex></li>
+                </ul>
             </Exemples>
         </SousPartie>
     </Partie>

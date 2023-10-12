@@ -18,7 +18,7 @@
         <Schema>
             <img    style="width: 18em;"
                     alt="Schéma angle"
-                    src="/tikz/6ch4_angle.svg">
+                    src="/tikz/6eme/ch04/angle.svg">
         </Schema>
         <Definition>
             <ul>
@@ -42,7 +42,7 @@
             <Schema>
                 <img    style="width: 30em;"
                         alt="Angle saillant et angle rentrant"
-                        src="/tikz/6ch4_saillant_rentrant.svg">
+                        src="/tikz/6eme/ch04/saillant_rentrant.svg">
             </Schema>
             <Propriete>
                 La somme des mesures d'un angle saillant et de l'angle rentrant associé vaut 360°.
@@ -58,7 +58,7 @@
                     <td>Entre 0° et 90°</td>
                     <td>
                         <img    alt="Angle 30°"
-                                src="/tikz/6ch4_angle_30.svg"
+                                src="/tikz/6eme/ch04/angle_30.svg"
                                 style="height: 9em;" >
                     </td>
                 </tr>
@@ -67,7 +67,7 @@
                     <td>= 90°</td>
                     <td>
                         <img    alt="Angle 90°"
-                                src="/tikz/6ch4_angle_90.svg"
+                                src="/tikz/6eme/ch04/angle_90.svg"
                                 style="height: 14em;" >
                     </td>
                 </tr>
@@ -76,7 +76,7 @@
                     <td>Entre 90° et 180°</td>
                     <td>
                         <img    alt="Angle 130°"
-                                src="/tikz/6ch4_angle_130.svg"
+                                src="/tikz/6eme/ch04/angle_130.svg"
                                 style="height: 11em;" >
                     </td>
                 </tr>
@@ -85,7 +85,7 @@
                     <td>= 180°</td>
                     <td>
                         <img    alt="Angle 180°"
-                                src="/tikz/6ch4_angle_180.svg"
+                                src="/tikz/6eme/ch04/angle_180.svg"
                                 style="height: 6em;" >
                     </td>
                 </tr>

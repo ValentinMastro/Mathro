@@ -5,8 +5,6 @@
     import Partie from "$lib/chapitrage/Partie.svelte";
     import SousPartie from "$lib/chapitrage/SousPartie.svelte";
     import Definition from "$lib/chapitrage/sections/Definition.svelte";
-    import Exemple from "$lib/chapitrage/sections/Exemple.svelte";
-    import Remarque from "$lib/chapitrage/sections/Remarque.svelte";
     import Schema from "$lib/chapitrage/sections/Schema.svelte";
     import Propriete from "$lib/chapitrage/sections/Propriete.svelte";
     import Paragraphe from "$lib/chapitrage/sections/Paragraphe.svelte";

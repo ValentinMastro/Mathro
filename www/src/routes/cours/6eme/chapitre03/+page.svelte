@@ -11,12 +11,12 @@
             Additionner, c'est réunir deux quantités en une.<br>
             <img    style="height: 7em;"
                     alt="Schema addition"
-                    src="/tikz/6ch3_addition_schema.svg">
+                    src="/tikz/6eme/ch03/addition_schema.svg">
         </Definition>
         <Exemples>
             <img    style="height: 8em;"
                     alt="Exemple d'addition"
-                    src="/tikz/6ch3_addition_exemples.svg">
+                    src="/tikz/6eme/ch03/addition_exemples.svg">
         </Exemples>
     </Partie>
     <Partie numero={2} titre="Soustraction">
@@ -24,12 +24,12 @@
             Soustraire, c'est retirer une quantité à une autre.<br>
             <img    style="height: 7em;"
                     alt="Schema addition"
-                    src="/tikz/6ch3_soustraction_schema.svg">
+                    src="/tikz/6eme/ch03/soustraction_schema.svg">
         </Definition>
         <Exemples>
             <img    style="height: 6em;"
                     alt="Exemple d'addition"
-                    src="/tikz/6ch3_soustraction_exemples.svg">
+                    src="/tikz/6eme/ch03/soustraction_exemples.svg">
         </Exemples>
     </Partie>
 </Chapitre>

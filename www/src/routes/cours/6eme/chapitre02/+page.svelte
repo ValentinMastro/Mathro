@@ -21,7 +21,7 @@
         </Notation>
         <Exemples>
             <img alt="Axe gradué sur lequel sont placés 5 points." 
-                src="/tikz/6ch2_axe.svg" />
+                src="/tikz/6eme/ch02/axe.svg" />
         </Exemples>
     </Partie>
     <Partie numero={2} titre="Repérage dans le plan">
@@ -35,7 +35,7 @@
         </Definition>
         <Schema>
             <img    alt="Plan avec l'axe des abscisses et l'axe des ordonnées" 
-                    src="/tikz/6ch2_plan.svg" />
+                    src="/tikz/6eme/ch02/plan.svg" />
         </Schema>
         <Definition>
             Dans un repère du plan, on associe à chaque point deux nombres :
@@ -48,7 +48,7 @@
         </Notation>
         <Schema>
             <img    alt="Plan contenant des points"
-                    src="/tikz/6ch2_plan_points.svg" />
+                    src="/tikz/6eme/ch02/plan_points.svg" />
         </Schema>
     </Partie>
 </Chapitre>
