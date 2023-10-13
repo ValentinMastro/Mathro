@@ -37,6 +37,9 @@
         <Remarque>
             Le dénominateur <Katex>b \neq 0</Katex>. <br> (on ne peut pas diviser par 0)
         </Remarque>
+        <div style='height:20vw'>
+
+        </div>
     </Partie>
 </Chapitre>
 
