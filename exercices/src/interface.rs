@@ -24,6 +24,11 @@ use crate::exos::ex6::{
             SoustractionDecimaux
         }
     },
+    ch04::{
+        angle_triangle::AngleTriangle,
+        mesurer_angle::MesurerAngle,
+        angle::CalculAngleRentrant,
+    },
     ch07::multiplication::MultiplicationPar11
 };
 
@@ -58,6 +63,11 @@ use crate::exos::ex4::{
         divisions::{
             ProblemeDivision1,
             ProblemeDivision2
+        },
+        pourcentage::{
+            AugmentationPourcentage,
+            DiminutionPourcentage,
+            PourcentageValeur
         }
     }
 };
@@ -119,6 +129,9 @@ pub fn envoyer_exercice_6eme(requete: Requete) -> Question {
                 11 => ObjetGeometriqueSimple::default().question(5),
                 12 => AdditionDecimaux::default().question(5),
                 13 => SoustractionDecimaux::default().question(5),
+                14 => AngleTriangle::default().question(5),
+                15 => MesurerAngle::default().question(5),
+                16 => CalculAngleRentrant::default().question(5),
                 _ => todo!()
             }
         },
@@ -151,6 +164,9 @@ pub fn envoyer_exercice_4eme(requete: Requete) -> Question {
                 17 => ProblemeDivision2::default().question(5),
                 18 => FractionsEgales::default().question(5),
                 19 => DivisionFraction::default().question(5),
+                20 => AugmentationPourcentage::default().question(5),
+                21 => DiminutionPourcentage::default().question(5),
+                22 => PourcentageValeur::default().question(5),
                 _ => todo!()
             }
         },
