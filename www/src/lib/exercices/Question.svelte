@@ -4,6 +4,7 @@
     export let numero_question: number;
     export let numero_reponse: number;
     export let afficher_reponses: boolean;
+    export let afficher_mauvaises_reponses: boolean;
     export let katex_enonce: boolean;
     export let katex_reponses: boolean;
 
@@ -31,7 +32,7 @@
                 {/if}
             </td>
         {:else}
-            <td class="reponse {afficher_reponses ? "mauvaise" : ""}">
+            <td class="reponse {afficher_mauvaises_reponses ? "mauvaise" : ""}">
                 {#if katex_reponses}
                     <Katex>{cellule}</Katex>
                 {:else}
@@ -52,7 +53,7 @@
         background-color: lightgreen;
     }
     .mauvaise {
-        
+        display: none;
     }
     tr {
         height: 48px;

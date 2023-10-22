@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import Katex from "svelte-katex";
-    import Switch from "$lib/Switch.svelte";
 	import BoutonRafraichir from "$lib/BoutonRafraichir.svelte";
 	import Question from "./Question.svelte";
 	import Explication from "./Explication.svelte";
@@ -9,6 +7,8 @@
     export let niveau: number;
     export let numero_evaluation: number;
     let afficher_reponses: boolean = false;
+    let afficher_mauvaises_reponses: boolean = false;
+    let afficher_explications: boolean = false;
     let graine_selectionnee: number = 0;
     
     const TABLEAU: any[][][] = Array(256).fill(0).map(
@@ -79,10 +79,25 @@
     });
 </script>
 
-<div class="boutons">
-    <BoutonRafraichir clique={changer_graine}/>
-    <Switch bind:afficher_reponses />
-    <input bind:value={graine_selectionnee}  type="number" />
+<div class="options">
+    <div class="selecteurs">
+        <div>
+            <input id="surbrillance_reponses" type="checkbox" bind:checked={afficher_reponses} />
+            <label for="surbrillance_reponses">Afficher les réponses</label>
+        </div>
+        <div>
+            <input id="cacher_mauvaises_reponses" type="checkbox" bind:checked={afficher_mauvaises_reponses} />
+            <label for="cacher_mauvaises_reponses">Cacher les mauvaises réponses</label>
+        </div>
+        <div>
+            <input id="explications" type="checkbox" bind:checked={afficher_explications} />
+            <label for="explications">Afficher les explications</label>
+        </div>
+    </div>
+    <div class="boutons">
+        <BoutonRafraichir clique={changer_graine}/>
+        <input bind:value={graine_selectionnee} type="number" min={0} max={255} />
+    </div>
 </div>
 
 
@@ -96,7 +111,10 @@
 {#if graine_index == graine_selectionnee}
     <table>
         <tr>
-            <th>#{graine_index}</th>
+            <th style="width: 120px;">
+                Évaluation n°{numero_evaluation}<br>
+                {niveau}ème #{graine_index}
+            </th>
             <th>Question</th>
             {#if afficher_reponses}
                 <th>Réponse</th>
@@ -119,8 +137,9 @@
                     numero_question={numero_question}
                     numero_reponse={indexes[graine_index][numero_question]}
                     bind:afficher_reponses
+                    bind:afficher_mauvaises_reponses
                     />
-            {#if false}
+            {#if afficher_explications}
                 <Explication 
                     explication={cellules_question[6]}
                 />
@@ -151,12 +170,20 @@
         border-style: solid;
         border-collapse: collapse;
     }
-    div.boutons {
+    div.options {
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
+        justify-content: space-between;
         align-items: center;
         margin-bottom: 10px;
+        
+    }
+    div.selecteurs {
+        display: flex;
+        flex-direction: column;
+    }
+    div.boutons {
+        display: flex;
         column-gap: 10px;
     }
     @media print {
@@ -167,7 +194,7 @@
             break-before: page;
             clear: both;
         }
-        div.boutons {
+        div.options {
             display: none;
         }
         tr {

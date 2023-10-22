@@ -158,8 +158,9 @@
                         correspond à une augmentation de <Katex>{"\\dfrac{5000-4000}{4000} \\times 100 = 25 \\%"}</Katex>
                     </li>
                     <li>
-                        Une voiture était vendue neuve à 25 000 €. Aujourd'hui, elle ne vaut plus que 5 000 €.
-                        Son prix a donc baissé de <Katex>{"\\dfrac{5000 - 25000}{25000}"}</Katex>.
+                        Une voiture était vendue neuve à 25 000 €. Aujourd'hui, elle ne vaut plus que 5 000 €.<br><br>
+                        Calculons son taux de variation : <Katex>{"\\dfrac{5000 - 25000}{25000} \\times 100 = -80 \\%"}</Katex>.<br>
+                        Son prix a donc baissé de 80 %.
                     </li>
                 </ul>
             </Exemples>

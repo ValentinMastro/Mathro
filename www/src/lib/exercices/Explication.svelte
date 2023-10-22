@@ -1,7 +1,8 @@
 <script lang="ts">
+    import Katex from "svelte-katex";
+
     export let explication: string;
     let baliseKatex: boolean;
-    import Katex from "svelte-katex";
 
     function analyserExplication() {
         // Expression régulière pour rechercher les balises Katex
@@ -13,7 +14,6 @@
         // Si la balise Katex est présente, la supprimer de la chaîne
         if (baliseKatex) {
             explication = explication.replace(regexKatex, (_, contenu) => {
-                // Vous pouvez également traiter le contenu ici si nécessaire
                 return contenu;
             });
         }
@@ -24,7 +24,8 @@
 </script>
 
 <tr class="explication">
-    <td class="explication" colspan="7">
+    <td class="question"></td>
+    <td class="explication" colspan="6">
         {#if baliseKatex}
             <Katex displayMode>{@html explication}</Katex>
         {:else}
@@ -39,7 +40,7 @@
         height: fit-content;
         border-color: white;
     }
-    td.explication {
-        width: 100%;
+    td.question {
+        width: 100px;
     }
 </style>
