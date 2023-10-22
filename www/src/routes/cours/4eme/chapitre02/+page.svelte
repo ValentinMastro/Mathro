@@ -145,6 +145,24 @@
                     <li><Katex>{"50€ \\times \\dfrac{100+20}{100} = 50€ \\times 1{,}2 = \\boxed{60€}"}</Katex></li>
                 </ul>
             </Exemples>
+            <Propriete>
+                Pour calculer le taux de variation entre une valeur de départ et une valeur d'arrivée : 
+                <Katex displayMode>
+                    {"\\dfrac{\\text{valeur d'arrivée} - \\text{valeur de départ}}{\\text{valeur de départ}} \\times 100"}
+                </Katex>
+            </Propriete>
+            <Exemples>
+                <ul>
+                    <li>
+                        Le nombre d'habitants d'une ville est passé de 4 000 à 5 000, ce qui
+                        correspond à une augmentation de <Katex>{"\\dfrac{5000-4000}{4000} \\times 100 = 25 \\%"}</Katex>
+                    </li>
+                    <li>
+                        Une voiture était vendue neuve à 25 000 €. Aujourd'hui, elle ne vaut plus que 5 000 €.
+                        Son prix a donc baissé de <Katex>{"\\dfrac{5000 - 25000}{25000}"}</Katex>.
+                    </li>
+                </ul>
+            </Exemples>
         </SousPartie>
     </Partie>
 </Chapitre>
