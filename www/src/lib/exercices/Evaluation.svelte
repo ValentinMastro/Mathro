@@ -116,7 +116,7 @@
                 {niveau}ème #{graine_index}
             </th>
             <th>Question</th>
-            {#if afficher_reponses}
+            {#if afficher_mauvaises_reponses}
                 <th>Réponse</th>
             {:else}
                 <th>A</th>
