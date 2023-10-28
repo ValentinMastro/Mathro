@@ -27,9 +27,13 @@
     <td class="question"></td>
     <td class="explication" colspan="6">
         {#if baliseKatex}
-            <Katex displayMode>{@html explication}</Katex>
+            <Katex displayMode>
+                {@html explication}
+            </Katex>
         {:else}
-            {@html explication}
+            <div class="texte">
+                {@html explication}
+            </div>
         {/if}
     </td>
 </tr>
@@ -42,5 +46,10 @@
     }
     td.question {
         width: 100px;
+    }
+    div.texte {
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 </style>

@@ -6,3 +6,6 @@ all:
 clean:
 	cd GenerateurExercices/ && cargo clean
 	rm -rf www/evaluation www/exercices
+
+update:
+	git submodule update --recursive --remote
