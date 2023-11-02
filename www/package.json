@@ -36,7 +36,9 @@
 	"dependencies": {
 		"@types/mathjax": "^0.0.37",
 		"execa": "^8.0.1",
+		"jszip": "^3.10.1",
 		"katex": "^0.16.8",
-		"svelte-katex": "^0.1.2"
+		"svelte-katex": "^0.1.2",
+		"svelte-preprocess": "^5.0.4"
 	}
 }

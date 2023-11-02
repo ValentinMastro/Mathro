@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
+    import JSZip from "jszip";
+
 	import BoutonRafraichir from "$lib/BoutonRafraichir.svelte";
 	import Question from "./Question.svelte";
 	import Explication from "./Explication.svelte";
@@ -35,15 +37,57 @@
         }[]
     }
 
-    async function get_evaluation(niveau: number = 6, id_evaluation: number = 1, graine: number = 0) {
-        const REQUETE_API = await fetch('/api', {
+    async function generer_evaluation_depuis_executable(niveau: number, id_evaluation: number): Promise<EvaluationInterface> {
+        const REQUETE_API = await fetch('/api/from_rust', {
             method: 'POST',
             body: JSON.stringify({niveau, id_evaluation}),
             headers: {
-                'content-type': 'application/json'
+                'Content-Type': 'application/json',
+                'Content-Encoding': 'gzip'
             }
         });
-        let evaluation: EvaluationInterface = await REQUETE_API.json();
+        return await REQUETE_API.json();
+    }
+
+    async function recuperer_evaluation_compressee(niveau: number, id_evaluation: number) {
+        const REQUETE_API = await fetch('/api/from_zip', {
+            method: 'POST',
+            body: JSON.stringify({niveau, id_evaluation}),
+            headers: {
+                'Content-Type': 'application/json',
+                'Content-Encoding': 'gzip'
+            }
+        });
+
+        // reponse est un string qui contient le contenu du fichier zip en base64
+        // on souhaite le décompresser pour obtenir le contenu du fichier json qui est à l'intérieur
+        let reponse: string = await REQUETE_API.json();
+        let evaluation: EvaluationInterface = {evaluations: []};
+
+        var zip = new JSZip();
+        zip = await zip.loadAsync(reponse, {base64: true});
+        var fichier = zip.file("data.json");
+
+        if (fichier == null) {
+            console.log("Erreur : fichier introuvable");
+            return evaluation;
+        }
+
+        var decompression = await fichier.async("string");
+        evaluation = JSON.parse(decompression);
+
+        if (evaluation == null) {
+            console.log("Erreur : fichier vide");
+            return evaluation;
+        }
+
+        return evaluation
+    }
+
+    async function get_evaluation(niveau: number = 6, id_evaluation: number = 1) {
+        let evaluation: EvaluationInterface = await recuperer_evaluation_compressee(niveau, id_evaluation);
+        //let evaluation: EvaluationInterface = await generer_evaluation_depuis_executable(niveau, id_evaluation);
+
         evaluation.evaluations.forEach((liste_questions, graine: number) => {
             liste_questions.questions.forEach((question, numero_question: number) => {
                 TABLEAU[graine][numero_question] = [question.enonce, ...reponses_melangees(question.reponse, graine, numero_question), question.explication]
