@@ -3,11 +3,13 @@
 </script>
 
 <header>
-	<a href="/" data-sveltekit-reload><nav>
+	<a href="/" data-sveltekit-reload>
+		<nav>
 		<div></div>
 		<div></div>
 		<div></div>
-	</nav></a>
+		</nav>
+	</a>
 </header>
 
 <style>
@@ -15,13 +17,14 @@
 		display: flex;
 		justify-content: space-between;
 	}
+	a {
+		width: 30px;
+		height: 30px;
+	}
 	nav {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-evenly;
-		--size: max(3vh, 3vw);
-		width: --size;
-		height: --size;
 	}
 	div {
 		width: 30px;

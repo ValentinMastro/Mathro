@@ -8,7 +8,7 @@
 <div id="interface_scratch">
     <ListeDeBlocs />
     <Programme />
-    <div style="width: 40%;">
+    <div style="width: 28%;">
         <Enonce />
         <AffichageExecutionDuProgramme />
     </div>
@@ -19,7 +19,7 @@
     #interface_scratch {
         display: flex;
         flex-direction: row;
-        width: 100%;
-        height: 95vh;
+        width: 100vw;
+        height: 100vh;
     }
 </style>

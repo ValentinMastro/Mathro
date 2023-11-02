@@ -23,20 +23,29 @@
 
 <div id="liste_de_blocs">
     <span>Mouvement</span>
+    <div class="categorie">
         <AllerXy x={0} y={0} />
         <Sorienter angle={0} />
         <TournerNegatif angle={15} />
         <TournerPositif angle={15} />
         <Avancer distance={10} />
+    </div>
     <span>Apparence</span>
+    <div class="categorie">
         <Dire message="Bonjour !" />
+    </div>
     <span>Évènements</span>
+    <div class="categorie">
         <DrapeauCliqu />
         <TouchePresse touche="espace" />
+    </div>
     <span>Contrôle</span>
+    <div class="categorie">
         <Repeter nombre={10} />
         <RepeterIndefiniment />
+    </div>
     <span>Opérateurs</span>
+    <div class="categorie">
         <Addition a={0} b={0} />
         <Soustraction a={0} b={0} />
         <Multiplication a={0} b={0} />
@@ -46,7 +55,7 @@
         <TestPlusPetitQue a={0} b={0} />
         <TestPlusGrandQue a={0} b={0} />
         <TestEgal a={0} b={0} />
-    <span>Variables</span>
+    </div>
 </div>
 
 <style>
@@ -54,11 +63,16 @@
         display: flex;
         flex-direction: column;
         height: 100%;
-        width: 20%;
+        width: 12%;
         background-color: lightgray;
     }
     span {
         color: black;
         font-weight: bold;
+        user-select: none;
+    }
+    .categorie {
+        display: flex;
+        flex-direction: column;
     }
 </style>

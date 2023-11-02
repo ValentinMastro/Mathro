@@ -13,6 +13,8 @@
 		<Header />
 		<slot />
 	</div>
+{:else if $page.url.pathname.includes("scratch")}
+	<slot />
 {:else}
 	<div class="app">
 		<Header />
