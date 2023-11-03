@@ -32,4 +32,10 @@
 		background-color: white;
 		margin: 3px 0;
 	}
+	@media print {
+		header {
+			display: none;
+		}
+	}
+	
 </style>
