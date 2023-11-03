@@ -7,7 +7,7 @@
 	<meta name="description" content="Cours de quatrième" />
 </svelte:head>
 
-<a href="/evaluations/4eme/01">
+<a href="/evaluations/4eme">
     <div id="menu_eval">
         <div id="evaluation">
             Évaluations
