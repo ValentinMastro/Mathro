@@ -3,6 +3,7 @@
     import Partie from "$lib/chapitrage/Partie.svelte";
     import SousPartie from "$lib/chapitrage/SousPartie.svelte";
     import Definition from "$lib/chapitrage/sections/Definition.svelte";
+	import Demonstration from "$lib/chapitrage/sections/Demonstration.svelte";
 	import Exemples from "$lib/chapitrage/sections/Exemples.svelte";
 	import Notation from "$lib/chapitrage/sections/Notation.svelte";
 	import Propriete from "$lib/chapitrage/sections/Propriete.svelte";
@@ -161,6 +162,49 @@
                         Une voiture était vendue neuve à 25 000 €. Aujourd'hui, elle ne vaut plus que 5 000 €.<br><br>
                         Calculons son taux de variation : <Katex>{"\\dfrac{5000 - 25000}{25000} \\times 100 = -80 \\%"}</Katex>.<br>
                         Son prix a donc baissé de 80 %.
+                    </li>
+                </ul>
+            </Exemples>
+            <Propriete>
+                <Katex>{"x \\% \\text{ de } y = y \\% \\text{ de } x"}</Katex>
+            </Propriete>
+            <Exemples>
+                <ul>
+                    <li>
+                        <Katex>{"12 \\% \\text{ de } 50 = 50 \\% \\text{ de } 12 = 6"}</Katex>
+                    </li>
+                    <li>
+                        <Katex>{"20 \\% \\text{ de } 25 = 25 \\% \\text{ de } 20 = 5"}</Katex>
+                    </li>
+                </ul>
+            </Exemples>
+            <Demonstration>
+                <Katex displayMode>{"x \\% \\text{ de } y = \\dfrac{x}{100} \\times y = \\dfrac{y}{100} \\times x = y \\% \\text{ de } x"}</Katex>
+            </Demonstration>
+        </SousPartie>
+    </Partie>
+    <Partie numero={3} titre={"Proportionnalité"}>
+        <SousPartie numero={1} titre="Grandeurs">
+            <Definition>
+                Une grandeur est une caractéristique quantifiable, associée à une unité.
+            </Definition>
+            <Exemples>
+                Distance(m), Prix(€), Durée(s), Température(°C), Masse(kg), Énergie(J),
+                Puissance(W), Tension électrique(V), etc.
+            </Exemples>
+            <Definition>
+                Deux grandeurs sont proportionnelles s'il existe un coefficient de proportionnalité,
+                c'est-à-dire un nombre qui, multiplié à l'une des grandeurs, donne l'autre.
+            </Definition>
+            <Exemples>
+                <ul>
+                    <li>
+                        Le côté d'un carré et son périmètre sont proportionnels. (le coefficient vaut 4)
+                    </li>
+                    <li>
+                        L'âge et la taille d'une personne ne sont pas proportionnels.<br>
+                        En effet, si une personne a 10 ans et qu'elle mesure 1,20 m, cela ne signifie 
+                        pas qu'à 20 ans, elle mesurera 2,40 m.
                     </li>
                 </ul>
             </Exemples>
