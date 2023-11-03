@@ -57,7 +57,15 @@
                 'Content-Type': 'application/json',
                 'Content-Encoding': 'gzip'
             }
-        });
+        }).then((reponse) => {
+            if (reponse.status == 200) {
+                return reponse;
+            } 
+        })
+
+        if (REQUETE_API == null) {
+            return {evaluations: []}
+        }
 
         // reponse est un string qui contient le contenu du fichier zip en base64
         // on souhaite le décompresser pour obtenir le contenu du fichier json qui est à l'intérieur
@@ -86,7 +94,10 @@
 
     async function get_evaluation(niveau: number = 6, id_evaluation: number = 1) {
         let evaluation: EvaluationInterface = await recuperer_evaluation_compressee(niveau, id_evaluation);
-        //let evaluation: EvaluationInterface = await generer_evaluation_depuis_executable(niveau, id_evaluation);
+
+        if (evaluation.evaluations.length == 0) {
+            evaluation = await generer_evaluation_depuis_executable(niveau, id_evaluation);
+        }
 
         evaluation.evaluations.forEach((liste_questions, graine: number) => {
             liste_questions.questions.forEach((question, numero_question: number) => {
