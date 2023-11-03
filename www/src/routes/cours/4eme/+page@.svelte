@@ -7,13 +7,14 @@
 	<meta name="description" content="Cours de quatrième" />
 </svelte:head>
 
-<a href="/evaluations/4eme">
-    <div id="menu_eval">
-        <div id="evaluation">
-            Évaluations
-        </div>
-    </div>
-</a>
+<div id="menu_eval">
+    <a id="evaluation" href="/evaluations/4eme" >
+        Évaluations
+    </a>
+    <a id="entrainement" href="/entrainement/4eme">
+        Entraînement
+    </a>
+</div>
 
 <div id="menu">
     <MenuChapitre   index={0} 
@@ -174,16 +175,21 @@
 <style>
     div#menu_eval {
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         width: 100%;
         margin-bottom: 15px;
     }
-    div#evaluation {
+    div#menu_eval > a {
+        text-decoration: none;
         background-color: white;
         color: black;
-        width: 28vw;
-        font-size: 3ex;
+        font: normal 1.5em "Marianne";
         text-align: center;
+        width: 15vw;
+
+        --h: 35px;
+        height: var(--h);
+        line-height: var(--h);
     }
     div#menu {
         display: flex;
@@ -201,11 +207,5 @@
     }
     ol li:before {
         content: counter(step-counter, upper-roman) " - ";
-    }
-
-    @media (max-width: 1050px) {
-        div#evaluation {
-            width: 90vw;
-        }
     }
 </style>

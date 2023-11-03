@@ -7,6 +7,15 @@
 	<meta name="description" content="Cours de quatrième" />
 </svelte:head>
 
+<div id="menu_eval">
+    <a id="evaluation" href="/evaluations/6eme" >
+        Évaluations
+    </a>
+    <a id="entrainement" href="/entrainement/6eme">
+        Entraînement
+    </a>
+</div>
+
 <div id="menu">
     <MenuChapitre   index={0} 
                     titre="Notation positionnelle des nombres" 
@@ -64,8 +73,9 @@
                     url="/cours/6eme/chapitre05"
                     cats={["Nombres et calculs"]} >
         <ol>
-            <li>Représentation de fractions</li>
-            <li>Addition de fractions</li>
+            <li>Lien entre quotient et fraction</li>
+            <li>Calculer la fraction d'un nombre</li>
+            <li>Calculs</li>
         </ol>
     </MenuChapitre>
     <MenuChapitre   index={6}
@@ -122,17 +132,8 @@
         </ol>
     </MenuChapitre>
     <MenuChapitre   index={12} 
-                    titre="Décompositions en facteurs premiers" 
-                    url="/cours/6eme/chapitre12"
-                    cats={["Nombres et calculs"]} >
-        <ol>
-            <li>Les nombres premiers</li>
-            <li>Théorème fondamental de l'arithmétique</li>
-        </ol>
-    </MenuChapitre>
-    <MenuChapitre   index={13} 
                     titre="Proportionnalité" 
-                    url="/cours/6eme/chapitre13"
+                    url="/cours/6eme/chapitre12"
                     cats={["Nombres et calculs", "Organisation et gestion de données"]} >
         <ol>
             <li>Grandeurs proportionnelles</li>
@@ -140,15 +141,21 @@
             <li>Pourcentages</li>
         </ol>
     </MenuChapitre>
-    <MenuChapitre   index={14}
+    <MenuChapitre   index={13}
                     titre="Enchaînement d'opérations"
-                    url="/cours/6eme/chapitre14"
+                    url="/cours/6eme/chapitre13"
                     cats={["Nombres et calculs"]} >
     </MenuChapitre>
-    <MenuChapitre   index={15}
+    <MenuChapitre   index={14}
                     titre="Quadrilatères"
-                    url="cours/6eme/chapitre15"
+                    url="cours/6eme/chapitre14"
                     cats={["Espace et géométrie"]} >
+    </MenuChapitre>
+    <MenuChapitre   index={15}
+                    titre="Vitesse et grandeurs composées"
+                    url="cours/6eme/chapitre15"
+                    cats={["Grandeurs et mesures", "Nombres et calculs"]}
+                    >
     </MenuChapitre>
     <MenuChapitre   index={16}
                     titre="Périmètres"
@@ -166,7 +173,7 @@
                     cats={["Espace et géométrie", "Grandeurs et mesures"]} >
     </MenuChapitre>
     <MenuChapitre   index={19}
-                    titre="Échelle et vitesse"
+                    titre="Échelles"
                     url="cours/6eme/chapitre19"
                     cats={["Grandeurs et mesures", "Nombres et calculs"]} >
     </MenuChapitre>
@@ -183,6 +190,24 @@
 </div>
 
 <style>
+    div#menu_eval {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    div#menu_eval > a {
+        text-decoration: none;
+        background-color: white;
+        color: black;
+        font: normal 1.5em "Marianne";
+        text-align: center;
+        width: 15vw;
+
+        --h: 35px;
+        height: var(--h);
+        line-height: var(--h);
+    }
     div#menu {
         display: flex;
         flex-direction: row;
