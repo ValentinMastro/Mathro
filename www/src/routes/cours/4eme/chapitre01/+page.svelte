@@ -10,12 +10,6 @@
     import Animation from "$lib/chapitrage/sections/Animation.svelte";
     import Propriete from "$lib/chapitrage/sections/Propriete.svelte";
     import Theoreme from "$lib/chapitrage/sections/Theoreme.svelte";
-
-    import { 
-        Calculer_le_carre_d_un_nombre,
-        Calculer_la_racine_carree_d_un_nombre,
-        Egalite_de_pythagore
-    } from "$lib/exercices/4eme/ch01";
 </script>
 
 <Chapitre numero={1} titre="Théorème de Pythagore">
@@ -60,15 +54,12 @@
                 }
                 update()
             }} />
-            <Exemple exercice={new Calculer_le_carre_d_un_nombre()} nombre={3}/>
             <Definition>
                 La racine carrée est l'opération réciproque du calcul du carré d'un nombre.
                 Elle se note avec le symbole « radical » : <Katex>\sqrt{'{~~}'}</Katex>.
             </Definition>
-            <Exemple exercice={new Calculer_la_racine_carree_d_un_nombre()} nombre={1}>
                 <tr>Si le carré de 12 est 144, <Katex>{'\\sqrt{144}=12'}</Katex></tr>
                 <tr>Si <Katex>{'8^2=64'}</Katex> alors <Katex>{'\\sqrt{64}=8'}</Katex></tr>
-            </Exemple>
         </SousPartie>
     </Partie>
     <Partie numero={2} titre="Triangle rectangle et hypoténuse">
@@ -81,66 +72,12 @@
         <Propriete>
             L'hypoténuse est le côté le plus grand d'un triangle rectangle.
         </Propriete>
-        <Schema fonctionAnimation={ (ctx) => {
-            var [x, y, z, t] = [140, 20, 45, 120]
-            ctx.beginPath();
-            ctx.moveTo(x, t);
-            ctx.lineTo(x, y);
-            ctx.lineTo(z, t);
-            ctx.closePath();
-            ctx.stroke();
-            
-            ctx.font = '20px serif'
-            ctx.textAlign = 'center'
-            ctx.textBaseline = 'middle'
-            ctx.fillText("A", x+10, t+3)
-            ctx.fillText("B", z-15, t+3)
-            ctx.fillText("C", x+10, y)
-            ctx.fillRect(x, t, -10, -10)
-        }} />
     </Partie>
     <Partie numero={3} titre="Énoncé et application du théorème de Pythagore">
         <Theoreme titre="Théorème de Pythagore">
             Si un triangle est rectangle, alors le carré de la longueur de l'hypoténuse
             est égal à la somme des carrés des longueurs des deux autres côtés. <br>
         </Theoreme>
-        <Exemple exercice={new Egalite_de_pythagore()} nombre={3} />
-        <Schema fonctionAnimation={(ctx) => {
-            var [x, y, z, t] = [140, 20, 45, 120]
-            var d = Math.pow(t-y, 2) + Math.pow(z-x, 2)
-            var [sens_t, sens_z] = [true, true]
-
-            async function update() {
-                if (t > 140 || t <= z ) { sens_t = !sens_t  }
-                t += sens_t ? 1 : -1
-                await new Promise(r => setTimeout(r, 100));
-
-                ctx.clearRect(0,0,600,200)
-                ctx.beginPath();
-                ctx.moveTo(x, t);
-                ctx.lineTo(x, y);
-                ctx.lineTo(z, t);
-                ctx.closePath();
-                ctx.stroke();
-                
-                ctx.font = '20px serif'
-                ctx.textAlign = 'center'
-                ctx.textBaseline = 'middle'
-                ctx.fillText("A", x+10, t+3)
-                ctx.fillText("B", z-15, t+3)
-                ctx.fillText("C", x+10, y)
-                ctx.fillRect(x, t, -10, -10)
-
-                ctx.textAlign = 'left'
-                d = Math.pow(t-y, 2) + Math.pow(z-x, 2)
-                ctx.fillText(`AB² + AC² = ${d}`, 350, 50)
-                ctx.fillText(`BC² = ${d}`, 350, 80)
-
-                requestAnimationFrame(update)
-            }
-
-            update()
-        }}></Schema>
         <div class="Redaction">
             <u>Exemple de rédaction :</u>
             <div id='énoncé'>
