@@ -10,12 +10,6 @@
     import Animation from "$lib/chapitrage/sections/Animation.svelte";
     import Propriete from "$lib/chapitrage/sections/Propriete.svelte";
     import Exemples from "$lib/chapitrage/sections/Exemples.svelte"
-
-    import {
-        EstEntierNaturel, 
-        EstEntierRelatif,
-        EstNombreRationnel
-    } from "$lib/exercices/4eme/ch00";
 </script>
 
 <Chapitre numero={0} titre={"Opérations"}>
