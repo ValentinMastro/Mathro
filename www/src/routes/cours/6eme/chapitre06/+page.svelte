@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Chapitre from "$lib/chapitrage/Chapitre.svelte";
 	import Partie from "$lib/chapitrage/Partie.svelte";
 	import Definition from "$lib/chapitrage/sections/Definition.svelte";
@@ -8,6 +8,27 @@
 
     import Katex from "svelte-katex";
 	import Exemples from "$lib/chapitrage/sections/Exemples.svelte";
+	import Remarque from "$lib/chapitrage/sections/Remarque.svelte";
+	import { text } from "@sveltejs/kit";
+
+    var t: number = 200; //entre -500 et 500
+    var distance: number;
+    var angle: number;
+    var doUpdate: boolean = false;
+
+    function update() {
+        t = t + 1;
+        if (t > 500) {
+            t = -500;
+        }
+        if (doUpdate) {
+            setTimeout(update, 10);
+        }
+    }
+
+    $: distance = Math.sqrt(Math.pow(500,2) + Math.pow(t,2));
+    $: angle = Math.atan2(t, 500) * 180 / Math.PI;
+
 </script>
 <Chapitre numero={6} titre="Cercle, centre, milieu, médiatrice" >
     <Partie numero={1} titre="Cercle" >
@@ -95,5 +116,61 @@
                 </p>
             </div>
         </Exemples>
+        <Remarque>
+            Le nombre <Katex>\pi</Katex> vaut environ 3,14.
+        </Remarque>
+    </Partie>
+    <Partie numero={2} titre="Médiatrice">
+        <Definition>
+            La médiatrice d'un segment est la droite constituée des points situés à égale distance des extrémités du segment.
+        </Definition>
+        <Schema>
+            <svg 
+            viewBox="0 0 1000 1000"
+            style="width: 30em;"
+            on:click={() => {
+                doUpdate = !doUpdate;
+                update();
+            }}
+            role="none"
+            >
+                <defs>
+                    <marker
+                    id="arrow"
+                    viewBox="0 0 10 10"
+                    refX="5"
+                    refY="5"
+                    markerWidth="6"
+                    markerHeight="6"
+                    orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" />
+                  </marker>
+                </defs>
+                <line x1="100" y1="500" x2="900" y2="500" stroke="black" stroke-width={2} />
+                <line x1="100" y1="520" x2="900" y2="520" stroke="black" stroke-width={2} marker-start="url(#arrow)" marker-end="url(#arrow)" stroke-dasharray="5,5" />
+                <text x="450" y="550"  text-anchor="middle" font-size="1.5em" >4 cm</text>
+                <circle cx="100" cy="500" r="7" stroke="black" fill="black" />
+                <circle cx="900" cy="500" r="7" stroke="black" fill="black" />
+                <text x="50" y="520"  text-anchor="east" font-size="3em" >A</text>
+                <text x="920" y="520"  text-anchor="west" font-size="3em" >B</text>
+                <line x1="500" x2="500" y1="0" y2="1000" stroke="red" stroke-width={2} />
+                
+                <circle cx="500" cy={500 - t} r="7" stroke="red" fill="red" />
+                <text x="510" y={490 - t}  text-anchor="start" font-size="3em" fill="red" >M</text>
+
+                <line x1="100" x2="500" y1="500" y2={500-t} stroke="red" stroke-width={3} stroke-dasharray="5,5" /> 
+                <line x1="900" x2="500" y1="500" y2={500-t} stroke="red" stroke-width={3} stroke-dasharray="5,5" /> 
+                <text x="200" y="500"
+                font-size="1.5em"
+                text-anchor="center"
+                transform-origin="center"
+                transform="translate(0,{-t}) rotate({-angle})">{(distance/250).toLocaleString()}</text>
+                <text x="700" y="500"
+                font-size="1.5em"
+                text-anchor="center"
+                transform-origin="center"
+                transform="translate(0,{-t}) rotate({angle})">{(distance/250).toLocaleString()}</text>
+            </svg>
+        </Schema>
     </Partie>
 </Chapitre>
