@@ -1,15 +1,16 @@
 <script lang="ts">
-	import Chapitre from "$lib/chapitrage/Chapitre.svelte";
+	import Katex from "svelte-katex";
+    
+    import Chapitre from "$lib/chapitrage/Chapitre.svelte";
 	import Partie from "$lib/chapitrage/Partie.svelte";
 	import Definition from "$lib/chapitrage/sections/Definition.svelte";
 	import Notation from "$lib/chapitrage/sections/Notation.svelte";
 	import Schema from "$lib/chapitrage/sections/Schema.svelte";
     import Formule from "$lib/chapitrage/sections/Formule.svelte";
-
-    import Katex from "svelte-katex";
+    import Paragraphe from "$lib/chapitrage/sections/Paragraphe.svelte";
 	import Exemples from "$lib/chapitrage/sections/Exemples.svelte";
 	import Remarque from "$lib/chapitrage/sections/Remarque.svelte";
-	import { text } from "@sveltejs/kit";
+	import Propriete from "$lib/chapitrage/sections/Propriete.svelte";
 
     var t: number = 200; //entre -500 et 500
     var distance: number;
@@ -160,16 +161,65 @@
 
                 <line x1="100" x2="500" y1="500" y2={500-t} stroke="red" stroke-width={3} stroke-dasharray="5,5" /> 
                 <line x1="900" x2="500" y1="500" y2={500-t} stroke="red" stroke-width={3} stroke-dasharray="5,5" /> 
-                <text x="200" y="500"
+                <text x="250" y={500-t/2} 
+                font-size="1.5em" 
+                text-anchor="center">
+                    {(distance/250).toLocaleString()} cm
+                </text>
+                <text x="700" y={500-t/2}
                 font-size="1.5em"
-                text-anchor="center"
-                transform-origin="center"
-                transform="translate(0,{-t}) rotate({-angle})">{(distance/250).toLocaleString()}</text>
-                <text x="700" y="500"
-                font-size="1.5em"
-                text-anchor="center"
-                transform-origin="center"
-                transform="translate(0,{-t}) rotate({angle})">{(distance/250).toLocaleString()}</text>
+                text-anchor="center">
+                    {(distance/250).toLocaleString()} cm
+                </text>
+            </svg>
+        </Schema>
+        <Paragraphe couleur="black" nom="Construction">
+            <svg
+            viewBox="0 0 1000 1000"
+            style="width: 30em;">
+                <!-- segment [AB] -->
+                <line x1="100" x2="900" y1="500" y2="500" stroke="black" stroke-width={2} />
+                <circle cx="100" cy="500" r="7" stroke="black" fill="black" />
+                <circle cx="900" cy="500" r="7" stroke="black" fill="black" />
+                <text x="50" y="520"  text-anchor="east" font-size="3em" >A</text>
+                <text x="920" y="520"  text-anchor="west" font-size="3em" >B</text>
+                
+                <!-- arcs de cercles de centres A et B -->
+                <path fill="none" stroke="black" stroke-width={2} d="M 400 200 A 300 300 0 0 1 400 700" />
+                <path fill="none" stroke="black" stroke-width={2} d="M 600 200 A 300 300 0 0 0 600 700" />
+
+                <!-- médiatrice du segment [AB] -->
+                <line x1="500" x2="500" y1="0" y2="1000" stroke="green" stroke-width={2} />
+            </svg>
+            <ul>
+                <li>Tracer le segment [AB]</li>
+                <li>Prendre le compas, et choisir un écartement</li>
+                <li>Placer la pointe du compas sur A et tracer un arc de cercle</li>
+                <li>Placer la pointe du compas sur B et tracer un arc de cercle</li>
+                <li>Relier les points d'intersections des arcs de cercle</li>
+            </ul>
+        </Paragraphe>
+        <Propriete>
+            La médiatrice d'un segment coupe ce segment en son milieu et perpendiculairement.
+        </Propriete>
+        <Schema>
+            <svg
+            viewBox="0 0 1000 1000"
+            style="width: 30em;">
+                <!-- segment [AB] -->
+                <line x1="100" x2="900" y1="500" y2="500" stroke="black" stroke-width={2} />
+                <circle cx="100" cy="500" r="7" stroke="black" fill="black" />
+                <circle cx="900" cy="500" r="7" stroke="black" fill="black" />
+                <text x="50" y="520"  text-anchor="east" font-size="3em" >A</text>
+                <text x="920" y="520"  text-anchor="west" font-size="3em" >B</text>
+
+                <!-- médiatrice du segment [AB] -->
+                <line x1="500" x2="500" y1="0" y2="1000" stroke="green" stroke-width={2} />
+
+                <!-- Codage -->
+                <rect x="500" y="480" width="20" height="20" fill="red" stroke="none"  />
+                <text x="300" y="510" text-anchor="middle" font-size="2.5em" fill="red" >||</text>
+                <text x="700" y="510" text-anchor="middle" font-size="2.5em" fill="red" >||</text>
             </svg>
         </Schema>
     </Partie>
