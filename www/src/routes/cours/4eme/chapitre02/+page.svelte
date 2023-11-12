@@ -210,20 +210,78 @@
             </Exemples>
         </SousPartie>
     </Partie>
-</Chapitre>
+    <Partie numero={4} titre="Échelles">
+        <Propriete>
+            Si les longueurs (en mètres) sont multipliées par un facteur <Katex>k</Katex>, <br>
+            alors les aires (en mètres carrés) sont multipliées par <Katex>k^2</Katex>, <br>
+            et les volumes (en mètres cubes) sont multipliés par <Katex>k^3</Katex>.
+        </Propriete>
+        <Exemples>
+            <svg viewBox="-50 0 2300 1100" style="width: 50em;">
+                <defs>
+                    <rect id="rectangle" x="100" y="300" width={500} height={200} fill="none" stroke="black" stroke-width={5} />
+                    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                        <path d="M 0 0 L 10 5 L 0 10 z" />
+                    </marker>
+                </defs>
+                
+                <use href="#rectangle" />
+                <text x="350" y="280" font-size="50px" font-family="Katex_Main" text-anchor="middle">5 cm</text>
+                <text x="90" y="410" font-size="50px" font-family="Katex_Main" text-anchor="end">2 cm</text>
+                <text x="350" y="410" font-size="50px" font-family="Katex_Main" text-anchor="middle">Aire : 10 cm²</text>
 
-<!--
-<SousPartie numero={3} titre={"Les nombres décimaux"}>
-    <Definition>
-        Une fraction décimale est une fraction 
-        dont le dénominateur est égal à 1, 10, 100, 1000, etc.
-    </Definition>
-    <Definition>
-        Un nombre décimal est un nombre qui peut s'écrire 
-        sous forme d'une fraction décimale.
-    </Definition>
-</SousPartie>
--->
+                <line x1="650" y1="400" x2="1000" y2="400" stroke="black" stroke-width={5} marker-end="url(#arrow)" stroke-dasharray="5,5" />
+                <text x="825" y="450" font-size="40px" font-family="Katex_Main" text-anchor="middle">×2</text>
+                <text x="825" y="380" font-size="40px" font-family="Katex_Main" text-anchor="middle">agrandissement</text>
+
+                <use href="#rectangle" style="transform: scale(2) translate(500px,-200px);" />
+                <text x="1700" y="180" font-size="50px" font-family="Katex_Main" text-anchor="middle">10 cm</text>
+                <text x="1190" y="410" font-size="50px" font-family="Katex_Main" text-anchor="end">4 cm</text>
+                <text x="1700" y="410" font-size="50px" font-family="Katex_Main" text-anchor="middle">Aire : 40 cm²</text>
+
+                <text x="100" y="700" font-size="50px" text-anchor="start">Les longueurs ont été multipliées par 2,</text>
+                <text x="100" y="770" font-size="50px" text-anchor="start">donc les aires ont été multipliées par 2² = 4.</text>
+            </svg>
+            <svg viewBox="0 0 2000 1200" style="width: 50em;">
+                <defs>
+                    <!-- cube vu de face -->
+                    <g id="cube">
+                        <rect x="100" y="200" width={500} height={500} fill="none" stroke="black" stroke-width={5} />
+                        <line x1="100" y1="200" x2="180" y2="120" stroke="black" stroke-width={5} />
+                        <line x1="600" y1="200" x2="680" y2="120" stroke="black" stroke-width={5} />
+                        <line x1="600" y1="700" x2="680" y2="620" stroke="black" stroke-width={5} />
+                        <line x1="100" y1="700" x2="180" y2="620" stroke="black" stroke-width={5} stroke-dasharray="5,5" />
+                        <line x1="180" y1="120" x2="680" y2="120" stroke="black" stroke-width={5} />
+                        <line x1="180" y1="620" x2="680" y2="620" stroke="black" stroke-width={5} stroke-dasharray="5,5" />
+                        <line x1="180" y1="120" x2="180" y2="620" stroke="black" stroke-width={5} stroke-dasharray="5,5" />
+                        <line x1="680" y1="120" x2="680" y2="620" stroke="black" stroke-width={5} />
+                    </g>
+                    <!-- Flèche -->
+                    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                        <path d="M 0 0 L 10 5 L 0 10 z" />
+                    </marker>
+                </defs>
+
+                <use href="#cube" style="transform: translate(1300px, 100px);"/>
+                <text x="600" y="45" font-size="50px" text-anchor="middle">|</text>
+                <text x="600" y="100" font-size="50px" font-family="Katex_Main" text-anchor="middle">3 m</text>
+                <text x="600" y="450" font-size="50px" font-family="Katex_Main" text-anchor="middle">Volume : 27 m³</text>
+
+                <line x1="1050" y1="500" x2="1350" y2="500" stroke="black" stroke-width={5} marker-end="url(#arrow)" stroke-dasharray="5,5" />
+                <text x="1200" y="550" font-size="40px" font-family="Katex_Main" text-anchor="middle">÷100</text>
+                <text x="1200" y="480" font-size="40px" text-anchor="middle">réduction</text>
+
+                <use href="#cube" style="transform: scale(1.5) translate(0px,-100px);" />
+                <text x="1700" y="240" font-size="50px" text-anchor="middle">|</text>
+                <text x="1700" y="190" font-size="50px" font-family="Katex_Main" text-anchor="middle">0,3 m</text>
+                <text x="1700" y="500" font-size="40px" font-family="Katex_Main" text-anchor="middle">Volume : 0,027 m³</text>
+
+                <text x="100" y="1100" font-size="50px" text-anchor="start">Les longueurs ont été divisées par 10,</text>
+                <text x="100" y="1170" font-size="50px" text-anchor="start">donc les volumes ont été divisés par 10³ = 1 000.</text>
+            </svg>
+        </Exemples>
+    </Partie>
+</Chapitre>
 
 <style>
     li {
