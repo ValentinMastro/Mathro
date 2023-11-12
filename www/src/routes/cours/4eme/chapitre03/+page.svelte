@@ -5,8 +5,11 @@
     import Exemples from '$lib/chapitrage/sections/Exemples.svelte';
 	import Propriete from '$lib/chapitrage/sections/Propriete.svelte';
     import Schema from '$lib/chapitrage/sections/Schema.svelte';
+	import Notation from '$lib/chapitrage/sections/Notation.svelte';
 
-    var t: number[] = [-1, -1, -1];
+    import Katex from 'svelte-katex';
+
+    var t: number[] = [-1, -1, -1, -1, -1, -1, -1]; // de -1 à 1
 
     function lancer_animation(index: number) {
         t[index] = 1
@@ -128,5 +131,92 @@
                 <li>les mesures des angles sont conservées <span style="color: blue;">(le symétrique d'un angle de 90° est un angle de 90°)</span></li>
             </ul>
         </Propriete>
+    </Partie>
+    <Partie numero={2} titre="Symetrie centrale">
+        <Definition>
+            Deux figures (ℱ) et (ℱ') sont symétriques par rapport à un point O si 
+            en "pivotant le plan" autour de O, (ℱ) et (ℱ') se superposent.
+        </Definition>
+        <Exemples>
+            <svg viewBox="0 0 1400 900" style="width: 25em;" role="none"
+                on:click={() => {lancer_animation(3);}}>
+                <defs>
+                    <path id="trapeze2" fill="none" stroke-width={5} d="M 100 400 L 200 200 L 500 200 L 600 400 Z" />
+                </defs>
+                
+                <use href="#trapeze2" stroke="black" />
+                <circle cx="600" cy="500" r="10" fill="red" />
+                <use href="#trapeze2" stroke="red" style="transform-origin: 600px 500px; transform: rotate({-t[3]*90 + 90}deg);" />
+            </svg>
+
+            <svg viewBox="0 -100 1400 900" style="width: 35em;" role="none"
+                on:click={() => {lancer_animation(4);}} >
+                <defs>
+                    <g id="centrale2">
+                        <line x1={300} x2={400} y1={400} y2={200} stroke-width={5} />
+                        <circle cx={300} cy={400} r={225} fill="none" stroke-width={5} />
+                    </g>
+                </defs>
+
+                <use href="#centrale2" stroke="black"/>
+                <circle cx="524" cy="386" r="10" fill="red" />
+                <use href="#centrale2" stroke="red" style="transform-origin: 524px 386px; transform: rotate({-t[4]*90+90}deg);" />
+            </svg>
+        </Exemples>
+        <Propriete>
+            Si deux points A et A' sont symétriques par rapport à O, alors O est le milieu du segment [AA'].
+        </Propriete>
+        <Schema>
+            <svg viewBox="0 0 1000 1000" style="width: 20em" role="none"
+                on:click={() => {lancer_animation(5);}}>
+                <defs>
+                    <rect id="carre" width="300" height="300" fill="none" stroke-width={5} />
+                </defs>
+
+                <use href="#carre" x="100" y="100" stroke="black" />
+                <circle cx="500" cy="500" r="10" fill="red" />
+                <use href="#carre" x="100" y="100" stroke="red" style="transform-origin: 500px 500px; transform: rotate({-t[5]*90+90}deg);" />
+
+                <line x1="400" y1="400" x2="600" y2="600" stroke="green" stroke-width={5} />
+                <line x1="400" y1="100" x2="600" y2="900" stroke="green" stroke-width={5} />
+                <line x1="100" y1="400" x2="900" y2="600" stroke="green" stroke-width={5} />
+            </svg>
+        </Schema>
+        <Propriete>
+            La symétrie centrale est également une <i>isométrie du plan</i>.
+        </Propriete>
+    </Partie>
+    <Partie numero={3} titre="Translation">
+        <Definition>
+            Une translation est un déplacement rectiligne dans le plan.
+        </Definition>
+        <Propriete>
+            Une translation est une <i>isométrie du plan</i>.
+        </Propriete>
+        <Schema>
+            <svg viewBox="0 100 1000 600" style="width: 25em;" 
+                on:click={() => {lancer_animation(6);}} role="none"
+            >
+                <defs>
+                    <path id="triangle" fill="none" stroke-width={5} d="M 100 400 L 200 200 L 500 200 Z" />
+                    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="3" markerHeight="3" orient="auto-start-reverse">
+                        <path d="M 0 0 L 10 5 L 0 10 z" />
+                    </marker>
+                </defs>
+
+                <use href="#triangle" stroke="black" />
+                <use href="#triangle" stroke="red" style="transform: translate({(1 - t[6])*100}px, {(1 - t[6])*100}px);" />
+                <line x1="200" y1="200" x2="400" y2="400" stroke="green" stroke-width={5} marker-end="url(#arrow)" />
+                <text x="200" y="195" font-size="35" text-anchor="end">A</text>
+                <text x="405" y="395" font-size="35" text-anchor="start">A'</text>
+            </svg>
+        </Schema>
+        <Notation>
+            <ul>
+                <li>La translation qui transforme A en A'</li>
+                <li>La translation de vecteur <Katex>{"\\overrightarrow{\\text{AA}'}"}</Katex></li>
+                <li>A' est l'image de A par cette translation</li>
+            </ul>
+        </Notation>
     </Partie>
 </Chapitre>
