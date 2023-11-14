@@ -4,6 +4,7 @@
 	import Paragraphe from "$lib/chapitrage/sections/Paragraphe.svelte";
     import Exemples from "$lib/chapitrage/sections/Exemples.svelte";
 	import SousPartie from "$lib/chapitrage/SousPartie.svelte";
+	import ZoneExerciceVirgule from "./ZoneExerciceVirgule.svelte";
 
 </script>
 <Chapitre numero={7} titre="Multiplication">
@@ -42,6 +43,7 @@
                 </li>
             </ul>
         </Exemples>
+        <ZoneExerciceVirgule />
     </Partie>
     <Partie numero={2} titre="Conversion d'unités">
         <Paragraphe couleur="black" nom="Les préfixes du Système International (SI)">
