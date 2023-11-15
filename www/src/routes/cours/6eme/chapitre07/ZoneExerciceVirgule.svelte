@@ -1,33 +1,25 @@
 <script lang="ts">
+    import { Decimal } from "decimal.js";
+    Decimal.set({ precision: 5, rounding: 4 })
+
     let enonce: string = "50 × 100";
-    
-    let a, b, precision_a, precision_b: number;
+    let a, b, reponse: Decimal;
+    let multiplication = true;
 
     let nombre_questions_repondues: number = 0;
     let reponses: boolean[] = [];
 
     function verifierReponse(valeur: string): boolean {
-        console.log(valeur);
-        return false;
+        return new Decimal(valeur).eq(reponse);
     }
 
     function genererQuestion() {
-        a = Math.floor(Math.random() * 900 + 1000);
-        precision_a = Math.floor(Math.random() * 5); // on décale la virgule de 0 à 4 chiffres
+        a = Decimal.random().mul(Math.pow(10, Math.floor(Math.random() * 3)));
+        b = new Decimal(10).pow(Math.floor(Math.random() * 3));
+        multiplication = Math.random() < 0.5;
 
-        b = 1000
-        precision_b = Math.floor(Math.random() * 7); // on décale la virgule de 0 à 4 chiffres
-
-        var a_str = (a * Math.pow(10, -precision_a)).toLocaleString();
-        var b_str;
-
-        if (precision_b <= 3) {
-            b_str = (b * Math.pow(10, -precision_b)).toLocaleString();
-            enonce = `${a_str} × ${b_str}`;
-        } else {
-            b_str = (b * Math.pow(10, precision_b - 6)).toLocaleString();
-            enonce = `${a_str} ÷ ${b_str}`;
-        }
+        enonce = `${a.toString().replace(".",",")} ${multiplication ? "×" : "÷"  } ${b}`;
+        reponse = multiplication ? a.mul(b) : a.div(b);
     }
 
     function gererToucheAppuyee(event: KeyboardEvent) {
