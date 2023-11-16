@@ -203,7 +203,7 @@
         border-collapse: collapse;
         border: 1px solid black;
         margin: auto auto;
-        width: 70%;
+        width: 90%;
     }
     table > tr {
         border: 1px solid black;
@@ -216,12 +216,17 @@
     table > tr > td {
         border: 1px solid black;
         padding: 5px;
+        text-align: center;
+    }
+    .tableau_conversion {
+        --taille-conversion: 40%;
+        width: var(--taille-conversion);
     }
     .tableau_conversion > tr {
         border: 0;
     }
     .tableau_conversion > tr > th {
-        width: calc(100% / 7);
+        width: calc(var(--taille-conversion)/ 7);
     }
     .tableau_conversion > tr > td {
         text-align: center;

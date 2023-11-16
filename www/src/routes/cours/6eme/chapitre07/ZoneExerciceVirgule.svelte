@@ -36,7 +36,7 @@
     genererQuestion();
 </script>
 
-<div id="racine" style="width: 40%; height: 30vh;">
+<div id="racine" style="width: 40vw; height: 20vw;">
     <div id="enonce">{enonce}</div>
     <div id="input">
         <input  type="number" 
@@ -66,7 +66,7 @@
     #enonce {
         height: 45%;
         color: black;
-        font-size: 3em;
+        font-size: 4vw;
         font-family: Katex_Main;
         text-align: center;
         line-height: 2em;
