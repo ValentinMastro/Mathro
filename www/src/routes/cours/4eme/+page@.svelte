@@ -50,14 +50,15 @@
             <li>Échelle</li>
         </ol>
     </MenuChapitre>
-    <MenuChapitre   index={3}  
-                    titre="Solides de l'espace" 
+    <MenuChapitre   index={3} 
+                    titre="Transformations du plan" 
                     url="/cours/4eme/chapitre03"
-                    cats={["Espace et géométrie", "Grandeurs et mesures"]}
-                    img="/images/rubik.jpg" >
+                    cats={["Espace et géométrie"]}
+                    img="/images/symetrie_axiale.jpg" >
         <ol>
-            <li>Volume et contenance</li>
-            <li>Solides de l'espace</li>
+            <li>Symétrie axiale</li>
+            <li>Symétrie centrale</li>
+            <li>Translation</li>
         </ol>
     </MenuChapitre>
     <MenuChapitre   index={4} 
@@ -128,15 +129,14 @@
                     img="/images/des.jpg" >
         
     </MenuChapitre>
-    <MenuChapitre   index={11} 
-                    titre="Transformations du plan" 
+    <MenuChapitre   index={11}  
+                    titre="Solides de l'espace" 
                     url="/cours/4eme/chapitre11"
-                    cats={["Espace et géométrie"]}
-                    img="/images/symetrie_axiale.jpg" >
+                    cats={["Espace et géométrie", "Grandeurs et mesures"]}
+                    img="/images/rubik.jpg" >
         <ol>
-            <li>Symétrie axiale</li>
-            <li>Symétrie centrale</li>
-            <li>Translation</li>
+            <li>Volume et contenance</li>
+            <li>Solides de l'espace</li>
         </ol>
     </MenuChapitre>
     <MenuChapitre   index={12} 
