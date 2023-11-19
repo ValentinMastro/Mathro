@@ -5,6 +5,7 @@
     import Exemples from "$lib/chapitrage/sections/Exemples.svelte";
 	import SousPartie from "$lib/chapitrage/SousPartie.svelte";
 	import ZoneExerciceVirgule from "./ZoneExerciceVirgule.svelte";
+	import ZoneExerciceConversion from "./ZoneExerciceConversion.svelte";
 
 </script>
 <Chapitre numero={7} titre="Multiplication">
@@ -195,6 +196,7 @@
                 </ul>
             </Exemples>
         </SousPartie>
+        <ZoneExerciceConversion />
     </Partie>
 </Chapitre>
 

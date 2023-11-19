@@ -5,11 +5,10 @@
     import Partie from "$lib/chapitrage/Partie.svelte";
     import SousPartie from "$lib/chapitrage/SousPartie.svelte";
     import Definition from "$lib/chapitrage/sections/Definition.svelte";
-    import Exemple from "$lib/chapitrage/sections/Exemple.svelte";
-    import Remarque from "$lib/chapitrage/sections/Remarque.svelte";
-    import Animation from "$lib/chapitrage/sections/Animation.svelte";
     import Propriete from "$lib/chapitrage/sections/Propriete.svelte";
     import Theoreme from "$lib/chapitrage/sections/Theoreme.svelte";
+	import AnimationCarreNombre from "./AnimationCarreNombre.svelte";
+    import Exemples from "$lib/chapitrage/sections/Exemples.svelte";
 </script>
 
 <Chapitre numero={1} titre="Théorème de Pythagore">
@@ -19,47 +18,25 @@
                 Le carré d'un nombre est égal à ce nombre multiplié par lui-même.
                 On le note avec un « 2 » en exposant (en petit, en haut à droite).
             </Definition>
-            <Animation fonctionAnimation={(context) => {
-                context.font = "48px serif"
-                context.textBaseline = "middle"
-
-                var n = 2
-                var taille = 0
-                var ecart = 0
-
-                async function update() {
-                    n += 1; if (n > 12) { n = 3 };
-                    taille = 22 - n
-                    ecart = taille/5
-                    await new Promise(r => setTimeout(r, 2000));
-
-                    context.clearRect(0,0,1000,300)
-
-                    context.textAlign = "end"
-                    context.fillText(`${n} =`, 95, 80)
-                    for (var i = 0; i < n; i++) {
-                        context.fillRect(100+(taille+ecart)*i, 77-taille/2, taille, taille)
-                    }
-
-                    context.fillRect(450,0,1,180)
-
-                    context.fillText(`${n}² = `, 585, 80)
-                    for (var i = 0; i < n*n; i++) {
-                        context.fillRect(580+(taille+ecart)*(i%n), 77-taille/2+(taille+ecart)*(Math.floor(i/n)-(n-1)/2), taille, taille)
-                    }
-                    context.textAlign = "left"
-                    context.fillText(`= ${n*n}`, 580+(taille+ecart)*n, 80)
-
-                    requestAnimationFrame(update)
-                }
-                update()
-            }} />
+            <AnimationCarreNombre />
+            <Exemples>
+                <ul>
+                    <li>Le carré de 12 est 144 car <Katex>{'12^2=12 \\times 12 = 144'}</Katex></li>
+                    <li>Le carré de 8 est 64 car <Katex>{'8^2= 8 \\times 8 = 64'}</Katex></li>
+                </ul>
+            </Exemples>
+        </SousPartie>
+        <SousPartie numero={2} titre="La racine carrée d'un nombre">
             <Definition>
                 La racine carrée est l'opération réciproque du calcul du carré d'un nombre.
                 Elle se note avec le symbole « radical » : <Katex>\sqrt{'{~~}'}</Katex>.
             </Definition>
-                <tr>Si le carré de 12 est 144, <Katex>{'\\sqrt{144}=12'}</Katex></tr>
-                <tr>Si <Katex>{'8^2=64'}</Katex> alors <Katex>{'\\sqrt{64}=8'}</Katex></tr>
+            <Exemples>
+                <ul>
+                    <li>Si le carré de 12 est 144, <Katex>{'\\sqrt{144}=12'}</Katex></li>
+                    <li>Si <Katex>{'8^2=64'}</Katex> alors <Katex>{'\\sqrt{64}=8'}</Katex></li>
+                </ul>
+            </Exemples>
         </SousPartie>
     </Partie>
     <Partie numero={2} titre="Triangle rectangle et hypoténuse">
