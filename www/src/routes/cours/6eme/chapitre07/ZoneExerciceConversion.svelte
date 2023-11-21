@@ -16,15 +16,19 @@
     function genererQuestion() {
         let indice_prefixe_depart = Math.floor(Math.random() * prefixes.length);
         let indice_prefixe_arrivee = Math.floor(Math.random() * prefixes.length);
-        if (indice_prefixe_depart == indice_prefixe_arrivee) { genererQuestion() }
+        let indice_unite = Math.floor(Math.random() * unites.length);
 
-        let unite_depart = prefixes[indice_prefixe_depart] + unites[Math.floor(Math.random() * unites.length)];
+        while (indice_prefixe_depart == indice_prefixe_arrivee) { 
+            indice_prefixe_arrivee = Math.floor(Math.random() * prefixes.length);
+        }
+
+        let unite_depart = prefixes[indice_prefixe_depart] + unites[indice_unite];
+        let unite_arrivee = prefixes[indice_prefixe_arrivee] + unites[indice_unite];
         let valeur_depart = Decimal.random().mul(Math.pow(10, Math.floor(Math.random() * 3)));
+        
+        enonce = `${valeur_depart} ${unite_depart} = ? ${unite_arrivee}`;
         reponse = valeur_depart.mul(Math.pow(10, indice_prefixe_arrivee - indice_prefixe_depart));
-
-        enonce = `${valeur_depart} ${unite_depart} = ? ${prefixes[indice_prefixe_arrivee]}${unites[Math.floor(Math.random() * unites.length)]}`;
     }
-
 </script>
 
 <ZoneExercice {enonce} {reponse} {verifierReponse} {genererQuestion} />

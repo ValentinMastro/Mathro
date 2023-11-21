@@ -1,63 +1,124 @@
 <script lang="ts">
     export let enonce: string;
     export let reponse: any;
-    let reponses: boolean[] = [];
-    let nombre_questions_repondues = 0;
     export let genererQuestion: (enonce: string, reponse: any) => void;
     export let verifierReponse: (valeur: string) => boolean;
+
+    let enonces: string[] = [];
+    let reponses_correctes: string[] = [];
+    let reponses_utilisateur: string[] = [];
+    let reponses_sont_correctes: boolean[] = [];
+    let nombre_questions_repondues = 0;
     
     function gererToucheAppuyee(event: KeyboardEvent) : void {
         let input = event.target as HTMLInputElement;
         let valeur = input.value;
 
         if (event.key === "Enter") {
-            input.value = "";
-            reponses.push(verifierReponse(valeur));
+            enonces.push(enonce);
+            reponses_utilisateur.push(valeur);
+            reponses_correctes.push(reponse);
+            reponses_sont_correctes.push(verifierReponse(valeur));
+
             nombre_questions_repondues++;
+            input.value = "";
             genererQuestion(enonce, reponse);
         }
+    }
+
+    function reset() {
+        enonces = [];
+        reponses_utilisateur = [];
+        reponses_sont_correctes = [];
+        nombre_questions_repondues = 0;
+        genererQuestion(enonce, reponse);
     }
 
     genererQuestion(enonce, reponse);
 </script>
 
-<div id="racine" style="width: 40vw; height: 20vw;">
-    <div id="enonce">{enonce}</div>
-    <div id="input">
-        <input  type="number" 
-                style="width: 100%; height: 90%; font-size: 2em; text-align: center;"
-                on:keypress={gererToucheAppuyee}
-        />
+<div id="zone_exercice">
+    <div id="racine">
+        {#if nombre_questions_repondues == 20}
+            <div    class="note"
+                    role="button"
+                    tabindex="0"
+                    on:click={reset}
+                    on:keypress={reset}
+            >
+                <span>{reponses_sont_correctes.filter(r => r).length} / {reponses_sont_correctes.length}</span>
+            </div>
+        {:else}
+            <div id="enonce">
+                <span>{enonce}</span>
+            </div>
+            <div id="input">
+                <input  type="number" 
+                        style="width: 100%; height: 90%; font-size: 2em; text-align: center;"
+                        on:keypress={gererToucheAppuyee}
+                />
+            </div>
+            <div id="resultat">
+                {#each Array(20) as _, index}
+                    {#if index < nombre_questions_repondues}
+                    <div 
+                        class='{reponses_sont_correctes[index] ? "bonne_reponse" : "mauvaise_reponse"}'
+                        style="height: 100%; aspect-ratio: 1; border-radius: 50%;" />
+                    {/if}
+                {/each}
+            </div>
+        {/if}
     </div>
-    <div id="resultat">
-        {#each Array(20) as _, index}
-            {#if index < nombre_questions_repondues}
-            <div 
-                class='{reponses[index] ? "bonne_reponse" : "mauvaise_reponse"}'
-                style="height: 100%; aspect-ratio: 1; border-radius: 50%;" />
-            {/if}
-        {/each}
+    {#if nombre_questions_repondues == 20}
+    <div id="details">
+        <table>
+            {#each enonces as enonce, index}
+            <tr>
+                <td>Q{index+1}{')'} {enonce}</td>
+                {#if !reponses_sont_correctes[index]}
+                    <td> <span style="color: red; text-decoration: line-through;">{reponses_utilisateur[index]}</span> </td>
+                    <td> <span>{reponses_correctes[index]}</span> </td>
+                {:else}
+                    <td> <span style="color: green;">{reponses_utilisateur[index]}</span> </td>
+                {/if}
+            </tr>
+            {/each}
+        </table>
     </div>
+    {/if}
 </div>
 
 <style>
+    #zone_exercice {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
     #racine {
+        aspect-ratio: 2/1;
+        width: 20vw;
         border: 1px solid black;
-        padding: 5px;
         display: flex; 
         flex-direction: column;
         justify-content: flex-start;
     }
+    #details {
+        height: 10vw;
+        overflow: scroll;
+    }
     #enonce {
         height: 45%;
         color: black;
-        font-size: 4vw;
+        font-size: 2vw;
         font-family: Katex_Main;
-        text-align: center;
-        line-height: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     #input {
-        height: 40%;
+        height: 35%;
         font-family: Katex_Main;
         width: 90%;
         margin: auto auto;
@@ -66,12 +127,47 @@
         height: 5%;
         display: flex;
         flex-direction: row;
-        column-gap: 1vw;
+        column-gap: 0.52vw;
+        padding-bottom: 2px;
+        padding-left: 2px;
     }
     .bonne_reponse {
         background-color: green;
     }
     .mauvaise_reponse {
         background-color: red;
+    }
+    span {
+        height: fit-content;
+    }
+    .note {
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        font: 4vw Katex_Main;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .note span {
+        color: white;
+    }
+    table {
+        font: 0.96vw Katex_Main;
+        color: black;
+        border-collapse: collapse;
+    }
+    table tr {
+        height: fit-content;
+    }
+    table td {
+        padding: 0 10px 0 0;
+    }
+    table td:nth-child(2) {
+        padding-left: 3px;
+        border-left: 3px double black;
+    }
+    table tr:nth-child(odd) {
+        background-color: #bbbbbb;
     }
 </style>
