@@ -6,6 +6,8 @@
 	import SousPartie from "$lib/chapitrage/SousPartie.svelte";
 	import ZoneExerciceVirgule from "./ZoneExerciceVirgule.svelte";
 	import ZoneExerciceConversion from "./ZoneExerciceConversion.svelte";
+	import Definition from "$lib/chapitrage/sections/Definition.svelte";
+	import ZoneExerciceMultiplicationDecimale from "./ZoneExerciceMultiplicationDecimale.svelte";
 
 </script>
 <Chapitre numero={7} titre="Multiplication">
@@ -197,6 +199,96 @@
             </Exemples>
         </SousPartie>
         <ZoneExerciceConversion />
+    </Partie>
+    <Partie numero={3} titre="Multiplication décimale">
+        <Definition>
+            La multiplication est une opération ayant pour opérateur ×.<br>
+            Les opérandes (les nombres que l'on multiplie) sont les <i>facteurs</i>,
+            et le résultat est le <i>produit</i>.
+        </Definition>
+        <Exemples>
+            <svg viewBox="0 0 3000 450" style="width: 80%;">
+                <text 
+                    x={1500} y={150}
+                    font-family="Katex_Main"
+                    font-size="130px"
+                    fill="black"
+                    text-anchor="middle"
+                    alignment-baseline="middle"
+                    >
+                    3 × 7 = 21
+                </text>
+                <circle cx={1235} cy={136} r={65} stroke="green" fill="none" stroke-width={4} />
+                <circle cx={1470} cy={136} r={65} stroke="green" fill="none" stroke-width={4} />
+                <rect x={1650} y={71} width={160} height={130} stroke="red" fill="none" stroke-width={4} />
+                <text 
+                    x={1350} y={250}
+                    font-family="Katex_Main"
+                    font-size="70px"
+                    fill="green"
+                    text-anchor="middle"
+                    alignment-baseline="middle"
+                    >
+                    facteurs
+                </text>
+                <text 
+                    x={1730} y={250}
+                    font-family="Katex_Main"
+                    font-size="70px"
+                    fill="red"
+                    text-anchor="middle"
+                    alignment-baseline="middle"
+                    >
+                    produit
+                </text>
+                <text 
+                    x={1500} y={400}
+                    font-family="Katex_Main"
+                    font-size="70px"
+                    fill="black"
+                    text-anchor="middle"
+                    alignment-baseline="middle"
+                    >
+                    Le produit de 3 par 7 vaut 21.
+                </text>
+            </svg>
+        </Exemples>
+        <Paragraphe couleur="red" nom="Règle de calcul" > 
+            Le produit de deux nombres décimaux a autant de chiffres après la virgule 
+            que les deux facteurs.
+        </Paragraphe>
+        <Exemples>
+            <svg viewBox="0 0 3000 450" style="width: 80%;">
+                <text 
+                    x={1500} y={150}
+                    font-family="Katex_Main"
+                    font-size="130px"
+                    fill="black"
+                    text-anchor="middle"
+                    alignment-baseline="middle"
+                    >
+                    3,14 × 7,2 = 22,608
+                </text>
+                <!-- On souligne les chiffres après la virgule -->
+                <line x1="1060" y1="190" x2="1200" y2="190" stroke="red" stroke-width="4" />
+                <line x1="1450" y1="190" x2="1520" y2="190" stroke="red" stroke-width="4" />
+                <line x1="1860" y1="190" x2="2040" y2="190" stroke="red" stroke-width="4" />
+                <text 
+                    x={770} y={250}
+                    font-family="Katex_Main"
+                    font-size="45px"
+                    fill="red"
+                    >
+                    <tspan dx="11ex">2 chiffres </tspan>
+                    <tspan dx="-12ex" dy="1em">après la virgule</tspan>
+                    <tspan dx="6ex" dy="-1em">1 chiffre</tspan>
+                    <tspan dx="-12ex" dy="1em">après la virgule</tspan>
+                    <tspan dx="9ex" dy="-1em">2+1=3 chiffres</tspan>
+                    <tspan dx="-15ex" dy="1em">après la virgule</tspan>
+                </text>
+            </svg>
+        </Exemples>
+        <ZoneExerciceMultiplicationDecimale />
     </Partie>
 </Chapitre>
 

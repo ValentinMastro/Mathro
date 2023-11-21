@@ -93,6 +93,7 @@
                     cats={["Nombres et calculs"]} >
         <ol>
             <li>Multiplier et diviser par 1,10,100,etc.</li>
+            <li>Conversion d'unités</li>
             <li>Multiplication décimale</li>
         </ol>
     </MenuChapitre>
