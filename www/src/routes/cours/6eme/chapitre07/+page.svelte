@@ -50,7 +50,7 @@
     </Partie>
     <Partie numero={2} titre="Conversion d'unités">
         <Paragraphe couleur="black" nom="Les préfixes du Système International (SI)">
-            <ul style="font-family: Katex_Main; columns: 2;">
+            <ul id="prefixes_SI">
                 <li>kilo (k) : un millier ⇒ × 1 000 </li>
                 <li>hecto (h) : une centaine ⇒ × 100 </li>
                 <li>déca (da) : une dizaine ⇒ × 10 </li>
@@ -60,7 +60,7 @@
             </ul>
         </Paragraphe>
 
-        <table class="tableau_SI" style="color: black;">
+        <table id="tableau_SI" style="color: black;">
             <tr>
                 <th>Préfixe</th>
                 <th>kilo</th>
@@ -207,7 +207,7 @@
             et le résultat est le <i>produit</i>.
         </Definition>
         <Exemples>
-            <svg viewBox="0 0 3000 450" style="width: 80%;">
+            <svg viewBox="900 0 1250 450" class="schema">
                 <text 
                     x={1500} y={150}
                     font-family="Katex_Main"
@@ -258,7 +258,7 @@
             que les deux facteurs.
         </Paragraphe>
         <Exemples>
-            <svg viewBox="0 0 3000 450" style="width: 80%;">
+            <svg viewBox="900 0 1250 450" class="schema">
                 <text 
                     x={1500} y={150}
                     font-family="Katex_Main"
@@ -326,5 +326,25 @@
         text-align: center;
         border-top: 0;
         border-bottom: 0;
+    }
+    #prefixes_SI {
+        font-family: Katex_Main; 
+        columns: 2;
+    }
+
+    @media (max-aspect-ratio: 1) {
+        #prefixes_SI {
+            columns: 1;
+        }
+        #tableau_SI {
+            font-size: 12px;
+        }
+    }
+
+    @media (min-aspect-ratio: 1) {
+        .schema {
+            width: 35%;
+            padding-left: 32.5%;
+        }
     }
 </style>

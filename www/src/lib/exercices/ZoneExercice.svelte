@@ -62,8 +62,8 @@
                 {#each Array(20) as _, index}
                     {#if index < nombre_questions_repondues}
                     <div 
-                        class='{reponses_sont_correctes[index] ? "bonne_reponse" : "mauvaise_reponse"}'
-                        style="height: 100%; aspect-ratio: 1; border-radius: 50%;" />
+                        class='reponse {reponses_sont_correctes[index] ? "bonne_reponse" : "mauvaise_reponse"}'
+                         />
                     {/if}
                 {/each}
             </div>
@@ -94,7 +94,7 @@
         height: 100%;
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: space-around;
     }
     #racine {
         aspect-ratio: 2/1;
@@ -111,15 +111,17 @@
     #enonce {
         height: 45%;
         color: black;
-        font-size: 2vw;
+        font-size: 130%;
         font-family: Katex_Main;
         display: flex;
         justify-content: center;
         align-items: center;
     }
     #input {
-        height: 35%;
+        --taille: calc(35%);
+        height: var(--taille);
         font-family: Katex_Main;
+        font-size: calc(var(--taille)*2);
         width: 90%;
         margin: auto auto;
     }
@@ -127,9 +129,15 @@
         height: 5%;
         display: flex;
         flex-direction: row;
-        column-gap: 0.52vw;
         padding-bottom: 2px;
         padding-left: 2px;
+
+        column-gap: calc(2.5%);
+    }
+    .reponse {
+        height: 100%; 
+        aspect-ratio: 1;
+        border-radius: 50%;
     }
     .bonne_reponse {
         background-color: green;
@@ -138,6 +146,7 @@
         background-color: red;
     }
     span {
+        width: fit-content;
         height: fit-content;
     }
     .note {
@@ -169,5 +178,10 @@
     }
     table tr:nth-child(odd) {
         background-color: #bbbbbb;
+    }
+    @media (max-aspect-ratio: 1) {
+        #racine {
+            width: 60vw;
+        }
     }
 </style>
