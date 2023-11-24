@@ -102,8 +102,8 @@
                     url="/cours/6eme/chapitre08"
                     cats={["Espace et géométrie"]} >
         <ol>
-            <li>Définitions</li>
-            <li>Propriétés</li>
+            <li>Constructions et définitions</li>
+            <li>Relations entre trois droites</li>
         </ol>
     </MenuChapitre>
     <MenuChapitre   index={9} 
