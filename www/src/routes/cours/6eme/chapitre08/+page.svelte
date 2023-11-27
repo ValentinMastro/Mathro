@@ -8,6 +8,7 @@
     import Paragraphe from "$lib/chapitrage/sections/Paragraphe.svelte";
 
     import Katex from "svelte-katex";
+	import SousPartie from "$lib/chapitrage/SousPartie.svelte";
 </script>
 
 
@@ -107,86 +108,229 @@
         </Schema>
     </Partie>
     <Partie numero={2} titre="Relations entre 3 droites">
-        <Propriete>
-            Si deux droites sont parallèles à une même droite, alors elles sont parallèles entre elles.
-            <div    class="explication"
-                    title="Si (d1) est parallèle à (d2) et (d2) est parallèle à (d3), alors (d1) est parallèle à (d3).">
-                <Katex displayMode>
-                    (d_1) // (d_2) \land (d_2) // (d_3) \implies (d_1) // (d_3)
-                </Katex>
-            </div>
-        </Propriete>
-        <Schema>
-            <svg viewBox="0 0 600 200">
-                <line x1="0" y1="50" x2="200" y2="150" stroke="black" />
-                <line x1="0" y1="0" x2="200" y2="100" stroke="black" />
-                <line x1="0" y1="100" x2="200" y2="200" stroke="black" />
-                <text x={180} y={85} font-family="Katex_Main" font-size="12px">
-                    (d )
-                    <tspan dx="-2.9ex" dy="0.3em" font-size="8px">1</tspan>
-                </text>
-                <text x={180} y={135} font-family="Katex_Main" font-size="12px">
-                    (d )
-                    <tspan dx="-2.9ex" dy="0.3em" font-size="8px">2</tspan>
-                </text>
-                <text x={180} y={185} font-family="Katex_Main" font-size="12px">
-                    (d )
-                    <tspan dx="-2.9ex" dy="0.3em" font-size="8px">3</tspan>
-                </text>
-            </svg>
-        </Schema>
-        <Paragraphe couleur="blue" nom="Exemple de rédaction">
-            <div class="conteneur_flex">
-                <div style="width: fit-content; height: fit-content; padding: 5px; border: 2px solid blue;">
-                    <u>Exercice :</u>
-                    <ul>
-                        <li>Tracer un rectangle ABCD</li>
-                        <li>Tracer <Katex>(d) // (AB)</Katex></li>
-                        <li>Montrer que <Katex>(d) // (CD)</Katex></li>
-                    </ul>
+        <SousPartie numero={1} titre="Première propriété">
+            <Propriete>
+                Si deux droites sont parallèles à une même droite, alors elles sont parallèles entre elles.
+                <div    class="explication"
+                        title="Si (d1) est parallèle à (d2) et (d2) est parallèle à (d3), alors (d1) est parallèle à (d3).">
+                    <Katex displayMode>
+                        (d_1) // (d_2) \land (d_2) // (d_3) \implies (d_1) // (d_3)
+                    </Katex>
                 </div>
-                <svg viewBox="0 0 400 200" style="height: 25ex;">
-                    <rect x="100" y="50" width="200" height="100" stroke="black" fill="none" />
-                    <line x1="0" y1="20" x2="400" y2="20" stroke="black" />
-                    <text x="30" y="35" font-family="Katex_Main" font-size="12px">
-                        (d)
+            </Propriete>
+            <Schema>
+                <svg viewBox="0 0 220 200" width="40ex">
+                    <line x1="0" y1="50" x2="200" y2="150" stroke="black" />
+                    <line x1="0" y1="0" x2="200" y2="100" stroke="black" />
+                    <line x1="0" y1="100" x2="200" y2="200" stroke="black" />
+                    <text x={180} y={85} font-family="Katex_Main" font-size="12px">
+                        (d )
+                        <tspan dx="-2.9ex" dy="0.3em" font-size="8px">1</tspan>
                     </text>
-                    <text x="90" y="45" font-family="Katex_Main" font-size="12px">
-                        A
+                    <text x={180} y={135} font-family="Katex_Main" font-size="12px">
+                        (d )
+                        <tspan dx="-2.9ex" dy="0.3em" font-size="8px">2</tspan>
                     </text>
-                    <text x="300" y="45" font-family="Katex_Main" font-size="12px">
-                        B
+                    <text x={180} y={185} font-family="Katex_Main" font-size="12px">
+                        (d )
+                        <tspan dx="-2.9ex" dy="0.3em" font-size="8px">3</tspan>
                     </text>
-                    <text x="90" y="160" font-family="Katex_Main" font-size="12px">
-                        C
-                    </text>
-                    <text x="300" y="160" font-family="Katex_Main" font-size="12px">
-                        D
-                    </text>
-            </div>
-            <Paragraphe couleur="blue" nom="On sait que">
-                <ul>
-                    <li>
-                        <Katex>(d) // (AB)</Katex>
-                    </li>
-                    <li>
-                        ABCD est un rectangle, donc : <Katex>(AB) // (CD)</Katex>
-                    </li>
-                </ul>
+                </svg>
+            </Schema>
+            <Paragraphe couleur="blue" nom="Exemple de rédaction">
+                <div class="conteneur_flex">
+                    <div class="exercice">
+                        <u>Exercice :</u>
+                        <ul>
+                            <li>Tracer un rectangle ABCD</li>
+                            <li>Tracer <Katex>(d) // (AB)</Katex></li>
+                            <li>Montrer que <Katex>(d) // (CD)</Katex></li>
+                        </ul>
+                    </div>
+                    <svg viewBox="0 0 400 200" style="height: 30ex;">
+                        <rect x="100" y="50" width="200" height="100" stroke="black" fill="none" />
+                        <line x1="0" y1="20" x2="400" y2="20" stroke="black" />
+                        <text x="30" y="35" font-family="Katex_Main" font-size="12px">
+                            (d)
+                        </text>
+                        <text x="90" y="45" font-family="Katex_Main" font-size="12px">
+                            A
+                        </text>
+                        <text x="300" y="45" font-family="Katex_Main" font-size="12px">
+                            B
+                        </text>
+                        <text x="90" y="160" font-family="Katex_Main" font-size="12px">
+                            C
+                        </text>
+                        <text x="300" y="160" font-family="Katex_Main" font-size="12px">
+                            D
+                        </text>
+                </div>
+                <Paragraphe couleur="blue" nom="On sait que">
+                    <ul>
+                        <li>
+                            <Katex>(d) // (AB)</Katex>
+                        </li>
+                        <li>
+                            ABCD est un rectangle, donc : <Katex>(AB) // (CD)</Katex>
+                        </li>
+                    </ul>
+                </Paragraphe>
+                <u>Or : </u> Si deux droites sont parallèles à une même droite, alors elles sont parallèles entre elles.<br>
+                <u>Donc : </u> <Katex>(d) // (CD)</Katex>
             </Paragraphe>
-            <u>Or : </u> Si deux droites sont parallèles à une même droite, alors elles sont parallèles entre elles.<br>
-            <u>Donc : </u> <Katex>(d) // (CD)</Katex>
-        </Paragraphe>
-        <Propriete>
-            Si deux droites sont perpendiculaires à une même droite, alors elles sont parallèles entre elles.
-            <div class="explication"
-                title="Si (d1) est perpendiculaire à (d2) et (d2) est perpendiculaire à (d3), alors (d1) est parallèle à (d3)."
-            >
-                <Katex displayMode>
-                    (d_1) \perp (d_2) \land (d_2) \perp (d_3) \implies (d_1) // (d_3)
-                </Katex>
-            </div>
-        </Propriete>
+        </SousPartie>
+        <SousPartie numero={2} titre="Deuxième propriété">
+            <Propriete>
+                Si deux droites sont perpendiculaires à une même droite, alors elles sont parallèles entre elles.
+                <div class="explication"
+                    title="Si (d1) est perpendiculaire à (d2) et (d2) est perpendiculaire à (d3), alors (d1) est parallèle à (d3)."
+                >
+                    <Katex displayMode>
+                        (d_1) \perp (d_2) \land (d_2) \perp (d_3) \implies (d_1) // (d_3)
+                    </Katex>
+                </div>
+            </Propriete>
+            <Schema>
+                <svg viewBox="0 0 220 200" width="40ex">
+                    <line x1="50" y1="200" x2="150" y2="0" stroke="black" />
+                    <line x1="0" y1="0" x2="200" y2="100" stroke="black" />
+                    <line x1="0" y1="100" x2="200" y2="200" stroke="black" />
+                    <text x={180} y={85} font-family="Katex_Main" font-size="12px">
+                        (d )
+                        <tspan dx="-2.9ex" dy="0.3em" font-size="8px">1</tspan>
+                    </text>
+                    <text x={150} y={15} font-family="Katex_Main" font-size="12px">
+                        (d )
+                        <tspan dx="-2.9ex" dy="0.3em" font-size="8px">2</tspan>
+                    </text>
+                    <text x={180} y={185} font-family="Katex_Main" font-size="12px">
+                        (d )
+                        <tspan dx="-2.9ex" dy="0.3em" font-size="8px">3</tspan>
+                    </text>
+                </svg>
+            </Schema>
+            <Paragraphe couleur="blue" nom="Exemple de rédaction">
+                <div class="conteneur_flex">
+                    <div class="exercice">
+                        <u>Exercice :</u><br>
+                        <svg viewBox="0 0 400 200" style="height: 15ex;">
+                            <line x1="50" y1="40" x2="320" y2="40" stroke="black" />
+                            <line x1="50" y1="160" x2="320" y2="160" stroke="black" />
+                            <line x1="50" y1="40" x2="50" y2="160" stroke="black" />
+                            <text x="200" y="30" font-family="Katex_Main" font-size="15px" text-anchor="middle">
+                                plafond
+                            </text>
+                            <text x="200" y="175" font-family="Katex_Main" font-size="15px" text-anchor="middle">
+                                sol
+                            </text>
+                            <text x="40" y="100" font-family="Katex_Main" font-size="15px" text-anchor="end">
+                                mur
+                            </text>
+                            <rect x="50" y="40" width="10" height="10" stroke="black" fill="none" />
+                            <rect x="50" y="150" width="10" height="10" stroke="black" fill="none" />
+                        </svg>
+                        <br>
+                        Démontrer que le sol est parallèle au plafond.
+                    </div>
+                </div>
+                <Paragraphe couleur="blue" nom="On sait que">
+                    <ul>
+                        <li>
+                            <Katex>(sol) \perp (mur)</Katex>
+                        </li>
+                        <li>
+                            <Katex>(plafond) \perp (mur)</Katex>
+                        </li>
+                    </ul>
+                </Paragraphe>
+                <u>Or : </u> Si deux droites sont perpendiculaires à une même droite, alors elles sont parallèles entre elles.<br>
+                <u>Donc : </u> <Katex>(sol) // (plafond)</Katex>
+            </Paragraphe>
+        </SousPartie>
+        <SousPartie numero={3} titre="Troisième propriété">
+            <Propriete>
+                Si deux droites sont parallèles, alors toute droite perpendiculaire à l'une est perpendiculaire à l'autre.
+                <div class="explication"
+                    title="Si (d1) est parallèle à (d2) et (d2) est perpendiculaire à (d3), alors (d1) est perpendiculaire à (d3).">
+                    <Katex displayMode>
+                        (d_1) // (d_2) \land (d_2) \perp (d_3) \implies (d_1) \perp (d_3)
+                    </Katex>
+                </div>
+            </Propriete>
+            <Schema>
+                <svg viewBox="0 0 220 200" width="40ex">
+                    <line x1="50" y1="200" x2="150" y2="0" stroke="black" />
+                    <line x1="0" y1="0" x2="200" y2="100" stroke="black" />
+                    <line x1="0" y1="100" x2="200" y2="200" stroke="black" />
+                    <text x={180} y={85} font-family="Katex_Main" font-size="12px">
+                        (d )
+                        <tspan dx="-2.9ex" dy="0.3em" font-size="8px">1</tspan>
+                    </text>
+                    <text x={150} y={15} font-family="Katex_Main" font-size="12px">
+                        (d )
+                        <tspan dx="-2.9ex" dy="0.3em" font-size="8px">3</tspan>
+                    </text>
+                    <text x={180} y={185} font-family="Katex_Main" font-size="12px">
+                        (d )
+                        <tspan dx="-2.9ex" dy="0.3em" font-size="8px">2</tspan>
+                    </text>
+                </svg>
+            </Schema>
+            <Paragraphe couleur="blue" nom="Exemple de rédaction">
+                <div class="conteneur_flex">
+                    <div class="exercice">
+                        <u>Exercice :</u>
+                        <ul>
+                            <li>Tracer un triangle ABC rectangle en A</li>
+                            <li>Tracer <Katex>(DE)//(AC)</Katex> telle que <Katex>E \in (AB)</Katex></li>
+                            <li>Montrer que ADE est un triangle rectangle.</li>
+                        </ul>
+                    </div>
+                    <svg viewBox="0 0 400 200" style="height: 15ex;">
+                        <!-- Triangle ABC rectangle en A -->
+                        <line x1="50" y1="180" x2="200" y2="180" stroke="black" />
+                        <line x1="50" y1="180" x2="200" y2="50" stroke="black" />
+                        <line x1="200" y1="50" x2="200" y2="180" stroke="black" />
+                        <text x="200" y="195" font-family="Katex_Main" font-size="15px" text-anchor="middle">
+                            A
+                        </text>
+                        <text x="200" y="40" font-family="Katex_Main" font-size="15px" text-anchor="middle">
+                            C
+                        </text>
+                        <text x="50" y="195" font-family="Katex_Main" font-size="15px" text-anchor="middle">
+                            B
+                        </text>
+                        <!-- Tracer (DE)//(AC) telle que E \in (AB) -->
+                        <line x1="320" y1="30" x2="320" y2="180" stroke="black" />
+                        <line x1="320" y1="30" x2="200" y2="180" stroke="black" />
+                        <line x1="200" y1="180" x2="320" y2="180" stroke="black" />
+                        <text x="320" y="25" font-family="Katex_Main" font-size="15px" text-anchor="middle">
+                            D
+                        </text>
+                        <text x="320" y="195" font-family="Katex_Main" font-size="15px" text-anchor="middle">
+                            E
+                        </text>
+                        <rect x="190" y="170" width="10" height="10" stroke="none" fill="red" />
+                        <rect x="310" y="170" width="10" height="10" stroke="none" fill="red" />
+                    </svg>
+                </div>
+                <Paragraphe couleur="blue" nom="On sait que">
+                    <ul>
+                        <li>
+                            ABC est un triangle rectangle en A : <Katex>(AB) \perp (AC)</Katex>
+                        </li>
+                        <li>
+                            <Katex>(DE) // (AC)</Katex>
+                        </li>
+                    </ul>
+                </Paragraphe>
+                <u>Or : </u> Si deux droites sont parallèles, alors toute droite perpendiculaire à l'une est perpendiculaire à l'autre.<br>
+                <u>Donc : </u> <Katex>(DE) \perp (AB)</Katex><br>
+                Comme <Katex>E \in (AB)</Katex>, alors <Katex>(DE) \perp (AE)</Katex><br>
+                Donc ADE est un triangle rectangle en E.
+            </Paragraphe>
+        </SousPartie>
     </Partie>
 </Chapitre>
 
@@ -200,5 +344,11 @@
     .explication {
         width: fit-content;
         height: fit-content;
+    }
+    .exercice {
+        width: fit-content; 
+        height: fit-content; 
+        padding: 5px; 
+        border: 2px solid blue;
     }
 </style>
