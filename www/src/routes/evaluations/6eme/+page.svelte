@@ -2,4 +2,4 @@
     import ListeEvaluation from "$lib/exercices/ListeEvaluation.svelte";
 </script>
 
-<ListeEvaluation niveau="6eme" nombre_evaluations_a_afficher={5} />
+<ListeEvaluation niveau="6eme" nombre_evaluations_a_afficher={7} />

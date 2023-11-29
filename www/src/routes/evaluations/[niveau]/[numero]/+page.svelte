@@ -2,7 +2,7 @@
     import Evaluation from "$lib/exercices/Evaluation.svelte";
     import type { PageData } from "./$types";
     
-    export let donnees: PageData;
+    export let data: PageData;
 </script>
 
-<Evaluation niveau={donnees.niveau} numero_evaluation={donnees.numero} />
+<Evaluation niveau={data.niveau} numero_evaluation={data.numero} />

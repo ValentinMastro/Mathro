@@ -12,9 +12,7 @@ export const load: PageLoad = ( {params} ) => {
     }
 
     return {
-        props: {
-            niveau: niveau,
-            numero: params.numero,
-        },
+        niveau: niveau,
+        numero: Number(params.numero),
     };
 }
