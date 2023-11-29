@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { onMount } from "svelte";
-    import Katex from "svelte-katex";
     import QuestionEntrainement from "./QuestionEntrainement.svelte";
 
     export let niveau: number;

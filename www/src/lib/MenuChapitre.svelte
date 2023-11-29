@@ -24,7 +24,7 @@
 
 <a href={url} data-sveltekit-reload data-sveltekit-preload-data="off">
 	<div id="carte">
-        <img src={img} alt="mage d'illustration du chapitre {index}" />
+        <img src={img} alt="Image d'illustration du chapitre {index}" />
         <div id="description">
             <div id="chapitre">
                 <div id="numero">
