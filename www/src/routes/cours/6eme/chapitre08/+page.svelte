@@ -332,6 +332,32 @@
             </Paragraphe>
         </SousPartie>
     </Partie>
+    <Partie numero={3} titre="Distance entre un point et une droite">
+        <Definition>
+            La <i>distance</i> entre un point et une droite est la longueur du segment perpendiculaire à la droite passant par le point.<br>
+            C'est <i>le plus court chemin</i> entre le point et la droite.
+        </Definition>
+        <Schema>
+            <svg viewBox="0 0 600 200">
+                <line x1="0" y1="0" x2="200" y2="100" stroke="black" />
+                <text x={180} y={85} font-family="Katex_Main" font-size="12px">
+                    (d )
+                    <tspan dx="-2.9ex" dy="0.3em" font-size="8px">1</tspan>
+                </text>
+                <circle cx="46" cy="73" r="2" fill="red" stroke="none" />
+                <text x={42} y={85} font-family="Katex_Main" font-size="10px" fill="red">C</text>
+                <line x1="46" y1="73" x2="65" y2="32" stroke="red" />
+                <text x={38} y={15} font-family="Katex_Main" font-size="10px" fill="red">A</text>
+                <text x={128} y={60} font-family="Katex_Main" font-size="10px" fill="red">B</text>
+                <line x1={38-5} y1={15+5} x2={38-3} y2={15} stroke="red" />
+                <line x1={128-5} y1={60+5} x2={128-3} y2={60} stroke="red" />
+                <rect   width="5" height="5" stroke="none" 
+                        style="transform-box: fill-box; transform-origin: center; transform: rotate(25deg);" 
+                        x="63" y="33" fill="green"></rect>
+            </svg>
+            
+        </Schema>
+    </Partie>
 </Chapitre>
 
 <style>
