@@ -85,12 +85,110 @@
                 Soient a, b, k, trois nombres : 
                 <Katex displayMode>k (a + b) = ka + kb</Katex>
             </Paragraphe>
+            <Exemples>
+                <ul class="no_marker">
+                    <li>
+                        <Katex>
+                            {`
+                                \\begin{aligned}
+                                    x(x+4) &= x \\times x + x \\times 4 \\\\
+                                           &= x^2 + 4x
+                                \\end{aligned}
+                            `}
+                        </Katex>    
+                    </li>
+                    <li>
+                        <Katex>
+                            {`
+                                \\begin{aligned}
+                                    3(2x+5) &= 3 \\times 2x + 3 \\times 5 \\\\
+                                            &= 6x + 15
+                                \\end{aligned}
+                            `}
+                        </Katex>
+                    </li>
+                    <li>
+                        <Katex>
+                            {`
+                                \\begin{aligned}
+                                    2x(x+3) &= 2x \\times x + 2x \\times 3 \\\\
+                                            &= 2x^2 + 6x
+                                \\end{aligned}
+                            `}
+                        </Katex>
+                    </li>
+                    <li>
+                        <Katex>
+                            {`
+                                \\begin{aligned}
+                                    2x + xy &= 2 {\\textcircled x} + {\\textcircled x} y \\\\
+                                    &= x (2 + y)
+                                \\end{aligned}
+                            `}
+                        </Katex>
+                    </li>
+                    <li>
+                        <Katex>
+                            {`
+                                \\begin{aligned}
+                                    3x + 15 &= 3x + 3 \\times 5 \\\\
+                                            &= {\\textcircled 3} x + {\\textcircled 3} \\times 5 \\\\
+                                            &= 3 (x + 5)
+                                \\end{aligned}
+                            `}
+                        </Katex>
+                    </li>
+                </ul>
+            </Exemples>
         </SousPartie>
         <SousPartie numero={2} titre="Double distributivité">
             <Paragraphe couleur="red" nom="Règle">
                 Soient a, b, c, d, quatre nombres : 
                 <Katex displayMode>(a + b) (c + d) = ac + ad + bc + b d</Katex>
             </Paragraphe>
+            <Exemples>
+                <ul class="no_marker">
+                    <li>
+                        <Katex>
+                            {`
+                                \\begin{aligned}
+                                    (2x+3)(4+5x) &= 2x \\times 4 + 2x \\times 5x + 3 \\times 4 + 3 \\times 5x \\\\
+                                                 &= 8x + 10x^2 + 12 + 15x \\\\
+                                                 &= 10x^2 + 23x + 12
+                                \\end{aligned}
+                            `}
+                        </Katex>
+                    </li>
+                    <li>
+                        <Katex>
+                            {`
+                                \\begin{aligned}
+                                3(x+12) + 2x(x+12) &= 3 \\fbox{(x+12)} + 2x \\fbox{(x+12)} \\\\
+                                                   &= (x+12)(3+2x)
+                                \\end{aligned}
+                            `}
+                        </Katex>
+                    </li>
+                    <li>
+                        <Katex>
+                            {`
+                                \\begin{aligned}
+                                    (-4x+7)(-2+2x)  &= (-4x) \\times (-2) + (-4x) \\times 2x + 7 \\times (-2) + 7 \\times 2x \\\\
+                                                    &= 8x + (-8x^2) + (-14) + 14x \\\\
+                                                    &= -8x^2 + 22x - 14
+                                \\end{aligned}
+                            
+                            `}
+                        </Katex>
+                    </li>
+                </ul>
+            </Exemples>
         </SousPartie>
     </Partie>
 </Chapitre>
+
+<style>
+    .no_marker {
+        list-style-type: none;
+    }
+</style>
