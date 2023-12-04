@@ -5,6 +5,7 @@
 	import TheoremeDefinition from "$lib/chapitrage/sections/TheoremeDefinition.svelte";
     import Definition from "$lib/chapitrage/sections/Definition.svelte";
 	import Paragraphe from "$lib/chapitrage/sections/Paragraphe.svelte";
+	import Notation from "$lib/chapitrage/sections/Notation.svelte";
 
 </script>
 
@@ -38,7 +39,7 @@
     </Partie>
     <Partie numero={2} titre="Divisibilités">
         <Definition>
-            "Être divisible par" signifie "être un multiple de".
+            "Être divisible par" signifie "être dans la table de multiplication de".
         </Definition>
         <Exemples>
             <ul>
@@ -46,6 +47,27 @@
                 <li>35 est divisible par <span class="rouge">5</span> car 35 = <span class="rouge">5</span> × 7</li>
             </ul>
         </Exemples>
+        <Notation>
+            On peut dire que : 
+            <ul>
+                <li>42 est divisible par 6</li>
+                <li>42 est un multiple de 6</li>
+                <li>6 divise 42</li>
+                <li>6 est un diviseur de 42</li>
+            </ul>
+        </Notation>
+        <Paragraphe nom="Méthode" couleur="red">
+            Pour savoir si un nombre est divisible par un autre, on peut :
+            <ul>
+                <li>calculer le reste de la division euclidienne, et vérifier qu'il est égal à 0<br>
+                    <img
+                        style="width: 20ex;" 
+                        src="/tikz/6eme/ch09/divisions_reste_egal_0.svg" 
+                        alt="Divisions ayant un reste égal à 0" />
+                </li>
+                <li>ou utiliser les critères de divisibilité</li>
+            </ul>
+        </Paragraphe>
         <Paragraphe nom="Critères de divisibilité" couleur="black">
             <table>
                 <tr>
@@ -120,6 +142,9 @@
                 </tr>
             </table>
         </Paragraphe>
+    </Partie>
+    <Partie numero={3} titre="Division décimale">
+        
     </Partie>
 </Chapitre>
 
