@@ -6,6 +6,7 @@
     import Definition from "$lib/chapitrage/sections/Definition.svelte";
 	import Paragraphe from "$lib/chapitrage/sections/Paragraphe.svelte";
 	import Notation from "$lib/chapitrage/sections/Notation.svelte";
+	import Remarque from "$lib/chapitrage/sections/Remarque.svelte";
 
 </script>
 
@@ -144,7 +145,16 @@
         </Paragraphe>
     </Partie>
     <Partie numero={3} titre="Division décimale">
-        
+        <Paragraphe nom="Méthode" couleur="red">
+            La division décimale a pour quotient un nombre décimal.
+            Pour cela, lorsque l'on pose la division, on introduit la virgule.
+        </Paragraphe>
+        <Remarque>
+            315 = 315,0 = 315,00 = 315,000 = ...
+        </Remarque>
+        <Exemples>
+            
+        </Exemples>
     </Partie>
 </Chapitre>
 
