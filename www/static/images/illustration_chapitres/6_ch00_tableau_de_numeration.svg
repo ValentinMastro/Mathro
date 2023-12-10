@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 165 265" xmlns="http://www.w3.org/2000/svg">
+    <text x="82.5" y="120" text-anchor="middle" dominant-baseline="middle" font-size="70" fill="red">352</text>
+    <text x="82.5" y="200" text-anchor="middle" dominant-baseline="middle" font-size="35" fill="red" visibility="hidden">
+        centaines
+        <animate
+            attributeName="visibility"
+            values="visible;hidden;hidden"
+            dur="3s"
+            repeatCount="indefinite" />
+    </text>
+    <text x="82.5" y="200" text-anchor="middle" dominant-baseline="middle" font-size="35" fill="red">
+        dizaines
+        <animate
+            attributeName="visibility"
+            values="hidden;visible;hidden"
+            dur="3s"
+            repeatCount="indefinite" />
+        </text>
+    <text x="82.5" y="200" text-anchor="middle" dominant-baseline="middle" font-size="35" fill="red">
+        unités
+        <animate
+            attributeName="visibility"
+            values="hidden;hidden;visible"
+            dur="3s"
+            repeatCount="indefinite" />
+    </text>
+
+    <text x="82.5" y="170" text-anchor="middle" dominant-baseline="middle" font-size="35" fill="red">
+    ￪
+        <animateTransform 
+            attributeName="transform" 
+            attributeType="XML" 
+            type="translate" 
+            values="-40 0; 0 0; 40 0"
+            calcMode="discrete"
+            dur="3s" 
+            repeatCount="indefinite" />
+    </text>
+</svg>

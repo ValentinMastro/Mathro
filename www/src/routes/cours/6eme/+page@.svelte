@@ -21,7 +21,7 @@
                     titre="Notation positionnelle des nombres" 
                     url="/cours/6eme/chapitre00"
                     cats={["Nombres et calculs"]}
-                    img="/images/tableau_de_numeration.png" >
+                    img="/images/illustration_chapitres/6_ch00_tableau_de_numeration.svg" >
         <ol>
             <li>Chiffres et nombres</li>
             <li>Comparaison</li>
