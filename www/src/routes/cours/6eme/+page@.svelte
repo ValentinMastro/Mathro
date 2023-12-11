@@ -32,7 +32,7 @@
                     titre="Notation géométrique" 
                     url="/cours/6eme/chapitre01"
                     cats={["Espace et géométrie"]}
-                    img="/images/droiteAB.svg" >
+                    img="/images/illustration_chapitres/6_ch01_notation_geometrique.svg" >
         <ol>
             <li>Droite, demi-droite, segment</li>
             <li>Polygones</li>
@@ -42,7 +42,8 @@
     <MenuChapitre   index={2} 
                     titre="Repérage et comparaison" 
                     url="/cours/6eme/chapitre02"
-                    cats={["Espace et géométrie"]} >
+                    cats={["Espace et géométrie"]}
+                    img="/images/illustration_chapitres/6_ch02_reperage.svg" >
         <ol>
             <li>Repérage sur une droite</li>
             <li>Comparaison et encadrement</li>
@@ -52,7 +53,8 @@
     <MenuChapitre   index={3}  
                     titre="Addition et soustraction" 
                     url="/cours/6eme/chapitre03"
-                    cats={["Espace et géométrie", "Grandeurs et mesures"]} >
+                    cats={["Espace et géométrie", "Grandeurs et mesures"]}
+                    img="/images/illustration_chapitres/6_ch03_addition.svg" >
         <ol>
             <li>Addition</li>
             <li>Soustraction</li>
@@ -61,7 +63,8 @@
     <MenuChapitre   index={4} 
                     titre="Angles" 
                     url="/cours/6eme/chapitre04"
-                    cats={["Espace et géométrie", "Grandeurs et mesures"]} >
+                    cats={["Espace et géométrie", "Grandeurs et mesures"]}
+                    img="/images/illustration_chapitres/6_ch04_angles.svg" >
         <ol>
             <li>Concept</li>
             <li>Les types d'angles</li>
@@ -71,7 +74,8 @@
     <MenuChapitre   index={5} 
                     titre="Fractions" 
                     url="/cours/6eme/chapitre05"
-                    cats={["Nombres et calculs"]} >
+                    cats={["Nombres et calculs"]}
+                    img="/images/gateau.png" >
         <ol>
             <li>Lien entre quotient et fraction</li>
             <li>Calculer la fraction d'un nombre</li>
@@ -81,18 +85,20 @@
     <MenuChapitre   index={6}
                     titre="Cercle, centre, milieu, médiatrice" 
                     url="/cours/6eme/chapitre06"
-                    cats={["Espace et géométrie"]} >
+                    cats={["Espace et géométrie"]}
+                    img="/images/illustration_chapitres/6_ch06_cercle.svg" >
         <ol>
             <li>Cercle</li>
             <li>Médiatrice</li>
         </ol>
     </MenuChapitre>
     <MenuChapitre   index={7} 
-                    titre="Multiplication" 
+                    titre="Multiplication"
                     url="/cours/6eme/chapitre07"
-                    cats={["Nombres et calculs"]} >
+                    cats={["Nombres et calculs"]}
+                    img="/images/illustration_chapitres/6_ch07_multiplication.svg" >
         <ol>
-            <li>Multiplier et diviser par 1,10,100,etc.</li>
+            <li>Multiplier et diviser par 1, 10, 100, etc.</li>
             <li>Conversion d'unités</li>
             <li>Multiplication décimale</li>
         </ol>
@@ -120,7 +126,9 @@
                     titre="Triangles" 
                     url="/cours/6eme/chapitre10"
                     cats={["Espace et géométrie"]} >
-        
+        <ol>
+            <li>Constructions</li>
+        </ol>
     </MenuChapitre>
     <MenuChapitre   index={11} 
                     titre="Horaires et durées" 
@@ -186,7 +194,8 @@
     <MenuChapitre   index={21}
                     titre="Programmation"
                     url="cours/6eme/chapitre21"
-                    cats={["Algorithmique et programmation"]} >
+                    cats={["Algorithmique et programmation"]}
+                    img="/for_scratch/ScratchCat3.0.svg" >
     </MenuChapitre>
 </div>
 

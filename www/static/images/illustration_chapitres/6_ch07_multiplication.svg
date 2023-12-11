@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 165 265" xmlns="http://www.w3.org/2000/svg">
+    <text   x="50%" y="50%" 
+            dominant-baseline="middle" 
+            text-anchor="middle" 
+            font-size="55" 
+            fill="red"
+            font-family="Katex_Main" >
+        3 × 4
+        <animate 
+            attributeName="opacity"
+            values="1; 0.2; 0"
+            dur="3s"
+            repeatCount="indefinite" />
+    </text>
+    <text   x="50%" y="50%" 
+            dominant-baseline="middle" 
+            text-anchor="middle" 
+            font-size="55" 
+            fill="green"
+            font-family="Katex_Main" >
+        12
+        <animate 
+            attributeName="opacity"
+            values="0; 0.8; 1"
+            dur="3s"
+            repeatCount="indefinite" />
+    </text>
+</svg>

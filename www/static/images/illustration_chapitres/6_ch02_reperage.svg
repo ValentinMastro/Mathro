@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="10 -10 165 265" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <pattern id="grille" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="grey" stroke-width="1"/>
+        </pattern>
+        <g id="point">
+            <text x="5" y="-1" fill="green" font-size="20" >A</text>
+            <circle cx="0" cy="0" r="2.8" fill="red" />
+        </g>
+    </defs>
+    <rect x="20" y="0" width="145" height="240" fill="url(#grille)" />
+    <line x1="20" y1="240" x2="165" y2="240" stroke="black" stroke-width="2"/>
+    <line x1="20" y1="0" x2="20" y2="240" stroke="black" stroke-width="2"/>
+    <use href="#point" x="0" y="0">
+        <animateMotion 
+            dur="9s" 
+            repeatCount="indefinite"
+            path="M 40 180 h 40 v 20 h 40 v -20 h 20 v -60 h -40" />
+    </use>
+</svg>
