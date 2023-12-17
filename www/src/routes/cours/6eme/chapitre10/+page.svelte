@@ -10,6 +10,7 @@
 
     import Katex from "svelte-katex";
 	import Remarque from "$lib/chapitrage/sections/Remarque.svelte";
+	import Schema from "$lib/chapitrage/sections/Schema.svelte";
 </script>
 
 
@@ -161,6 +162,64 @@
                     </svg>
                 </div>
             </div>
+        </SousPartie>
+    </Partie>
+    <Partie numero={2} titre="Les différents types de triangle">
+        <SousPartie titre="Triangle rectangle" numero={1}>
+            <Definition>
+                Triangle ayant un angle droit (=90°)
+            </Definition>
+            <Schema>
+                <svg viewBox="0 0 500 500" style="width: 25em;">
+                    <rect x="425" y="425" width="25" height="25" stroke="none" stroke-width="3" fill="red" />
+                    <path d="M 50,450 l 50,0 a 30 30 0 0 0 -20 -30 Z" stroke="none" fill="#007fff" />
+                    <path d="M 450,50 l 0,50 a 30 30 0 0 1 -30 -20 Z" stroke="none" fill="#007fff" /> 
+                    <polygon points="50,450 450,450 450,50" stroke="black" stroke-width="3" fill="none" />
+                    <text x="40" y="470" font-family="Katex_Main" font-size="20px" fill="#007fff" >
+                        angle aigu
+                    </text>
+                    <text x="455" y="440" font-family="Katex_Main" font-size="20px" fill="red" >
+                        <tspan>angle</tspan>
+                        <tspan dx="-50" dy="20">droit</tspan>
+                    </text>
+                    <text x="455" y="70" font-family="Katex_Main" font-size="20px" fill="#007fff" >
+                        <tspan>angle</tspan>
+                        <tspan dx="-47" dy="20">aigu</tspan>
+                    </text>
+                    <text   x="200" y="230" font-size="20px" text-anchor="middle" dominant-baseline="central"
+                            fill="green" transform-origin="center" transform="rotate(-45)" >
+                        hypoténuse
+                    </text>
+                    <line x1="50" y1="450" x2="450" y2="50" stroke="#00bb00" stroke-width="3" />
+                </svg>
+            </Schema>
+        </SousPartie>
+        <SousPartie titre="Triangle isocèle" numero={2}>
+            <Definition>
+                Triangle ayant deux côtés de même longueur.
+            </Definition>
+            <Schema>
+                <svg viewBox="0 0 500 500" style="width: 25em;">
+                    <rect x="425" y="425" width="25" height="25" stroke="none" stroke-width="3" fill="red" />
+                    <polygon points="50,450 450,450 250,50" stroke="black" stroke-width="3" fill="none" />
+                    <text x="40" y="470" font-family="Katex_Main" font-size="20px" fill="#007fff" >
+                        angle aigu
+                    </text>
+                    <text x="455" y="440" font-family="Katex_Main" font-size="20px" fill="red" >
+                        <tspan>angle</tspan>
+                        <tspan dx="-50" dy="20">droit</tspan>
+                    </text>
+                    <text x="455" y="70" font-family="Katex_Main" font-size="20px" fill="#007fff" >
+                        <tspan>angle</tspan>
+                        <tspan dx="-47" dy="20">aigu</tspan>
+                    </text>
+                    <text   x="200" y="230" font-size="20px" text-anchor="middle" dominant-baseline="central"
+                            fill="green" transform-origin="center" transform="rotate(-45)" >
+                        côté
+                    </text>
+                    <line x1="50" y1="450" x2="450" y2="450" stroke="#00bb00" stroke-width="3" />
+                </svg>
+            </Schema>
         </SousPartie>
     </Partie>
 </Chapitre>

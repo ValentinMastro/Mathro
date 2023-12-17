@@ -48,12 +48,15 @@
     .numero {
         background-color: cyan;
         border-style: double;
+        width: fit-content;
     }
     .bonne {
         background-color: lightgreen;
+        width: fit-content;
     }
     .mauvaise {
         display: none;
+        width: fit-content;
     }
     tr {
         height: 48px;

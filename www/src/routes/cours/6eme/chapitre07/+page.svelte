@@ -218,9 +218,9 @@
                     >
                     3 × 7 = 21
                 </text>
-                <circle cx={1235} cy={136} r={65} stroke="green" fill="none" stroke-width={4} />
-                <circle cx={1470} cy={136} r={65} stroke="green" fill="none" stroke-width={4} />
-                <rect x={1650} y={71} width={160} height={130} stroke="red" fill="none" stroke-width={4} />
+                <circle cx={1235} cy={110} r={65} stroke="green" fill="none" stroke-width={4} />
+                <circle cx={1470} cy={110} r={65} stroke="green" fill="none" stroke-width={4} />
+                <rect x={1650} y={50} width={160} height={130} stroke="red" fill="none" stroke-width={4} />
                 <text 
                     x={1350} y={250}
                     font-family="Katex_Main"
@@ -270,9 +270,9 @@
                     3,14 × 7,2 = 22,608
                 </text>
                 <!-- On souligne les chiffres après la virgule -->
-                <line x1="1060" y1="190" x2="1200" y2="190" stroke="red" stroke-width="4" />
-                <line x1="1450" y1="190" x2="1520" y2="190" stroke="red" stroke-width="4" />
-                <line x1="1860" y1="190" x2="2040" y2="190" stroke="red" stroke-width="4" />
+                <line x1="1060" y1="180" x2="1200" y2="180" stroke="red" stroke-width="4" />
+                <line x1="1450" y1="180" x2="1520" y2="180" stroke="red" stroke-width="4" />
+                <line x1="1860" y1="180" x2="2040" y2="180" stroke="red" stroke-width="4" />
                 <text 
                     x={770} y={250}
                     font-family="Katex_Main"
