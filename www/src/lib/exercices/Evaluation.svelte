@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { onMount } from "svelte";
     import JSZip from "jszip";
+    import init, { generer_evaluation } from "exercices";
 
 	import BoutonRafraichir from "$lib/BoutonRafraichir.svelte";
 	import Question from "./Question.svelte";
 	import Explication from "./Explication.svelte";
+	import Addition from "$lib/scratch/blocs/operations/Addition.svelte";
 
     export let niveau: number;
     export let numero_evaluation: number;
@@ -93,7 +95,7 @@
     }
 
     async function get_evaluation(niveau: number = 6, id_evaluation: number = 1) {
-        let evaluation: EvaluationInterface = await recuperer_evaluation_compressee(niveau, id_evaluation);
+        let evaluation: EvaluationInterface = generer_evaluation(niveau, id_evaluation);
 
         if (evaluation.evaluations.length == 0) {
             evaluation = await generer_evaluation_depuis_executable(niveau, id_evaluation);
