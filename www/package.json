@@ -37,7 +37,6 @@
 		"@types/mathjax": "^0.0.37",
 		"decimal.js": "^10.4.3",
 		"execa": "^8.0.1",
-		"exercices": "file:../GenerateurExercices/pkg/exercices-0.1.0.tgz",
 		"jszip": "^3.10.1",
 		"katex": "^0.16.8",
 		"svelte-katex": "^0.1.2",
