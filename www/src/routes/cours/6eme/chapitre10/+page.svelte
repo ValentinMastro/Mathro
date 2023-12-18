@@ -11,10 +11,7 @@
     import Katex from "svelte-katex";
 	import Remarque from "$lib/chapitrage/sections/Remarque.svelte";
 	import Schema from "$lib/chapitrage/sections/Schema.svelte";
-<<<<<<< HEAD
-=======
 	import Notation from "$lib/chapitrage/sections/Notation.svelte";
->>>>>>> eb2a734e2d83b5334dd2d250ec0a794b63690731
 </script>
 
 
