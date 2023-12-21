@@ -4,6 +4,6 @@
 
 <style>
     span {
-        font-family: Katex_Main;
+        font-family: "Katex_Main";
     }
 </style>

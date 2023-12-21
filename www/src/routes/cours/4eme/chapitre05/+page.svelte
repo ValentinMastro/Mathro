@@ -3,6 +3,7 @@
 	import Partie from "$lib/chapitrage/Partie.svelte";
 	import Paragraphe from "$lib/chapitrage/sections/Paragraphe.svelte";
 	import Schema from "$lib/chapitrage/sections/Schema.svelte";
+    import L from "$lib/chapitrage/sections/L.svelte";
 
     import Katex from "svelte-katex";
 </script>
@@ -80,12 +81,31 @@
 
                 <line x1="70" x2="410" y1="250" y2="70" stroke="green" stroke-width={2} marker-start="url(#arrow)" marker-end="url(#arrow)" />
                 <line x1="70" x2="430" y1="250" y2="420" stroke="green" stroke-width={2} marker-start="url(#arrow)" marker-end="url(#arrow)" />
+                <text x="250" y="200" text-anchor="middle" fill="green" font-size="25px">8 cm</text>
                 
                 <text x="250" y="480" text-anchor="middle" font-size="25px">Les droites (WV) et (XY) sont parallèles.</text>
                 <text x="500" y="250" text-anchor="start" font-size="25px">Question :</text>
                 <line x1="500" x2="620" y1="255" y2="255" stroke="black" stroke-width={2} />
                 <text x="500" y="290" text-anchor="start" font-size="25px">Calculer la longueur UX.</text>
             </svg>
+        </Paragraphe>
+        <Paragraphe couleur="blue" nom="Rédaction">
+            <u>On sait que :</u>
+            <ul>
+                <li>les points U, V, X sont alignés</li>
+                <li>les points U, W, Y sont alignés</li>
+                <li><L>(WV)//(XY)</L></li>
+            </ul>
+            <u>D'après</u> le théorème de Thalès :
+            <Katex displayMode>
+                {`
+                \\begin{align*}
+                    \\frac{UX}{UV} &= \\frac{UY}{UW} = \\frac{XY}{VW} \\\\[0.5cm]
+                    \\frac{8}{4} &= \\frac{UY}{4{,}5} = \\frac{XY}{VW} \\\\[0.5cm]
+                    UY &= \\frac{8 \\times 4{,}5}{4} = 9 & \\text{(produit en croix)} \\\\[0.5cm]
+                \\end{align*}
+                `}
+            </Katex>
         </Paragraphe>
     </Partie>
 </Chapitre>
