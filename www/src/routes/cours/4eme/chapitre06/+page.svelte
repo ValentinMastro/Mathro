@@ -5,10 +5,13 @@
 	import Definition from "$lib/chapitrage/sections/Definition.svelte";
 	import Exemples from "$lib/chapitrage/sections/Exemples.svelte";
     import Remarque from "$lib/chapitrage/sections/Remarque.svelte";
-
+    import Propriete from "$lib/chapitrage/sections/Propriete.svelte";
     import L from "$lib/chapitrage/sections/L.svelte";
 	import Paragraphe from "$lib/chapitrage/sections/Paragraphe.svelte";
+
     import Katex from "svelte-katex";
+
+	import UnitesSi from "./UnitesSI.svelte";
 </script>
 
 <Chapitre numero={6} titre="Puissances" >
@@ -156,6 +159,29 @@
                         <td colspan="3">Milliardièmes</td>
                     </tr>
                     <tr>
+                        <td>10<sup>11</sup></td>
+                        <td>10<sup>10</sup></td>
+                        <td>10<sup>9</sup></td>
+                        <td>10<sup>8</sup></td>
+                        <td>10<sup>7</sup></td>
+                        <td>10<sup>6</sup></td>
+                        <td>10<sup>5</sup></td>
+                        <td>10<sup>4</sup></td>
+                        <td>10<sup>3</sup></td>
+                        <td>10<sup>2</sup></td>
+                        <td>10<sup>1</sup></td>
+                        <td>10<sup>0</sup></td>
+                        <td>10<sup>-1</sup></td>
+                        <td>10<sup>-2</sup></td>
+                        <td>10<sup>-3</sup></td>
+                        <td>10<sup>-4</sup></td>
+                        <td>10<sup>-5</sup></td>
+                        <td>10<sup>-6</sup></td>
+                        <td>10<sup>-7</sup></td>
+                        <td>10<sup>-8</sup></td>
+                        <td>10<sup>-9</sup></td>
+                    </tr>
+                    <tr>
                         <td></td>
                         <td></td>
                         <td>giga</td>
@@ -180,9 +206,186 @@
                     </tr>
                     <tr>
                         <td></td>
+                        <td></td>
+                        <td>G</td>
+                        <td></td>
+                        <td></td>
+                        <td>M</td>
+                        <td></td>
+                        <td></td>
+                        <td>k</td>
+                        <td>h</td>
+                        <td>da</td>
+                        <td></td>
+                        <td>d</td>
+                        <td>c</td>
+                        <td>m</td>
+                        <td></td>
+                        <td></td>
+                        <td>µ</td>
+                        <td></td>
+                        <td></td>
+                        <td>n</td>
                     </tr>
                 </table>
             </Paragraphe>
+            <UnitesSi />
+            <Paragraphe couleur="red" nom="Méthode">
+                Comment convertir une unité en une autre en utilisant les préfixes du SI ?
+            </Paragraphe>
+            <Exemples>
+                <ul id="exemples_convertion">
+                    <li>
+                        <u>Convertir 30 km en m :</u>
+                        <Katex displayMode>
+                            {`
+                                \\begin{align*}
+                                    30 \\color{red} \\text{ km} \\color{blue} &= 30 \\color{red}\\times 10^3 \\text{ m} \\color{blue} \\\\
+                                    &= \\color{green} 30 \\color{blue} \\times 10^3 \\text{ m} \\\\
+                                    &= \\color{green} 3 \\times 10^1 \\color{blue} \\times 10^3 \\text{ m} \\\\
+                                    &= 3 \\times 10^{1+3} \\text{ m} \\\\
+                                    &= 3 \\times 10^4 \\text{ m} \\\\
+                                \\end{align*}
+                            `}
+                        </Katex>
+                    </li>
+                    <li>
+                        <u>Convertir 50 mK en K :</u>
+                        <Katex displayMode>
+                            {`
+                                \\begin{align*}
+                                    50 \\color{red} \\text{ mK} \\color{blue} &= 50 \\color{red}\\times 10^{-3} \\text{ K} \\color{blue} \\\\
+                                    &= \\color{green} 50 \\color{blue} \\times 10^{-3} \\text{ K} \\\\
+                                    &= \\color{green} 5 \\times 10^1 \\color{blue} \\times 10^{-3} \\text{ K} \\\\
+                                    &= 5 \\times 10^{1+(-3)} \\text{ K} \\\\
+                                    &= 5 \\times 10^{-2} \\text{ K} \\\\
+                                \\end{align*}
+                            `}
+                        </Katex>
+                    </li>
+                    <li>
+                        <u>Convertir 330 m en hm</u>
+                        <Katex displayMode>
+                            {`
+                                \\begin{align*}
+                                    330 \\color{red} \\text{ m} \\color{blue} &= 330 \\color{red}\\times 10^{-2} \\text{ hm} \\color{blue} \\\\
+                                    &= \\color{green} 330 \\color{blue} \\times 10^{-2} \\text{ hm} \\\\
+                                    &= \\color{green} 3{,}3 \\times 10^2 \\color{blue} \\times 10^{-2} \\text{ hm} \\\\
+                                    &= 3{,}3 \\times 10^{2+(-2)} \\text{ hm} \\\\
+                                    &= 3{,}3 \\times 10^0 \\text{ hm} \\\\
+                                \\end{align*}
+                            `}
+                        </Katex>
+                    </li>
+                    <li>
+                        <u>Convertir 101 300 Pa en hPa</u>
+                        <Katex displayMode>
+                            {`
+                                \\begin{align*}
+                                    101~300 \\color{red} \\text{ Pa} \\color{blue} &= 101~300 \\color{red}\\times 10^{-2} \\text{ hPa} \\color{blue} \\\\
+                                    &= \\color{green} 101~300 \\color{blue} \\times 10^{-2} \\text{ hPa} \\\\
+                                    &= \\color{green} 1~013 \\color{blue} \\times 10^2 \\color{blue} \\times 10^{-2} \\text{ hPa} \\\\
+                                    &= 1~013 \\color{blue} \\times 10^{2+(-2)} \\text{ hPa} \\\\
+                                    &= 1~013 \\color{blue} \\times 10^0 \\text{ hPa} \\\\
+                                    &= 1~013 \\text{ hPa} \\\\
+                                \\end{align*}
+                            `}
+                        </Katex>
+                    </li>
+                    <li>
+                        <u>Convertir 9 &times; 10<sup>11</sup> mW en GW</u>
+                        <Katex displayMode>
+                            {`
+                                \\begin{align*}
+                                    9 \\times 10^{11} \\color{red} \\text{ mW} \\color{blue} &= 9 \\times 10^{11} \\color{red}\\times 10^{-3} \\text{ W} \\color{blue} \\\\
+                                    &= 9 \\times 10^{11} \\color{blue} \\times 10^{-3} \\color{green} \\text{ W} \\color{blue} \\\\
+                                    &= 9 \\times 10^{11} \\color{blue} \\times 10^{-3} \\color{green} \\times 10^{-9} \\text{ GW} \\color{blue} \\\\
+                                    &= 9 \\times 10^{11+(-3)+(-9)} \\text{ GW} \\\\
+                                    &= 9 \\times 10^{-1} \\text{ GW} \\\\
+                                \\end{align*}
+                            `}
+                        </Katex>
+                    </li>
+                    <li>
+                        <u>Convertir 0,000 000 84 nm en km</u>
+                        <Katex displayMode>
+                            {`
+                                \\begin{align*}
+                                    0{,}000~000~84 \\color{red} \\text{ nm} \\color{blue} &= 0{,}000~000~84 \\color{red}\\times 10^{-9} \\text{ m} \\color{blue} \\\\
+                                    &= \\color{green} 0{,}000~000~84 \\color{blue} \\times 10^{-9} \\text{ m} \\\\
+                                    &= \\color{green} 8{,}4 \\times 10^{-7} \\color{blue} \\times 10^{-9} \\color{red} \\text{ m} \\color{blue} \\\\
+                                    &= 8{,}4 \\times 10^{-7} \\color{blue} \\times 10^{-9} \\color{red} \\times 10^{-3} \\text{ km} \\color{blue} \\\\
+                                    &= 8{,}4 \\times 10^{-7+(-9)+(-3)} \\text{ km} \\\\
+                                    &= 8{,}4 \\times 10^{-19} \\text{ km} \\\\
+                                \\end{align*}
+                            `}
+                        </Katex>
+                    </li>
+                </ul>
+            </Exemples>
         </SousPartie>
     </Partie>
+    <Partie numero={2} titre="Puissances à base quelconque">
+        <Definition>
+            Soit <L>a</L> un nombre réel non nul et <L>n</L> un nombre entier relatif.<br>
+            <Katex displayMode>
+                {`
+                    a^n = \\underbrace{a \\times a \\times \\cdots \\times a}_{n \\text{ facteurs}}
+                `}
+            </Katex>
+            <l>a</l> est la <i>base</i> de la puissance et <L>n</L> est son <i>exposant</i>.
+        </Definition>
+        <Remarque>
+            Pour n'importe quelle base <Katex>a</Katex>, on a <Katex>a^0 = 1</Katex>.
+        </Remarque>
+        <Propriete>
+            Pour tout nombre <Katex>x</Katex>, <Katex>x^2</Katex> est positif.
+        </Propriete>
+        <Propriete>
+            Si <Katex>x</Katex> est un nombre négatif, <Katex>x^n</Katex> est 
+            <ul>
+                <li>positif si <L>n</L> est un entier pair</li>
+                <li>négatif si <L>n</L> est un entier impair</li>
+            </ul>
+        </Propriete>
+        <Exemples>
+            <ul>
+                <li>
+                    <Katex>{`(-2)^5 = -32`}</Katex> est négatif car <L>5</L> est impair.
+                </li>
+                <li>
+                    <Katex>{`(-6)^6 = 46656`}</Katex> est positif car <L>6</L> est pair.
+                </li>
+                <li>
+                    <Katex>{`(-3)^{10} = 59049`}</Katex> est positif car <L>10</L> est pair.
+                </li>
+            </ul>
+        </Exemples>
+    </Partie>
 </Chapitre>
+
+<style>
+    #SI_prefixes {
+        border-collapse: collapse;
+        width: 100%;
+        text-align: center;
+    }
+
+    #SI_prefixes td {
+        border: 1px solid #999999;
+        padding: 8px;
+    }
+
+    #SI_prefixes tr:nth-child(even){
+        background-color: #dddddd;
+    }
+
+    #exemples_convertion {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #exemples_convertion li::marker {
+        content: "➜ ";
+    }
+</style>
