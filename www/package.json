@@ -34,6 +34,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@threlte/core": "^7.0.12",
+		"@threlte/extras": "^8.1.0",
 		"@types/mathjax": "^0.0.37",
 		"decimal.js": "^10.4.3",
 		"execa": "^8.0.1",
@@ -41,6 +43,8 @@
 		"katex": "^0.16.8",
 		"svelte-katex": "^0.1.2",
 		"svelte-preprocess": "^5.0.4",
+		"svelte-tweakpane-ui": "^1.1.4",
+		"three": "^0.160.0",
 		"vite-plugin-wasm": "^3.3.0"
 	}
 }

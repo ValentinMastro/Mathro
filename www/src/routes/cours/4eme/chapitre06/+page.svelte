@@ -236,15 +236,15 @@
             <Exemples>
                 <ul id="exemples_convertion">
                     <li>
-                        <u>Convertir 30 km en m :</u>
+                        <u title="Distance entre Meaux et Sucy-en-Brie à vol d'oiseau">Convertir 33,51 km en m :</u>
                         <Katex displayMode>
                             {`
                                 \\begin{align*}
-                                    30 \\color{red} \\text{ km} \\color{blue} &= 30 \\color{red}\\times 10^3 \\text{ m} \\color{blue} \\\\
-                                    &= \\color{green} 30 \\color{blue} \\times 10^3 \\text{ m} \\\\
-                                    &= \\color{green} 3 \\times 10^1 \\color{blue} \\times 10^3 \\text{ m} \\\\
-                                    &= 3 \\times 10^{1+3} \\text{ m} \\\\
-                                    &= 3 \\times 10^4 \\text{ m} \\\\
+                                    33,51 \\color{red} \\text{ km} \\color{blue} &= 33,51 \\color{red}\\times 10^3 \\text{ m} \\color{blue} \\\\
+                                    &= \\color{green} 33,51 \\color{blue} \\times 10^3 \\text{ m} \\\\
+                                    &= \\color{green} 3,351 \\times 10^1 \\color{blue} \\times 10^3 \\text{ m} \\\\
+                                    &= 3,351 \\times 10^{1+3} \\text{ m} \\\\
+                                    &= 3,351 \\times 10^4 \\text{ m} \\\\
                                 \\end{align*}
                             `}
                         </Katex>

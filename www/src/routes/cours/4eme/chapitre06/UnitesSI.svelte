@@ -1,9 +1,56 @@
 <script lang="ts">
-    import Katex from 'svelte-katex'
-
     let couleurs: string[] = ["#c9323b", "#4a2874", "#a43f85", "#1c5d95", "#68a23c", "#f5a02b", "#ec6c3b"];
     let unites: string[] = ["kg", "cd", "mol", "K", "A", "s", "m"];
-    let constantes: string[] = ["h", "", "", "k", "e", "Δν", "c"];
+    let constantes: string[] = [
+        "h", 
+        "K<tspan font-size='30' dx='-5' dy='20'>cd</tspan>", 
+        "N<tspan font-size='30' dx='-10' dy='20'>A</tspan>", 
+        "k", 
+        "e", 
+        "Δν", 
+        "c"
+    ];
+    let lien_constantes: string[] = [
+        "https://fr.wikipedia.org/wiki/Constante_de_Planck",
+        "https://fr.wikipedia.org/wiki/Candela",
+        "https://fr.wikipedia.org/wiki/Nombre_d%27Avogadro",
+        "https://fr.wikipedia.org/wiki/Constante_de_Boltzmann",
+        "https://fr.wikipedia.org/wiki/Charge_%C3%A9l%C3%A9mentaire",
+        "https://fr.wikipedia.org/wiki/Seconde_(temps)",
+        "https://fr.wikipedia.org/wiki/Vitesse_de_la_lumi%C3%A8re"
+    ];
+
+    function surbrillance_dans_le_tableau(e: MouseEvent) {
+        let svg = document.getElementById("svg_SI") as SVGSVGElement & HTMLElement;
+        if (!svg) return;
+
+        // Récupérer les coordonnées du pointeur dans le fichier svg
+        var pt = svg.createSVGPoint();
+        pt.x = e.clientX;
+        pt.y = e.clientY;
+        var point = pt.matrixTransform(svg.getScreenCTM()!.inverse());
+
+        // Calculer l'angle entre le point et le centre
+        var angle = Math.atan2(point.y, point.x)
+        var degres = angle*180/Math.PI;
+        if (degres < -120) degres += 360;
+
+        // zone 0 -> 60
+        // zone 1 -> 60 + (360/7)
+        // etc.
+        var zone = Math.floor((degres + 120) / (360/7));
+        
+        // Mettre en évidence la zone
+        var tableau = document.getElementById("SI_unites");
+        if (!tableau) return;
+        var lignes = tableau.getElementsByTagName("tr");
+        for (var i = 1; i < lignes.length; i++) {
+            lignes[i].style.backgroundColor = "white";
+            lignes[i].style.color = "black";
+        }
+        lignes[zone+1].style.backgroundColor = couleurs[(7-zone)%7];
+        lignes[zone+1].style.color = "white";
+    }
 </script>
 
 <div class="flex">
@@ -15,14 +62,14 @@
             <th>Symbole de l'unité</th>
         </tr>
         <tr>
-            <td>Longueur</td>
-            <td>Le mètre</td>
-            <td>m</td>
-        </tr>
-        <tr>
             <td>Masse</td>
             <td>Le kilogramme</td>
             <td>kg</td>
+        </tr>
+        <tr>
+            <td>Longueur</td>
+            <td>Le mètre</td>
+            <td>m</td>
         </tr>
         <tr>
             <td>Temps</td>
@@ -50,7 +97,12 @@
             <td>cd</td>
         </tr>
     </table>
-    <svg viewBox="-500 -500 1000 1000">
+    <svg viewBox="-500 -500 1000 1000" 
+        id="svg_SI"
+        role="none"
+        on:mouseover={surbrillance_dans_le_tableau}
+        on:focus={() => {}}
+    >
         <defs>
             <style>
                 #petit_secteur {
@@ -69,6 +121,9 @@
                     font-size: 60px;
                     font-style: italic;
                     fill: black;
+                }
+                a:hover {
+                    text-decoration: none;
                 }
             </style>
             <g id="secteur">
@@ -104,22 +159,17 @@
                 Z"></path>
             </g>
         </defs>
-        <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" font-size="150" fill="black">SI</text>
+        <text x="0" y="10" text-anchor="middle" dominant-baseline="middle" font-size="150" fill="black">SI</text>
 
         {#each couleurs as couleur, i}
             <use href="#secteur" transform="rotate({180 - i*51})" fill={couleur} />
             <text x="0" y="-275" class="unites" style="rotate: {0 - i*51}deg;" >{unites[i]}</text>
-            <text x="0" y="-157.5" class="constantes" style="rotate: {0 - i*51}deg;" >{constantes[i]}</text>
+            <a href={lien_constantes[i]} target="_blank">
+                <text x="0" y="-157.5" class="constantes" style="rotate: {0 - i*51}deg;" >
+                    {@html constantes[i]}
+                </text>
+            </a>
         {/each}
-
-        <text x="0" y="-157.5" class="constantes" style="rotate: {0 - 1*51}deg;" >
-            K
-            <tspan font-size="30" dx="-20" dy="20">cd</tspan>
-        </text>
-        <text x="0" y="-157.5" class="constantes" style="rotate: {0 - 2*51}deg;" >
-            N
-            <tspan font-size="30" dx="-20" dy="20">A</tspan>
-        </text>
     </svg>
 </div>
 
@@ -140,6 +190,11 @@
         padding: 5px;
         width: fit-content;
     }
+
+    #SI_unites tr td:nth-child(3) {
+        text-align: center;
+    }
+
     .flex {
         display: flex;
         justify-content: center;
