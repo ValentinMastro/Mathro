@@ -1,14 +1,10 @@
 <script>
-	import Chapitre from "$lib/chapitrage/Chapitre.svelte";
-	import Partie from "$lib/chapitrage/Partie.svelte";
-	import Paragraphe from "$lib/chapitrage/sections/Paragraphe.svelte";
-    import Exemples from "$lib/chapitrage/sections/Exemples.svelte";
-	import SousPartie from "$lib/chapitrage/SousPartie.svelte";
-	import ZoneExerciceVirgule from "./ZoneExerciceVirgule.svelte";
-	import ZoneExerciceConversion from "./ZoneExerciceConversion.svelte";
-	import Definition from "$lib/chapitrage/sections/Definition.svelte";
-	import ZoneExerciceMultiplicationDecimale from "./ZoneExerciceMultiplicationDecimale.svelte";
+    import { Chapitre, Partie, SousPartie } from "$lib/chapitrage/all_chapitrages";
+    import { Definition, Exemples, Paragraphe } from "$lib/chapitrage/sections/all_sections";
 
+    import ZoneExerciceVirgule from "./ZoneExerciceVirgule.svelte";
+	import ZoneExerciceConversion from "./ZoneExerciceConversion.svelte";
+	import ZoneExerciceMultiplicationDecimale from "./ZoneExerciceMultiplicationDecimale.svelte";
 </script>
 <Chapitre numero={7} titre="Multiplication">
     <Partie numero={1} titre="Multiplier et diviser par 1, 10, 100, 1 000, etc.">

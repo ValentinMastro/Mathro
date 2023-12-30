@@ -1,16 +1,7 @@
 <script lang="ts">
-	import Katex from "svelte-katex";
-    
-    import Chapitre from "$lib/chapitrage/Chapitre.svelte";
-	import Partie from "$lib/chapitrage/Partie.svelte";
-	import Definition from "$lib/chapitrage/sections/Definition.svelte";
-	import Notation from "$lib/chapitrage/sections/Notation.svelte";
-	import Schema from "$lib/chapitrage/sections/Schema.svelte";
-    import Formule from "$lib/chapitrage/sections/Formule.svelte";
-    import Paragraphe from "$lib/chapitrage/sections/Paragraphe.svelte";
-	import Exemples from "$lib/chapitrage/sections/Exemples.svelte";
-	import Remarque from "$lib/chapitrage/sections/Remarque.svelte";
-	import Propriete from "$lib/chapitrage/sections/Propriete.svelte";
+    import { Chapitre, Partie } from "$lib/chapitrage/all_chapitrages";
+    import { Definition, Exemples, Remarque, Schema, Notation, Formule, Propriete, Paragraphe } from "$lib/chapitrage/sections/all_sections";
+    import Katex from "svelte-katex";
 
     var t: number = 200; //entre -500 et 500
     var distance: number;

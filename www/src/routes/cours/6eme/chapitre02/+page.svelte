@@ -1,11 +1,7 @@
 <script lang="ts">
-    import Chapitre from "$lib/chapitrage/Chapitre.svelte";
-	import Partie from "$lib/chapitrage/Partie.svelte";
-	import Definition from "$lib/chapitrage/sections/Definition.svelte";
-	import Exemples from "$lib/chapitrage/sections/Exemples.svelte";
-	import Notation from "$lib/chapitrage/sections/Notation.svelte";
-	import Schema from "$lib/chapitrage/sections/Schema.svelte";
-	import Katex from "svelte-katex";
+    import { Chapitre, Partie } from "$lib/chapitrage/all_chapitrages";
+    import { Definition, Exemples, Notation, Schema } from "$lib/chapitrage/sections/all_sections";
+    import Katex from "svelte-katex";
 </script>
 
 <Chapitre numero={2} titre="Repérage et comparaison">

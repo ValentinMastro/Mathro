@@ -1,10 +1,8 @@
 <script>
-	import Chapitre from "$lib/chapitrage/Chapitre.svelte";
-    import Partie from "$lib/chapitrage/Partie.svelte";
-	import SousPartie from "$lib/chapitrage/SousPartie.svelte";
-	import Definition from "$lib/chapitrage/sections/Definition.svelte";
-	import Exemples from "$lib/chapitrage/sections/Exemples.svelte";
+    import { Chapitre, Partie, SousPartie } from "$lib/chapitrage/all_chapitrages";
+    import { Definition, Exemples } from "$lib/chapitrage/sections/all_sections";
 </script>
+
 <Chapitre numero={3} titre="Addition et soustraction">
     <Partie numero={1} titre="Addition">
         <Definition>

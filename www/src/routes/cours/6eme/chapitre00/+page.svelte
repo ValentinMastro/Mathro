@@ -1,14 +1,7 @@
 <script lang="ts">
+    import { Chapitre, Partie, SousPartie } from "$lib/chapitrage/all_chapitrages";
+    import { Definition, Propriete, Paragraphe, Exemples } from "$lib/chapitrage/sections/all_sections";
     import Katex from "svelte-katex";
-
-    import Chapitre from "$lib/chapitrage/Chapitre.svelte";
-    import Partie from "$lib/chapitrage/Partie.svelte";
-    import SousPartie from "$lib/chapitrage/SousPartie.svelte";
-    import Definition from "$lib/chapitrage/sections/Definition.svelte";
-    import Schema from "$lib/chapitrage/sections/Schema.svelte";
-    import Propriete from "$lib/chapitrage/sections/Propriete.svelte";
-    import Paragraphe from "$lib/chapitrage/sections/Paragraphe.svelte";
-    import Exemples from "$lib/chapitrage/sections/Exemples.svelte"
 	import AnimationComparaison from "./AnimationComparaison.svelte";
 </script>
 
@@ -21,53 +14,6 @@
         <Paragraphe couleur="red" nom="Convention">
             Modifier l'ordre des chiffres change la valeur du nombre.
         </Paragraphe>
-        <Schema fonctionAnimation={(ctx) => {
-            ctx.font = "50px serif"
-
-            // @ts-ignore
-            function chiffre(digit, x1, y1, x2, y2, t) {
-                ctx.fillText(digit, x1*(1-t) + x2*t, y1*(1-t) + y2*t)
-            }
-
-            var dt = 1/60   // durée/60
-            var t = dt
-            var sens = true
-            var scenario = 0
-            var valeur = ""
-
-            async function update() {
-                if (t >= 1) {
-                    sens = false
-                    ctx.fillText(valeur, 0, 60)
-                    await new Promise(r => setTimeout(r, 2000));
-                } else if (t <= 0) {
-                    sens = true
-                    scenario = (scenario + 1) % 3
-                }
-                t += (sens ? dt : -dt)
-
-                ctx.clearRect(0, 0, 1000, 300)
-                if (scenario == 0) {
-                    chiffre("1", 30, 40, 145, 120, t)
-                    chiffre("5", 130, 40, 170, 120, t)
-                    chiffre("8", 230, 40, 195, 120, t)
-                    valeur = "cent cinquante-huit"
-                } else if (scenario == 1) {
-                    chiffre("1", 30, 40, 170, 120, t)
-                    chiffre("5", 130, 40, 145, 120, t)
-                    chiffre("8", 230, 40, 195, 120, t)
-                    valeur = "cinq cent dix-huit"
-                } else if (scenario == 2) {
-                    chiffre("1", 30, 40, 195, 120, t)
-                    chiffre("5", 130, 40, 170, 120, t)
-                    chiffre("8", 230, 40, 145, 120, t)
-                    valeur = "huit cent cinquante-et-un"
-                }
-
-                requestAnimationFrame(update)
-            }
-            update()
-        }} />
         <Exemples>
             Avec les chiffres 1, 5 et 8, il est possible de former les nombres : 
             <ul>

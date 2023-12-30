@@ -1,13 +1,8 @@
 <script lang="ts">
-    import Chapitre from "$lib/chapitrage/Chapitre.svelte";
-    import Partie from "$lib/chapitrage/Partie.svelte";
-    import SousPartie from "$lib/chapitrage/SousPartie.svelte";
-    import Definition from "$lib/chapitrage/sections/Definition.svelte";
-    import Exemples from "$lib/chapitrage/sections/Exemples.svelte";
-    import Propriete from "$lib/chapitrage/sections/Propriete.svelte";
-    import Paragraphe from "$lib/chapitrage/sections/Paragraphe.svelte";
+    import { Chapitre, Partie, SousPartie } from "$lib/chapitrage/all_chapitrages";
+    import { Definition, Exemples, Propriete, Paragraphe } from "$lib/chapitrage/sections/all_sections";
 
-    import Katex from "svelte-katex";
+    import { Katex } from "svelte-katex";
 </script>
 
 <Chapitre numero={12} titre="Proportionnalité">

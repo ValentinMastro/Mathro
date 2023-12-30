@@ -1,13 +1,7 @@
 <script lang="ts">
-	import Chapitre from "$lib/chapitrage/Chapitre.svelte";
-	import Partie from "$lib/chapitrage/Partie.svelte";
-	import Exemples from "$lib/chapitrage/sections/Exemples.svelte";
-	import TheoremeDefinition from "$lib/chapitrage/sections/TheoremeDefinition.svelte";
-    import Definition from "$lib/chapitrage/sections/Definition.svelte";
-	import Paragraphe from "$lib/chapitrage/sections/Paragraphe.svelte";
-	import Notation from "$lib/chapitrage/sections/Notation.svelte";
-	import Remarque from "$lib/chapitrage/sections/Remarque.svelte";
-
+    import { Chapitre, Partie } from "$lib/chapitrage/all_chapitrages";
+    import { Definition, Exemples, Paragraphe, Notation, Remarque } from "$lib/chapitrage/sections/all_sections";
+    import TheoremeDefinition from "$lib/chapitrage/sections/TheoremeDefinition.svelte";
 </script>
 
 <Chapitre numero={9} titre="Divisions">
