@@ -1,14 +1,6 @@
 <script lang="ts">
-    import Chapitre from "$lib/chapitrage/Chapitre.svelte";
-	import Partie from "$lib/chapitrage/Partie.svelte";
-	import SousPartie from "$lib/chapitrage/SousPartie.svelte";
-	import SousSousPartie from "$lib/chapitrage/SousSousPartie.svelte";
-
-    import Definition from "$lib/chapitrage/sections/Definition.svelte";
-	import Paragraphe from "$lib/chapitrage/sections/Paragraphe.svelte";
-    import Formule from "$lib/chapitrage/sections/Formule.svelte";
-    import Schema from "$lib/chapitrage/sections/Schema.svelte";
-
+    import { Chapitre, Partie, SousPartie, SousSousPartie } from "$lib/chapitrage/all_chapitrages";
+    import { Definition, Paragraphe, Formule, Schema } from "$lib/chapitrage/sections/all_sections";
     import Katex from "svelte-katex"
     import AnimationCube from "./AnimationCube.svelte";
 </script>

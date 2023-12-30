@@ -1,11 +1,7 @@
 <script lang="ts">
-	import Chapitre from "$lib/chapitrage/Chapitre.svelte";
-    import Partie from "$lib/chapitrage/Partie.svelte";
-
-	import Definition from "$lib/chapitrage/sections/Definition.svelte";
-    import Schema from "$lib/chapitrage/sections/Schema.svelte";
-    import Remarque from "$lib/chapitrage/sections/Remarque.svelte";
-	import AnimationCosinus from "./AnimationCosinus.svelte";
+    import { Chapitre, Partie } from "$lib/chapitrage/all_chapitrages";
+    import { Definition, Schema, Remarque } from "$lib/chapitrage/sections/all_sections";
+    import AnimationCosinus from "./AnimationCosinus.svelte";
 </script>
 
 <Chapitre numero={8} titre="Cosinus">

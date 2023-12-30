@@ -1,15 +1,8 @@
 <script lang="ts">
+    import { Chapitre, Partie, SousPartie } from "$lib/chapitrage/all_chapitrages";
+    import { Definition, Exemples, Remarque, Propriete } from "$lib/chapitrage/sections/all_sections";
     import Katex from "svelte-katex";
-
-    import Chapitre from "$lib/chapitrage/Chapitre.svelte";
-    import Partie from "$lib/chapitrage/Partie.svelte";
-    import SousPartie from "$lib/chapitrage/SousPartie.svelte";
-    import Definition from "$lib/chapitrage/sections/Definition.svelte";
-    import Exemple from "$lib/chapitrage/sections/Exemple.svelte";
-    import Remarque from "$lib/chapitrage/sections/Remarque.svelte";
     import Animation from "$lib/chapitrage/sections/Animation.svelte";
-    import Propriete from "$lib/chapitrage/sections/Propriete.svelte";
-    import Exemples from "$lib/chapitrage/sections/Exemples.svelte"
 </script>
 
 <Chapitre numero={0} titre={"Opérations"}>

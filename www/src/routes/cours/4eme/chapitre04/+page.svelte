@@ -1,12 +1,7 @@
 <script>
-	import Chapitre from "$lib/chapitrage/Chapitre.svelte";
-	import Partie from "$lib/chapitrage/Partie.svelte";
-	import SousPartie from "$lib/chapitrage/SousPartie.svelte";
-	import Definition from "$lib/chapitrage/sections/Definition.svelte";
-	import Exemples from "$lib/chapitrage/sections/Exemples.svelte";
-	import Paragraphe from "$lib/chapitrage/sections/Paragraphe.svelte";
+    import { Chapitre, Partie, SousPartie } from "$lib/chapitrage/all_chapitrages";
+    import { Definition, Exemples, Paragraphe } from "$lib/chapitrage/sections/all_sections";
 	import Katex from "svelte-katex";
-
 </script>
 
 
