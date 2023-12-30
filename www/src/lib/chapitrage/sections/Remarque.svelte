@@ -1,14 +1,7 @@
 <script lang="ts">
-
+    import Paragraphe from "./Paragraphe.svelte";
 </script>
 
-<div>
-    <u>Remarque :</u><br />
+<Paragraphe couleur="black" nom="Remarque">
     <slot />
-</div>
-
-<style>
-    div {
-        color: black;
-    }
-</style>
+</Paragraphe>

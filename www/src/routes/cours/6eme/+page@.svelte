@@ -157,23 +157,23 @@
     </MenuChapitre>
     <MenuChapitre   index={14}
                     titre="Quadrilatères"
-                    url="cours/6eme/chapitre14"
+                    url="/cours/6eme/chapitre14"
                     cats={["Espace et géométrie"]} >
     </MenuChapitre>
     <MenuChapitre   index={15}
                     titre="Vitesse et grandeurs composées"
-                    url="cours/6eme/chapitre15"
+                    url="/cours/6eme/chapitre15"
                     cats={["Grandeurs et mesures", "Nombres et calculs"]}
                     >
     </MenuChapitre>
     <MenuChapitre   index={16}
                     titre="Périmètres"
-                    url="cours/6eme/chapitre16"
+                    url="/cours/6eme/chapitre16"
                     cats={["Espace et géométrie", "Grandeurs et mesures"]} >
     </MenuChapitre>
     <MenuChapitre   index={17}
                     titre="Tableaux et diagrammes"
-                    url="cours/6eme/chapitre17"
+                    url="/cours/6eme/chapitre17"
                     cats={["Organisation et gestion de données"]} >
     </MenuChapitre>
     <MenuChapitre   index={18}
@@ -183,17 +183,17 @@
     </MenuChapitre>
     <MenuChapitre   index={19}
                     titre="Échelles"
-                    url="cours/6eme/chapitre19"
+                    url="/cours/6eme/chapitre19"
                     cats={["Grandeurs et mesures", "Nombres et calculs"]} >
     </MenuChapitre>
     <MenuChapitre   index={20}
                     titre="Solides et volumes"
-                    url="cours/6eme/chapitre20"
+                    url="/cours/6eme/chapitre20"
                     cats={["Grandeurs et mesures", "Espace et géométrie"]} >
     </MenuChapitre>
     <MenuChapitre   index={21}
                     titre="Programmation"
-                    url="cours/6eme/chapitre21"
+                    url="/cours/6eme/chapitre21"
                     cats={["Algorithmique et programmation"]}
                     img="/for_scratch/ScratchCat3.0.svg" >
     </MenuChapitre>

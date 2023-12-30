@@ -1,14 +1,8 @@
 <script lang="ts">
-
+    import Paragraphe from "./Paragraphe.svelte";
+    export let singulier: boolean = false;
 </script>
 
-<div>
-    <u>Exemples :</u><br />
+<Paragraphe couleur="blue" nom="{singulier ? "Exemple" : "Exemples"}">
     <slot />
-</div>
-
-<style>
-    div {
-        color: blue;
-    }
-</style>
+</Paragraphe>`;

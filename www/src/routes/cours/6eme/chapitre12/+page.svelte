@@ -385,6 +385,15 @@
                 <li>100 % = <Katex>{`\\frac{100}{100} = 1`}</Katex></li>
             </ul>
         </Exemples>
+        <Propriete>
+            Pour calculer un pourcentage d'une valeur, on <i>multiple</i> cette valeur par le pourcentage.
+        </Propriete>
+        <Exemples>
+            <ul>
+                <li style="padding-bottom: 1ex;">Calculer 26 % de 80 € : <Katex>{`\\frac{26}{100} \\times 80 = 26 \\times 80 \\div 100 = 20,80~€`}</Katex></li>
+                <li>Calculer 73 % de 80 € : <Katex>{`\\frac{73}{100} \\times 80 = 73 \\times 80 \\div 100 = 58,40~€`}</Katex></li>
+            </ul>
+        </Exemples>
     </Partie>
 </Chapitre>
 

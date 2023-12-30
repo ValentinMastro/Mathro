@@ -1,14 +1,8 @@
 <script lang="ts">
-    export let titre: string
+    export let titre: string;
+    import Paragraphe from "./Paragraphe.svelte";
 </script>
 
-<div>
-    <u>{titre} :</u><br />
+<Paragraphe couleur="red" nom={titre} >
     <slot />
-</div>
-
-<style>
-    div {
-        color: red;
-    }
-</style>
+</Paragraphe>

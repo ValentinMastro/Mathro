@@ -1,10 +1,6 @@
 <script lang="ts">
-	import Chapitre from "$lib/chapitrage/Chapitre.svelte";
-	import Partie from "$lib/chapitrage/Partie.svelte";
-    import Definition from "$lib/chapitrage/sections/Definition.svelte";
-    import Exemples from "$lib/chapitrage/sections/Exemples.svelte";
-	import Paragraphe from "$lib/chapitrage/sections/Paragraphe.svelte";
-	import Remarque from "$lib/chapitrage/sections/Remarque.svelte";
+    import { Chapitre, Partie } from "$lib/chapitrage/all_chapitrages";
+    import { Definition, Exemples, Remarque, Paragraphe } from "$lib/chapitrage/sections/all_sections";
 </script>
 
 <Chapitre numero={11} titre="Dates, horaires et durées">

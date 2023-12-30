@@ -1,10 +1,7 @@
-<div>
-    <u>Définition :</u><br />
-    <slot />
-</div>
+<script lang="ts">
+    import Paragraphe from "./Paragraphe.svelte";
+</script>
 
-<style>
-    div {
-        color: green;
-    }
-</style>
+<Paragraphe couleur="green" nom="Définition">
+    <slot />
+</Paragraphe>
