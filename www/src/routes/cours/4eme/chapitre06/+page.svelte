@@ -14,7 +14,7 @@
                 <Katex>10^n</Katex> (se lit « 10 puissance <L>n</L> ») est le produit de <L>n</L> facteurs égaux à 10.
             </Definition>
             <Exemples>
-                <ul  style="list-style: none; columns: 2;">
+                <ul>
                     <li><Katex>10^9 = 10 \times 10 \times 10 \times 10 \times 10 \times 10 \times 10 \times 10 \times 10 = 1~000~000~000</Katex></li>
                     <li><Katex>10^4 = 10 \times 10 \times 10 \times 10 = 10~000</Katex></li>
                     <li><Katex>10^5 = 10 \times 10 \times 10 \times 10 \times 10 = 100~000</Katex></li>
@@ -31,7 +31,7 @@
                 </ul>
             </Paragraphe>
             <Exemples>
-                <ul style="list-style: none; columns: 3;">
+                <ul class="margin_between_items" style="columns: 3;">
                     <li><Katex>{`10^{-2} = \\dfrac{1}{10^2} = \\dfrac{1}{100} = 0{,}01`}</Katex></li>
                     <li><Katex>{`10^2 \\times 10^3 = 10^{2+3} = 10^5 = 100~000`}</Katex></li>
                     <li><Katex>{`10^{3} \\times 10^{4} = 10^{3+4} = 10^7`}</Katex></li>
@@ -53,7 +53,7 @@
                 Multiplier par <Katex>{"10^{-n}"}</Katex> revient à diviser par <Katex>10^n</Katex>.
             </Remarque>
             <Exemples>
-                <ul style="list-style: square; columns: 4;">
+                <ul class="margin_between_items" style="list-style: square; columns: 3;">
                     <li>
                         <Katex>{`
                             1{,}234 \\times 10^2 = 123{,}4 
@@ -379,5 +379,9 @@
 
     #exemples_convertion li::marker {
         content: "➜ ";
+    }
+
+    .margin_between_items li + li {
+        margin-top: 1em;
     }
 </style>

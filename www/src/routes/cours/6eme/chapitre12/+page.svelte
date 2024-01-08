@@ -2,7 +2,7 @@
     import { Chapitre, Partie, SousPartie } from "$lib/chapitrage/all_chapitrages";
     import { Definition, Exemples, Propriete, Paragraphe } from "$lib/chapitrage/sections/all_sections";
 
-    import { Katex } from "svelte-katex";
+    import Katex from "svelte-katex";
 </script>
 
 <Chapitre numero={12} titre="Proportionnalité">
