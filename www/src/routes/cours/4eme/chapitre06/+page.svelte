@@ -242,7 +242,7 @@
                         </Katex>
                     </li>
                     <li>
-                        <u>Convertir 50 mK en K :</u>
+                        <u title="Température très basse, proche du zéro absolu">Convertir 50 mK en K :</u>
                         <Katex displayMode>
                             {`
                                 \\begin{align*}
@@ -256,7 +256,7 @@
                         </Katex>
                     </li>
                     <li>
-                        <u>Convertir 330 m en hm</u>
+                        <u title="hauteur de la Tour Eiffel">Convertir 330 m en hm</u>
                         <Katex displayMode>
                             {`
                                 \\begin{align*}
@@ -270,7 +270,7 @@
                         </Katex>
                     </li>
                     <li>
-                        <u>Convertir 101 300 Pa en hPa</u>
+                        <u title="Pression atmosphérique">Convertir 101 300 Pa en hPa</u>
                         <Katex displayMode>
                             {`
                                 \\begin{align*}
@@ -285,7 +285,7 @@
                         </Katex>
                     </li>
                     <li>
-                        <u>Convertir 9 &times; 10<sup>11</sup> mW en GW</u>
+                        <u title="Puissance électrique d'un réacteur nucléaire">Convertir 9 &times; 10<sup>11</sup> mW en GW</u>
                         <Katex displayMode>
                             {`
                                 \\begin{align*}
@@ -299,7 +299,7 @@
                         </Katex>
                     </li>
                     <li>
-                        <u>Convertir 0,000 000 84 nm en km</u>
+                        <u title="rayon d'un proton">Convertir 0,000 000 84 nm en km</u>
                         <Katex displayMode>
                             {`
                                 \\begin{align*}
