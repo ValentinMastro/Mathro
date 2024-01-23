@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Chapitre, Partie } from "$lib/chapitrage/all_chapitrages";
+    import { Chapitre, Partie, SousPartie } from "$lib/chapitrage/all_chapitrages";
     import { Definition, Exemples, Remarque, Paragraphe } from "$lib/chapitrage/sections/all_sections";
 </script>
 
@@ -77,5 +77,18 @@
             Dans le monde anglo-saxon, on peut trouver le format <code>mois/jour/année</code>.<br>
             Ce qui donnerait alors : <i>Thursday, December 21<sup>st</sup>, 2023</i>
         </Remarque>
+        <SousPartie numero="1" titre="Convertir en hh:mm:ss">
+            <Exemples>
+                On veut savoir le nombre d'heures et de minutes dans 500 000 s.
+            </Exemples>
+            <Paragraphe couleur="red" nom="Méthode">
+                On utilise la division euclidienne : 
+                <ul>
+                    <li>par 60, pour convertir les secondes en minutes</li>
+                    <li>par 60, pour convertir les minutes en heures</li>
+                    <li>par 24, pour convertir les heures en jours</li>
+                </ul>
+            </Paragraphe>
+        </SousPartie>
     </Partie>
 </Chapitre>

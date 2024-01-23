@@ -27,9 +27,9 @@
         </SousPartie>
         <SousPartie numero={2} titre="Tableau de proportionnalité">
             <Exemples>
-                <ul class="liste_sans_puce">
+                <ul class="liste_sans_puce" style="columns: 2;">
                     <li>
-                        <table class="donnees">
+                        <table class="donnees" style="width: 100%;">
                             <tr>
                                 <th>Nombre de pommes</th>
                                 <td>1</td>
@@ -45,7 +45,7 @@
                         </table>
                     </li>
                     <li>
-                        <table class="donnees">
+                        <table class="donnees" style="width: 100%;">
                             <tr>
                                 <th>Durée (h)</th>
                                 <td>1</td>
@@ -69,42 +69,44 @@
                 ils forment une droite passant par l'origine.
             </Propriete>
             <Exemples>
-                <table class="donnees">
-                    <tr>
-                        <th>Nombre de pommes</th>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <th>Prix (€)</th>
-                        <td>0,30</td>
-                        <td>0,60</td>
-                        <td>0,90</td>
-                    </tr>
-                </table>
-                <svg viewBox="0 0 1000 1000" style="width: 30%;">
-                    <!-- Axes -->
-                    <line x1="100" y1="900" x2="900" y2="900" stroke="black" stroke-width="2" />
-                    <line x1="100" y1="900" x2="100" y2="100" stroke="black" stroke-width="2" />
-                    <!-- Graduations -->
-                    {#each [0, 1, 2, 3] as x}
-                        <line x1={100 + x * 200} y1="890" x2={100 + x * 200} y2="910" stroke="black" stroke-width="2" />
-                        <text x={100 + x * 200} y="940" text-anchor="middle" font-size="30px">{x}</text>
-                    {/each}
-                    {#each [0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90] as y}
-                        <line x1="110" y1={900 - y * 800} x2="90" y2={900 - y * 800} stroke="black" stroke-width="2" />
-                        <text x="80" y={900 - y * 800} text-anchor="end" dominant-baseline="middle" font-size="30px">{y.toLocaleString("fr-FR", {minimumFractionDigits: 2})}</text>
-                    {/each}
-                    <!-- Points -->
-                    {#each [0.30, 0.60, 0.90] as y}
-                        <circle cx={100 + (y/0.3) * 200} cy={900 - y * 800} r="10" fill="black" />
-                        <line x1={100 + (y/0.3) * 200} y1="900" x2={100 + (y/0.3) * 200} y2={900 - y * 800} stroke="red" stroke-width="2" stroke-dasharray="2 4" />
-                        <line x1="100" y1={900 - y * 800} x2={100 + (y/0.3) * 200} y2={900 - y * 800} stroke="red" stroke-width="2" stroke-dasharray="2 4" />
-                    {/each}
-                    <!-- Droite passant par tous les points -->
-                    <line x1="100" y1="900" x2="850" y2="0" stroke="blue" stroke-width="2" />
-                </svg>
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+                    <table class="donnees" style="height: fit-content;">
+                        <tr>
+                            <th>Nombre de pommes</th>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <th>Prix (€)</th>
+                            <td>0,30</td>
+                            <td>0,60</td>
+                            <td>0,90</td>
+                        </tr>
+                    </table>
+                    <svg viewBox="0 100 1000 900" style="width: 30%;">
+                        <!-- Axes -->
+                        <line x1="100" y1="900" x2="900" y2="900" stroke="black" stroke-width="2" />
+                        <line x1="100" y1="900" x2="100" y2="100" stroke="black" stroke-width="2" />
+                        <!-- Graduations -->
+                        {#each [0, 1, 2, 3] as x}
+                            <line x1={100 + x * 200} y1="890" x2={100 + x * 200} y2="910" stroke="black" stroke-width="2" />
+                            <text x={100 + x * 200} y="940" text-anchor="middle" font-size="30px">{x}</text>
+                        {/each}
+                        {#each [0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90] as y}
+                            <line x1="110" y1={900 - y * 800} x2="90" y2={900 - y * 800} stroke="black" stroke-width="2" />
+                            <text x="80" y={900 - y * 800} text-anchor="end" dominant-baseline="middle" font-size="30px">{y.toLocaleString("fr-FR", {minimumFractionDigits: 2})}</text>
+                        {/each}
+                        <!-- Points -->
+                        {#each [0.30, 0.60, 0.90] as y}
+                            <circle cx={100 + (y/0.3) * 200} cy={900 - y * 800} r="10" fill="black" />
+                            <line x1={100 + (y/0.3) * 200} y1="900" x2={100 + (y/0.3) * 200} y2={900 - y * 800} stroke="red" stroke-width="2" stroke-dasharray="2 4" />
+                            <line x1="100" y1={900 - y * 800} x2={100 + (y/0.3) * 200} y2={900 - y * 800} stroke="red" stroke-width="2" stroke-dasharray="2 4" />
+                        {/each}
+                        <!-- Droite passant par tous les points -->
+                        <line x1="100" y1="900" x2="850" y2="0" stroke="blue" stroke-width="2" />
+                    </svg>
+                </div>
             </Exemples>
         </SousPartie>
     </Partie>
@@ -114,9 +116,9 @@
             proportionnalité.
         </div>
 
-        <table class="raisins" style="color: black;">
+        <table class="raisins" style="color: black; margin: auto;">
             <tr>
-                <th>Masse de raisins (kg)</th>
+                <th style="width: fit-content;">Masse de raisins (kg)</th>
                 <td>3</td>
                 <td>6</td>
             </tr>
@@ -127,103 +129,105 @@
             </tr>
         </table>
 
-        <SousPartie numero={1} titre="Homogénéité">
-            <Paragraphe couleur="red" nom="Méthode">
-                Multiplier ou diviser toute une colonne par la même valeur.
-            </Paragraphe>
-            <svg viewBox="0 0 1100 300" style="width: 50%;">
-                <defs>
-                    <style>
-                        .text_raisins {
-                            font-size: 28px;
-                            text-anchor: middle;
-                            dominant-baseline: middle;
-                        }
-                        .bold {
-                            font-weight: bold;
-                        }
-                    </style>
-                    <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
-                        <path d="M0,0 L0,6 L9,3 z" fill="red" />
-                    </marker>
-                </defs>
-                <!-- Tableau -->
-                    <!-- Lignes horizontales -->
-                <line x1="100" y1="100" x2="1000" y2="100" stroke="black" stroke-width="2" />
-                <line x1="100" y1="150" x2="1000" y2="150" stroke="black" stroke-width="2" />
-                <line x1="100" y1="200" x2="1000" y2="200" stroke="black" stroke-width="2" />
-                    <!-- Lignes verticales -->
-                <line x1="100" y1="100" x2="100" y2="200" stroke="black" stroke-width="2" />
-                <line x1="400" y1="100" x2="400" y2="200" stroke="black" stroke-width="2" />
-                <line x1="700" y1="100" x2="700" y2="200" stroke="black" stroke-width="2" />
-                <line x1="1000" y1="100" x2="1000" y2="200" stroke="black" stroke-width="2" />
-                <!-- Contenu -->
-                <text x="250" y="130" class="text_raisins bold">Masse de raisins (kg)</text>
-                <text x="250" y="180" class="text_raisins bold">Prix (€)</text>
-                <text x="550" y="130" class="text_raisins">3</text>
-                <text x="850" y="130" class="text_raisins">6</text>
-                <text x="550" y="180" class="text_raisins">7,80</text>
-                <text x="850" y="180" class="text_raisins">?</text>
-                <!-- Flèches -->
-                <path d="M550,80 a 150 30 0 0 1 300 0" stroke="red" stroke-width="2" fill="none" marker-end="url(#arrow)" />
-                <path d="M550,220 a 150 30 0 0 0 300 0" stroke="red" stroke-width="2" fill="none" marker-end="url(#arrow)" />
-                <!-- Légende -->
-                <text x="700" y="70" class="text_raisins" fill="red">× 2</text>
-                <text x="700" y="230" class="text_raisins" fill="red">× 2</text>
-            </svg>
-        </SousPartie>
-        <SousPartie numero={2} titre="Passage à l'unité">
-            <Paragraphe couleur="red" nom="Méthode">
-                Se ramener à une colonne contenant le nombre 1.
-            </Paragraphe>
-            <svg viewBox="0 0 1100 300" style="width: 50%;">
-                <defs>
-                    <style>
-                        .text_raisins {
-                            font-size: 28px;
-                            text-anchor: middle;
-                            dominant-baseline: middle;
-                        }
-                        .bold {
-                            font-weight: bold;
-                        }
-                    </style>
-                    <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
-                        <path d="M0,0 L0,6 L9,3 z" fill="red" />
-                    </marker>
-                </defs>
-                <!-- Tableau -->
-                    <!-- Lignes horizontales -->
-                <line x1="100" y1="100" x2="1000" y2="100" stroke="black" stroke-width="2" />
-                <line x1="100" y1="150" x2="1000" y2="150" stroke="black" stroke-width="2" />
-                <line x1="100" y1="200" x2="1000" y2="200" stroke="black" stroke-width="2" />
-                    <!-- Lignes verticales -->
-                <line x1="100" y1="100" x2="100" y2="200" stroke="black" stroke-width="2" />
-                <line x1="400" y1="100" x2="400" y2="200" stroke="black" stroke-width="2" />
-                <line x1="600" y1="100" x2="600" y2="200" stroke="black" stroke-width="2" />
-                <line x1="800" y1="100" x2="800" y2="200" stroke="black" stroke-width="2" />
-                <line x1="1000" y1="100" x2="1000" y2="200" stroke="black" stroke-width="2" />
-                <!-- Contenu -->
-                <text x="250" y="130" class="text_raisins bold">Masse de raisins (kg)</text>
-                <text x="250" y="180" class="text_raisins bold">Prix (€)</text>
-                <text x="500" y="130" class="text_raisins">3</text>
-                <text x="700" y="130" class="text_raisins">1</text>
-                <text x="500" y="180" class="text_raisins">7,80</text>
-                <text x="700" y="180" class="text_raisins">?</text>
-                <text x="900" y="130" class="text_raisins">6</text>
-                <text x="900" y="180" class="text_raisins">?</text>
-                <!-- Flèches -->
-                <path d="M500,80 a 100 30 0 0 1 150 0" stroke="red" stroke-width="2" fill="none" marker-end="url(#arrow)" />
-                <path d="M500,220 a 100 30 0 0 0 150 0" stroke="red" stroke-width="2" fill="none" marker-end="url(#arrow)" />
-                <path d="M720,80 a 100 30 0 0 1 150 0" stroke="red" stroke-width="2" fill="none" marker-end="url(#arrow)" />
-                <path d="M720,220 a 100 30 0 0 0 150 0" stroke="red" stroke-width="2" fill="none" marker-end="url(#arrow)" />
-                <!-- Légende -->
-                <text x="580" y="50" class="text_raisins" fill="red">÷ 3</text>
-                <text x="580" y="250" class="text_raisins" fill="red">÷ 3</text>
-                <text x="800" y="50" class="text_raisins" fill="red">× 6</text>
-                <text x="800" y="250" class="text_raisins" fill="red">× 6</text>
-            </svg>
-        </SousPartie>
+        <div style="display: flex; flex-direction: row; ">
+            <SousPartie numero={1} titre="Homogénéité">
+                <Paragraphe couleur="red" nom="Méthode">
+                    Multiplier ou diviser toute une colonne par la même valeur.
+                </Paragraphe>
+                <svg viewBox="0 0 1100 300" style="width: 100%;">
+                    <defs>
+                        <style>
+                            .text_raisins {
+                                font-size: 28px;
+                                text-anchor: middle;
+                                dominant-baseline: middle;
+                            }
+                            .bold {
+                                font-weight: bold;
+                            }
+                        </style>
+                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
+                            <path d="M0,0 L0,6 L9,3 z" fill="red" />
+                        </marker>
+                    </defs>
+                    <!-- Tableau -->
+                        <!-- Lignes horizontales -->
+                    <line x1="100" y1="100" x2="1000" y2="100" stroke="black" stroke-width="2" />
+                    <line x1="100" y1="150" x2="1000" y2="150" stroke="black" stroke-width="2" />
+                    <line x1="100" y1="200" x2="1000" y2="200" stroke="black" stroke-width="2" />
+                        <!-- Lignes verticales -->
+                    <line x1="100" y1="100" x2="100" y2="200" stroke="black" stroke-width="2" />
+                    <line x1="400" y1="100" x2="400" y2="200" stroke="black" stroke-width="2" />
+                    <line x1="700" y1="100" x2="700" y2="200" stroke="black" stroke-width="2" />
+                    <line x1="1000" y1="100" x2="1000" y2="200" stroke="black" stroke-width="2" />
+                    <!-- Contenu -->
+                    <text x="250" y="130" class="text_raisins bold">Masse de raisins (kg)</text>
+                    <text x="250" y="180" class="text_raisins bold">Prix (€)</text>
+                    <text x="550" y="130" class="text_raisins">3</text>
+                    <text x="850" y="130" class="text_raisins">6</text>
+                    <text x="550" y="180" class="text_raisins">7,80</text>
+                    <text x="850" y="180" class="text_raisins">?</text>
+                    <!-- Flèches -->
+                    <path d="M550,80 a 150 30 0 0 1 300 0" stroke="red" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+                    <path d="M550,220 a 150 30 0 0 0 300 0" stroke="red" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+                    <!-- Légende -->
+                    <text x="700" y="70" class="text_raisins" fill="red">× 2</text>
+                    <text x="700" y="230" class="text_raisins" fill="red">× 2</text>
+                </svg>
+            </SousPartie>
+            <SousPartie numero={2} titre="Passage à l'unité">
+                <Paragraphe couleur="red" nom="Méthode">
+                    Se ramener à une colonne contenant le nombre 1.
+                </Paragraphe>
+                <svg viewBox="0 0 1100 300" style="width: 100%;">
+                    <defs>
+                        <style>
+                            .text_raisins {
+                                font-size: 28px;
+                                text-anchor: middle;
+                                dominant-baseline: middle;
+                            }
+                            .bold {
+                                font-weight: bold;
+                            }
+                        </style>
+                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
+                            <path d="M0,0 L0,6 L9,3 z" fill="red" />
+                        </marker>
+                    </defs>
+                    <!-- Tableau -->
+                        <!-- Lignes horizontales -->
+                    <line x1="100" y1="100" x2="1000" y2="100" stroke="black" stroke-width="2" />
+                    <line x1="100" y1="150" x2="1000" y2="150" stroke="black" stroke-width="2" />
+                    <line x1="100" y1="200" x2="1000" y2="200" stroke="black" stroke-width="2" />
+                        <!-- Lignes verticales -->
+                    <line x1="100" y1="100" x2="100" y2="200" stroke="black" stroke-width="2" />
+                    <line x1="400" y1="100" x2="400" y2="200" stroke="black" stroke-width="2" />
+                    <line x1="600" y1="100" x2="600" y2="200" stroke="black" stroke-width="2" />
+                    <line x1="800" y1="100" x2="800" y2="200" stroke="black" stroke-width="2" />
+                    <line x1="1000" y1="100" x2="1000" y2="200" stroke="black" stroke-width="2" />
+                    <!-- Contenu -->
+                    <text x="250" y="130" class="text_raisins bold">Masse de raisins (kg)</text>
+                    <text x="250" y="180" class="text_raisins bold">Prix (€)</text>
+                    <text x="500" y="130" class="text_raisins">3</text>
+                    <text x="700" y="130" class="text_raisins">1</text>
+                    <text x="500" y="180" class="text_raisins">7,80</text>
+                    <text x="700" y="180" class="text_raisins">?</text>
+                    <text x="900" y="130" class="text_raisins">6</text>
+                    <text x="900" y="180" class="text_raisins">?</text>
+                    <!-- Flèches -->
+                    <path d="M500,80 a 100 30 0 0 1 150 0" stroke="red" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+                    <path d="M500,220 a 100 30 0 0 0 150 0" stroke="red" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+                    <path d="M720,80 a 100 30 0 0 1 150 0" stroke="red" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+                    <path d="M720,220 a 100 30 0 0 0 150 0" stroke="red" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+                    <!-- Légende -->
+                    <text x="580" y="50" class="text_raisins" fill="red">÷ 3</text>
+                    <text x="580" y="250" class="text_raisins" fill="red">÷ 3</text>
+                    <text x="800" y="50" class="text_raisins" fill="red">× 6</text>
+                    <text x="800" y="250" class="text_raisins" fill="red">× 6</text>
+                </svg>
+            </SousPartie>
+        </div>
         <SousPartie numero={3} titre="Coefficient de proportionnalité">
             <Paragraphe couleur="red" nom="Méthode">
                 Calculer le coefficient de proportionnalité, 
@@ -372,7 +376,7 @@
             Un pourcentage est une fraction dont le dénominateur est 100.
         </Definition>
         <Exemples>
-            <ul style="columns: 5;">
+            <ul class="col5">
                 <li>27 % = <Katex>{`\\frac{27}{100}`}</Katex></li>
                 <li>50 % = <Katex>{`\\frac{50}{100} = \\frac{1}{2}`}</Katex></li>
                 <li>25 % = <Katex>{`\\frac{25}{100} = \\frac{1}{4}`}</Katex></li>
@@ -423,5 +427,15 @@
     }
     .raisins td {
         text-align: center;
+    }
+
+    .col5 {
+        columns: 5;
+    }
+
+    @media print {
+        .col5 {
+            columns: 3;
+        }
     }
 </style>

@@ -5,4 +5,4 @@
 
 <Paragraphe couleur="blue" nom="{singulier ? "Exemple" : "Exemples"}">
     <slot />
-</Paragraphe>`;
+</Paragraphe>

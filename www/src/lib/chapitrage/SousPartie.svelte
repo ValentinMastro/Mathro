@@ -3,8 +3,10 @@
     export let titre: string
 </script>
 
-<h4 class="souspartie">{String.fromCharCode(numero+96)}) {titre}</h4>
-<slot />
+<div style="width: 100%;">
+    <h4 class="souspartie">{String.fromCharCode(numero+96)}) {titre}</h4>
+    <slot />
+</div>
 
 <style>
     h4.souspartie {
