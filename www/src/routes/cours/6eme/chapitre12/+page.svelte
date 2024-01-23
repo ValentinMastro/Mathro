@@ -394,6 +394,11 @@
             </ul>
         </Exemples>
     </Partie>
+    <Partie numero={4} titre="Le nombre π">
+        <Definition>
+            Le nombre π est le coefficient de proportionnalité entre le diamètre d'un cercle et son périmètre.
+        </Definition>
+    </Partie>
 </Chapitre>
 
 <style>
