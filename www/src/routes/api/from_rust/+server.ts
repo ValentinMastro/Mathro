@@ -5,7 +5,7 @@ import {$} from 'execa';
  
 export const POST: RequestHandler = async ({ request }) => {
     const { niveau, id_evaluation } = await request.json();
-    const { stdout } = await $`./evaluation ${niveau} ${id_evaluation}`;
+    const { stdout } = await $`./evaluation ${niveau} ${id_evaluation} json`;
 
     return json(JSON.parse(stdout), {
         headers: {

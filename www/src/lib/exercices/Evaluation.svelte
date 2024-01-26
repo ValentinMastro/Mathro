@@ -5,7 +5,6 @@
 	import BoutonRafraichir from "$lib/BoutonRafraichir.svelte";
 	import Question from "./Question.svelte";
 	import Explication from "./Explication.svelte";
-	import Addition from "$lib/scratch/blocs/operations/Addition.svelte";
 
     export let niveau: number;
     export let numero_evaluation: number;
