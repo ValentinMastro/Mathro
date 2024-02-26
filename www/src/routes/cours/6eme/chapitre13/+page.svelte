@@ -7,7 +7,7 @@
 </script>
 
 <Chapitre numero={13} titre="Les quadrilatères et leur périmètre">
-    <Partie numero={1} titre="Périmètre : le cas général">
+    <Partie numero={1} titre="Concept du périmètre">
         <Definition>
             Le périmètre d'une figure est la longueur de son contour.
         </Definition>
@@ -21,8 +21,19 @@
                 Quadrilatère ayant 4 côtés égaux et 4 angles droits.
             </Definition>
             <Schema>
-                <svg viewBox="0 0 200 200" style="height: 20vw;" >
+                <svg viewBox="30 30 180 150" style="height: 20vw;" >
                     <rect x="50" y="50" width="100" height="100" fill="none" stroke="black" />
+                    <text x="170" y="100" text-anchor="middle" dominant-baseline="middle" font-size="10px" fill="red">4 cm</text>
+                    <!-- Codage des 4 côtés -->
+                    <line x1="100" y1="55" x2="100" y2="45" stroke="red" />
+                    <line x1="100" y1="155" x2="100" y2="145" stroke="red" />
+                    <line x1="55" y1="100" x2="45" y2="100" stroke="red" />
+                    <line x1="155" y1="100" x2="145" y2="100" stroke="red" />
+                    <!-- Codage des 4 angles droits -->
+                    <rect x="50" y="50" width="8" height="8" fill="red" />
+                    <rect x="50" y="142" width="8" height="8" fill="red" />
+                    <rect x="142" y="142" width="8" height="8" fill="red" />
+                    <rect x="142" y="50" width="8" height="8" fill="red" />
                 </svg>
             </Schema>
             <Formule>
@@ -45,8 +56,53 @@
                 Quadrilatère ayant 4 côtés égaux.
             </Definition>
             <Schema>
-                <svg viewBox="0 0 200 200" style="height: 20vw;" >
-                    <polygon points="100,50 150,100 100,150 50,100" fill="none" stroke="black" />
+                <svg viewBox="10 30 160 90" style="height: 20vw;" >
+                    <!-- On va tracer un losange 
+                        - dont deux côtés sont horizontaux et parallèles
+                        - dont les côtés mesurent 4 cm
+                        - dont les angles mesurent 45° et 135°
+
+                        Le but est d'animer le tracer pour que l'élève comprenne comment on trace un losange.
+                    -->
+                    <defs>
+                        <marker id="codage" orient="auto" markerUnits="strokeWidth">
+                            <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" font-size="10px" fill="red">|</text>
+                        </marker>
+                        <style>
+                            .codage {
+                                text-anchor: middle;
+                                dominant-baseline: middle;
+                                font-size: 10px;
+                                fill: red;
+                            }
+                            .codage_vert {
+                                text-anchor: middle;
+                                dominant-baseline: middle;
+                                font-size: 10px;
+                                fill: green;
+                            }
+                        </style>
+                        <path   id="losange"
+                                d="
+                                M 20 50
+                                L 100 50
+                                L {100 + 80/Math.sqrt(2)} {50 + 80/Math.sqrt(2)}
+                                L {20 + 80/Math.sqrt(2)} {50 + 80/Math.sqrt(2)}
+                                Z" />
+                        <mask id="masque_losange" >
+                            <use href="#losange" fill="white" />
+                        </mask>
+                    </defs>
+                    <use href="#losange" fill="none" stroke="black" />
+                    <!-- Codage des 4 longueurs -->
+                    <text x="60" y="40" class="codage">4 cm</text>
+                    <text x="60" y="50" class="codage">|</text>
+                    <text x={100 + 40/Math.sqrt(2)} y={50 + 40/Math.sqrt(2)} class="codage">|</text>
+                    <text x={60 + 80/Math.sqrt(2)} y={50 + 80/Math.sqrt(2)} class="codage">|</text>
+                    <text x={20 + 40/Math.sqrt(2)} y={50 + 40/Math.sqrt(2)} class="codage">|</text>
+                    <!-- Angle de 45° -->
+                    <circle cx="20" cy="50" r="18" fill="green" mask="url(#masque_losange)" />
+                    <text x="45" y="60" class="codage_vert">45°</text>
                 </svg>
             </Schema>
             <Formule>
@@ -69,8 +125,30 @@
                 Quadrilatère ayant 4 angles droits.
             </Definition>
             <Schema>
-                <svg viewBox="0 0 200 200" style="height: 20vw;" >
+                <svg viewBox="15 30 150 90" style="height: 20vw;" >
+                    <defs>
+                        <style>
+                            .codage {
+                                text-anchor: middle;
+                                dominant-baseline: middle;
+                                font-size: 10px;
+                                fill: red;
+                            }
+                        </style>
+                    </defs>
                     <rect x="50" y="50" width="100" height="50" fill="none" stroke="black" />
+                    <text x="100" y="40" class="codage">4 cm</text>
+                    <text x="30" y="75" class="codage">2 cm</text>
+                    <!-- Codage des 4 côtés -->
+                    <text x="100" y="50" class="codage">||</text>
+                    <text x="100" y="100" class="codage">||</text>
+                    <text x="50" y="75" class="codage">--</text>
+                    <text x="150" y="75" class="codage">--</text>
+                    <!-- Codage des 4 angles droits -->
+                    <rect x="50" y="50" width="8" height="8" fill="red" />
+                    <rect x="50" y="92" width="8" height="8" fill="red" />
+                    <rect x="142" y="92" width="8" height="8" fill="red" />
+                    <rect x="142" y="50" width="8" height="8" fill="red" />
                 </svg>
             </Schema>
             <Formule>
@@ -95,7 +173,27 @@
             </Definition>
             <Schema>
                 <svg viewBox="0 0 200 200" style="height: 20vw;" >
-                    <polygon points="50,50 150,50 100,150 50,150" fill="none" stroke="black" />
+                    <defs>
+                        <style>
+                            .codage {
+                                text-anchor: middle;
+                                dominant-baseline: middle;
+                                font-size: 10px;
+                                fill: red;
+                            }
+                        </style>
+                        <path id="trapeze"
+                            d="
+                            M 70 50
+                            L 130 50
+                            L 170 150
+                            L 30 150
+                            Z" />
+                        <mask id="masque_trapeze" >
+                            <use href="#trapeze" fill="white" />
+                        </mask>
+                    </defs>
+                    <use href="#trapeze" fill="none" stroke="black" />
                 </svg>
             </Schema>
             <Formule>
@@ -126,6 +224,16 @@
                     {`P_{\\text{parallélogramme}} = 2 \\times (\\ell_1 + \\ell_2)`}
                 </Katex>
             </Formule>
+        </SousPartie>
+        <SousPartie numero={6} titre="Le cerf-volant">
+            <Definition>
+                Quadrilatère ayant 2 paires de côtés adjacents de même longueur.
+            </Definition>
+            <Schema>
+                <svg viewBox="0 0 200 200" style="height: 20vw;" >
+                    <polygon points="0,100 60,50 200,100 60,150" fill="none" stroke="black" />
+                </svg>
+            </Schema>
         </SousPartie>
     </Partie>
 </Chapitre>
