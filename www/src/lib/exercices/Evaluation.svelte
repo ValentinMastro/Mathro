@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-    import JSZip from "jszip";
+    import init, { rust_evaluation } from "@vmastro/exercices";
 
 	import BoutonRafraichir from "$lib/BoutonRafraichir.svelte";
-	import Question from "./Question.svelte";
-	import Explication from "./Explication.svelte";
+	import Question from "./pour_evaluation/Question.svelte";
+	import Explication from "./pour_evaluation/Explication.svelte";
 
     export let niveau: number;
     export let numero_evaluation: number;
@@ -30,107 +30,27 @@
                     bonne: string,
                     mauvaises: string[]
                 },
-                katex_enonce: boolean,
-                katex_reponses: boolean,
+                "format_enonce": "Texte" | "Latex",
+                "format_reponses": "Texte" | "Latex" | "Nombre" | { "QuantitéAvecUnité": string },
                 explication: string
             }[]
         }[]
     }
 
-    async function generer_evaluation_depuis_executable(niveau: number, id_evaluation: number): Promise<EvaluationInterface> {
-        const REQUETE_API = await fetch('/api/from_rust', {
-            method: 'POST',
-            body: JSON.stringify({niveau, id_evaluation}),
-            headers: {
-                'Content-Type': 'application/json',
-                'Content-Encoding': 'gzip'
-            }
-        });
-        return await REQUETE_API.json();
-    }
-
-    async function recuperer_evaluation_compressee(niveau: number, id_evaluation: number) {
-        const REQUETE_API = await fetch('/api/from_zip', {
-            method: 'POST',
-            body: JSON.stringify({niveau, id_evaluation}),
-            headers: {
-                'Content-Type': 'application/json',
-                'Content-Encoding': 'gzip'
-            }
-        }).then((reponse) => {
-            if (reponse.status == 200) {
-                return reponse;
-            } 
-        })
-
-        if (REQUETE_API == null) {
-            return {evaluations: []}
-        }
-
-        // reponse est un string qui contient le contenu du fichier zip en base64
-        // on souhaite le décompresser pour obtenir le contenu du fichier json qui est à l'intérieur
-        let reponse: string = await REQUETE_API.json();
-        let evaluation: EvaluationInterface = {evaluations: []};
-
-        var zip = new JSZip();
-        zip = await zip.loadAsync(reponse, {base64: true});
-        var fichier = zip.file("data.json");
-
-        if (fichier == null) {
-            console.log("Erreur : fichier introuvable");
-            return evaluation;
-        }
-
-        var decompression = await fichier.async("string");
-        evaluation = JSON.parse(decompression);
-
-        if (evaluation == null) {
-            console.log("Erreur : fichier vide");
-            return evaluation;
-        }
-
-        return evaluation
-    }
-
-    async function get_evaluation(niveau: number = 6, id_evaluation: number = 1) {
-        let evaluation: EvaluationInterface = await recuperer_evaluation_compressee(niveau, id_evaluation);
-
-        if (evaluation.evaluations.length == 0) {
-            evaluation = await generer_evaluation_depuis_executable(niveau, id_evaluation);
-        }
-
-        evaluation.evaluations.forEach((liste_questions, graine: number) => {
-            liste_questions.questions.forEach((question, numero_question: number) => {
-                TABLEAU[graine][numero_question] = [question.enonce, ...reponses_melangees(question.reponse, graine, numero_question), question.explication]
-                if (graine == 0) {
-                    KATEX_ENONCE[numero_question] = question.katex_enonce;
-                    KATEX_REPONSES[numero_question] = question.katex_reponses;
-                }
-            })
-        })
-    }
-
-    function randomIntFromInterval(min: number , max: number) { // min and max included 
-        return Math.floor(Math.random() * (max - min + 1) + min)
-    }
-
-    let index = 0
-    let indexes: number[][] = Array(256).fill(0).map(() => [])
-    function reponses_melangees(rep: {bonne: string, mauvaises: string[]}, graine: number, numero_question: number) {
-        let melange = [rep.bonne, ...rep.mauvaises];
-        index = randomIntFromInterval(0, melange.length - 1);
-        indexes[graine][numero_question] = index;
-        [melange[0], melange[index]] = [melange[index], melange[0]];
-
-        return melange
+    async function generer_evaluation(niveau: number, id_evaluation: number): Promise<EvaluationInterface> {
+        await init();
+        let donnees_evaluation: EvaluationInterface = JSON.parse(rust_evaluation(niveau, id_evaluation));
+        return donnees_evaluation
     }
 
     function changer_graine() {
         graine_selectionnee = (graine_selectionnee+1) % 256
     }
 
+    let DONNEES_EVALUATIONS: EvaluationInterface = {evaluations: []}
+
     onMount(async () => {
-        await get_evaluation(niveau, numero_evaluation);
+        DONNEES_EVALUATIONS = await generer_evaluation(niveau, numero_evaluation);
     });
 </script>
 
@@ -161,12 +81,12 @@
     à toutes les évaluations (entre la n°0 et la n°255).
 -->
 <div class="tout">
-{#each TABLEAU as evaluation, graine_index}
+{#each DONNEES_EVALUATIONS.evaluations as evaluation, graine_index}
 <!-- Seule une seule évaluation (identifiée par sa graine) est affichée -->
 {#if graine_index == graine_selectionnee}
     <table>
         <tr>
-            <th style="width: 120px;">
+            <th style="width: 130px;">
                 Évaluation n°{numero_evaluation}<br>
                 {niveau}ème #{graine_index}
             </th>
@@ -182,21 +102,21 @@
             {/if}
         </tr>
         <!-- evaluation contient toutes les questions (en général 20) -->
-        {#each evaluation as cellules_question, numero_question }
+        {#each evaluation.questions as question, numero_question }
             <Question 
-                    enonce={cellules_question[0]}
-                    katex_enonce={KATEX_ENONCE[numero_question]}
-                    question={cellules_question.slice(1,-1)}
-                    katex_reponses={KATEX_REPONSES[numero_question]}
+                    enonce={question.enonce}
+                    reponses={question.reponse}
+                    type_enonce={{"type": question.format_enonce}}
+                    type_reponses={{"type": question.format_reponses}}
                     
                     numero_question={numero_question}
-                    numero_reponse={indexes[graine_index][numero_question]}
+
                     bind:afficher_reponses
                     bind:afficher_mauvaises_reponses
                     />
             {#if afficher_explications}
                 <Explication 
-                    explication={cellules_question[6]}
+                    explication={question.explication}
                 />
             {/if}
         {/each}

@@ -8,9 +8,8 @@
 	import Paragraphe from "$lib/chapitrage/sections/Paragraphe.svelte";
     import Remarque from "$lib/chapitrage/sections/Remarque.svelte";
 
-    import Katex from "svelte-katex";
+    import { math, display } from 'mathlifier';
 	import DiagrammeCirculaire from "./DiagrammeCirculaire.svelte";
-
 
     let serie_1 = Array(8).fill(0).map(() => Math.floor(Math.random()*6)+1); // 1 à 6
     let serie_2 = Array(5).fill(0).map(() => Math.floor(Math.random()*13)+37); // 37 à 50
@@ -135,7 +134,7 @@
             </Notation>
             <Definition>
                 <i>La moyenne</i> d'une série statistique est la somme de toutes les valeurs divisée par l'effectif total.<br>
-                On la note <Katex>{"\\bar{x}"}</Katex> (<Katex>x</Katex> barre).
+                On la note {@html math("\\bar{x}")} ({@html math("x")} barre).
             </Definition>
             <Exemples>
                 <ul style="columns: 2;">
@@ -147,11 +146,11 @@
                             {/each}
                             &#125;
                         </span><br>
-                        <Katex displayMode>{`
-                            \\bar{x} 
+                        {@html display(`
+                            \\bar{x}
                             = \\frac{${serie_1.join("+")}}{${serie_1.length}} 
                             = ${moyenne_1.toLocaleString("fr-FR", {maximumFractionDigits: 3})}
-                        `}</Katex>
+                        `)}
                     </li>
                     <li>
                         <span style="color: black;">
@@ -161,11 +160,11 @@
                             {/each}
                             &#125;
                         </span><br>
-                        <Katex displayMode>{`
+                        {@html display(`
                             \\bar{x} 
                             = \\frac{${serie_2.join("+")}}{${serie_2.length}} 
                             = ${moyenne_2.toLocaleString("fr-FR", {maximumFractionDigits: 1})}
-                        `}</Katex>
+                        `)}
                     </li>
                 </ul>
             </Exemples>
@@ -182,7 +181,10 @@
                             {serie_1.join(" ; ")}
                             &#125;
                         </span>
-                        &xrarr; L'étendue est <Katex>{Math.max(...serie_1)} - {Math.min(...serie_1)} = {Math.max(...serie_1) - Math.min(...serie_1)}</Katex>.
+                        &xrarr; L'étendue est {@html math(`
+                            ${Math.max(...serie_1)} - ${Math.min(...serie_1)} = 
+                            ${Math.max(...serie_1) - Math.min(...serie_1)})}
+                            `)}.
                     </li>
                     <li>
                         <span style="color: black;">
@@ -190,7 +192,10 @@
                             {serie_2.join(" ; ")}
                             &#125;
                         </span>
-                        &xrarr; L'étendue est <Katex>{Math.max(...serie_2)} - {Math.min(...serie_2)} = {Math.max(...serie_2) - Math.min(...serie_2)}</Katex>.
+                        &xrarr; L'étendue est {@html math(`
+                            ${Math.max(...serie_2)} - ${Math.min(...serie_2)} = 
+                            ${Math.max(...serie_2) - Math.min(...serie_2)})}
+                            `)}.
                     </li>
                 </ul>
             </Exemples>
@@ -208,7 +213,7 @@
                             {serie_2.join(" ; ")}
                             &#125;
                         </span>
-                        &xrarr; La médiane est <Katex>{mediane_2}</Katex>.<br>
+                        &xrarr; La médiane est {@html math(`${mediane_2}`)} <br>
                         En effet, on peut scinder cette série en deux : 
                         <span style="color: black;">
                             &#123;
@@ -226,8 +231,8 @@
                 Pour trouver la médiane d'une série statistique, on procède ainsi :
                 <ol>
                     <li>On ordonne les valeurs de la série par ordre croissant.</li>
-                    <li>Si l'effectif total est impair, la médiane est la valeur du milieu (la <Katex>{"\\frac{\\text{N}+1}{2}"}</Katex>ème valeur).</li>
-                    <li>Si l'effectif total est pair, la médiane est la moyenne des deux valeurs du milieu (la <Katex>{"\\frac{\\text{N}}{2}"}</Katex>ème et la <Katex>{"(\\frac{\\text{N}}{2}+1)"}</Katex>ème valeurs).</li>
+                    <li>Si l'effectif total est impair, la médiane est la valeur du milieu (la {@html math(`\\frac{\\text{N}+1}{2}`)}ème valeur).</li>
+                    <li>Si l'effectif total est pair, la médiane est la moyenne des deux valeurs du milieu (la {@html math(`\\frac{\\text{N}}{2}`)}ème et la {@html math(`(\\frac{\\text{N}}{2}+1)`)}ème valeurs).</li>
                 </ol>
             </Paragraphe>
             <Exemples>
@@ -248,7 +253,7 @@
                                 </span>
                             </li>
                             <li>
-                                <Katex>{"\\text{N}"}={serie_1.length}</Katex> est pair, donc la médiane est entre la <Katex>{"\\frac{\\text{N}}{2}"}</Katex>ème et la <Katex>{"(\\frac{\\text{N}}{2}+1)"}</Katex>ème valeurs :<br>
+                                {@html math(`\\text{N}=${serie_1.length}`)} est pair, donc la médiane est entre la {@html math(`\\frac{\\text{N}}{2}`)}ème et la {@html math(`(\\frac{\\text{N}}{2}+1)`)}ème valeurs :<br>
                                 Autrement dit, entre la {serie_1.length/2}ème valeur et la {serie_1.length/2+1}ème valeur.<br>
                                 La médiane est donc {mediane_1.toLocaleString("fr-FR", {maximumFractionDigits: 3})}.
                             </li>
@@ -270,7 +275,7 @@
                                 </span>
                             </li>
                             <li>
-                                <Katex>{"\\text{N}"}={serie_2.length}</Katex> est impair, donc la médiane est la <Katex>{"\\frac{\\text{N}+1}{2}"}</Katex>ème valeur :<br>
+                                {@html math(`\\text{N}=${serie_2.length}`)} est impair, donc la médiane est la {@html math(`\\frac{\\text{N}+1}{2}`)}ème valeur :<br>
                                 Autrement dit, la {Math.floor(serie_2.length/2)+1}ème valeur.<br>
                                 La médiane est donc {mediane_2.toLocaleString("fr-FR", {maximumFractionDigits: 1})}.
                             </li>
@@ -421,7 +426,7 @@
                         {/each}
                     </tr>
                 </table>
-                <svg viewBox="0 0 1000 400" style="width: 50%;">
+                <svg viewBox="0 0 1000 400" style="width: 80%;">
                     <!-- Axes -->
                     <line x1="100" y1="350" x2="100" y2="50" stroke="black" stroke-width="2" />
                     <line x1="100" y1="350" x2="900" y2="350" stroke="black" stroke-width="2" />
@@ -472,17 +477,17 @@
                 <tr>
                     <th>Fréquence</th>
                     {#each Object.values(donnees_5) as valeur}
-                        <td><Katex>{`\\dfrac{${valeur}}{${donnees_5["TOTAL"]}}`}</Katex></td>
+                        <td>{@html math(`\\dfrac{${valeur}}{${donnees_5["TOTAL"]}}`)}</td>
                     {/each}
                 </tr>
                 <tr>
                     <th>Pourcentage</th>
                     {#each Object.values(donnees_5) as valeur}
                         <td>
-                            <Katex>
-                                {`\\dfrac{${valeur}}{${donnees_5["TOTAL"]}} \\times 100 
-                                = ${(100 * valeur / donnees_5["TOTAL"]).toLocaleString("fr-FR", {maximumFractionDigits: 1})} \\%`}
-                        </Katex>
+                            {@html math(`
+                                \\dfrac{${valeur}}{${donnees_5["TOTAL"]}} \\times 100
+                                = ${(100 * valeur / donnees_5["TOTAL"]).toLocaleString("fr-FR", {maximumFractionDigits: 1})} \\%
+                            `)}
                         </td>
                     {/each}
                 </tr>
