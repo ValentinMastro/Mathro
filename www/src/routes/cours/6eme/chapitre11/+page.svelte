@@ -77,7 +77,7 @@
             Dans le monde anglo-saxon, on peut trouver le format <code>mois/jour/année</code>.<br>
             Ce qui donnerait alors : <i>Thursday, December 21<sup>st</sup>, 2023</i>
         </Remarque>
-        <SousPartie numero="1" titre="Convertir en hh:mm:ss">
+        <SousPartie numero={1} titre="Convertir en hh:mm:ss">
             <Exemples>
                 On veut savoir le nombre d'heures et de minutes dans 500 000 s.
             </Exemples>

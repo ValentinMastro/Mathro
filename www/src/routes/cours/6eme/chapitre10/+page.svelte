@@ -1,8 +1,7 @@
 <script>
     import { Chapitre, Partie, SousPartie } from "$lib/chapitrage/all_chapitrages";
     import { Definition, Exemples, Paragraphe, Propriete, Remarque, Schema, Notation } from "$lib/chapitrage/sections/all_sections";
-    import L from "$lib/chapitrage/sections/L.svelte";
-    import Katex from "svelte-katex";
+    import { math } from 'mathlifier';
 </script>
 
 
@@ -25,7 +24,7 @@
                         </ol>
                     </Paragraphe>
                     <Exemples>
-                        On donne les longueurs suivantes : <L>AB = 4 cm</L>, <L>BC = 5 cm</L> et <L>AC = 6 cm</L>.
+                        On donne les longueurs suivantes : {@html math("AB = 4 cm")}, {@html math("BC = 5 cm")} et {@html math("AC = 6 cm")}
                     </Exemples>
                 </div>
                 <div class="droite">
@@ -74,7 +73,7 @@
                         </ol>
                     </Paragraphe>
                     <Exemples>
-                        On donne <L>AB = 2 cm</L>, <L>BC = 3 cm</L> et <Katex>{"\\widehat{ABC} = 60°"}</Katex>
+                        On donne {@html math("AB = 2 cm")}, {@html math("BC = 3 cm")} et {@html math("\\widehat{ABC} = 60°")}
                     </Exemples>
                 </div>
                 <div class="droite">
@@ -122,7 +121,7 @@
                         </ol>
                     </Paragraphe>
                     <Exemples>
-                        On donne <L>DF = 4 cm</L>, <Katex>{"\\widehat{EDF} = 45°"}</Katex> et <Katex>{"\\widehat{DFE} = 90°"}</Katex>
+                        On donne {@html math("DF = 4 cm")}, {@html math("\\widehat{EDF} = 45°")} et {@html math("\\widehat{DFE} = 90°")}
                     </Exemples>
                 </div>
                 <div class="droite">
@@ -260,7 +259,7 @@
                 Triangle ayant trois côtés de même longueur.
             </Definition>
             <Propriete>
-                Un triangle équilatéral a trois angles de même mesure : <L>180° ÷ 3 = 60°</L>.
+                Un triangle équilatéral a trois angles de même mesure : {@html math("180° \\div 3 = 60°")}.
             </Propriete>
             <Schema>
                 <svg viewBox="0 0 500 500" style="width: 30em;">
@@ -359,7 +358,7 @@
             </Schema>
             <Notation>
                 <ul>
-                    <li>La hauteur du côté <L>[AB]</L></li>
+                    <li>La hauteur du côté [AB]</li>
                     <li>La hauteur issue de C</li>
                 </ul>
             </Notation>
