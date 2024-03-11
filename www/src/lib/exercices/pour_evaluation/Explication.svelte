@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Katex from "svelte-katex";
+    import { display } from "mathlifier";
 
     export let explication: string;
     let baliseKatex: boolean;
@@ -27,9 +27,7 @@
     <td class="question"></td>
     <td class="explication" colspan="6">
         {#if baliseKatex}
-            <Katex displayMode>
-                {@html explication}
-            </Katex>
+            {@html display(explication)}
         {:else}
             <div class="texte">
                 {@html explication}
@@ -43,6 +41,7 @@
         width: 100%;
         height: fit-content;
         border-color: white;
+        background-color: cyan;
     }
     td.question {
         width: 100px;
