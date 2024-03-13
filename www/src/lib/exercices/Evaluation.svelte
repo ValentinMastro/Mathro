@@ -32,6 +32,7 @@
                 },
                 "format_enonce": "Texte" | "Latex",
                 "format_reponses": "Texte" | "Latex" | "Nombre" | { "QuantitéAvecUnité": string },
+                "format_explication": "Texte" | "HTML" | "LatexInline" | "LatexDisplay",
                 explication: string
             }[]
         }[]
@@ -116,7 +117,7 @@
                     />
             {#if afficher_explications}
                 <Explication 
-                    explication={question.explication}
+                    explication={question.explication} format_explication={question.format_explication}
                 />
             {/if}
         {/each}

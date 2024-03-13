@@ -1,37 +1,24 @@
 <script lang="ts">
-    import { display } from "mathlifier";
+    import { math, display } from "mathlifier";
 
     export let explication: string;
-    let baliseKatex: boolean;
-
-    function analyserExplication() {
-        // Expression régulière pour rechercher les balises Katex
-        const regexKatex = /<Katex>([\s\S]*?)<\/Katex>/g;
-
-        // Recherche si la balise Katex est présente
-        baliseKatex = regexKatex.test(explication);
-
-        // Si la balise Katex est présente, la supprimer de la chaîne
-        if (baliseKatex) {
-            explication = explication.replace(regexKatex, (_, contenu) => {
-                return contenu;
-            });
-        }
-        console.log(baliseKatex, explication)
-    }
-
-    analyserExplication()
+    export let format_explication: "Texte" | "HTML" | "LatexInline" | "LatexDisplay";
 </script>
 
 <tr class="explication">
     <td class="question"></td>
     <td class="explication" colspan="6">
-        {#if baliseKatex}
+        {#if format_explication === "Texte"}
+            <div class="texte">{explication}</div>
+        {/if}
+        {#if format_explication === "HTML"}
+            {@html explication}
+        {/if}
+        {#if format_explication === "LatexInline"}
+            {@html math(explication)}
+        {/if}
+        {#if format_explication === "LatexDisplay"}
             {@html display(explication)}
-        {:else}
-            <div class="texte">
-                {@html explication}
-            </div>
         {/if}
     </td>
 </tr>
