@@ -1,8 +1,8 @@
 <script lang="ts">
-    import { T } from '@threlte/core'
-    import { Gizmo, OrbitControls } from '@threlte/extras'
+    import { T } from '@threlte/core';
+    import { Gizmo, OrbitControls } from '@threlte/extras';
   
-    import { BoxGeometry, MeshStandardMaterial } from 'three'
+    import { BoxGeometry, MeshStandardMaterial } from 'three';
   
     export let autoRotate: boolean
     export let enableDamping: boolean
@@ -38,9 +38,19 @@
 />
 
 <T.DirectionalLight
-    position.y={10}
+    position.y={12}
     position.z={10}
+    color="#ff0000"
 />
+
+<T.DirectionalLight
+    position.y={-12}
+    position.z={-10}
+    color="#00ff00"
+/>
+
+
+
 <T.AmbientLight intensity={0.3} />
 
 <T.GridHelper args={[10, 10]} />

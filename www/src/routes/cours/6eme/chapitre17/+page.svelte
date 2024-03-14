@@ -178,7 +178,7 @@
             </Definition>
             <Formule>
                 Si le pavé droit est de longueur {@html math(`\\text{L}`)}, de largeur {@html math("\\ell")}
-                et de hauteur {@html math("h")}, alors {@html math(`\\text{V}_{pavé} = \\text{L} \\times \\ell \\times h`)}.
+                et de hauteur {@html math("h")}, alors {@html math(`\\text{V}_{pave} = \\text{L} \\times \\ell \\times h`)}.
             </Formule>
         </SousPartie>
         <SousPartie numero={3} titre="Pyramide">
