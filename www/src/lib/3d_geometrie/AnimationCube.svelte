@@ -1,8 +1,8 @@
 <script lang="ts">
     import { Canvas } from '@threlte/core'
   
-    import Scene from './Scene.svelte'
-    import Settings from './Settings.svelte'
+    import Scene from "./Scene.svelte"
+    import Settings from "./Settings.svelte"
   
     let autoRotate: boolean = false
     let enableDamping: boolean = true

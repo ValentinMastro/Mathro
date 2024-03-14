@@ -2,7 +2,7 @@
     import { Chapitre, Partie, SousPartie, SousSousPartie } from "$lib/chapitrage/all_chapitrages";
     import { Definition, Paragraphe, Formule, Schema } from "$lib/chapitrage/sections/all_sections";
     import Katex from "svelte-katex"
-    import AnimationCube from "./AnimationCube.svelte";
+    import AnimationCube from "../../../../lib/3d_geometrie/AnimationCube.svelte";
 </script>
 
 <Chapitre numero={11} titre="Solides de l'espace, volume et contenance">
