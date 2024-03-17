@@ -87,7 +87,7 @@
             Un sommet est le point commun à plusieurs arêtes.
         </Definition>
         <Schema>
-            <svg viewBox="0 0 400 400" width='25%'>
+            <svg viewBox="0 0 400 400" width='40%'>
                 <defs>
                     <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse">
                         <path d="M 25 0 L 0 0 0 25" fill="none" stroke="gray" stroke-width="0.5" />
