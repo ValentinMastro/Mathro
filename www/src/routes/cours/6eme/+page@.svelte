@@ -151,35 +151,52 @@
         </ol>
     </MenuChapitre>
     <MenuChapitre   index={13}
-                    titre="Enchaînement d'opérations"
+                    titre="Les quadrilatères et leur périmètre"
                     url="/cours/6eme/chapitre13"
-                    cats={["Nombres et calculs"]} >
+                    cats={["Espace et géométrie", "Grandeurs et mesures"]} >
+        <ol>
+            <li>Concept du périmètre</li>
+            <li>Les quadrilatères</li>
+        </ol>
     </MenuChapitre>
     <MenuChapitre   index={14}
-                    titre="Quadrilatères"
+                    titre="Enchaînement d'opérations"
                     url="/cours/6eme/chapitre14"
-                    cats={["Espace et géométrie"]} >
+                    cats={["Nombres et calculs"]} >
+        <ol>
+            <li>Commutativité et associativité de l'addition et de la multiplication</li>
+            <li>Priorité des opérations</li>
+        </ol>
     </MenuChapitre>
     <MenuChapitre   index={15}
-                    titre="Vitesse et grandeurs composées"
+                    titre="Vitesses"
                     url="/cours/6eme/chapitre15"
                     cats={["Grandeurs et mesures", "Nombres et calculs"]}
                     >
     </MenuChapitre>
     <MenuChapitre   index={16}
-                    titre="Périmètres"
+                    titre="Aires"
                     url="/cours/6eme/chapitre16"
                     cats={["Espace et géométrie", "Grandeurs et mesures"]} >
+        <ol>
+            <li>Unités d'aires et conversion</li>
+            <li>Formules d'aires</li>
+        </ol>
     </MenuChapitre>
     <MenuChapitre   index={17}
-                    titre="Tableaux et diagrammes"
+                    titre="Volumes"
                     url="/cours/6eme/chapitre17"
-                    cats={["Organisation et gestion de données"]} >
+                    cats={["Espace et géométrie", "Grandeurs et mesures"]} >
+        <ol>
+            <li>Unités de volume et de contenance</li>
+            <li>Les polyèdres</li>
+            <li>Les solides de révolution</li>
+        </ol>
     </MenuChapitre>
     <MenuChapitre   index={18}
-                    titre="Aires"
+                    titre="Tableaux et diagrammes"
                     url="cours/6eme/chapitre18"
-                    cats={["Espace et géométrie", "Grandeurs et mesures"]} >
+                    cats={["Organisation et gestion de données"]} >
     </MenuChapitre>
     <MenuChapitre   index={19}
                     titre="Échelles"

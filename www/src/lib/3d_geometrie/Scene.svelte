@@ -1,6 +1,6 @@
-<script lang="ts">
+<script lang="ts" type="module">
     import { T } from '@threlte/core';
-    import { Gizmo, OrbitControls } from '@threlte/extras';
+    import { Gizmo } from '@threlte/extras';
   
     import { BoxGeometry, MeshStandardMaterial } from 'three';
   
@@ -19,16 +19,6 @@
     position={[10, 5, 10]}
     lookAt.y={0.5}
 >
-    <OrbitControls
-        {enableDamping}
-        {autoRotate}
-        {rotateSpeed}
-        {zoomToCursor}
-        {zoomSpeed}
-        {minPolarAngle}
-        {maxPolarAngle}
-        {enableZoom}
-    />
 </T.PerspectiveCamera>
 
 <Gizmo
