@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Chapitre, Partie } from "$lib/chapitrage/all_chapitrages";
 	import { Definition, Exemples } from "$lib/chapitrage/sections/all_sections";
-	import Katex from "svelte-katex";
+	import { math, display } from 'mathlifier';
 </script>
 
 <Chapitre numero={10} titre="Probabilités">
@@ -19,18 +19,18 @@
 			</ul>
 		</Exemples>
 		<Definition>
-			L'ensemble des issues de l'expérience est l'univers noté <Katex>{`\\Omega`}</Katex>.
+			L'ensemble des issues de l'expérience est l'univers noté {@html math(`\\Omega`)}.
 		</Definition>
 		<Exemples>
 			<ul>
 				<li>
-					Pour un pile ou face, <Katex>{`\\Omega = \\{ \\text{Pile}, \\text{Face} \\}`}</Katex>
+					Pour un pile ou face, {@html math(`\\Omega = \\{ \\text{Pile}, \\text{Face} \\}`)}
 				</li>
 				<li>
-					Pour un lancer de dé, <Katex>{`\\Omega = \\{ 1, 2, 3, 4, 5, 6 \\}`}</Katex>
+					Pour un lancer de dé, {@html math(`\\Omega = \\{ 1, 2, 3, 4, 5, 6 \\}`)}
 				</li>
 				<li>
-					Tirer une lettre au hasard dans l'alphabet français, <Katex>{`\\Omega = \\{ \\text{A}, \\text{B}, \\text{C}, \\dots, \\text{Z} \\}`}</Katex>
+					Tirer une lettre au hasard dans l'alphabet français, {@html math(`\\Omega = \\{ \\text{A}, \\text{B}, \\text{C}, \\dots, \\text{Z} \\}`)}
 				</li>
 			</ul>
 		</Exemples>
@@ -41,13 +41,13 @@
 			<ul>
 				<li>
 					Expérience : lancer un dé<br>
-					<Katex>{`\\text{A} = «~\\text{Obtenir un nombre pair}~» = \\{ 2, 4, 6 \\}`}</Katex><br>
-					<Katex>{`\\text{B} = «~\\text{Obtenir un nombre impair}~» = \\{ 1, 3, 5 \\}`}</Katex>
+					{@html math(`\\text{A} = `)} « Obtenir un nombre pair » {@html math(` = \\{ 2, 4, 6 \\}`)}<br>
+					{@html math(`\\text{B} = `)} « Obtenir un nombre impair » {@html math(` = \\{ 1, 3, 5 \\}`)}
 				</li>
 				<li>
 					Expérience : tirer une lettre au hasard dans l'alphabet français<br>
-					<Katex>{`\\text{C} = «~\\text{Obtenir une voyelle}~» = \\{ \\text{A}, \\text{E}, \\text{I}, \\text{O}, \\text{U}, \\text{Y} \\}`}</Katex><br>
-					<Katex>{`\\text{D} = «~\\text{Obtenir une lettre}~» = \\{ \\text{B}, \\text{C}, \\dots, \\text{Z} \\}`}</Katex>
+					{@html math(`\\text{C} = `)} « Obtenir une voyelle » {@html math(` = \\{ \\text{A}, \\text{E}, \\text{I}, \\text{O}, \\text{U} \\}`)}<br>
+					{@html math(`\\text{D} = `)} « Obtenir une lettre » {@html math(` = \\{ \\text{B}, \\text{C}, \\dots, \\text{Z} \\}`)}
 				</li>
 			</ul>
 		</Exemples>

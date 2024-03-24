@@ -165,6 +165,28 @@
                         <line x1="325" y1="25" x2="325" y2="225" stroke="black" />
                         <line x1="125" y1="225" x2="125" y2="25" stroke="black" stroke-dasharray="5,5"/>
                     </svg>
+                    <svg viewBox="25 0 350 325" width="30%">
+                        <defs>
+                            <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse">
+                                <path d="M 25 0 L 0 0 0 25" fill="none" stroke="gray" stroke-width="0.5" />
+                            </pattern>
+                        </defs>
+                        <rect x="0" y="0" width="100%" height="100%" fill="url(#grid)" />
+                        
+                        <!-- cube en perspective -->
+                        <line x1="50" y1="100" x2="250" y2="100" stroke="black" stroke-dasharray="5,5"/>
+                        <line x1="250" y1="100" x2="250" y2="300" stroke="black" stroke-dasharray="5,5"/>
+                        <line x1="250" y1="300" x2="50" y2="300" stroke="black" />
+                        <line x1="50" y1="300" x2="50" y2="100" stroke="black" />
+                        <line x1="50" y1="100" x2="125" y2="25" stroke="black" />
+                        <line x1="250" y1="100" x2="325" y2="25" stroke="black" stroke-dasharray="5,5"/>
+                        <line x1="250" y1="300" x2="325" y2="225" stroke="black" />
+                        <line x1="50" y1="300" x2="125" y2="225" stroke="black" />
+                        <line x1="125" y1="25" x2="325" y2="25" stroke="black" />
+                        <line x1="125" y1="225" x2="325" y2="225" stroke="black"/>
+                        <line x1="325" y1="25" x2="325" y2="225" stroke="black" />
+                        <line x1="125" y1="225" x2="125" y2="25" stroke="black"/>
+                    </svg>
                     <div style="width: 40%; aspect-ratio: 1;">
                         <AnimationCube />
                     </div>
@@ -180,6 +202,37 @@
                 Si le pavé droit est de longueur {@html math(`\\text{L}`)}, de largeur {@html math("\\ell")}
                 et de hauteur {@html math("h")}, alors {@html math(`\\text{V}_{pave} = \\text{L} \\times \\ell \\times h`)}.
             </Formule>
+            <Schema>
+                <div style="display: flex; flex-direction: row; justify-content: space-around;">
+                    <svg viewBox="25 0 350 325" width="30%">
+                        <defs>
+                            <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse">
+                                <path d="M 25 0 L 0 0 0 25" fill="none" stroke="gray" stroke-width="0.5" />
+                            </pattern>
+                        </defs>
+                        <rect x="0" y="0" width="100%" height="100%" fill="url(#grid)" />
+                        
+                        <!-- cube en perspective -->
+                        <polygon points="50,100 250,100 250,300 50,300" stroke="black" fill="none" />
+                        <line x1="50" y1="100" x2="125" y2="25" stroke="black" />
+                        <line x1="250" y1="100" x2="325" y2="25" stroke="black" />
+                        <line x1="250" y1="300" x2="325" y2="225" stroke="black" />
+                        <line x1="50" y1="300" x2="125" y2="225" stroke="black" stroke-dasharray="5,5"/>
+                        <line x1="125" y1="25" x2="325" y2="25" stroke="black" />
+                        <line x1="125" y1="225" x2="325" y2="225" stroke="black" stroke-dasharray="5,5"/>
+                        <line x1="325" y1="25" x2="325" y2="225" stroke="black" />
+                        <line x1="125" y1="225" x2="125" y2="25" stroke="black" stroke-dasharray="5,5"/>
+                    </svg>
+                    <svg viewBox="25 0 350 325" width="30%">
+                        <defs>
+                            <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse">
+                                <path d="M 25 0 L 0 0 0 25" fill="none" stroke="gray" stroke-width="0.5" />
+                            </pattern>
+                        </defs>
+                        <rect x="0" y="0" width="100%" height="100%" fill="url(#grid)" />
+                    </svg>
+                </div>
+            </Schema>
         </SousPartie>
         <SousPartie numero={3} titre="Pyramide">
             <Definition>
