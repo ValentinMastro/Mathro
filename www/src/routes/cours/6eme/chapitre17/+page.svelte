@@ -358,6 +358,30 @@
                     <line x1="50" y1="30" x2="70" y2="20" stroke="black" />
                     <line x1="80" y1="30" x2="70" y2="20" stroke="black" />
                 </svg>
+                <svg viewBox="0 10 90 100" width="12em">
+                    <defs>
+                        <pattern id="grid_10" width="10" height="10" patternUnits="userSpaceOnUse">
+                            <path d="M 10 0 L 0 0 0 10" fill="none" stroke="gray" stroke-width="0.5" />
+                        </pattern>
+                    </defs>
+                    <rect x="0" y="0" width="100" height="100" fill="url(#grid_10)" />
+
+                    <polygon points="10,30 40,30 30,20" fill="none" stroke="black" />
+                    <line x1="10" y1="30" x2="10" y2="70" stroke="black" />
+                    <line x1="40" y1="30" x2="40" y2="70" stroke="black" />
+                    <line x1="30" y1="20" x2="30" y2="60" stroke="black" stroke-dasharray="1,1" />
+                    <line x1="10" y1="70" x2="40" y2="70" stroke="black" />
+                    <line x1="10" y1="70" x2="30" y2="60" stroke="black" stroke-dasharray="1,1"/>
+                    <line x1="30" y1="60" x2="40" y2="70" stroke="black" stroke-dasharray="1,1" />
+
+                    <polygon points="50,70 80,70 70,60" fill="none" stroke="black" />
+                    <line x1="50" y1="70" x2="50" y2="30" stroke="black" />
+                    <line x1="80" y1="70" x2="80" y2="30" stroke="black" />
+                    <line x1="70" y1="60" x2="70" y2="20" stroke="black" />
+                    <line x1="50" y1="30" x2="80" y2="30" stroke="black" stroke-dasharray="1,1"/>
+                    <line x1="50" y1="30" x2="70" y2="20" stroke="black" />
+                    <line x1="80" y1="30" x2="70" y2="20" stroke="black" />
+                </svg>
             </Schema>
         </SousPartie>
     </Partie>

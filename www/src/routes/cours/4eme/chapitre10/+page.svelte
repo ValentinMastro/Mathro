@@ -46,8 +46,8 @@
 				</li>
 				<li>
 					Expérience : tirer une lettre au hasard dans l'alphabet français<br>
-					{@html math(`\\text{C} = `)} « Obtenir une voyelle » {@html math(` = \\{ \\text{A}, \\text{E}, \\text{I}, \\text{O}, \\text{U} \\}`)}<br>
-					{@html math(`\\text{D} = `)} « Obtenir une lettre » {@html math(` = \\{ \\text{B}, \\text{C}, \\dots, \\text{Z} \\}`)}
+					{@html math(`\\text{C} = `)} « Obtenir une voyelle » {@html math(` = \\{ \\text{A}, \\text{E}, \\text{I}, \\text{O}, \\text{U}, \\text{Y} \\}`)}<br>
+					{@html math(`\\text{D} = `)} « Obtenir une consonne» {@html math(` = \\{ \\text{B}, \\text{C}, \\dots, \\text{Z} \\}`)}
 				</li>
 			</ul>
 		</Exemples>
