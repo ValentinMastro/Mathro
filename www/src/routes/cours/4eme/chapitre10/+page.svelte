@@ -19,7 +19,7 @@
 			</ul>
 		</Exemples>
 		<Definition>
-			L'ensemble des issues de l'expérience est l'univers noté {@html math(`\\Omega`)}.
+			L'ensemble des issues de l'expérience aléatoire est l'univers noté {@html math(`\\Omega`)}.
 		</Definition>
 		<Exemples>
 			<ul>
@@ -35,7 +35,7 @@
 			</ul>
 		</Exemples>
 		<Definition>
-			Un évènement est un ensemble d'issues de l'expérience.
+			Un évènement est un ensemble d'issues de l'expérience aléatoire.
 		</Definition>
 		<Exemples>
 			<ul>

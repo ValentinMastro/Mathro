@@ -41,7 +41,7 @@
 		"@threlte/core": "^7.0.12",
 		"@threlte/extras": "^8.1.0",
 		"@types/mathjax": "^0.0.37",
-		"@vmastro/exercices": "^0.1.9",
+		"@vmastro/exercices": "^0.1.10",
 		"decimal.js": "^10.4.3",
 		"execa": "^8.0.1",
 		"jszip": "^3.10.1",
