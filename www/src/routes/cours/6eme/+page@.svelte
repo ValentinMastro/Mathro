@@ -195,7 +195,7 @@
     </MenuChapitre>
     <MenuChapitre   index={18}
                     titre="Tableaux et diagrammes"
-                    url="cours/6eme/chapitre18"
+                    url="/cours/6eme/chapitre18"
                     cats={["Organisation et gestion de données"]} >
     </MenuChapitre>
     <MenuChapitre   index={19}
