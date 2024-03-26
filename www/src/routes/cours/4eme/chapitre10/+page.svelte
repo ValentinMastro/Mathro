@@ -1,7 +1,18 @@
 <script lang="ts">
 	import { Chapitre, Partie } from "$lib/chapitrage/all_chapitrages";
-	import { Definition, Exemples } from "$lib/chapitrage/sections/all_sections";
+	import { Definition, Exemples, Paragraphe } from "$lib/chapitrage/sections/all_sections";
 	import { math, display } from 'mathlifier';
+
+	let numero_boules: number[] = [
+		1, 1, 1, 5,
+		2, 6, 6, 2, 
+		2, 4, 4, 6
+	]
+	let couleur_boules: string[] = [
+		"gray", "gray", "white", "white",
+		"gray", "gray", "white", "white",
+		"white", "gray", "gray", "gray"
+	]
 </script>
 
 <Chapitre numero={10} titre="Probabilités">
@@ -51,5 +62,37 @@
 				</li>
 			</ul>
 		</Exemples>
+		<Definition>
+			Un évènement A est dit :
+			<ul>
+				<li>Impossible si {@html math(`A = \\emptyset`)}, autrement dit si A ne peut pas se réaliser</li>
+				<li>Certain si {@html math(`A = \\Omega`)}, autrement dit si A se réalise à chaque fois</li>
+			</ul>
+		</Definition>
+		<Paragraphe nom="Récapitulatif" couleur="red">
+			<div style="color: black; border: 1px black solid; width: fit-content;">
+				On considère une urne contenant des boules blanches ou grises, et numérotées :
+				<ol>
+					<li>Si on s’intéresse à la couleur de la boule, quelles sont les issues possibles ?</li>
+					<li>Si on s’intéresse au numéro écrit sur la boule, quelles sont les issues possibles ?</li>
+					<li>Donne un événement certain de se réaliser.</li>
+					<li>Donne un événement impossible.</li>
+				</ol>
+				<div style="display: flex; justify-content: center;">
+					<svg viewBox="-5 -5 {320+10} {240+10}" width="15em">
+						{#each Array(12) as _, index }
+							<circle cx={40 + 80*(index%4)} cy={40 + 80*Math.floor(index/4)} r="40" stroke="black" fill={couleur_boules[index]} />
+							<text x={40 + 80*(index%4)} y={48 + 80*Math.floor(index/4)} text-anchor="middle" alignment-baseline="middle" font-size="30">{numero_boules[index]}</text>
+						{/each}
+					</svg>
+				</div>
+			</div>
+			<ol>
+				<li>Les issues possibles sont : {@html math(`\\Omega = \\{ \\text{Blanche}, \\text{Grise} \\}`)}</li>
+				<li>Les issues possibles sont : {@html math(`\\Omega = \\{ 1, 2, 4, 5, 6 \\}`)}</li>
+				<li>Un événement certain est : « Obtenir une boule »</li>
+				<li>Un événement impossible est : « Obtenir une boule rouge »</li>
+			</ol>
+		</Paragraphe>
 	</Partie>
 </Chapitre>
