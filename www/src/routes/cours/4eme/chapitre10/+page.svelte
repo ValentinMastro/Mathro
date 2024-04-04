@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Partie } from "$lib/chapitrage/all_chapitrages";
-	import { Definition, Exemples, Paragraphe } from "$lib/chapitrage/sections/all_sections";
+	import { Definition, Exemples, Paragraphe, Propriete } from "$lib/chapitrage/sections/all_sections";
 	import { math, display } from 'mathlifier';
 
 	let numero_boules: number[] = [
@@ -94,5 +94,51 @@
 				<li>Un événement impossible est : « Obtenir une boule rouge »</li>
 			</ol>
 		</Paragraphe>
+	</Partie>
+	<Partie numero={2} titre="Approche quantitative">
+		<Definition>
+			La probabilité d'un évènement est un nombre entre 0 et 1 :
+			<ul>
+				<li>quand ce nombre est égal à 0, l'évènement est impossible</li>
+				<li>quand ce nombre est proche de 0, l'évènement est peu probable</li>
+				<li>quand ce nombre est proche de 1, l'évènement est très probable</li>
+				<li>quand ce nombre est égal à 1, l'évènement est certain</li>
+			</ul>
+		</Definition>
+		<Paragraphe couleur="black" nom="Conséquence">
+			{@html math(`P(\\emptyset) = 0`)} et {@html math(`P(\\Omega) = 1`)}
+		</Paragraphe>
+		<Definition>
+			Soit A un évènement.<br>
+			{@html math(`\\overline{A}`)} est l'évènement contraire de A.
+		</Definition>
+		<Exemples>
+			<ul>
+				<li>
+					Je lance un dé : <br>
+					A = « Avoir un 6 » <br>
+					{@html math(`\\overline{A}`)} = « Ne pas avoir un 6 » = « Avoir un 1, 2, 3, 4 ou 5 »
+				</li>
+				<li>
+					Je tire au sort une lettre dans l'alphabet : <br>
+					B = « Avoir une consonne » <br>
+					{@html math(`\\overline{B}`)} = « Ne pas avoir une consonne » = « Avoir une voyelle »
+				</li>
+			</ul>
+		</Exemples>
+		<Propriete>
+			Soit A un évènement.<br>
+			{@html math(`p(A)+p(\\overline{A}) = 1`)}<br>
+			{@html math(`p(\\overline{A}) = 1 - p(A)`)}
+		</Propriete>
+		<Exemples>
+			<u>Expérience aléatoire : </u> Tirer une carte dans un jeu de 32 cartes <br>
+			<u>Question : </u> {@html math(`p(\\text{avoir un valet ou une dame}) = ?`)}<br>
+			<u>Solution : </u>
+			<ul>
+				<li>{@html math(`p(avoir un valet ou une dame) = \\dfrac{8}{32}`)}</li>
+				<li>{@html math(`p(ne pas avoir un valet ou une dame) = 1 - \\dfrac{8}{32} = \\dfrac{32}{32} - \\dfrac{8}{32} = \\dfrac{24}{32}`)}</li>
+			</ul>
+		</Exemples>
 	</Partie>
 </Chapitre>
