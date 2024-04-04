@@ -141,8 +141,13 @@
                     {/each}
                     {#each ["1997-01", "2007-01", "2017-01"] as annee, i}
                         <line x1={400*(i+1)/3} y1="180" x2={400*(i+1)/3} y2="190" stroke="black" />
-                        <text x={400*(i+1)/3} y="200" text-anchor="middle">{annee}</text>
+                        <text x={400*(i+1)/3} y="200" text-anchor="middle" font-size="0.7em">{annee}</text>
                     {/each}
+                    {#each [2.40, 3.13, 3.46] as prix, i}
+                        <text x={400*(i+1)/3} y={195 - 40*prix - 10} text-anchor="middle">X</text>
+                    {/each}
+                    <line x1={400/3} y1={180 - 40*2.40} x2={400*2/3} y2={180 - 40*3.13} stroke="black" />
+                    <line x1={400*2/3} y1={180 - 40*3.13} x2={400} y2={180 - 40*3.46} stroke="black" />
                 </svg>
             </Exemples>
         </SousPartie>
