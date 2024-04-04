@@ -131,10 +131,18 @@
                         <td>3,46</td>
                     </tr>
                 </table>
-
                 <svg viewBox="0 0 500 200" width="50em">
                     <line x1="50" y1="180" x2="450" y2="180" stroke="black" />
                     <line x1="50" y1="180" x2="50" y2="20" stroke="black" />
+                    {#each [0, 1, 2, 3, 4] as valeur, i}
+                        <line x1="45" y1={180 - 40*valeur} x2="50" y2={180 - 40*valeur} stroke="black" />
+                        <line x1="50" y1={180 - 40*valeur} x2="450" y2={180 - 40*valeur} stroke="black" stroke-width="1" stroke-dasharray="1,4" />
+                        <text x="40" y={180 - 40*valeur + 5} text-anchor="end">{valeur}</text>
+                    {/each}
+                    {#each ["1997-01", "2007-01", "2017-01"] as annee, i}
+                        <line x1={400*(i+1)/3} y1="180" x2={400*(i+1)/3} y2="190" stroke="black" />
+                        <text x={400*(i+1)/3} y="200" text-anchor="middle">{annee}</text>
+                    {/each}
                 </svg>
             </Exemples>
         </SousPartie>
