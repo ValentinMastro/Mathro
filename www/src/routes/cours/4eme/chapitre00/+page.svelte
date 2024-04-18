@@ -30,7 +30,7 @@
 				Une fraction est un moyen d'écrire le résultat d'une division entre deux nombres entiers :
 				le numérateur et le dénominateur.
 			</Definition>
-			<svg viewBox="20 0 160 100" style="width: 20em;">
+			<svg viewBox="20 0 160 100" style="width: 17em;">
 				<defs>
 					<style>
 						text {
