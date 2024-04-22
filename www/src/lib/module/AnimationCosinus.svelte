@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Katex from "svelte-katex";
+    import { math, display } from "mathlifier";
 
     // mesure de l'angle aigu en degrés
     let angle_aigu: number = 30;
@@ -80,10 +80,10 @@
         Hypoténuse : AC = {hypotenuse.toLocaleString("fr-FR", {maximumFractionDigits: 2})} cm <br>
         Côté adjacent : AB = {adjacent.toLocaleString("fr-FR", {maximumFractionDigits: 2})} cm <br>
         Côté opposé : BC = {oppose.toLocaleString("fr-FR", {maximumFractionDigits: 2})} cm <br>
-        <Katex>{`\\widehat{\\text{CAB}} = ${angle_aigu} °`}</Katex>
+        {@html math(`\\widehat{\\text{CAB}} = ${angle_aigu} °`)}
     </div>
     <div class="flex_centre">
-        <Katex displayMode>{`
+        {@html display(`
             \\begin{align*}
                 \\cos(\\widehat{\\text{CAB}}) &= \\dfrac{\\text{côté adjacent}}{\\text{hypoténuse}} \\\\
                 &= \\frac{\\text{AB}}{\\text{AC}} \\\\
@@ -91,7 +91,7 @@
                 \\cos(\\widehat{\\text{CAB}}) &\\approx ${Math.cos(angle_aigu_rad).toLocaleString("fr-FR", {minimumFractionDigits: 2, maximumFractionDigits: 2})} \\\\
                 \\arccos(${Math.cos(angle_aigu_rad).toLocaleString("fr-FR", {minimumFractionDigits: 2, maximumFractionDigits: 2})}) &= ${angle_aigu} °
             \\end{align*}
-        `}</Katex>
+        `)}
     </div>
 </div>
 
