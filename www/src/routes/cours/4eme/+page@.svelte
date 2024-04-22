@@ -129,24 +129,24 @@
                     img="/images/des.jpg" >
         
     </MenuChapitre>
-    <MenuChapitre   index={11}  
-                    titre="Solides de l'espace" 
-                    url="/cours/4eme/chapitre11"
-                    cats={["Espace et géométrie", "Grandeurs et mesures"]}
-                    img="/images/rubik.jpg" >
-        <ol>
-            <li>Volume et contenance</li>
-            <li>Solides de l'espace</li>
-        </ol>
-    </MenuChapitre>
-    <MenuChapitre   index={12} 
+    <MenuChapitre   index={11} 
                     titre="Décompositions en facteurs premiers" 
-                    url="/cours/4eme/chapitre12"
+                    url="/cours/4eme/chapitre11"
                     cats={["Nombres et calculs"]}
                     img="/images/tesla-map.jpg" >
         <ol>
             <li>Les nombres premiers</li>
             <li>Théorème fondamental de l'arithmétique</li>
+        </ol>
+    </MenuChapitre>
+    <MenuChapitre   index={12}  
+                    titre="Solides de l'espace" 
+                    url="/cours/4eme/chapitre12"
+                    cats={["Espace et géométrie", "Grandeurs et mesures"]}
+                    img="/images/rubik.jpg" >
+        <ol>
+            <li>Volume et contenance</li>
+            <li>Solides de l'espace</li>
         </ol>
     </MenuChapitre>
     <MenuChapitre   index={13} 

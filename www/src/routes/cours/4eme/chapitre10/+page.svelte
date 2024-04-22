@@ -136,8 +136,8 @@
 			<u>Question : </u> {@html math(`p(\\text{avoir un valet ou une dame}) = ?`)}<br>
 			<u>Solution : </u>
 			<ul>
-				<li>{@html math(`p(avoir un valet ou une dame) = \\dfrac{8}{32}`)}</li>
-				<li>{@html math(`p(ne pas avoir un valet ou une dame) = 1 - \\dfrac{8}{32} = \\dfrac{32}{32} - \\dfrac{8}{32} = \\dfrac{24}{32}`)}</li>
+				<li>{@html math(`p(\\text{avoir un valet ou une dame}) = \\dfrac{8}{32}`)}</li>
+				<li>{@html math(`p(\\text{ne pas avoir un valet ou une dame}) = 1 - \\dfrac{8}{32} = \\dfrac{32}{32} - \\dfrac{8}{32} = \\dfrac{24}{32}`)}</li>
 			</ul>
 		</Exemples>
 	</Partie>
