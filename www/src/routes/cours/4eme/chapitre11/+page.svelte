@@ -1,14 +1,15 @@
 <script lang="ts">
     import { Chapitre, Partie } from "$lib/chapitrage/all_chapitrages";
     import { Definition, Exemples, Paragraphe, Remarque } from "$lib/chapitrage/sections/all_sections";
-    import Katex from "svelte-katex";
+    import { math, display } from "mathlifier";
 </script>
 
 <Chapitre numero={11} titre="Décomposition en facteurs premiers">
     <Partie numero={1} titre="Nombres premiers">
         <Definition>
-            On dit que <Katex>a</Katex> est un <i>diviseur</i> de <Katex>b</Katex> si <Katex>b</Katex> est un multiple de <Katex>a</Katex>.<br>
-            Autrement dit, le reste de la division euclidienne de <Katex>b</Katex> par <Katex>a</Katex> est nul.
+            Soient {@html math("a")} et {@html math("b")} deux entiers naturels.<br>
+            On dit que {@html math("a")} est un <i>diviseur</i> de {@html math("b")} si {@html math("b")} est un multiple de {@html math("a")}.<br>
+            Autrement dit, le reste de la division euclidienne de {@html math("b")} par {@html math("a")} est nul.
         </Definition>
         <Exemples>
             <ul>
@@ -20,7 +21,7 @@
             </ul>
         </Exemples>
         <Definition>
-            Un nombre est <i>premier</i> s'il n'a que deux diviseurs : 1 et lui-même.<br>
+            Un entier naturel est <i>premier</i> s'il n'a que deux diviseurs : 1 et lui-même.<br>
             S'il n'est pas premier, on dit qu'il est <i>composé</i>.
         </Definition>
         <Remarque>
@@ -44,10 +45,18 @@
         </Paragraphe>
         <Exemples>
             <ul>
-                <li>219 = 3 × 73</li>
-                <li>110 = 2 × 5 × 11</li>
-                <li>625 = 5 × 5 × 5 × 5 = 5<sup>4</sup></li>
-                <li>360 = 2 × 2 × 2 × 3 × 3 × 5 = 2<sup>3</sup> × 3<sup>2</sup> × 5</li>
+                <li>
+                    {@html math("219 = 3 \\times 73")}
+                </li>
+                <li>
+                    {@html math("110 = 2 \\times 5 \\times 11")}
+                </li>
+                <li>
+                    {@html math("625 = 5 \\times 5 \\times 5 \\times 5 = 5^4")}
+                </li>
+                <li>
+                    {@html math("360 = 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 5 = 2^3 \\times 3^2 \\times 5")}
+                </li>
             </ul>
         </Exemples>
     </Partie>
