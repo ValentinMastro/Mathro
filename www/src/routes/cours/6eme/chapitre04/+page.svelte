@@ -1,7 +1,7 @@
 <script>
     import { Chapitre, Partie, SousPartie } from "$lib/chapitrage/all_chapitrages";
     import { Definition, Exemples, Notation, Propriete, Schema} from "$lib/chapitrage/sections/all_sections";
-    import Katex from "svelte-katex";
+    import { math, display } from 'mathlifier';
 </script>
 <Chapitre titre="Angles" numero={4}>
     <Partie titre="Concept" numero={1}>
@@ -41,7 +41,7 @@
                 La somme des mesures d'un angle saillant et de l'angle rentrant associé vaut 360°.
             </Propriete>
             <Exemples>
-                <Katex>{"\\widehat{DEF} + \\widecheck{DEF} = 360°"}</Katex>
+                {@html math("\\widehat{DEF} + \\widecheck{DEF} = 360°")}
             </Exemples>
         </SousPartie>
         <SousPartie numero={2} titre="Nomenclature des angles saillants">
