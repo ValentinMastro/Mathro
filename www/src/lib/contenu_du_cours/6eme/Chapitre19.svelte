@@ -38,8 +38,8 @@
                     </g>
                 </defs>
                 <use href="#figure" x="0" y="0" />
-                <use href="#figure" x="0" y="0" transform="scale({t}, 1) translate(-320, 0)" />
-                <line x1="160" y1="0" x2="160" y2="300" stroke="black" />
+                <use href="#figure" x="0" y="0" transform-origin="center" transform="scale({t}, 1)" />
+                <line x1="150" y1="0" x2="150" y2="300" stroke="black" />
             </svg>
         </Schema>
     </Partie>
