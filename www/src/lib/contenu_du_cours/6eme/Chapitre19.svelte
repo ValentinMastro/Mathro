@@ -21,8 +21,8 @@
 <Chapitre numero={19} titre="Symétrie axiale">
     <Partie numero={1} titre="Définition">
         <Definition>
-            (ℱ) et (ℱ') sont symétriques par rapport à une droite (d) si 
-            « en repliant sur la droite (d) », (ℱ) et (ℱ') se superposent.
+            (ℱ) et (ℱ') sont symétriques par rapport à une droite {@html math('(d)')} si 
+            « en repliant sur la droite {@html math('(d)')} », (ℱ) et (ℱ') se superposent.
         </Definition>
         <Schema>
             <svg viewBox="0 0 300 300" style="width: 15em"
@@ -38,7 +38,9 @@
                     </g>
                 </defs>
                 <use href="#figure" x="0" y="0" />
-                <use href="#figure" x="0" y="0" transform-origin="center" transform="scale({t}, 1)" />
+                <use href="#figure" x="0" y="0" transform-origin="center" transform="scale({t}, 1)" >
+                    <animateTransform attributeName="scaleX" attributeType="XML" type="scale" from="1" to="-1" dur="1s" fill="freeze" />
+                </use>
                 <line x1="150" y1="0" x2="150" y2="300" stroke="black" />
             </svg>
         </Schema>
@@ -46,7 +48,7 @@
     <Partie numero={2} titre="Construction du symétrique d'un point">
         <SousPartie titre="Avec l'équerre" numero={1}>
             <Propriete>
-                Si A' est le symétrique de A par rapport à (d), alors (d) est la médiatrice de [AA'].
+                Si {@html math("A'")} est le symétrique de {@html math("A")} par rapport à {@html math("(d)")}, alors {@html math("(d)")} est la médiatrice de {@html math("[AA']")}
             </Propriete>
             <Paragraphe nom="Protocole de construction" couleur="black" >
                 On a un point A et une droite (d). <br>
