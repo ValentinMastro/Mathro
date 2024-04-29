@@ -132,7 +132,7 @@
                 </Definition>
                 <Formule>
                     Si le pavé droit est de longueur {@html math(`\\text{L}`)}, de largeur {@html math("\\ell")}
-                    et de hauteur {@html math(`\\text{h}`)}, alors {@html math(`\\text{V}_{pavé} = \\text{L} \\times \\ell \\times h`)}.
+                    et de hauteur {@html math(`\\text{h}`)}, alors {@html math(`\\text{V}_{pave} = \\text{L} \\times \\ell \\times h`)}.
                 </Formule>
             </SousSousPartie>
             <SousSousPartie numero={3} titre="Pyramide">
@@ -161,7 +161,7 @@
                 Un solide de révolution est un solide obtenu en faisant tourner un polygone autour d'un axe.<br>
                 L'axe de révolution est une droite passant par le centre du polygone.
             </Definition>
-            <SousSousPartie numero={1} titre="Cylindre de révolution">
+            <SousSousPartie numero={1} titre="Cylindre de revolution">
                 <Definition>
                     Un cylindre de révolution est un solide obtenu en faisant tourner un rectangle autour d'un de ses côtés.<br>
                 </Definition>
@@ -176,7 +176,7 @@
                 </Definition>
                 <Formule>
                     Si le cône a une hauteur {@html math(`h`)} et un rayon de base {@html math(`r`)}, 
-                    alors {@html math(`\\text{V}_{cône} = \\frac{1}{3} \\times \\pi r^2 \\times h`)}.
+                    alors {@html math(`\\text{V}_{cone} = \\frac{1}{3} \\times \\pi r^2 \\times h`)}.
                 </Formule>
             </SousSousPartie>
             <SousSousPartie numero={3} titre="Sphère et boule">
@@ -186,7 +186,7 @@
                 </Definition>
                 <Formule>
                     Si la sphère a un rayon {@html math(`r`)}, 
-                    alors {@html math(`\\text{A}_{sphère} = 4 \\times \\pi r^2`)}
+                    alors {@html math(`\\text{A}_{sphere} = 4 \\times \\pi r^2`)}
                     et {@html math(`\\text{V}_{boule} = \\frac{4}{3} \\times \\pi r^3`)}.
                 </Formule>
             </SousSousPartie>

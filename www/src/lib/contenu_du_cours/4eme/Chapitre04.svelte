@@ -22,8 +22,8 @@
                 Évaluer une expression signifie remplacer chacune des variables par une valeur numérique donnée.
             </Definition>
             <Exemples>
-                Évaluer l'expression {@html math("3 \times a + 8")} en {@html math("a=2")} signifie remplacer {@html math("a")} par 2, ce qui donne : 
-                {@html math("3 \times 2 + 8 = 6 + 8 = 14")}
+                Évaluer l'expression {@html math("3 \\times a + 8")} en {@html math("a=2")} signifie remplacer {@html math("a")} par 2, ce qui donne : 
+                {@html math("3 \\times 2 + 8 = 6 + 8 = 14")}
             </Exemples>
             <Paragraphe couleur="red" nom="Convention d'écriture">
                 Le symbole de multiplication est facultatif : 
@@ -63,7 +63,7 @@
                         En effet, si on choisit {@html math("a=3")} :
                         <ul>
                             <li>{@html math("a^2 = 3^2 = 9")}</li>
-                            <li>{@html math("2a = 2 \times 3 = 6")}</li>
+                            <li>{@html math("2a = 2 \\times 3 = 6")}</li>
                         </ul>
                     </li>
                 </ul>

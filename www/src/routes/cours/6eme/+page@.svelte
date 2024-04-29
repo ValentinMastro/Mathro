@@ -197,16 +197,27 @@
                     titre="Tableaux et diagrammes"
                     url="/cours/6eme/chapitre18"
                     cats={["Organisation et gestion de données"]} >
+        <ol>
+            <li>Tableaux</li>
+            <li>Diagrammes et graphiques</li>
+        </ol>
     </MenuChapitre>
     <MenuChapitre   index={19}
-                    titre="Échelles"
+                    titre="Symétrie axiale"
                     url="/cours/6eme/chapitre19"
-                    cats={["Grandeurs et mesures", "Nombres et calculs"]} >
+                    cats={["Espace et géométrie"]} >
+        <ol>
+            <li>Définition</li>
+            <li>Construction du symétrique d'un point</li>
+        </ol>
     </MenuChapitre>
     <MenuChapitre   index={20}
-                    titre="Solides et volumes"
+                    titre="Échelles"
                     url="/cours/6eme/chapitre20"
                     cats={["Grandeurs et mesures", "Espace et géométrie"]} >
+        <ol>
+            <li></li>
+        </ol>
     </MenuChapitre>
     <MenuChapitre   index={21}
                     titre="Programmation"

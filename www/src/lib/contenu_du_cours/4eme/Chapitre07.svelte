@@ -183,7 +183,7 @@
                         </span>
                         &xrarr; L'étendue est {@html math(`
                             ${Math.max(...serie_1)} - ${Math.min(...serie_1)} = 
-                            ${Math.max(...serie_1) - Math.min(...serie_1)})}
+                            ${Math.max(...serie_1) - Math.min(...serie_1)}
                             `)}.
                     </li>
                     <li>
@@ -194,7 +194,7 @@
                         </span>
                         &xrarr; L'étendue est {@html math(`
                             ${Math.max(...serie_2)} - ${Math.min(...serie_2)} = 
-                            ${Math.max(...serie_2) - Math.min(...serie_2)})}
+                            ${Math.max(...serie_2) - Math.min(...serie_2)}
                             `)}.
                     </li>
                 </ul>

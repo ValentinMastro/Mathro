@@ -14,10 +14,10 @@
             </Definition>
             <Exemples>
                 <ul>
-                    <li>{@html math("10^9 = 10 \times 10 \times 10 \times 10 \times 10 \times 10 \times 10 \times 10 \times 10 = 1~000~000~000")}</li>
-                    <li>{@html math("10^4 = 10 \times 10 \times 10 \times 10 = 10~000")}</li>
-                    <li>{@html math("10^5 = 10 \times 10 \times 10 \times 10 \times 10 = 100~000")}</li>
-                    <li>{@html math("10^2 = 10 \times 10 = 100")}</li>
+                    <li>{@html math("10^9 = 10 \\times 10 \\times 10 \\times 10 \\times 10 \\times 10 \\times 10 \\times 10 \\times 10 = 1~000~000~000")}</li>
+                    <li>{@html math("10^4 = 10 \\times 10 \\times 10 \\times 10 = 10~000")}</li>
+                    <li>{@html math("10^5 = 10 \\times 10 \\times 10 \\times 10 \\times 10 = 100~000")}</li>
+                    <li>{@html math("10^2 = 10 \\times 10 = 100")}</li>
                     <li>{@html math("10^0 = 1")}</li>
                 </ul>
             </Exemples>
