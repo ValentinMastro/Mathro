@@ -63,7 +63,7 @@
                 {@html math("\\Rightarrow")} Placer 2 points sur la droite {@html math("(d)")}. <br>
                 {@html math("\\Rightarrow")} Avec le compas, tracer un arc de cercle de centre le premier point, et passant par {@html math("A")}. <br>
                 {@html math("\\Rightarrow")} Avec le compas, tracer un arc de cercle de centre le deuxième point, et passant par {@html math("A")}. <br>
-                Les deux cercles se croiseront en aux points {@html math("A")} et {@html math("A'")}, le symétrique de {@html math("A")} par rapport à {@html math("(d)")}.
+                Les deux cercles se croiseront aux points {@html math("A")} et {@html math("A'")}, le symétrique de {@html math("A")} par rapport à {@html math("(d)")}.
             </Paragraphe>
             <Schema>
                 <svg viewBox="0 0 300 300" style="width: 20em">
