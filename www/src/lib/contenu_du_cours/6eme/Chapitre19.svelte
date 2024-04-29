@@ -68,11 +68,11 @@
             <Schema>
                 <svg viewBox="0 0 300 300" style="width: 20em">
                     <line x1="30" y1="250" x2="200" y2="50" stroke="black"/>
-                    <text x="45" y="250" font-size="20" fill="black">(d)</text>
+                    <text x="45" y="250" font-size="20" fill="black" font-family="Katex_Italic" >(d)</text>
                     <text x="60" y="100" font-size="10" fill="black">X</text>
                     <text x="64" y="90" font-size="20" fill="black" font-family="Katex_Main">A</text>
                     <text x="173" y="196" font-size="10" fill="black">X</text>
-                    <text x="181" y="185" font-size="20" fill="black" font-family="Katex_Main">A'</text>
+                    <text x="181" y="185" font-size="20" fill="black" font-family="Katex_Italic">A'</text>
                     <circle cx="30" cy="250" r="157" stroke="black" fill="none"/>
                     <circle cx="200" cy="50" r="144" stroke="black" fill="none"/>
 
