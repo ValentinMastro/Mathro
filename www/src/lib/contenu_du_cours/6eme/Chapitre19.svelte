@@ -56,6 +56,41 @@
                 Appelons O le point d'intersection.<br>
                 {@html math("\\Rightarrow")} Placer le point {@html math("A'")} sur la droite tracée tel que {@html math("AO = OA'")}.
             </Paragraphe>
+            <svg viewBox="0 0 300 300" style="width: 20em">
+                <line x1="30" y1="250" x2="200" y2="50" stroke="black"/>
+                <text x="45" y="250" font-size="20" fill="black" font-family="Katex_Italic" >(d)</text>
+                <text x="60" y="100" font-size="10" fill="black">X</text>
+                <text x="64" y="90" font-size="20" fill="black" font-family="Katex_Main">A</text>
+                
+                <!-- Droite perpendiculaire passant par A -->
+                <text x="110" y="135" font-size="20" fill="black" font-family="Katex_Main">O</text>
+                <line x1="60" y1="95" x2="280" y2="270" stroke="black" />
+                <text x="170" y="189" font-size="10" fill="black">X</text>
+                <text x="178" y="180" font-size="20" fill="black" font-family="Katex_Main">A'</text>
+
+                <!-- Codage -->
+                <text x="82" y="130" font-size="30" fill="red">~</text>
+                <text x="142" y="180" font-size="30" fill="red">~</text>
+            </svg>
+            <svg viewBox="0 0 300 300" style="width: 20em">
+                <line x1="30" y1="250" x2="200" y2="50" stroke="black"/>
+                <text x="45" y="250" font-size="20" fill="black">(d)</text>
+                <text x="60" y="100" font-size="10" fill="black">X</text>
+                <text x="64" y="90" font-size="20" fill="black">A</text>
+                
+                <!-- Droite perpendiculaire passant par A -->
+                <line x1="60" y1="95" x2="280" y2="270" stroke="black" >
+                    <animate attributeName="x2" from="60" to="280" dur="10s" repeatCount="indefinite" />
+                    <animate attributeName="y2" from="95" to="270" dur="10s" repeatCount="indefinite" />
+                </line>
+                <text x="110" y="135" font-size="20" fill="black">O</text>
+                <text x="170" y="189" font-size="10" fill="black">X</text>
+                <text x="178" y="180" font-size="20" fill="black">A'</text>
+
+                <!-- Codage -->
+                <text x="82" y="130" font-size="30" fill="red">~</text>
+                <text x="142" y="180" font-size="30" fill="red">~</text>
+            </svg>
         </SousPartie>
         <SousPartie titre="Avec le compas" numero={2}>
             <Paragraphe nom="Protocole de construction" couleur="black" >
