@@ -71,6 +71,8 @@
                     <text x="45" y="250" font-size="20" fill="black">(d)</text>
                     <text x="60" y="100" font-size="10" fill="black">X</text>
                     <text x="55" y="85" font-size="20" fill="black">A</text>
+                    <circle cx="30" cy="250" r="157" stroke="black" fill="none"/>
+                    <circle cx="200" cy="50" r="144" stroke="black" fill="none"/>
                 </svg>
             </Schema>
         </SousPartie>
