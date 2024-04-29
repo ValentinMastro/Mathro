@@ -59,7 +59,7 @@
         </SousPartie>
         <SousPartie titre="Avec le compas" numero={2}>
             <Paragraphe nom="Protocole de construction" couleur="black" >
-                On a un point A et une droite (d). <br>
+                On a un point A et une droite {@html math('(d)')} <br>
                 {@html math("\\Rightarrow")} Placer 2 points sur la droite {@html math("(d)")}. <br>
                 {@html math("\\Rightarrow")} Avec le compas, tracer un arc de cercle de centre le premier point, et passant par {@html math("A")}. <br>
                 {@html math("\\Rightarrow")} Avec le compas, tracer un arc de cercle de centre le deuxième point, et passant par {@html math("A")}. <br>
@@ -70,9 +70,30 @@
                     <line x1="30" y1="250" x2="200" y2="50" stroke="black"/>
                     <text x="45" y="250" font-size="20" fill="black">(d)</text>
                     <text x="60" y="100" font-size="10" fill="black">X</text>
-                    <text x="55" y="85" font-size="20" fill="black">A</text>
+                    <text x="64" y="90" font-size="20" fill="black" font-family="Katex_Main">A</text>
+                    <text x="173" y="196" font-size="10" fill="black">X</text>
+                    <text x="181" y="185" font-size="20" fill="black" font-family="Katex_Main">A'</text>
                     <circle cx="30" cy="250" r="157" stroke="black" fill="none"/>
                     <circle cx="200" cy="50" r="144" stroke="black" fill="none"/>
+
+                    <text x="27" y="253" font-size="10" fill="green">X</text>
+                    <text x="197" y="54" font-size="10" fill="red">X</text>
+                </svg>
+                <svg viewBox="0 0 300 300" style="width: 20em">
+                    <line x1="30" y1="250" x2="200" y2="50" stroke="black"/>
+                    <text x="45" y="250" font-size="20" fill="black">(d)</text>
+                    <text x="60" y="100" font-size="10" fill="black">X</text>
+                    <text x="64" y="90" font-size="20" fill="black">A</text>
+
+                    <text x="27" y="253" font-size="10" fill="green">X</text>
+                    <text x="197" y="54" font-size="10" fill="red">X</text>
+
+                    <circle cx="30" cy="250" r="157" stroke="black" fill="none" stroke-dasharray="{Math.PI * 157} {Math.PI * 157}" stroke-dashoffset="{(0.4) * 2 * Math.PI * 157}">
+                        <animate attributeName="stroke-dashoffset" from="{(0.9) * 2 * Math.PI * 157}" to="{(0.4) * 2 * Math.PI * 157}" dur="10s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="200" cy="50" r="144" stroke="black" fill="none" stroke-dasharray="{Math.PI * 144} {Math.PI * 144}">
+                        <animate attributeName="stroke-dashoffset" from="{(0.4) * 2 * Math.PI * 144}" to="{(0.9) * 2 * Math.PI * 144}" dur="10s" repeatCount="indefinite" />
+                    </circle>
                 </svg>
             </Schema>
         </SousPartie>
