@@ -57,5 +57,22 @@
                 {@html math("\\Rightarrow")} Placer le point {@html math("A'")} sur la droite tracée tel que {@html math("AO = OA'")}.
             </Paragraphe>
         </SousPartie>
+        <SousPartie titre="Avec le compas" numero={2}>
+            <Paragraphe nom="Protocole de construction" couleur="black" >
+                On a un point A et une droite (d). <br>
+                {@html math("\\Rightarrow")} Placer 2 points sur la droite {@html math("(d)")}. <br>
+                {@html math("\\Rightarrow")} Avec le compas, tracer un arc de cerclce de centre le premier point, et passant par {@html math("A")}. <br>
+                {@html math("\\Rightarrow")} Avec le compas, tracer un arc de cerclce de centre le deuxième point, et passant par {@html math("A")}. <br>
+                Les deux cerclces se croiseront en aux points {@html math("A")} et {@html math("A'")}, le symétrique de {@html math("A")} par rapport à {@html math("(d)")}.
+            </Paragraphe>
+            <Schema>
+                <svg viewBox="0 0 300 300" style="width: 20em">
+                    <line x1="30" y1="250" x2="200" y2="50" stroke="black"/>
+                    <text x="45" y="250" font-size="20" fill="black">(d)</text>
+                    <text x="60" y="100" font-size="10" fill="black">X</text>
+                    <text x="55" y="85" font-size="20" fill="black">A</text>
+                </svg>
+            </Schema>
+        </SousPartie>
     </Partie>
 </Chapitre>
