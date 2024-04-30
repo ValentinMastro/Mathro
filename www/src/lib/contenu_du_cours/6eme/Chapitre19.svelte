@@ -133,4 +133,54 @@
             </Schema>
         </SousPartie>
     </Partie>
+    <Partie numero={3} titre="Axes de symétrie">
+        <Definition>
+            Un axe de symétrie est une droite avec laquelle on peut plier la figure 
+            afin que les deux parties obtenues soient superposables.
+        </Definition>
+        <SousPartie numero={1} titre="Dans un quadrilatère">
+            <Schema>
+                <svg viewBox="-50 -50 1000 350" style="width: 50em;">
+                    <!-- Carré -->
+                    <polygon points="0,0 0,200 200,200 200,0" fill="none" stroke="black" />
+                    <line x1="-20" y1="100" x2="220" y2="100" stroke="black" stroke-dasharray="5 5"/>
+                    <line x1="100" y1="-20" x2="100" y2="220" stroke="black" stroke-dasharray="5 5"/>
+                    <line x1="-20" y1="-20" x2="220" y2="220" stroke="black" stroke-dasharray="5 5"/>
+                    <line x1="220" y1="-20" x2="-20" y2="220" stroke="black" stroke-dasharray="5 5"/>
+                    <!-- Losange -->
+                    <polygon points="400,0 475,100 400,200 325,100" fill="none" stroke="black" />
+                    <line x1="300" y1="100" x2="500" y2="100" stroke="black" stroke-dasharray="5 5"/>
+                    <line x1="400" y1="-20" x2="400" y2="220" stroke="black" stroke-dasharray="5 5"/>
+                    <!-- Rectangle -->
+                    <polygon points="600,40 600,160 900,160 900,40" fill="none" stroke="black" />
+                    <line x1="580" y1="100" x2="920" y2="100" stroke="black" stroke-dasharray="5 5"/>
+                    <line x1="750" y1="-20" x2="750" y2="220" stroke="black" stroke-dasharray="5 5"/>
+                </svg>
+            </Schema>
+            <Propriete>
+                <ul>
+                    <li>Dans un carré, les axes de symétrie sont les médiatrices des côtés et les diagonales.</li>
+                    <li>Dans un losange, les axes de symétrie sont les diagonales.</li>
+                    <li>Dans un rectangle, les axes de symétrie sont les médiatrices des côtés.</li>
+                </ul>
+            </Propriete>
+        </SousPartie>
+        <SousPartie numero={2} titre="Dans les triangles">
+            <Schema>
+                <svg viewBox="-50 -50 700 300" style="width: 40em;">
+                    <!-- Triangle isocèle -->
+                    <polygon points="50,200 100,0 150,200" fill="none" stroke="black" />
+                    <line x1="100" y1="-20" x2="100" y2="220" stroke="black" stroke-dasharray="5 5"/>
+                    <!-- Triangle équilatéral -->
+                    <polygon points="280,200 400,0 520,200" fill="none" stroke="black" />
+                </svg>
+            </Schema>
+            <Propriete>
+                <ul>
+                    <li>Dans un triangle isocèle, l'axe de symétrie est la médiatrice de la base.</li>
+                    <li>Dans un triangle équilatéral, les axes de symétrie sont les médiatrices des 3 côtés du triangle.</li>
+                </ul>
+            </Propriete>
+        </SousPartie>
+    </Partie>
 </Chapitre>
