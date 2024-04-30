@@ -165,14 +165,17 @@
                 </ul>
             </Propriete>
         </SousPartie>
-        <SousPartie numero={2} titre="Dans les triangles">
+        <SousPartie numero={2} titre="Dans un triangle">
             <Schema>
                 <svg viewBox="-50 -50 700 300" style="width: 40em;">
                     <!-- Triangle isocèle -->
                     <polygon points="50,200 100,0 150,200" fill="none" stroke="black" />
                     <line x1="100" y1="-20" x2="100" y2="220" stroke="black" stroke-dasharray="5 5"/>
                     <!-- Triangle équilatéral -->
-                    <polygon points="280,200 400,0 520,200" fill="none" stroke="black" />
+                    <polygon points="280,200 {280+240*Math.cos(Math.PI/3)},{200-240*Math.sin(Math.PI/3)} 520,200" fill="none" stroke="black" />
+                    <line x1="400" y1="-20" x2="400" y2="220" stroke="black" stroke-dasharray="5 5"/>
+                    <line x1={520+20*Math.cos(Math.PI/6)} y1={200+20*Math.sin(Math.PI/6)} x2={280+120*Math.cos(Math.PI/3)} y2={200-120*Math.sin(Math.PI/3)} stroke="black" stroke-dasharray="1"/>
+                    <line x1={280-20*Math.cos(Math.PI/6)} y1={200+20*Math.sin(Math.PI/6)} x2={520+120*Math.cos(4*Math.PI/3)} y2={200+120*Math.sin(4*Math.PI/3)} stroke="black" stroke-dasharray="1"/>
                 </svg>
             </Schema>
             <Propriete>
