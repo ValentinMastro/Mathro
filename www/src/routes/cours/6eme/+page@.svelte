@@ -128,6 +128,8 @@
                     cats={["Espace et géométrie"]} >
         <ol>
             <li>Constructions</li>
+            <li>Les différents types de triangles</li>
+            <li>Les droites remarquables dans un triangle</li>
         </ol>
     </MenuChapitre>
     <MenuChapitre   index={11} 
