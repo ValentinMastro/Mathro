@@ -226,6 +226,15 @@
                     url="/cours/6eme/chapitre21"
                     cats={["Algorithmique et programmation"]}
                     img="/for_scratch/ScratchCat3.0.svg" >
+        <ol>
+            <li>Blocs et boucles</li>
+            <li>Variable</li>
+        </ol>
+    </MenuChapitre>
+    <MenuChapitre   index={22}
+                    titre="Propriétés de la symétrie axiale"
+                    url="/cours/6eme/chapitre22"
+                    cats={["Espace et géométrie"]} >
     </MenuChapitre>
 </div>
 
