@@ -234,7 +234,7 @@
     <MenuChapitre   index={22}
                     titre="Propriétés de la symétrie axiale"
                     url="/cours/6eme/chapitre22"
-                    cats={["Espace et géométrie"]} >
+                    cats={["Espace et géométrie", "Grandeurs et mesures"]} >
     </MenuChapitre>
 </div>
 
