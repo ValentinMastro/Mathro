@@ -58,6 +58,11 @@
                 </defs>
                 <use href="#figure" />
                 <text x="10" y="80" dx="-1em" font-size="12" fill="black">A</text>
+                <text x="10" y="120" dx="-1em" font-size="12" fill="black">B</text>
+                <text x="25" y="155" dx="-1em" font-size="12" fill="black">C</text>
+                <text x="185" y="80" dx="1em" font-size="12" fill="black">A'</text>
+                <text x="185" y="120" dx="1em" font-size="12" fill="black">B'</text>
+                <text x="170" y="155" dx="1em" font-size="12" fill="black">C'</text>
                 <use href="#figure" transform="scale(-1, 1) translate(-200, 0)" />
                 <path d="M 100 0 L 100 200" stroke="black" />
             </svg>
