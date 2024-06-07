@@ -46,6 +46,16 @@
                 </svg>
             </div>
         </Exemples>
+        <p style="color: red">
+            Pour simplifier l'écriture du programme, on peut utiliser la boucle répéter :
+        </p>
+        <ul style="color: black">
+            <li>Répéter 4 fois</li>
+            <ul>
+                <li>Avancer de 100 pas</li>
+                <li>Tourner de 90 degrés</li>
+            </ul>
+        </ul>
         <Definition>
             Dans Scratch, un bloc est une instruction, un ordre, que l'on donne à la machine.
         </Definition>
