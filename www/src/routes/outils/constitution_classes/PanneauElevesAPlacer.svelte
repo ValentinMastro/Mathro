@@ -17,6 +17,19 @@
         donnees = await importerDonneesDepuisLePressePapier(nombre_de_classes);
         console.log(donnees);
     }
+
+    function exporter() {
+        console.log(donnees);
+    }
+
+    function melanger() {
+        for (let eleve of donnees.eleves) {
+            let index_classe = Math.floor(Math.random() * nombre_de_classes);
+            donnees.classes[index_classe].eleves.push(eleve);
+        }
+        donnees = donnees;
+    }
+
 </script>
 
 <div class="panneau" class:retracte={retracte} on:click={toggle} role="none">
@@ -28,6 +41,7 @@
         <div id="non_retracte" style="display: flex; flex-direction: column; background-color: black;">
             <button on:click={importer}>Importer</button>
             <button>Exporter</button>
+            <button on:click={melanger}>Mélanger</button>
             <div style="width: 10%;"><!-- Espace --></div>
             <div id="liste_des_eleves_a_placer" style="overflow-y: auto;">
                 {#each donnees.eleves.filter(eleve => {
