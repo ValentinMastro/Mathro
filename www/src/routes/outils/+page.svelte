@@ -1,0 +1,1 @@
+<a href="/outils/constitution_classes">Constitution des classes</a>

@@ -23,8 +23,16 @@
 		</div>
 	</div>
 </div>
+<div id="outils">
+	<a href="/outils">Outils</a>
+</div>
 
 <style>
+	#outils {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+	}
 	div#accueil {
 		display: flex;
 		flex-direction: row;

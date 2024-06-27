@@ -15,6 +15,8 @@
 	</div>
 {:else if $page.url.pathname.includes("scratch")}
 	<slot />
+{:else if $page.url.pathname.includes("outils")}
+	<slot />
 {:else}
 	<div class="app">
 		<Header />

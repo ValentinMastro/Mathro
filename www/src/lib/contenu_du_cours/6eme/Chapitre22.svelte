@@ -55,16 +55,23 @@
                         <circle cx="10" cy="120" r="2.5" fill="red" stroke="none" />
                         <circle cx="30" cy="150" r="2.5" fill="red" stroke="none" />
                     </g>
+                    <clipPath id="figure_clip">
+                        <path d="M 10 80 L 10 120 L 30 150 L 30 80 Z" />
+                    </clipPath>
                 </defs>
                 <use href="#figure" />
-                <text x="10" y="80" dx="-1em" font-size="12" fill="black">A</text>
-                <text x="10" y="120" dx="-1em" font-size="12" fill="black">B</text>
+                <text x="10" y="80" dx="-1em" font-size="12" fill="black">B</text>
+                <text x="10" y="120" dx="-1em" font-size="12" fill="black">A</text>
                 <text x="25" y="155" dx="-1em" font-size="12" fill="black">C</text>
-                <text x="185" y="80" dx="1em" font-size="12" fill="black">A'</text>
-                <text x="185" y="120" dx="1em" font-size="12" fill="black">B'</text>
+                <text x="185" y="80" dx="1em" font-size="12" fill="black">B'</text>
+                <text x="185" y="120" dx="1em" font-size="12" fill="black">A'</text>
                 <text x="170" y="155" dx="1em" font-size="12" fill="black">C'</text>
                 <use href="#figure" transform="scale(-1, 1) translate(-200, 0)" />
                 <path d="M 100 0 L 100 200" stroke="black" />
+                <text x="15" y="102" font-size="12" fill="green">3 cm</text>
+                <text x="20" y="118" font-size="12" fill="orange" stroke="black" stroke-width="0.2">120°</text>
+                <circle cx="10" cy="120" r="10" fill="orange" stroke="none" clip-path="url(#figure_clip)" />
+                <line x1="10" y1="80" x2="10" y2="120" stroke="green" stroke-width="3" />
             </svg>
         </div>
         <span style="color: black;">Q1]</span><br> 
