@@ -3,6 +3,7 @@
     import PanneauRelationsEleves from "./PanneauRelationsEleves.svelte";
     import Configuration from "./Configuration.svelte";
 	import GrilleClasses from "./GrilleClasses.svelte";
+    import BarreDeRecherche from "./BarreDeRecherche.svelte";
 
     import type { Donnees } from "./types";
 
@@ -12,9 +13,11 @@
         classes: [],
         eleves: [],
     };
+    let mode_recherche = false;
 </script>
 
 <PanneauElevesAPlacer bind:niveau bind:nombre_de_classes bind:donnees/>
 <PanneauRelationsEleves />
 <Configuration bind:niveau bind:nombre_de_classes/>
-<GrilleClasses bind:niveau bind:nombre_de_classes bind:donnees/>
+<GrilleClasses bind:niveau bind:nombre_de_classes bind:donnees bind:mode_recherche />
+<BarreDeRecherche bind:donnees bind:mode_recherche />

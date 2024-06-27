@@ -11,6 +11,7 @@
     export let niveau: 6 | 5 | 4 | 3;
     export let nombre_de_classes: 5 | 6;
     export let donnees: Donnees;
+    export let mode_recherche: boolean;
 
     let config = false;
 
@@ -72,7 +73,7 @@
             </div>
             <!-- Liste des élèves -->
             {#each classe.eleves as eleve}
-                <CarteEleve {eleve} />
+                <CarteEleve {eleve} {mode_recherche} {donnees} />
             {/each}
             <!-- Résumé de la classe -->
             <ResumeClasse {classe} />

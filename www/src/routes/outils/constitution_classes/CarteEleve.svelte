@@ -5,6 +5,8 @@
 
     export let eleve: Eleve;
     export let donnees: Donnees;
+    export let mode_recherche: boolean;
+    export let recherche: string;
 
     let erreur_option = false;
 
@@ -26,9 +28,20 @@
 
     $: erreur_option = detecter_erreur_option(donnees);
 
+    function calcul_opacite(eleve: Eleve, mode_recherche: boolean): number {
+        if (!mode_recherche) return 1;
+        if (eleve.nom.toLowerCase().includes(recherche.toLowerCase())) return 1;
+        if (eleve.prenom.toLowerCase().includes(recherche.toLowerCase())) return 1;
+        return 0.3;
+    }
+
+    $: {
+        console.log(recherche)
+    }
+
 </script>
 
-<div class="carte" style="background-color: {eleve.genre === 'F' ? 'pink' : 'lightblue'}"
+<div class="carte" style="background-color: {eleve.genre === 'F' ? 'pink' : 'lightblue'}; opacity: {calcul_opacite(eleve, mode_recherche)}"
     use:draggable={eleve.id}
 >
     <div class="niveau">

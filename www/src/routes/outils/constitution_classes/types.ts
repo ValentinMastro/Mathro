@@ -7,7 +7,7 @@ type Eleve = {
     zozo: boolean,
     genre: "M" | "F",
     LV1: 'AGL1',
-    LV2: 'ALL' | 'ESP' | 'ALL2' | 'HISP',
+    LV2: 'ALL' | 'ESP' | 'ALL2' | 'HISP' | '',
     options: {
         chorale: boolean,
         latin: boolean,
@@ -55,17 +55,19 @@ function creer_classe(index: number) {
     }
 }
 
-function lv2(contenu: string[]): 'ALL' | 'ESP' | 'ALL2' | 'HISP' {
-    if (contenu[6].includes('ALL') && contenu[9].includes("BILANGUE")) return 'ALL';
-    if (contenu[6].includes('ESP')) return 'ESP';
-    if (contenu[6].includes('ALL')) return 'ALL2';
-    if (contenu[6].includes('ESP') && contenu[9].includes("BILANGUE")) return 'HISP';
-    return 'ALL';
+function lv2(contenu: string[]): 'ALL' | 'ESP' | 'ALL2' | 'HISP' | '' {
+    if (contenu[6].includes('ALL2')) return 'ALL';
+    if (contenu[6].includes('ESP2')) return 'ESP';
+    if (contenu[6].includes('ALL4')) return 'ALL2';
+    if (contenu[6].includes('ESP9')) return 'HISP';
+    return '';
 }
 
 async function importerDonneesDepuisLePressePapier(nombre_de_classes: number): Promise<Donnees> {
     let presse_papier = await navigator.clipboard.readText();
+    
     let lignes = presse_papier.split('\n');
+    console.log(lignes)
 
     let eleves: Eleve[] = [];
 
@@ -88,7 +90,7 @@ async function importerDonneesDepuisLePressePapier(nombre_de_classes: number): P
             LV1: 'AGL1',
             LV2: lv2(contenu),
             options: {
-                chorale: contenu[8].includes('CHOR') || contenu[8].includes('CHKCO'),
+                chorale: contenu[7].includes('CHOR') || contenu[7].includes('CHKCO'),
                 latin: contenu[7].includes('LCA'),
                 grec: contenu[7].includes('GREC'),
             }
