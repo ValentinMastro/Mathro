@@ -162,7 +162,7 @@
     </MenuChapitre>
     <MenuChapitre   index={14}
                     titre="Réciproques"
-                    url="cours/4eme/chapitre14"
+                    url="/cours/4eme/chapitre14"
                     cats={["Espace et géométrie", "Grandeurs et mesures"]}
                     img="/images/double_fleche.png" >
         <ol>

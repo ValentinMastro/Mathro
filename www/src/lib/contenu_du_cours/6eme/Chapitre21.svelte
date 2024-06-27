@@ -1,7 +1,7 @@
 <script lang="ts">
     import { Chapitre, Partie, SousPartie } from "$lib/chapitrage/all_chapitrages";
     import { Definition, Propriete, Schema, Paragraphe, Formule, Exemples, Remarque } from "$lib/chapitrage/sections/all_sections";
-    import { math, display } from 'mathlifier'; 
+    import { math, display } from 'mathlifier';
 </script>
 
 <Chapitre numero={21} titre="Programmation">
@@ -88,6 +88,32 @@
                     <li>la variable rayon, qui contient la valeur que l'on souhaite</li>
                 </ul>
             </div>
+        </Exemples>
+        <Exemples singulier>
+            L'objectif de ce programme est de calculer la somme des entiers de 1 à 50.
+
+            <ul>
+                <li>
+                    Mettre la variable TOTAL à 0
+                </li>
+                <li>
+                    Mettre la variable NOMBRE à 0
+                </li>
+                <li>
+                    Répeter 50 fois
+                    <ul>
+                        <li>
+                            Mettre la variable NOMBRE à NOMBRE + 1
+                        </li>
+                        <li>
+                            Mettre la variable TOTAL à TOTAL + NOMBRE
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Afficher TOTAL
+                </li>
+            </ul>
         </Exemples>
     </Partie>
 </Chapitre>

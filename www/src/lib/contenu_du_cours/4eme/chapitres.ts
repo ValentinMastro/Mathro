@@ -11,6 +11,9 @@ import Chapitre09 from "./Chapitre09.svelte";
 import Chapitre10 from "./Chapitre10.svelte";
 import Chapitre11 from "./Chapitre11.svelte";
 import Chapitre12 from "./Chapitre12.svelte";
+import Chapitre13 from "./Chapitre13.svelte";
+import Chapitre14 from "./Chapitre14.svelte";
+import Chapitre15 from "./Chapitre15.svelte";
 
 const chapitres = [
     Chapitre00,
@@ -26,6 +29,9 @@ const chapitres = [
     Chapitre10,
     Chapitre11,
     Chapitre12,
+    Chapitre13,
+    Chapitre14,
+    Chapitre15
 ];
 
 export function getChapitre(numero_chapitre: number) {
