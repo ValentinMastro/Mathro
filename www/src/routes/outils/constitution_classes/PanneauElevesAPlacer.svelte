@@ -38,7 +38,7 @@
                     }
                     return true;
                 }) as eleve}
-                    <CarteEleve {eleve} />
+                    <CarteEleve {eleve} {donnees} />
                 {/each}
             </div>
         </div>

@@ -1,11 +1,36 @@
 <script lang="ts">
-	import type { Eleve } from "./types";
+	import type { Donnees, Eleve } from "./types";
     import { couleur, texte } from "./types";
+    import { draggable } from "./drag_and_drop";
 
     export let eleve: Eleve;
+    export let donnees: Donnees;
+
+    let erreur_option = false;
+
+    function detecter_erreur_option(donnees: Donnees): boolean {
+        console.log("ook", donnees)
+        if (!donnees) return false;
+        let classe = donnees.classes.find(c => c.eleves.includes(eleve));
+        if (!classe) return false;
+
+        if (eleve.options.latin && !classe.options.latin) return true;
+        if (eleve.options.grec && !classe.options.grec) return true;
+        if (eleve.LV2 === "ALL" && !classe.options.allemand_bilangue) return true;
+        if (eleve.LV2 === "ALL2" && !classe.options.allemand_lv2) return true;
+        if (eleve.LV2 === "ESP" && !classe.options.espagnol_lv2) return true;
+        if (eleve.LV2 === "HISP" && !classe.options.hispanica) return true;
+
+        return false;
+    }
+
+    $: erreur_option = detecter_erreur_option(donnees);
+
 </script>
 
-<div class="carte" style="background-color: {eleve.genre === 'F' ? 'pink' : 'lightblue'}">
+<div class="carte" style="background-color: {eleve.genre === 'F' ? 'pink' : 'lightblue'}"
+    use:draggable={eleve.id}
+>
     <div class="niveau">
         {#if eleve.niveau === 'A'}
             <div class="lettre A">A</div>
@@ -25,7 +50,7 @@
         <div class="lv2" style="background-color: {couleur(eleve.LV2)}">{texte(eleve.LV2)}</div>
     </div>
     <div class="nom">
-        <span style="font-weight: bold;">{eleve.nom}</span> {eleve.prenom}
+        <span style="font-weight: bold; {erreur_option ? "color: red" : ""}">{eleve.nom}</span> {eleve.prenom}
     </div>
     <div class="info_attitude">
         {#if eleve.moteur}

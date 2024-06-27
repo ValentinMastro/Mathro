@@ -1,8 +1,12 @@
 <script lang='ts'>
     import type { Donnees, Classe } from './types';
+    import { ajouterEleve } from './types';
+    import { dropzone } from "./drag_and_drop";
+
     import BoutonOption from './BoutonOption.svelte';
     import Option from './Option.svelte';
     import ResumeClasse from './ResumeClasse.svelte';
+    import CarteEleve from './CarteEleve.svelte';
 
     export let niveau: 6 | 5 | 4 | 3;
     export let nombre_de_classes: 5 | 6;
@@ -30,7 +34,24 @@
 
 <div id="classes">
     {#each donnees.classes as classe}
-        <div class="classe" style="width: {(100 - nombre_de_classes*0.1)/nombre_de_classes}%">
+        <div class="classe" style="width: {(100 - nombre_de_classes*0.1)/nombre_de_classes}%" 
+        use:dropzone={{
+            on_dropzone(id) {
+                const eleve_a_deplacer = donnees.eleves.find(e => e.id == id);
+                if (eleve_a_deplacer) {
+                    // Retirer l'élève de sa classe actuelle
+                    for (let classe of donnees.classes) {
+                        if (classe.eleves.includes(eleve_a_deplacer)) {
+                            classe.eleves = classe.eleves.filter(e => e !== eleve_a_deplacer);
+                        }
+                    }
+                    classe.eleves.push(eleve_a_deplacer);
+                } else {
+                    console.log("Erreur : l'élève n'a pas été trouvé");
+                }
+                donnees = donnees;
+            }
+        }} >
             <!-- Nom de la classe -->
             <div class="barre">
                 <div class="nom" on:click={configurer} role="none">
@@ -51,7 +72,7 @@
             </div>
             <!-- Liste des élèves -->
             {#each classe.eleves as eleve}
-                <div>{eleve.nom}</div>
+                <CarteEleve {eleve} />
             {/each}
             <!-- Résumé de la classe -->
             <ResumeClasse {classe} />
@@ -82,6 +103,12 @@
         align-items: center;
 
         user-select: none;
+    }
+    .classe:global(.droppable) {
+        background-color: red;
+    }
+    .classe:global(.droppable) * {
+        pointer-events: none;
     }
     .separateur {
         background-color: black;

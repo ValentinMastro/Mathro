@@ -1,4 +1,5 @@
 type Eleve = {
+    id: number,
     nom: string,
     prenom: string,
     niveau: "A" | "B" | "C" | "D" | "",
@@ -54,6 +55,14 @@ function creer_classe(index: number) {
     }
 }
 
+function lv2(contenu: string[]): 'ALL' | 'ESP' | 'ALL2' | 'HISP' {
+    if (contenu[6].includes('ALL') && contenu[9].includes("BILANGUE")) return 'ALL';
+    if (contenu[6].includes('ESP')) return 'ESP';
+    if (contenu[6].includes('ALL')) return 'ALL2';
+    if (contenu[6].includes('ESP') && contenu[9].includes("BILANGUE")) return 'HISP';
+    return 'ALL';
+}
+
 async function importerDonneesDepuisLePressePapier(nombre_de_classes: number): Promise<Donnees> {
     let presse_papier = await navigator.clipboard.readText();
     let lignes = presse_papier.split('\n');
@@ -69,17 +78,18 @@ async function importerDonneesDepuisLePressePapier(nombre_de_classes: number): P
         }
         
         eleves.push({
+            id: Number(ligne),
             nom: contenu[2],
             prenom: contenu[3],
             niveau: contenu[0] as "A" | "B" | "C" | "D" | "",
-            moteur: contenu[1].includes('M'),
-            zozo: contenu[1].includes('Z'),
+            moteur: contenu[1].includes('M') || contenu[1].includes('m'),
+            zozo: contenu[1].includes('Z') || contenu[1].includes('z'),
             genre: contenu[4] as "M" | "F",
-            LV1: contenu[5] as 'AGL1',
-            LV2: contenu[6] as 'ALL' | 'ESP' | 'ALL2' | 'HISP',
+            LV1: 'AGL1',
+            LV2: lv2(contenu),
             options: {
-                chorale: contenu[7].includes('CHOR'),
-                latin: contenu[7].includes('LAT'),
+                chorale: contenu[8].includes('CHOR') || contenu[8].includes('CHKCO'),
+                latin: contenu[7].includes('LCA'),
                 grec: contenu[7].includes('GREC'),
             }
         })
