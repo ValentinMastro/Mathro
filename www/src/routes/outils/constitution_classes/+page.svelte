@@ -14,10 +14,11 @@
         eleves: [],
     };
     let mode_recherche = false;
+    let recherche: string = "";
 </script>
 
 <PanneauElevesAPlacer bind:niveau bind:nombre_de_classes bind:donnees/>
 <PanneauRelationsEleves />
 <Configuration bind:niveau bind:nombre_de_classes/>
 <GrilleClasses bind:niveau bind:nombre_de_classes bind:donnees bind:mode_recherche />
-<BarreDeRecherche bind:donnees bind:mode_recherche />
+<BarreDeRecherche bind:donnees bind:mode_recherche bind:recherche />
