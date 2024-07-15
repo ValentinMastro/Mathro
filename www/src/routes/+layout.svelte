@@ -17,6 +17,8 @@
 	<slot />
 {:else if $page.url.pathname.includes("outils")}
 	<slot />
+{:else if $page.url.pathname.includes("cahier")}
+	<slot />
 {:else}
 	<div class="app">
 		<Header />
