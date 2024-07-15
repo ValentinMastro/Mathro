@@ -14,7 +14,7 @@
     <a id="entrainement" href="/entrainement/6eme">
         Entraînement
     </a>
-    <a id="cahier_de_cours" href="/cahier_de_cours/4eme">
+    <a id="cahier_de_cours" href="/cahier_de_cours/6eme">
         Cahier de cours
     </a>
 </div>
