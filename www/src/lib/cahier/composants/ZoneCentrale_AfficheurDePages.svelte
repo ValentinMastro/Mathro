@@ -1,10 +1,9 @@
 <script lang="ts">
-    import { numero_de_la_page, nombre_de_pages, nombre_de_pages_a_afficher, niveau } from "../store";
+    import { numero_de_la_page, nombre_de_pages, niveau } from "../store";
 
     async function recuperer_pages() {
-        //return [await import(`$lib/cahier/contenu/6eme/Page000.svelte`)]
         let pages = [];
-        for (let i = 0; i < nombre_de_pages($niveau); i++) {
+        for (let i = 1; i <= nombre_de_pages($niveau); i++) {
             pages.push(await import(`$lib/cahier/contenu/${$niveau}eme/Page${i.toString().padStart(3, "0")}.svelte`));
         }
         return pages;
@@ -15,14 +14,14 @@
     {#await recuperer_pages() }
         <p>Chargement...</p>
     {:then pages} 
-        {#if $numero_de_la_page == -1}
+        {#if $numero_de_la_page == 0}
             <div class="page_simple"></div>
         {/if}
-        {#each pages as page,index}
-            {#if index == $numero_de_la_page || index == $numero_de_la_page + 1}
+        {#each pages as page, index}
+            {#if index + 1 == $numero_de_la_page || index + 1 == $numero_de_la_page + 1}
                 <div class="page_simple">
                     <svelte:component this={page.default} />
-                    <span class="numero">Page {index}</span>
+                    <span class="numero">Page {index + 1}</span>
                 </div>
             {/if}
         {/each}

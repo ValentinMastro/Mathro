@@ -29,7 +29,7 @@
                 break;
             case "ArrowLeft":
                 numero_de_la_page.update((n) => {
-                    if ($numero_de_la_page > -1) {
+                    if ($numero_de_la_page > 0) {
                         return n - 2;
                     } else {
                         return n;
@@ -42,14 +42,4 @@
 
 <svelte:window on:keydown={touche_pressee} />
 
-<div id="page">
-    <ZoneCentrale_AfficheurDePages />
-</div>
-
-<style>
-    #page {
-        width: 100vw;
-        height: 100vh;
-        background-color: red;
-    }
-</style>
+<ZoneCentrale_AfficheurDePages />

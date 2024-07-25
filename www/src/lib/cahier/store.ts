@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
 
-export let numero_de_la_page = writable(-1);
+export let numero_de_la_page = writable(0);
 export let niveau = writable<3 | 4 | 5 | 6>(6);
 export let nombre_de_pages_a_afficher = writable<1 | 2>(2);
 
