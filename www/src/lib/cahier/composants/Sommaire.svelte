@@ -4,7 +4,6 @@
     let categories_visibles = $state(["Nombres et calculs", 
                             "Espace et géométrie", "Grandeurs et mesures", 
                             "Organisation et gestion de données", "Algorithmique et programmation"]);
-    $inspect(categories_visibles);
 </script>
 
 <h2>Sommaire</h2>
