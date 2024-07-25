@@ -17,3 +17,4 @@ export const load: PageLoad = ( {params} ) => {
         niveau: parse(params.niveau),
     };
 }
+
