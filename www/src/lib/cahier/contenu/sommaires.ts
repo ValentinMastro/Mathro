@@ -24,10 +24,11 @@ export function couleur_de_la_categorie(categorie: Categories) {
 type Chapitre = {
     titre: string,
     categories: Categories[],
+    premiere_page?: number,
 }
 
 export let sommaire_6eme: Chapitre[] = [
-    { titre: "Connaître les différentes écritures d’un nombre décimal", categories: ["Nombres et calculs"] },
+    { titre: "Connaître les différentes écritures d’un nombre décimal", categories: ["Nombres et calculs"], premiere_page: 3 },
     { titre: "Connaître le vocabulaire de base et les notations usuelles en géométrie", categories: ["Espace et géométrie"] },
     { titre: "Comparer des nombres, repérer et encadrer un nombre décimal", categories: ["Nombres et calculs"] },
     { titre: "Le cercle", categories: ["Espace et géométrie"] },
@@ -51,7 +52,7 @@ export let sommaire_6eme: Chapitre[] = [
     { titre: "Déterminer l’aire d’un triangle", categories: ["Grandeurs et mesures"] },
     { titre: "Multiplier deux nombres décimaux", categories: ["Nombres et calculs"] },
     { titre: "Calculer le volume d’un solide", categories: ["Grandeurs et mesures"] },
-    { titre: "Définir la médiatrice d’un segment et connaître sa propriété caractéristique", categories: ["Espace et géométrie"] },
+    { titre: "La médiatrice d’un segment", categories: ["Espace et géométrie"] },
     { titre: "Calculer le périmètre d’un cercle et l’aire d’un disque", categories: ["Grandeurs et mesures"] },
     { titre: "Utiliser la proportionnalité pour résoudre un problème", categories: ["Nombres et calculs"] },
     { titre: "Utiliser les positions relatives de droites", categories: ["Espace et géométrie"] },

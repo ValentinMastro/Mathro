@@ -1,5 +1,6 @@
 <script lang="ts">
     import { sommaire_6eme, couleur_de_la_categorie } from "$lib/cahier/contenu/sommaires";
+    import { numero_de_la_page } from "../store";
 
     let categories_visibles = $state(["Nombres et calculs", 
                             "Espace et géométrie", "Grandeurs et mesures", 
@@ -9,7 +10,9 @@
 <h2>Sommaire</h2>
 
 {#snippet ma_categorie(categorie)}
-    <span class="categorie" style="background-color: {categories_visibles.includes(categorie) ? couleur_de_la_categorie(categorie) : "gray"};" >{categorie}</span>
+    <span style="color: {categories_visibles.includes(categorie) ? couleur_de_la_categorie(categorie) : "gray"}; user-select: none;" >
+        &#x25CF;
+    </span>
 {/snippet}
 
 {#snippet selecteur_de_categorie(categorie)}
@@ -23,13 +26,22 @@
             }
         }}
     >
-        {@render ma_categorie(categorie)}
+        <span class="categorie" style="background-color: {categories_visibles.includes(categorie) ? couleur_de_la_categorie(categorie) : "gray"};" >
+            {categorie}
+        </span>
     </div>
 {/snippet}
 
 <ol>
-    {#each sommaire_6eme as chapitre}
-        <li style="visibility: {chapitre.categories.some((c) => categories_visibles.includes(c)) ? "visible" : "hidden"}">
+    {#each sommaire_6eme as chapitre, index}
+        <li style="visibility: {chapitre.categories.some((c) => categories_visibles.includes(c)) ? "visible" : "hidden"}"
+            role="none"
+            onclick={() => {
+                if (chapitre.premiere_page != undefined) {
+                    numero_de_la_page.set(chapitre.premiere_page - (chapitre.premiere_page % 2))
+                }
+            }}
+        >
             <span style="width: 1ex"></span>
             <span>{chapitre.titre}</span>
             <div class="categories">
@@ -73,17 +85,7 @@
     li {
         display: flex;
         align-items: flex-start;
-    }
-
-    span.categorie {
-        user-select: none;
-        color: white;
-        font-weight: bold;
-        font-size: 0.85em;
-
-        padding-left: 0.6em;
-        padding-right: 0.6em;
-        border-radius: 8px;
+        margin-top: 0.4em;
     }
 
     .categories {
@@ -92,6 +94,15 @@
 
     h2 {
         text-align: center;
+    }
+
+    .categorie {
+        font-weight: bold;
+        color: white;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        border-radius: 0.5em;
+        user-select: none;
     }
 
     .liste_categories {

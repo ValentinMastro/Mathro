@@ -1,40 +1,46 @@
 <script lang="ts">
     // Récupération du niveau de la page
     import type { PageData } from "./$types";
-    import { 
-        numero_de_la_page, 
-        niveau, 
-        nombre_de_pages_a_afficher, 
-        nombre_de_pages } from "../../../lib/cahier/store";
     export let data: PageData;
 
-    niveau.set(data.niveau as 3 | 4 | 5 | 6);
+    import { nombre_de_pages, niveau, numero_de_la_page, nombre_de_pages_a_afficher } from "$lib/cahier/store";
 
-    // Composants de la page
-    import ZoneCentrale_AfficheurDePages from "$lib/cahier/composants/ZoneCentrale_AfficheurDePages.svelte";
+    import ZoneCentraleAfficheurDePages from "$lib/cahier/composants/ZoneCentrale_AfficheurDePages.svelte";
+
+    function changement_de_page(diff: number) {
+        numero_de_la_page.update((n) => {
+            if ($numero_de_la_page + diff >= 0 && $numero_de_la_page + diff <= nombre_de_pages($niveau) - ($nombre_de_pages_a_afficher - 1) ) {
+                return n + diff;
+            } else {
+                return n;
+            }
+        });
+    }
 
     function touche_pressee(event: KeyboardEvent) {
         switch (event.key) {
             case "p":
-                nombre_de_pages_a_afficher.update((n) => n == 1 ? 2 : 1);
+                nombre_de_pages_a_afficher.set(($nombre_de_pages_a_afficher == 1) ? 2 : 1);
                 break;
             case "ArrowRight":
-                numero_de_la_page.update((n) => {
-                    if ($numero_de_la_page < nombre_de_pages($niveau) - 1) {
-                        return n + 2;
-                    } else {
-                        return n;
-                    }
-                });
+                if ($nombre_de_pages_a_afficher == 1) {
+                    changement_de_page(1);
+                } else {
+                    changement_de_page(2);
+                }
                 break;
             case "ArrowLeft":
-                numero_de_la_page.update((n) => {
-                    if ($numero_de_la_page > 0) {
-                        return n - 2;
-                    } else {
-                        return n;
-                    }
-                });
+                if ($nombre_de_pages_a_afficher == 1) {
+                    changement_de_page(-1);
+                } else {
+                    changement_de_page(-2);
+                }
+                break;
+            case "ArrowUp":
+                changement_de_page(1);
+                break;
+            case "ArrowDown":
+                changement_de_page(-1);
                 break;
         }
     }
@@ -42,4 +48,4 @@
 
 <svelte:window on:keydown={touche_pressee} />
 
-<ZoneCentrale_AfficheurDePages />
+<ZoneCentraleAfficheurDePages />
