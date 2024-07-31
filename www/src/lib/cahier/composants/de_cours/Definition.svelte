@@ -1,6 +1,6 @@
 <script lang="ts">
     interface Props {
-        lignes: number,
+        lignes?: number,
         children?: any,
     }
     let { lignes = 1, children }: Props = $props();
