@@ -5,19 +5,30 @@
     }
 
     let { numero_de_page, contenu }: Props = $props();
+
+    import { plein_ecran, largeur_plein_ecran, taille_numero_de_page, taille_page } from "$lib/cahier/store";
+
+    let composant: HTMLDivElement;
+    $effect(() => {
+        const resizeObserver = new ResizeObserver(() => {
+            if (composant) {
+                taille_page.set(Number(composant.clientHeight));
+            }
+        });
+        resizeObserver.observe(composant);
+    });
 </script>
 
 <svelte:options runes={true} />
 
-<div class="page {numero_de_page >= 3 ? "seyes" : ""}" style="visibility: {numero_de_page == 0 ? "hidden" : "visible"}">
+<div bind:this={composant} class="page {numero_de_page >= 3 ? "seyes" : ""}" style="visibility: {numero_de_page == 0 ? "hidden" : "visible"}; {$plein_ecran ? "width: " + $largeur_plein_ecran + "%" : "height: 100%;"}">
     <svelte:component this={contenu} />
-    <span class="numero">Page {numero_de_page}</span>
+    <span class="numero" style="font-size: {$taille_numero_de_page}px">Page {numero_de_page}</span>
 </div>
 
 <style>
     .page {
         color: black;
-        height: 100%;
         aspect-ratio: 210/297;
         position: relative;
         display: flex;

@@ -1,22 +1,24 @@
 <script lang="ts">
-    import { sommaire_6eme, couleur_de_la_categorie } from "$lib/cahier/contenu/sommaires";
-    import { numero_de_la_page } from "../store";
+    import { sommaire, couleur_de_la_categorie } from "$lib/cahier/contenu/sommaires";
+    import { numero_de_la_page, niveau } from "../store";
+    import { taille_sommaire, taille_chapitre } from "../store";
 
     let categories_visibles = $state(["Nombres et calculs", 
                             "Espace et géométrie", "Grandeurs et mesures", 
                             "Organisation et gestion de données", "Algorithmique et programmation"]);
 </script>
 
-<h2>Sommaire</h2>
+<h2 style="font-size: {$taille_sommaire}px">Sommaire</h2>
 
 {#snippet ma_categorie(categorie)}
-    <span style="color: {categories_visibles.includes(categorie) ? couleur_de_la_categorie(categorie) : "gray"}; user-select: none;" >
+    <span style="font-size: {$taille_chapitre}px; color: {categories_visibles.includes(categorie) ? couleur_de_la_categorie(categorie) : "gray"}; user-select: none;" >
         &#x25CF;
     </span>
 {/snippet}
 
 {#snippet selecteur_de_categorie(categorie)}
     <div
+        style="font-size: {$taille_chapitre*0.8}px;"
         role="none"
         onclick={() => {
             if (categories_visibles.includes(categorie)) {
@@ -32,8 +34,8 @@
     </div>
 {/snippet}
 
-<ol>
-    {#each sommaire_6eme as chapitre, index}
+<ol style="font-size: {$taille_chapitre}px;">
+    {#each sommaire($niveau) as chapitre}
         <li style="visibility: {chapitre.categories.some((c) => categories_visibles.includes(c)) ? "visible" : "hidden"}"
             role="none"
             onclick={() => {
@@ -69,6 +71,8 @@
     {@render selecteur_de_categorie("Nombres et calculs")}
     {@render selecteur_de_categorie("Espace et géométrie")}
     {@render selecteur_de_categorie("Grandeurs et mesures")}
+    {@render selecteur_de_categorie("Organisation et gestion de données")}
+    {@render selecteur_de_categorie("Algorithmique et programmation")}
 </div>
 
 <style>
@@ -110,5 +114,7 @@
         justify-content: space-evenly;
         margin-top: auto;
         margin-bottom: auto;
+        flex-wrap: wrap;
+        row-gap: 0.5em;
     }
 </style>

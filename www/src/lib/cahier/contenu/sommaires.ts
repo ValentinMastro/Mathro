@@ -27,7 +27,7 @@ type Chapitre = {
     premiere_page?: number,
 }
 
-export let sommaire_6eme: Chapitre[] = [
+let sommaire_6eme: Chapitre[] = [
     { titre: "Connaître les différentes écritures d’un nombre décimal", categories: ["Nombres et calculs"], premiere_page: 3 },
     { titre: "Connaître le vocabulaire de base et les notations usuelles en géométrie", categories: ["Espace et géométrie"] },
     { titre: "Comparer des nombres, repérer et encadrer un nombre décimal", categories: ["Nombres et calculs"] },
@@ -58,3 +58,35 @@ export let sommaire_6eme: Chapitre[] = [
     { titre: "Utiliser les positions relatives de droites", categories: ["Espace et géométrie"] },
     { titre: "Division décimale", categories: ["Nombres et calculs"] },
 ];
+
+let sommaire_4eme: Chapitre[] = [
+    { titre: "Opérations sur les nombres relatifs", categories: ["Nombres et calculs"] },
+    { titre: "Théorème de Pythagore", categories: ["Espace et géométrie", "Nombres et calculs", "Grandeurs et mesures"] },
+    { titre: "Fractions et proportionnalité", categories: ["Nombres et calculs"] },
+    { titre: "Transformations du plan", categories: ["Espace et géométrie"] },
+    { titre: "Calcul littéral", categories: ["Nombres et calculs"] },
+    { titre: "Théorème de Thalès", categories: ["Espace et géométrie", "Grandeurs et mesures"] },
+    { titre: "Puissances", categories: ["Nombres et calculs"] },
+    { titre: "Statistiques", categories: ["Organisation et gestion de données"] },
+    { titre: "Cosinus", categories: ["Espace et géométrie", "Nombres et calculs", "Grandeurs et mesures"] },
+    { titre: "Équations", categories: ["Nombres et calculs"] },
+    { titre: "Probabilités", categories: ["Organisation et gestion de données"] },
+    { titre: "Décomposition en facteurs premiers", categories: ["Nombres et calculs"] },
+    { titre: "Solides de l'espace", categories: ["Espace et géométrie"] },
+    { titre: "Programmation", categories: ["Algorithmique et programmation"] },
+    { titre: "Repérage", categories: ["Espace et géométrie"] },
+    { titre: "Réciproques", categories: ["Espace et géométrie", "Grandeurs et mesures"] },
+];
+
+export function sommaire(niveau: 3 | 4 | 5 | 6): Chapitre[] {
+    switch (niveau) {
+        case 3:
+            return [];
+        case 4:
+            return sommaire_4eme;
+        case 5:
+            return [];
+        case 6:
+            return sommaire_6eme;
+    }
+}

@@ -1,19 +1,5 @@
-<div id="titre">
-    <div>Cahier de cours</div>
-    <div>Mathématiques</div>
-    <div>6ème</div>
-    <div>2024-2025</div>
-</div>
+<script lang="ts">
+    import PageDeGarde from "$lib/cahier/composants/PageDeGarde.svelte";
+</script>
 
-<style>
-    div#titre {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-    }
-    div#titre > div {
-        font-size: 3em;
-    }
-</style>
+<PageDeGarde />
