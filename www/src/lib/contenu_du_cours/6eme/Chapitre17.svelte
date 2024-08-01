@@ -200,9 +200,6 @@
                         <line x1="325" y1="25" x2="325" y2="225" stroke="black" />
                         <line x1="125" y1="225" x2="125" y2="25" stroke="black"/>
                     </svg>
-                    <div style="width: 40%; aspect-ratio: 1;">
-                        <AnimationCube />
-                    </div>
                 </div>
             </Schema>
         </SousPartie>
