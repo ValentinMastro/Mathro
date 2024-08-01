@@ -1,6 +1,5 @@
 <script lang="ts">
-    import Katex from "svelte-katex";
-
+    import { math } from "mathlifier";
     interface InterfaceQuestion {
         type: "QCM",
         enonce: string,
@@ -38,7 +37,7 @@
         </div>
         <div id="contenu_enonce">
             {#if question.katex_enonce}
-                <Katex>{question.enonce}</Katex>
+                {@html math(question.enonce)}
             {:else}
                 <p>{@html question.enonce}</p>
             {/if}
@@ -53,7 +52,7 @@
                         type="radio" id="reponse_{index_reponse}" name="reponse" />
                     <label for="reponse_{index_reponse}">
                         {#if question.katex_reponses}
-                            <p><Katex>{reponse}</Katex></p>
+                            <p>{@html math(reponse)}</p>
                         {:else}
                             <p>{@html reponse}</p>
                         {/if}
