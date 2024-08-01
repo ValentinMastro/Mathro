@@ -11,7 +11,7 @@ export function nombre_de_pages(niveau: 3 | 4 | 5 | 6): number {
         case 3:
             return 0;
         case 4:
-            return 96;
+            return 97;
         case 5:
             return 0;
         case 6:

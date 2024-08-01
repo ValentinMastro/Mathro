@@ -21,7 +21,7 @@
 
 <svelte:options runes={true} />
 
-<div bind:this={composant} class="page {numero_de_page >= 3 ? "seyes" : ""}" style="visibility: {numero_de_page == 0 ? "hidden" : "visible"}; {$plein_ecran ? "width: " + $largeur_plein_ecran + "%" : "height: 100%;"}">
+<div bind:this={composant} class="page {numero_de_page >= 3 ? "seyes" : ""}" style="visibility: {numero_de_page == 0 || numero_de_page == 97 ? "hidden" : "visible"}; {$plein_ecran ? "width: " + $largeur_plein_ecran + "%" : "height: 100%;"}">
     <svelte:component this={contenu} />
     <span class="numero" style="font-size: {$taille_numero_de_page}px">Page {numero_de_page}</span>
 </div>

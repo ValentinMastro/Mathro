@@ -21,9 +21,9 @@
             <input id="largeur" type="range" min="0" max="100" bind:value={$largeur_plein_ecran} />
             <div id="scroll">
                 {#each pages as page, i}
-                {#if i != 0}
-                    <PageDeCahier numero_de_page={i} contenu={page.default} />
-                {/if}
+                    {#if i != 0 && i != nombre_de_pages($niveau)}
+                        <PageDeCahier numero_de_page={i} contenu={page.default} />
+                    {/if}
                 {/each}
             </div>
         {:else}
