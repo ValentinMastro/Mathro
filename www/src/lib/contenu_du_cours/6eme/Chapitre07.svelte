@@ -52,86 +52,88 @@
         </Paragraphe>
 
         <table id="tableau_SI" style="color: black;">
-            <tr>
-                <th>Préfixe</th>
-                <th>kilo</th>
-                <th>hecto</th>
-                <th>déca</th>
-                <th>unité</th>
-                <th>déci</th>
-                <th>centi</th>
-                <th>milli</th>
-            </tr>
-            <tr>
-                <td>distance (en mètre)</td>
-                <td>km</td>
-                <td>hm</td>
-                <td>dam</td>
-                <td>m</td>
-                <td>dm</td>
-                <td>cm</td>
-                <td>mm</td>
-            </tr>
-            <tr>
-                <td>masse (en kilogramme)</td>
-                <td>kg</td>
-                <td>hg</td>
-                <td>dag</td>
-                <td>g</td>
-                <td>dg</td>
-                <td>cg</td>
-                <td>mg</td>
-            </tr>
-            <tr>
-                <td>temps (en seconde)</td>
-                <td>ks</td> 
-                <td>hs</td>
-                <td>das</td>
-                <td>s</td>
-                <td>ds</td>
-                <td>cs</td>
-                <td>ms</td>
-            </tr>
-            <tr>
-                <td>température (en kelvin)</td>
-                <td>kK</td>
-                <td>hK</td>
-                <td>daK</td>
-                <td>K</td>
-                <td>dK</td>
-                <td>cK</td>
-                <td>mK</td>
-            </tr>
-            <tr>
-                <td>intensité électrique (en ampère)</td>
-                <td>kA</td>
-                <td>hA</td>
-                <td>daA</td>
-                <td>A</td>
-                <td>dA</td>
-                <td>cA</td>
-                <td>mA</td>
-            </tr>
-            <tr>
-                <td>intensité lumineuse (en candela)</td>
-                <td>kcd</td>
-                <td>hcd</td>
-                <td>dacd</td>
-                <td>cd</td>
-                <td>dcd</td>
-                <td>ccd</td>
-                <td>mcd</td>
-            </tr>
-            <tr>
-                <td>quantité de matière (en mole)</td>
-                <td>kmol</td>
-                <td>hmol</td>
-                <td>damol</td>
-                <td>mol</td>
-                <td>dmol</td>
-                <td>cmol</td>
-                <td>mmol</td>
-            </tr>
+                <tbody>
+                <tr>
+                    <th>Préfixe</th>
+                    <th>kilo</th>
+                    <th>hecto</th>
+                    <th>déca</th>
+                    <th>unité</th>
+                    <th>déci</th>
+                    <th>centi</th>
+                    <th>milli</th>
+                </tr>
+                <tr>
+                    <td>distance (en mètre)</td>
+                    <td>km</td>
+                    <td>hm</td>
+                    <td>dam</td>
+                    <td>m</td>
+                    <td>dm</td>
+                    <td>cm</td>
+                    <td>mm</td>
+                </tr>
+                <tr>
+                    <td>masse (en kilogramme)</td>
+                    <td>kg</td>
+                    <td>hg</td>
+                    <td>dag</td>
+                    <td>g</td>
+                    <td>dg</td>
+                    <td>cg</td>
+                    <td>mg</td>
+                </tr>
+                <tr>
+                    <td>temps (en seconde)</td>
+                    <td>ks</td> 
+                    <td>hs</td>
+                    <td>das</td>
+                    <td>s</td>
+                    <td>ds</td>
+                    <td>cs</td>
+                    <td>ms</td>
+                </tr>
+                <tr>
+                    <td>température (en kelvin)</td>
+                    <td>kK</td>
+                    <td>hK</td>
+                    <td>daK</td>
+                    <td>K</td>
+                    <td>dK</td>
+                    <td>cK</td>
+                    <td>mK</td>
+                </tr>
+                <tr>
+                    <td>intensité électrique (en ampère)</td>
+                    <td>kA</td>
+                    <td>hA</td>
+                    <td>daA</td>
+                    <td>A</td>
+                    <td>dA</td>
+                    <td>cA</td>
+                    <td>mA</td>
+                </tr>
+                <tr>
+                    <td>intensité lumineuse (en candela)</td>
+                    <td>kcd</td>
+                    <td>hcd</td>
+                    <td>dacd</td>
+                    <td>cd</td>
+                    <td>dcd</td>
+                    <td>ccd</td>
+                    <td>mcd</td>
+                </tr>
+                <tr>
+                    <td>quantité de matière (en mole)</td>
+                    <td>kmol</td>
+                    <td>hmol</td>
+                    <td>damol</td>
+                    <td>mol</td>
+                    <td>dmol</td>
+                    <td>cmol</td>
+                    <td>mmol</td>
+                </tr>
+            </tbody>
         </table>
         <SousPartie numero={1} titre="Convertir en remplaçant les préfixes">
             <Exemples>
@@ -150,33 +152,35 @@
         </SousPartie>
         <SousPartie numero={2} titre="Convertir en utilisant le tableau">
             <table class="tableau_conversion" style="color: black;">
-                <tr>
-                    <th>km</th>
-                    <th>hm</th>
-                    <th>dam</th>
-                    <th>m</th>
-                    <th>dm</th>
-                    <th>cm</th>
-                    <th>mm</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>0,</td>
-                    <td>0</td>
-                    <td>3</td>
-                    <td>2</td>
-                    <td>7</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>0</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <th>km</th>
+                        <th>hm</th>
+                        <th>dam</th>
+                        <th>m</th>
+                        <th>dm</th>
+                        <th>cm</th>
+                        <th>mm</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>0,</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>7</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
             </table>
             <Exemples>
                 <ul style="font-family: Katex_Main;">
@@ -288,15 +292,15 @@
         margin: auto auto;
         width: 90%;
     }
-    table > tr {
+    table > tbody > tr {
         border: 1px solid black;
         margin-top: 10px;
     }
-    table > tr > th {
+    table > tbody > tr > th {
         border: 1px solid black;
         padding: 5px;
     }
-    table > tr > td {
+    table > tbody > tr > td {
         border: 1px solid black;
         padding: 5px;
         text-align: center;
@@ -305,13 +309,13 @@
         --taille-conversion: 40%;
         width: var(--taille-conversion);
     }
-    .tableau_conversion > tr {
+    .tableau_conversion > tbody > tr {
         border: 0;
     }
-    .tableau_conversion > tr > th {
+    .tableau_conversion > tbody > tr > th {
         width: calc(var(--taille-conversion)/ 7);
     }
-    .tableau_conversion > tr > td {
+    .tableau_conversion > tbody > tr > td {
         text-align: center;
         border-top: 0;
         border-bottom: 0;

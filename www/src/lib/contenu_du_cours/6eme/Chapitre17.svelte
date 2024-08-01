@@ -1,7 +1,6 @@
 <script lang="ts">
     import { Chapitre, Partie, SousPartie } from "$lib/chapitrage/all_chapitrages";
     import { Definition, Exemples, Remarque, Paragraphe, Schema, Formule } from "$lib/chapitrage/sections/all_sections";
-    import AnimationCube from "$lib/3d_geometrie/AnimationCube.svelte";
     import { math } from 'mathlifier';
 
     let angle_cylindre: number = 0;
@@ -58,36 +57,38 @@
 
         <SousPartie numero={1} titre="Tableau de conversion">
             <table>
-                <tr>
-                    <th colspan="3">km<sup>3</sup></th>
-                    <th colspan="3">hm<sup>3</sup></th>
-                    <th colspan="3">dam<sup>3</sup></th>
-                    <th colspan="3">m<sup>3</sup></th>
-                    <th colspan="3">dm<sup>3</sup></th>
-                    <th colspan="3">cm<sup>3</sup></th>
-                    <th colspan="3">mm<sup>3</sup></th>
-                </tr>
-                <tr>
-                    <!-- unités dérivées du litre (utilisation du l ronde) -->
-                    {#each Array(11) as _, i}
-                        <td></td>
-                    {/each}
-                    <td>kℓ</td>
-                    <td>hℓ</td>
-                    <td>daℓ</td>
-                    <td>ℓ</td>
-                    <td>dℓ</td>
-                    <td>cℓ</td>
-                    <td>mℓ</td>
-                    {#each Array(3) as _, i}
-                        <td></td>
-                    {/each}
-                </tr>
-                <tr style="height: 100px;">
-                    {#each Array(21) as _, i}
-                        <td></td>
-                    {/each}
-                </tr>
+                <tbody>
+                    <tr>
+                        <th colspan="3">km<sup>3</sup></th>
+                        <th colspan="3">hm<sup>3</sup></th>
+                        <th colspan="3">dam<sup>3</sup></th>
+                        <th colspan="3">m<sup>3</sup></th>
+                        <th colspan="3">dm<sup>3</sup></th>
+                        <th colspan="3">cm<sup>3</sup></th>
+                        <th colspan="3">mm<sup>3</sup></th>
+                    </tr>
+                    <tr>
+                        <!-- unités dérivées du litre (utilisation du l ronde) -->
+                        {#each Array(11) as _, i}
+                            <td></td>
+                        {/each}
+                        <td>kℓ</td>
+                        <td>hℓ</td>
+                        <td>daℓ</td>
+                        <td>ℓ</td>
+                        <td>dℓ</td>
+                        <td>cℓ</td>
+                        <td>mℓ</td>
+                        {#each Array(3) as _, i}
+                            <td></td>
+                        {/each}
+                    </tr>
+                    <tr style="height: 100px;">
+                        {#each Array(21) as _, i}
+                            <td></td>
+                        {/each}
+                    </tr>
+                </tbody>
             </table>
         </SousPartie>
     </Partie>

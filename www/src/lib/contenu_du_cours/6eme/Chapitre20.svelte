@@ -21,16 +21,18 @@
         
         <div style="display: flex; justify-content: center;">
             <table>
-                <tr>
-                    <td>Distance sur la carte (en cm)</td>
-                    <td>1</td>
-                    <td class="case_vide"></td>
-                </tr>
-                <tr>
-                    <td>Distance réelle (en cm)</td>
-                    <td>2000</td>
-                    <td class="case_vide"></td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td>Distance sur la carte (en cm)</td>
+                        <td>1</td>
+                        <td class="case_vide"></td>
+                    </tr>
+                    <tr>
+                        <td>Distance réelle (en cm)</td>
+                        <td>2000</td>
+                        <td class="case_vide"></td>
+                    </tr>
+                </tbody>
             </table>
         </div>
 

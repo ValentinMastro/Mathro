@@ -29,34 +29,38 @@
                 <ul class="liste_sans_puce" style="columns: 2;">
                     <li>
                         <table class="donnees" style="width: 100%;">
-                            <tr>
-                                <th>Nombre de pommes</th>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                            </tr>
-                            <tr>
-                                <th>Prix (€)</th>
-                                <td>0,30</td>
-                                <td>0,60</td>
-                                <td>0,90</td>
-                            </tr>
+                            <tbody>
+                                <tr>
+                                    <th>Nombre de pommes</th>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <th>Prix (€)</th>
+                                    <td>0,30</td>
+                                    <td>0,60</td>
+                                    <td>0,90</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </li>
                     <li>
                         <table class="donnees" style="width: 100%;">
-                            <tr>
-                                <th>Durée (h)</th>
-                                <td>1</td>
-                                <td>5</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <th>Distance (km)</th>
-                                <td>50</td>
-                                <td>250</td>
-                                <td>500</td>
-                            </tr>
+                            <tbody>
+                                <tr>
+                                    <th>Durée (h)</th>
+                                    <td>1</td>
+                                    <td>5</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <th>Distance (km)</th>
+                                    <td>50</td>
+                                    <td>250</td>
+                                    <td>500</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </li>
                 </ul>
@@ -70,18 +74,20 @@
             <Exemples>
                 <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
                     <table class="donnees" style="height: fit-content;">
-                        <tr>
-                            <th>Nombre de pommes</th>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <th>Prix (€)</th>
-                            <td>0,30</td>
-                            <td>0,60</td>
-                            <td>0,90</td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <th>Nombre de pommes</th>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <th>Prix (€)</th>
+                                <td>0,30</td>
+                                <td>0,60</td>
+                                <td>0,90</td>
+                            </tr>
+                        </tbody>
                     </table>
                     <svg viewBox="0 100 1000 900" style="width: 30%;">
                         <!-- Axes -->
@@ -116,16 +122,18 @@
         </div>
 
         <table class="raisins" style="color: black; margin: auto;">
-            <tr>
-                <th style="width: fit-content;">Masse de raisins (kg)</th>
-                <td>3</td>
-                <td>6</td>
-            </tr>
-            <tr>
-                <th>Prix (€)</th>
-                <td>7,80</td>
-                <td>?</td>
-            </tr>
+            <tbody>
+                <tr>
+                    <th style="width: fit-content;">Masse de raisins (kg)</th>
+                    <td>3</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <th>Prix (€)</th>
+                    <td>7,80</td>
+                    <td>?</td>
+                </tr>
+            </tbody>
         </table>
 
         <div style="display: flex; flex-direction: row; ">

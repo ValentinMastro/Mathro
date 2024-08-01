@@ -86,41 +86,43 @@
 <!-- Seule une seule évaluation (identifiée par sa graine) est affichée -->
 {#if graine_index == graine_selectionnee}
     <table>
-        <tr>
-            <th style="width: 130px;">
-                Évaluation n°{numero_evaluation}<br>
-                {niveau}ème #{graine_index}
-            </th>
-            <th>Question</th>
-            {#if afficher_mauvaises_reponses}
-                <th>Réponse</th>
-            {:else}
-                <th>A</th>
-                <th>B</th>
-                <th>C</th>
-                <th>D</th>
-                <th>E</th>
-            {/if}
-        </tr>
-        <!-- evaluation contient toutes les questions (en général 20) -->
-        {#each evaluation.questions as question, numero_question }
-            <Question 
-                    enonce={question.enonce}
-                    reponses={question.reponse}
-                    type_enonce={{"type": question.format_enonce}}
-                    type_reponses={{"type": question.format_reponses}}
-                    
-                    numero_question={numero_question}
+        <tbody>
+            <tr>
+                <th style="width: 130px;">
+                    Évaluation n°{numero_evaluation}<br>
+                    {niveau}ème #{graine_index}
+                </th>
+                <th>Question</th>
+                {#if afficher_mauvaises_reponses}
+                    <th>Réponse</th>
+                {:else}
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>D</th>
+                    <th>E</th>
+                {/if}
+            </tr>
+            <!-- evaluation contient toutes les questions (en général 20) -->
+            {#each evaluation.questions as question, numero_question }
+                <Question 
+                        enonce={question.enonce}
+                        reponses={question.reponse}
+                        type_enonce={{"type": question.format_enonce}}
+                        type_reponses={{"type": question.format_reponses}}
+                        
+                        numero_question={numero_question}
 
-                    bind:afficher_reponses
-                    bind:afficher_mauvaises_reponses
+                        bind:afficher_reponses
+                        bind:afficher_mauvaises_reponses
+                        />
+                {#if afficher_explications}
+                    <Explication 
+                        explication={question.explication} format_explication={question.format_explication}
                     />
-            {#if afficher_explications}
-                <Explication 
-                    explication={question.explication} format_explication={question.format_explication}
-                />
-            {/if}
-        {/each}
+                {/if}
+            {/each}
+        </tbody>
     </table>
     <div class="finpage"></div>
 {/if}

@@ -54,22 +54,24 @@
             <p style="color: black;">On se sert des tableaux pour ranger, classer, classifier des données.</p>
             <Exemples singulier>
                 <table>
-                    <tr>
-                        <td>couleurs des yeux</td>
-                        <td>bleus</td>
-                        <td>verts</td>
-                        <td>marrons</td>
-                        <td>vairons</td>
-                        <td>total</td>
-                    </tr>
-                    <tr>
-                        <td>nombre d'élèves</td>
-                        <td>3</td>
-                        <td>7</td>
-                        <td>15</td>
-                        <td>1</td>
-                        <td>26</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>couleurs des yeux</td>
+                            <td>bleus</td>
+                            <td>verts</td>
+                            <td>marrons</td>
+                            <td>vairons</td>
+                            <td>total</td>
+                        </tr>
+                        <tr>
+                            <td>nombre d'élèves</td>
+                            <td>3</td>
+                            <td>7</td>
+                            <td>15</td>
+                            <td>1</td>
+                            <td>26</td>
+                        </tr>
+                    </tbody>
                 </table>
             </Exemples>
             <Paragraphe couleur="blue" nom="Exemple de lecture">
@@ -78,30 +80,32 @@
         </SousPartie>
         <SousPartie numero={2} titre="Tableau à double entrée">
             <table>
-                <tr>
-                    <td></td>
-                    <td>noir</td>
-                    <td>blond</td>
-                    <td>châtain</td>
-                    <td>brun</td>
-                    <td>roux</td>
-                </tr>
-                <tr>
-                    <td>garçons</td>
-                    <td>5</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>1</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>filles</td>
-                    <td>9</td>
-                    <td>7</td>
-                    <td>6</td>
-                    <td>2</td>
-                    <td>8</td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>noir</td>
+                        <td>blond</td>
+                        <td>châtain</td>
+                        <td>brun</td>
+                        <td>roux</td>
+                    </tr>
+                    <tr>
+                        <td>garçons</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>filles</td>
+                        <td>9</td>
+                        <td>7</td>
+                        <td>6</td>
+                        <td>2</td>
+                        <td>8</td>
+                    </tr>
+                </tbody>
             </table>
             <Paragraphe couleur="blue" nom="Exemple de lecture">
                 Il y a 7 filles aux cheveux blonds.
@@ -117,18 +121,20 @@
                 Prix moyen d'un kg de baguette de pain en France.
 
                 <table>
-                    <tr>
-                        <td>Année</td>
-                        <td>1997-01</td>
-                        <td>2007-01</td>
-                        <td>2017-01</td>
-                    </tr>
-                    <tr>
-                        <td>Prix (€)</td>
-                        <td>2,40</td>
-                        <td>3,13</td>
-                        <td>3,46</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>Année</td>
+                            <td>1997-01</td>
+                            <td>2007-01</td>
+                            <td>2017-01</td>
+                        </tr>
+                        <tr>
+                            <td>Prix (€)</td>
+                            <td>2,40</td>
+                            <td>3,13</td>
+                            <td>3,46</td>
+                        </tr>
+                    </tbody>
                 </table>
                 <svg viewBox="0 0 500 200" width="50em">
                     <line x1="50" y1="180" x2="450" y2="180" stroke="black" />
@@ -162,18 +168,20 @@
                     <li>
                         <table class="donnees">
                             <caption>Nombre d'habitants à Meaux par année</caption>
-                            <tr>
-                                <th>Année</th>
-                                {#each Object.keys(donnees_1) as annee}
-                                    <th>{annee}</th>
-                                {/each}
-                            </tr>
-                            <tr>
-                                <th>Nombre d'habitants</th>
-                                {#each Object.values(donnees_1) as valeur}
-                                    <td>{valeur.toLocaleString("fr-FR")}</td>
-                                {/each}
-                            </tr>
+                            <tbody>
+                                <tr>
+                                    <th>Année</th>
+                                    {#each Object.keys(donnees_1) as annee}
+                                        <th>{annee}</th>
+                                    {/each}
+                                </tr>
+                                <tr>
+                                    <th>Nombre d'habitants</th>
+                                    {#each Object.values(donnees_1) as valeur}
+                                        <td>{valeur.toLocaleString("fr-FR")}</td>
+                                    {/each}
+                                </tr>
+                            </tbody>
                         </table>
                         <svg viewBox="0 0 1000 1000">
                             <!-- Axes -->
@@ -203,18 +211,20 @@
                     <li>
                         <table class="donnees">
                             <caption>Prix moyen d'un kg de baguette de pain en France</caption>
-                            <tr>
-                                <th>Année</th>
-                                {#each Object.keys(donnees_2) as annee}
-                                    <th>{annee}</th>
-                                {/each}
-                            </tr>
-                            <tr>
-                                <th style="width: fit-content">Prix</th>
-                                {#each Object.values(donnees_2) as valeur}
-                                    <td>{valeur.toLocaleString("fr-FR", {minimumFractionDigits: 2, maximumFractionDigits: 2})} €</td>
-                                {/each}
-                            </tr>
+                            <tbody>
+                                <tr>
+                                    <th>Année</th>
+                                    {#each Object.keys(donnees_2) as annee}
+                                        <th>{annee}</th>
+                                    {/each}
+                                </tr>
+                                <tr>
+                                    <th style="width: fit-content">Prix</th>
+                                    {#each Object.values(donnees_2) as valeur}
+                                        <td>{valeur.toLocaleString("fr-FR", {minimumFractionDigits: 2, maximumFractionDigits: 2})} €</td>
+                                    {/each}
+                                </tr>
+                            </tbody>
                         </table>
                         <svg viewBox="0 0 1000 1000">
                             <!-- Axes -->

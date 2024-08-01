@@ -28,38 +28,40 @@
 
         <SousPartie numero={1} titre="Tableau de numération">
             <table class="tableau">
-                <tr>
-                    <th colspan={3}>Millions</th>
-                    <th colspan={3}>Milliers</th>
-                    <th colspan={3}>Unités</th>
-                </tr>
-                <tr>
-                    <td>Centaines</td>
-                    <td>Dizaines</td>
-                    <td>Unités</td>
-                    <td>Centaines</td>
-                    <td>Dizaines</td>
-                    <td>Unités</td>
-                    <td>Centaines</td>
-                    <td>Dizaines</td>
-                    <td>Unités</td>
-                </tr>
-                <tr style="text-align: center; color: red;">
-                    <td></td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>3</td>
-                    <td>9</td>
-                    <td>8</td>
-                </tr>
-                <tr class="ligneblanche">
-                    {#each Array(9) as _}
+                <tbody>
+                    <tr>
+                        <th colspan={3}>Millions</th>
+                        <th colspan={3}>Milliers</th>
+                        <th colspan={3}>Unités</th>
+                    </tr>
+                    <tr>
+                        <td>Centaines</td>
+                        <td>Dizaines</td>
+                        <td>Unités</td>
+                        <td>Centaines</td>
+                        <td>Dizaines</td>
+                        <td>Unités</td>
+                        <td>Centaines</td>
+                        <td>Dizaines</td>
+                        <td>Unités</td>
+                    </tr>
+                    <tr style="text-align: center; color: red;">
                         <td></td>
-                    {/each}
-                </tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>8</td>
+                    </tr>
+                    <tr class="ligneblanche">
+                        {#each Array(9) as _}
+                            <td></td>
+                        {/each}
+                    </tr>
+                </tbody>
             </table>
 
             <Exemples>
