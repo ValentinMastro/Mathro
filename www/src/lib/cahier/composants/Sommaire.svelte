@@ -11,7 +11,7 @@
 <h2 style="font-size: {$taille_sommaire}px">Sommaire</h2>
 
 {#snippet ma_categorie(categorie)}
-    <span style="font-size: {$taille_chapitre}px; color: {categories_visibles.includes(categorie) ? couleur_de_la_categorie(categorie) : "gray"}; user-select: none;" >
+    <span style="font-size: {$taille_chapitre*0.8}px; color: {categories_visibles.includes(categorie) ? couleur_de_la_categorie(categorie) : "gray"}; user-select: none;" >
         &#x25CF;
     </span>
 {/snippet}
@@ -34,7 +34,7 @@
     </div>
 {/snippet}
 
-<ol style="font-size: {$taille_chapitre}px;">
+<ol style="font-size: {$taille_chapitre*0.67}px;">
     {#each sommaire($niveau) as chapitre}
         <li style="visibility: {chapitre.categories.some((c) => categories_visibles.includes(c)) ? "visible" : "hidden"}"
             role="none"
@@ -89,7 +89,6 @@
     li {
         display: flex;
         align-items: flex-start;
-        margin-top: 0.4em;
     }
 
     .categories {
