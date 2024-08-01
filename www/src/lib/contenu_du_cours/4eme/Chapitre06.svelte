@@ -140,84 +140,86 @@
         <SousPartie titre="Système International (SI)" numero={3}>
             <Paragraphe couleur="black" nom="Tableau des préfixes du SI">
                 <table id="SI_prefixes">
-                    <tr>
-                        <td colspan="3">Milliards</td>
-                        <td colspan="3">Millions</td>
-                        <td colspan="3">Milliers</td>
-                        <td colspan="3">Unités</td>
-                        <td colspan="3">Millièmes</td>
-                        <td colspan="3">Millionièmes</td>
-                        <td colspan="3">Milliardièmes</td>
-                    </tr>
-                    <tr>
-                        <td>10<sup>11</sup></td>
-                        <td>10<sup>10</sup></td>
-                        <td>10<sup>9</sup></td>
-                        <td>10<sup>8</sup></td>
-                        <td>10<sup>7</sup></td>
-                        <td>10<sup>6</sup></td>
-                        <td>10<sup>5</sup></td>
-                        <td>10<sup>4</sup></td>
-                        <td>10<sup>3</sup></td>
-                        <td>10<sup>2</sup></td>
-                        <td>10<sup>1</sup></td>
-                        <td>10<sup>0</sup></td>
-                        <td>10<sup>-1</sup></td>
-                        <td>10<sup>-2</sup></td>
-                        <td>10<sup>-3</sup></td>
-                        <td>10<sup>-4</sup></td>
-                        <td>10<sup>-5</sup></td>
-                        <td>10<sup>-6</sup></td>
-                        <td>10<sup>-7</sup></td>
-                        <td>10<sup>-8</sup></td>
-                        <td>10<sup>-9</sup></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td>giga</td>
-                        <td></td>
-                        <td></td>
-                        <td>méga</td>
-                        <td></td>
-                        <td></td>
-                        <td>kilo</td>
-                        <td>hecto</td>
-                        <td>déca</td>
-                        <td></td>
-                        <td>déci</td>
-                        <td>centi</td>
-                        <td>milli</td>
-                        <td></td>
-                        <td></td>
-                        <td>micro</td>
-                        <td></td>
-                        <td></td>
-                        <td>nano</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td>G</td>
-                        <td></td>
-                        <td></td>
-                        <td>M</td>
-                        <td></td>
-                        <td></td>
-                        <td>k</td>
-                        <td>h</td>
-                        <td>da</td>
-                        <td></td>
-                        <td>d</td>
-                        <td>c</td>
-                        <td>m</td>
-                        <td></td>
-                        <td></td>
-                        <td>µ</td>
-                        <td></td>
-                        <td></td>
-                        <td>n</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td colspan="3">Milliards</td>
+                            <td colspan="3">Millions</td>
+                            <td colspan="3">Milliers</td>
+                            <td colspan="3">Unités</td>
+                            <td colspan="3">Millièmes</td>
+                            <td colspan="3">Millionièmes</td>
+                            <td colspan="3">Milliardièmes</td>
+                        </tr>
+                        <tr>
+                            <td>10<sup>11</sup></td>
+                            <td>10<sup>10</sup></td>
+                            <td>10<sup>9</sup></td>
+                            <td>10<sup>8</sup></td>
+                            <td>10<sup>7</sup></td>
+                            <td>10<sup>6</sup></td>
+                            <td>10<sup>5</sup></td>
+                            <td>10<sup>4</sup></td>
+                            <td>10<sup>3</sup></td>
+                            <td>10<sup>2</sup></td>
+                            <td>10<sup>1</sup></td>
+                            <td>10<sup>0</sup></td>
+                            <td>10<sup>-1</sup></td>
+                            <td>10<sup>-2</sup></td>
+                            <td>10<sup>-3</sup></td>
+                            <td>10<sup>-4</sup></td>
+                            <td>10<sup>-5</sup></td>
+                            <td>10<sup>-6</sup></td>
+                            <td>10<sup>-7</sup></td>
+                            <td>10<sup>-8</sup></td>
+                            <td>10<sup>-9</sup></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>giga</td>
+                            <td></td>
+                            <td></td>
+                            <td>méga</td>
+                            <td></td>
+                            <td></td>
+                            <td>kilo</td>
+                            <td>hecto</td>
+                            <td>déca</td>
+                            <td></td>
+                            <td>déci</td>
+                            <td>centi</td>
+                            <td>milli</td>
+                            <td></td>
+                            <td></td>
+                            <td>micro</td>
+                            <td></td>
+                            <td></td>
+                            <td>nano</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>G</td>
+                            <td></td>
+                            <td></td>
+                            <td>M</td>
+                            <td></td>
+                            <td></td>
+                            <td>k</td>
+                            <td>h</td>
+                            <td>da</td>
+                            <td></td>
+                            <td>d</td>
+                            <td>c</td>
+                            <td>m</td>
+                            <td></td>
+                            <td></td>
+                            <td>µ</td>
+                            <td></td>
+                            <td></td>
+                            <td>n</td>
+                        </tr>
+                    </tbody>
                 </table>
             </Paragraphe>
             <UnitesSi />

@@ -56,46 +56,48 @@
 <div class="flex">
     <table id="SI_unites">
         <caption style="margin-bottom: 10px;"><u>Les sept unités de base du Système International</u></caption>
-        <tr>
-            <th>Grandeur physique</th>
-            <th>Unité</th>
-            <th>Symbole de l'unité</th>
-        </tr>
-        <tr>
-            <td>Masse</td>
-            <td>Le kilogramme</td>
-            <td>kg</td>
-        </tr>
-        <tr>
-            <td>Longueur</td>
-            <td>Le mètre</td>
-            <td>m</td>
-        </tr>
-        <tr>
-            <td>Temps</td>
-            <td>La seconde</td>
-            <td>s</td>
-        </tr>
-        <tr>
-            <td>Courant électrique</td>
-            <td>L'ampère</td>
-            <td>A</td>
-        </tr>
-        <tr>
-            <td>Température thermodynamique</td>
-            <td>Le kelvin</td>
-            <td>K</td>
-        </tr>
-        <tr>
-            <td>Quantité de matière</td>
-            <td>La mole</td>
-            <td>mol</td>
-        </tr>
-        <tr>
-            <td>Intensité lumineuse</td>
-            <td>La candela</td>
-            <td>cd</td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Grandeur physique</th>
+                <th>Unité</th>
+                <th>Symbole de l'unité</th>
+            </tr>
+            <tr>
+                <td>Masse</td>
+                <td>Le kilogramme</td>
+                <td>kg</td>
+            </tr>
+            <tr>
+                <td>Longueur</td>
+                <td>Le mètre</td>
+                <td>m</td>
+            </tr>
+            <tr>
+                <td>Temps</td>
+                <td>La seconde</td>
+                <td>s</td>
+            </tr>
+            <tr>
+                <td>Courant électrique</td>
+                <td>L'ampère</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <td>Température thermodynamique</td>
+                <td>Le kelvin</td>
+                <td>K</td>
+            </tr>
+            <tr>
+                <td>Quantité de matière</td>
+                <td>La mole</td>
+                <td>mol</td>
+            </tr>
+            <tr>
+                <td>Intensité lumineuse</td>
+                <td>La candela</td>
+                <td>cd</td>
+            </tr>
+        </tbody>
     </table>
     <svg viewBox="-500 -500 1000 1000" 
         id="svg_SI"

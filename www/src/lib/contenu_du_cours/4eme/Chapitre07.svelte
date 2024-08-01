@@ -298,18 +298,20 @@
                     <li>
                         <table class="donnees">
                             <caption>Nombre d'habitants à Meaux par année</caption>
-                            <tr>
-                                <th>Année</th>
-                                {#each Object.keys(donnees_1) as annee}
-                                    <th>{annee}</th>
-                                {/each}
-                            </tr>
-                            <tr>
-                                <th>Nombre d'habitants</th>
-                                {#each Object.values(donnees_1) as valeur}
-                                    <td>{valeur.toLocaleString("fr-FR")}</td>
-                                {/each}
-                            </tr>
+                            <tbody>
+                                <tr>
+                                    <th>Année</th>
+                                    {#each Object.keys(donnees_1) as annee}
+                                        <th>{annee}</th>
+                                    {/each}
+                                </tr>
+                                <tr>
+                                    <th>Nombre d'habitants</th>
+                                    {#each Object.values(donnees_1) as valeur}
+                                        <td>{valeur.toLocaleString("fr-FR")}</td>
+                                    {/each}
+                                </tr>
+                            </tbody>
                         </table>
                         <svg viewBox="0 0 1000 1000">
                             <!-- Axes -->
@@ -339,18 +341,20 @@
                     <li>
                         <table class="donnees">
                             <caption>Prix moyen d'un kg de baguette de pain en France</caption>
-                            <tr>
-                                <th>Année</th>
-                                {#each Object.keys(donnees_2) as annee}
-                                    <th>{annee}</th>
-                                {/each}
-                            </tr>
-                            <tr>
-                                <th style="width: fit-content">Prix</th>
-                                {#each Object.values(donnees_2) as valeur}
-                                    <td>{valeur.toLocaleString("fr-FR", {minimumFractionDigits: 2, maximumFractionDigits: 2})} €</td>
-                                {/each}
-                            </tr>
+                            <tbody>
+                                <tr>
+                                    <th>Année</th>
+                                    {#each Object.keys(donnees_2) as annee}
+                                        <th>{annee}</th>
+                                    {/each}
+                                </tr>
+                                <tr>
+                                    <th style="width: fit-content">Prix</th>
+                                    {#each Object.values(donnees_2) as valeur}
+                                        <td>{valeur.toLocaleString("fr-FR", {minimumFractionDigits: 2, maximumFractionDigits: 2})} €</td>
+                                    {/each}
+                                </tr>
+                            </tbody>
                         </table>
                         <svg viewBox="0 0 1000 1000">
                             <!-- Axes -->
@@ -413,18 +417,20 @@
             <Exemples>
                 <table class="donnees">
                     <caption>Population de Meaux (77284) en 2019 par grandes tranches d'âge</caption>
-                    <tr>
-                        <th>Tranche d'âge</th>
-                        {#each Object.keys(donnees_3) as tranche}
-                            <th>{tranche}</th>
-                        {/each}
-                    </tr>
-                    <tr>
-                        <th>Nombre d'habitants</th>
-                        {#each Object.values(donnees_3) as valeur}
-                            <td>{valeur.toLocaleString("fr-FR")}</td>
-                        {/each}
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <th>Tranche d'âge</th>
+                            {#each Object.keys(donnees_3) as tranche}
+                                <th>{tranche}</th>
+                            {/each}
+                        </tr>
+                        <tr>
+                            <th>Nombre d'habitants</th>
+                            {#each Object.values(donnees_3) as valeur}
+                                <td>{valeur.toLocaleString("fr-FR")}</td>
+                            {/each}
+                        </tr>
+                    </tbody>
                 </table>
                 <svg viewBox="0 0 1000 400" style="width: 80%;">
                     <!-- Axes -->
@@ -462,35 +468,37 @@
         <Exemples>
             <table class="donnees">
                 <caption>Nombre d'élèves dans une classe par sexe</caption>
-                <tr>
-                    <th>Sexe</th>
-                    {#each Object.keys(donnees_5) as sexe}
-                        <th>{sexe}</th>
-                    {/each}
-                </tr>
-                <tr>
-                    <th>Nombre d'élèves <br>(Effectif)</th>
-                    {#each Object.values(donnees_5) as valeur}
-                        <td>{valeur.toLocaleString("fr-FR")}</td>
-                    {/each}
-                </tr>
-                <tr>
-                    <th>Fréquence</th>
-                    {#each Object.values(donnees_5) as valeur}
-                        <td>{@html math(`\\dfrac{${valeur}}{${donnees_5["TOTAL"]}}`)}</td>
-                    {/each}
-                </tr>
-                <tr>
-                    <th>Pourcentage</th>
-                    {#each Object.values(donnees_5) as valeur}
-                        <td>
-                            {@html math(`
-                                \\dfrac{${valeur}}{${donnees_5["TOTAL"]}} \\times 100
-                                = ${(100 * valeur / donnees_5["TOTAL"]).toLocaleString("fr-FR", {maximumFractionDigits: 1})} \\%
-                            `)}
-                        </td>
-                    {/each}
-                </tr>
+                <tbody>
+                    <tr>
+                        <th>Sexe</th>
+                        {#each Object.keys(donnees_5) as sexe}
+                            <th>{sexe}</th>
+                        {/each}
+                    </tr>
+                    <tr>
+                        <th>Nombre d'élèves <br>(Effectif)</th>
+                        {#each Object.values(donnees_5) as valeur}
+                            <td>{valeur.toLocaleString("fr-FR")}</td>
+                        {/each}
+                    </tr>
+                    <tr>
+                        <th>Fréquence</th>
+                        {#each Object.values(donnees_5) as valeur}
+                            <td>{@html math(`\\dfrac{${valeur}}{${donnees_5["TOTAL"]}}`)}</td>
+                        {/each}
+                    </tr>
+                    <tr>
+                        <th>Pourcentage</th>
+                        {#each Object.values(donnees_5) as valeur}
+                            <td>
+                                {@html math(`
+                                    \\dfrac{${valeur}}{${donnees_5["TOTAL"]}} \\times 100
+                                    = ${(100 * valeur / donnees_5["TOTAL"]).toLocaleString("fr-FR", {maximumFractionDigits: 1})} \\%
+                                `)}
+                            </td>
+                        {/each}
+                    </tr>
+                </tbody>
             </table>
         </Exemples>
     </Partie>

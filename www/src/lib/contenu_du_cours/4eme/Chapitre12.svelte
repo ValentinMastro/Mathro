@@ -2,7 +2,6 @@
     import { Chapitre, Partie, SousPartie, SousSousPartie } from "$lib/chapitrage/all_chapitrages";
     import { Definition, Paragraphe, Formule, Schema } from "$lib/chapitrage/sections/all_sections";
     import { math, display } from 'mathlifier';
-    import AnimationCube from "$lib/3d_geometrie/AnimationCube.svelte";
 </script>
 
 <Chapitre numero={12} titre="Solides de l'espace, volume et contenance">
@@ -53,35 +52,37 @@
         </Paragraphe>
         <table id="unites_volumes">
             <caption>Tableau de conversion des unités de volume et de contenance</caption>
-            <tr>
-                {#each Array(11) as _}
+            <tbody>
+                <tr>
+                    {#each Array(11) as _}
+                        <th></th>
+                    {/each}
+                    <th>k&#x2113;</th>
+                    <th>h&#x2113;</th>
+                    <th>da&#x2113;</th>
+                    <th>&#x2113;</th>
+                    <th>d&#x2113;</th>
+                    <th>c&#x2113;</th>
+                    <th>m&#x2113;</th>
                     <th></th>
-                {/each}
-                <th>k&#x2113;</th>
-                <th>h&#x2113;</th>
-                <th>da&#x2113;</th>
-                <th>&#x2113;</th>
-                <th>d&#x2113;</th>
-                <th>c&#x2113;</th>
-                <th>m&#x2113;</th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr>
-                <th colspan="3">km<sup>3</sup></th>
-                <th colspan="3">hm<sup>3</sup></th>
-                <th colspan="3">dam<sup>3</sup></th>
-                <th colspan="3">m<sup>3</sup></th>
-                <th colspan="3">dm<sup>3</sup></th>
-                <th colspan="3">cm<sup>3</sup></th>
-                <th colspan="3">mm<sup>3</sup></th>
-            </tr>
-            <tr>
-                {#each Array(21) as _}
-                    <td />
-                {/each}
-            </tr>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th colspan="3">km<sup>3</sup></th>
+                    <th colspan="3">hm<sup>3</sup></th>
+                    <th colspan="3">dam<sup>3</sup></th>
+                    <th colspan="3">m<sup>3</sup></th>
+                    <th colspan="3">dm<sup>3</sup></th>
+                    <th colspan="3">cm<sup>3</sup></th>
+                    <th colspan="3">mm<sup>3</sup></th>
+                </tr>
+                <tr>
+                    {#each Array(21) as _}
+                        <td></td>
+                    {/each}
+                </tr>
+            </tbody>
         </table>
     </Partie>
     <Partie numero={2} titre="Solides de l'espace">
@@ -119,9 +120,6 @@
                                 Cube en perspective cavalière
                             </text>
                         </svg>
-                        <div style="width: 40%; aspect-ratio: 1;">
-                            <AnimationCube />
-                        </div>
                     </div>
                 </Schema>
             </SousSousPartie>
