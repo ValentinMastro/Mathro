@@ -42,6 +42,12 @@
 
 <svelte:window on:keydown={touche_pressee} />
 
+<svelte:head>
+    <title>
+        Cahier de cours - {$niveau}ème
+    </title>
+</svelte:head>
+
 <ZoneCentraleAfficheurDePages />
 
 <style>
