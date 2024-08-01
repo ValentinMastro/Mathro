@@ -17,12 +17,14 @@
     #contenu {
         position: absolute;
         left: 20%;
-        width: 80%;
+        width: 79%;
     }
 
     .pas_de_titre {
-        top: 9.38%;
-        height: 82.8%;
+        --top: 8.6%;
+        top: var(--top);
+        height: calc(92.18% - var(--top));
+        background-color: none;
     }
 
     .apres_un_titre {
