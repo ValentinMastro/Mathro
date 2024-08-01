@@ -43,3 +43,12 @@
 <svelte:window on:keydown={touche_pressee} />
 
 <ZoneCentraleAfficheurDePages />
+
+<style>
+    :global(.katex) {
+        font-size: 1.1em;
+    }
+    :global(.mathlifier-display) {
+        margin-bottom: -2.4ex;
+    }
+</style>
