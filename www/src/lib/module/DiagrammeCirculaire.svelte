@@ -49,24 +49,26 @@
 
 <table class="donnees">
     <caption style="letter-spacing: 0px;">{caption}</caption>
-    <tr>
-        <th>{etiquette_1}</th>
-        {#each Object.keys(donnees) as tranche}
-            <th>{tranche}</th>
-        {/each}
-    </tr>
-    <tr>
-        <th>{etiquette_2}</th>
-        {#each Object.values(donnees) as valeur}
-            <td>{valeur.toLocaleString("fr-FR")}</td>
-        {/each}
-    </tr>
-    <tr>
-        <th>Angle</th>
-        {#each Object.values(donnees) as valeur}
-            <td>{(360 * valeur / donnees["TOTAL"]).toFixed(0)}°</td>
-        {/each}
-    </tr>
+    <tbody>
+        <tr>
+            <th>{etiquette_1}</th>
+            {#each Object.keys(donnees) as tranche}
+                <th>{tranche}</th>
+            {/each}
+        </tr>
+        <tr>
+            <th>{etiquette_2}</th>
+            {#each Object.values(donnees) as valeur}
+                <td>{valeur.toLocaleString("fr-FR")}</td>
+            {/each}
+        </tr>
+        <tr>
+            <th>Angle</th>
+            {#each Object.values(donnees) as valeur}
+                <td>{(360 * valeur / donnees["TOTAL"]).toFixed(0)}°</td>
+            {/each}
+        </tr>
+    </tbody>
 </table>
 <svg viewBox="90 0 {width} 1000">
     <!-- Cercle -->
