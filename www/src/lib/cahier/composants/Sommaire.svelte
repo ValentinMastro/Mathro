@@ -1,5 +1,6 @@
 <script lang="ts">
     import { sommaire, couleur_de_la_categorie } from "$lib/cahier/contenu/sommaires";
+    import type { Categories } from "$lib/cahier/contenu/sommaires";
     import { numero_de_la_page, niveau } from "../store";
     import { taille_sommaire, taille_chapitre } from "../store";
 
@@ -10,13 +11,13 @@
 
 <h2 style="font-size: {$taille_sommaire}px">Sommaire</h2>
 
-{#snippet ma_categorie(categorie)}
+{#snippet ma_categorie(categorie: Categories)}
     <span style="font-size: {$taille_chapitre*0.8}px; color: {categories_visibles.includes(categorie) ? couleur_de_la_categorie(categorie) : "gray"}; user-select: none;" >
         &#x25CF;
     </span>
 {/snippet}
 
-{#snippet selecteur_de_categorie(categorie)}
+{#snippet selecteur_de_categorie(categorie: Categories)}
     <div
         style="font-size: {$taille_chapitre*0.8}px;"
         role="none"
@@ -68,11 +69,11 @@
 </ol>
 
 <div class="liste_categories">
-    {@render selecteur_de_categorie("Nombres et calculs")}
-    {@render selecteur_de_categorie("Espace et géométrie")}
-    {@render selecteur_de_categorie("Grandeurs et mesures")}
-    {@render selecteur_de_categorie("Organisation et gestion de données")}
-    {@render selecteur_de_categorie("Algorithmique et programmation")}
+    {#each ["Nombres et calculs", "Espace et géométrie", "Grandeurs et mesures", "Organisation et gestion de données", "Algorithmique et programmation"] as categorie}
+        {#if sommaire($niveau).some((chapitre) => chapitre.categories.includes(categorie as Categories))}
+            {@render selecteur_de_categorie(categorie as Categories)}
+        {/if}
+    {/each}
 </div>
 
 <style>

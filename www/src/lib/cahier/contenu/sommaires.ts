@@ -1,4 +1,4 @@
-type Categories =   "Nombres et calculs" | 
+export type Categories =   "Nombres et calculs" | 
                     "Espace et géométrie" | 
                     "Grandeurs et mesures" | 
                     "Algorithmique et programmation" | 
