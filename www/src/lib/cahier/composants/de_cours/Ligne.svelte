@@ -16,9 +16,4 @@
         width: 100%;
         position: relative;
     }
-    span {
-        position: absolute;
-        bottom: 0;
-        margin-bottom: -0.7ex;
-    }
 </style>
