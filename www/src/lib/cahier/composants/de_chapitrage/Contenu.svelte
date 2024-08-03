@@ -24,7 +24,6 @@
         --top: 8.6%;
         top: var(--top);
         height: calc(92.18% - var(--top));
-        background-color: none;
     }
 
     .apres_un_titre {
