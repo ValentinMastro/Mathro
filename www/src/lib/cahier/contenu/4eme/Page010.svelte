@@ -19,7 +19,7 @@
         return deg * Math.PI / 180;
     }
 
-    let facteur_1: number = $state(1);
+    let facteur_1: number = $state(2);
     let facteur_2: number = $state(1);
 </script>
 
@@ -47,40 +47,56 @@
     
     <LigneVide />
 
-    <Propriete lignes={3}>
+    <Propriete lignes={3.4}>
         Soient deux nombres {@html math("a")} et {@html math("b")} avec {@html math("b \\neq 0")}.<br>
         Soit {@html math("k \\neq 0")}.<br>
         Alors {@html math("\\dfrac{a}{b} = \\dfrac{k \\times a}{k \\times b}")}.
     </Propriete>
 
-    <LigneVide />
+    <LigneVide lignes={0.6} />
 
-    <Exemples lignes={3}>
-        <Item>
-            {@html math("\\dfrac{3}{4} = \\frac{2 \\times 3}{2 \\times 4} = \\frac{6}{8}")}
-        </Item>
-        <LigneVide />
-        <Item>
-            {@html math("\\dfrac{35}{75} = \\frac{35 \\div 5}{75 \\div 5} = \\frac{7}{15}")}
-        </Item>
+    <Exemples lignes={1}>
+        {@html  display("\\dfrac{3}{4} = \\dfrac{2 \\times 3}{2 \\times 4} = \\dfrac{6}{8} \\hspace{2cm} \\dfrac{35}{75} = \\dfrac{35 \\div 5}{75 \\div 5} = \\dfrac{7}{15}")}
     </Exemples>
 
-    <Schema lignes={10}>
+    <LigneVide />
+
+    <Schema lignes={10} aspectRatioSVG={1.25}>
         {#snippet svg()}
             {#each Array(4*facteur_1) as _, i}
                 <path 
-                    d="M 500 500 L 900 500 A 400 400 0 0 0 {500 + 400 * Math.cos(en_radians(90/facteur_1))} {500 - 400 * Math.sin(en_radians(90/facteur_1))} Z"
-                    transform-origin="500 500"
+                    d="M 300 300 L {300+250} 300 A 250 250 0 0 0 {300 + 250 * Math.cos(en_radians(90/facteur_1))} {300 - 250 * Math.sin(en_radians(90/facteur_1))} Z"
+                    transform-origin="300 300"
                     transform={`rotate(-${i * 90/facteur_1})`}
                     stroke="black"
                     stroke-width={3}
                     fill={i + 1 <= 3*facteur_1 ? 'green' : 'red'}
                 />
                 <text 
-                    x={500 + 350 * Math.cos(en_radians((i+0.5)*90/facteur_1))}
-                    y={500 - 350 * Math.sin(en_radians((i+0.5)*90/facteur_1))}
-                    font-size="50" 
-                    fill="{i + 1 <= 3*facteur_1 ? 'white' : 'black'}"
+                    x={300 + 280 * Math.cos(en_radians((i+0.5)*90/facteur_1))}
+                    y={300 - 280 * Math.sin(en_radians((i+0.5)*90/facteur_1))}
+                    font-size={i % 2 == 1 ? 50 : 35} 
+                    fill="{i + 1 <= 3*facteur_1 ? 'green' : 'red'}"
+                    text-anchor="middle" 
+                    dominant-baseline="middle"
+                >
+                    {i + 1}
+                </text>
+            {/each}
+            {#each Array(15*facteur_2) as _, i}
+                <path 
+                    d="M 900 650 L {900+250} 650 A 250 250 0 0 0 {900 + 250 * Math.cos(en_radians(24/facteur_2))} {650 - 250 * Math.sin(en_radians(24/facteur_2))} Z"
+                    transform-origin="900 650"
+                    transform={`rotate(-${i * 24/facteur_2})`}
+                    stroke="black"
+                    stroke-width={3}
+                    fill={i + 1 <= 7*facteur_2 ? 'green' : 'red'}
+                /> 
+                <text 
+                    x={900 + (i % 2 == 1 ? 320 : 280) * Math.cos(en_radians((i+0.5)*24/facteur_2))}
+                    y={650 - (i % 2 == 1 ? 320 : 280) * Math.sin(en_radians((i+0.5)*24/facteur_2))}
+                    font-size={i % 2 == 1 ? 50 : 35} 
+                    fill="{i + 1 <= 7*facteur_2 ? 'green' : 'red'}"
                     text-anchor="middle" 
                     dominant-baseline="middle"
                 >
@@ -90,7 +106,7 @@
         {/snippet}
         {#snippet html()}
             <input type="range" min="1" max="10" bind:value={facteur_1} style="width: 100%;"/>
-            <input type="range" min="1" max="10" bind:value={facteur_2} style="width: 100%;"/>
+            <input type="range" min="1" max="5" bind:value={facteur_2} style="width: 100%;"/>
 
             <LigneVide />
             <Item>
@@ -98,7 +114,7 @@
             </Item>
             <LigneVide />
             <Item>
-                {@html math(`\\dfrac{35}{75} = \\dfrac{35 \\div 5}{75 \\div 5} = \\dfrac{7}{15}`)}
+                {@html math(`\\dfrac{7}{15} = \\dfrac{7 \\times ${facteur_2}}{15 \\times ${facteur_2}} = \\dfrac{${facteur_2 * 7}}{${facteur_2 * 15}}`)}
             </Item>
         {/snippet}
     </Schema>
