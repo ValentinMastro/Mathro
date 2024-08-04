@@ -29,8 +29,8 @@ type Chapitre = {
 
 let sommaire_6eme: Chapitre[] = [
     { titre: "Connaître les différentes écritures d’un nombre décimal", categories: ["Nombres et calculs"], premiere_page: 3 },
-    { titre: "Connaître le vocabulaire de base et les notations usuelles en géométrie", categories: ["Espace et géométrie"] },
-    { titre: "Comparer des nombres, repérer et encadrer un nombre décimal", categories: ["Nombres et calculs"] },
+    { titre: "Connaître le vocabulaire de base et les notations usuelles en géométrie", categories: ["Espace et géométrie"]},
+    { titre: "Comparer des nombres, repérer et encadrer un nombre décimal", categories: ["Nombres et calculs"]},
     { titre: "Le cercle", categories: ["Espace et géométrie"] },
     { titre: "Reconnaître une situation de proportionnalité", categories: ["Nombres et calculs"] },
     { titre: "Connaître le vocabulaire des angles et estimer leur mesure", categories: ["Grandeurs et mesures"] },
@@ -60,9 +60,9 @@ let sommaire_6eme: Chapitre[] = [
 ];
 
 let sommaire_4eme: Chapitre[] = [
-    { titre: "Opérations sur les nombres relatifs", categories: ["Nombres et calculs"] },
-    { titre: "Théorème de Pythagore", categories: ["Espace et géométrie", "Nombres et calculs", "Grandeurs et mesures"] },
-    { titre: "Fractions et proportionnalité", categories: ["Nombres et calculs"] },
+    { titre: "Opérations sur les nombres relatifs", categories: ["Nombres et calculs"], premiere_page: 3 },
+    { titre: "Théorème de Pythagore", categories: ["Espace et géométrie", "Nombres et calculs", "Grandeurs et mesures"], premiere_page: 6 },
+    { titre: "Fractions et proportionnalité", categories: ["Nombres et calculs"], premiere_page: 10 },
     { titre: "Transformations du plan", categories: ["Espace et géométrie"] },
     { titre: "Calcul littéral", categories: ["Nombres et calculs"] },
     { titre: "Théorème de Thalès", categories: ["Espace et géométrie", "Grandeurs et mesures"] },
