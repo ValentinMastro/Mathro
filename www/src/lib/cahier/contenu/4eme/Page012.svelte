@@ -1,17 +1,30 @@
 <script lang="ts">
 	import Contenu from "$lib/cahier/composants/de_chapitrage/Contenu.svelte";
+    import DansLaMarge from "$lib/cahier/composants/de_chapitrage/DansLaMarge.svelte";
 	import Partie from "$lib/cahier/composants/de_chapitrage/Partie.svelte";
 	import SousPartie from "$lib/cahier/composants/de_chapitrage/SousPartie.svelte";
 
 	import Definition from "$lib/cahier/composants/de_cours/Definition.svelte";
+	import Exemple from "$lib/cahier/composants/de_cours/Exemple.svelte";
     import Exemples from "$lib/cahier/composants/de_cours/Exemples.svelte";
     import Item from "$lib/cahier/composants/de_cours/Item.svelte";
 	import Propriete from "$lib/cahier/composants/de_cours/Propriete.svelte";
+    import Texte from "$lib/cahier/composants/de_cours/Texte.svelte";
 
     import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 
     import { math } from "mathlifier";
+
+    let pourcentage_augmentation: number = $state(20);
+    let augmentation: number = $derived(50 * pourcentage_augmentation / 100);
+    let resultat_augmentation: number = $derived(50 * (100 + pourcentage_augmentation) / 100);
 </script>
+
+<DansLaMarge>
+    <LigneVide lignes={22} />
+    <Texte>+ {pourcentage_augmentation} %</Texte>
+    <input type="range" bind:value={pourcentage_augmentation} min="0" max="100" step="10" style="width: 80%;"/>
+</DansLaMarge>
 
 <Contenu>
     <Partie numero={2} titre="Pourcentages" />
@@ -35,6 +48,7 @@
             <LigneVide lignes={0.5} />
 
         <SousPartie numero={2} titre="Augmentation par un pourcentage" />
+            <LigneVide />
             <Propriete lignes={4}>
                 Pour augmenter une valeur de {@html math("p \\%")} :
                 <Item>
@@ -47,4 +61,19 @@
                     <u>OU</u> je calcule {@html math("\\dfrac{100+p}{100} \\times")} la valeur initiale
                 </Item>
             </Propriete>
+
+            <LigneVide />
+
+            <Exemple lignes={4}>
+                50 € + {pourcentage_augmentation} % :
+                <Item>
+                    {@html math(`${pourcentage_augmentation}\\% ~\\text{de}~ 50€ = \\underline{${augmentation}€} \\longrightarrow 50€+\\underline{${augmentation}€}=\\boxed{${resultat_augmentation}€}`)}
+                </Item>
+                <Item>
+                    {@html math(`${100+pourcentage_augmentation}\\% ~\\text{de}~ 50€ = \\boxed{${resultat_augmentation}€}`)}
+                </Item>
+                <Item>
+                    {@html math(`50€ \\times \\dfrac{100+${pourcentage_augmentation}}{100} = 50€ \\times ${(100+pourcentage_augmentation)/100} = \\boxed{${resultat_augmentation}€}`)}
+                </Item>
+            </Exemple>
 </Contenu>
