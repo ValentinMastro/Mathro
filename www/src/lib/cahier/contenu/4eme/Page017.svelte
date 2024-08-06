@@ -12,12 +12,15 @@
 
     let rotate_1 = $state(0);
     let rotate_2 = $state(0);
+    let rotate_3 = $state(0);
 </script>
 
 <DansLaMarge>
     <LigneVide lignes={8} />
     <input type="range" min="0" max="180" step="0.01" bind:value={rotate_1} style="width: 80%;"/>
     <input type="range" min="0" max="180" step="0.01" bind:value={rotate_2} style="width: 80%;"/>
+    <LigneVide lignes={12} />
+    <input type="range" min="0" max="180" step="0.01" bind:value={rotate_3} style="width: 80%;"/>
 </DansLaMarge>
 
 <Contenu>
@@ -52,5 +55,23 @@
         <Propriete lignes={2}>
             Si deux points {@html math("\\text{A}")} et {@html math("\\text{A}'")} sont symétriques par rapport à O, <br>
             alors O est le milieu du segment {@html math("\\text{AA'}")}.
+        </Propriete>
+        <Schema lignes={10}>
+            {#snippet svg()}
+                <defs>
+                    <rect id="carre" width="300" height="300" fill="none" stroke-width={5} />
+                </defs>
+
+                <use href="#carre" x="100" y="100" stroke="black" />
+                <circle cx="500" cy="500" r="10" fill="red" />
+                <use href="#carre" x="100" y="100" stroke="red" style="transform-origin: 500px 500px; transform: rotate({rotate_3}deg);" />
+
+                <line x1="400" y1="400" x2="600" y2="600" stroke="green" stroke-width={5} />
+                <line x1="400" y1="100" x2="600" y2="900" stroke="green" stroke-width={5} />
+                <line x1="100" y1="400" x2="900" y2="600" stroke="green" stroke-width={5} />
+            {/snippet}
+        </Schema>
+        <Propriete>
+            La symétrie centrale est une <i>isométrie du plan</i>.
         </Propriete>
 </Contenu>
