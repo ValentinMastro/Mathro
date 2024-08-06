@@ -4,7 +4,7 @@
         children?: any,
     }
     let { lignes = 1, children }: Props = $props();
-    import { hauteur_ligne_cahier, taille_texte, separateur_texte } from "$lib/cahier/store";
+    import { hauteur_ligne_cahier, separateur_texte } from "$lib/cahier/store";
 </script>
 
 <div class="texte" style="height: {$hauteur_ligne_cahier * lignes}px; line-height: {$separateur_texte}px;">
