@@ -1,20 +1,9 @@
 <script lang="ts">
-    import Chapitre from "$lib/cahier/composants/de_chapitrage/Chapitre.svelte";
-    import Contenu from "$lib/cahier/composants/de_chapitrage/Contenu.svelte";
-    import Partie from "$lib/cahier/composants/de_chapitrage/Partie.svelte";
-    import DansLaMarge from "$lib/cahier/composants/de_chapitrage/DansLaMarge.svelte";
-
-    import Definition from "$lib/cahier/composants/de_cours/Definition.svelte";
-    import Propriete from "$lib/cahier/composants/de_cours/Propriete.svelte";
-    import Exemples from "$lib/cahier/composants/de_cours/Exemples.svelte";
-    import Notation from "$lib/cahier/composants/de_cours/Notation.svelte";
-    import Item from "$lib/cahier/composants/de_cours/Item.svelte";
-    import Schema from "$lib/cahier/composants/de_cours/Schema.svelte";
-
+    import { Chapitre, Contenu, Partie, DansLaMarge } from "$lib/cahier/composants/de_chapitrage/*";
+    import { Definition, Propriete, Exemples, Notation, Item, Schema, Ligne } from "$lib/cahier/composants/de_cours/*";
     import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 
-    import { math, display } from 'mathlifier';
-	import Ligne from "$lib/cahier/composants/de_cours/Ligne.svelte";
+    import { math } from 'mathlifier';
 
     function en_radians(deg: number): number {
         return deg * Math.PI / 180;

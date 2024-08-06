@@ -1,10 +1,6 @@
 <script lang="ts">
-    import Contenu from "$lib/cahier/composants/de_chapitrage/Contenu.svelte";
-
-    import Schema from "$lib/cahier/composants/de_cours/Schema.svelte";
-    import Exemples from "$lib/cahier/composants/de_cours/Exemples.svelte";
-    import Texte from "$lib/cahier/composants/de_cours/Texte.svelte";
-
+    import { Contenu } from "$lib/cahier/composants/de_chapitrage/*";
+    import { Schema, Exemples, Texte } from "$lib/cahier/composants/de_cours/*";
     import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 
     import { math } from 'mathlifier';

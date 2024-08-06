@@ -1,9 +1,7 @@
 <script lang="ts">
-    import Contenu from "$lib/cahier/composants/de_chapitrage/Contenu.svelte";
-
-    import Texte from "$lib/cahier/composants/de_cours/Texte.svelte";
-    import Schema from "$lib/cahier/composants/de_cours/Schema.svelte";
-
+    import { Contenu } from "$lib/cahier/composants/de_chapitrage/*";
+    import { Schema, Texte } from "$lib/cahier/composants/de_cours/*";
+    
     import { math } from "mathlifier";
 </script>
 

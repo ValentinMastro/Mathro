@@ -1,15 +1,6 @@
 <script lang="ts">
-    import Chapitre from "$lib/cahier/composants/de_chapitrage/Chapitre.svelte";
-    import Partie from "$lib/cahier/composants/de_chapitrage/Partie.svelte";
-    import SousPartie from "$lib/cahier/composants/de_chapitrage/SousPartie.svelte";
-    import Contenu from "$lib/cahier/composants/de_chapitrage/Contenu.svelte";
-    import DansLaMarge from "$lib/cahier/composants/de_chapitrage/DansLaMarge.svelte";
-
-    import Definition from "$lib/cahier/composants/de_cours/Definition.svelte";
-    import Exemple from "$lib/cahier/composants/de_cours/Exemple.svelte";
-    import Paragraphe from "$lib/cahier/composants/de_cours/Paragraphe.svelte";
-    import Item from "$lib/cahier/composants/de_cours/Item.svelte";
-
+    import { Chapitre, Partie, SousPartie, Contenu, DansLaMarge } from "$lib/cahier/composants/de_chapitrage/*";
+    import { Definition, Exemple, Paragraphe, Item } from "$lib/cahier/composants/de_cours/*";
     import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 
     import { math } from "mathlifier";
