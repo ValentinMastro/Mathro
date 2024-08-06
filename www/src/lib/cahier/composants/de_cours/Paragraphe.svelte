@@ -2,7 +2,7 @@
     interface Props {
         nom_du_paragraphe: string,
         couleur: string,
-        lignes: number,
+        lignes?: number,
         children?: any,
     }
 
