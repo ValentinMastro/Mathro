@@ -13,3 +13,10 @@ export { default as Ligne } from "./Ligne.svelte";
 export { default as Texte } from "./Texte.svelte";
 
 export { default as Schema } from "./Schema.svelte"; 
+
+export interface ParagrapheProps {
+    nom_du_paragraphe?: string,
+    couleur?: string,
+    lignes?: number,
+    children?: any,
+}

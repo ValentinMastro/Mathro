@@ -1,12 +1,6 @@
 <script lang="ts">
-    interface Props {
-        nom_du_paragraphe: string,
-        couleur: string,
-        lignes?: number,
-        children?: any,
-    }
-
-    let { nom_du_paragraphe, couleur, lignes = 1, children }: Props = $props();
+    import { type ParagrapheProps } from "./*";
+    let { nom_du_paragraphe = "Paragraphe", couleur = "black", lignes = 1, children }: ParagrapheProps = $props();
 
     import { taille_texte, separateur_texte, hauteur_ligne_cahier } from "$lib/cahier/store";
 </script>
