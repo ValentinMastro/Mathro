@@ -15,6 +15,7 @@ export { default as Texte } from "./Texte.svelte";
 export { default as Schema } from "./Schema.svelte"; 
 
 export interface ParagrapheProps {
+    addStyle?: string,
     nom_du_paragraphe?: string,
     couleur?: string,
     lignes?: number,
