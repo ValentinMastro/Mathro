@@ -174,9 +174,6 @@
 </Contenu>
 
 <style>
-    :root {
-        --hauteur: 1em;
-    }
     #SI_prefixes {
         border-collapse: collapse;
         width: 100%;
