@@ -59,7 +59,7 @@
                 <text x={100 + 800*(i+0.5)/Object.values(donnees_2).length} y={950 - 750*valeur/5 - 10} text-anchor="middle" font-size="22">{valeur.toLocaleString("fr-FR", {minimumFractionDigits: 2, maximumFractionDigits: 2})} €</text>
             {/each}
             <!-- Légendes -->
-            <text x="950" y="910" text-anchor="middle" font-size="22">Année</text>
+            <text x="950" y="950" text-anchor="middle" font-size="22">Année</text>
             <text x="150" y="50" text-anchor="middle" font-size="22">Prix (€)</text>
         {/snippet}
     </Schema>
