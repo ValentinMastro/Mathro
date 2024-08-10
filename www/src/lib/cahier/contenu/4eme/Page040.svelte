@@ -7,7 +7,7 @@
 
 <Contenu>
     <Exemple lignes={2}>
-        Dans le triangle DEF rectangle en E, on a {@html math("\\text{DE} = 6~\\text{cm}")} et {@html math("\\widehat{\\text{EDF}} = 30°")}.<br>
+        Dans le triangle DEF rectangle en E, on a {@html math("\\text{DE} = 6~\\text{cm}")} et {@html math("\\widehat{\\text{EDF}} = 30^\\circ")}.<br>
         Calculer la longueur DF.
     </Exemple>
     <Schema lignes={10} aspectRatioSVG={0.9}>
@@ -55,7 +55,7 @@
             </Ligne>
             <LigneVide />
             <Ligne>
-                {@html math("\\text{DF} = 6 {\\color{red} \\times 1} \\div \\cos(30°) \\approx 6{,}93~\\text{cm}")}
+                {@html math("\\text{DF} = 6 {\\color{red} \\times 1} \\div \\cos(30^\\circ) \\approx 6{,}93~\\text{cm}")}
             </Ligne>
         {/snippet}
     </Schema>

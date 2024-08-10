@@ -55,7 +55,7 @@
                 </Ligne>
                 <LigneVide />
                 <Ligne>
-                    donc {@html math("\\widehat{\\text{ABC}} = \\arccos\\left(\\dfrac{3}{5}\\right) \\approx 53{,}13°")}
+                    donc {@html math("\\widehat{\\text{ABC}} = \\arccos\\left(\\dfrac{3}{5}\\right) \\approx 53{,}13^\\circ")}
                 </Ligne>
             {/snippet}
         </Schema>
