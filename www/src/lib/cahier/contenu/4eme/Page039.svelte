@@ -33,8 +33,8 @@
                 <rect x="100" y="850" width="50" height="50" fill="black" />
                 <line x1="100" y1="100" x2="100" y2="900" stroke="red" stroke-width="8" />
                 
-                <text x="60" y="100" font-size="65" text-anchor="middle" fill="red">A</text>
-                <text x="60" y="950" font-size="65" text-anchor="middle" fill="black">B</text>
+                <text x="60" y="100" font-size="65" text-anchor="middle" fill="red">B</text>
+                <text x="60" y="950" font-size="65" text-anchor="middle" fill="black">A</text>
                 <text x="720" y="950" font-size="65" text-anchor="middle" fill="black">C</text>
 
                 <text x="50" y="500" font-size="55" text-anchor="middle" fill="red">adj</text>
