@@ -3,6 +3,7 @@ export { default as Paragraphe } from "./Paragraphe.svelte";
     export { default as Demonstration } from "./Demonstration.svelte";
     export { default as Exemple } from "./Exemple.svelte";
     export { default as Exemples } from "./Exemples.svelte";
+    export { default as Formule } from "./Formule.svelte";
     export { default as Formules } from "./Formules.svelte";
     export { default as Item } from "./Item.svelte";
     export { default as Notation } from "./Notation.svelte";
