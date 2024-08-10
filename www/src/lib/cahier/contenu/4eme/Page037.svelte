@@ -1,18 +1,34 @@
 <script lang="ts">
-	import { Contenu, Partie } from "$lib/cahier/composants/de_chapitrage/*";
-    import { Definition, Exemples } from "$lib/cahier/composants/de_cours/*";
+	import { Contenu, DansLaMarge, Partie } from "$lib/cahier/composants/de_chapitrage/*";
+    import { Definition, Exemples, Ligne, Texte } from "$lib/cahier/composants/de_cours/*";
 	import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 
     import { hauteur_ligne_cahier, taille_texte } from "$lib/cahier/store";
     import { math } from "mathlifier";
 
     // Nombre d'élèves dans une classe par sexe
-    let donnees_5 = {
-        "Filles": 15,
-        "Garçons": 12,
-        "TOTAL": 27
-    }
+    let filles: number = $state(15);
+    let garçons: number = $state(12);
+
+    let donnees_5 = $derived({
+        "Filles": filles,
+        "Garçons": garçons,
+        "TOTAL": filles + garçons
+    });
 </script>
+
+<DansLaMarge>
+    <LigneVide lignes={10} />
+    
+    <Texte lignes={2}> 
+        <label for="filles"># filles :</label>
+        <input type="number" bind:value={filles} id="filles" style="width: 40%;"/>
+        <br>
+        <label for="garçons"># garçons :</label>
+        <input type="number" bind:value={garçons} id="garçons" style="width: 30%;"/>
+    </Texte>
+
+</DansLaMarge>
 
 <Contenu>
     <Partie numero={3} titre="Fréquences" />
