@@ -73,9 +73,9 @@ let sommaire_4eme: Chapitre[] = [
     { titre: "Probabilités", categories: ["Organisation et gestion de données"] },
     { titre: "Décomposition en facteurs premiers", categories: ["Nombres et calculs"] },
     { titre: "Solides de l'espace", categories: ["Espace et géométrie"] },
-    { titre: "Programmation", categories: ["Algorithmique et programmation"] },
     { titre: "Repérage", categories: ["Espace et géométrie"] },
     { titre: "Réciproques", categories: ["Espace et géométrie", "Grandeurs et mesures"] },
+    { titre: "Programmation", categories: ["Algorithmique et programmation"] },
 ];
 
 export function sommaire(niveau: 3 | 4 | 5 | 6): Chapitre[] {
