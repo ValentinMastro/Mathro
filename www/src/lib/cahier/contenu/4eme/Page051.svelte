@@ -13,7 +13,7 @@
             Il a 12 arêtes et 8 sommets.
         </Definition>
         <Formule>
-            Si l'arête d'un cube mesure {@html math("c")}, alors {@html math(`\\text{V}_{cube} = c^3`)}.
+            Si l'arête d'un cube mesure {@html math("c")}, alors {@html math(`\\text{V}_{\\text{cube}} = c^3`)}.
         </Formule>
         <Schema lignes={8}>
             {#snippet svg()}
@@ -30,14 +30,14 @@
         </Schema>
     
     <LigneVide />
-    <SousSousPartie numero={1} titre="Le pavé droit" />
+    <SousSousPartie numero={2} titre="Le pavé droit" />
         <Definition lignes={3}>
             Un pavé droit (ou parallélépipède rectangle) est un hexaèdre (un polyèdre à 6 faces) dont toutes les faces sont des rectangles.
             Il a 12 arêtes et 8 sommets.
         </Definition>
         <Formule lignes={2}>
             Si le pavé droit est de longueur {@html math(`\\text{L}`)}, de largeur {@html math("\\ell")}
-            et de hauteur {@html math(`\\text{h}`)}, alors {@html math(`\\text{V}_{pave} = \\text{L} \\times \\ell \\times h`)}.
+            et de hauteur {@html math(`\\text{h}`)}, alors {@html math(`\\text{V}_{\\text{pave}} = \\text{L} \\times \\ell \\times h`)}.
         </Formule>
         <Schema lignes={8} aspectRatioSVG={1.25}>
             {#snippet svg()}
