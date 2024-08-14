@@ -5,9 +5,8 @@
 
     import { math } from "mathlifier";
 
-    let scale_1 = $state(1);
-    let scale_2 = $state(1);
-    let scale_3 = $state(1);
+    let scale_1 = $state(-1);
+    let scale_2 = $state(-1);
 </script>
 
 <Chapitre titre="Transformations du plan" />
@@ -32,7 +31,7 @@
                 
                 <use href="#trapeze" />
                 <line x1={0} y1={500} x2={800} y2={500} stroke="black" stroke-width={8} stroke-dasharray="30 30"  />
-                <use href="#trapeze" style="transform-origin: 400px 500px; transform: scaleY({scale_1});" />
+                <use href="#trapeze" style="transform-origin: 400px 500px; transform: scaleY({-scale_1});" />
 
                 <defs>
                     <g id="figure2">
@@ -44,7 +43,7 @@
 
                 <use href="#figure2" />
                 <line x1={1500} x2={1500} y1={50} y2={800} stroke="black" stroke-width={8} stroke-dasharray="30 30" />
-                <use href="#figure2" style="transform-origin: 1500px 400px; transform: scaleX({scale_2});" />
+                <use href="#figure2" style="transform-origin: 1500px 400px; transform: scaleX({-scale_2});" />
             {/snippet}
         </Schema>
         <Propriete lignes={2}>
