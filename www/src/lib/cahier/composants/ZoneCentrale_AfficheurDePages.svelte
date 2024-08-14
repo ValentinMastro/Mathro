@@ -3,11 +3,14 @@
     import PageDeCahier from "./PageDeCahier.svelte";
     import type { Component } from "svelte";
 
+    let pages_chargees: number = $state(0);
+
     async function recuperer_pages() {
         let pages = [];
         for (let i = 0; i <= nombre_de_pages($niveau); i++) {
             let page: Component = await import(`$lib/cahier/contenu/${$niveau}eme/Page${i.toString().padStart(3, "0")}.svelte`);
             pages.push(page);
+            pages_chargees = i;
         }
         return pages;
     }
@@ -15,7 +18,7 @@
 
 <div id="zone">
     {#await recuperer_pages() }
-        <p>Chargement...</p>
+        <p>Chargement... {pages_chargees}/{nombre_de_pages($niveau)}</p>
     {:then pages}
         {#if $plein_ecran}
             <input id="largeur" type="range" min="0" max="100" bind:value={$largeur_plein_ecran} />
