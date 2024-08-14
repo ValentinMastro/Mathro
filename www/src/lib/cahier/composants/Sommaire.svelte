@@ -92,6 +92,11 @@
         align-items: flex-start;
     }
 
+    li:hover {
+        cursor: pointer;
+        background-color: aqua;
+    }
+
     .categories {
         margin-left: auto;
     }
