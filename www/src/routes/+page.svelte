@@ -7,7 +7,7 @@
 	<div id="sigma">Σ</div>
 	<div id="menu" data-sveltekit-reload>
 		<div id="4eme" class="niveau">
-			<a href="/cours/4eme">4ème</a>
+			<a href="/cahier_de_cours/4eme">4ème</a>
 		</div>
 		<div id="6eme" class="niveau">
 			<a href="/cours/6eme">6ème</a>
