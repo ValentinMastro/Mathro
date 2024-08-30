@@ -9,8 +9,11 @@
 		<div id="4eme" class="niveau">
 			<a href="/cahier_de_cours/4eme">4ème</a>
 		</div>
+		<div id="5eme" class="niveau">
+			<a href="/cahier_de_cours/5eme">5ème</a>
+		</div>
 		<div id="6eme" class="niveau">
-			<a href="/cours/6eme">6ème</a>
+			<a href="/cahier_de_cours/6eme">6ème</a>
 		</div>
 		<div id="scratch" class="niveau">
 			<a href="/scratch">
@@ -28,55 +31,65 @@
 </div>
 
 <style>
-	#outils {
-		position: fixed;
-		bottom: 0;
-		left: 0;
-	}
-	div#accueil {
+	#accueil {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
 		height: 100vh;
+
+		#sigma {
+			font-size: 30vw;
+		}
+
+		#menu {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			.niveau {
+				font-size: 5vw;
+				margin-left: 1em;
+			}
+
+			img#scratch_cat {
+				vertical-align: -3px;
+			}
+		}
 	}
-	div#menu {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+
+
+	a { text-decoration: none; }
+
+	#outils {
+		position: fixed;
+		bottom: 0;
+		left: 0;
 	}
-	div#sigma {
-		font-size: 30vw;
-	}
-	div.niveau {
-		font-size: 5vw;
-		margin-left: 1em;
-	}
-	a {
-		text-decoration: none;
-	}
-	img#scratch_cat {
-		vertical-align: -3px;
-	}
+	
 	@media (min-aspect-ratio: 1) {
 		img#scratch_cat {
 			width: 4vw;
 		}
 	}
 	@media (max-aspect-ratio: 1) {
-		div#accueil {
+		#accueil {
 			flex-direction: column;
-		}
-		div#sigma {
-			font-size: 30vh;
-		}
-		div.niveau {
-			margin: 0;
-			font-size: 5vh;
-		}
-		img#scratch_cat {
-			height: 5vh;
+
+			#sigma {
+				font-size: 30vh;
+			}
+
+			#menu {
+				.niveau {
+					margin: 0;
+					font-size: 5vh;
+				}
+				img#scratch_cat {
+					height: 5vh;
+				}
+			}
 		}
 	}
 </style>
