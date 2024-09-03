@@ -19,6 +19,22 @@
         });
     }
 
+    /*
+    
+    function detection_mobile(): boolean {
+        if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    if (detection_mobile()) {
+        plein_ecran.set(true);
+    }
+    
+    */
+
     function touche_pressee(event: KeyboardEvent) {
         switch (event.key) {
             case "p":
