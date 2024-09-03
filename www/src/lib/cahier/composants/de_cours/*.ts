@@ -13,6 +13,8 @@ export { default as Paragraphe } from "./Paragraphe.svelte";
 
 export { default as Ligne } from "./Ligne.svelte";
 export { default as Texte } from "./Texte.svelte";
+export { default as Tableau } from "./Tableau.svelte";
+export { default as LigneTableau } from "./LigneTableau.svelte";
 
 export { default as Schema } from "./Schema.svelte"; 
 
