@@ -55,6 +55,14 @@
         </span> de {numero.toLocaleString()}.
     </Item>
 {/snippet}
+{#snippet ligne_de_texte_nombre(index_surbrillance: number, numero: number, puissance: number, texte: string)}
+    <Item>
+        {nombre(numero, puissance)} est 
+        <span role="tooltip" onmouseenter={() => surbrillances[index_surbrillance] = true} onmouseleave={() => surbrillances[index_surbrillance] = false}>
+            {texte}
+        </span> de {numero.toLocaleString()}.
+    </Item>
+{/snippet}
 
 <Contenu apres_un_titre={true}>
     <Partie numero={1} titre="Chiffres et nombres" />
@@ -85,9 +93,9 @@
                 {@render ligne_de_texte(0, numero_1, 2, "le chiffre des centaines")}
                 {@render ligne_de_texte(1, numero_2, 4, "le chiffre des dizaines de milliers")}
                 {@render ligne_de_texte(2, numero_3, 9, "le chiffre des milliards")}
-                {@render ligne_de_texte(3, numero_1, 1, "le nombre des dizaines")}
-                {@render ligne_de_texte(4, numero_2, 4, "le nombre des dizaines de milliers")}
-                {@render ligne_de_texte(5, numero_3, 6, "le nombre des millions")}
+                {@render ligne_de_texte_nombre(3, numero_1, 1, "le nombre des dizaines")}
+                {@render ligne_de_texte_nombre(4, numero_2, 4, "le nombre des dizaines de milliers")}
+                {@render ligne_de_texte_nombre(5, numero_3, 6, "le nombre des millions")}
             </Exemples>
     
     <LigneVide />
