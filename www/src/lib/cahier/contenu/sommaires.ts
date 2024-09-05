@@ -28,11 +28,67 @@ type Chapitre = {
 }
 
 let sommaire_6eme: Chapitre[] = [
+    // Période 1
     { titre: "Nombres entiers", categories: ["Nombres et calculs"]},
     { titre: "Vocabulaire de géométrie", categories: ["Espace et géométrie"]},
     { titre: "Fractions/Partage", categories: ["Nombres et calculs"]},
     { titre: "Figures simples", categories: ["Espace et géométrie"]},
-    { titre: "Nombres décimaux", categories: ["Nombres et calculs"]}
+    { titre: "Nombres décimaux", categories: ["Nombres et calculs"]},
+    // Période 2
+    { titre: "Droites", categories: ["Espace et géométrie"]},
+    { titre: "Addition, Soustraction et Multiplication", categories: ["Nombres et calculs"]},
+    { titre: "Polygones", categories: ["Espace et géométrie"]},
+    { titre: "Conversions d'unités", categories: ["Grandeurs et mesures"]},
+    { titre: "Symétrie axiale", categories: ["Espace et géométrie"]},
+    // Période 3
+    { titre: "Division euclidienne", categories: ["Nombres et calculs"]},
+    { titre: "Aires et périmètres", categories: ["Espace et géométrie", "Grandeurs et mesures"]},
+    { titre: "Division décimale", categories: ["Nombres et calculs"]},
+    { titre: "Géométrie dans l'espace", categories: ["Espace et géométrie"]},
+    { titre: "Durées, Horaires", categories: ["Grandeurs et mesures"]},
+    // Période 4
+    { titre: "Rapporteur", categories: ["Espace et géométrie"]},
+    { titre: "Proportionnalité", categories: ["Nombres et calculs"]},
+    { titre: "Médiatrice", categories: ["Espace et géométrie"]},
+    { titre: "Volumes et contenances", categories: ["Espace et géométrie", "Grandeurs et mesures"]},
+    { titre: "Se repérer", categories: ["Espace et géométrie"]},
+    // Période 5
+    { titre: "Résoudre des problèmes", categories: ["Nombres et calculs"]},
+    { titre: "Propriétés des droites", categories: ["Espace et géométrie"]},
+    { titre: "Représentations usuelles", categories: ["Grandeurs et mesures"]},
+    { titre: "Échelles, agrandissements et réductions", categories: ["Espace et géométrie"]},
+];
+
+let sommaire_5eme: Chapitre[] = [
+    // Période 1
+    { titre: "Fractions", categories: ["Nombres et calculs"] },
+    { titre: "Symétrie axiale", categories: ["Espace et géométrie"] },
+    { titre: "Nombres premiers", categories: ["Nombres et calculs"] },
+    { titre: "Anges d'un triangle", categories: ["Espace et géométrie"] },
+    { titre: "Nombres relatifs", categories: ["Nombres et calculs"] },
+    // Période 2
+    { titre: "Construction de triangles", categories: ["Espace et géométrie"] },
+    { titre: "Enchaînement d'opérations", categories: ["Nombres et calculs"] },
+    { titre: "Parallélogrammes", categories: ["Espace et géométrie"] },
+    { titre: "Calculs avec fractions", categories: ["Nombres et calculs"] },
+    { titre: "Grandeurs", categories: ["Grandeurs et mesures"] },
+    // Période 3
+    { titre: "Symétrie centrale", categories: ["Espace et géométrie"] },
+    { titre: "Calculer avec des relatifs", categories: ["Nombres et calculs"] },
+    { titre: "Droites remarquables dans un triangle", categories: ["Espace et géométrie"] },
+    { titre: "Expressions littérales", categories: ["Nombres et calculs"] },
+    // Période 4
+    { titre: "Situations de proportionnalité", categories: ["Nombres et calculs"] },
+    { titre: "Solides", categories: ["Espace et géométrie"] },
+    { titre: "Tableaux et statistiques", categories: ["Organisation et gestion de données"] },
+    { titre: "Calcul littéral", categories: ["Nombres et calculs"] },
+    // Période 5
+    { titre: "Volumes", categories: ["Espace et géométrie"] },
+    { titre: "Utiliser la proportionnalité", categories: ["Nombres et calculs"] },
+    { titre: "Angles", categories: ["Espace et géométrie"] },
+    { titre: "Diagrammes et graphiques", categories: ["Organisation et gestion de données"] },
+    { titre: "Probabilités", categories: ["Organisation et gestion de données"] },
+    { titre: "Dépendance de grandeurs", categories: ["Grandeurs et mesures"] },
 ];
 
 let sommaire_4eme: Chapitre[] = [
