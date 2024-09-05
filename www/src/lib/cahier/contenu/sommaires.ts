@@ -117,7 +117,7 @@ export function sommaire(niveau: 3 | 4 | 5 | 6): Chapitre[] {
         case 4:
             return sommaire_4eme;
         case 5:
-            return [];
+            return sommaire_5eme;
         case 6:
             return sommaire_6eme;
     }
