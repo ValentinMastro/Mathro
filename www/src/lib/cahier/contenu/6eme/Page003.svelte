@@ -68,7 +68,7 @@
     <Partie numero={1} titre="Chiffres et nombres" />
         <SousPartie numero={1} titre="Tableau de numération" />
         <LigneVide />
-        <Tableau>
+        <Tableau addStyle="font-size: x-large;">
             <LigneTableau>
                 <td colspan={3}>Milliards</td>
                 <td colspan={3}>Millions</td>
