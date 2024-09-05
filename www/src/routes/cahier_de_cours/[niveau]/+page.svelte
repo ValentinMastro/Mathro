@@ -73,4 +73,7 @@
     :global(.mathlifier-display) {
         margin-bottom: -2.4ex;
     }
+    :global(*) {
+        font-family: 'Noto Serif', serif;
+    }
 </style>
