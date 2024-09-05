@@ -7,9 +7,21 @@
 </script>
 
 <Contenu >
+        <Exemples lignes={6}>
+            <Item lignes={2}>
+                {@html math("325 = 300 + 20 + 5 = 3 \\times 100 + 2 \\times 10 + 5 \\times 1")} <br />
+                &ensp;&ensp;&ensp;&ensp;&ensp; = 3 centaines, 2 dizaines et 5 unités.
+            </Item>
+            <Item lignes={4}>
+                {@html math("105~037 = 100~000 + 5~000 + 30 + 7")} <br />
+                &ensp;&ensp;&ensp;&ensp;&ensp; {@html math("= 1 \\times 100~000 + 5 \\times 1~000 + 3 \\times 10 + 7 \\times 1")} <br />
+                &ensp;&ensp;&ensp;&ensp;&ensp; = 1 centaine de milliers, 5 milliers, 3 dizaines et 7 unités.
+            </Item>
+        </Exemples>
+        <LigneVide />
     <Partie numero={2} titre="Comparaison et encadrement" />
         <LigneVide />
-        <Definition lignes={7}>
+        <Definition lignes={8}>
             Comparer deux nombres consiste à dire lequel est le plus grand ou le plus petit.<br>
             Pour cela, on utilise les symboles :
                 <Item>&lt; (plus petit que)</Item>

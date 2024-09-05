@@ -100,20 +100,9 @@
     
     <LigneVide />
     <SousPartie numero={3} titre="Décomposition" />
-        <Propriete>
+        <Propriete lignes={2}>
             Il est possible de décomposer un nombre selon la position de ses chiffres.
         </Propriete>
-        <Exemples lignes={5}>
-            <Item lignes={2}>
-                {@html math("325 = 300 + 20 + 5 = 3 \\times 100 + 5 \\times 10 + 5 \\times 1")} <br />
-                &ensp;&ensp;&ensp;&ensp;&ensp; = 3 centaines, 2 dizaines et 5 unités.
-            </Item>
-            <Item lignes={3}>
-                {@html math("105~037 = 100~000 + 5~000 + 30 + 7")} <br />
-                &ensp;&ensp;&ensp;&ensp;&ensp; {@html math("= 1 \\times 100~000 + 5 \\times 10~000 + 3 \\times 10 + 7 \\times 1")} <br />
-                &ensp;&ensp;&ensp;&ensp;&ensp; = 1 centaine de milliers, 5 dizaines de milliers, 3 dizaines et 7 unités.
-            </Item>
-        </Exemples>
 </Contenu>
 
 <style>
