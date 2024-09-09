@@ -8,6 +8,7 @@
     niveau.set(data.niveau as 3 | 4 | 5 | 6);
 
     import ZoneCentraleAfficheurDePages from "$lib/cahier/composants/ZoneCentrale_AfficheurDePages.svelte";
+	import { onMount } from "svelte";
 
     function changement_de_page(diff: number) {
         numero_de_la_page.update((n) => {
@@ -18,26 +19,24 @@
             }
         });
     }
-
-    /*
     
-    function detection_mobile(): boolean {
-        if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent)){
-            return true;
-        } else {
-            return false;
+    onMount(() => {
+        function detection_mobile(): boolean {
+            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent)){
+                return true;
+            } else {
+                return false;
+            }
         }
-    }
 
-    if (detection_mobile()) {
-        plein_ecran.set(true);
-    }
-    
-    */
+        if (detection_mobile()) {
+            plein_ecran.set(true);
+        }
+    });
 
     function touche_pressee(event: KeyboardEvent) {
         switch (event.key) {
-            case "p":
+            case "m":
                 plein_ecran.update((plein_ecran) => !plein_ecran);
                 break;
             case "ArrowRight":
