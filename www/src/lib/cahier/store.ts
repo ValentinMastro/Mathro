@@ -5,6 +5,7 @@ export let niveau = writable<3 | 4 | 5 | 6>(6);
 export let deux_pages = writable(true);
 export let plein_ecran = writable(false);
 export let largeur_plein_ecran = writable(100);
+export let sur_mobile = writable(false);
 
 export function nombre_de_pages(niveau: 3 | 4 | 5 | 6): number {
     switch (niveau) {
@@ -13,7 +14,7 @@ export function nombre_de_pages(niveau: 3 | 4 | 5 | 6): number {
         case 4:
             return 97;
         case 5:
-            return 97;
+            return 10;
         case 6:
             return 97;
     }
