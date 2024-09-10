@@ -21,15 +21,28 @@
                     {@html math(`\\frac{2}{3} \\neq \\frac{3}{4}`)} car {@html math(`\\frac{2}{3} = 2 \\div 3 = 0,666...`)} et {@html math(`\\frac{3}{4} = 3 \\div 4 = 0,75`)}.
                 </Item>
             </Exemples>
+            <LigneVide />
             <Propriete lignes={3}>
                 Si deux fractions sont égales, alors on peut multiplier le numérateur et le dénominateur de l'une par un même nombre non nul pour obtenir l'autre fraction.
             </Propriete>
-            <Exemples lignes={2}>
-                <Item>
-                    {@html math(`\\dfrac{3}{4} _{\\color{red} \\rightarrow \\times 2}^{\\color{red} \\rightarrow \\times 2} = \\dfrac{6}{8}`)}.
+            <Exemples lignes={4}>
+                <Item lignes={2}>
+                    {@html math(`\\dfrac{3}{4} \\begin{matrix} {\\color{red} \\rightarrow \\times 2} \\\\ {\\color{red} \\rightarrow \\times 2} \\end{matrix} = \\dfrac{6}{8}`)}.
                 </Item>
-                <Item>
-                    {@html math(`\\dfrac{2}{3} _{\\color{red} \\rightarrow \\times 4}^{\\color{red} \\rightarrow \\times 4} \\neq \\dfrac{8}{12}`)}.
+                <Item lignes={2}>
+                    {@html math(`\\dfrac{2}{3} \\begin{matrix} {\\color{red} \\rightarrow \\times 4} \\\\ {\\color{red} \\rightarrow \\times 4} \\end{matrix} = \\dfrac{8}{12}`)}.
+                </Item>
+            </Exemples>
+            <LigneVide />
+            <Definition lignes={2}>
+                Simplifier une fraction consiste à trouver un <i>facteur commun</i> entre le numérateur et le dénominateur.
+            </Definition>
+            <Exemples lignes={4}>
+                <Item lignes={2}>
+                    {@html math(`\\dfrac{6}{8} = \\dfrac{3 \\times 2}{4 \\times 2} = \\dfrac{3}{4}`)}.
+                </Item>
+                <Item lignes={2}>
+                    {@html math(`\\dfrac{121}{176} = \\dfrac{11 \\times 11}{16 \\times 11} = \\dfrac{11}{16}`)}.
                 </Item>
             </Exemples>
 </Contenu>
