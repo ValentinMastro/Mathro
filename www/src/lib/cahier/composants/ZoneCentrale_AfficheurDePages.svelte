@@ -63,4 +63,12 @@
         width: 5vw;
         z-index: 2;
     }
+    @media print {
+        #largeur {
+            display: none;
+        }
+        #scroll {
+            row-gap: 0;
+        }
+    }
 </style>
