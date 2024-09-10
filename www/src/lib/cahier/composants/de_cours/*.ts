@@ -6,6 +6,7 @@ export { default as Paragraphe } from "./Paragraphe.svelte";
     export { default as Formule } from "./Formule.svelte";
     export { default as Formules } from "./Formules.svelte";
     export { default as Item } from "./Item.svelte";
+    export { default as Methode } from "./Methode.svelte";
     export { default as Notation } from "./Notation.svelte";
     export { default as Propriete } from "./Propriete.svelte";
     export { default as Remarque } from "./Remarque.svelte";
