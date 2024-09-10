@@ -3,7 +3,7 @@
     import type { PageData } from "./$types";
     export let data: PageData;
 
-    import { nombre_de_pages, niveau, numero_de_la_page, plein_ecran } from "$lib/cahier/store";
+    import { nombre_de_pages, niveau, numero_de_la_page, plein_ecran, sur_mobile } from "$lib/cahier/store";
 
     niveau.set(data.niveau as 3 | 4 | 5 | 6);
 
@@ -31,6 +31,7 @@
 
         if (detection_mobile()) {
             plein_ecran.set(true);
+            sur_mobile.set(true);
         }
     });
 
