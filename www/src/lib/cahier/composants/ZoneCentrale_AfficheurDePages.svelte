@@ -7,7 +7,6 @@
 
     async function charger_page(numero_de_page: number) {
         let page: Component = await import(`$lib/cahier/contenu/${$niveau}eme/Page${numero_de_page.toString().padStart(3, "0")}.svelte`);
-        console.log(page);
         pages_chargees += 1;
         return page;
     }
