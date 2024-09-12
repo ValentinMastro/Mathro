@@ -5,19 +5,27 @@
 
     let pages_chargees: number = $state(0);
 
-    async function recuperer_pages() {
-        let pages = [];
-        for (let i = 0; i <= nombre_de_pages($niveau); i++) {
-            let page: Component = await import(`$lib/cahier/contenu/${$niveau}eme/Page${i.toString().padStart(3, "0")}.svelte`);
-            pages.push(page);
-            pages_chargees = i;
-        }
-        return pages;
+    async function charger_page(numero_de_page: number) {
+        let page: Component = await import(`$lib/cahier/contenu/${$niveau}eme/Page${numero_de_page.toString().padStart(3, "0")}.svelte`);
+        console.log(page);
+        pages_chargees += 1;
+        return page;
+    }
+
+    async function charger_pages() {
+        var range = Array(nombre_de_pages($niveau)).keys();
+        return Promise.all(
+            [...range].map(
+                async (i) => {
+                    return await charger_page(i);
+                }
+            )
+        )
     }
 </script>
 
 <div id="zone">
-    {#await recuperer_pages() }
+    {#await charger_pages() }
         <p>Chargement... {pages_chargees}/{nombre_de_pages($niveau)}</p>
     {:then pages}
         {#if $plein_ecran}
