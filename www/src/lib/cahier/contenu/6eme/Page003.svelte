@@ -3,7 +3,6 @@
     import { Tableau, LigneTableau, Texte, Exemples, Item, Propriete } from "$lib/cahier/composants/de_cours/*";
 	import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 	import { hauteur_ligne_cahier } from "$lib/cahier/store";
-    import { math, alignStar } from "mathlifier";
 
     let numero_1 = $state(1234);
     let numero_2 = $state(15234900);
@@ -68,7 +67,7 @@
     <Partie numero={1} titre="Chiffres et nombres" />
         <SousPartie numero={1} titre="Tableau de numération" />
         <LigneVide />
-        <Tableau addStyle="font-size: x-large;">
+        <Tableau>
             <LigneTableau>
                 <td colspan={3}>Milliards</td>
                 <td colspan={3}>Millions</td>
