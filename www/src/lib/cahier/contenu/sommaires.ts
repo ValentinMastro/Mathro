@@ -1,8 +1,9 @@
-export type Categories =   "Nombres et calculs" | 
-                    "Espace et géométrie" | 
-                    "Grandeurs et mesures" | 
-                    "Algorithmique et programmation" | 
-                    "Organisation et gestion de données";
+export type Categories =   
+    "Nombres et calculs" | 
+    "Espace et géométrie" | 
+    "Grandeurs et mesures" | 
+    "Algorithmique et programmation" | 
+    "Organisation et gestion de données";
 
 export function couleur_de_la_categorie(categorie: Categories) {
     switch (categorie) {
@@ -29,7 +30,7 @@ type Chapitre = {
 
 let sommaire_6eme: Chapitre[] = [
     // Période 1
-    { titre: "Nombres entiers", categories: ["Nombres et calculs"]},
+    { titre: "Nombres entiers", categories: ["Nombres et calculs"], premiere_page: 3},
     { titre: "Vocabulaire de géométrie", categories: ["Espace et géométrie"]},
     { titre: "Fractions/Partage", categories: ["Nombres et calculs"]},
     { titre: "Figures simples", categories: ["Espace et géométrie"]},
@@ -61,7 +62,7 @@ let sommaire_6eme: Chapitre[] = [
 
 let sommaire_5eme: Chapitre[] = [
     // Période 1
-    { titre: "Fractions", categories: ["Nombres et calculs"] },
+    { titre: "Fractions", categories: ["Nombres et calculs"], premiere_page: 3},
     { titre: "Symétrie axiale", categories: ["Espace et géométrie"] },
     { titre: "Nombres premiers", categories: ["Nombres et calculs"] },
     { titre: "Anges d'un triangle", categories: ["Espace et géométrie"] },
