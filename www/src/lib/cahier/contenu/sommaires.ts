@@ -26,6 +26,7 @@ type Chapitre = {
     titre: string,
     categories: Categories[],
     premiere_page?: number,
+    attendus?: string[],
 }
 
 let sommaire_6eme: Chapitre[] = [
@@ -62,11 +63,51 @@ let sommaire_6eme: Chapitre[] = [
 
 let sommaire_5eme: Chapitre[] = [
     // Période 1
-    { titre: "Fractions", categories: ["Nombres et calculs"], premiere_page: 3},
-    { titre: "Symétrie axiale", categories: ["Espace et géométrie"] },
-    { titre: "Nombres premiers", categories: ["Nombres et calculs"] },
-    { titre: "Anges d'un triangle", categories: ["Espace et géométrie"] },
-    { titre: "Nombres relatifs", categories: ["Nombres et calculs"] },
+    { titre: "Fractions", categories: ["Nombres et calculs"], premiere_page: 3,
+        attendus: [
+            "Décomposer une fraction sous la forme d’une somme (ou d’une différence) d’un entier et d’une fraction",
+            "Reconnaître et produire des fractions égales",
+            "Comparer, ranger, encadrer des fractions dont les dénominateurs sont égaux ou multiples l’un de l’autre",
+            "Simplification de fractions"
+        ]
+    },
+    { titre: "Symétrie axiale", categories: ["Espace et géométrie"],
+        attendus: [
+            "Consolider le travail sur les codages de figures : interprétation d’une figure codée ou réalisation d’un codage",
+            "Comprendre l’effet des symétries (axiale et centrale) : conservation du parallélisme, des longueurs et des angles",
+            "Déterminer des longueurs et des mesures d’angles en utilisant les propriétés de conservation des symétries (axiale et centrale)",
+            "Prouver que deux droites sont parallèles en utilisant la conservation du parallélisme par les symétries (axiale et centrale)",
+            "Reconnaître les axes et centres de symétrie d’une figure",
+            "Identifier des symétries dans des frises, des pavages, des rosaces",
+            "Mener des raisonnements en utilisant des propriétés des figures, des configurations et des symétries"
+        ]
+     },
+    { titre: "Nombres premiers", categories: ["Nombres et calculs"],
+        attendus: [
+            "Savoir calculer le quotient et le reste dans une division euclidienne",
+            "Déterminer si un nombre entier est ou n’est pas multiple ou diviseur d’un autre nombre entier",
+            "Modéliser et résoudre des problèmes faisant intervenir les notions de multiple, de diviseur, de quotient et de reste",
+            "Utiliser les critères de divisibilité (par 2, 3, 5, 9, 10)",
+            "Nombres premiers",
+            "Décomposition d’un nombre en produit de facteurs premiers"
+        ]
+    },
+    { titre: "Angles d'un triangle", categories: ["Espace et géométrie"],
+        attendus: [
+            "Connaître et utiliser la propriété sur la somme des mesures des angles d’un triangle",
+            "Reconnaître des triangles particuliers en utilisant les angles",
+            "Calculer les angles d’un triangle"
+        ]
+     },
+    { titre: "Nombres relatifs", categories: ["Nombres et calculs"],
+        attendus: [
+            "Introduction des nombres relatifs",
+            "Déterminer l’opposé d’un nombre relatif",
+            "Repérer sur une droite graduée les nombres décimaux relatifs",
+            "Placer des points ayant pour coordonnées des nombres relatifs dans un repère orthogonal",
+            "Comparer des nombres relatifs"
+        ]
+     },
     // Période 2
     { titre: "Construction de triangles", categories: ["Espace et géométrie"] },
     { titre: "Enchaînement d'opérations", categories: ["Nombres et calculs"] },
@@ -74,7 +115,7 @@ let sommaire_5eme: Chapitre[] = [
     { titre: "Calculs avec fractions", categories: ["Nombres et calculs"] },
     { titre: "Grandeurs", categories: ["Grandeurs et mesures"] },
     // Période 3
-    { titre: "Symétrie centrale", categories: ["Espace et géométrie"] },
+    { titre: "Construire des symétriques", categories: ["Espace et géométrie"] },
     { titre: "Calculer avec des relatifs", categories: ["Nombres et calculs"] },
     { titre: "Droites remarquables dans un triangle", categories: ["Espace et géométrie"] },
     { titre: "Expressions littérales", categories: ["Nombres et calculs"] },
