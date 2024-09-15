@@ -30,16 +30,16 @@
             </Item>
         </Exemples>
 
-        <Methode>
+        <Methode lignes={2}>
             Pour calculer le pourcentage d'un nombre, on peut se ramener à l'écriture fractionnaire.
         </Methode>
 
         <Exemples lignes={4}>
             <Item lignes={2}>
-                {@html math(`35 \\% de 120 = \\dfrac{35}{100} \\times 120 = \\dfrac{35 \\times 120}{100} = \\dfrac{4200}{100} = 42`)}.
+                {@html math(`35 \\% \\text{~de~} 120 = \\dfrac{35}{100} \\times 120 = \\dfrac{35 \\times 120}{100} = \\dfrac{4200}{100} = 42`)}.
             </Item>
             <Item lignes={2}>
-                {@html math(`15 \\% de 200 = \\dfrac{15}{100} \\times 200 = 15 \\times \\dfrac{200}{100} = 15 \\times 2 = 30`)}.
+                {@html math(`15 \\% \\text{~de~} 200 = \\dfrac{15}{100} \\times 200 = 15 \\times \\dfrac{200}{100} = 15 \\times 2 = 30`)}.
             </Item>
         </Exemples>
 </Contenu>
