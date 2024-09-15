@@ -9,14 +9,18 @@
                             "Organisation et gestion de données", "Algorithmique et programmation"]);
 </script>
 
-<h2 style="font-size: {$taille_sommaire}px">Sommaire</h2>
-
+<!-- Pastille de couleur indiquant la catégorie du chapitre -->
 {#snippet ma_categorie(categorie: Categories)}
     <span style="font-size: {$taille_chapitre*0.8}px; color: {categories_visibles.includes(categorie) ? couleur_de_la_categorie(categorie) : "gray"}; user-select: none;" >
         &#x25CF;
     </span>
 {/snippet}
 
+<!-- 
+    Sélecteur de catégorie : 
+        - Lorsqu'on clique sur lui, on affiche ou on cache les chapitres de cette catégorie.
+        - La couleur de fond du sélecteur est la couleur de la catégorie si elle est visible, sinon grise.
+-->
 {#snippet selecteur_de_categorie(categorie: Categories)}
     <div
         style="font-size: {$taille_chapitre*0.8}px;"
@@ -35,6 +39,9 @@
     </div>
 {/snippet}
 
+<h2 style="font-size: {$taille_sommaire}px">Sommaire</h2>
+
+<!-- Liste des chapitres -->
 <ol style="font-size: {$taille_chapitre*0.67}px;">
     {#each sommaire($niveau) as chapitre}
         <li style="visibility: {chapitre.categories.some((c) => categories_visibles.includes(c)) ? "visible" : "hidden"}"
@@ -44,9 +51,9 @@
                     numero_de_la_page.set(chapitre.premiere_page - (chapitre.premiere_page % 2))
                 }
             }}
+            
         >
-            <span style="width: 1ex"></span>
-            <span>{chapitre.titre}</span>
+            <span style="padding-left: 1ex;">{chapitre.titre}</span>
             <div class="categories">
                 {#if chapitre.categories.includes("Nombres et calculs")}
                     {@render ma_categorie("Nombres et calculs")}
@@ -82,19 +89,17 @@
         counter-reset: chapter-counter;
     }
 
-    li::before {
-        content: "Chapitre " counter(chapter-counter) " - ";
-        counter-increment: chapter-counter;
-    }
-
     li {
         display: flex;
         align-items: flex-start;
-    }
-
-    li:hover {
-        cursor: pointer;
-        background-color: aqua;
+        &:hover {
+            cursor: pointer;
+            background-color: aqua;
+        }
+        &::before {
+            content: "Chapitre " counter(chapter-counter) " - ";
+            counter-increment: chapter-counter;
+        }
     }
 
     .categories {
