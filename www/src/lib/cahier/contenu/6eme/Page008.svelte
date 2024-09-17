@@ -42,7 +42,7 @@
             {/snippet}
         </Schema>
         <LigneVide lignes={4} />
-        <Schema lignes={5} aspectRatioSVG={3}>
+        <Schema lignes={5} aspectRatioSVG={3.4}>
             {#snippet svg()}
                 <line x1="200" y1="200" x2="3000" y2="700" stroke="black" stroke-width="10"></line>
                 <line x1="1000" x2="1000" y1="300" y2="400" stroke="black" stroke-width="10"></line>
