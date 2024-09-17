@@ -71,7 +71,7 @@ let sommaire_5eme: Chapitre[] = [
             "Simplification de fractions"
         ]
     },
-    { titre: "Symétrie axiale", categories: ["Espace et géométrie"],
+    { titre: "Propriétés de la symétrie", categories: ["Espace et géométrie"], premiere_page: 8,
         attendus: [
             "Consolider le travail sur les codages de figures : interprétation d’une figure codée ou réalisation d’un codage",
             "Comprendre l’effet des symétries (axiale et centrale) : conservation du parallélisme, des longueurs et des angles",
@@ -81,7 +81,7 @@ let sommaire_5eme: Chapitre[] = [
             "Identifier des symétries dans des frises, des pavages, des rosaces",
             "Mener des raisonnements en utilisant des propriétés des figures, des configurations et des symétries"
         ]
-     },
+    },
     { titre: "Nombres premiers", categories: ["Nombres et calculs"],
         attendus: [
             "Savoir calculer le quotient et le reste dans une division euclidienne",
