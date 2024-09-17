@@ -10,6 +10,7 @@
 
 <Contenu apres_un_titre={true}>
     <Partie numero={1} titre="Concept" />
+        <LigneVide />
         <Definition lignes={2}>
             Soient deux nombres entiers {@html math('a')} et {@html math('b')} avec {@html math('b \\neq 0')}.<br>
             Le quotient de {@html math('a')} par {@html math('b')} est le nombre qui, multiplié par {@html math('b')}, est égal à {@html math('a')}.<br>
