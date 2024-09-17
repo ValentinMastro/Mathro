@@ -1,13 +1,13 @@
 <script lang="ts">
     import { Contenu, Partie, DansLaMarge } from "$lib/cahier/composants/de_chapitrage/*";
-    import { Definition, Notation, Exemples, Schema, Item, Exemple } from "$lib/cahier/composants/de_cours/*";
+    import { Definition, Notation, Exemples, Schema, Item, Exemple, Texte } from "$lib/cahier/composants/de_cours/*";
     import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 	import { math } from "mathlifier";
 
     let t = $state(0);
     let point: {x: number, y: number} = $derived({
-        x: 200 + (3600-200)*t,
-        y: 200 + (800-200)*t
+        x: 200 + (3000-200)*t,
+        y: 200 + (700-200)*t
     });
 </script>
 
@@ -42,15 +42,41 @@
             {/snippet}
         </Schema>
         <LigneVide lignes={4} />
-        <Schema lignes={5} aspectRatioSVG={4}>
+        <Schema lignes={5} aspectRatioSVG={3}>
             {#snippet svg()}
-                <line x1="200" y1="200" x2="3600" y2="800" stroke="black" stroke-width="10"></line>
+                <line x1="200" y1="200" x2="3000" y2="700" stroke="black" stroke-width="10"></line>
                 <line x1="1000" x2="1000" y1="300" y2="400" stroke="black" stroke-width="10"></line>
                 <line x1="2500" x2="2500" y1="570" y2="670" stroke="black" stroke-width="10"></line>
-                <text x="1000" y="570" font-size="150" text-anchor="middle" fill="black">M</text>
+                <text x="1000" y="570" font-size="150" text-anchor="middle" fill="black">O</text>
                 <text x="2500" y="800" font-size="150" text-anchor="middle" fill="black">P</text>
                 <circle cx={point.x} cy={point.y} r="35" fill="red"></circle>
-                <text x={point.x} y={point.y + 100} font-size="150" text-anchor="middle" fill="black">N</text>
+                <text x={point.x} y={point.y + 180} font-size="150" text-anchor="middle" fill="red">N</text>
+            {/snippet}
+            {#snippet html()}
+                <Texte>                
+                    {#if point.x >= 1000 && point.x <= 2500}
+                        {@html math("\\text{N} \\in [\\text{OP}]")}
+                    {:else}
+                        {@html math("\\text{N} \\notin [\\text{OP}]")}
+                    {/if}
+                </Texte>
+                <Texte>
+                    {#if point.x >= 1000}
+                        {@html math("\\text{N} \\in [\\text{OP})")}
+                    {:else}
+                        {@html math("\\text{N} \\notin [\\text{OP})")}
+                    {/if}
+                </Texte>
+                <Texte>
+                    {#if point.x <= 2500}
+                        {@html math("\\text{N} \\in (\\text{OP}]")}
+                    {:else}
+                        {@html math("\\text{N} \\notin (\\text{OP}]")}
+                    {/if}
+                </Texte>
+                <Texte>
+                    {@html math("\\text{N} \\in (\\text{OP})")}
+                </Texte>
             {/snippet}
         </Schema>
 </Contenu>
