@@ -9,14 +9,14 @@
 
     let { pages } = $props();
 
-    const row_gap = 8;
+    const gap = 8;
 
     $effect(() => {
-        window.scrollTo(0, ($taille_page + row_gap) * (scroll_jusqua_la_page - 1));
+        window.scrollTo(0, ($taille_page + 2*gap) * (scroll_jusqua_la_page - 1));
     });
 </script>
 
-<div id="scroll" style="row-gap: {row_gap}px;">
+<div id="scroll" style="gap: {gap}px;">
     {#each pages as page, i}
         {#if i != 0 && i != nombre_de_pages($niveau)}
             <PageDeCahier numero_de_page={i} contenu={page.default} />
@@ -35,13 +35,13 @@
         align-items: center;
     }
     .fin_de_page {
-        height: 0;
+        height: 0px;
         width: 100%;
     }
 
     @media print {
         #scroll {
-            row-gap: 0;
+            gap: 0;
         }
         .fin_de_page {
             page-break-after: always;
