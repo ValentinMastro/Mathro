@@ -1,7 +1,5 @@
 <script lang="ts">
-    import { page } from "$app/stores";
     import { onMount } from "svelte";
-    const url_numero_de_la_page = $page.url.searchParams.get("page");
 
     import type { PageData } from "./$types";
     export let data: PageData;
