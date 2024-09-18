@@ -1,8 +1,8 @@
 <script lang="ts">
     import { sommaire, couleur_de_la_categorie } from "$lib/cahier/contenu/sommaires";
     import type { Categories } from "$lib/cahier/contenu/sommaires";
-    import { numero_de_la_page, niveau } from "../store";
-    import { taille_sommaire, taille_chapitre } from "../store";
+    import { numero_de_la_page, niveau } from "../../store";
+    import { taille_sommaire, taille_chapitre } from "../../store";
 
     let categories_visibles = $state(["Nombres et calculs", 
                             "Espace et géométrie", "Grandeurs et mesures", 
@@ -51,7 +51,6 @@
                     numero_de_la_page.set(chapitre.premiere_page - (chapitre.premiere_page % 2))
                 }
             }}
-            
         >
             <span style="padding-left: 1ex;">{chapitre.titre}</span>
             <div class="categories">
