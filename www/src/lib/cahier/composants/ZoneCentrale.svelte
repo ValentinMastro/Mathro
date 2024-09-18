@@ -1,7 +1,9 @@
 <script lang="ts">
-    import { numero_de_la_page, nombre_de_pages, niveau, plein_ecran, largeur_plein_ecran } from "../store";
-    import PageDeCahier from "./PageDeCahier.svelte";
     import type { Component } from "svelte";
+
+    import { numero_de_la_page, nombre_de_pages, niveau, plein_ecran, largeur_plein_ecran } from "$lib/cahier/store";
+    import PageDeCahier from "./PageDeCahier.svelte";
+    import Scroll from "./Scroll.svelte";
 
     let pages_chargees: number = $state(0);
 
@@ -29,13 +31,7 @@
     {:then pages}
         {#if $plein_ecran}
             <input id="largeur" type="range" min="0" max="100" bind:value={$largeur_plein_ecran} />
-            <div id="scroll">
-                {#each pages as page, i}
-                    {#if i != 0 && i != nombre_de_pages($niveau)}
-                        <PageDeCahier numero_de_page={i} contenu={page.default} />
-                    {/if}
-                {/each}
-            </div>
+            <Scroll pages={pages} />
         {:else}
             <PageDeCahier numero_de_page={$numero_de_la_page} contenu={pages[$numero_de_la_page].default} />
             <PageDeCahier numero_de_page={$numero_de_la_page + 1} contenu={pages[$numero_de_la_page + 1].default} />
@@ -53,15 +49,6 @@
 
         display: flex;
         justify-content: space-evenly;
-    }
-    #scroll {
-        display: flex;
-        flex-direction: column;
-        gap: 1vh;
-        overflow-y: scroll;
-        width: 100%;
-        height: fit-content;
-        align-items: center;
     }
     #largeur {
         position: fixed;

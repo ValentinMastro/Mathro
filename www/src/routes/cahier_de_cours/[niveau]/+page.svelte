@@ -1,14 +1,15 @@
 <script lang="ts">
-    // Récupération du niveau de la page
+    import { page } from "$app/stores";
+    import { onMount } from "svelte";
+    const url_numero_de_la_page = $page.url.searchParams.get("page");
+
     import type { PageData } from "./$types";
     export let data: PageData;
 
     import { nombre_de_pages, niveau, numero_de_la_page, plein_ecran, sur_mobile } from "$lib/cahier/store";
-
+    import ZoneCentrale from "$lib/cahier/composants/ZoneCentrale.svelte";
+    
     niveau.set(data.niveau as 3 | 4 | 5 | 6);
-
-    import ZoneCentraleAfficheurDePages from "$lib/cahier/composants/ZoneCentrale_AfficheurDePages.svelte";
-	import { onMount } from "svelte";
 
     function changement_de_page(diff: number) {
         numero_de_la_page.update((n) => {
@@ -22,16 +23,19 @@
     
     onMount(() => {
         function detection_mobile(): boolean {
-            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent)){
-                return true;
-            } else {
-                return false;
-            }
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent);
+        }
+
+        function detection_mode_portrait(): boolean {
+            return window.innerHeight > window.innerWidth;
         }
 
         if (detection_mobile()) {
             plein_ecran.set(true);
             sur_mobile.set(true);
+        }
+        if (detection_mode_portrait()) {
+            plein_ecran.set(true);
         }
     });
 
@@ -64,7 +68,7 @@
     </title>
 </svelte:head>
 
-<ZoneCentraleAfficheurDePages />
+<ZoneCentrale />
 
 <style>
     :global(.katex) {

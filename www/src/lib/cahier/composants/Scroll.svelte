@@ -1,0 +1,50 @@
+<script lang="ts">
+    import { page } from "$app/stores";
+    const scroll_jusqua_la_page: number = parseInt(
+        $page.url.searchParams.get("page") ?? "1"
+    )
+        
+    import { nombre_de_pages, niveau, taille_page } from "$lib/cahier/store";
+    import PageDeCahier from "./PageDeCahier.svelte";
+
+    let { pages } = $props();
+
+    const row_gap = 8;
+
+    $effect(() => {
+        window.scrollTo(0, ($taille_page + row_gap) * (scroll_jusqua_la_page - 1));
+    });
+</script>
+
+<div id="scroll" style="row-gap: {row_gap}px;">
+    {#each pages as page, i}
+        {#if i != 0 && i != nombre_de_pages($niveau)}
+            <PageDeCahier numero_de_page={i} contenu={page.default} />
+        {/if}
+        <div class="fin_de_page"></div>
+    {/each}
+</div>
+
+<style>
+    #scroll {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        width: 100%;
+        height: fit-content;
+        align-items: center;
+    }
+    .fin_de_page {
+        height: 0;
+        width: 100%;
+    }
+
+    @media print {
+        #scroll {
+            row-gap: 0;
+        }
+        .fin_de_page {
+            page-break-after: always;
+        }
+    }
+</style>
