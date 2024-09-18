@@ -61,8 +61,5 @@
         #largeur {
             display: none;
         }
-        #scroll {
-            row-gap: 0;
-        }
     }
 </style>
