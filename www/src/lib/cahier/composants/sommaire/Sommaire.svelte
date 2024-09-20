@@ -1,43 +1,20 @@
 <script lang="ts">
-    import { sommaire, couleur_de_la_categorie } from "$lib/cahier/contenu/sommaires";
-    import type { Categories } from "$lib/cahier/contenu/sommaires";
-    import { numero_de_la_page, niveau } from "../../store";
-    import { taille_sommaire, taille_chapitre } from "../../store";
+    import {
+        sommaire,
+        categories_visibles,
+        type Categories,
+    } from "$lib/cahier/contenu/sommaires";
 
-    let categories_visibles = $state(["Nombres et calculs", 
-                            "Espace et géométrie", "Grandeurs et mesures", 
-                            "Organisation et gestion de données", "Algorithmique et programmation"]);
+    import {
+        niveau,
+        taille_sommaire,
+        taille_chapitre,
+        numero_de_la_page,
+    } from "$lib/cahier/store";
+
+    import Pastilles from "./Pastilles.svelte";
+	import SelecteurCategories from "./SelecteurCategories.svelte";
 </script>
-
-<!-- Pastille de couleur indiquant la catégorie du chapitre -->
-{#snippet ma_categorie(categorie: Categories)}
-    <span style="font-size: {$taille_chapitre*0.8}px; color: {categories_visibles.includes(categorie) ? couleur_de_la_categorie(categorie) : "gray"}; user-select: none;" >
-        &#x25CF;
-    </span>
-{/snippet}
-
-<!-- 
-    Sélecteur de catégorie : 
-        - Lorsqu'on clique sur lui, on affiche ou on cache les chapitres de cette catégorie.
-        - La couleur de fond du sélecteur est la couleur de la catégorie si elle est visible, sinon grise.
--->
-{#snippet selecteur_de_categorie(categorie: Categories)}
-    <div
-        style="font-size: {$taille_chapitre*0.8}px;"
-        role="none"
-        onclick={() => {
-            if (categories_visibles.includes(categorie)) {
-                categories_visibles = categories_visibles.filter((c) => c != categorie);
-            } else {
-                categories_visibles = [...categories_visibles, categorie];
-            }
-        }}
-    >
-        <span class="categorie" style="background-color: {categories_visibles.includes(categorie) ? couleur_de_la_categorie(categorie) : "gray"};" >
-            {categorie}
-        </span>
-    </div>
-{/snippet}
 
 <h2 style="font-size: {$taille_sommaire}px">Sommaire</h2>
 
@@ -54,30 +31,16 @@
         >
             <span style="padding-left: 1ex;">{chapitre.titre}</span>
             <div class="categories">
-                {#if chapitre.categories.includes("Nombres et calculs")}
-                    {@render ma_categorie("Nombres et calculs")}
-                {/if}
-                {#if chapitre.categories.includes("Espace et géométrie")}
-                    {@render ma_categorie("Espace et géométrie")}
-                {/if}
-                {#if chapitre.categories.includes("Grandeurs et mesures")}
-                    {@render ma_categorie("Grandeurs et mesures")}
-                {/if}
-                {#if chapitre.categories.includes("Organisation et gestion de données")}
-                    {@render ma_categorie("Organisation et gestion de données")}
-                {/if}
-                {#if chapitre.categories.includes("Algorithmique et programmation")}
-                    {@render ma_categorie("Algorithmique et programmation")}
-                {/if}
+                <Pastilles {chapitre} />
             </div>
         </li>
     {/each}
 </ol>
 
 <div class="liste_categories">
-    {#each ["Nombres et calculs", "Espace et géométrie", "Grandeurs et mesures", "Organisation et gestion de données", "Algorithmique et programmation"] as categorie}
-        {#if sommaire($niveau).some((chapitre) => chapitre.categories.includes(categorie as Categories))}
-            {@render selecteur_de_categorie(categorie as Categories)}
+    {#each ["Nombres et calculs", "Espace et géométrie", "Grandeurs et mesures", "Organisation et gestion de données", "Algorithmique et programmation"].map((item) => item as Categories) as categorie}
+        {#if sommaire($niveau).some((chapitre) => chapitre.categories.includes(categorie))}
+            <SelecteurCategories {categorie} />
         {/if}
     {/each}
 </div>
@@ -107,15 +70,6 @@
 
     h2 {
         text-align: center;
-    }
-
-    .categorie {
-        font-weight: bold;
-        color: white;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-        border-radius: 0.5em;
-        user-select: none;
     }
 
     .liste_categories {

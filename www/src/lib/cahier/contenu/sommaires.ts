@@ -22,7 +22,15 @@ export function couleur_de_la_categorie(categorie: Categories) {
     }
 }
 
-type Chapitre = {
+export let categories_visibles = [
+    "Nombres et calculs",
+    "Espace et géométrie",
+    "Grandeurs et mesures",
+    "Algorithmique et programmation",
+    "Organisation et gestion de données"
+];
+
+export type Chapitre = {
     titre: string,
     categories: Categories[],
     premiere_page?: number,
