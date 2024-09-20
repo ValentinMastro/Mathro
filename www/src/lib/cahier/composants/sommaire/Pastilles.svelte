@@ -1,6 +1,5 @@
 <!-- Pastille de couleur indiquant la catégorie du chapitre -->
 <script lang="ts">
-    import { taille_chapitre } from "$lib/cahier/store";
     import { type Chapitre, couleur_de_la_categorie, categories_visibles } from "$lib/cahier/contenu/sommaires";
 
     let { chapitre }: { chapitre: Chapitre } = $props();
@@ -9,7 +8,7 @@
 
 {#snippet pastille(couleur: string)}
     <span style="color: {couleur};" >
-        {@html math("\\Large\\bullet")}
+        {@html math("\\large\\bullet")}
     </span>
 {/snippet}
 

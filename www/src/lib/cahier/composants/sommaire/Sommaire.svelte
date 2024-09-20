@@ -16,12 +16,14 @@
 	import SelecteurCategories from "./SelecteurCategories.svelte";
 </script>
 
-<h2 style="font-size: {$taille_sommaire}px">Sommaire</h2>
+<h2 style="font-size: {$taille_sommaire}px">
+    Sommaire
+</h2>
 
-<!-- Liste des chapitres -->
-<ol style="font-size: {$taille_chapitre*0.67}px;">
+<ol class="liste_chapitres" 
+    style="font-size: {$taille_chapitre*0.72}px;">
     {#each sommaire($niveau) as chapitre}
-        <li style="visibility: {chapitre.categories.some((c) => categories_visibles.includes(c)) ? "visible" : "hidden"}"
+        <li class="chapitre" style="visibility: {chapitre.categories.some((c) => categories_visibles.includes(c)) ? "visible" : "hidden"}"
             role="none"
             onclick={() => {
                 if (chapitre.premiere_page != undefined) {
@@ -34,6 +36,15 @@
                 <Pastilles {chapitre} />
             </div>
         </li>
+        <div class="attendus">
+            {#if chapitre.attendus != undefined}
+                <ul>
+                    {#each chapitre.attendus as attendu}
+                        <li>{attendu}</li>
+                    {/each}
+                </ul>
+            {/if}
+        </div>
     {/each}
 </ol>
 
@@ -46,30 +57,40 @@
 </div>
 
 <style>
-    ol {
-        list-style-type: none;
-        counter-reset: chapter-counter;
-    }
-
-    li {
-        display: flex;
-        align-items: flex-start;
-        &:hover {
-            cursor: pointer;
-            background-color: aqua;
-        }
-        &::before {
-            content: "Chapitre " counter(chapter-counter) " - ";
-            counter-increment: chapter-counter;
-        }
-    }
-
-    .categories {
-        margin-left: auto;
-    }
-
     h2 {
         text-align: center;
+    }
+
+    .liste_chapitres {
+        list-style-type: none;
+        counter-reset: chapter-counter;
+
+        .chapitre {
+            display: flex;
+            align-items: flex-start;
+            user-select: none;
+            &:hover {
+                cursor: pointer;
+                background-color: aqua;
+            }
+            &::before {
+                content: "Chapitre " counter(chapter-counter) " - ";
+                counter-increment: chapter-counter;
+            }
+
+            .categories {
+                margin-left: auto;
+            }
+        }
+
+        .attendus {
+            display: none;
+            font-size: 0.7em;
+        }
+    }
+
+    .chapitre:hover + .attendus {
+        display: block;
     }
 
     .liste_categories {
