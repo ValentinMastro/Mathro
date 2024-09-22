@@ -64,6 +64,7 @@
     .liste_chapitres {
         list-style-type: none;
         counter-reset: chapter-counter;
+        position: relative;
 
         .chapitre {
             display: flex;
@@ -84,12 +85,25 @@
         }
 
         .attendus {
-            display: none;
             font-size: 0.7em;
+            position: absolute;
+            background-color: aqua;
+            width: 100%;
+
+            display: none;
+            visibility: hidden;
+            opacity: 0;
+
+            ul {
+                list-style-type: disc;
+                padding-right: 5%;
+            }
         }
     }
 
     .chapitre:hover + .attendus {
+        visibility: visible;
+        opacity: 1;
         display: block;
     }
 
