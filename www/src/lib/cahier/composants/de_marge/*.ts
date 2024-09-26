@@ -1,0 +1,1 @@
+export { default as Nombre } from "./Nombre.svelte";
