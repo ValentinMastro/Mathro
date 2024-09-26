@@ -11,6 +11,7 @@ export { default as Paragraphe } from "./Paragraphe.svelte";
     export { default as Propriete } from "./Propriete.svelte";
     export { default as Remarque } from "./Remarque.svelte";
     export { default as Theoreme } from "./Theoreme.svelte";
+    export { default as TheoremeDefinition } from "./TheoremeDefinition.svelte";
     export { default as Vocabulaire }  from './Vocabulaire.svelte';
 
 export { default as Ligne } from "./Ligne.svelte";
