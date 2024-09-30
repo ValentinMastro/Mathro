@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { Contenu } from "$lib/cahier/composants/de_chapitrage/*";
     import { Paragraphe, Tableau, LigneTableau } from "$lib/cahier/composants/de_cours/*";
+    import { taille_texte } from "$lib/cahier/store";
 </script>
 
 <Contenu>
     <Paragraphe nom_du_paragraphe="Critères de divisibilité" couleur="black"></Paragraphe>
-        <Tableau lignes={6}>
+        <Tableau lignes={6} addStyle="font-size: {$taille_texte*0.6}px;">
             <LigneTableau lignes={1}>
                 <th></th>
                 <th>règle</th>
@@ -78,3 +79,12 @@
             </LigneTableau>
         </Tableau>
 </Contenu>
+
+<style>
+    .green {
+        color: green;
+    }
+    .rouge {
+        color: red;
+    }
+</style>
