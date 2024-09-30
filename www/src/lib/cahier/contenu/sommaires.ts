@@ -39,11 +39,46 @@ export type Chapitre = {
 
 let sommaire_6eme: Chapitre[] = [
     // Période 1
-    { titre: "Nombres entiers", categories: ["Nombres et calculs"], premiere_page: 3},
-    { titre: "Vocabulaire de géométrie", categories: ["Espace et géométrie"]},
-    { titre: "Fractions/Partage", categories: ["Nombres et calculs"]},
-    { titre: "Figures simples", categories: ["Espace et géométrie"]},
-    { titre: "Nombres décimaux", categories: ["Nombres et calculs"]},
+    { titre: "Nombres entiers", categories: ["Nombres et calculs"], premiere_page: 3,
+        attendus: [
+            "Unités de numération décimale pour les nombres entiers",
+            "Décomposition, comparaison, encadrement",
+            "Repérage sur une demi-droite graduée"
+        ]
+    },
+    { titre: "Vocabulaire de géométrie", categories: ["Espace et géométrie"],
+        attendus: [
+            "Rappel : vocabulaire de géométrie (segment, droite, demi-droite, milieu)",
+            "Alignement, appartenance",
+            "Constructions"
+        ]
+    },
+    { titre: "Fraction/Partage", categories: ["Nombres et calculs"],
+        attendus: [
+            "Partages d’unités",
+            "Repérage sur une demi-droite graduée",
+            "Comparaison de fractions de même dénominateur, encadrement par deux entiers consécutifs, décomposition",
+            "Egalités de fractions usuelles (exemples : 5/10 = 1/2 ; 10/100 = 1/10 ; 2/4 = 1/2)",
+            "Ajouter des fractions de même dénominateurs"
+        ]
+    },
+    { titre: "Figures simples", categories: ["Espace et géométrie"],
+        attendus: [
+            "Notation et vocabulaire des angles, lexique (angle droit, aigu, obtus)",
+            "Reproduire un angle avec le compas",
+            "Définition du cercle (ensemble des points situés à une distance donnée d’un point donné), du disque",
+            "Vocabulaire associé (centre, rayon, diamètre, corde)",
+            "Constructions"
+        ]
+    },
+    { titre: "Nombres décimaux", categories: ["Nombres et calculs"],
+        attendus: [
+            "Unités de numération décimale",
+            "Diverses désignations orales et écrites (fractions décimales, écritures à virgule, décompositions)",
+            "Repérage sur une demi-droite graduée",
+            "Comparaison, encadrement par deux entiers ou par deux décimaux"
+        ]
+    },
     // Période 2
     { titre: "Droites", categories: ["Espace et géométrie"]},
     { titre: "Addition, Soustraction et Multiplication", categories: ["Nombres et calculs"]},
