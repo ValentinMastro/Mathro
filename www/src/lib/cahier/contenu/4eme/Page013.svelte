@@ -9,7 +9,7 @@
 <Contenu>
     <Propriete lignes={3.5}>
         Pour calculer le taux de variation entre une valeur de départ et une valeur d'arrivée :
-        {@html math("\\text{taux de variation} = \\dfrac{\\text{valeur d'arrivée} - \\text{valeur de départ}}{\\text{valeur de départ}} \\times 100")}
+        {@html math("\\text{taux de variation} = \\dfrac{\\text{valeur d'arrivée} - \\text{valeur de départ}}{\\text{valeur de départ}} \\times 100 \\%")}
     </Propriete>
     <LigneVide lignes={0.5} />
 
@@ -17,13 +17,13 @@
         <Item lignes={4}>
             Le nombre d'habitants d'une ville est passé de 4 000 à 5 000,<br> 
             ce qui correspond à une augmentation de <br>
-            {@html display("\\dfrac{5000-4000}{4000} \\times 100 = 25 \\%")}
+            {@html display("\\dfrac{5000-4000}{4000} \\times 100 \\% = 25 \\%")}
         </Item>
         <Item lignes={5}>
             Une voiture était vendue neuve à 25 000 €. <br>
             Aujourd'hui, elle ne vaut plus que 5 000 €.<br>
             Calculons son taux de variation : <br>
-            {@html display("\\dfrac{5000 - 25000}{25000} \\times 100 = -80 \\%")}<br>
+            {@html display("\\dfrac{5000 - 25000}{25000} \\times 100 \\% = -80 \\%")}<br>
             Son prix a donc baissé de 80 %.
         </Item>
     </Exemples>
