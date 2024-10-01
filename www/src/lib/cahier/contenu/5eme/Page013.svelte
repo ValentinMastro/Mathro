@@ -6,7 +6,7 @@
 
 <Contenu>
     <Paragraphe nom_du_paragraphe="Critères de divisibilité" couleur="black"></Paragraphe>
-        <Tableau lignes={6} addStyle="font-size: {$taille_texte*0.6}px;">
+        <Tableau lignes={6} addStyle="font-size: {$taille_texte*0.75}px;">
             <LigneTableau lignes={1}>
                 <th></th>
                 <th>règle</th>
