@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { page } from "$app/stores";
+    import { page as interface_navigateur } from "$app/stores";
     const scroll_jusqua_la_page: number = parseInt(
-        $page.url.searchParams.get("page") ?? "1"
+        $interface_navigateur.url.searchParams.get("page") ?? "1"
     )
         
     import { nombre_de_pages, niveau, taille_page } from "$lib/cahier/store";
