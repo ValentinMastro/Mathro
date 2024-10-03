@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { page as interface_navigateur } from "$app/stores";
     import type { PageData } from "./$types";
     let { data }: { data: PageData } = $props();
 
@@ -18,19 +19,15 @@
     }
     
     $effect(() => {
-        function detection_mobile(): boolean {
-            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent);
-        }
+        const on_est_sur_mobile: boolean = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent);
+        const on_est_en_mode_portrait: boolean = window.innerHeight > window.innerWidth; // aspect_ratio < 1 ?
+        const on_demande_le_plein_ecran: boolean = $interface_navigateur.url.searchParams.get("plein_ecran") !== null;
 
-        function detection_mode_portrait(): boolean {
-            return window.innerHeight > window.innerWidth;
-        }
-
-        if (detection_mobile()) {
+        if (on_est_sur_mobile) {
             plein_ecran.set(true);
             sur_mobile.set(true);
         }
-        if (detection_mode_portrait()) {
+        if (on_est_en_mode_portrait || on_demande_le_plein_ecran) {
             plein_ecran.set(true);
         }
     });
