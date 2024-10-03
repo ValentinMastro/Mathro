@@ -1,8 +1,6 @@
 <script lang="ts">
-    import { onMount } from "svelte";
-
     import type { PageData } from "./$types";
-    export let data: PageData;
+    let { data }: { data: PageData } = $props();
 
     import { nombre_de_pages, niveau, numero_de_la_page, plein_ecran, sur_mobile } from "$lib/cahier/store";
     import ZoneCentrale from "$lib/cahier/composants/ZoneCentrale.svelte";
@@ -19,7 +17,7 @@
         });
     }
     
-    onMount(() => {
+    $effect(() => {
         function detection_mobile(): boolean {
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent);
         }
