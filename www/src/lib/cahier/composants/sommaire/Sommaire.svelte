@@ -9,11 +9,19 @@
         niveau,
         taille_sommaire,
         taille_chapitre,
+        taille_page,
         numero_de_la_page,
     } from "$lib/cahier/store";
 
     import Pastilles from "./Pastilles.svelte";
 	import SelecteurCategories from "./SelecteurCategories.svelte";
+
+    function scroll_lors_du_clic_sur_le_sommaire(premiere_page: number | undefined) {
+        if (premiere_page != undefined) {
+            numero_de_la_page.set(premiere_page - (premiere_page % 2));
+            window.scrollTo(0, ($taille_page + 2*8) * (premiere_page - 1));
+        }
+    }
 </script>
 
 <h2 style="font-size: {$taille_sommaire}px">
@@ -25,11 +33,7 @@
     {#each sommaire($niveau) as chapitre}
         <li class="chapitre" style="visibility: {chapitre.categories.some((c) => categories_visibles.includes(c)) ? "visible" : "hidden"}"
             role="none"
-            onclick={() => {
-                if (chapitre.premiere_page != undefined) {
-                    numero_de_la_page.set(chapitre.premiere_page - (chapitre.premiere_page % 2))
-                }
-            }}
+            onclick={() => scroll_lors_du_clic_sur_le_sommaire(chapitre.premiere_page)}
         >
             <span style="padding-left: 1ex;">{chapitre.titre}</span>
             <div class="categories">
