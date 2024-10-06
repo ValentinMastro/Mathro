@@ -71,7 +71,7 @@
             <text x={1200} y={950} fill="black" font-size={100} text-anchor="middle">donc chaque morceau vaut un cinquième.</text>
         {/snippet}
     </Schema>
-    <LigneVide />
+    <LigneVide lignes={5} />
     <Partie numero={1} titre="Partager l'unité" />
         <LigneVide />
         <Definition lignes={2}>
