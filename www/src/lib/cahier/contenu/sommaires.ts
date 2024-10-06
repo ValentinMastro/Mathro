@@ -125,7 +125,7 @@ let sommaire_5eme: Chapitre[] = [
             "Mener des raisonnements en utilisant des propriétés des figures, des configurations et des symétries"
         ]
     },
-    { titre: "Nombres premiers", categories: ["Nombres et calculs"],
+    { titre: "Nombres premiers", categories: ["Nombres et calculs"], premiere_page: 11,
         attendus: [
             "Savoir calculer le quotient et le reste dans une division euclidienne",
             "Déterminer si un nombre entier est ou n’est pas multiple ou diviseur d’un autre nombre entier",
@@ -135,13 +135,13 @@ let sommaire_5eme: Chapitre[] = [
             "Décomposition d’un nombre en produit de facteurs premiers"
         ]
     },
-    { titre: "Angles d'un triangle", categories: ["Espace et géométrie"],
+    { titre: "Angles d'un triangle", categories: ["Espace et géométrie"], premiere_page: 16,
         attendus: [
             "Connaître et utiliser la propriété sur la somme des mesures des angles d’un triangle",
             "Reconnaître des triangles particuliers en utilisant les angles",
             "Calculer les angles d’un triangle"
         ]
-     },
+    },
     { titre: "Nombres relatifs", categories: ["Nombres et calculs"],
         attendus: [
             "Introduction des nombres relatifs",
