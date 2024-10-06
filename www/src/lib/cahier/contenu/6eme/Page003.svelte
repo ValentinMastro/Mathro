@@ -1,8 +1,8 @@
 <script lang="ts">
     import { Chapitre, Partie, SousPartie, Contenu, DansLaMarge } from "$lib/cahier/composants/de_chapitrage/*";
     import { Tableau, LigneTableau, Texte, Exemples, Item, Propriete } from "$lib/cahier/composants/de_cours/*";
+    import { Nombre } from "$lib/cahier/composants/de_marge/*";
 	import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
-	import { hauteur_ligne_cahier } from "$lib/cahier/store";
 
     let numero_1 = $state(1234);
     let numero_2 = $state(15234900);
@@ -28,9 +28,9 @@
     
 <DansLaMarge apres_un_titre={true}>
     <LigneVide lignes={5} />
-    <input type="number" bind:value={numero_1} style="width: 80%; height: {$hauteur_ligne_cahier * 0.79}px;" />
-    <input type="number" bind:value={numero_2} style="width: 80%; height: {$hauteur_ligne_cahier * 0.79}px;" />
-    <input type="number" bind:value={numero_3} style="width: 80%; height: {$hauteur_ligne_cahier * 0.79}px;" />
+    <Nombre bind:valeur={numero_1} min={1000} max={9999}/>
+    <Nombre bind:valeur={numero_2} min={10000000} max={99999999}/>
+    <Nombre bind:valeur={numero_3} min={1000000000} max={9999999999}/>
 </DansLaMarge>
 
 {#snippet ligne_de_chiffres(index_surbrillance_chiffre: number, puissance_chiffre: number, index_surbrillance_nombre: number, puissance_nombre: number, numero: number, )}

@@ -1,6 +1,7 @@
 <script lang="ts">
     import { Contenu, Partie, DansLaMarge } from "$lib/cahier/composants/de_chapitrage/*";
     import { Definition, Notation, Exemples, Schema, Item, Exemple, Texte } from "$lib/cahier/composants/de_cours/*";
+    import { Slider } from "$lib/cahier/composants/de_marge/*";
     import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 	import { math } from "mathlifier";
 
@@ -13,7 +14,7 @@
 
 <DansLaMarge>
     <LigneVide lignes={20} />
-    <input type="range" min="0" max="1" step="0.01" bind:value={t} style="width: 80%;" />
+    <Slider bind:valeur={t} min={0} max={1} pas={0.01} />
 </DansLaMarge>
 
 <Contenu>
