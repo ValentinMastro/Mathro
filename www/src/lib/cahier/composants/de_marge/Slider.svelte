@@ -13,7 +13,9 @@
 </script>
 
 <div style="height: {$hauteur_ligne_cahier}px;">
-    <label for="slider">{label}</label>
+    {#if label}
+        <label for="slider">{label}</label>
+    {/if}
     <input id="slider" type="range" bind:value={valeur} {min} {max} step={pas} />
 </div>
 
@@ -21,9 +23,12 @@
 <style>
     div {
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    label {
+        margin-left: 3%;
+        margin-right: 3%;
     }
     input {
         width: 95%;
