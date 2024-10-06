@@ -46,14 +46,14 @@ let sommaire_6eme: Chapitre[] = [
             "Repérage sur une demi-droite graduée"
         ]
     },
-    { titre: "Vocabulaire de géométrie", categories: ["Espace et géométrie"],
+    { titre: "Vocabulaire de géométrie", categories: ["Espace et géométrie"], premiere_page: 6,
         attendus: [
             "Rappel : vocabulaire de géométrie (segment, droite, demi-droite, milieu)",
             "Alignement, appartenance",
             "Constructions"
         ]
     },
-    { titre: "Fraction/Partage", categories: ["Nombres et calculs"],
+    { titre: "Fraction/Partage", categories: ["Nombres et calculs"], premiere_page: 9,
         attendus: [
             "Partages d’unités",
             "Repérage sur une demi-droite graduée",
@@ -62,7 +62,7 @@ let sommaire_6eme: Chapitre[] = [
             "Ajouter des fractions de même dénominateurs"
         ]
     },
-    { titre: "Figures simples", categories: ["Espace et géométrie"],
+    { titre: "Figures simples", categories: ["Espace et géométrie"], premiere_page: 15,
         attendus: [
             "Notation et vocabulaire des angles, lexique (angle droit, aigu, obtus)",
             "Reproduire un angle avec le compas",
