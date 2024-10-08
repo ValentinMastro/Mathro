@@ -29,6 +29,7 @@
         /* 
             a et b sont des angles (entre 0 et 180)
             On veut savoir si on doit mettre le flag large-arc-flag à 1 ou 0
+            Cela permet de décider quel arc de cercle on doit dessiner
 
             Si b > a, alors on doit mettre le flag à 0 si b - a > 180
             Si b < a, alors on doit mettre le flag à 0 si a - b < 180
@@ -104,15 +105,6 @@
         {#snippet svg()}
             <circle cx={500} cy={500} r={375} fill="none" stroke="black" stroke-width={5} />
             <text id="cercle" x={200} y={500} font-size={70} fill="black">(C)</text>
-            <line 
-                x1={500 + 375 * Math.cos(angle_1)} y1={500 + 375 * Math.sin(angle_1)} 
-                x2={500 + 375 * Math.cos(angle_2)} y2={500 + 375 * Math.sin(angle_2)} 
-                stroke="red" stroke-width={5} />
-            <line
-                x1={500 + 375 * Math.cos(angle_3)} y1={500 + 375 * Math.sin(angle_3)}
-                x2={500 + 375 * Math.cos(angle_4)} y2={500 + 375 * Math.sin(angle_4)}
-                stroke="blue" stroke-width={5} />
-
             <path fill="none" stroke="red" stroke-width={10} d={`
                     M ${500 + 375 * Math.cos(angle_1)} ${500 + 375 * Math.sin(angle_1)}
                     A 375 375 0 0 ${large_arc_flag_1} ${500 + 375 * Math.cos(angle_2)} ${500 + 375 * Math.sin(angle_2)}
