@@ -30,6 +30,10 @@
         if (on_est_en_mode_portrait || on_demande_le_plein_ecran) {
             plein_ecran.set(true);
         }
+
+        numero_de_la_page.set(
+            parseInt($interface_navigateur.url.searchParams.get("page") ?? "0")
+        )
     });
 
     function touche_pressee(event: KeyboardEvent) {
