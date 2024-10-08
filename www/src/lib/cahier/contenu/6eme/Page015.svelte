@@ -67,8 +67,9 @@
                 <Propriete lignes={2}>
                     Le diamètre d'un cercle mesure le double de son rayon. <br>
                 </Propriete>
-                <Texte addStyle="color: red; display: flex; justify-content: center;">
-                    {@html math("d = 2r")}
+                <Texte lignes={2} addStyle="color: red; display: flex; justify-content: center;">
+                    {@html math("d = 2 \\times r")}<br>
+                    {@html math("r = \\frac{d}{2}")}
                 </Texte>
             {/snippet}
             {#snippet svg()}
