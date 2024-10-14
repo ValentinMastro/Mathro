@@ -1,6 +1,7 @@
 <script lang="ts">
     import { Chapitre, Partie, SousPartie, Contenu, DansLaMarge } from "$lib/cahier/composants/de_chapitrage/*";
     import { Definition, Exemple, Paragraphe, Item } from "$lib/cahier/composants/de_cours/*";
+    import { Nombre } from "$lib/cahier/composants/de_marge/*";
     import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 
     import { math } from "mathlifier";
@@ -12,12 +13,11 @@
 
 <DansLaMarge apres_un_titre>
     <LigneVide lignes={18} />
-    <label for="a"> a = </label>
-    <input type="number" bind:value={a} style="width: 65%;"/>
+    <Nombre label="a" bind:valeur={a} min={-20} max={20} />
 </DansLaMarge>
 
 <Contenu apres_un_titre>
-    <Partie numero={1} titre="Calcul littéral" />
+    <Partie numero={1} titre="Les expressions littérales" />
         <SousPartie numero={1} titre="Écriture" />
             <LigneVide />
             <Definition lignes={2}>

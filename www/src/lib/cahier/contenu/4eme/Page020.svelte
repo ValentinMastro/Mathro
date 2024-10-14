@@ -1,6 +1,7 @@
 <script lang="ts">
     import { Contenu, SousPartie, DansLaMarge } from "$lib/cahier/composants/de_chapitrage/*";
     import { Definition, Exemples, Item } from "$lib/cahier/composants/de_cours/*";
+    import { Nombre } from "$lib/cahier/composants/de_marge/*";
     import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 
     import { math } from "mathlifier";
@@ -10,8 +11,7 @@
 
 <DansLaMarge>
     <LigneVide lignes={16} />
-    <label for="a">a = </label>
-    <input type="number" bind:value={a} style="width: 60%;"/>
+    <Nombre label="a" bind:valeur={a} min={-20} max={20} />
 </DansLaMarge>
 
 <Contenu>
@@ -46,10 +46,10 @@
             <Item lignes={3}>
                 {@html math("a^2")} et {@html math("2a")} ne sont pas égales. En effet, si on choisit {@html math("a=3")} :
                 <Item>
-                    {@html math("a^2 = 3^2 = \\textcolor{red}{9}")}
+                    {@html math(`a^2 = ${a}^2 = \\textcolor{red}{${a*a}}`)}
                 </Item>
                 <Item>
-                    {@html math("2a = 2 \\times 3 = \\textcolor{red}{6}")}
+                    {@html math(`2a = 2 \\times ${a} = \\textcolor{red}{${2*a}}`)}
                 </Item>
             </Item>
         </Exemples>
