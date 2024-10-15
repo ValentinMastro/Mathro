@@ -11,14 +11,14 @@
         <LigneVide />
         <Tableau>
             <LigneTableau>
-                <td>Centaines</td>
-                <td>Dizaines</td>
-                <td>Unités</td>
-                <td>,</td>
-                <td>Dixièmes</td>
-                <td>Centièmes</td>
-                <td>Millièmes</td>
-                <td></td>
+                <td colspan={3}>Partie entière</td>
+                <td class="virgule">,</td>
+                <td colspan={3} style="border-right: 1px dashed black">Partie décimale</td>
+            </LigneTableau>
+            <LigneTableau>
+                {#each ["centaine", "dizaine", "unité", "virgule", "dixième", "centième", "millième", "dix-millième", "cent-millième", "millionnième"] as t}
+                    <td class="vertical {t == "virgule" ? "virgule" : ""}">{t}</td>
+                {/each}
             </LigneTableau>
         </Tableau>
 </Contenu>
@@ -26,8 +26,15 @@
 <style>
     td {
         border: 1px solid black;
-        padding: 5px;
+        text-transform: uppercase;
+    }
+    .vertical {
         writing-mode: vertical-rl;
         text-orientation: upright;
+        text-align: start;
+        padding: 12px;
+    }
+    .virgule {
+        color: red;
     }
 </style>
