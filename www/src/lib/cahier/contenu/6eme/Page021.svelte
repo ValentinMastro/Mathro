@@ -13,15 +13,33 @@
             taille_graduation: (i == 0 || i == 10) ? 30 : 15,
         }));
 
-    let nombre = $state(1.23);
+    let nombre = $state(0.237);
     let chiffres = $derived({
-        unite: Math.floor(nombre),
-        dixieme: Math.floor((nombre - Math.floor(nombre)) * 10),
-        centieme: Math.floor((nombre - Math.floor(nombre)) * 100),
+        dixieme: Math.floor(nombre * 10),
+        centieme: Math.floor(nombre * 100 - 10 * Math.floor(nombre * 10)),
+        millieme: Math.floor(nombre * 1000 - 100 * Math.floor(nombre * 10) - 10 * Math.floor(nombre * 100 - 10 * Math.floor(nombre * 10))),
     })
 
-    let abscisse_nombre_dixiemes = $derived(400 + 1000*(nombre - 1));
-    let abscisse_nombre_centiemes = $derived(400 + 1000*((nombre - 1)*10));
+    let abscisses = $derived({
+        dixieme: 400 + 100 * chiffres["dixieme"] + 10 * chiffres["centieme"] + chiffres["millieme"],
+        centieme: 400 + 100 * chiffres["centieme"] + 10 * chiffres["millieme"],
+        millieme: 400 + 100 * chiffres["millieme"],
+    })
+
+    let extremites = $derived([
+        {
+            debut: 0,
+            fin: 1,
+        },
+        {
+            debut: 0 + 0.1 * chiffres["dixieme"],
+            fin: 0.1 + 0.1 * chiffres["dixieme"],
+        },
+        {
+            debut: 0 + 0.1 * chiffres["dixieme"] + 0.01 * chiffres["centieme"],
+            fin: 0.01 + 0.1 * chiffres["dixieme"] + 0.01 * chiffres["centieme"],
+        }
+    ])
 </script>
 
 <DansLaMarge>
@@ -35,16 +53,26 @@
         <Exemple />
         <Schema lignes={10} aspectRatioSVG={1.7}>
             {#snippet svg()}
-                <circle cx={abscisse_nombre_dixiemes} cy={200} r={10} fill="red" />
-                <circle cx={abscisse_nombre_centiemes} cy={500} r={12} fill="red" />
+                <circle cx={abscisses["dixieme"]} cy={200} r={10} fill="red" />
+                <circle cx={abscisses["centieme"]} cy={500} r={12} fill="red" />
+                <circle cx={abscisses["millieme"]} cy={800} r={14} fill="red" />
                 <!-- Axes -->
-                {#each [200, 500, 800] as ordonnee_axe}
+                {#each [200, 500, 800] as ordonnee_axe, index}
                     <line x1={300} x2={1500} y1={ordonnee_axe} y2={ordonnee_axe} stroke="black" stroke-width={5} />
                     {#each abscisses_graduations as {abscisse, taille_graduation}}
                         <line x1={abscisse} x2={abscisse} y1={ordonnee_axe - taille_graduation} y2={ordonnee_axe + taille_graduation} stroke="black" stroke-width={5} />
                     {/each}
+                    <!-- Graduations -->
+                    <text x={400} y={ordonnee_axe + 80} font-size={45} text-anchor="middle">{extremites[index]["debut"].toLocaleString("fr-FR")}</text>
+                    <text x={1400} y={ordonnee_axe + 80} font-size={45} text-anchor="middle">{extremites[index]["fin"].toLocaleString("fr-FR")}</text>
                 {/each}
-            {/snippet}
+                <!-- Nombre -->
+                <text x={abscisses["dixieme"]} y={200 + 80} font-size={45} text-anchor="middle" fill="red">{nombre.toLocaleString("fr-FR")}</text>
+                <text x={abscisses["centieme"]} y={500 + 80} font-size={45} text-anchor="middle" fill="red">{nombre.toLocaleString("fr-FR")}</text>
+                {#if chiffres["millieme"] != 0}
+                    <text x={abscisses["millieme"]} y={800 + 80} font-size={45} text-anchor="middle" fill="red">{nombre.toLocaleString("fr-FR")}</text>
+                {/if}
+                {/snippet}
         </Schema>
 
         <LigneVide />
