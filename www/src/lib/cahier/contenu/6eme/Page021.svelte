@@ -59,7 +59,7 @@
                 puis, on compare chaque chiffre après la virgule, en commençant par les dixièmes, puis les centièmes, etc.
             </Item>
         </Methode>
-        <Exemples>
+        <Exemples lignes={2}>
             <Item>
                 {@html math("1{,}23 < 1{,}24")}
             </Item>
