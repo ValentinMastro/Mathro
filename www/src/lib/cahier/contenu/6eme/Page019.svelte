@@ -24,9 +24,9 @@
 
 <DansLaMarge>
     <LigneVide lignes={17} />
-    <Nombre bind:valeur={nombre_1} min={1} max={999} step={0.000_001} />
-    <Nombre bind:valeur={nombre_2} min={1} max={999} step={0.000_001} />
-    <Nombre bind:valeur={nombre_3} min={1} max={999} step={0.000_001} />
+    <Nombre bind:valeur={nombre_1} min={0} max={999} step={0.000_001} />
+    <Nombre bind:valeur={nombre_2} min={0} max={999} step={0.000_001} />
+    <Nombre bind:valeur={nombre_3} min={0} max={999} step={0.000_001} />
 </DansLaMarge>
 
 <Contenu apres_un_titre>
@@ -61,7 +61,7 @@
                 <Item>le nombre des dixièmes est {nombre_de(nombre_2, -1)}</Item>
             </Item>
             <Item lignes={4}>
-                {nombre_3.toLocaleString("fr-FR")} :
+                {nombre_3.toLocaleString("fr-FR", {minimumFractionDigits: 4, maximumFractionDigits: 6})} :
                 <Item>le chiffre des dix-millièmes est {chiffre(nombre_3, -4)}</Item>
                 <Item>le nombre de millièmes est {nombre_de(nombre_3, -3)}</Item>
                 <Item>le nombre de dix-millièmes est {nombre_de(nombre_3, -4)}</Item>
