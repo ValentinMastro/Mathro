@@ -72,7 +72,13 @@
                 {#if chiffres["millieme"] != 0}
                     <text x={abscisses["millieme"]} y={800 + 80} font-size={45} text-anchor="middle" fill="red">{nombre.toLocaleString("fr-FR")}</text>
                 {/if}
-                {/snippet}
+                <!-- Graduation supplémentaires -->
+                {#each [1, 2, 3, 4, 5, 6, 7, 8, 9] as chiffre} 
+                    <text x={400 + 100 * chiffre} y={200 - 30} font-size={35} text-anchor="middle">0,{chiffre}</text>
+                    <text x={400 + 100 * chiffre} y={500 - 30} font-size={35} text-anchor="middle">0,{chiffres["dixieme"]}{chiffre}</text>
+                    <text x={400 + 100 * chiffre} y={800 - 30} font-size={35} text-anchor="middle">0,{chiffres["dixieme"]}{chiffres["centieme"]}{chiffre}</text>
+                {/each}
+            {/snippet}
         </Schema>
 
         <LigneVide />
