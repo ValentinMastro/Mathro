@@ -96,12 +96,6 @@
                 {@render ligne_de_texte_nombre(4, numero_2, 4, "le nombre des dizaines de milliers")}
                 {@render ligne_de_texte_nombre(5, numero_3, 6, "le nombre des millions")}
             </Exemples>
-    
-    <LigneVide />
-    <SousPartie numero={3} titre="Décomposition" />
-        <Propriete lignes={2}>
-            Il est possible de décomposer un nombre selon la position de ses chiffres.
-        </Propriete>
 </Contenu>
 
 <style>

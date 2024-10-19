@@ -1,12 +1,16 @@
 <script lang="ts">
     import { Contenu, Partie, SousPartie } from "$lib/cahier/composants/de_chapitrage/*";
-    import { Definition, Exemples, Item } from "$lib/cahier/composants/de_cours/*";
+    import { Definition, Exemples, Item, Propriete } from "$lib/cahier/composants/de_cours/*";
     import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 
     import { math, alignStar } from 'mathlifier';
 </script>
 
 <Contenu >
+    <SousPartie numero={3} titre="Décomposition" />
+        <Propriete lignes={2}>
+            Il est possible de décomposer un nombre selon la position de ses chiffres.
+        </Propriete>
         <Exemples lignes={6}>
             <Item lignes={2}>
                 {@html math("325 = 300 + 20 + 5 = 3 \\times 100 + 2 \\times 10 + 5 \\times 1")} <br />
@@ -38,13 +42,5 @@
                     32 + 2 &\\leq 34 \\\\
                     65 &\\geq 54 + 11
             `)}
-        </Exemples>
-        <Definition lignes={2}>
-            Ordre croissant : du plus petit au plus grand <br>
-            Ordre décroissant : du plus grand au plus petit
-        </Definition>
-        <Exemples lignes={2}>
-            <Item>{@html math("1 \\lt 2 \\lt 7 \\lt 12")}</Item>
-            <Item>{@html math("19 \\gt 18 \\gt 15 \\gt 8")}</Item>
         </Exemples>
 </Contenu>

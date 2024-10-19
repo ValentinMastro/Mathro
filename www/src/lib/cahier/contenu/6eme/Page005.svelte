@@ -2,10 +2,19 @@
     import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
     import { Definition, Notation, Item, Texte, Exemples, Schema } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
+    
     import { math } from 'mathlifier';
 </script>
 
 <Contenu>
+        <Definition lignes={2}>
+            Ordre croissant : du plus petit au plus grand <br>
+            Ordre décroissant : du plus grand au plus petit
+        </Definition>
+        <Exemples lignes={2}>
+            <Item>{@html math("1 \\lt 2 \\lt 7 \\lt 12")}</Item>
+            <Item>{@html math("19 \\gt 18 \\gt 15 \\gt 8")}</Item>
+        </Exemples>
         <Definition lignes={2}>
             Encadrer un nombre, c'est déterminer un nombre qui lui est inférieur
             et un nombre qui lui est supérieur.
