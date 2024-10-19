@@ -105,7 +105,7 @@ let sommaire_6eme: Chapitre[] = [
             "Constructions",
         ]
     },
-    { titre: "Conversions d'unités", categories: ["Grandeurs et mesures"],
+    { titre: "Conversions d'unités", categories: ["Nombres et calculs", "Grandeurs et mesures"],
         attendus: [
             "Multiplier, diviser par 10, 100, 1 000",
             "Convertir des unités de longueurs ou de masse",
@@ -182,7 +182,7 @@ let sommaire_6eme: Chapitre[] = [
             "Formules du volume d’un cube, d’un pavé droit",
         ]
     },
-    { titre: "Se repérer", categories: ["Espace et géométrie"],
+    { titre: "Se repérer", categories: ["Espace et géométrie", "Algorithmique et programmation"],
         attendus: [
             "Se repérer, décrire ou exécuter des déplacements, sur un plan ou sur une carte (école, quartier, ville, village)",
             "Programmer les déplacements d’un robot ou ceux d’un personnage sur un écran en utilisant un logiciel de programmation",
