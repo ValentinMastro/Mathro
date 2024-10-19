@@ -78,6 +78,11 @@
                     <text x={400 + 100 * chiffre} y={500 - 30} font-size={35} text-anchor="middle">0,{chiffres["dixieme"]}{chiffre}</text>
                     <text x={400 + 100 * chiffre} y={800 - 30} font-size={35} text-anchor="middle">0,{chiffres["dixieme"]}{chiffres["centieme"]}{chiffre}</text>
                 {/each}
+                <!-- Lignes de zoom -->
+                <line x1={400 + 100 * chiffres["dixieme"]} y1={200} x2={400} y2={500} stroke="green" stroke-width={5} />
+                <line x1={400 + 100 * (chiffres["dixieme"] + 1)} y1={200} x2={1400} y2={500} stroke="green" stroke-width={5} />
+                <line x1={400 + 100 * chiffres["centieme"]} y1={500} x2={400} y2={800} stroke="green" stroke-width={5} />
+                <line x1={400 + 100 * (chiffres["centieme"] + 1)} y1={500} x2={1400} y2={800} stroke="green" stroke-width={5} />
             {/snippet}
         </Schema>
 
