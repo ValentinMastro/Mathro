@@ -50,27 +50,30 @@
             {#snippet svg()}
                 <defs>
                     <style>
-                        text {
+                        .point22 {
                             font-size: 60px;
                             text-anchor: middle;
                             vertical-align: center;
                         }
-                        .droite {
+                        .droite22 {
+                            font-size: 60px;
+                            text-anchor: middle;
+                            vertical-align: center;
                             font-style: italic;
                         }
                     </style>
                 </defs>
                 <line x1={0} y1={600} x2={1000} y2={600} stroke="red" stroke-width={5} />
-                <text x={500} y={670} fill="red" class="droite">(d)</text>
+                <text class="droite22" x={500} y={670} fill="red">(d)</text>
                 <line x1={500 - rayon * Math.cos(angle)} y1={400 - rayon * Math.sin(angle)} x2={500 + rayon * Math.cos(angle)} y2={400 + rayon * Math.sin(angle)} stroke="green" stroke-width={5} /> 
-                <text x={500 - rayon / 2 * Math.cos(angle)} y={200} fill="green" class="droite">(d'')</text>
+                <text class="droite22" x={500 - rayon / 2 * Math.cos(angle)} y={200} fill="green">(d'')</text>
                 <line x1={0} y1={500 + slider_2} x2={1000} y2={500 + slider_2} stroke="blue" stroke-width={5} />
-                <text x={300} y={570 + slider_2} fill="blue" class="droite">(d')</text>
+                <text class="droite22" x={300} y={570 + slider_2} fill="blue">(d')</text>
                 <!-- points d'intersection -->
                 <circle cx={point_intersection_1.x} cy={point_intersection_1.y} r={10} fill="black" />
-                <text x={point_intersection_1.x} y={point_intersection_1.y - 30} fill="black">I</text>
+                <text class="point22" x={point_intersection_1.x} y={point_intersection_1.y - 30} fill="black">I</text>
                 <circle cx={point_intersection_2.x} cy={point_intersection_2.y} r={10} fill="black" />
-                <text x={point_intersection_2.x} y={point_intersection_2.y - 30} fill="black">K</text>
+                <text class="point22" x={point_intersection_2.x} y={point_intersection_2.y - 30} fill="black">K</text>
             {/snippet}
             {#snippet html()}
                 <LigneVide />
@@ -80,4 +83,3 @@
             {/snippet}
         </Schema>
 </Contenu>
-
