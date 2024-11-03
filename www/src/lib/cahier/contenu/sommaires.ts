@@ -71,7 +71,7 @@ let sommaire_6eme: Chapitre[] = [
             "Constructions"
         ]
     },
-    { titre: "Nombres décimaux", categories: ["Nombres et calculs"],
+    { titre: "Nombres décimaux", categories: ["Nombres et calculs"], premiere_page: 19,
         attendus: [
             "Unités de numération décimale",
             "Diverses désignations orales et écrites (fractions décimales, écritures à virgule, décompositions)",
@@ -80,7 +80,7 @@ let sommaire_6eme: Chapitre[] = [
         ]
     },
     // Période 2
-    { titre: "Droites", categories: ["Espace et géométrie"],
+    { titre: "Droites", categories: ["Espace et géométrie"], premiere_page: 22,
         attendus: [
             "Perpendicularité, parallélisme : définitions",
             "Distance entre deux points, entre un point et une droite",
@@ -88,7 +88,7 @@ let sommaire_6eme: Chapitre[] = [
             "Médiatrice d’un segment : définition, construction à l’équerre",
         ]
     },
-    { titre: "Addition, Soustraction et Multiplication", categories: ["Nombres et calculs"],
+    { titre: "Addition, Soustraction et Multiplication", categories: ["Nombres et calculs"], premiere_page: 27,
         attendus: [
             "Propriétés et vocabulaire de l’addition, de la soustraction et de la multiplication",
             "Parenthèses et priorités opératoires",
