@@ -25,16 +25,16 @@
         <LigneVide />
         <Exemples lignes={4}>
             <Item>
-                Pythagore est né vers l'an 580 avant J.-C {@html math("\\longrightarrow -580")}.
+                Pythagore est né vers l'an 580 avant J.-C. {@html math("\\longrightarrow -580")}.
             </Item>
             <Item>
                 Leonhard Euler est né en 1707 {@html math("\\longrightarrow +1707")}.
             </Item>
             <Item>
-                La température de fusion du diazote est de {@html math("\\longrightarrow -210~^{\\circ}\\text{C}")}.
+                La température de fusion du diazote est de {@html math("-210~^{\\circ}\\text{C}")}.
             </Item>
             <Item>
-                La température d'ébullition du diazote est de {@html math("\\longrightarrow -196~^{\\circ}\\text{C}")}.
+                La température d'ébullition du diazote est de {@html math("-196~^{\\circ}\\text{C}")}.
             </Item>
         </Exemples>
 </Contenu>
