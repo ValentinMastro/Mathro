@@ -28,6 +28,7 @@
                     <text x={530} y={900} class="droite25" fill="blue">(d')</text>
                     <text x={625 + 30} y={500 - 30} class="point25" fill="black">A</text>
                     <circle cx={625} cy={500} r={10} fill="black" />
+                    <rect x={625} y={500} width={30} height={30} fill="black" />
                 {/snippet}
                 {#snippet html()}
                     <Paragraphe nom_du_paragraphe="Protocole" lignes={4}>
@@ -62,6 +63,8 @@
                     <text x={900} y={820} class="droite25" fill="blue">(d')</text>
                     <text x={550} y={900} class="droite25" fill="green">(d*)</text>
                     <text x={625 + 30} y={750 - 30} class="point25" fill="black">A</text>
+                    <rect x={625} y={125} width={30} height={30} fill="black" />
+                    <rect x={625} y={750} width={30} height={30} fill="black" />
                     <circle cx={625} cy={750} r={10} fill="black" />
                 {/snippet}
                 {#snippet html()}
