@@ -43,7 +43,7 @@
         <LigneVide />
         <Notation>
             Si {@html math('(d)')} et {@html math("(d')")} sont parallèles, 
-            on note {@html math("(d) \\backslash\\backslash (d')")}.
+            on note {@html math("(d) // (d')")}.
         </Notation>
         <LigneVide lignes={2} />
         <Schema lignes={10}>
@@ -77,7 +77,7 @@
             {/snippet}
             {#snippet html()}
                 <LigneVide />
-                <Texte>{@html math("{\\color{red} (d)} \\backslash \\backslash {\\color{blue} (d')}")}</Texte>
+                <Texte>{@html math("{\\color{red} (d)} // {\\color{blue} (d')}")}</Texte>
                 <Texte>{@html math('{\\color{red} (d)}')} et {@html math("{\\color{green} (d'')}")}  sont sécantes en {@html math("\\text{I}")}.</Texte>
                 <Texte>{@html math("{\\color{blue} (d')}")} et {@html math("{\\color{green} (d'')}")}  sont sécantes en {@html math("\\text{K}")}.</Texte>
             {/snippet}

@@ -61,7 +61,7 @@
                     {@html math("{\\color{blue} (d')} \\perp {\\color{green} (d'')}")}
                 </Texte>
                 <Texte>
-                    De plus, {@html math("{\\color{red} (d)} \\backslash \\backslash {\\color{green} (d'')}")}
+                    De plus, {@html math("{\\color{red} (d)} // {\\color{green} (d'')}")}
                 </Texte>
             {/snippet}
         </Schema>
