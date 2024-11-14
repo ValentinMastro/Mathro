@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from "$lib/cahier/composants/de_chapitrage/*";
-	import { Definition, Item, Paragraphe, Schema } from "$lib/cahier/composants/de_cours/*";
+	import { Definition, Item, Paragraphe, Protocole, Schema } from "$lib/cahier/composants/de_cours/*";
     import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 
     import { math } from 'mathlifier';
@@ -10,7 +10,7 @@
     <Partie numero={4} titre="Médiatrice" />
         <LigneVide />
         <Definition lignes={2}>
-            La <i>médiatrice</i> d'un segment est la droite perpendiculaire à ce segment et passant par son milieu.
+            La <i>médiatrice</i> d'un segment est la droite perpendiculaire à ce segment qui passe par son milieu.
         </Definition>
         <Paragraphe nom_du_paragraphe="Consigne">
             Tracer la médiatrice du segment {@html math("[\\text{AB}]")}.
@@ -49,7 +49,7 @@
             {/snippet}
             {#snippet html()}
                 <LigneVide />
-                <Paragraphe nom_du_paragraphe="Protocole" lignes={5}>
+                <Protocole lignes={5}>
                     <Item lignes={2}>
                         Avec la règle, déterminer {@html math("\\text{I}")} le milieu du segment {@html math("[\\text{AB}]")}.
                     </Item>
@@ -57,7 +57,7 @@
                         Avec l'équerre, tracer la droite perpendiculaire à {@html math("[\\text{AB}]")} passant <br>
                         par {@html math("\\text{I}")}.
                     </Item>
-                </Paragraphe>
+                </Protocole>
             {/snippet}
         </Schema>
 </Contenu>

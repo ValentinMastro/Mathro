@@ -9,6 +9,7 @@ export { default as Paragraphe } from "./Paragraphe.svelte";
     export { default as Methode } from "./Methode.svelte";
     export { default as Notation } from "./Notation.svelte";
     export { default as Propriete } from "./Propriete.svelte";
+    export { default as Protocole } from "./Protocole.svelte";
     export { default as Remarque } from "./Remarque.svelte";
     export { default as Theoreme } from "./Theoreme.svelte";
     export { default as TheoremeDefinition } from "./TheoremeDefinition.svelte";

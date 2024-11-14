@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie, SousPartie } from "$lib/cahier/composants/de_chapitrage/*";
-	import { Item, Paragraphe, Schema } from "$lib/cahier/composants/de_cours/*";
+	import { Item, Paragraphe, Protocole, Schema } from "$lib/cahier/composants/de_cours/*";
     import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 
     import { math } from 'mathlifier';
@@ -31,14 +31,14 @@
                     <rect x={625} y={500} width={30} height={30} fill="black" />
                 {/snippet}
                 {#snippet html()}
-                    <Paragraphe nom_du_paragraphe="Protocole" lignes={4}>
+                    <Protocole>
                         <Item lignes={2}>
                             Faire glisser l'équerre le long de {@html math("\\color{red} (d)")}, jusqu'à alignement avec {@html math("\\text{A}")}.
                         </Item>
                         <Item lignes={2}>
                             Tracer la droite {@html math("\\color{blue} (d')")}, le long de l'équerre.
                         </Item>
-                    </Paragraphe>
+                    </Protocole>
                 {/snippet}
             </Schema>
             <LigneVide />
@@ -68,7 +68,7 @@
                     <circle cx={625} cy={750} r={10} fill="black" />
                 {/snippet}
                 {#snippet html()}
-                    <Paragraphe nom_du_paragraphe="Protocole" lignes={8}>
+                    <Protocole lignes={8}>
                         <Item lignes={2}>
                             Faire glisser l'équerre le long de {@html math("\\color{red} (d)")}, jusqu'à alignement avec {@html math("\\text{A}")}.
                         </Item>
@@ -81,7 +81,7 @@
                         <Item lignes={2}>
                             Tracer la droite {@html math("\\color{blue} (d')")}, le long de l'équerre.
                         </Item>
-                    </Paragraphe>
+                    </Protocole>
                 {/snippet}
             </Schema>
 </Contenu>
