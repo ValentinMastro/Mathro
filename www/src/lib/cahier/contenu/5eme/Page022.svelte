@@ -23,10 +23,11 @@
                 Relier le point d'intersection des deux arcs de cercle au premier segment.
             </Item>
         </Protocole>
+        <LigneVide />
         <Exemple>
             Tracer {@html math("\\text{ABC}")} tel que {@html math("\\text{AB} = 5\\,\\text{cm}")}, {@html math("\\text{AC} = 4\\,\\text{cm}")} et {@html math("\\text{BC} = 3\\,\\text{cm}")}.
         </Exemple>
-        <Schema lignes={10}>
+        <Schema lignes={10} aspectRatioSVG={0.8}>
             {#snippet svg()}
                 <defs>
                     <style>
@@ -38,21 +39,39 @@
                 </defs>
                 <line x1={200} x2={200+500} y1={800} y2={800} stroke="black" stroke-width={8} />
                 <!-- arcs de cercle -->
-                <!-- arc de centre (200,800) et de rayon 300 de angle1 à angle2 -->
-                {@const angle1 = Math.acos(-Math.PI)}
-                {@const angle2 = Math.acos(Math.PI)}
-                <path d={`
-                    M ${200+500} ${800}
-                    A 300 300 0 0 0 ${200+500-Math.cos(angle1)*300} ${800-Math.sin(angle1)*300}
-                `} fill="none" stroke="black" stroke-width={8} />
+                <!-- arc de centre (200,800) et de rayon 300 -->
+                <circle cx={200} cy={800} r={300} fill="none" stroke="black" stroke-width={8}
+                    stroke-dasharray="10,10" />
+                <!-- arc de centre (200+500,800) et de rayon 400 -->
+                <circle cx={200+500} cy={800} r={400} fill="none" stroke="black" stroke-width={8}
+                    stroke-dasharray="10,10" />
                 <!-- côtés -->
-                {@const extension = 200}
-                <line x1={200} y1={800} x2={200+Math.cos(Math.acos(3/5))*(400+extension)} y2={800-Math.sin(Math.acos(3/5))*(400+extension)} stroke="black" stroke-width={8} />
-                <line x1={200+500} y1={800} x2={200+500-Math.cos(Math.acos(4/5))*(300+extension)} y2={800-Math.sin(Math.acos(4/5))*(300+extension)} stroke="black" stroke-width={8} />
+                <line x1={200} y1={800} x2={200+Math.cos(Math.acos(3/5))*300} y2={800-Math.sin(Math.acos(3/5))*300} stroke="black" stroke-width={8} />
+                <line x1={200+500} y1={800} x2={200+500-Math.cos(Math.acos(4/5))*400} y2={800-Math.sin(Math.acos(4/5))*400} stroke="black" stroke-width={8} />
                 <!-- points -->
                 <text x={200-20} y={800+20} class="point21">B</text>
                 <text x={200+500+20} y={800+20} class="point21">A</text>
                 <text x={200+500-Math.cos(Math.acos(4/5))*400} y={800-Math.sin(Math.acos(4/5))*400-50} class="point21">C</text>
+            {/snippet}
+            {#snippet html()}
+                <LigneVide />
+                <Protocole lignes={7}>
+                    <Item lignes={2}>
+                        Tracer le segment {@html math("\\text{AB}")} de <br>
+                        longueur 5 cm.
+                    </Item>
+                    <Item lignes={2}>
+                        Puisque {@html math("\\text{AC} = 4\\,\\text{cm}")}, tracer un arc de <br>
+                        cercle de centre {@html math("\\text{A}")} et de rayon 4 cm.
+                    </Item>
+                    <Item lignes={2}>
+                        Puisque {@html math("\\text{BC} = 3\\,\\text{cm}")}, tracer un arc de <br>
+                        cercle de centre {@html math("\\text{B}")} et de rayon 3 cm.
+                    </Item>
+                    <Item>
+                        Relier le point d'intersection à {@html math("\\text{A}")} et à {@html math("\\text{B}")}.
+                    </Item>
+                </Protocole>
             {/snippet}
         </Schema>
 </Contenu>
