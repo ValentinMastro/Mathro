@@ -22,9 +22,9 @@
         </Vocabulaire>
         <Exemples lignes={9}>
             <Item lignes={3}>
-                Dans le calcul {@html math("3 \\times 5 = 15")}
+                Dans le calcul {@html math("3 + 8 = 11")}
                 <Item> 3 et 5 sont des <i>termes</i></Item>
-                <Item> 15 est la <i>somme</i></Item>
+                <Item> 11 est la <i>somme</i></Item>
             </Item>
             <Item lignes={3}>
                 Dans le calcul {@html math("7 - 2 = 5")}
