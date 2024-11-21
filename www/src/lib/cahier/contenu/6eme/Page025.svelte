@@ -31,7 +31,7 @@
                     <rect x={625} y={500} width={30} height={30} fill="black" />
                 {/snippet}
                 {#snippet html()}
-                    <Protocole>
+                    <Protocole lignes={4}>
                         <Item lignes={2}>
                             Faire glisser l'équerre le long de {@html math("\\color{red} (d)")}, jusqu'à alignement avec {@html math("\\text{A}")}.
                         </Item>
