@@ -96,7 +96,7 @@ let sommaire_6eme: Chapitre[] = [
             "Distributivité simple",
         ]
     },
-    { titre: "Polygones", categories: ["Espace et géométrie"],
+    { titre: "Polygones", categories: ["Espace et géométrie"], premiere_page: 30,
         attendus: [
             "Triangles, dont les triangles particuliers (triangle rectangle, triangle isocèle, triangle équilatéral)",
             "Quadrilatères, dont les quadrilatères particuliers (carré, rectangle, losange, première approche du parallélogramme)",
