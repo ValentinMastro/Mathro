@@ -1,11 +1,4 @@
 <script lang="ts">
-    // Calculs posés à afficher
-    /* 
-        987+123
-        901-789
-        3.72*89.1
-    */
-
 	import { Contenu, DansLaMarge, Partie } from "$lib/cahier/composants/de_chapitrage/*";
 	import { Schema, Texte } from "$lib/cahier/composants/de_cours/*";
 	import { Nombre } from "$lib/cahier/composants/de_marge/*";
