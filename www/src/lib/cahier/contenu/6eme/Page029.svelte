@@ -8,10 +8,8 @@
 
 	import { Contenu, DansLaMarge, Partie } from "$lib/cahier/composants/de_chapitrage/*";
 	import { Schema, Texte } from "$lib/cahier/composants/de_cours/*";
-	import Ligne from "$lib/cahier/composants/de_cours/Ligne.svelte";
 	import { Nombre } from "$lib/cahier/composants/de_marge/*";
     import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
-	import { parse } from "cookie";
 
     let terme_1 = $state(987);
     let terme_2 = $state(123);
