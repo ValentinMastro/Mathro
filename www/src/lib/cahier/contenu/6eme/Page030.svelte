@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie } from "$lib/cahier/composants/de_chapitrage/*";
-	import { Definition, Item } from "$lib/cahier/composants/de_cours/*";
-	import Paragraphe from "$lib/cahier/composants/de_cours/Paragraphe.svelte";
+	import { Definition, Item, Nomenclature } from "$lib/cahier/composants/de_cours/*";
 	import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 
 
@@ -15,7 +14,8 @@
         <Definition>
             Un polygone est une figure fermée qui possède plusieurs côtés.
         </Definition>
-        <Paragraphe nom_du_paragraphe="Nomenclature" lignes={6}>
+        <LigneVide />
+        <Nomenclature lignes={6}>
             <Item>
                 3 côtés : triangle
             </Item>
@@ -34,5 +34,5 @@
             <Item>
                 10 côtés : décagone
             </Item>
-        </Paragraphe>
+        </Nomenclature>
 </Contenu>
