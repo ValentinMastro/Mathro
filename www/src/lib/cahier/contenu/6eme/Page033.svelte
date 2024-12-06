@@ -35,4 +35,21 @@
                 il possède 4 angles droits et 4 côtés de même longueur.
             </Item>
         </Definition>
+        <LigneVide />
+        <Schema lignes={10} aspectRatioSVG={2}>
+            {#snippet svg()}
+                <defs>
+                    <rect id="rectangle" x={100} y={100} width={500} height={300} />
+                    <rect id="carre" x={200} y={600} width={300} height={300} />
+                    <polygon id="losange" points="1200,200 1400,500 1200,800 1000,500" />
+                </defs>
+                <use href="#rectangle" stroke="black" fill="none" stroke-width={6} />
+                <use href="#losange" stroke="black" fill="none" stroke-width={6} />
+                <use href="#carre" stroke="black" fill="none" stroke-width={6} />
+                {#each [{x: 100, y: 100}, {x: 570, y: 100}, {x: 570, y: 370}, {x: 100, y: 370}] as {x, y}}
+                    <rect x={x} y={y} width={30} height={30} fill="red" />
+                    <rect x={x*3/5+130} y={y+500} width={30} height={30} fill="red" />
+                {/each}
+            {/snippet}
+        </Schema>
 </Contenu>
