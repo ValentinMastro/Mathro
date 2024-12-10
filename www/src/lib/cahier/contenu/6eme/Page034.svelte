@@ -1,8 +1,11 @@
 <script lang="ts">
     import { Chapitre, Contenu, Partie } from "$lib/cahier/composants/de_chapitrage/*";
-	import { Exemples, Nomenclature } from "$lib/cahier/composants/de_cours/*";
+	import { Exemples, Nomenclature, Tableau } from "$lib/cahier/composants/de_cours/*";
 	import Item from "$lib/cahier/composants/de_cours/Item.svelte";
+	import LigneTableau from "$lib/cahier/composants/de_cours/LigneTableau.svelte";
     import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
+
+    import { math } from "mathlifier";
 </script>
 
 <Chapitre titre="Conversions d'unités" />
@@ -22,4 +25,29 @@
             <Item>3 k€ = 3000 €</Item>
             <Item>5 mm = 0,005 m</Item>
         </Exemples>
+        <LigneVide lignes={3} />
+        <Tableau>
+            <LigneTableau>
+                <td>kilo</td>
+                <td>hecto</td>
+                <td>déca</td>
+                <td>{@html math("~~\\emptyset~~")}</td>
+                <td>deci</td>
+                <td>centi</td>
+                <td>milli</td>
+            </LigneTableau>
+            {#each ["g", "m", "s"] as unite}
+                <LigneTableau>
+                    {#each ["k", "h", "da", "", "d", "c", "m"] as prefixe}
+                        <td>{prefixe + unite}</td>
+                    {/each}
+                </LigneTableau>
+            {/each}
+            <LigneTableau lignes={3}></LigneTableau>
+        </Tableau>
+        <LigneVide />
+        <Exemples>
+            
+        </Exemples>
+        
 </Contenu>
