@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie } from "$lib/cahier/composants/de_chapitrage/*";
-	import { Definition, Schema } from "$lib/cahier/composants/de_cours/*";
+	import { Definition, Propriete, Schema } from "$lib/cahier/composants/de_cours/*";
+	import Item from "$lib/cahier/composants/de_cours/Item.svelte";
+	import Paragraphe from "$lib/cahier/composants/de_cours/Paragraphe.svelte";
 	import Texte from "$lib/cahier/composants/de_cours/Texte.svelte";
     import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 
@@ -30,4 +32,26 @@
                 <Texte>{@html math("\\text{(AD)} // \\text{(BC)}")}</Texte>
             {/snippet}
         </Schema>
+        <Paragraphe couleur="red" nom_du_paragraphe="Propriétés" lignes={5}>
+            <Item>
+                Les côtés opposés d'un parallélogramme sont de même longueur.
+            </Item>
+            <Item>
+                Les angles opposés d'un parallélogramme sont de même mesure.
+            </Item>
+            <Item>
+                Deux angles intérieurs consécutifs sont supplémentaires.
+            </Item>
+            <Item>
+                Les diagonales d'un parallélogramme se coupent en leur milieu.
+            </Item>
+            <Item>
+
+            </Item>
+        </Paragraphe>
+    <Partie numero={2} titre="Les différents types de parallélogrammes" />
+        <LigneVide />
+        <Definition>
+            Un rectangle est un parallélogramme qui a un angle droit.
+        </Definition>
 </Contenu>
