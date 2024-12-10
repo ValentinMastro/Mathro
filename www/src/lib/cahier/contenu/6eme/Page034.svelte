@@ -43,11 +43,11 @@
                     {/each}
                 </LigneTableau>
             {/each}
-            <LigneTableau lignes={3}></LigneTableau>
+            <LigneTableau lignes={7}></LigneTableau>
         </Tableau>
         <LigneVide />
         <Exemples>
-            
+
         </Exemples>
         
 </Contenu>
