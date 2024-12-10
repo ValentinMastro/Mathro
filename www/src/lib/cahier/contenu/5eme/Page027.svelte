@@ -32,7 +32,7 @@
                 <Texte>{@html math("\\text{(AD)} // \\text{(BC)}")}</Texte>
             {/snippet}
         </Schema>
-        <Paragraphe couleur="red" nom_du_paragraphe="Propriétés" lignes={5}>
+        <Paragraphe couleur="red" nom_du_paragraphe="Propriétés" lignes={6}>
             <Item>
                 Les côtés opposés d'un parallélogramme sont de même longueur.
             </Item>
@@ -45,13 +45,8 @@
             <Item>
                 Les diagonales d'un parallélogramme se coupent en leur milieu.
             </Item>
-            <Item>
-
+            <Item lignes={2}>
+                La somme des mesures des angles d'un parallélogramme est de 360°.
             </Item>
         </Paragraphe>
-    <Partie numero={2} titre="Les différents types de parallélogrammes" />
-        <LigneVide />
-        <Definition>
-            Un rectangle est un parallélogramme qui a un angle droit.
-        </Definition>
 </Contenu>
