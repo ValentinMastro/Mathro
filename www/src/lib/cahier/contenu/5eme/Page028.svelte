@@ -1,6 +1,6 @@
 <script lang="ts">
     import { Contenu, Partie } from "$lib/cahier/composants/de_chapitrage/*";
-    import { Definition } from "$lib/cahier/composants/de_cours/*";
+    import { Definition, Demonstration } from "$lib/cahier/composants/de_cours/*";
     import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 </script>
 
@@ -10,4 +10,8 @@
     <Definition>
         Un rectangle est un parallélogramme qui a un angle droit.
     </Definition>
+    <Demonstration lignes={4}>
+        Si un parallélogramme a un angle droit, alors l'angle opposé est aussi un angle droit.<br>
+        De plus, deux angles consécutifs sont supplémentaires, donc les deux autres angles sont aussi droits.
+    </Demonstration>
 </Contenu>
