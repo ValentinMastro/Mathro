@@ -83,9 +83,16 @@
                         <polygon id="triangle_isocèle" points="200,200 1000,200 600,800" />
                     </defs>
                     <use href="#triangle_isocèle" stroke="black" fill="none" stroke-width="8" />
-                    <text x={200} y={200} dx={-50} font-size={70}>A</text>
-                    <text x={1000} y={200} dx={50} font-size={70}>B</text>
-                    <text x={600} y={800} dy={60} font-size={70}>C</text>
+                    {@const points={
+                        A: { x: 200, y: 200 },
+                        B: { x: 1000, y: 200 },
+                        C: { x: 600, y: 800 }
+                    }}
+                    {#each Object.entries(points) as [nom, { x, y }]}
+                        <text x={x} y={y} font-size={70}>{nom}</text>
+                    {/each}
+                    <text x={(200+600)/2} y={(200+800)/2} dy={50} font-size={70} fill='red'>/</text>
+                    <text x={(1000+600)/2} y={(200+800)/2} dy={50} font-size={70} fill='red'>\</text>
                 {/snippet}
                 {#snippet html()}
                     <LigneVide lignes={2} />
