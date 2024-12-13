@@ -52,13 +52,13 @@
         <LigneVide />
         <Exemples lignes={4} addStyle="display: flex; flex-direction: row;">
             <Ligne lignes={4}>
-                <Item>3 km = 30 000 cm</Item>
+                <Item>3 km = 300 000 cm</Item>
                 <Item>0,5 ms = 0,000 05 das</Item>
                 <Item>12,7 cg = 0,000 127 kg</Item>
                 <Item>0,05 cA = 0,000 05 A</Item>
             </Ligne>
             <Ligne lignes={3}>
-                <Item>213,4 ko = 213 400 co</Item>
+                <Item>213,4 ko = 21 340 000 co</Item>
                 <Item>5 V = 5000 mV</Item>
                 <Item>0,000 4 kcd = 400 mcd</Item>
             </Ligne>

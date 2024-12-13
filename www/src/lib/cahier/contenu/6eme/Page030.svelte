@@ -16,23 +16,11 @@
         </Definition>
         <LigneVide />
         <Nomenclature lignes={6}>
-            <Item>
-                3 côtés : triangle
-            </Item>
-            <Item>
-                4 côtés : quadrilatère
-            </Item>
-            <Item>
-                5 côtés : pentagone
-            </Item>
-            <Item>
-                6 côtés : hexagone
-            </Item>
-            <Item>
-                8 côtés : octogone
-            </Item>
-            <Item>
-                10 côtés : décagone
-            </Item>
+            <Item>3 côtés : triangle</Item>
+            <Item>4 côtés : quadrilatère</Item>
+            <Item>5 côtés : pentagone</Item>
+            <Item>6 côtés : hexagone</Item>
+            <Item>8 côtés : octogone</Item>
+            <Item>10 côtés : décagone</Item>
         </Nomenclature>
 </Contenu>
