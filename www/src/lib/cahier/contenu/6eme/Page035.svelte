@@ -8,12 +8,15 @@
 
     let puissance = $state(2);
 
-    let produit = $derived(3.14 * Math.pow(10, puissance));
-    let quotient = $derived(3.14 / Math.pow(10, puissance));
+    let pow10 = $derived(Math.pow(10, puissance));
+    let pow10Neg = $derived((Math.pow(10, -puissance)).toLocaleString("fr-FR", { maximumFractionDigits: 6 }));
+
+    let produit = $derived((3.14 * Math.pow(10, puissance)).toLocaleString("fr-FR"));
+    let quotient = $derived((3.14 / Math.pow(10, puissance)).toLocaleString("fr-FR", { maximumFractionDigits: 6 }));
 </script>
 
 <DansLaMarge>
-    <LigneVide lignes={13} />
+    <LigneVide lignes={15} />
     <Slider min={0} max={4} bind:valeur={puissance} />
 </DansLaMarge>
 
@@ -34,8 +37,9 @@
             <Item>Diviser par 100 revient à multiplier par 0,01.</Item>
             <Item>Diviser par 1000 revient à multiplier par 0,001.</Item>
         </Remarque>
+        <LigneVide />
         <Exemples lignes={2}>
-            <Item>{@html math(`3{,}14 \\times 1${'0'.repeat(puissance)} = ${produit}`)}</Item>
-            <Item>{@html math(`3{,}14 \\div 1${'0'.repeat(puissance)} = 3,14 \\times ${Math.pow(10, -puissance)} = ${quotient}`)}</Item>
+            <Item>{@html math(`3{,}14 \\times ${pow10} = ${produit}`)}</Item>
+            <Item>{@html math(`3{,}14 \\div ${pow10} = 3{,}14 \\times ${pow10Neg} = ${quotient}`)}</Item>
         </Exemples>
 </Contenu>

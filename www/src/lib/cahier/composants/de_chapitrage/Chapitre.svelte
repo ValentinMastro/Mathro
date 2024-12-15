@@ -1,14 +1,13 @@
 <script lang="ts">
     interface Props {
         titre: string,
+        numero_chapitre?: number
     }
 
-    let { titre }: Props = $props();
+    let { titre, numero_chapitre = sommaire($niveau).findIndex((chapitre) => chapitre.titre == titre) + 1 }: Props = $props();
 
     import { sommaire } from "$lib/cahier/contenu/sommaires";
     import { niveau, taille_chapitre, separateur_chapitre } from "$lib/cahier/store";
-
-    let numero_chapitre = sommaire($niveau).findIndex((chapitre) => chapitre.titre == titre) + 1;
 </script>
 
 <svelte:options runes={true} />
