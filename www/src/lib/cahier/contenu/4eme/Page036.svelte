@@ -95,30 +95,43 @@
         </Exemples>
         <Schema lignes={20}>
             {#snippet svg()}
+                <defs>
+                    <style>
+                        .textp36 {
+                            font-size: 22px;
+                            text-anchor: middle;
+                        }
+                        .textp36_end {
+                            font-size: 22px;
+                            text-anchor: end;
+                        }
+                    </style>
+                </defs>
                 <!-- Axes -->
                 <line x1="100" y1="950" x2="900" y2="950" stroke="black" stroke-width="2" />
-                <line x1="100" y1="950" x2="100" y2="50" stroke="black" stroke-width="2" />
+                <line x1="100" y1="950" x2="100" y2="250" stroke="black" stroke-width="2" />
                 <!-- Graduations horizontales -->
+                {@const graduation_horizontale = 150}
                 {#each [0, 15, 30, 45, 60, 75] as annee, i}
-                    <line x1={annee * 720 / 75 + 100} y1="950" x2={annee * 720 / 75 + 100} y2="960" stroke="black" stroke-width="2" />
-                    <text x={annee * 720 / 75 + 100} y="980" text-anchor="middle" font-size="22">{annee}</text>
+                    <line x1={annee / 15 * graduation_horizontale + 100} y1="950" x2={annee / 15 * graduation_horizontale + 100} y2="960" stroke="black" stroke-width="2" />
+                    <text x={annee / 15 * graduation_horizontale + 100} y="980" class="textp36">{annee}</text>
                 {/each}
                 <!-- Barres -->
                 {#each Object.values(villes[index_ville].donnees) as valeur, i}
                     {#if i < Object.values(villes[index_ville].donnees).length - 1}
-                        <rect x={100 + i*15*720/75} y={950 - 900*valeur/18000} width="{15*720/75}" height={900*valeur/18000} fill="lightgray" stroke="black" />
-                        <text x={100 + (i+0.5)*15*720/75} y={950 - 900*valeur/18000 - 10} text-anchor="middle" font-size="22">{valeur.toLocaleString("fr-FR")}</text>
+                        <rect x={100 + i*graduation_horizontale} y={950 - 900*valeur/18000} width="{graduation_horizontale}" height={900*valeur/18000} fill="lightgray" stroke="black" />
+                        <text x={100 + (i+0.5)*graduation_horizontale} y={950 - 900*valeur/18000 - 10} class="textp36">{valeur.toLocaleString("fr-FR")}</text>
                     {/if}
                 {/each}
                 <!-- Graduations verticales -->
                 {#each Array(14).fill(0).map((valeur, i) => i*1000) as valeur, i}
                     <line x1="90" y1={950 - 900*valeur/18000} x2="100" y2={950 - 900*valeur/18000} stroke="black" stroke-width="2" />
                     <line x1="100" y1={950 - 900*valeur/18000} x2="900" y2={950 - 900*valeur/18000} stroke="black" stroke-width="1" stroke-dasharray="1,4" />
-                    <text x="80" y={950 - 900*valeur/18000} text-anchor="end" font-size="22">{valeur.toLocaleString("fr-FR")}</text>
+                    <text x="80" y={958 - 900*valeur/18000} class="textp36_end">{valeur.toLocaleString("fr-FR")}</text>
                 {/each}
                 <!-- Légendes -->
-                <text x="930" y="950" text-anchor="middle" font-size="22">Âge</text>
-                <text x="110" y="100" text-anchor="start" font-size="22">Nombre d'habitants</text>
+                <text x="930" y="950" class="textp36">Âge</text>
+                <text x="110" y="240" class="textp36">Nombre d'habitants</text>
             {/snippet}
         </Schema>
 </Contenu>
