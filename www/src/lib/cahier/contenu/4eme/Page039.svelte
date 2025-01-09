@@ -13,7 +13,7 @@
             Le cosinus d'un angle aigu d'un triangle rectangle est le quotient du côté adjacent par l'hypoténuse.<br>
             C'est une valeur comprise entre 0 et 1, qui permet de calculer la mesure d'un angle à partir de la longueur des côtés d'un triangle rectangle.
         </Definition>
-
+        <LigneVide />
         <Exemple lignes={2}>
             Dans le triangle ABC rectangle en A tel que {@html math("\\text{AB} = 3~\\text{cm}")} et {@html math("\\text{BC} = 5~\\text{cm}")},
             calculer l'angle {@html math("\\widehat{\\text{ABC}}")}.
@@ -22,14 +22,14 @@
         <Schema lignes={10}>
             {#snippet svg()}
                 <defs>
-                    <polygon id="triangle" points="100,100 100,900, 700,900" />
+                    <polygon id="trianglep39" points="100,100 100,900, 700,900" />
                     <clipPath id="clip_triangle">
-                        <use href="#triangle" fill="white" />
+                        <use href="#trianglep39" fill="white" />
                     </clipPath>
                 </defs>
 
                 <circle cx="100" cy="100" r="100" fill="red" clip-path="url(#clip_triangle)" />
-                <use href="#triangle" fill="none" stroke="black" stroke-width="5" />
+                <use href="#trianglep39" fill="none" stroke="black" stroke-width="5" />
                 <rect x="100" y="850" width="50" height="50" fill="black" />
                 <line x1="100" y1="100" x2="100" y2="900" stroke="red" stroke-width="8" />
                 

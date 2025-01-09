@@ -29,6 +29,7 @@
         <Definition>
             Le côté opposé à l'angle droit est appelé l'hypoténuse.
         </Definition>
+        <LigneVide />
         <Definition lignes={3}>
             Choisissons un des angles aigus du triangle.<br>
             Le côté du triangle qui forme l'angle choisi et qui n'est pas l'hypoténuse est appelé le <i>côté adjacent</i>.<br>
@@ -37,9 +38,9 @@
         <Schema lignes={10}>
             {#snippet svg()}
                 <defs>
-                    <polygon id="triangle" points="100,100 100,900, 700,900" />
+                    <polygon id="trianglep38" points="100,100 100,900 700,900" />
                     <clipPath id="clip_triangle">
-                        <use href="#triangle" fill="white" />
+                        <use href="#trianglep38" fill="white" />
                     </clipPath>
                 </defs>
 
@@ -50,7 +51,7 @@
                 {/if}
 
 
-                <use href="#triangle" fill="none" stroke="black" stroke-width="5" />
+                <use href="#trianglep38" fill="none" stroke="black" stroke-width="5" />
                 <rect x="100" y="850" width="50" height="50" fill="black" />
 
                 {#if index_selection_angle == 0}
