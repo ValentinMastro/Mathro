@@ -38,16 +38,4 @@
         <Definition>
             Un évènement est un ensemble d'issues de l'expérience aléatoire.
         </Definition>
-        <Exemples>
-            <Item lignes={3}>
-                    Expérience : lancer un dé<br>
-                    {@html math(`\\text{A} = `)} « Obtenir un nombre pair » {@html math(` = \\{ 2, 4, 6 \\}`)}<br>
-                    {@html math(`\\text{B} = `)} « Obtenir un nombre impair » {@html math(` = \\{ 1, 3, 5 \\}`)}
-            </Item>
-            <Item lignes={3}>
-                    Expérience : tirer une lettre au hasard dans l'alphabet français<br>
-                    {@html math(`\\text{C} = `)} « Obtenir une voyelle » {@html math(` = \\{ \\text{A}, \\text{E}, \\text{I}, \\text{O}, \\text{U}, \\text{Y} \\}`)}<br>
-                    {@html math(`\\text{D} = `)} « Obtenir une consonne» {@html math(` = \\{ \\text{B}, \\text{C}, \\dots, \\text{Z} \\}`)}
-            </Item>
-        </Exemples> 
 </Contenu>
