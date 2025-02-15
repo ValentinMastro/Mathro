@@ -43,16 +43,16 @@
         <LigneVide />
         <Exemples lignes={4}>
             <Item>
-                {@html math("1{,}5~m² = 15~000~cm²")}
+                {@html math("1{,}5~\\text{m}² = 15~000~\\text{cm}²")}
             </Item>
             <Item>
-                {@html math("0{,}02~hm² = 0{,}000~2~km²")}
+                {@html math("0{,}02~\\text{hm}² = 0{,}000~2~\\text{km}²")}
             </Item>
             <Item>
-                {@html math("365~mm² = 0{,}000~003~65~dam²")}
+                {@html math("365~\\text{mm}² = 0{,}000~003~65~\\text{dam}²")}
             </Item>
             <Item>
-                {@html math("10~ha = 100~000~m²")}
+                {@html math("10~\\text{ha} = 100~000~\\text{m}²")}
             </Item>
         </Exemples>
 </Contenu>
