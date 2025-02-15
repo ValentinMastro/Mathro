@@ -12,7 +12,7 @@
 	<Partie numero={1} titre="Concept" />
 		<LigneVide />
 		<TheoremeDefinition lignes={4}>
-			À deux entiers positifs (le dividende et le diviseur), 
+			À deux entiers positifs (le dividende et le diviseur),
 			on associe <u>de façon unique</u> deux nombres entiers (le quotient et le reste) tels que :
 			<Item>
 				{@html math("\\text{dividende} = \\text{diviseur} \\times \\text{quotient} + \\text{reste}")}
@@ -21,6 +21,7 @@
 				{@html math("0 \\leq \\text{reste} < \\text{diviseur}")}
 			</Item>
 		</TheoremeDefinition>
+		<LigneVide />
 		<Exemples lignes={2}>
 			<Item>{@html math("19 = 3 \\times 6 + 1")}</Item>
 			<Item>{@html math("255 = 16 \\times 15 + 15")}</Item>
@@ -30,11 +31,12 @@
 	<Partie numero={2} titre="Multiples et diviseurs" />
 		<LigneVide />
 		<Definition lignes={2}>
-			Dans une division euclidienne, si le reste est égal à 0, 
+			Dans une division euclidienne, si le reste est égal à 0,
 			le dividende est un multiple du diviseur.
 		</Definition>
+		<LigneVide />
 		<Exemples lignes={5}>
-			On peut dire que : 
+			On peut dire que :
 			<Item>
 				15 est un multiple de 5
 			</Item>

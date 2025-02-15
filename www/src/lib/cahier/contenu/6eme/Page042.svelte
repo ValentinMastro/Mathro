@@ -22,9 +22,9 @@
                 <td>Divisible par 3</td>
                 <td>La somme des chiffres<br> est dans la table de 3</td>
                 <td class="liste">
-                    <span class=vert>51 : 5 + 1 = 6</span>
-                    <span class=vert>48 : 4 + 8 = 12</span>
-                    <span class=rouge>217 : 2 + 1 + 7 = 10</span>
+                    <span class=vert>{@html math("51 \\longrightarrow 5 + 1 = 6")}</span>
+                    <span class=vert>{@html math("48 \\longrightarrow 4 + 8 = 12")}</span>
+                    <span class=rouge>{@html math("217 \\longrightarrow 2 + 1 + 7 = 10")}</span>
                 </td>
             </LigneTableau>
             <LigneTableau lignes={2}>

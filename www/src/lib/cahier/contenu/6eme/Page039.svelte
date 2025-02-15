@@ -21,7 +21,7 @@
         </Protocole>
         <LigneVide />
         <Exemple />
-        <Schema lignes={5}>
+        <Schema lignes={10}>
             {#snippet svg()}
                 <circle cx={200} cy={200} r={20} fill="black" />
                 <text x={200} y={200} font-size={100} text-anchor="middle" dy="-1em">A</text>
