@@ -17,24 +17,6 @@
             }
         });
     }
-    
-    $effect(() => {
-        const on_est_sur_mobile: boolean = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent);
-        const on_est_en_mode_portrait: boolean = window.innerHeight > window.innerWidth; // aspect_ratio < 1 ?
-        const on_demande_le_plein_ecran: boolean = $interface_navigateur.url.searchParams.get("plein_ecran") !== null;
-
-        if (on_est_sur_mobile) {
-            plein_ecran.set(true);
-            sur_mobile.set(true);
-        }
-        if (on_est_en_mode_portrait || on_demande_le_plein_ecran) {
-            plein_ecran.set(true);
-        }
-
-        numero_de_la_page.set(
-            parseInt($interface_navigateur.url.searchParams.get("page") ?? "0")
-        )
-    });
 
     function touche_pressee(event: KeyboardEvent) {
         switch (event.key) {
@@ -55,6 +37,25 @@
                 break;
         }
     }
+    
+    $effect(() => {
+        const on_est_sur_mobile: boolean = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent);
+        const on_est_en_mode_portrait: boolean = window.innerHeight > window.innerWidth; // aspect_ratio < 1 ?
+        const on_demande_le_plein_ecran: boolean = $interface_navigateur.url.searchParams.get("plein_ecran") !== null;
+
+        if (on_est_sur_mobile) {
+            plein_ecran.set(true);
+            sur_mobile.set(true);
+        }
+        if (on_est_en_mode_portrait || on_demande_le_plein_ecran) {
+            plein_ecran.set(true);
+        }
+
+        numero_de_la_page.set(
+            parseInt($interface_navigateur.url.searchParams.get("page") ?? "0")
+        )
+    });
+
 </script>
 
 <svelte:window on:keydown={touche_pressee} />
