@@ -58,10 +58,10 @@
                     {@html math("{\\color{red} (d)} \\perp {\\color{blue} (d')}")}
                 </Texte>
                 <Texte>
-                    {@html math("{\\color{blue} (d')} \\perp {\\color{green} (d'')}")}
+                    {@html math("{\\color{blue} (d')} \\perp {\\color{darkgreen} (d'')}")}
                 </Texte>
                 <Texte>
-                    De plus, {@html math("{\\color{red} (d)} // {\\color{green} (d'')}")}
+                    De plus, {@html math("{\\color{red} (d)} // {\\color{darkgreen} (d'')}")}
                 </Texte>
             {/snippet}
         </Schema>

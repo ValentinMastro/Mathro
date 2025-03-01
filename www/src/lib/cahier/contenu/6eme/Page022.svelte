@@ -78,8 +78,8 @@
             {#snippet html()}
                 <LigneVide />
                 <Texte>{@html math("{\\color{red} (d)} // {\\color{blue} (d')}")}</Texte>
-                <Texte>{@html math('{\\color{red} (d)}')} et {@html math("{\\color{green} (d'')}")}  sont sécantes en {@html math("\\text{I}")}.</Texte>
-                <Texte>{@html math("{\\color{blue} (d')}")} et {@html math("{\\color{green} (d'')}")}  sont sécantes en {@html math("\\text{K}")}.</Texte>
+                <Texte>{@html math('{\\color{red} (d)}')} et {@html math("{\\color{darkgreen} (d'')}")}  sont sécantes en {@html math("\\text{I}")}.</Texte>
+                <Texte>{@html math("{\\color{blue} (d')}")} et {@html math("{\\color{darkgreen} (d'')}")}  sont sécantes en {@html math("\\text{K}")}.</Texte>
             {/snippet}
         </Schema>
 </Contenu>
