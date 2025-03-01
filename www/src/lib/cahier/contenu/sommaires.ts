@@ -1,8 +1,8 @@
-export type Categories =   
-    "Nombres et calculs" | 
-    "Espace et géométrie" | 
-    "Grandeurs et mesures" | 
-    "Algorithmique et programmation" | 
+export type Categories =
+    "Nombres et calculs" |
+    "Espace et géométrie" |
+    "Grandeurs et mesures" |
+    "Algorithmique et programmation" |
     "Organisation et gestion de données";
 
 export function couleur_de_la_categorie(categorie: Categories) {
@@ -22,7 +22,7 @@ export function couleur_de_la_categorie(categorie: Categories) {
     }
 }
 
-export let categories_visibles = [
+export const categories_visibles = [
     "Nombres et calculs",
     "Espace et géométrie",
     "Grandeurs et mesures",
@@ -37,7 +37,7 @@ export type Chapitre = {
     attendus?: string[],
 }
 
-let sommaire_6eme: Chapitre[] = [
+const sommaire_6eme: Chapitre[] = [
     // Période 1
     { titre: "Nombres entiers", categories: ["Nombres et calculs"], premiere_page: 3,
         attendus: [
@@ -105,13 +105,13 @@ let sommaire_6eme: Chapitre[] = [
             "Constructions",
         ]
     },
-    { titre: "Conversions d'unités", categories: ["Nombres et calculs", "Grandeurs et mesures"],
+    { titre: "Conversions d'unités", categories: ["Nombres et calculs", "Grandeurs et mesures"], premiere_page: 34,
         attendus: [
             "Multiplier, diviser par 10, 100, 1 000",
             "Convertir des unités de longueurs ou de masse",
         ]
     },
-    { titre: "Symétrie axiale", categories: ["Espace et géométrie"],
+    { titre: "Symétrie axiale", categories: ["Espace et géométrie"], premiere_page: 38,
         attendus: [
             "Figure symétrique, axe de symétrie d’une figure, figures symétriques par rapport à un axe",
             "Constructions à l’équerre",
@@ -120,7 +120,7 @@ let sommaire_6eme: Chapitre[] = [
         ]
     },
     // Période 3
-    { titre: "Division euclidienne", categories: ["Nombres et calculs"],
+    { titre: "Division euclidienne", categories: ["Nombres et calculs"], premiere_page: 41,
         attendus: [
             "Vocabulaire (dividende, diviseur, quotient, reste, multiple, divisible)",
             "Critères de divisibilité par 2, 3, 5, 9 et 10",
@@ -128,7 +128,7 @@ let sommaire_6eme: Chapitre[] = [
             "Algorithme de calcul posé pour effectuer la division euclidienne d’un entier par un entier",
         ]
     },
-    { titre: "Aires et périmètres", categories: ["Espace et géométrie", "Grandeurs et mesures"],
+    { titre: "Aires et périmètres", categories: ["Espace et géométrie", "Grandeurs et mesures"], premiere_page: 43,
         attendus: [
             "Formules du périmètre d’un carré, d’un rectangle, de la longueur d’un cercle",
             "Différenciation périmètre et aire d’une figure",
@@ -136,7 +136,7 @@ let sommaire_6eme: Chapitre[] = [
             "Formules de l’aire d’un carré, d’un rectangle, d’un triangle, d’un disque",
         ]
     },
-    { titre: "Division décimale", categories: ["Nombres et calculs"],
+    { titre: "Division décimale", categories: ["Nombres et calculs"], premiere_page: 46,
         attendus: [
             "Algorithme de calcul posé pour effectuer la division d’un nombre décimal (entier ou non) par un nombre entier",
             "Utiliser des fractions pour exprimer un quotient",
@@ -218,7 +218,7 @@ let sommaire_6eme: Chapitre[] = [
     },
 ];
 
-let sommaire_5eme: Chapitre[] = [
+const sommaire_5eme: Chapitre[] = [
     // Période 1
     { titre: "Fractions", categories: ["Nombres et calculs"], premiere_page: 3,
         attendus: [
@@ -311,7 +311,7 @@ let sommaire_5eme: Chapitre[] = [
         ]
     },
     { titre: "Calculer avec des relatifs", categories: ["Nombres et calculs"],
-        attendus: [ 
+        attendus: [
             "Additionner deux nombres relatifs",
             "Soustraire des nombres décimaux relatifs",
             "Savoir que soustraire revient à additionner l’opposé",
@@ -415,7 +415,7 @@ let sommaire_5eme: Chapitre[] = [
     },
 ];
 
-let sommaire_4eme: Chapitre[] = [
+const sommaire_4eme: Chapitre[] = [
     { titre: "Opérations sur les nombres relatifs", categories: ["Nombres et calculs"], premiere_page: 3 },
     { titre: "Théorème de Pythagore", categories: ["Espace et géométrie", "Nombres et calculs", "Grandeurs et mesures"], premiere_page: 6 },
     { titre: "Fractions et proportionnalité", categories: ["Nombres et calculs"], premiere_page: 10 },
