@@ -9,7 +9,7 @@
 </script>
 
 <tr style="height: {$hauteur_ligne_cahier * lignes}px; {addStyle}">
-    {@render children()}
+    {@render children?.()}
 </tr>
 
 <style>

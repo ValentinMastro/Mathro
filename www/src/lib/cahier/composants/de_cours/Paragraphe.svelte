@@ -1,6 +1,6 @@
 <script lang="ts">
     import { type ParagrapheProps } from "./*";
-    let { addStyle = "", nom_du_paragraphe = "Paragraphe", couleur = "black", lignes = 1, children }: ParagrapheProps = $props();
+    let { addStyle = "", nom_du_paragraphe = "Paragraphe", couleur = "black", lignes = 1, children = undefined }: ParagrapheProps = $props();
 
     import { taille_texte, separateur_texte, hauteur_ligne_cahier } from "$lib/cahier/store";
 </script>
@@ -14,15 +14,9 @@
         </span>
     </div>
     <div class="contenu_de_section" style="height: {$hauteur_ligne_cahier * lignes}px">
-        {#if addStyle != ""}
-            <div style={addStyle}>
-                {@render children()}
-            </div>
-        {:else}
-            <div>
-                {@render children()}
-            </div>
-        {/if}
+        <div style="{addStyle}">
+            {@render children?.()}
+        </div>
     </div>
 </div>
 
