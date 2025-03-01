@@ -16,8 +16,6 @@
             }
         )
     )
-
-    $inspect(points_polygone_regulier);
 </script>
 
 <DansLaMarge>

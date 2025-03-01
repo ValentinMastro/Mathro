@@ -14,18 +14,19 @@
                 L'aire d'une figure est la mesure de la surface intérieure de la figure.
             </Definition>
             <LigneVide />
-            <Exemple />
-            <Schema lignes={5}>
-                {#snippet svg()}
-                    <polygon points="200,200 200,800 400,800 400,400 800,400 800,200" fill="none" stroke="black" stroke-width={8} />
-                {/snippet}
-                {#snippet html()}
-                    <LigneVide lignes={1} />
-                    <Texte>
-                        Cette figure a une aire de 5 carreaux.
-                    </Texte>
-                {/snippet}
-            </Schema>
+            <Exemple lignes={5}>
+                <Schema lignes={5}>
+                    {#snippet svg()}
+                        <polygon points="200,200 200,800 400,800 400,400 800,400 800,200" fill="none" stroke="black" stroke-width={8} />
+                    {/snippet}
+                    {#snippet html()}
+                        <LigneVide lignes={1} />
+                        <Texte>
+                            Cette figure a une aire de 5 carreaux.
+                        </Texte>
+                    {/snippet}
+                </Schema>
+            </Exemple>
 
         <SousPartie numero={2} titre="Formulaire" />
             <LigneVide />

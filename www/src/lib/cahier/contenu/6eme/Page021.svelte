@@ -50,41 +50,42 @@
 <Contenu>
     <Partie numero={3} titre="Repérage sur une droite graduée" />
         <LigneVide />
-        <Exemple />
-        <Schema lignes={10} aspectRatioSVG={1.7}>
-            {#snippet svg()}
-                <circle cx={abscisses["dixieme"]} cy={200} r={10} fill="red" />
-                <circle cx={abscisses["centieme"]} cy={500} r={12} fill="red" />
-                <circle cx={abscisses["millieme"]} cy={800} r={14} fill="red" />
-                <!-- Axes -->
-                {#each [200, 500, 800] as ordonnee_axe, index}
-                    <line x1={300} x2={1500} y1={ordonnee_axe} y2={ordonnee_axe} stroke="black" stroke-width={5} />
-                    {#each abscisses_graduations as {abscisse, taille_graduation}}
-                        <line x1={abscisse} x2={abscisse} y1={ordonnee_axe - taille_graduation} y2={ordonnee_axe + taille_graduation} stroke="black" stroke-width={5} />
+        <Exemple lignes={10}>
+            <Schema lignes={10} aspectRatioSVG={1.7}>
+                {#snippet svg()}
+                    <circle cx={abscisses["dixieme"]} cy={200} r={10} fill="red" />
+                    <circle cx={abscisses["centieme"]} cy={500} r={12} fill="red" />
+                    <circle cx={abscisses["millieme"]} cy={800} r={14} fill="red" />
+                    <!-- Axes -->
+                    {#each [200, 500, 800] as ordonnee_axe, index}
+                        <line x1={300} x2={1500} y1={ordonnee_axe} y2={ordonnee_axe} stroke="black" stroke-width={5} />
+                        {#each abscisses_graduations as {abscisse, taille_graduation}}
+                            <line x1={abscisse} x2={abscisse} y1={ordonnee_axe - taille_graduation} y2={ordonnee_axe + taille_graduation} stroke="black" stroke-width={5} />
+                        {/each}
+                        <!-- Graduations -->
+                        <text x={400} y={ordonnee_axe + 80} font-size={45} text-anchor="middle">{extremites[index]["debut"].toLocaleString("fr-FR")}</text>
+                        <text x={1400} y={ordonnee_axe + 80} font-size={45} text-anchor="middle">{extremites[index]["fin"].toLocaleString("fr-FR")}</text>
                     {/each}
-                    <!-- Graduations -->
-                    <text x={400} y={ordonnee_axe + 80} font-size={45} text-anchor="middle">{extremites[index]["debut"].toLocaleString("fr-FR")}</text>
-                    <text x={1400} y={ordonnee_axe + 80} font-size={45} text-anchor="middle">{extremites[index]["fin"].toLocaleString("fr-FR")}</text>
-                {/each}
-                <!-- Nombre -->
-                <text x={abscisses["dixieme"]} y={200 + 80} font-size={45} text-anchor="middle" fill="red">{nombre.toLocaleString("fr-FR")}</text>
-                <text x={abscisses["centieme"]} y={500 + 80} font-size={45} text-anchor="middle" fill="red">{nombre.toLocaleString("fr-FR")}</text>
-                {#if chiffres["millieme"] != 0}
-                    <text x={abscisses["millieme"]} y={800 + 80} font-size={45} text-anchor="middle" fill="red">{nombre.toLocaleString("fr-FR")}</text>
-                {/if}
-                <!-- Graduation supplémentaires -->
-                {#each [1, 2, 3, 4, 5, 6, 7, 8, 9] as chiffre} 
-                    <text x={400 + 100 * chiffre} y={200 - 30} font-size={35} text-anchor="middle">0,{chiffre}</text>
-                    <text x={400 + 100 * chiffre} y={500 - 30} font-size={35} text-anchor="middle">0,{chiffres["dixieme"]}{chiffre}</text>
-                    <text x={400 + 100 * chiffre} y={800 - 30} font-size={35} text-anchor="middle">0,{chiffres["dixieme"]}{chiffres["centieme"]}{chiffre}</text>
-                {/each}
-                <!-- Lignes de zoom -->
-                <line x1={400 + 100 * chiffres["dixieme"]} y1={200} x2={400} y2={500} stroke="green" stroke-width={5} />
-                <line x1={400 + 100 * (chiffres["dixieme"] + 1)} y1={200} x2={1400} y2={500} stroke="green" stroke-width={5} />
-                <line x1={400 + 100 * chiffres["centieme"]} y1={500} x2={400} y2={800} stroke="green" stroke-width={5} />
-                <line x1={400 + 100 * (chiffres["centieme"] + 1)} y1={500} x2={1400} y2={800} stroke="green" stroke-width={5} />
-            {/snippet}
-        </Schema>
+                    <!-- Nombre -->
+                    <text x={abscisses["dixieme"]} y={200 + 80} font-size={45} text-anchor="middle" fill="red">{nombre.toLocaleString("fr-FR")}</text>
+                    <text x={abscisses["centieme"]} y={500 + 80} font-size={45} text-anchor="middle" fill="red">{nombre.toLocaleString("fr-FR")}</text>
+                    {#if chiffres["millieme"] != 0}
+                        <text x={abscisses["millieme"]} y={800 + 80} font-size={45} text-anchor="middle" fill="red">{nombre.toLocaleString("fr-FR")}</text>
+                    {/if}
+                    <!-- Graduation supplémentaires -->
+                    {#each [1, 2, 3, 4, 5, 6, 7, 8, 9] as chiffre} 
+                        <text x={400 + 100 * chiffre} y={200 - 30} font-size={35} text-anchor="middle">0,{chiffre}</text>
+                        <text x={400 + 100 * chiffre} y={500 - 30} font-size={35} text-anchor="middle">0,{chiffres["dixieme"]}{chiffre}</text>
+                        <text x={400 + 100 * chiffre} y={800 - 30} font-size={35} text-anchor="middle">0,{chiffres["dixieme"]}{chiffres["centieme"]}{chiffre}</text>
+                    {/each}
+                    <!-- Lignes de zoom -->
+                    <line x1={400 + 100 * chiffres["dixieme"]} y1={200} x2={400} y2={500} stroke="green" stroke-width={5} />
+                    <line x1={400 + 100 * (chiffres["dixieme"] + 1)} y1={200} x2={1400} y2={500} stroke="green" stroke-width={5} />
+                    <line x1={400 + 100 * chiffres["centieme"]} y1={500} x2={400} y2={800} stroke="green" stroke-width={5} />
+                    <line x1={400 + 100 * (chiffres["centieme"] + 1)} y1={500} x2={1400} y2={800} stroke="green" stroke-width={5} />
+                {/snippet}
+            </Schema>
+        </Exemple>
 
         <LigneVide />
     <Partie numero={4} titre="Comparaison" />

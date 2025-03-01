@@ -27,21 +27,22 @@
             Si le point M est sur la droite (AB), on note {@html math("\\text{M} \\in (\\text{AB})")}.<br>
             Si le point A n'est pas sur le segment [BC], on note {@html math("\\text{A} \\notin [\\text{BC}]")}.
         </Notation>
-        <Exemples></Exemples>
-        <Schema lignes={5} aspectRatioSVG={4}>
-            {#snippet svg()}
-                <line x1="200" y1="200" x2="3600" y2="800" stroke="black" stroke-width="10"></line>
-                <line x1="300" x2="300" y1="170" y2="270" stroke="black" stroke-width="10"></line>
-                <line x1="2500" x2="2500" y1="570" y2="670" stroke="black" stroke-width="10"></line>
-                <!-- line qui passe par 2500 600 -->
-                <line x1="2500" x2="3200" y1="600" y2="300" stroke="black" stroke-width="10"></line>
-                <line x1="3200" x2="3200" y1="250" y2="350" stroke="black" stroke-width="10"></line>
-                <!-- Nom des points -->
-                <text x={200} y={400} font-size="150" fill="black">A</text>
-                <text x={2500} y={780} font-size="150" fill="black">B</text>
-                <text x={3200} y={200} font-size="150" fill="black">C</text>
-            {/snippet}
-        </Schema>
+        <Exemples lignes={5}>
+            <Schema lignes={5} aspectRatioSVG={4}>
+                {#snippet svg()}
+                    <line x1="200" y1="200" x2="3600" y2="800" stroke="black" stroke-width="10"></line>
+                    <line x1="300" x2="300" y1="170" y2="270" stroke="black" stroke-width="10"></line>
+                    <line x1="2500" x2="2500" y1="570" y2="670" stroke="black" stroke-width="10"></line>
+                    <!-- line qui passe par 2500 600 -->
+                    <line x1="2500" x2="3200" y1="600" y2="300" stroke="black" stroke-width="10"></line>
+                    <line x1="3200" x2="3200" y1="250" y2="350" stroke="black" stroke-width="10"></line>
+                    <!-- Nom des points -->
+                    <text x={200} y={400} font-size="150" fill="black">A</text>
+                    <text x={2500} y={780} font-size="150" fill="black">B</text>
+                    <text x={3200} y={200} font-size="150" fill="black">C</text>
+                {/snippet}
+            </Schema>
+        </Exemples>
         <LigneVide lignes={4} />
         <Schema lignes={5} aspectRatioSVG={3.4}>
             {#snippet svg()}

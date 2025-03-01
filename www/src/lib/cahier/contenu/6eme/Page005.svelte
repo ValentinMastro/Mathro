@@ -43,21 +43,22 @@
         </Notation>
         <LigneVide />
 
-        <Exemples></Exemples>
-        <Schema lignes={2} aspectRatioSVG={6}>
-            {#snippet svg()}
-                <line x1="{2*6*1000/12}" x2="{(10+1)*6*1000/12}" y1="500" y2="500" stroke="black" stroke-width="15" />
-                <path d="M {(10+1)*6*1000/12} 500 l -100 -100 l 0 200 z" fill="black" />
-                {#each Array(9) as _, i}
-                    <line x1={(i+2) * 6*1000/12} y1="450" x2={(i+2) * 6*1000/12} y2="550" stroke="black" stroke-width="20" />
-                {/each}
-                <text x="{(2)*6*1000/12}" y="800" font-size="250" text-anchor="middle">0</text>
-                <text x="{(3)*6*1000/12}" y="800" font-size="250" text-anchor="middle">1</text>
-                {#each [{point: "A", abscisse: 0}, {point: "B", abscisse: 1}, {point: "C", abscisse: 2}, {point: "D", abscisse: 4}, {point: "E", abscisse: 7}] as {point, abscisse}}
-                    <text x="{(abscisse+2)*6*1000/12}" y="330" font-size="300" text-anchor="middle">{point}</text>
-                {/each}
-            {/snippet}
-        </Schema>
+        <Exemples lignes={2}>
+            <Schema lignes={2} aspectRatioSVG={6}>
+                {#snippet svg()}
+                    <line x1="{2*6*1000/12}" x2="{(10+1)*6*1000/12}" y1="500" y2="500" stroke="black" stroke-width="15" />
+                    <path d="M {(10+1)*6*1000/12} 500 l -100 -100 l 0 200 z" fill="black" />
+                    {#each Array(9) as _, i}
+                        <line x1={(i+2) * 6*1000/12} y1="450" x2={(i+2) * 6*1000/12} y2="550" stroke="black" stroke-width="20" />
+                    {/each}
+                    <text x="{(2)*6*1000/12}" y="800" font-size="250" text-anchor="middle">0</text>
+                    <text x="{(3)*6*1000/12}" y="800" font-size="250" text-anchor="middle">1</text>
+                    {#each [{point: "A", abscisse: 0}, {point: "B", abscisse: 1}, {point: "C", abscisse: 2}, {point: "D", abscisse: 4}, {point: "E", abscisse: 7}] as {point, abscisse}}
+                        <text x="{(abscisse+2)*6*1000/12}" y="330" font-size="300" text-anchor="middle">{point}</text>
+                    {/each}
+                {/snippet}
+            </Schema>
+        </Exemples>
         <Texte addStyle="color: rgb(0, 0, 139);">
             {@html math("\\text{A}(0) \\quad \\text{B}(1) \\quad \\text{C}(2) \\quad \\text{D}(4) \\quad \\text{E}(7)")}
         </Texte>

@@ -19,12 +19,13 @@
 		<Notation>
 			On note les deux extrémités du segment entre crochets.
 		</Notation>
-		<Exemples></Exemples>
-		<Schema lignes={3} aspectRatioSVG={6}>
-			{#snippet svg()}
-				{@render segment()}
-			{/snippet}
-		</Schema>
+		<Exemples lignes={3}>
+			<Schema lignes={3} aspectRatioSVG={6}>
+				{#snippet svg()}
+					{@render segment()}
+				{/snippet}
+			</Schema>
+		</Exemples>
 		<LigneVide />
 		<Definition lignes={2}>
 			Le milieu d'un segment est le point qui partage le segment en deux parties égales.

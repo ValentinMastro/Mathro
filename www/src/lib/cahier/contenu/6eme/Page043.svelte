@@ -17,18 +17,19 @@
                 Le périmètre d'une figure est la longueur de son contour.
             </Definition>
             <LigneVide />
-            <Exemple />
-            <Schema lignes={5}>
-                {#snippet svg()}
-                    <path d="M 200 200 L 800 200 L 800 800 L 600 800 L 600 400 L 200 400 Z" fill="none" stroke="black" stroke-width={8} />
-                {/snippet}
-                {#snippet html()}
-                    <LigneVide lignes={2} />
-                    <Texte>
-                        Cette figure a un périmètre de 12 carreaux.
-                    </Texte>
-                {/snippet}
-            </Schema>
+            <Exemple lignes={5}>
+                <Schema lignes={5}>
+                    {#snippet svg()}
+                        <path d="M 200 200 L 800 200 L 800 800 L 600 800 L 600 400 L 200 400 Z" fill="none" stroke="black" stroke-width={8} />
+                    {/snippet}
+                    {#snippet html()}
+                        <LigneVide lignes={2} />
+                        <Texte>
+                            Cette figure a un périmètre de 12 carreaux.
+                        </Texte>
+                    {/snippet}
+                </Schema>
+            </Exemple>
 
         <SousPartie numero={2} titre="Formulaire" />
             <LigneVide />

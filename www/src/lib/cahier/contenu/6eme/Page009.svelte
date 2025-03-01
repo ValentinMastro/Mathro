@@ -2,7 +2,7 @@
     import { Chapitre, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-	import { math, strong } from 'mathlifier';
+	import { math } from 'mathlifier';
 
 </script>
 
