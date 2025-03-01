@@ -1,3 +1,5 @@
+import type { Snippet } from "svelte";
+
 export { default as Paragraphe } from "./Paragraphe.svelte";
     export { default as Definition } from "./Definition.svelte";
     export { default as Demonstration } from "./Demonstration.svelte";
@@ -28,5 +30,5 @@ export interface ParagrapheProps {
     nom_du_paragraphe?: string,
     couleur?: string,
     lignes?: number,
-    children?: any,
+    children?: Snippet,
 }
