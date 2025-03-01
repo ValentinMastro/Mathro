@@ -33,8 +33,14 @@
             <input id="largeur" type="range" min="0" max="100" bind:value={$largeur_plein_ecran} />
             <Scroll pages={pages} />
         {:else}
-            <PageDeCahier numero_de_page={$numero_de_la_page} contenu={pages[$numero_de_la_page].default} />
-            <PageDeCahier numero_de_page={$numero_de_la_page + 1} contenu={pages[$numero_de_la_page + 1].default} />
+            {@const PageGauche: Component = pages[$numero_de_la_page].default}
+            {@const PageDroite: Component = pages[$numero_de_la_page + 1].default}
+            <PageDeCahier numero_de_page={$numero_de_la_page}>
+                <PageGauche />
+            </PageDeCahier>
+            <PageDeCahier numero_de_page={$numero_de_la_page + 1}>
+                <PageDroite />
+            </PageDeCahier>
         {/if}
     {/await}
 </div>

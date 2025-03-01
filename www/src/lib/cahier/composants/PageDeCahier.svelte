@@ -1,14 +1,21 @@
 <script lang="ts">
-    interface Props {
-        numero_de_page: number,
-        contenu: any,
-    }
-
-    let { numero_de_page, contenu }: Props = $props();
-
+    import type { Snippet } from "svelte";
     import { plein_ecran, largeur_plein_ecran, taille_numero_de_page, taille_page } from "$lib/cahier/store";
 
+    interface Props {
+        numero_de_page: number,
+        children: Snippet,
+    }
+
+    let { numero_de_page, children }: Props = $props();
+        
+    // Le 'composant' permet de récupérer les dimensions de la fenêtre
     let composant: HTMLDivElement;
+    
+    let is_seyes: string = $derived(numero_de_page >= 3 ? "seyes" : "");
+    let visibility: string = $derived((numero_de_page == 0 || numero_de_page == 97) ? "hidden" : "visible");
+    let is_full_screen: string = $derived($plein_ecran ? `width: ${$largeur_plein_ecran}%` : `height: 100%` )
+    
     $effect(() => {
         const resizeObserver = new ResizeObserver(() => {
             if (composant) {
@@ -21,8 +28,8 @@
 
 <svelte:options runes={true} />
 
-<div bind:this={composant} class="page {numero_de_page >= 3 ? "seyes" : ""}" style="visibility: {numero_de_page == 0 || numero_de_page == 97 ? "hidden" : "visible"}; {$plein_ecran ? "width: " + $largeur_plein_ecran + "%" : "height: 100%;"}">
-    <svelte:component this={contenu} />
+<div bind:this={composant} class="page {is_seyes}" style="visibility: {visibility}; {is_full_screen};">
+    {@render children()}
     <span class="numero" style="font-size: {$taille_numero_de_page}px">Page {numero_de_page}</span>
 </div>
 
