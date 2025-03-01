@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { Component } from "svelte";
+    // TODO: depreciated
     import { page as interface_navigateur } from "$app/stores";
     const scroll_jusqua_la_page: number = parseInt(
         $interface_navigateur.url.searchParams.get("page") ?? "1"
