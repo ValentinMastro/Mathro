@@ -1,4 +1,5 @@
 <script lang="ts">
+    import type { Component } from "svelte";
     import { page as interface_navigateur } from "$app/stores";
     const scroll_jusqua_la_page: number = parseInt(
         $interface_navigateur.url.searchParams.get("page") ?? "1"
@@ -19,7 +20,10 @@
 <div id="scroll" style="gap: {gap}px;">
     {#each pages as page, i}
         {#if i != 0 && i != nombre_de_pages($niveau)}
-            <PageDeCahier numero_de_page={i} contenu={page.default} />
+            {@const PageNumero: Component = page.default }
+            <PageDeCahier numero_de_page={i}> 
+                <PageNumero />
+            </PageDeCahier>
         {/if}
         <div class="fin_de_page"></div>
     {/each}
