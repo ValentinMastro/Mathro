@@ -5,19 +5,19 @@
 
 {#if children === undefined}
     <Texte>
-        <span id="exemple">
-            Exemple :
+        <span id="illustration">
+            Illustration :
         </span>
     </Texte>
 {:else}
-    <Paragraphe {lignes} nom_du_paragraphe="Exemple" couleur="rgb(0, 0, 138)" {addStyle}>
+    <Paragraphe {lignes} nom_du_paragraphe="Illustration" couleur="black" {addStyle}>
         {@render children()}
     </Paragraphe>
 {/if}
 
 <style>
-    #exemple {
-        color: rgb(0, 0, 138);
+    #illustration {
+        color: black;
         text-decoration: underline;
     }
 </style>

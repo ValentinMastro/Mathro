@@ -1,8 +1,9 @@
 <script lang="ts">
     import { type ParagrapheProps } from "./*";
-    let { addStyle = "", nom_du_paragraphe = "Paragraphe", couleur = "black", lignes = 1, children = undefined }: ParagrapheProps = $props();
+    let { addStyle = "", nom_du_paragraphe = "Paragraphe", couleur = "black", lignes = 1, lignes_vides = 1, children = undefined }: ParagrapheProps = $props();
 
     import { taille_texte, separateur_texte, hauteur_ligne_cahier } from "$lib/cahier/store";
+    import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 </script>
 
 <svelte:options runes={true} />
@@ -19,6 +20,7 @@
         </div>
     </div>
 </div>
+<LigneVide lignes={lignes_vides} />
 
 <style>
     .titre_de_section {

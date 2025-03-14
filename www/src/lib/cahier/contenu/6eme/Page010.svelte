@@ -19,12 +19,10 @@
 
 <Contenu>
     <Partie numero={2} titre="Égalités de fractions" />
-        <LigneVide />
         <Propriete lignes={2}>
             Si on multiplie le numérateur et le dénominateur <u>par le même nombre</u>,
             alors on obtient une deuxième fraction égale à la première.
         </Propriete>
-        <LigneVide />
         <Exemples lignes={6}>
             <Item lignes={2}>
                 {@html math(`\\dfrac{2}{3} _{\\xrightarrow{\\color{red} \\times ${facteur_1}}}^{\\xrightarrow[\\color{red} \\times ${facteur_1}]{}} \\dfrac{${2*facteur_1}}{${3*facteur_1}}`)}

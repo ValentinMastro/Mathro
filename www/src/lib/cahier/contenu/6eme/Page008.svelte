@@ -13,13 +13,12 @@
 </script>
 
 <DansLaMarge>
-    <LigneVide lignes={20} />
+    <LigneVide lignes={22} />
     <Slider bind:valeur={t} min={0} max={1} pas={0.01} />
 </DansLaMarge>
 
 <Contenu>
     <Partie numero={2} titre="Alignement et appartenance" />
-        <LigneVide />
         <Definition lignes={2}>
             Trois points sont alignés s'il est possible de les placer sur la même droite.
         </Definition>
@@ -43,7 +42,7 @@
                 {/snippet}
             </Schema>
         </Exemples>
-        <LigneVide lignes={4} />
+        <LigneVide lignes={3} />
         <Schema lignes={5} aspectRatioSVG={3.4}>
             {#snippet svg()}
                 <line x1="200" y1="200" x2="3000" y2="700" stroke="black" stroke-width="10"></line>

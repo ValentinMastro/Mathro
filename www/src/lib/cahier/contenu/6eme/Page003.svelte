@@ -27,7 +27,7 @@
 <Chapitre titre="Nombres entiers" />
     
 <DansLaMarge apres_un_titre={true}>
-    <LigneVide lignes={5} />
+    <LigneVide lignes={6} />
     <Nombre bind:valeur={numero_1} min={1000} max={9999}/>
     <Nombre bind:valeur={numero_2} min={10000000} max={99999999}/>
     <Nombre bind:valeur={numero_3} min={1000000000} max={9999999999}/>
@@ -66,7 +66,6 @@
 <Contenu apres_un_titre={true}>
     <Partie numero={1} titre="Chiffres et nombres" />
         <SousPartie numero={1} titre="Tableau de numération" />
-        <LigneVide />
         <Tableau>
             <LigneTableau>
                 <td colspan={3}>Milliards</td>
@@ -85,8 +84,8 @@
             <LigneTableau>{@render ligne_de_chiffres(1, 4, 4, 4, numero_2)}</LigneTableau>
             <LigneTableau>{@render ligne_de_chiffres(2, 9, 5, 6, numero_3)}</LigneTableau>
         </Tableau>
-
         <LigneVide />
+
         <SousPartie numero={2} titre="Chiffres et nombres" />
             <Exemples lignes={6}>
                 {@render ligne_de_texte(0, numero_1, 2, "le chiffre des centaines")}
@@ -96,6 +95,11 @@
                 {@render ligne_de_texte_nombre(4, numero_2, 4, "le nombre des dizaines de milliers")}
                 {@render ligne_de_texte_nombre(5, numero_3, 6, "le nombre des millions")}
             </Exemples>
+
+        <SousPartie numero={3} titre="Décomposition" />
+            <Propriete lignes={2}>
+                Il est possible de décomposer un nombre selon la position de ses chiffres.
+            </Propriete>
 </Contenu>
 
 <style>

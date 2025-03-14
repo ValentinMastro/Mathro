@@ -1,7 +1,6 @@
 <script lang="ts">
-    import { Contenu, Partie } from "$lib/cahier/composants/de_chapitrage/*";
+    import { Contenu } from "$lib/cahier/composants/de_chapitrage/*";
     import { Definition, Notation, Exemples, Schema, Item, Exemple } from "$lib/cahier/composants/de_cours/*";
-	import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 </script>
 
 {#snippet segment()}
@@ -26,14 +25,14 @@
 				{/snippet}
 			</Schema>
 		</Exemples>
-		<LigneVide />
+
 		<Definition lignes={2}>
 			Le milieu d'un segment est le point qui partage le segment en deux parties égales.
 		</Definition>
 		<Exemple>
 			M est le milieu du segment [UV].
 		</Exemple>
-		<LigneVide />
+
 		<Schema lignes={3} aspectRatioSVG={6}>
 			{#snippet svg()}
 				{@render segment()}

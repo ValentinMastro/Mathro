@@ -73,12 +73,10 @@
     </Schema>
     <LigneVide lignes={5} />
     <Partie numero={1} titre="Partager l'unité" />
-        <LigneVide />
         <Definition lignes={2}>
             Si l'unité est partagée en {@html math("k")}  morceaux, en sélectionnant 1 morceau parmi les {@html math("k")}, 
             on représente la fraction {@html math("\\frac{1}{k}")}.
         </Definition>
-        <LigneVide />
         <Schema lignes={5} aspectRatioSVG={3}>
             {#snippet svg()}
                 <line x1={300} x2={3000} y1={400} y2={400} stroke="black" stroke-width={12} />

@@ -2,11 +2,14 @@ import type { Snippet } from "svelte";
 
 export { default as Paragraphe } from "./Paragraphe.svelte";
     export { default as Definition } from "./Definition.svelte";
+    export { default as Definitions } from "./Definitions.svelte";
     export { default as Demonstration } from "./Demonstration.svelte";
+    export { default as Convention } from "./Convention.svelte";
     export { default as Exemple } from "./Exemple.svelte";
     export { default as Exemples } from "./Exemples.svelte";
     export { default as Formule } from "./Formule.svelte";
     export { default as Formules } from "./Formules.svelte";
+    export { default as Illustration } from "./Illustration.svelte";
     export { default as Item } from "./Item.svelte";
     export { default as Methode } from "./Methode.svelte";
     export { default as Nomenclature } from "./Nomenclature.svelte";
@@ -30,5 +33,6 @@ export interface ParagrapheProps {
     nom_du_paragraphe?: string,
     couleur?: string,
     lignes?: number,
+    lignes_vides?: number,
     children?: Snippet,
 }

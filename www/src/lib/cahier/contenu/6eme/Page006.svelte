@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Exemples, Notation, Schema } from '$lib/cahier/composants/de_cours/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
 	import { math } from 'mathlifier';
 </script>
@@ -10,7 +9,6 @@
 
 <Contenu apres_un_titre={true}>
 	<Partie numero={1} titre="Droite, demi-droite, segment, milieu" />
-		<LigneVide />
 		<Definition lignes={2}>
 			Une <i>droite</i> est un ensemble de points alignés. <br />
 			Elle se prolonge à l'infini des deux côtés.

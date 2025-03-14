@@ -12,27 +12,23 @@
 <Contenu apres_un_titre>
     <Partie numero={1} titre="Périmètres" />
         <SousPartie numero={1} titre="Concept" />
-            <LigneVide />
             <Definition>
                 Le périmètre d'une figure est la longueur de son contour.
             </Definition>
-            <LigneVide />
-            <Exemple lignes={5}>
+            <Exemple />
                 <Schema lignes={5}>
                     {#snippet svg()}
                         <path d="M 200 200 L 800 200 L 800 800 L 600 800 L 600 400 L 200 400 Z" fill="none" stroke="black" stroke-width={8} />
                     {/snippet}
                     {#snippet html()}
-                        <LigneVide lignes={2} />
+                        <LigneVide lignes={1} />
                         <Texte>
                             Cette figure a un périmètre de 12 carreaux.
                         </Texte>
                     {/snippet}
                 </Schema>
-            </Exemple>
 
         <SousPartie numero={2} titre="Formulaire" />
-            <LigneVide />
             <Formules lignes={4}>
                 <Item>
                     {@html math("𝒫_{\\text{carré}} = 4 \\times \\text{côté}")}
@@ -47,7 +43,6 @@
                     {@html math("𝒫_{\\text{cercle}} = 2 \\times \\pi \\times \\text{rayon}")}
                 </Item>
             </Formules>
-            <LigneVide />
             <Schema lignes={5} aspectRatioSVG={4}>
                 {#snippet svg()}
                     <!-- Carré -->
