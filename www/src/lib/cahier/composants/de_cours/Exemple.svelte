@@ -1,23 +1,20 @@
 <script lang="ts">
-    import { Texte, Paragraphe, type ParagrapheProps } from "./*";
-    let { addStyle = "", lignes = 1, children }: ParagrapheProps = $props();
+    import { Paragraphe, type ParagrapheProps } from "./*";
+    let {
+        addStyle,
+        nom_du_paragraphe = "Exemple",
+        couleur = "bleu",
+        lignes,
+        lignes_vides,
+        children
+    }: ParagrapheProps = $props();
 </script>
 
-{#if children === undefined}
-    <Texte>
-        <span id="exemple">
-            Exemple :
-        </span>
-    </Texte>
-{:else}
-    <Paragraphe {lignes} nom_du_paragraphe="Exemple" couleur="rgb(0, 0, 138)" {addStyle}>
-        {@render children()}
-    </Paragraphe>
-{/if}
-
-<style>
-    #exemple {
-        color: rgb(0, 0, 138);
-        text-decoration: underline;
-    }
-</style>
+<Paragraphe 
+    {addStyle} 
+    {nom_du_paragraphe} 
+    {couleur}
+    {lignes}
+    {lignes_vides}
+    {children}
+/>

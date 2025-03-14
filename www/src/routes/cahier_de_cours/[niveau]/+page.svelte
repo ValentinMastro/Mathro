@@ -75,4 +75,11 @@
     :global(.mathlifier-display) {
         margin-bottom: -2.4ex;
     }
+
+    :global(*) {
+        --bleu: rgb(0, 0, 138);
+        --rouge: rgb(225, 0, 0);
+        --vert: rgb(0, 138, 0);
+        --noir: black;
+    }
 </style>

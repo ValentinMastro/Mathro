@@ -28,10 +28,12 @@ export { default as LigneTableau } from "./LigneTableau.svelte";
 
 export { default as Schema } from "./Schema.svelte"; 
 
+export type couleur = "bleu" | "rouge" | "vert" | "noir";
+
 export interface ParagrapheProps {
     addStyle?: string,
     nom_du_paragraphe?: string,
-    couleur?: string,
+    couleur?: couleur,
     lignes?: number,
     lignes_vides?: number,
     children?: Snippet,

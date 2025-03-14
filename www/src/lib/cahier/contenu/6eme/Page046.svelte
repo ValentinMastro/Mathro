@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu } from "$lib/cahier/composants/de_chapitrage/*";
 	import { Definition, Item, Propriete, Exemples, Schema } from "$lib/cahier/composants/de_cours/*";
-
-	import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 </script>
 
 <Chapitre titre="Division décimale" />
@@ -11,7 +9,7 @@
     <Definition lignes={2}>
         Contrairement à la division euclidienne, la division décimale admet pour quotient un nombre décimal.
     </Definition>
-    <LigneVide />
+
     <Propriete lignes={5}>
         Lorsque l'on effectue une division décimale :
         <Item lignes={2}>
@@ -23,7 +21,7 @@
             OU que les restes se répètent en boucle.
         </Item>
     </Propriete>
-    <LigneVide />
+
     <Exemples>
         <Schema>
             

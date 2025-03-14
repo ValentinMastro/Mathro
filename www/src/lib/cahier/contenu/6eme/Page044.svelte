@@ -9,7 +9,7 @@
 <Contenu>
     <Partie numero={2} titre="Aires" />
         <SousPartie numero={1} titre="Concept" />
-            <Definition>
+            <Definition lignes_vides={0}>
                 L'aire d'une figure est la mesure de la surface intérieure de la figure.
             </Definition>
             <Exemple />
@@ -43,7 +43,7 @@
             </Schema>
 
         <SousPartie numero={2} titre="Formulaire" />
-            <Formules lignes={4}>
+            <Formules lignes={4} lignes_vides={0}>
                 <Item>
                     {@html math("𝒜_{\\text{carré}} = \\text{côté} \\times \\text{côté}")}
                 </Item>

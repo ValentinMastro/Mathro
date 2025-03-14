@@ -7,7 +7,7 @@
     import { math } from "mathlifier";
 </script>
 
-<Chapitre titre="Horaires, Durées" />
+<Chapitre titre="Durées, Horaires" />
 
 <Contenu apres_un_titre>
     <Partie numero={1} titre="Unités de mesure du temps" />
