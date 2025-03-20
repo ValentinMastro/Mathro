@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from "$lib/cahier/composants/de_chapitrage/*";
-	import { Definition, Item, Ligne, LigneTableau, Notation, Schema, Tableau } from "$lib/cahier/composants/de_cours/*";
+	import { Definition, Item, LigneTableau, Notation, Schema, Tableau } from "$lib/cahier/composants/de_cours/*";
 	import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 
     import { math } from "mathlifier";
