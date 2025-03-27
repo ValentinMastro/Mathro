@@ -7,14 +7,13 @@
 
 <Contenu>
     <Partie numero={3} titre="La fraction d'un nombre" />
-        <LigneVide />
         <SousPartie numero={1} titre="Multiplier un nombre et une fraction" />
-            <LigneVide />
             <Methode lignes={2}>
                 Multiplier un nombre par une fraction, c'est multiplier le nombre par le numérateur, et diviser par le dénominateur.
             </Methode>
-            <Exemple lignes={4}>
-                Calculons {@html math("3 \\times \\frac{2}{5}")}.
+            <Exemple lignes={5}>
+                <LigneVide />
+                Calculons {@html math("3 \\times \\dfrac{2}{5}")}
                 <Item>
                     {@html math("3 \\times 2 \\div 5 = 6 \\div 5 = 1,2")}
                 </Item>
@@ -26,9 +25,7 @@
                 </Item>
             </Exemple>
 
-            <LigneVide />
         <SousPartie numero={2} titre="Les pourcentages" />
-            <LigneVide />
             <Definition>
                 Un pourcentage est une fraction dont le dénominateur est 100.
             </Definition>

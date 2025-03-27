@@ -4,7 +4,7 @@
     import { Slider } from "$lib/cahier/composants/de_marge/*";
 	import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 
-    import { math, display } from "mathlifier";
+    import { math } from "mathlifier";
 
     let nombre_de_points: number = 1000;
     let points_aleatoires = Array(nombre_de_points).fill(0).map(() => Math.random() * 2 * Math.PI);
@@ -26,7 +26,6 @@
 
 <Contenu apres_un_titre>
     <Partie numero={1} titre="Autour du cercle" />
-        <LigneVide />
         <Definition lignes={4}>
             Soit un point {@html math("\\text{O}")}. <br>
             Soit une distance {@html math("r")}. <br>

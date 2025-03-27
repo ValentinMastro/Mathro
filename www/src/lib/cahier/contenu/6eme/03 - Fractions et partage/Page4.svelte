@@ -7,7 +7,6 @@
 
 <Contenu>
     <Partie numero={4} titre="Additionner des fractions" />
-        <LigneVide />
         <Propriete lignes={2}>
             Pour additionner des fractions, il faut qu'elles aient le même dénominateur.
         </Propriete>
@@ -26,9 +25,7 @@
             </Item>
         </Exemples>
 
-        <LigneVide />
     <Partie numero={5} titre="Comparer des fractions" />
-        <LigneVide />
         <SousPartie numero={1} titre="Comparer des fractions à 1" />
             <Propriete lignes={4}>
                 <Item lignes={2}>

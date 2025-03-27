@@ -7,7 +7,6 @@
 
 <Contenu>
     <SousPartie numero={2} titre="Comparer des fractions entre elles" />
-        <LigneVide />
         <Propriete lignes={4}>
             <Item lignes={2}>
                 Si deux fractions ont le même dénominateur, alors la fraction avec le plus grand numérateur est la plus grande.

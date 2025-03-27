@@ -64,8 +64,6 @@
             parseInt(navigateur.url.searchParams.get("page") ?? "0")
         )
     });
-
-    $inspect($numero_de_la_page);
 </script>
 
 <svelte:window on:keydown={touche_pressee} />
