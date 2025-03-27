@@ -7,27 +7,31 @@
 
     let pages_chargees: number = $state(0);
 
-    async function charger_page(numero_de_page: number) {
-        let page: Component = await import(`$lib/cahier/contenu/${$niveau}eme/Page${numero_de_page.toString().padStart(3, "0")}.svelte`);
+    let liste_des_pages = import.meta.glob("$lib/cahier/composants/{PageDeGarde,sommaire/Sommaire}.svelte");
+
+    switch ($niveau) {
+        case 4: liste_des_pages = import.meta.glob("$lib/cahier/{composants/{Page0,PageDeGarde,sommaire/Sommaire},contenu/4eme/*/*}.svelte"); break;
+        case 5: liste_des_pages = import.meta.glob("$lib/cahier/{composants/{Page0,PageDeGarde,sommaire/Sommaire},contenu/5eme/*/*}.svelte"); break;
+        case 6: liste_des_pages = import.meta.glob("$lib/cahier/{composants/{Page0,PageDeGarde,sommaire/Sommaire},contenu/6eme/*/*}.svelte"); break;
+        default: throw new Error("Niveau inconnu");
+    }
+
+    async function charger_page(path: string) {
+        let page: Component = await import(path);
         pages_chargees += 1;
         return page;
     }
 
     async function charger_pages() {
-        var range = Array(nombre_de_pages($niveau)).keys();
         return Promise.all(
-            [...range].map(
-                async (i) => {
-                    return await charger_page(i);
-                }
-            )
-        )
+            Object.entries(liste_des_pages).map(async ([key, _value]: [string, unknown]) => charger_page(key))
+        );
     }
 </script>
 
 <div id="zone">
     {#await charger_pages() }
-        <p>Chargement... {pages_chargees}/{nombre_de_pages($niveau)}</p>
+        <p>Chargement...</p>
     {:then pages}
         {#if $plein_ecran}
             <input id="largeur" type="range" min="0" max="100" bind:value={$largeur_plein_ecran} />

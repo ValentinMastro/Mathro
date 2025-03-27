@@ -1,4 +1,4 @@
-import { writable, derived } from 'svelte/store';
+import { writable, derived, type Readable } from 'svelte/store';
 
 export let numero_de_la_page = writable(0);
 export let niveau = writable<3 | 4 | 5 | 6>(6);
@@ -7,18 +7,23 @@ export let plein_ecran = writable(false);
 export let largeur_plein_ecran = writable(100);
 export let sur_mobile = writable(false);
 
-export function nombre_de_pages(niveau: 3 | 4 | 5 | 6): number {
-    switch (niveau) {
-        case 3:
-            return 0;
-        case 4:
-            return 97;
-        case 5:
-            return 97;
-        case 6:
-            return 97;
+export let liste_des_pages: Readable<Record<string, () => Promise<unknown>>> = derived([niveau], ([$niveau]) => {
+    switch ($niveau) {
+        case 4: import.meta.glob("$lib/cahier/{composants/{Page0,PageDeGarde,sommaire/Sommaire},contenu/4eme/*/*}.svelte"); break;
+        case 5: import.meta.glob("$lib/cahier/{composants/{Page0,PageDeGarde,sommaire/Sommaire},contenu/5eme/*/*}.svelte"); break;
+        case 6: import.meta.glob("$lib/cahier/{composants/{Page0,PageDeGarde,sommaire/Sommaire},contenu/6eme/*/*}.svelte"); break;
+        default: throw new Error("Niveau inconnu");
     }
-}
+});
+
+export let nombre_de_pages = derived([niveau], ([$niveau]) => {
+    switch ($niveau) {
+        case 4|5|6:
+            return 97;
+        default:
+            return 0;
+    }
+});
 
 export let taille_page = writable(0);
 export let taille_sommaire = derived([taille_page], ([$taille_page]) => {
