@@ -9,7 +9,7 @@
     import { nombre_de_pages, niveau, taille_page } from "$lib/cahier/store";
     import PageDeCahier from "./PageDeCahier.svelte";
 
-    let { pages } = $props();
+    let { pages }: {pages: Component[]} = $props();
 
     const gap = 8;
 
@@ -20,8 +20,8 @@
 
 <div id="scroll" style="gap: {gap}px;">
     {#each pages as page, i}
-        {#if i != 0 && i != nombre_de_pages($niveau)}
-            {@const PageNumero: Component = page.default }
+        {#if i != 0 && i != $nombre_de_pages}
+            {@const PageNumero: Component = page }
             <PageDeCahier numero_de_page={i}> 
                 <PageNumero />
             </PageDeCahier>
