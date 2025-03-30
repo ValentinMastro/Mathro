@@ -1,56 +1,30 @@
 <script lang="ts">
-    import { Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-    import { Propriete, Item, Exemples } from '$lib/cahier/composants/de_cours/*';
+    import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
+    import { Definition, Exemples, Item } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-
     import { math } from 'mathlifier';
 </script>
 
 <Contenu>
-    <Partie numero={2} titre="Les opérations de base" />
-        <SousPartie numero={1} titre="Addition et soustraction" />
+    <SousPartie numero={2} titre="Fractions et nombres rationnels" />
+        <Definition lignes={2}>
+            Une fraction est un moyen d'écrire le résultat d'une division entre deux nombres entiers :
+            le numérateur et le dénominateur.
+        </Definition>
+        <Definition lignes={2}>
+            S'il existe une division entre deux nombres entiers égale à un nombre, alors ce nombre est <i>rationnel</i>.
+        </Definition>
+        <Exemples lignes={5}>
+            <Item>
+                {@html math('0{,}75')} est rationnel car {@html math('0{,}75 = \\dfrac{3}{4}')}
+            </Item>
             <LigneVide />
-            <Propriete lignes={6}>
-                Pour additionner deux nombres relatifs :
-                <Item lignes={2}>
-                    s'ils sont de même signe, la somme a le même signe et on additionne les distances à zéro
-                    ;
-                </Item>
-                <Item lignes={3}>
-                    s'ils sont de signes différents, le signe de la somme est celui du terme de la plus
-                    grande distance à zéro, et on soustrait les distances à zéro.
-                </Item>
-            </Propriete>
-            <Exemples lignes={4}>
-                <Item>
-                    {@html math("17 + 5 = 22")}
-                </Item>
-                <Item>
-                    {@html math("12 + (-4) = 8")}
-                </Item>
-                <Item>
-                    {@html math("-3 + (-6) = -9")}
-                </Item>
-                <Item>
-                    {@html math("-5 + (+14) = 9")}
-                </Item>
-            </Exemples>
-            <Propriete>
-                Soustraire un nombre revient à ajouter son opposé
-            </Propriete>
-            <Exemples lignes={4}>
-                <Item>
-                    {@html math("124 - 95 = 29")}
-                </Item>
-                <Item>
-                    {@html math("12 - (-4) = 12 + (+4) = 16")}
-                </Item>
-                <Item>
-                    {@html math("-12 - (+6) = -12 + (-6) = -18")}
-                </Item>
-                <Item>
-                    {@html math("-89 - (-51) = -89 + (+51) = -38")}
-                </Item>
-            </Exemples>
-        
+            <Item>
+                {@html math('0{,}17')} est rationnel car {@html math('0{,}17 = \\dfrac{17}{100}')}
+            </Item>
+            <LigneVide lignes={1.1} />
+            <Item>
+                {@html math('\\pi')} n'est pas un nombre rationnel
+            </Item>
+        </Exemples>
 </Contenu>

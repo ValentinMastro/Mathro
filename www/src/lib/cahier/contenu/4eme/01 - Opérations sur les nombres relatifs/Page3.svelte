@@ -1,56 +1,55 @@
 <script lang="ts">
     import { Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-    import { Propriete, Item, Remarque, Exemple, Exemples } from '$lib/cahier/composants/de_cours/*';
-    import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
+    import { Propriete, Item, Exemples } from '$lib/cahier/composants/de_cours/*';
+	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
-    import { math, alignStar } from 'mathlifier';
+    import { math } from 'mathlifier';
 </script>
 
 <Contenu>
-        <SousPartie numero={2} titre="Multiplication et division" />
-            <LigneVide />
-            <Propriete lignes={3}>
-                Pour multiplier des nombres relatifs : 
-                <Item>
-                    si le nombre de facteurs négatifs est <i>pair</i>, le produit est positif
+    <Partie numero={2} titre="Les opérations de base" />
+        <SousPartie numero={1} titre="Addition et soustraction" />
+            <Propriete lignes={6}>
+                Pour additionner deux nombres relatifs :
+                <Item lignes={2}>
+                    s'ils sont de même signe, la somme a le même signe et on additionne les distances à zéro
+                    ;
                 </Item>
-                <Item>
-                    si le nombre de facteurs négatifs est <i>impair</i>, le produit est négatif
+                <Item lignes={3}>
+                    s'ils sont de signes différents, le signe de la somme est celui du terme de la plus
+                    grande distance à zéro, et on soustrait les distances à zéro.
                 </Item>
             </Propriete>
-            <Remarque>
-                Pour les divisions, on utilise la même règle de signes.
-            </Remarque>
-            <Exemples lignes={2}>
+            <Exemples lignes={4}>
                 <Item>
-                    {@html math("(-2) \\times (-6) \\times (+6) \\times 4 \\times (-2) = -576")}
+                    {@html math("17 + 5 = 22")}
                 </Item>
                 <Item>
-                    {@html math("(-2) \\times (-6) \\times 6 \\times (+4) \\times (-2) \\div (-2) = 288")}
+                    {@html math("12 + (-4) = 8")}
+                </Item>
+                <Item>
+                    {@html math("-3 + (-6) = -9")}
+                </Item>
+                <Item>
+                    {@html math("-5 + (+14) = 9")}
                 </Item>
             </Exemples>
-
-            <LigneVide lignes={2} />
-    <Partie numero={3} titre="La priorité des opérations" />
-            <LigneVide />
-            <Propriete lignes={4}>
-                Dans un calcul contenant plusieurs opérations :
-                <Item>la priorité est donnée aux calculs entres parenthèses</Item>
-                <Item>puis, aux multiplications et aux divisions (de gauche à droite)</Item>
-                <Item>enfin, aux additions et aux soustractions (de gauche à droite)</Item>
+            <Propriete>
+                Soustraire un nombre revient à ajouter son opposé
             </Propriete>
-            <Remarque lignes={2}>
-                Dans un calcul contenant un trait de fraction, on calcule d'abord le numérateur et le
-                dénominateur, puis on effectue la division.
-            </Remarque>
-            <Exemple lignes={6}>
-                {@html alignStar(`
-                        \\text{A} &= 3 \\times (4 + 2) \\times 5 - 6 \\div 2 \\\\[-0.3pt]
-                        &= 3 \\times 6 \\times 5 - 6 \\div 2 \\\\[-0.3pt]
-                        &= 18 \\times 5 - 6 \\div 2 \\\\[-0.3pt]
-                        &= 90 - 6 \\div 2 \\\\[-0.3pt]
-                        &= 90 - 3 \\\\[-0.3pt]
-                        &= 87
-                `)}
-            </Exemple>
+            <Exemples lignes={4}>
+                <Item>
+                    {@html math("124 - 95 = 29")}
+                </Item>
+                <Item>
+                    {@html math("12 - (-4) = 12 + (+4) = 16")}
+                </Item>
+                <Item>
+                    {@html math("-12 - (+6) = -12 + (-6) = -18")}
+                </Item>
+                <Item>
+                    {@html math("-89 - (-51) = -89 + (+51) = -38")}
+                </Item>
+            </Exemples>
+        
 </Contenu>
