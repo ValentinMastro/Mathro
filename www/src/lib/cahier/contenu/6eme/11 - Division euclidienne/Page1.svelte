@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie } from "$lib/cahier/composants/de_chapitrage/*";
 	import { Exemples, Item, Definition, TheoremeDefinition } from "$lib/cahier/composants/de_cours/*";
-	import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
 
 	import { math } from "mathlifier";
 </script>
@@ -10,7 +9,6 @@
 
 <Contenu apres_un_titre>
 	<Partie numero={1} titre="Concept" />
-		<LigneVide />
 		<TheoremeDefinition lignes={4}>
 			À deux entiers positifs (le dividende et le diviseur),
 			on associe <u>de façon unique</u> deux nombres entiers (le quotient et le reste) tels que :
@@ -21,20 +19,16 @@
 				{@html math("0 \\leq \\text{reste} < \\text{diviseur}")}
 			</Item>
 		</TheoremeDefinition>
-		<LigneVide />
 		<Exemples lignes={2}>
 			<Item>{@html math("19 = 3 \\times 6 + 1")}</Item>
 			<Item>{@html math("255 = 16 \\times 15 + 15")}</Item>
 		</Exemples>
-		<LigneVide />
-
+		
 	<Partie numero={2} titre="Multiples et diviseurs" />
-		<LigneVide />
 		<Definition lignes={2}>
 			Dans une division euclidienne, si le reste est égal à 0,
 			le dividende est un multiple du diviseur.
 		</Definition>
-		<LigneVide />
 		<Exemples lignes={5}>
 			On peut dire que :
 			<Item>
