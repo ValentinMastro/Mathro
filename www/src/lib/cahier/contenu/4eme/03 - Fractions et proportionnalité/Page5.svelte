@@ -1,36 +1,45 @@
 <script lang="ts">
-    import { Contenu, Partie } from "$lib/cahier/composants/de_chapitrage/*";
-    import { Definition, Exemples, Item } from "$lib/cahier/composants/de_cours/*";
+    import { Contenu } from "$lib/cahier/composants/de_chapitrage/*";
+    import { Exemples, Propriete, Item, Demonstration } from "$lib/cahier/composants/de_cours/*";
     import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
-
-    import { math } from "mathlifier";
+    import { display, math } from "mathlifier";
 </script>
 
 <Contenu>
-    <Partie numero={3} titre={"Proportionnalité"} />
-        <LigneVide />
-        <Definition lignes={2}>
-            Une grandeur est une caractéristique quantifiable, associée à une unité.
-        </Definition>
-        <Exemples lignes={2}>
-            Distance (m), Prix (€), Durée (s), Température (°C), Masse (kg), <br>
-            Énergie (J), Puissance (W), Tension électrique (V), etc.
-        </Exemples>
-        <LigneVide />
-        <Definition lignes={3}>
-            Deux grandeurs sont proportionnelles s'il existe un coefficient de proportionnalité,
-            c'est-à-dire un nombre qui, multiplié à l'une des grandeurs, donne l'autre.
-        </Definition>
-        <Exemples lignes={6}>
-            <Item lignes={3}>
-                Le côté d'un carré et son périmètre sont proportionnels. <br>
-                En effet, {@html math("\\text{P}_{\\text{carré}} = 4 \\times c")} où {@html math("c")} est la longueur du côté.<br>
-                4 est donc le coefficient de proportionnalité.
-            </Item>
-            <Item lignes={3}>
-                L'âge et la taille d'une personne ne sont pas proportionnels.<br>
-                En effet, si une personne a 10 ans et qu'elle mesure 1,20 m, cela ne signifie 
-                pas qu'à 20 ans, elle mesurera 2,40 m.
-            </Item>
-        </Exemples>
+    <Propriete lignes={3.5}>
+        Pour calculer le taux de variation entre une valeur de départ et une valeur d'arrivée :<br />
+        {@html display("\\text{taux de variation} = \\dfrac{\\text{valeur d'arrivée} - \\text{valeur de départ}}{\\text{valeur de départ}} \\times 100 \\%")}
+    </Propriete>
+
+    <Exemples lignes={8.4}>
+        <Item lignes={4}>
+            Le nombre d'habitants d'une ville est passé de 4 000 à 5 000,<br>
+            ce qui correspond à une augmentation de <br>
+            {@html display("\\dfrac{5000-4000}{4000} \\times 100 \\% = 25 \\%")}
+        </Item>
+        <Item lignes={4.4}>
+            Une voiture était vendue neuve à 25 000 €. <br>
+            Aujourd'hui, elle ne vaut plus que 5 000 €.<br>
+            Calculons son taux de variation : <br>
+            {@html display("\\dfrac{5000 - 25000}{25000} \\times 100 \\% = -80 \\%")}<br>
+            Son prix a donc baissé de 80 %.
+        </Item>
+    </Exemples>
+
+    <LigneVide lignes={2} />
+
+    <Propriete>
+        {@html math("x \\% \\text{ de } y = y \\% \\text{ de } x")}
+    </Propriete>
+    <Demonstration lignes={1.4}>
+        {@html math("x \\% \\text{ de } y = \\dfrac{x}{100} \\times y = \\dfrac{y}{100} \\times x = y \\% \\text{ de } x")}
+    </Demonstration>
+    <Exemples lignes={2}>
+        <Item>
+            {@html math("12 \\% \\text{ de } 50 = 50 \\% \\text{ de } 12 = 6")}
+        </Item>
+        <Item>
+            {@html math("20 \\% \\text{ de } 25 = 25 \\% \\text{ de } 20 = 5")}
+        </Item>
+    </Exemples>
 </Contenu>
