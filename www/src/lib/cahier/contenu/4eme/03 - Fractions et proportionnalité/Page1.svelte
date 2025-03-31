@@ -15,7 +15,7 @@
 
 {#snippet cercle(cx: number, cy: number, r: number, numerateur: number, denominateur: number, facteur: number)}
     {#each Array(denominateur*facteur) as _, i}
-        <path 
+        <path
             d="M {cx} {cy} L {cx+r} {cy} A {r} {r} 0 0 0 {cx + r * Math.cos(en_radians((360/denominateur)/facteur))} {cy - r * Math.sin(en_radians((360/denominateur)/facteur))} Z"
             transform-origin="{cx} {cy}"
             transform={`rotate(-${i * (360/denominateur)/facteur})`}
@@ -23,12 +23,12 @@
             stroke-width={3}
             fill={i + 1 <= numerateur*facteur ? 'green' : 'red'}
         />
-        <text 
+        <text
             x={cx + (r+50+(i%2)*70) * Math.cos(en_radians((i+0.5)*(360/denominateur)/facteur))}
             y={cy - (r+50+(i%2)*70) * Math.sin(en_radians((i+0.5)*(360/denominateur)/facteur))}
-            font-size={i % 2 == 1 ? 70 : 40} 
+            font-size={i % 2 == 1 ? 70 : 40}
             fill="{i + 1 <= numerateur*facteur ? 'green' : 'red'}"
-            text-anchor="middle" 
+            text-anchor="middle"
             dominant-baseline="middle"
         >
             {i + 1}
@@ -46,35 +46,39 @@
 
 <Contenu apres_un_titre>
     <Partie numero={1} titre="Calculs fractionnaires" />
-    <LigneVide />
     <Definition lignes={3}>
         Soient deux nombres {@html math("a")} et {@html math("b")} avec {@html math("b \\neq 0")}.<br>
         Le quotient de {@html math("a")} par {@html math("b")} est le nombre qui, lorsqu'il est multiplié par {@html math("b")}, donne {@html math("a")}.
     </Definition>
-    <Notation>
-        On le note {@html math("\\frac{a}{b}")} et on le lit "a sur b".
+    <Notation lignes={1.3}>
+        On le note {@html math("\\dfrac{a}{b}")} et on le lit "a sur b".
     </Notation>
 
-    <Exemples lignes={2}>
+    <Exemples lignes={3}>
         <Item>
-            {@html math("\\frac{3}{4} \\times 4 = \\frac{3}{\\cancel{4}} \\times \\cancel{4} = 3")}
+            {@html math("\\dfrac{3}{4} \\times 4 = \\dfrac{3}{\\cancel{4}} \\times \\cancel{4} = 3")}
         </Item>
+        <LigneVide />
         <Item>
-            {@html math("\\frac{7{,}2}{5{,}8} \\times 5{,}8 = \\frac{7{,}2}{\\cancel{5{,}8}} \\times \\cancel{5{,}8} = 7{,}2")}
+            {@html math("\\dfrac{7{,}2}{5{,}8} \\times 5{,}8 = \\dfrac{7{,}2}{\\cancel{5{,}8}} \\times \\cancel{5{,}8} = 7{,}2")}
         </Item>
     </Exemples>
-    
-    <LigneVide />
 
-    <Propriete lignes={3.4}>
-        Soient deux nombres {@html math("a")} et {@html math("b")} avec {@html math("b \\neq 0")}.<br>
+    <Propriete lignes={2.4}>
+        Soient deux nombres {@html math("a")} et {@html math("b")} avec {@html math("b \\neq 0")}.
         Soit {@html math("k \\neq 0")}.<br>
         Alors {@html math("\\dfrac{a}{b} = \\dfrac{k \\times a}{k \\times b}")}.
     </Propriete>
 
-    <LigneVide lignes={0.6} />
-
-    <Exemples />
+    <Exemples lignes={3}>
+        <Item>
+            {@html math(`\\dfrac{3}{4} = \\dfrac{${facteur_1} \\times 3}{${facteur_1} \\times 4} = \\dfrac{${facteur_1 * 3}}{${facteur_1 * 4}}`)}
+        </Item>
+        <LigneVide />
+        <Item>
+            {@html math(`\\dfrac{7}{15} = \\dfrac{${facteur_2} \\times 7}{${facteur_2} \\times 15} = \\dfrac{${facteur_2 * 7}}{${facteur_2 * 15}}`)}
+        </Item>
+    </Exemples>
 
     <Schema lignes={8} aspectRatioSVG={2.4}>
         {#snippet svg()}
@@ -83,8 +87,4 @@
         {/snippet}
     </Schema>
 
-    <LigneVide />
-    <Ligne>
-        {@html math(`\\hspace{1cm} \\dfrac{3}{4} = \\dfrac{${facteur_1} \\times 3}{${facteur_1} \\times 4} = \\dfrac{${facteur_1 * 3}}{${facteur_1 * 4}} \\hspace{3cm} \\dfrac{7}{15} = \\dfrac{7 \\times ${facteur_2}}{15 \\times ${facteur_2}} = \\dfrac{${facteur_2 * 7}}{${facteur_2 * 15}}`)}
-    </Ligne>
 </Contenu>

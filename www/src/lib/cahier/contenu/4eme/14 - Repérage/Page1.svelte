@@ -10,9 +10,8 @@
 
 <Contenu apres_un_titre>
     <Partie numero={1} titre="Sur une droite (1 dimension)" />
-        <LigneVide />
         <Definition lignes={4}>
-            Une droite graduée est une droite munie de 3 éléments : 
+            Une droite graduée est une droite munie de 3 éléments :
             <Item>un point, appelé l'origine</Item>
             <Item>une unité de longueur</Item>
             <Item>un sens</Item>
@@ -47,5 +46,5 @@
         </Schema>
         <Notation>
             {@html math("\\text{A}(-3) \\quad \\text{B}(-1) \\quad \\text{C}(2) \\quad \\text{D}(4)") }
-        </Notation>    
+        </Notation>
 </Contenu>

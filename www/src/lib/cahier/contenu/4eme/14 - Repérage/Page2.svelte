@@ -8,9 +8,8 @@
 
 <Contenu>
     <Partie numero={2} titre="Sur le plan (2 dimensions)" />
-        <LigneVide />
         <Definition lignes={5}>
-            Un repère orthogonal est constitué de 3 éléments : 
+            Un repère orthogonal est constitué de 3 éléments :
             <Item>un point, appelé l'origine du repère</Item>
             <Item>l'axe des abscisses</Item>
             <Item>l'axe des ordonnées</Item>
@@ -31,12 +30,12 @@
             {/snippet}
         </Schema>
 
-        <Notation lignes={2}>
-            {@html math("(\\text{O};x;y)") } est le repère orthogonal constitué de l'origine {@html math("\\text{O}") }, 
+        <Notation lignes={2} lignes_vides={0}>
+            {@html math("(\\text{O};x;y)") } est le repère orthogonal constitué de l'origine {@html math("\\text{O}") },
             de l'axe des abscisses {@html math("x") } et de l'axe des ordonnées {@html math("y") }.
         </Notation>
-        <Definition lignes={3}>
-            À chaque point du plan, on associe deux nombres que l'on appellent ses coordonnées : 
+        <Definition lignes={3} lignes_vides={0}>
+            À chaque point du plan, on associe deux nombres que l'on appellent ses coordonnées :
             son <i>abscisse</i> (horizontale) et son <i>ordonnée</i> (verticale).
         </Definition>
         <Schema lignes={10}>

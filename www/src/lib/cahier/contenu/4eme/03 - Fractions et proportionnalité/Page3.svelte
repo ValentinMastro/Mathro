@@ -2,7 +2,6 @@
     import { Contenu, DansLaMarge, Partie, SousPartie } from "$lib/cahier/composants/de_chapitrage/*";
     import { Definition, Exemple, Exemples, Item, Propriete, Texte } from "$lib/cahier/composants/de_cours/*";
 	import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
-
     import { math } from "mathlifier";
 
     let pourcentage_augmentation: number = $state(20);
@@ -11,7 +10,7 @@
 </script>
 
 <DansLaMarge>
-    <LigneVide lignes={22} />
+    <LigneVide lignes={23} />
     <Texte>+ {pourcentage_augmentation} %</Texte>
     <input type="range" bind:value={pourcentage_augmentation} min="0" max="100" step="10" style="width: 80%;"/>
 </DansLaMarge>
@@ -19,26 +18,23 @@
 <Contenu>
     <Partie numero={2} titre="Pourcentages" />
         <SousPartie numero={1} titre="Le pourcentage d'un nombre" />
-            <LigneVide />
-            <Definition>
+            <Definition lignes={1.4}>
                 Calculer {@html math("p\\% \\text{ de } x")} revient à calculer {@html math("\\dfrac{p}{100} \\times x")}.
             </Definition>
-
-            <Exemples lignes={4.5}>
-                <Item lignes={1.5}>
+            <Exemples lignes={5}>
+                <Item lignes={1}>
                     {@html math("25 \\% \\text{ de } 12 = \\dfrac{25}{100} \\times 12 = 3")}
                 </Item>
-                <Item lignes={1.5}>
+                <LigneVide />
+                <Item lignes={1}>
                     {@html math("60 \\% \\text{ de } 50 = \\dfrac{60}{100} \\times 50 = 30")}
                 </Item>
-                <Item lignes={1.5}>
+                <LigneVide />
+                <Item lignes={1}>
                     {@html math("75 \\% \\text{ de } 32 = \\dfrac{75}{100} \\times 32 = 24")}
                 </Item>
             </Exemples>
-            <LigneVide lignes={0.5} />
-
         <SousPartie numero={2} titre="Augmentation par un pourcentage" />
-            <LigneVide />
             <Propriete lignes={4}>
                 Pour augmenter une valeur de {@html math("p \\%")} :
                 <Item>
@@ -51,8 +47,6 @@
                     <u>OU</u> je calcule {@html math("\\dfrac{100+p}{100} \\times")} la valeur initiale
                 </Item>
             </Propriete>
-
-            <LigneVide />
 
             <Exemple lignes={4}>
                 50 € + {pourcentage_augmentation} % :
