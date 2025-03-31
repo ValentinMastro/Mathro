@@ -1,16 +1,24 @@
 <script lang="ts">
     import { Texte, type ParagrapheProps } from "./*";
-    
+
     import { taille_texte, separateur_texte, hauteur_ligne_cahier } from "$lib/cahier/store";
     import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
-    
-    let { 
-        addStyle = "", 
+
+    function calculerLignesVides(lignes: number): number {
+        if (Number.isInteger(lignes)) {
+            return 1;
+        } else {
+            return Math.ceil(lignes) - lignes;
+        }
+    }
+
+    let {
+        addStyle = "",
         nom_du_paragraphe = "Paragraphe",
         couleur = "noir",
         lignes = 1,
-        lignes_vides = 1, 
-        children 
+        lignes_vides = calculerLignesVides(lignes),
+        children
     }: ParagrapheProps = $props();
 </script>
 
