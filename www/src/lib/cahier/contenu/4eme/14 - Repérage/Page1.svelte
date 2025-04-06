@@ -24,6 +24,7 @@
                 {#each Array(9) as _, i}
                     <line x1={(i+2) * 6*1000/12} y1="450" x2={(i+2) * 6*1000/12} y2="550" stroke="black" stroke-width="20" />
                 {/each}
+                <text x={6*1000/12} y={330} font-size="250" text-anchor="middle">0</text>
             {/snippet}
         </Schema>
         <Definition lignes={2}>
@@ -40,7 +41,7 @@
                 <text x="{(5)*6*1000/12}" y="800" font-size="250" text-anchor="middle">0</text>
                 <text x="{(6)*6*1000/12}" y="800" font-size="250" text-anchor="middle">1</text>
                 {#each [{point: "A", abscisse: -3}, {point: "B", abscisse: -1}, {point: "C", abscisse: 2}, {point: "D", abscisse: 4}] as {point, abscisse}}
-                    <text x="{(abscisse+5)*6*1000/12}" y="330" font-size="300" text-anchor="middle">{point}</text>
+                    <text x={(abscisse+5)*6*1000/12} y={330} font-size={300} text-anchor="middle">{point}</text>
                 {/each}
             {/snippet}
         </Schema>
