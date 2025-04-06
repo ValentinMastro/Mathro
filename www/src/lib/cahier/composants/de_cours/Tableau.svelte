@@ -5,7 +5,7 @@
 </script>
 
 <table style='height: {$hauteur_ligne_cahier * lignes}px; font-size: {$taille_texte}px;  {addStyle}'>
-    {@render children()}
+    {@render children?.()}
 </table>
 
 <style>
