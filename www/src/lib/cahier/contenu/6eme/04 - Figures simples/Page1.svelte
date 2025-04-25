@@ -8,7 +8,7 @@
 
     let nombre_de_points: number = 1000;
     let points_aleatoires = Array(nombre_de_points).fill(0).map(() => Math.random() * 2 * Math.PI);
-    
+
     let slider_1: number = $state(nombre_de_points);
     let slider_2: number = $state(30);
 
@@ -29,14 +29,14 @@
         <Definition lignes={4}>
             Soit un point {@html math("\\text{O}")}. <br>
             Soit une distance {@html math("r")}. <br>
-            L'ensemble des points situés à une distance {@html math("r")} du point {@html math("\\text{O}")} est 
+            L'ensemble des points situés à une distance {@html math("r")} du point {@html math("\\text{O}")} est
             appelé cercle de centre {@html math("\\text{O}")} et de rayon {@html math("r")}.
         </Definition>
         <Schema lignes={10} aspectRatioSVG={2}>
             {#snippet svg()}
                 <defs>
                     <style>
-                        text {
+                        .p1ch04 {
                             font-family: Katex_Main;
                         }
                         .italic {
@@ -46,10 +46,10 @@
                 </defs>
                 <!-- Point O -->
                 <circle cx={1000} cy={500} r={10} fill="black" />
-                <text x={1000} y={500} dx={40} dy={-10} text-anchor="middle" font-size={70}>O</text>
+                <text class="p1ch04" x={1000} y={500} dx={40} dy={-10} text-anchor="middle" font-size={70}>O</text>
                 <!-- Rayon r=400 unités -->
                 <line x1={1000} y1={500} x2={1000-400} y2={500} stroke="red" stroke-width={5} />
-                <text x={1000-200} y={500} dx={0} dy={40} text-anchor="middle" font-size={70} fill="red" class="italic">r</text>
+                <text class="p1ch04 italic" x={1000-200} y={500} dx={0} dy={40} text-anchor="middle" font-size={70} fill="red">r</text>
                 <!-- On génère le cercle de centre O et de rayon r, en utilisant des points aléatoires -->
                 {#each points_aleatoires.slice(0, slider_1) as angle}
                     <!-- Point sur le cercle -->
@@ -78,8 +78,8 @@
                 <!-- Cercle -->
                 <circle cx={500} cy={500} r={375} fill="none" stroke="black" stroke-width={5} />
                 <!-- Diamètre -->
-                <line 
-                    x1={500-375*Math.cos(angle_2)} y1={500-375*Math.sin(angle_2)} 
+                <line
+                    x1={500-375*Math.cos(angle_2)} y1={500-375*Math.sin(angle_2)}
                     x2={500+375*Math.cos(angle_2)} y2={500+375*Math.sin(angle_2)}
                     stroke="red" stroke-width={5} />
                 <text x={500} y={500} dx={-100} dy={60} text-anchor="middle" font-size={70} fill="red" class="italic">d</text>

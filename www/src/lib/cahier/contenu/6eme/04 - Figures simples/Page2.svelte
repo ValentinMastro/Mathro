@@ -26,7 +26,7 @@
     )
 
     function disjonction_large_arc_flag(a: number, b: number): number {
-        /* 
+        /*
             a et b sont des angles (entre 0 et 180)
             On veut savoir si on doit mettre le flag large-arc-flag à 1 ou 0
             Cela permet de décider quel arc de cercle on doit dessiner
@@ -61,7 +61,7 @@
         {#snippet svg()}
             <defs>
                 <style>
-                    text {
+                    .p2ch04 {
                         font-family: Katex_Main;
                         text-anchor: middle;
                         dominant-baseline: middle;
@@ -72,10 +72,10 @@
                 </style>
             </defs>
             <circle cx={500} cy={500} r={375} fill="none" stroke="black" stroke-width={5} />
-            <text id="cercle" x={200} y={500} font-size={70} fill="black">(C)</text>
-            <line 
-                x1={500 + 375 * Math.cos(angle_1)} y1={500 + 375 * Math.sin(angle_1)} 
-                x2={500 + 375 * Math.cos(angle_2)} y2={500 + 375 * Math.sin(angle_2)} 
+            <text class="p2ch04" id="cercle" x={200} y={500} font-size={70} fill="black">(C)</text>
+            <line
+                x1={500 + 375 * Math.cos(angle_1)} y1={500 + 375 * Math.sin(angle_1)}
+                x2={500 + 375 * Math.cos(angle_2)} y2={500 + 375 * Math.sin(angle_2)}
                 stroke="red" stroke-width={10} />
             <line
                 x1={500 + 375 * Math.cos(angle_3)} y1={500 + 375 * Math.sin(angle_3)}
@@ -83,7 +83,7 @@
                 stroke="blue" stroke-width={10} />
             {#each liste_angles as {angle, couleur, point}}
                 <circle cx={500 + 375 * Math.cos(angle)} cy={500 + 375 * Math.sin(angle)} r={10} fill={couleur} />
-                <text x={500 + 375 * Math.cos(angle)} y={500 + 375 * Math.sin(angle)} dx={50*Math.cos(angle)} dy={50*Math.sin(angle)} font-size={70} fill={couleur}>
+                <text class="p2ch04" x={500 + 375 * Math.cos(angle)} y={500 + 375 * Math.sin(angle)} dx={50*Math.cos(angle)} dy={50*Math.sin(angle)} font-size={70} fill={couleur}>
                     {point}
                 </text>
             {/each}
