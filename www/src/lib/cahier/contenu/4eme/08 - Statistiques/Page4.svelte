@@ -3,7 +3,7 @@
 	import { Definition, Remarque, Exemples, Schema, Tableau, LigneTableau } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
-	import { hauteur_ligne_cahier, taille_texte } from '$lib/cahier/store.svelte';
+	import { get_tailles } from '$lib/cahier/store.svelte';
 
 	// Nombre d'habitant à Meaux par année
 	let donnees_1 = {
@@ -27,7 +27,7 @@
 	<Remarque>On l'utilise le plus souvent pour comparer des valeurs entre elles.</Remarque>
 	<Exemples lignes={0} addStyle="margin-bottom: -0.2ex;" />
 	<Tableau>
-		<caption style="height: {$hauteur_ligne_cahier}px;">Nombre d'habitants à Meaux par année</caption>
+		<caption style="height: {get_tailles().hauteur_ligne_cahier}px;">Nombre d'habitants à Meaux par année</caption>
 		<LigneTableau>
 			<th>Année</th>
 			{#each Object.keys(donnees_1) as annee}

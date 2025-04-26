@@ -3,7 +3,7 @@
 	import { Definition, Exemples, Ligne, Texte } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
-	import { hauteur_ligne_cahier, taille_texte } from '$lib/cahier/store.svelte';
+	import { get_tailles } from '$lib/cahier/store.svelte';
 	import { math } from 'mathlifier';
 
 	// Nombre d'élèves dans une classe par sexe
@@ -36,7 +36,7 @@
 		La <i>fréquence</i> d'une valeur d'une série est son effectif divisé par l'effectif total.
 	</Definition>
 	<Exemples lignes={8}>
-		<table class="donnees" style="--hauteur: {$hauteur_ligne_cahier}px; --taille-texte: {$taille_texte}px;">
+		<table class="donnees" style="--hauteur: {get_tailles().hauteur_ligne_cahier}px; --taille-texte: {get_tailles().texte}px;">
 			<caption>Nombre d'élèves dans une classe par sexe</caption>
 			<thead>
 				<tr>

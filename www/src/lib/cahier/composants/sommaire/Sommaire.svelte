@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { sommaire, categories_visibles, type Categories } from '$lib/cahier/contenu/sommaires';
 
-	import { page_state, taille_sommaire, taille_chapitre, taille_page } from '$lib/cahier/store.svelte';
+	import { page_state, get_tailles, get_taille_page } from '$lib/cahier/store.svelte';
 
 	import Pastilles from './Pastilles.svelte';
 	import SelecteurCategories from './SelecteurCategories.svelte';
@@ -9,14 +9,14 @@
 	function scroll_lors_du_clic_sur_le_sommaire(premiere_page: number | undefined) {
 		if (premiere_page != undefined) {
 			page_state.numero_de_la_page = premiere_page - (premiere_page % 2);
-			window.scrollTo(0, ($taille_page + 2 * 8) * (premiere_page - 1));
+			window.scrollTo(0, (get_taille_page() + 2 * 8) * (premiere_page - 1));
 		}
 	}
 </script>
 
-<h2 style="font-size: {$taille_sommaire}px">Sommaire</h2>
+<h2 style="font-size: {get_tailles().sommaire}px">Sommaire</h2>
 
-<ol class="liste_chapitres" style="font-size: {$taille_chapitre * 0.72}px;">
+<ol class="liste_chapitres" style="font-size: {get_tailles().chapitre * 0.72}px;">
 	{#each sommaire(page_state.niveau) as chapitre}
 		<li
 			class="chapitre"

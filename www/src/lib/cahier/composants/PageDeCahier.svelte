@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import { page_state, taille_numero_de_page, taille_page } from '$lib/cahier/store.svelte';
+	import { page_state, get_tailles, set_taille_page } from '$lib/cahier/store.svelte';
 
 	interface Props {
 		numero_de_page: number;
@@ -20,7 +20,7 @@
 	$effect(() => {
 		const resizeObserver = new ResizeObserver(() => {
 			if (composant) {
-				taille_page.set(Number(composant.clientHeight));
+				set_taille_page(Number(composant.clientHeight));
 			}
 		});
 		resizeObserver.observe(composant);
@@ -29,7 +29,7 @@
 
 <div bind:this={composant} class="page {is_seyes} {is_zoom_page}" style="visibility: {visibility}; {is_full_screen};">
 	{@render children()}
-	<span class="numero" style="font-size: {$taille_numero_de_page}px">Page {numero_de_page}</span>
+	<span class="numero" style="font-size: {get_tailles().numero_de_page}px">Page {numero_de_page}</span>
 </div>
 
 <style>

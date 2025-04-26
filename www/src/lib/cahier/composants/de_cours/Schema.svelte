@@ -7,7 +7,7 @@
 		position_html?: 'gauche' | 'droite';
 	}
 	let { lignes = 1, aspectRatioSVG = 1 / 1, svg, html, position_html = 'droite' }: Props = $props();
-	import { hauteur_ligne_cahier } from '$lib/cahier/store.svelte';
+	import { get_tailles } from '$lib/cahier/store.svelte';
 </script>
 
 {#snippet afficher_svg()}
@@ -26,7 +26,7 @@
 	{/if}
 {/snippet}
 
-<div class="schema" style="--hauteur: {$hauteur_ligne_cahier}px; --lignes: {lignes}; --aspectRatioSVG: {aspectRatioSVG}">
+<div class="schema" style="--hauteur: {get_tailles().hauteur_ligne_cahier}px; --lignes: {lignes}; --aspectRatioSVG: {aspectRatioSVG}">
 	{#if position_html === 'gauche'}
 		{@render afficher_html()}
 		{@render afficher_svg()}

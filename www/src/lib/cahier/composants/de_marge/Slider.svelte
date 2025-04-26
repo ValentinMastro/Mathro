@@ -7,12 +7,12 @@
 		pas?: number;
 	}
 
-	import { hauteur_ligne_cahier } from '$lib/cahier/store.svelte';
+	import { get_tailles } from '$lib/cahier/store.svelte';
 
 	let { valeur = $bindable(), label = '', min, max, pas = 1 }: Props = $props();
 </script>
 
-<div style="height: {$hauteur_ligne_cahier}px;">
+<div style="height: {get_tailles().hauteur_ligne_cahier}px;">
 	{#if label}
 		<label for="slider">{label}</label>
 	{/if}

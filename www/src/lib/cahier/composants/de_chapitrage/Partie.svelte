@@ -7,7 +7,7 @@
 
 	let { numero, titre, lignes_vides = 1 }: Props = $props();
 
-	import { hauteur_ligne_cahier, taille_titre_de_sections } from '$lib/cahier/store.svelte';
+	import { get_tailles } from '$lib/cahier/store.svelte';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
 	function enChiffresRomains(n: number) {
@@ -38,8 +38,8 @@
 	}
 </script>
 
-<div class="partie" style="height: {$hauteur_ligne_cahier}px;">
-	<span style="font-size: {$taille_titre_de_sections}px;">
+<div class="partie" style="height: {get_tailles().hauteur_ligne_cahier}px;">
+	<span style="font-size: {get_tailles().titre_de_sections}px;">
 		{enChiffresRomains(numero)} - {titre}
 	</span>
 </div>

@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { Contenu } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Partie, SousPartie, SousSousPartie } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Item, Paragraphe, Formule, Schema } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
-	import { hauteur_ligne_cahier, taille_texte } from '$lib/cahier/store.svelte';
+	import { get_tailles } from '$lib/cahier/store.svelte';
 </script>
 
 <Contenu>
-	<table id="unites_volumes" style="--hauteur-ligne: {$hauteur_ligne_cahier}px; --taille-texte: {$taille_texte}px;">
+	<table id="unites_volumes" style="--hauteur-ligne: {get_tailles().hauteur_ligne_cahier}px; --taille-texte: {get_tailles().texte}px;">
 		<caption>Tableau de conversion des unités de volume et de contenance</caption>
 		<tbody>
 			<tr>

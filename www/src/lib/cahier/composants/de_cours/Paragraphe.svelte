@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Texte, type ParagrapheProps } from './*';
 
-	import { taille_texte, separateur_texte, hauteur_ligne_cahier } from '$lib/cahier/store.svelte';
+	import { get_tailles } from '$lib/cahier/store.svelte';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
 	function calculerLignesVides(lignes: number): number {
@@ -29,13 +29,13 @@
 		</span>
 	</Texte>
 {:else}
-	<div style="color: var(--{couleur}); font-size: {$taille_texte}px; line-height: {$separateur_texte}px;">
-		<div class="titre_de_section" style="height: {$hauteur_ligne_cahier}px;">
+	<div style="color: var(--{couleur}); font-size: {get_tailles().texte}px; line-height: {get_tailles().separateur_texte}px;">
+		<div class="titre_de_section" style="height: {get_tailles().hauteur_ligne_cahier}px;">
 			<span>
 				{nom_du_paragraphe} :
 			</span>
 		</div>
-		<div class="contenu_de_section" style="height: {$hauteur_ligne_cahier * lignes}px">
+		<div class="contenu_de_section" style="height: {get_tailles().hauteur_ligne_cahier * lignes}px">
 			<div style={addStyle}>
 				{@render children()}
 			</div>

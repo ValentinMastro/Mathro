@@ -2,7 +2,7 @@
 	import { Contenu } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Paragraphe, Schema } from '$lib/cahier/composants/de_cours/*';
 
-	import { hauteur_ligne_cahier, taille_texte } from '$lib/cahier/store.svelte';
+	import { get_tailles } from '$lib/cahier/store.svelte';
 
 	// Prix moyen d'un kg de baguette de pain en France par année
 	// source : https://www.insee.fr/fr/statistiques/serie/000442423?idbank=000442423
@@ -20,19 +20,19 @@
 
 <Contenu>
 	<Paragraphe nom_du_paragraphe="Exemples (suite)" couleur="bleu" lignes={3} addStyle="margin-bottom: -0.2ex;">
-		<table class="donnees" style="font-size: {$taille_texte * 0.9}px">
-			<caption style="height: {$hauteur_ligne_cahier}px;">Prix moyen d'un kg de baguette de pain en France</caption>
-			<tbody style="height: {$hauteur_ligne_cahier}px;">
-				<tr style="height: {$hauteur_ligne_cahier}px;">
-					<th style="height: {$hauteur_ligne_cahier}px;">Année</th>
+		<table class="donnees" style="font-size: {get_tailles().texte * 0.9}px">
+			<caption style="height: {get_tailles().hauteur_ligne_cahier}px;">Prix moyen d'un kg de baguette de pain en France</caption>
+			<tbody style="height: {get_tailles().hauteur_ligne_cahier}px;">
+				<tr style="height: {get_tailles().hauteur_ligne_cahier}px;">
+					<th style="height: {get_tailles().hauteur_ligne_cahier}px;">Année</th>
 					{#each Object.keys(donnees_2) as annee}
-						<th style="height: {$hauteur_ligne_cahier}px;">{annee}</th>
+						<th style="height: {get_tailles().hauteur_ligne_cahier}px;">{annee}</th>
 					{/each}
 				</tr>
-				<tr style="height: {$hauteur_ligne_cahier}px;">
-					<th style="height: {$hauteur_ligne_cahier}px;">Prix</th>
+				<tr style="height: {get_tailles().hauteur_ligne_cahier}px;">
+					<th style="height: {get_tailles().hauteur_ligne_cahier}px;">Prix</th>
 					{#each Object.values(donnees_2) as valeur}
-						<td style="height: {$hauteur_ligne_cahier}px;"
+						<td style="height: {get_tailles().hauteur_ligne_cahier}px;"
 							>{valeur.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €</td
 						>
 					{/each}

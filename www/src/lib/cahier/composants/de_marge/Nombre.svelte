@@ -7,12 +7,12 @@
 		step?: number;
 	}
 
-	import { hauteur_ligne_cahier, taille_texte } from '$lib/cahier/store.svelte';
+	import { get_tailles } from '$lib/cahier/store.svelte';
 
 	let { valeur = $bindable(), label = '', min, max, step = 1 }: Props = $props();
 </script>
 
-<div class="marge" style="--hauteur: {$hauteur_ligne_cahier}px; --taille-texte: {$taille_texte * 0.75}px;">
+<div class="marge" style="--hauteur: {get_tailles().hauteur_ligne_cahier}px; --taille-texte: {get_tailles().texte * 0.75}px;">
 	<label for="id">{label}</label>
 	<input id="id" type="number" bind:value={valeur} {min} {max} {step} />
 </div>

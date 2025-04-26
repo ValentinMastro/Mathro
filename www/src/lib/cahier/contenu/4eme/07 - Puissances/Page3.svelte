@@ -3,7 +3,7 @@
 	import { Paragraphe, Schema } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
-	import { taille_texte, hauteur_ligne_cahier } from '$lib/cahier/store.svelte';
+	import { get_tailles } from '$lib/cahier/store.svelte';
 	import { math } from 'mathlifier';
 
 	function prefixe(exposant: number): string {
@@ -135,7 +135,11 @@
 	}
 </script>
 
-<table id="SI_prefixes" style="font-size: {$taille_texte * 0.8}px; top: {6.2 * $hauteur_ligne_cahier}px; --hauteur: {$hauteur_ligne_cahier}px;">
+<table
+	id="SI_prefixes"
+	style="font-size: {get_tailles().texte * 0.8}px; top: {6.2 * get_tailles().hauteur_ligne_cahier}px; --hauteur: {get_tailles()
+		.hauteur_ligne_cahier}px;"
+>
 	<thead>
 		<tr>
 			{#each ['Milliards', 'Millions', 'Milliers', 'Unités', 'Millièmes', 'Millionièmes', 'Milliardièmes'] as classe}
@@ -169,16 +173,16 @@
 	<LigneVide />
 	<Paragraphe couleur="noir" nom_du_paragraphe="Tableau des préfixes du SI" lignes={5} />
 
-	<table id="SI_unites" style="--hauteur={$hauteur_ligne_cahier}px; --taille_texte={$taille_texte}px;">
-		<caption style="font-size: {$taille_texte}px;"><u>Les sept unités de base du Système International</u></caption>
-		<tbody style="font-size: {$taille_texte}px;">
-			<tr style="height: {$hauteur_ligne_cahier}px;">
+	<table id="SI_unites" style="--hauteur={get_tailles().hauteur_ligne_cahier}px; --taille_texte={get_tailles().texte}px;">
+		<caption style="font-size: {get_tailles().texte}px;"><u>Les sept unités de base du Système International</u></caption>
+		<tbody style="font-size: {get_tailles().texte}px;">
+			<tr style="height: {get_tailles().hauteur_ligne_cahier}px;">
 				<th>Grandeur physique</th>
 				<th>Unité</th>
 				<th>Symbole de l'unité</th>
 			</tr>
 			{#each unites as { grandeur, unite, symbole }}
-				<tr style="height: {$hauteur_ligne_cahier}px;">
+				<tr style="height: {get_tailles().hauteur_ligne_cahier}px;">
 					<td>{grandeur}</td>
 					<td>{unite}</td>
 					<td>{symbole}</td>

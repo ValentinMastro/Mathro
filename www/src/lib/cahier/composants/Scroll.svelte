@@ -4,7 +4,7 @@
 	import { page as interface_navigateur } from '$app/stores';
 	const scroll_jusqua_la_page: number = parseInt($interface_navigateur.url.searchParams.get('page') ?? '1');
 
-	import { nombre_de_pages, taille_page } from '$lib/cahier/store.svelte';
+	import { nombre_de_pages, get_taille_page } from '$lib/cahier/store.svelte';
 	import PageDeCahier from './PageDeCahier.svelte';
 
 	let { pages }: { pages: Component[] } = $props();
@@ -12,7 +12,7 @@
 	const gap = 8;
 
 	$effect(() => {
-		window.scrollTo(0, ($taille_page + 2 * gap) * (scroll_jusqua_la_page - 1));
+		window.scrollTo(0, (get_taille_page() + 2 * gap) * (scroll_jusqua_la_page - 1));
 	});
 </script>
 

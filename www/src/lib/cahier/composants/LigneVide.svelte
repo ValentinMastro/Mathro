@@ -3,7 +3,7 @@
 		lignes?: number;
 	}
 	let { lignes = 1 }: Props = $props();
-	import { hauteur_ligne_cahier } from '$lib/cahier/store.svelte';
+	import { get_tailles } from '$lib/cahier/store.svelte';
 </script>
 
-<div class="ligne-vide" style="height: {$hauteur_ligne_cahier * lignes}px; width: 100%;"></div>
+<div class="ligne-vide" style="height: {get_tailles().hauteur_ligne_cahier * lignes}px; width: 100%;"></div>

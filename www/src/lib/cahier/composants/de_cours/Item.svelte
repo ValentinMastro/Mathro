@@ -6,16 +6,16 @@
 		children?: any;
 	}
 	let { bullet = '&bullet;', bullet_color = undefined, lignes = 1, children }: Props = $props();
-	import { hauteur_ligne_cahier, taille_texte } from '$lib/cahier/store.svelte';
+	import { get_tailles } from '$lib/cahier/store.svelte';
 </script>
 
-<div class="item" style="height: {$hauteur_ligne_cahier * lignes}px;">
+<div class="item" style="height: {get_tailles().hauteur_ligne_cahier * lignes}px;">
 	{#if bullet_color}
-		<span style="font-size: {$taille_texte}px; color: {bullet_color}">{@html bullet}</span>
+		<span style="font-size: {get_tailles().texte}px; color: {bullet_color}">{@html bullet}</span>
 	{:else}
-		<span style="font-size: {$taille_texte}px;">{@html bullet}</span>
+		<span style="font-size: {get_tailles().texte}px;">{@html bullet}</span>
 	{/if}
-	<span style="font-size: {$taille_texte}px;">{@render children()}</span>
+	<span style="font-size: {get_tailles().texte}px;">{@render children()}</span>
 </div>
 
 <style>

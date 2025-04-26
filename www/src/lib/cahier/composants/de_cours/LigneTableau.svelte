@@ -4,11 +4,11 @@
 		children?: any;
 		lignes?: number;
 	}
-	import { hauteur_ligne_cahier } from '$lib/cahier/store.svelte';
+	import { get_tailles } from '$lib/cahier/store.svelte';
 	let { addStyle = '', children, lignes = 1 }: Props = $props();
 </script>
 
-<tr style="height: {$hauteur_ligne_cahier * lignes}px; {addStyle}">
+<tr style="height: {get_tailles().hauteur_ligne_cahier * lignes}px; {addStyle}">
 	{@render children?.()}
 </tr>
 

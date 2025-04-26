@@ -4,13 +4,13 @@
         - La couleur de fond du sélecteur est la couleur de la catégorie si elle est visible, sinon grise.
 -->
 <script lang="ts">
-	import { taille_chapitre } from '$lib/cahier/store.svelte';
+	import { get_tailles } from '$lib/cahier/store.svelte';
 	import { type Categories, couleur_de_la_categorie, categories_visibles } from '$lib/cahier/contenu/sommaires';
 
 	let { categorie }: { categorie: Categories } = $props();
 </script>
 
-<div style="font-size: {$taille_chapitre * 0.8}px;">
+<div style="font-size: {get_tailles().chapitre * 0.8}px;">
 	<span class="categorie" style="background-color: {categories_visibles.includes(categorie) ? couleur_de_la_categorie(categorie) : 'gray'};">
 		{categorie}
 	</span>
