@@ -1,0 +1,224 @@
+{
+	"chapitres": [
+		{
+			"titre": "Nombres entiers",
+			"categories": ["Nombres et calculs"],
+			"attendus": [
+				"Unités de numération décimale pour les nombres entiers",
+				"Décomposition, comparaison, encadrement",
+				"Repérage sur une demi-droite graduée"
+			],
+			"premiere_page": 3
+		},
+		{
+			"titre": "Vocabulaire de géométrie",
+			"categories": ["Espace et géométrie"],
+			"attendus": ["Rappel : vocabulaire de géométrie (segment, droite, demi-droite, milieu)", "Alignement, appartenance", "Constructions"],
+			"premiere_page": 6
+		},
+		{
+			"titre": "Fraction/Partage",
+			"categories": ["Nombres et calculs"],
+			"attendus": [
+				"Partages d’unités",
+				"Repérage sur une demi-droite graduée",
+				"Comparaison de fractions de même dénominateur, encadrement par deux entiers consécutifs, décomposition",
+				"Egalités de fractions usuelles (exemples : 5/10 = 1/2 ; 10/100 = 1/10 ; 2/4 = 1/2)",
+				"Ajouter des fractions de même dénominateurs"
+			],
+			"premiere_page": 9
+		},
+		{
+			"titre": "Figures simples",
+			"categories": ["Espace et géométrie"],
+			"attendus": [
+				"Notation et vocabulaire des angles, lexique (angle droit, aigu, obtus)",
+				"Reproduire un angle avec le compas",
+				"Définition du cercle (ensemble des points situés à une distance donnée d’un point donné), du disque",
+				"Vocabulaire associé (centre, rayon, diamètre, corde)",
+				"Constructions"
+			],
+			"premiere_page": 14
+		},
+		{
+			"titre": "Nombres décimaux",
+			"categories": ["Nombres et calculs"],
+			"attendus": [
+				"Unités de numération décimale",
+				"Diverses désignations orales et écrites (fractions décimales, écritures à virgule, décompositions)",
+				"Repérage sur une demi-droite graduée",
+				"Comparaison, encadrement par deux entiers ou par deux décimaux"
+			],
+			"premiere_page": 17
+		},
+		{
+			"titre": "Droites",
+			"categories": ["Espace et géométrie"],
+			"attendus": [
+				"Perpendicularité, parallélisme : définitions",
+				"Distance entre deux points, entre un point et une droite",
+				"Constructions",
+				"Médiatrice d’un segment : définition, construction à l’équerre"
+			],
+			"premiere_page": 20
+		},
+		{
+			"titre": "Addition, Soustraction et Multiplication",
+			"categories": ["Nombres et calculs"],
+			"attendus": [
+				"Propriétés et vocabulaire de l’addition, de la soustraction et de la multiplication",
+				"Parenthèses et priorités opératoires",
+				"Algorithme de calcul posé pour effectuer : l’addition, la soustraction et la multiplication de décimaux",
+				"Distributivité simple"
+			],
+			"premiere_page": 25
+		},
+		{
+			"titre": "Polygones",
+			"categories": ["Espace et géométrie"],
+			"attendus": [
+				"Triangles, dont les triangles particuliers (triangle rectangle, triangle isocèle, triangle équilatéral)",
+				"Quadrilatères, dont les quadrilatères particuliers (carré, rectangle, losange, première approche du parallélogramme)",
+				"Vocabulaire associé (côté, sommet, angle, diagonale, polygone, milieu)",
+				"Propriétés des côtés, des angles et des diagonales",
+				"Constructions"
+			],
+			"premiere_page": 32
+		},
+		{
+			"titre": "Conversions d'unités",
+			"categories": ["Nombres et calculs", "Grandeurs et mesures"],
+			"attendus": ["Multiplier, diviser par 10, 100, 1 000", "Convertir des unités de longueurs ou de masse"],
+			"premiere_page": 34
+		},
+		{
+			"titre": "Symétrie axiale",
+			"categories": ["Espace et géométrie"],
+			"attendus": [
+				"Figure symétrique, axe de symétrie d’une figure, figures symétriques par rapport à un axe",
+				"Constructions à l’équerre",
+				"Compléter une figure par symétrie axiale",
+				"Propriété de conservation"
+			]
+		},
+		{
+			"titre": "Division euclidienne",
+			"categories": ["Nombres et calculs"],
+			"attendus": [
+				"Vocabulaire (dividende, diviseur, quotient, reste, multiple, divisible)",
+				"Critères de divisibilité par 2, 3, 5, 9 et 10",
+				"Multiples de 25 et de 50, diviseurs de 100",
+				"Algorithme de calcul posé pour effectuer la division euclidienne d’un entier par un entier"
+			]
+		},
+		{
+			"titre": "Aires et périmètres",
+			"categories": ["Espace et géométrie", "Grandeurs et mesures"],
+			"attendus": [
+				"Formules du périmètre d’un carré, d’un rectangle, de la longueur d’un cercle",
+				"Différenciation périmètre et aire d’une figure",
+				"Unités usuelles d’aire et conversions",
+				"Formules de l’aire d’un carré, d’un rectangle, d’un triangle, d’un disque"
+			]
+		},
+		{
+			"titre": "Division décimale",
+			"categories": ["Nombres et calculs"],
+			"attendus": [
+				"Algorithme de calcul posé pour effectuer la division d’un nombre décimal (entier ou non) par un nombre entier",
+				"Utiliser des fractions pour exprimer un quotient"
+			]
+		},
+		{
+			"titre": "Géométrie dans l'espace",
+			"categories": ["Espace et géométrie"],
+			"attendus": [
+				"Solides simples et assemblages de solides simples : cube, pavé droit, prisme droit, pyramide, cylindre, cône, boule",
+				"Vocabulaire associé : sommet, hauteur solide, face, arête",
+				"Perspective cavalière et patron d’un pavé droit, d’un cube"
+			]
+		},
+		{
+			"titre": "Durées, Horaires",
+			"categories": ["Grandeurs et mesures"],
+			"attendus": [
+				"Durée écoulée entre deux instants donnés",
+				"Déterminer un instant à partir de la connaissance d’un instant et d’une durée",
+				"Unités de mesure de durées et conversions (jour, semaine, heure, minute, seconde, dixième de seconde, mois,siècle, millénaire)"
+			]
+		},
+		{
+			"titre": "Rapporteur",
+			"categories": ["Espace et géométrie"],
+			"attendus": [
+				"Utilisation du rapporteur pour déterminer la mesure d’un angle ou pour construire un angle de mesure donnée",
+				"Mesure en degré d’un angle"
+			]
+		},
+		{
+			"titre": "Proportionnalité",
+			"categories": ["Nombres et calculs"],
+			"attendus": [
+				"Problèmes relevant de la proportionnalité",
+				"Propriétés de linéarité (additive et multiplicative), passage à l’unité, coefficient de proportionnalité"
+			]
+		},
+		{
+			"titre": "Médiatrice",
+			"categories": ["Espace et géométrie"],
+			"attendus": [
+				"Constructions au compas",
+				"Caractérisation : ensemble des points équidistants des extrémités du segment",
+				"Lien avec la symétrie axiale (construction au compas)"
+			]
+		},
+		{
+			"titre": "Volumes et contenances",
+			"categories": ["Espace et géométrie", "Grandeurs et mesures"],
+			"attendus": ["Unités de volume et de contenance et conversions", "Formules du volume d’un cube, d’un pavé droit"]
+		},
+		{
+			"titre": "Se repérer",
+			"categories": ["Espace et géométrie", "Algorithmique et programmation"],
+			"attendus": [
+				"Se repérer, décrire ou exécuter des déplacements, sur un plan ou sur une carte (école, quartier, ville, village)",
+				"Programmer les déplacements d’un robot ou ceux d’un personnage sur un écran en utilisant un logiciel de programmation",
+				"Vocabulaire permettant de définir des positions et des déplacements (tourner à gauche, à droite ; faire demi-tour, effectuer un quart de tour à droite, à gauche)",
+				"Divers modes de représentation de l’espace : maquettes, plans, schémas"
+			]
+		},
+		{
+			"titre": "Résoudre des problèmes",
+			"categories": ["Nombres et calculs"],
+			"attendus": [
+				"Multiplier par 0,1 ou 0,5 (multiplier par 1/10 ou 1/2)",
+				"Opérateur de partage (lien entre langage courant et écriture mathématique (ex : « la moitié de » et multiplier par 1/2)",
+				"Appliquer un taux de pourcentage (Lien fractions et taux de pourcentage)"
+			]
+		},
+		{
+			"titre": "Propriétés des droites",
+			"categories": ["Espace et géométrie"],
+			"attendus": ["Propriétés des droites parallèles et des droites perpendiculaires"]
+		},
+		{
+			"titre": "Représentations usuelles",
+			"categories": ["Grandeurs et mesures"],
+			"attendus": [
+				"Tableaux (en deux ou plusieurs colonnes, à double entrée)",
+				"Diagrammes en bâtons, circulaires ou semi-circulaires",
+				"Graphiques cartésiens"
+			]
+		},
+		{
+			"titre": "Échelles, agrandissements et réductions",
+			"categories": ["Espace et géométrie"],
+			"attendus": ["Reproduire une figure en respectant une échelle donnée", "Agrandissement ou réduction d’une figure"]
+		},
+		{
+			"titre": "Bissectrices",
+			"categories": ["Espace et géométrie"],
+			"annexe": true
+		}
+	]
+}

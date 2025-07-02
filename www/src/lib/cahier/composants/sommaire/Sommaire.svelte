@@ -12,34 +12,31 @@
 			window.scrollTo(0, (get_taille_page() + 2 * 8) * (premiere_page - 1));
 		}
 	}
+
+	const chapitres = sommaire(page_state.niveau);
 </script>
 
 <h2 style="font-size: {get_tailles().sommaire}px">Sommaire</h2>
 
-<ol class="liste_chapitres" style="font-size: {get_tailles().chapitre * 0.72}px;">
-	{#each sommaire(page_state.niveau) as chapitre}
-		<li
-			class="chapitre"
-			style="visibility: {chapitre.categories.some((c) => categories_visibles.includes(c)) ? 'visible' : 'hidden'}"
-			role="none"
-			onclick={() => scroll_lors_du_clic_sur_le_sommaire(chapitre.premiere_page)}
-		>
-			<span style="padding-left: 1ex;">{chapitre.titre}</span>
-			<div class="categories">
-				<Pastilles {chapitre} />
-			</div>
-		</li>
-		<div class="attendus">
-			{#if chapitre.attendus != undefined}
-				<ul>
-					{#each chapitre.attendus as attendu}
-						<li>{attendu}</li>
-					{/each}
-				</ul>
-			{/if}
-		</div>
-	{/each}
-</ol>
+<table style="font-size: {get_tailles().chapitre * 0.7}px">
+	<tbody>
+		{#each chapitres as chapitre, index}
+			<tr onclick={() => scroll_lors_du_clic_sur_le_sommaire(chapitre.premiere_page)}>
+				<td style="text-align: right; padding-right: 1%;">
+					{#if !chapitre.annexe}
+						{@const numero_chapitre = index + 1}
+						Chapitre {numero_chapitre} -
+					{:else}
+						{@const numero_annexe = chapitres.filter((e) => e.annexe).findIndex((e) => (e.titre = chapitre.titre)) + 1}
+						{@const lettre_annexe = String.fromCharCode(64 + numero_annexe)}
+						Annexe {lettre_annexe} -
+					{/if}
+				</td>
+				<td>{chapitre.titre}</td>
+			</tr>
+		{/each}
+	</tbody>
+</table>
 
 <div class="liste_categories">
 	{#each ['Nombres et calculs', 'Espace et géométrie', 'Grandeurs et mesures', 'Organisation et gestion de données', 'Algorithmique et programmation'].map((item) => item as Categories) as categorie}
@@ -54,50 +51,29 @@
 		text-align: center;
 	}
 
-	.liste_chapitres {
-		list-style-type: none;
-		counter-reset: chapter-counter;
-		position: relative;
-
-		.chapitre {
-			display: flex;
-			align-items: flex-start;
-			user-select: none;
-			&:hover {
-				cursor: pointer;
-				background-color: aqua;
-			}
-			&::before {
-				content: 'Chapitre ' counter(chapter-counter) ' - ';
-				counter-increment: chapter-counter;
-			}
-
-			.categories {
-				margin-left: auto;
-			}
-		}
-
-		.attendus {
-			font-size: 0.7em;
-			position: absolute;
-			background-color: aqua;
-			width: 100%;
-
-			display: none;
-			visibility: hidden;
-			opacity: 0;
-
-			ul {
-				list-style-type: disc;
-				padding-right: 5%;
-			}
-		}
+	table {
+		width: 100%;
+		border-collapse: collapse;
 	}
 
-	.chapitre:hover + .attendus {
-		visibility: visible;
-		opacity: 1;
-		display: block;
+	tr:nth-child(even) {
+		background-color: #dddddd;
+	}
+
+	.attendus {
+		font-size: 0.7em;
+		position: absolute;
+		background-color: aqua;
+		width: 95.9%;
+
+		display: none;
+		visibility: hidden;
+		opacity: 0;
+
+		ul {
+			list-style-type: disc;
+			padding-right: 5%;
+		}
 	}
 
 	.liste_categories {

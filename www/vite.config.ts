@@ -3,5 +3,5 @@ import { defineConfig } from 'vite';
 import wasmPack from 'vite-plugin-wasm-pack';
 
 export default defineConfig({
-	plugins: [sveltekit(), wasmPack([], ['@vmastro/exercices'])],
+	plugins: [sveltekit(), wasmPack([], ['@vmastro/exercices'])]
 });

@@ -1,55 +1,120 @@
 <script lang="ts">
-	import { Contenu, SousSousPartie } from "$lib/cahier/composants/de_chapitrage/*";
-    import { Definition, Formule, Schema } from "$lib/cahier/composants/de_cours/*";
-	import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
+	import { Contenu, DansLaMarge } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Definition, Item, Nomenclature } from '$lib/cahier/composants/de_cours/*';
+	import { Nombre } from '$lib/cahier/composants/de_marge/*';
+	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
-    import { math } from 'mathlifier';
+	let nombre_de_côtés: number = $state(12);
+
+	function nom_du_polygone_selon_Kepler(n: number): string {
+		let polygones_de_1_à_19 = [
+			'',
+			'monogone',
+			'digone',
+			'triangle',
+			'quadrilatère',
+			'pentagone',
+			'hexagone',
+			'heptagone',
+			'octogone',
+			'nonagone',
+			'décagone',
+			'hendécagone',
+			'dodécagone',
+			'tridécagone',
+			'tétradécagone',
+			'pentadécagone',
+			'hexadécagone',
+			'heptadécagone',
+			'octadécagone',
+			'ennéadécagone'
+		];
+
+		if (n <= 19) {
+			return polygones_de_1_à_19[n];
+		}
+
+		/* Entre 20 et 99 côtés */
+		let dizaines = (n - (n % 10)) / 10;
+		let unites = n % 10;
+
+		let nom_dizaine = '';
+		let nom_unite = '';
+
+		switch (dizaines) {
+			case 2:
+				unites == 0 ? (nom_dizaine = 'icosa') : (nom_dizaine = 'icosi');
+				break;
+			case 3:
+				nom_dizaine = 'triaconta';
+				break;
+			case 4:
+				nom_dizaine = 'tétraconta';
+				break;
+			case 5:
+				nom_dizaine = 'pentaconta';
+				break;
+			case 6:
+				nom_dizaine = 'hexaconta';
+				break;
+			case 7:
+				nom_dizaine = 'heptaconta';
+				break;
+			case 8:
+				nom_dizaine = 'octaconta';
+				break;
+			case 9:
+				nom_dizaine = 'ennéaconta';
+				break;
+		}
+		switch (unites) {
+			case 1:
+				nom_unite = 'hena';
+				break;
+			case 2:
+				nom_unite = 'di';
+				break;
+			case 3:
+				nom_unite = 'tri';
+				break;
+			case 4:
+				nom_unite = 'tétra';
+				break;
+			case 5:
+				nom_unite = 'penta';
+				break;
+			case 6:
+				nom_unite = 'hexa';
+				break;
+			case 7:
+				nom_unite = 'hepta';
+				break;
+			case 8:
+				nom_unite = 'octa';
+				break;
+			case 9:
+				nom_unite = 'ennéa';
+				break;
+		}
+		return nom_dizaine + 'kai' + nom_unite + 'èdre';
+	}
 </script>
 
+<DansLaMarge>
+	<LigneVide lignes={12} />
+	<Nombre min={5} max={99} bind:valeur={nombre_de_côtés} />
+</DansLaMarge>
+
 <Contenu>
-    <SousSousPartie numero={1} titre="Le cube" />
-        <Definition lignes={2}>
-            Un cube est un hexaèdre régulier, c'est-à-dire un polyèdre dont toutes les faces sont des carrés.
-            Il a 12 arêtes et 8 sommets.
-        </Definition>
-        <Formule>
-            Si l'arête d'un cube mesure {@html math("c")}, alors {@html math(`\\text{V}_{\\text{cube}} = c^3`)}.
-        </Formule>
-        <Schema lignes={8}>
-            {#snippet svg()}
-                <rect x="125" y="375" width="500" height="500" fill="none" stroke="black" stroke-width="4" />
-                <path d="M 125 375 l 250 -250 l 500 0 l -250 250 Z" fill="none" stroke="black" stroke-width="4" />
-                <path d="M 125 875 l 250 -250 l 0 -500" fill="none" stroke="black" stroke-width="4" stroke-dasharray="20 20"  />
-                <line x1="375" y1="625" x2="875" y2="625" stroke="black" stroke-width="4" stroke-dasharray="20 20" />
-                <path d="M 625 875 l 250 -250 l 0 -500" fill="none" stroke="black" stroke-width="4" />
-
-                <text x="10" y="950" text-anchor="start" dominant-baseline="middle" font-size="70px" stroke="none" fill="black">
-                    Cube en perspective cavalière
-                </text>
-            {/snippet}
-        </Schema>
-    
-    <LigneVide />
-    <SousSousPartie numero={2} titre="Le pavé droit" />
-        <Definition lignes={3}>
-            Un pavé droit (ou parallélépipède rectangle) est un hexaèdre (un polyèdre à 6 faces) dont toutes les faces sont des rectangles.
-            Il a 12 arêtes et 8 sommets.
-        </Definition>
-        <Formule lignes={2}>
-            Si le pavé droit est de longueur {@html math(`\\text{L}`)}, de largeur {@html math("\\ell")}
-            et de hauteur {@html math(`\\text{h}`)}, alors {@html math(`\\text{V}_{\\text{pave}} = \\text{L} \\times \\ell \\times h`)}.
-        </Formule>
-        <Schema lignes={8} aspectRatioSVG={1.25}>
-            {#snippet svg()}
-                <rect x="125" y="375" width="625" height="375" fill="none" stroke="black" stroke-width="4" />
-                <path d="M 125 375 l 250 -250 l 625 0 l -250 250 Z" fill="none" stroke="black" stroke-width="4" />
-                <path d="M 125 750 l 250 -250 l 0 -375" fill="none" stroke="black" stroke-width="4" stroke-dasharray="20 20"  />
-                <line x1="375" y1="500" x2="1000" y2="500" stroke="black" stroke-width="4" stroke-dasharray="20 20" />
-                <path d="M 750 750 l 250 -250 l 0 -375" fill="none" stroke="black" stroke-width="4" />
-
-                <text x="10" y="850" text-anchor="start" dominant-baseline="middle" font-size="70px" stroke="none" fill="black">
-                    Pavé droit en perspective cavalière
-                </text>
-            {/snippet}
-        </Schema>
+	<Partie numero={2} titre="Solides de l'espace" />
+	<SousPartie numero={1} titre="Polyèdres" />
+	<Definition>Un polyèdre est un solide dont toutes les faces sont des polygones.</Definition>
+	<Nomenclature lignes={5}>
+		<Item>Un tétraèdre a 4 faces.</Item>
+		<Item>Un hexaèdre a 6 faces.</Item>
+		<Item>Un octaèdre a 8 faces.</Item>
+		<Item>Un décaèdre a 10 faces.</Item>
+		<Item>Un {nom_du_polygone_selon_Kepler(nombre_de_côtés)} a {nombre_de_côtés} faces.</Item>
+	</Nomenclature>
 </Contenu>

@@ -1,0 +1,20 @@
+{
+	"chapitres": [
+		{ "titre": "Opérations sur les nombres relatifs", "categories": ["Nombres et calculs"] },
+		{ "titre": "Théorème de Pythagore", "categories": ["Espace et géométrie", "Nombres et calculs", "Grandeurs et mesures"] },
+		{ "titre": "Fractions et proportionnalité", "categories": ["Nombres et calculs"] },
+		{ "titre": "Transformations du plan", "categories": ["Espace et géométrie"] },
+		{ "titre": "Calcul littéral", "categories": ["Nombres et calculs"] },
+		{ "titre": "Théorème de Thalès", "categories": ["Espace et géométrie", "Grandeurs et mesures"] },
+		{ "titre": "Puissances", "categories": ["Nombres et calculs"] },
+		{ "titre": "Statistiques", "categories": ["Organisation et gestion de données"] },
+		{ "titre": "Cosinus", "categories": ["Espace et géométrie", "Nombres et calculs", "Grandeurs et mesures"] },
+		{ "titre": "Équations", "categories": ["Nombres et calculs"] },
+		{ "titre": "Probabilités", "categories": ["Organisation et gestion de données"] },
+		{ "titre": "Décomposition en facteurs premiers", "categories": ["Nombres et calculs"] },
+		{ "titre": "Solides de l'espace", "categories": ["Espace et géométrie"] },
+		{ "titre": "Repérage", "categories": ["Espace et géométrie"] },
+		{ "titre": "Réciproques", "categories": ["Espace et géométrie", "Grandeurs et mesures"] },
+		{ "titre": "Programmation", "categories": ["Algorithmique et programmation"] }
+	]
+}
