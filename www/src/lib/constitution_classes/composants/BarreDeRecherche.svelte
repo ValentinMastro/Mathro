@@ -1,7 +1,4 @@
 <script lang="ts">
-	// import type { Donnees } from './types';
-
-	// export let _donnees: Donnees;
 	export let mode_recherche: boolean;
 	export let recherche: string;
 

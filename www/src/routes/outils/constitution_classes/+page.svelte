@@ -1,23 +1,28 @@
 <script lang="ts">
-	import PanneauElevesAPlacer from './PanneauElevesAPlacer.svelte';
-	import PanneauRelationsEleves from './PanneauRelationsEleves.svelte';
-	import Configuration from './Configuration.svelte';
-	import GrilleClasses from './GrilleClasses.svelte';
-	import BarreDeRecherche from './BarreDeRecherche.svelte';
+	import {
+		// BarreDeRecherche,
+		Configuration,
+		GrilleClasses,
+		PanneauElevesAPlacer,
+		PanneauRelationsEleves
+	} from '$lib/constitution_classes/composants/*';
 
-	import type { Donnees } from './types';
+	import { classes, eleves } from '$lib/constitution_classes/store.svelte';
 
-	let niveau: 6 | 5 | 4 | 3 = 6;
-	let nombre_de_classes: 5 | 6 = 5;
-	let donnees: Donnees = {
-		classes: [],
-		eleves: []
-	};
-	let mode_recherche = false;
-	let recherche: string = '';
+	function handleKeydown(event: KeyboardEvent) {
+		if (event.ctrlKey && event.altKey && event.key.toLowerCase() === 'c') {
+			console.log('Ctrl + Alt + C détecté !');
+			classes.set([]);
+			eleves.set([]);
+		}
+	}
+
+	$inspect($classes);
 </script>
 
-<PanneauElevesAPlacer bind:niveau bind:nombre_de_classes bind:donnees />
-<PanneauRelationsEleves />
-<Configuration bind:niveau bind:nombre_de_classes />
-<GrilleClasses bind:niveau bind:nombre_de_classes bind:donnees bind:mode_recherche />
+<svelte:window on:keydown={handleKeydown} />
+
+<PanneauElevesAPlacer />
+<!-- <PanneauRelationsEleves /> -->
+<Configuration />
+<GrilleClasses />
