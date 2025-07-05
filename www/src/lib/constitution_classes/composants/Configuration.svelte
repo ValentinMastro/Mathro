@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { niveau } from '$lib/constitution_classes/store.svelte';
+	import { trier_par_nom_croissant, trier_par_nom_decroissant } from './tools/trier';
 </script>
 
 <div id="configuration">
@@ -11,6 +12,10 @@
 			<option value={3}>3ème</option>
 		</select>
 	</div>
+	<button onclick={trier_par_nom_croissant}>Alphabétique ↓</button>
+	<button onclick={trier_par_nom_decroissant}>Alphabétique ↑</button>
+	<button>Niveau ↓</button>
+	<button>Niveau ↑</button>
 </div>
 
 <style>

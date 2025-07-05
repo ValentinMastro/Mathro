@@ -37,3 +37,11 @@ export function restaurerDepuisJSON(fichier: File) {
 	};
 	reader.readAsText(fichier);
 }
+
+export function afficher_classe_eleves_trier_par_ordre_croissant() {
+	let mes_classes = get(classes);
+	let mes_eleves = mes_classes.flatMap((classe) => classe.eleves);
+	mes_eleves.sort((e1, e2) => e1.nom.localeCompare(e2.nom));
+	let affichage_des_classes = mes_eleves.map((eleve) => mes_classes.find((c) => c.eleves.includes(eleve))?.index);
+	console.log(affichage_des_classes.join('\n'));
+}
