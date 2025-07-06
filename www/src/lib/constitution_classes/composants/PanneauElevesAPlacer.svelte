@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { CarteEleve } from '$lib/constitution_classes/composants/*';
 	import { importerDonnees } from '$lib/constitution_classes/donnees/importation';
-	import { niveau, nombre_de_classes, classes, eleves } from '$lib/constitution_classes/store.svelte';
+	import { classes, eleves } from '$lib/constitution_classes/store.svelte';
 	import { sauvegarder, restaurerDepuisJSON } from '$lib/constitution_classes/donnees/sauvegarder_et_restaurer';
-	import { eleve_et_classe_incompatibles } from '../donnees/types';
+	import { eleve_et_classe_incompatibles, type Classe, type Eleve } from '$lib/constitution_classes/donnees/types';
 
 	let retracte = $state(false);
 
@@ -16,18 +16,26 @@
 	}
 
 	function preremplissage() {
-		// $eleves
-		// 	.filter((e) => $classes.some((c) => c.eleves.map((e) => e.id).includes(e.id)))
-		// 	.forEach((e) => {
-		// 		console.log(e);
-		// 		let classes_possibles = $classes.filter((c) => !eleve_et_classe_incompatibles(e, c));
-		// 		if (classes_possibles.length <= 1) classe_aleatoire = classes_possibles[0].index
-		// 		let classe_aleatoire = classes_possibles[Math.floor(Math.random() * classes_possibles.length)].index;
-		// 		classes.update((c) => {
-		// 			c.find((classe) => classe.index == classe_aleatoire)?.eleves.push(e);
-		// 			return c;
-		// 		});
-		// 	});
+		$eleves
+			// Parmi les élèves qui ne sont pas encore placés
+			.filter((eleve) => !$classes.some((classe) => classe.eleves.map((e) => e.id).includes(eleve.id)))
+			// On ne garde que les élèves qui n'ont qu'une seule classe possible (suite aux options)
+			.map((eleve) => {
+				let nombre_de_classes_compatibles = 0;
+				let classe_trouvee: Classe | undefined = undefined;
+				for (let classe of $classes) {
+					if (!eleve_et_classe_incompatibles(eleve, classe)) {
+						nombre_de_classes_compatibles += 1;
+						classe_trouvee = classe;
+					}
+				}
+				return [eleve, nombre_de_classes_compatibles, classe_trouvee];
+			})
+			.filter(([_eleve, nombre_de_classes_compatibles, _classe_trouvee]) => nombre_de_classes_compatibles == 1)
+			// Chacun d'entre eux est ajouté à la classe correspondante
+			.forEach(([eleve, _nombre_de_classes_compatibles, classe_trouvee]) => {
+				$classes.find((classe) => (classe_trouvee as Classe).index == classe.index)?.eleves.push(eleve as Eleve);
+			});
 	}
 
 	function exporter() {}
@@ -70,7 +78,12 @@
 				/>
 			</div>
 			<div style="height: 3vh;"><!-- Espace --></div>
-			<button onclick={preremplissage}>Pré-remplissage</button>
+			<button
+				onclick={(e) => {
+					e.stopPropagation();
+					preremplissage();
+				}}>Pré-remplissage</button
+			>
 			<div style="height: 3vh;"><!-- Espace --></div>
 			<div id="liste_des_eleves_a_placer" style="overflow-y: auto;">
 				{#each $eleves.filter((eleve: any) => {
