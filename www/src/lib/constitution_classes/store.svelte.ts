@@ -28,6 +28,6 @@ function persistStore<T>(key: string, initialValue: T) {
 	return store;
 }
 
-// 🧠 Tes stores persistants
+// 🧠 Stores persistants
 export const classes = persistStore<Classe[]>('classes', []);
 export const eleves = persistStore<Eleve[]>('eleves', []);
