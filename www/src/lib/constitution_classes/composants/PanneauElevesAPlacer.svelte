@@ -75,7 +75,7 @@
 			<div id="liste_des_eleves_a_placer" style="overflow-y: auto;">
 				{#each $eleves.filter((eleve: any) => {
 					for (let classe of $classes) {
-						if (classe.eleves.includes(eleve)) {
+						if (classe.eleves.map((eleve) => eleve.id).includes(eleve.id)) {
 							return false;
 						}
 					}
