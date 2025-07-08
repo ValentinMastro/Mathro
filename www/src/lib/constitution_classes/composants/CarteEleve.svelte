@@ -23,14 +23,11 @@
 	<div class="niveau">
 		{#if eleve.niveau === 'A'}
 			<div class="lettre A">A</div>
-		{/if}
-		{#if eleve.niveau === 'B'}
+		{:else if eleve.niveau === 'B'}
 			<div class="lettre B">B</div>
-		{/if}
-		{#if eleve.niveau === 'C'}
+		{:else if eleve.niveau === 'C'}
 			<div class="lettre C">C</div>
-		{/if}
-		{#if eleve.niveau === 'D'}
+		{:else if eleve.niveau === 'D'}
 			<div class="lettre D">D</div>
 		{/if}
 	</div>
