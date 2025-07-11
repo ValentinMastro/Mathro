@@ -1,34 +1,30 @@
-export type Categories =
-	| 'Nombres et calculs'
-	| 'Espace et géométrie'
-	| 'Grandeurs et mesures'
-	| 'Algorithmique et programmation'
-	| 'Organisation et gestion de données';
+export enum Categories {
+	'Nombres, calcul et résolution de problèmes',
+	'Espace et géométrie',
+	'Grandeurs et mesures',
+	'Organisation et gestion de données et probabilités',
+	'Initiation à la pensée informatique',
+	'La proportionnalité'
+}
 
 export function couleur_de_la_categorie(categorie: Categories) {
 	switch (categorie) {
-		case 'Nombres et calculs':
+		case Categories['Nombres, calcul et résolution de problèmes']:
 			return 'blue';
-		case 'Espace et géométrie':
+		case Categories['Espace et géométrie']:
 			return 'green';
-		case 'Grandeurs et mesures':
+		case Categories['Grandeurs et mesures']:
 			return 'orange';
-		case 'Algorithmique et programmation':
+		case Categories['Initiation à la pensée informatique']:
 			return 'purple';
-		case 'Organisation et gestion de données':
+		case Categories['Organisation et gestion de données et probabilités']:
 			return 'red';
-		default:
-			return 'black';
+		case Categories['La proportionnalité']:
+			return 'yellow';
 	}
 }
 
-export const categories_visibles = [
-	'Nombres et calculs',
-	'Espace et géométrie',
-	'Grandeurs et mesures',
-	'Algorithmique et programmation',
-	'Organisation et gestion de données'
-];
+export const categories_visibles = Object.keys(Categories);
 
 export type Chapitre = {
 	titre: string;
