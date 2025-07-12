@@ -1,9 +1,11 @@
 {
 	"chapitres": [
 		{
+			"période": 1,
+			"numéro": 1,
 			"titre": "Fractions",
-			"categories": ["Nombres et calculs"],
-			"attendus": [
+			"catégories": ["Nombres, calcul et résolution de problèmes"],
+			"objectifs": [
 				"Décomposer une fraction sous la forme d’une somme (ou d’une différence) d’un entier et d’une fraction",
 				"Reconnaître et produire des fractions égales",
 				"Comparer, ranger, encadrer des fractions dont les dénominateurs sont égaux ou multiples l’un de l’autre",
@@ -11,9 +13,11 @@
 			]
 		},
 		{
+			"période": 1,
+			"numéro": 2,
 			"titre": "Propriétés de la symétrie",
-			"categories": ["Espace et géométrie"],
-			"attendus": [
+			"catégories": ["Espace et géométrie"],
+			"objectifs": [
 				"Consolider le travail sur les codages de figures : interprétation d’une figure codée ou réalisation d’un codage",
 				"Comprendre l’effet des symétries (axiale et centrale) : conservation du parallélisme, des longueurs et des angles",
 				"Déterminer des longueurs et des mesures d’angles en utilisant les propriétés de conservation des symétries (axiale et centrale)",
@@ -24,9 +28,11 @@
 			]
 		},
 		{
+			"période": 1,
+			"numéro": 3,
 			"titre": "Nombres premiers",
-			"categories": ["Nombres et calculs"],
-			"attendus": [
+			"catégories": ["Nombres, calcul et résolution de problèmes"],
+			"objectifs": [
 				"Savoir calculer le quotient et le reste dans une division euclidienne",
 				"Déterminer si un nombre entier est ou n’est pas multiple ou diviseur d’un autre nombre entier",
 				"Modéliser et résoudre des problèmes faisant intervenir les notions de multiple, de diviseur, de quotient et de reste",
@@ -36,18 +42,22 @@
 			]
 		},
 		{
+			"période": 1,
+			"numéro": 4,
 			"titre": "Angles d'un triangle",
-			"categories": ["Espace et géométrie"],
-			"attendus": [
+			"catégories": ["Espace et géométrie"],
+			"objectifs": [
 				"Connaître et utiliser la propriété sur la somme des mesures des angles d’un triangle",
 				"Reconnaître des triangles particuliers en utilisant les angles",
 				"Calculer les angles d’un triangle"
 			]
 		},
 		{
+			"période": 1,
+			"numéro": 5,
 			"titre": "Nombres relatifs",
-			"categories": ["Nombres et calculs"],
-			"attendus": [
+			"catégories": ["Nombres, calcul et résolution de problèmes"],
+			"objectifs": [
 				"Introduction des nombres relatifs",
 				"Déterminer l’opposé d’un nombre relatif",
 				"Repérer sur une droite graduée les nombres décimaux relatifs",
@@ -56,27 +66,33 @@
 			]
 		},
 		{
+			"période": 1,
+			"numéro": 6,
 			"titre": "Construction de triangles",
-			"categories": ["Espace et géométrie"],
-			"attendus": [
+			"catégories": ["Espace et géométrie"],
+			"objectifs": [
 				"Connaître l’inégalité triangulaire et l’énoncer",
 				"Connaître le lien entre l’inégalité triangulaire et la construction d’un triangle à partir de la donnée de trois longueurs",
 				"Construire un triangle à partir de la mesure d’une longueur et de deux angles ou d’un angle et de deux longueurs données"
 			]
 		},
 		{
+			"période": 1,
+			"numéro": 7,
 			"titre": "Enchaînement d'opérations",
-			"categories": ["Nombres et calculs"],
-			"attendus": [
+			"catégories": ["Nombres, calcul et résolution de problèmes"],
+			"objectifs": [
 				"Effectuer mentalement, à la main ou à l’aide d’une calculatrice un enchaînement d’opérations en respectant les priorités opératoires",
 				"Contrôler la vraisemblance d’un résultat",
 				"Résoudre des problèmes faisant intervenir des nombres décimaux"
 			]
 		},
 		{
+			"période": 1,
+			"numéro": 8,
 			"titre": "Parallélogrammes",
-			"categories": ["Espace et géométrie"],
-			"attendus": [
+			"catégories": ["Espace et géométrie"],
+			"objectifs": [
 				"Définir le parallélogramme (intersection des diagonales ou parallélisme des couples de côtés opposés)",
 				"L’autre propriété est démontrée et devient une propriété caractéristique",
 				"Savoir que les côtés opposés d’un parallélogramme sont deux à deux de même longueur grâce aux propriétés de la symétrie",
@@ -84,17 +100,21 @@
 			]
 		},
 		{
+			"période": 1,
+			"numéro": 9,
 			"titre": "Calculs avec fractions",
-			"categories": ["Nombres et calculs"],
-			"attendus": [
+			"catégories": ["Nombres, calcul et résolution de problèmes"],
+			"objectifs": [
 				"Additionner ou soustraire des fractions dont les dénominateurs sont égaux ou multiples l’un de l’autre",
 				"Résoudre des problèmes faisant intervenir des fractions"
 			]
 		},
 		{
+			"période": 1,
+			"numéro": 10,
 			"titre": "Grandeurs",
-			"categories": ["Grandeurs et mesures"],
-			"attendus": [
+			"catégories": ["Grandeurs et mesures"],
+			"objectifs": [
 				"Calculer le périmètre et l’aire des figures usuelles (rectangle, triangle, disque)",
 				"Calculer le périmètre et l’aire d’un assemblage de figures",
 				"Calculer le périmètre et l’aire du parallélogramme",
@@ -103,17 +123,21 @@
 			]
 		},
 		{
+			"période": 1,
+			"numéro": 11,
 			"titre": "Construire des symétriques",
-			"categories": ["Espace et géométrie"],
-			"attendus": [
+			"catégories": ["Espace et géométrie"],
+			"objectifs": [
 				"Construire les images par une symétrie axiale de segments, de droites, de cercles, de triangles ou d’assemblages de ces figures",
 				"Transformer une figure par symétrie axiale"
 			]
 		},
 		{
+			"période": 1,
+			"numéro": 12,
 			"titre": "Calculer avec des relatifs",
-			"categories": ["Nombres et calculs"],
-			"attendus": [
+			"catégories": ["Nombres, calcul et résolution de problèmes"],
+			"objectifs": [
 				"Additionner deux nombres relatifs",
 				"Soustraire des nombres décimaux relatifs",
 				"Savoir que soustraire revient à additionner l’opposé",
@@ -121,18 +145,22 @@
 			]
 		},
 		{
+			"période": 1,
+			"numéro": 13,
 			"titre": "Droites remarquables dans un triangle",
-			"categories": ["Espace et géométrie"],
-			"attendus": [
+			"catégories": ["Espace et géométrie"],
+			"objectifs": [
 				"Connaître deux droites remarquables du triangle : les hauteurs et médiatrices",
 				"Utiliser la médiatrice dans le cadre de résolution de problèmes",
 				"Démontrer que les médiatrices d’un triangle sont concourantes"
 			]
 		},
 		{
+			"période": 1,
+			"numéro": 14,
 			"titre": "Expressions littérales",
-			"categories": ["Nombres et calculs"],
-			"attendus": [
+			"catégories": ["Nombres, calcul et résolution de problèmes"],
+			"objectifs": [
 				"Traduire un programme de calcul",
 				"Substituer une valeur numérique à une lettre pour calculer la valeur d’une expression littérale",
 				"Utiliser la distributivité simple pour réduire une expression littérale de la forme ax + bx où a et b sont des nombres décimaux",
@@ -140,9 +168,11 @@
 			]
 		},
 		{
+			"période": 1,
+			"numéro": 15,
 			"titre": "Situations de proportionnalité",
-			"categories": ["Nombres et calculs"],
-			"attendus": [
+			"catégories": ["La proportionnalité"],
+			"objectifs": [
 				"Reconnaître une grandeur",
 				"Reconnaître deux grandeurs proportionnelles",
 				"Reconnaître des tableaux de proportionnalité",
@@ -151,18 +181,22 @@
 			]
 		},
 		{
+			"période": 1,
+			"numéro": 16,
 			"titre": "Solides",
-			"categories": ["Espace et géométrie"],
-			"attendus": [
+			"catégories": ["Espace et géométrie"],
+			"objectifs": [
 				"Reconnaître des solides (pavé droit, cube, cylindre, prisme droit, pyramide, cône, boule) à partir d’un objet réel, d’une image, d’une représentation en perspective cavalière",
 				"Construire une représentation en perspective cavalière d’un prisme droit, d’un cylindre",
 				"Construire et mettre en relation une représentation en perspective cavalière et un patron d’un pavé droit, d’un cylindre"
 			]
 		},
 		{
+			"période": 1,
+			"numéro": 17,
 			"titre": "Tableaux et statistiques",
-			"categories": ["Organisation et gestion de données"],
-			"attendus": [
+			"catégories": ["Organisation et gestion de données et probabilités"],
+			"objectifs": [
 				"Recueillir et organiser des données",
 				"Lire et interpréter des données brutes ou présentées sous forme de tableaux",
 				"Représenter, sur papier ou à l’aide d’un tableur-grapheur, des données sous la forme d’un tableau",
@@ -175,9 +209,11 @@
 			]
 		},
 		{
+			"période": 1,
+			"numéro": 18,
 			"titre": "Calcul littéral",
-			"categories": ["Nombres et calculs"],
-			"attendus": [
+			"catégories": ["Nombres, calcul et résolution de problèmes"],
+			"objectifs": [
 				"Produire une expression littérale pour élaborer une formule ou traduire un programme de calcul",
 				"Utiliser une lettre pour traduire des propriétés générales",
 				"Utiliser une lettre pour démontrer une propriété générale",
@@ -185,9 +221,11 @@
 			]
 		},
 		{
+			"période": 1,
+			"numéro": 19,
 			"titre": "Volumes",
-			"categories": ["Espace et géométrie"],
-			"attendus": [
+			"catégories": ["Espace et géométrie"],
+			"objectifs": [
 				"Calculer le volume d’un pavé droit, d’un prisme droit, d’un cylindre",
 				"Calculer le volume d’un assemblage de ces solides",
 				"Exprimer les résultats dans l’unité adaptée",
@@ -197,9 +235,11 @@
 			]
 		},
 		{
+			"période": 1,
+			"numéro": 20,
 			"titre": "Utiliser la proportionnalité",
-			"categories": ["Nombres et calculs"],
-			"attendus": [
+			"catégories": ["La proportionnalité"],
+			"objectifs": [
 				"Résoudre des problèmes de proportionnalité dans diverses situations pouvant faire intervenir des pourcentages et des échelles",
 				"Mettre en œuvre des procédures variées (additivité, homogénéité, passage à l’unité, coefficient de proportionnalité). Calculer un pourcentage",
 				"Calculer une remise",
@@ -207,27 +247,35 @@
 			]
 		},
 		{
+			"période": 1,
+			"numéro": 21,
 			"titre": "Angles et parallélisme",
-			"categories": ["Espace et géométrie"],
-			"attendus": ["Connaître les caractérisations angulaires du parallélisme (angles alternes internes, angles correspondants)"]
+			"catégories": ["Espace et géométrie"],
+			"objectifs": ["Connaître les caractérisations angulaires du parallélisme (angles alternes internes, angles correspondants)"]
 		},
 		{
+			"période": 1,
+			"numéro": 22,
 			"titre": "Diagrammes et graphiques",
-			"categories": ["Organisation et gestion de données"],
-			"attendus": [
+			"catégories": ["Organisation et gestion de données et probabilités"],
+			"objectifs": [
 				"Lire et interpréter des données brutes ou présentées sous forme de diagrammes et de graphiques",
 				"Représenter, sur papier ou à l’aide d’un tableur-grapheur, des données sous la forme d’un diagramme ou d’un graphique"
 			]
 		},
 		{
+			"période": 1,
+			"numéro": 23,
 			"titre": "Probabilités",
-			"categories": ["Organisation et gestion de données"],
-			"attendus": ["Placer un événement sur une échelle de probabilités", "Calculer des probabilités dans des situations simples d’équiprobabilité"]
+			"catégories": ["Organisation et gestion de données et probabilités"],
+			"objectifs": ["Placer un événement sur une échelle de probabilités", "Calculer des probabilités dans des situations simples d’équiprobabilité"]
 		},
 		{
+			"période": 1,
+			"numéro": 24,
 			"titre": "Dépendance de grandeurs",
-			"categories": ["Grandeurs et mesures"],
-			"attendus": [
+			"catégories": ["Grandeurs et mesures"],
+			"objectifs": [
 				"Traduire la relation de dépendance entre deux grandeurs par un tableau de valeurs",
 				"Produire une formule représentant la dépendance de deux grandeurs"
 			]

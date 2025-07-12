@@ -1,20 +1,56 @@
 {
 	"chapitres": [
-		{ "titre": "Opérations sur les nombres relatifs", "categories": ["Nombres et calculs"] },
-		{ "titre": "Théorème de Pythagore", "categories": ["Espace et géométrie", "Nombres et calculs", "Grandeurs et mesures"] },
-		{ "titre": "Fractions et proportionnalité", "categories": ["Nombres et calculs"] },
-		{ "titre": "Transformations du plan", "categories": ["Espace et géométrie"] },
-		{ "titre": "Calcul littéral", "categories": ["Nombres et calculs"] },
-		{ "titre": "Théorème de Thalès", "categories": ["Espace et géométrie", "Grandeurs et mesures"] },
-		{ "titre": "Puissances", "categories": ["Nombres et calculs"] },
-		{ "titre": "Statistiques", "categories": ["Organisation et gestion de données"] },
-		{ "titre": "Cosinus", "categories": ["Espace et géométrie", "Nombres et calculs", "Grandeurs et mesures"] },
-		{ "titre": "Équations", "categories": ["Nombres et calculs"] },
-		{ "titre": "Probabilités", "categories": ["Organisation et gestion de données"] },
-		{ "titre": "Décomposition en facteurs premiers", "categories": ["Nombres et calculs"] },
-		{ "titre": "Solides de l'espace", "categories": ["Espace et géométrie"] },
-		{ "titre": "Repérage", "categories": ["Espace et géométrie"] },
-		{ "titre": "Réciproques", "categories": ["Espace et géométrie", "Grandeurs et mesures"] },
-		{ "titre": "Programmation", "categories": ["Algorithmique et programmation"] }
+		{
+			"période": 1,
+			"numéro": 1,
+			"titre": "Opérations sur les nombres relatifs",
+			"catégories": ["Nombres, calcul et résolution de problèmes"],
+			"objectifs": []
+		},
+		{
+			"période": 1,
+			"numéro": 2,
+			"titre": "Théorème de Pythagore",
+			"catégories": ["Espace et géométrie", "Nombres, calcul et résolution de problèmes", "Grandeurs et mesures"],
+			"objectifs": []
+		},
+		{
+			"période": 1,
+			"numéro": 3,
+			"titre": "Fractions et proportionnalité",
+			"catégories": ["Nombres, calcul et résolution de problèmes"],
+			"objectifs": []
+		},
+		{ "période": 1, "numéro": 4, "titre": "Transformations du plan", "catégories": ["Espace et géométrie"], "objectifs": [] },
+		{ "période": 1, "numéro": 5, "titre": "Calcul littéral", "catégories": ["Nombres, calcul et résolution de problèmes"], "objectifs": [] },
+		{ "période": 1, "numéro": 6, "titre": "Théorème de Thalès", "catégories": ["Espace et géométrie", "Grandeurs et mesures"], "objectifs": [] },
+		{ "période": 1, "numéro": 7, "titre": "Puissances", "catégories": ["Nombres, calcul et résolution de problèmes"], "objectifs": [] },
+		{ "période": 1, "numéro": 8, "titre": "Statistiques", "catégories": ["Organisation et gestion de données et probabilités"], "objectifs": [] },
+		{
+			"période": 1,
+			"numéro": 9,
+			"titre": "Cosinus",
+			"catégories": ["Espace et géométrie", "Nombres, calcul et résolution de problèmes", "Grandeurs et mesures"],
+			"objectifs": []
+		},
+		{ "période": 1, "numéro": 10, "titre": "Équations", "catégories": ["Nombres, calcul et résolution de problèmes"], "objectifs": [] },
+		{ "période": 1, "numéro": 11, "titre": "Probabilités", "catégories": ["Organisation et gestion de données et probabilités"], "objectifs": [] },
+		{
+			"période": 1,
+			"numéro": 12,
+			"titre": "Décomposition en facteurs premiers",
+			"catégories": ["Nombres, calcul et résolution de problèmes"],
+			"objectifs": []
+		},
+		{ "période": 1, "numéro": 13, "titre": "Solides de l'espace", "catégories": ["Espace et géométrie"], "objectifs": [] },
+		{ "période": 1, "numéro": 14, "titre": "Repérage", "catégories": ["Espace et géométrie"], "objectifs": [] },
+		{ "période": 1, "numéro": 15, "titre": "Réciproques", "catégories": ["Espace et géométrie", "Grandeurs et mesures"], "objectifs": [] },
+		{
+			"période": "tout au long de l'année",
+			"numéro": 16,
+			"titre": "Programmation",
+			"catégories": ["Algorithmique et programmation"],
+			"objectifs": []
+		}
 	]
 }

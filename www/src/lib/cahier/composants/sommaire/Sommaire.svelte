@@ -1,8 +1,6 @@
 <script lang="ts">
-	import { sommaire, categories_visibles, type Categories } from '$lib/cahier/contenu/sommaires';
-
+	import { sommaire, Categories, type Chapitre, type Période } from '$lib/cahier/contenu/sommaires';
 	import { page_state, get_tailles, get_taille_page } from '$lib/cahier/store.svelte';
-
 	import Pastilles from './Pastilles.svelte';
 	import SelecteurCategories from './SelecteurCategories.svelte';
 
@@ -16,31 +14,54 @@
 	const chapitres = sommaire(page_state.niveau);
 </script>
 
+{#snippet période(p: Période)}
+	<tr style="background-color: black; width: 100%; height: 0.5vh;"> <td></td> <td></td> <td></td> </tr>
+	<tr class="période">
+		{#if p == "tout au long de l'année"}
+			<td>{p}</td>
+		{:else}
+			<td>période {p}</td>
+		{/if}
+		<td></td>
+		<td></td>
+	</tr>
+{/snippet}
+
+{#snippet titre(chapitre: Chapitre)}
+	<tr class="chapitre {chapitre.numéro % 2 == 0 ? 'pair' : 'impair'}" onclick={() => scroll_lors_du_clic_sur_le_sommaire(chapitre.premiere_page)}>
+		<td>
+			<Pastilles {chapitre} />
+		</td>
+		<td style="text-align: right; padding-right: 1%;">
+			{#if !chapitre.annexe}
+				Chapitre {chapitre.numéro} -
+			{:else}
+				{@const numero_annexe = chapitres.filter((e) => e.annexe).findIndex((e) => (e.titre = chapitre.titre)) + 1}
+				{@const lettre_annexe = String.fromCharCode(64 + numero_annexe)}
+				Annexe {lettre_annexe} -
+			{/if}
+		</td>
+		<td>{chapitre.titre}</td>
+	</tr>
+{/snippet}
+
 <h2 style="font-size: {get_tailles().sommaire}px">Sommaire</h2>
 
 <table style="font-size: {get_tailles().chapitre * 0.7}px">
 	<tbody>
-		{#each chapitres as chapitre, index}
-			<tr onclick={() => scroll_lors_du_clic_sur_le_sommaire(chapitre.premiere_page)}>
-				<td style="text-align: right; padding-right: 1%;">
-					{#if !chapitre.annexe}
-						{@const numero_chapitre = index + 1}
-						Chapitre {numero_chapitre} -
-					{:else}
-						{@const numero_annexe = chapitres.filter((e) => e.annexe).findIndex((e) => (e.titre = chapitre.titre)) + 1}
-						{@const lettre_annexe = String.fromCharCode(64 + numero_annexe)}
-						Annexe {lettre_annexe} -
-					{/if}
-				</td>
-				<td>{chapitre.titre}</td>
-			</tr>
+		{#each chapitres as chapitre}
+			{@const chapitre_précédent = chapitres.find((c) => c.numéro == chapitre.numéro - 1)}
+			{#if chapitre.numéro == 1 || chapitre_précédent?.période != chapitre.période}
+				{@render période(chapitre.période)}
+			{/if}
+			{@render titre(chapitre)}
 		{/each}
 	</tbody>
 </table>
 
 <div class="liste_categories">
-	{#each ['Nombres et calculs', 'Espace et géométrie', 'Grandeurs et mesures', 'Organisation et gestion de données', 'Algorithmique et programmation'].map((item) => item as Categories) as categorie}
-		{#if sommaire(page_state.niveau).some((chapitre) => chapitre.categories.includes(categorie))}
+	{#each Object.values(Categories) as categorie}
+		{#if chapitres.some((chapitre) => chapitre.catégories.includes(categorie))}
 			<SelecteurCategories {categorie} />
 		{/if}
 	{/each}
@@ -49,6 +70,8 @@
 <style>
 	h2 {
 		text-align: center;
+		margin-top: 0.3em;
+		margin-bottom: 0.3em;
 	}
 
 	table {
@@ -56,31 +79,25 @@
 		border-collapse: collapse;
 	}
 
-	tr:nth-child(even) {
-		background-color: #dddddd;
+	.période {
+		td:first-child {
+			padding-left: 5%;
+		}
+
+		font-style: italic;
 	}
 
-	.attendus {
-		font-size: 0.7em;
-		position: absolute;
-		background-color: aqua;
-		width: 95.9%;
-
-		display: none;
-		visibility: hidden;
-		opacity: 0;
-
-		ul {
-			list-style-type: disc;
-			padding-right: 5%;
-		}
+	.chapitre.pair {
+		background-color: #dddddd;
 	}
 
 	.liste_categories {
 		display: flex;
+		flex-direction: column;
 		justify-content: space-evenly;
 		margin-top: auto;
 		margin-bottom: auto;
+		margin-left: 5%;
 		flex-wrap: wrap;
 		row-gap: 0.5em;
 	}

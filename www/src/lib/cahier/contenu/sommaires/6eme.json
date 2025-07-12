@@ -2,7 +2,7 @@
 	"chapitres": [
 		{
 			"période": 1,
-			"numero": 1,
+			"numéro": 1,
 			"titre": "Fractions",
 			"objectifs": [
 				"Unités de numération pour les nombres entiers",
@@ -18,7 +18,7 @@
 		},
 		{
 			"période": 1,
-			"numero": 2,
+			"numéro": 2,
 			"titre": "Bases de géométrie",
 			"objectifs": [
 				"Vocabulaire de base (segment, droite, demi-droite)",
@@ -33,7 +33,7 @@
 		},
 		{
 			"période": 1,
-			"numero": 3,
+			"numéro": 3,
 			"titre": "Nombres décimaux",
 			"objectifs": [
 				"Unités de numération pour les nombres décimaux",
@@ -49,7 +49,7 @@
 		},
 		{
 			"période": 2,
-			"numero": 4,
+			"numéro": 4,
 			"titre": "Angles",
 			"objectifs": [
 				"Lexique et notations (angle droit, angle plat, angle plein, angle nul, angle aigu, angle obtus, angles opposés par le sommet, angles adjacents, angles supplémentaires, sommet de l’angle, côtés de l’angle)",
@@ -62,7 +62,7 @@
 		},
 		{
 			"période": 2,
-			"numero": 5,
+			"numéro": 5,
 			"titre": "Addition, soustraction et multiplication",
 			"objectifs": [
 				"Rappels : Vocabulaire de l’addition, de la soustraction et de la multiplication",
@@ -79,7 +79,7 @@
 		},
 		{
 			"période": 2,
-			"numero": 6,
+			"numéro": 6,
 			"titre": "Triangles",
 			"objectifs": [
 				"Initiation à l’inégalité triangulaire",
@@ -92,7 +92,7 @@
 		},
 		{
 			"période": 2,
-			"numero": 7,
+			"numéro": 7,
 			"titre": "Division euclidienne",
 			"objectifs": [
 				"Vocabulaire (dividende, diviseur, quotient, reste)",
@@ -104,7 +104,7 @@
 		},
 		{
 			"période": 3,
-			"numero": 8,
+			"numéro": 8,
 			"titre": "Équidistance",
 			"objectifs": [
 				"Vocabulaire : rayon, diamètre, corde",
@@ -118,7 +118,7 @@
 		},
 		{
 			"période": 3,
-			"numero": 9,
+			"numéro": 9,
 			"titre": "Division décimale",
 			"objectifs": [
 				"Diviser un nombre décimal par un nombre entier non nul inférieur à 10",
@@ -132,7 +132,7 @@
 		},
 		{
 			"période": 3,
-			"numero": 10,
+			"numéro": 10,
 			"titre": "Quadrilatères",
 			"objectifs": [
 				"Définitions et propriétés : quadrilatère, carré, rectangle, losange, trapèze, trapèze rectangle, pentagone et hexagone",
@@ -143,7 +143,7 @@
 		},
 		{
 			"période": 3,
-			"numero": 11,
+			"numéro": 11,
 			"titre": "Proportionnalité",
 			"objectifs": [
 				"Définition de la proportionnalité entre deux grandeurs",
@@ -157,7 +157,7 @@
 		},
 		{
 			"période": 4,
-			"numero": 12,
+			"numéro": 12,
 			"titre": "Périmètre et aire",
 			"objectifs": [
 				"Formules du périmètre d’un carré, d’un rectangle, d’un disque",
@@ -171,7 +171,7 @@
 		},
 		{
 			"période": 4,
-			"numero": 13,
+			"numéro": 13,
 			"titre": "Symétrie axiale",
 			"objectifs": [
 				"Définition du symétrique d’un point par rapport à une droite",
@@ -184,7 +184,7 @@
 		},
 		{
 			"période": 4,
-			"numero": 14,
+			"numéro": 14,
 			"titre": "Résoudre des problèmes",
 			"objectifs": [
 				"Utiliser une multiplication pour appliquer une fraction à un nombre entier",
@@ -198,7 +198,7 @@
 		},
 		{
 			"période": 5,
-			"numero": 15,
+			"numéro": 15,
 			"titre": "Solides",
 			"objectifs": [
 				"Voir dans l’espace des assemblages de cubes (dessin à main levée, perspective cavalière, patron)",
@@ -211,7 +211,7 @@
 		},
 		{
 			"période": 5,
-			"numero": 16,
+			"numéro": 16,
 			"titre": "Se repérer dans le temps et l’espace",
 			"objectifs": [
 				"Effectuer des calculs sur des horaires et des durées",
@@ -224,7 +224,7 @@
 		},
 		{
 			"période": 5,
-			"numero": 17,
+			"numéro": 17,
 			"titre": "Gestion de données",
 			"objectifs": [
 				"Planifier une enquête et recueillir des données",
@@ -237,7 +237,7 @@
 		},
 		{
 			"période": 5,
-			"numero": 18,
+			"numéro": 18,
 			"titre": "Probabilités",
 			"objectifs": [
 				"Savoir que la probabilité d’un évènement est un nombre compris entre 0 et 1",
@@ -248,8 +248,8 @@
 			"premiere_page": 0
 		},
 		{
-			"période": "extra",
-			"numero": 19,
+			"période": "tout au long de l'année",
+			"numéro": 19,
 			"titre": "Algèbre",
 			"objectifs": [
 				"Utiliser des modèles pré-algébriques pour résoudre des problèmes algébriques",
@@ -259,8 +259,8 @@
 			"premiere_page": 0
 		},
 		{
-			"période": "extra",
-			"numero": 20,
+			"période": "tout au long de l'année",
+			"numéro": 20,
 			"titre": "Initiation à la pensée informatique",
 			"objectifs": [
 				"Identifier une instruction ou une séquence d’instructions",

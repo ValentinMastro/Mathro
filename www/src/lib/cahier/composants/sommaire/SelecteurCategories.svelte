@@ -1,8 +1,3 @@
-<!--
-    Sélecteur de catégorie :
-        - Lorsqu'on clique sur lui, on affiche ou on cache les chapitres de cette catégorie.
-        - La couleur de fond du sélecteur est la couleur de la catégorie si elle est visible, sinon grise.
--->
 <script lang="ts">
 	import { get_tailles } from '$lib/cahier/store.svelte';
 	import { type Categories, couleur_de_la_categorie, categories_visibles } from '$lib/cahier/contenu/sommaires';

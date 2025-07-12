@@ -1,35 +1,39 @@
 export enum Categories {
-	'Nombres, calcul et résolution de problèmes',
-	'Espace et géométrie',
-	'Grandeurs et mesures',
-	'Organisation et gestion de données et probabilités',
-	'Initiation à la pensée informatique',
-	'La proportionnalité'
+	Numérique = 'Nombres, calcul et résolution de problèmes',
+	Géométrie = 'Espace et géométrie',
+	Grandeurs = 'Grandeurs et mesures',
+	GestionDeDonnées = 'Organisation et gestion de données et probabilités',
+	Informatique = 'Initiation à la pensée informatique',
+	Proportionnalité = 'La proportionnalité'
 }
 
-export function couleur_de_la_categorie(categorie: Categories) {
+export function couleur_de_la_categorie(categorie: Categories): string {
 	switch (categorie) {
-		case Categories['Nombres, calcul et résolution de problèmes']:
+		case Categories.Numérique:
 			return 'blue';
-		case Categories['Espace et géométrie']:
+		case Categories.Géométrie:
 			return 'green';
-		case Categories['Grandeurs et mesures']:
+		case Categories.Grandeurs:
 			return 'orange';
-		case Categories['Initiation à la pensée informatique']:
+		case Categories.GestionDeDonnées:
 			return 'purple';
-		case Categories['Organisation et gestion de données et probabilités']:
+		case Categories.Informatique:
 			return 'red';
-		case Categories['La proportionnalité']:
-			return 'yellow';
+		case Categories.Proportionnalité:
+			return 'skyblue';
 	}
 }
 
-export const categories_visibles = Object.keys(Categories);
+export const categories_visibles = Object.values(Categories);
+
+export type Période = 1 | 2 | 3 | 4 | 5 | "tout au long de l'année";
 
 export type Chapitre = {
+	période: Période;
+	numéro: number;
 	titre: string;
-	categories: Categories[];
-	attendus?: string[];
+	objectifs: string[];
+	catégories: Categories[];
 	premiere_page?: number;
 	annexe?: boolean;
 };

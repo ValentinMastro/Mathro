@@ -1,23 +1,12 @@
 <!-- Pastille de couleur indiquant la catégorie du chapitre -->
 <script lang="ts">
-    import { type Chapitre, couleur_de_la_categorie, categories_visibles } from "$lib/cahier/contenu/sommaires";
-
-    let { chapitre }: { chapitre: Chapitre } = $props();
-    import { math } from "mathlifier";
+	import { type Chapitre, couleur_de_la_categorie } from '$lib/cahier/contenu/sommaires';
+	let { chapitre }: { chapitre: Chapitre } = $props();
+	import { math } from 'mathlifier';
 </script>
 
-{#snippet pastille(couleur: string)}
-    <span style="color: {couleur};" >
-        {@html math("\\large\\bullet")}
-    </span>
-{/snippet}
-
-{#each chapitre.categories as categorie}
-    {@render pastille(couleur_de_la_categorie(categorie))}
+{#each chapitre.catégories as categorie}
+	<span style="color: {couleur_de_la_categorie(categorie)}; user-select: none;">
+		{@html math('\\large\\blacksquare')}
+	</span>
 {/each}
-
-<style>
-    span {
-        user-select: none;
-    }
-</style>
