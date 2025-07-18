@@ -44,14 +44,10 @@ export function set_taille_page(value: number) {
 
 let tailles = $derived({
 	hauteur_ligne_cahier: taille_page / 37.1,
-	sommaire: taille_page / 25,
-	numero_de_page: taille_page / 60,
 	titre: taille_page / 20,
 	chapitre: taille_page / 45,
 	titre_de_sections: taille_page / 50,
-	texte: taille_page / 60,
-	separateur_chapitre: (taille_page / 45) * 1.22,
-	separateur_texte: (taille_page / 60) * 1.6
+	separateur_chapitre: (taille_page / 45) * 1.22
 });
 
 export function get_tailles() {

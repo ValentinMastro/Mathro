@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import { page_state, get_tailles, set_taille_page } from '$lib/cahier/store.svelte';
+	import { page_state, set_taille_page } from '$lib/cahier/store.svelte';
 
 	interface Props {
 		numero_de_page: number;
@@ -9,27 +9,39 @@
 
 	let { numero_de_page, children }: Props = $props();
 
-	// Le 'composant' permet de récupérer les dimensions de la fenêtre
-	let composant: HTMLDivElement;
-
-	let is_seyes: string = $derived(numero_de_page >= 3 ? 'seyes' : '');
-	let visibility: string = $derived(numero_de_page == 0 || numero_de_page == 97 ? 'hidden' : 'visible');
-	let is_full_screen: string = $derived(page_state.plein_ecran ? `width: ${page_state.largeur_plein_ecran}%` : `height: 100%`);
+	let is_seyes: string = $derived(numero_de_page >= 2 ? 'seyes' : '');
 	let is_zoom_page: string = $derived(page_state.zoom_page ? 'zoom_page' : '');
+	let is_hidden: string = $derived(numero_de_page == 0 || numero_de_page == 97 ? 'hidden' : 'visible');
+	let is_full_screen: string = $derived(page_state.plein_ecran ? `width: ${page_state.largeur_plein_ecran}%` : `height: 100%`);
 
+	// Récupération des dimensions de la fenêtre
+	let composant: HTMLDivElement;
+	let taille_page = $state(0);
 	$effect(() => {
 		const resizeObserver = new ResizeObserver(() => {
 			if (composant) {
 				set_taille_page(Number(composant.clientHeight));
+				taille_page = composant.clientHeight;
 			}
 		});
 		resizeObserver.observe(composant);
 	});
 </script>
 
-<div bind:this={composant} class="page {is_seyes} {is_zoom_page}" style="visibility: {visibility}; {is_full_screen};">
+<div
+	bind:this={composant}
+	class="page {is_seyes} {is_zoom_page}"
+	style="
+	    visibility: {is_hidden}; {is_full_screen};
+		--taille-page: {taille_page}px;
+		--carreau: {taille_page / 37.1}px;
+		--hauteur-ligne-cahier: {taille_page / 37.1}px;
+		--font-size: {taille_page / 60}px;
+		--line-height: {(taille_page / 60) * 1.6}px;
+		"
+>
 	{@render children()}
-	<span class="numero" style="font-size: {get_tailles().numero_de_page}px">Page {numero_de_page}</span>
+	<span class="numero">Page {numero_de_page}</span>
 </div>
 
 <style>
@@ -41,6 +53,11 @@
 		flex-direction: column;
 		background-color: white;
 		font-family: 'Noto Serif', serif;
+
+		--bleu: rgb(0, 0, 138);
+		--rouge: rgb(225, 0, 0);
+		--vert: rgb(0, 138, 0);
+		--noir: black;
 	}
 	@media print {
 		.page {
@@ -60,5 +77,6 @@
 		position: absolute;
 		bottom: 1%;
 		left: 1%;
+		font-size: calc(var(--taille-page) / 60);
 	}
 </style>
