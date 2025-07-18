@@ -1,23 +1,18 @@
 <script>
 	import Header from './Header.svelte';
-	import { page } from '$app/stores'
-	import './accueil.css'
+	import { page } from '$app/state';
+	import './styles.css';
 </script>
 
-{#if $page.url.pathname === '/'}
+{#if page.url.pathname === '/'}
 	<div class="app">
 		<slot />
 	</div>
-{:else if $page.url.pathname === "/cours/4eme" || $page.url.pathname === "/cours/6eme"}
-	<div class="app">
-		<Header />
-		<slot />
-	</div>
-{:else if $page.url.pathname.includes("scratch")}
+{:else if page.url.pathname.includes('scratch')}
 	<slot />
-{:else if $page.url.pathname.includes("outils")}
+{:else if page.url.pathname.includes('outils')}
 	<slot />
-{:else if $page.url.pathname.includes("cahier")}
+{:else if page.url.pathname.includes('cahier')}
 	<slot />
 {:else}
 	<div class="app">
@@ -27,6 +22,8 @@
 		</main>
 	</div>
 {/if}
+
+<div class="no-print-message">L'impression est désactivée.</div>
 
 <style>
 	.app {
@@ -44,6 +41,23 @@
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
+
+	.no-print-message {
+		display: none;
+	}
+
+	@media print {
+		:global(body > *) {
+			display: none !important;
+		}
+		.no-print-message {
+			display: block !important;
+			color: red;
+			position: absolute;
+			top: 30%;
+			width: 100%;
+			text-align: center;
+			font-size: 2em;
+		}
+	}
 </style>
-
-
