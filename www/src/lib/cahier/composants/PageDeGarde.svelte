@@ -17,7 +17,7 @@
 	<div>Cahier de cours</div>
 	<div>Mathématiques</div>
 	<div>{page_state.niveau}ème</div>
-	<div>2024-2025</div>
+	<div>2025-2026</div>
 </div>
 
 <style>
