@@ -1,6 +1,16 @@
 <script lang="ts">
 	import { Chapitre, Partie, SousPartie, Contenu, DansLaMarge } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Tableau, LigneTableau, Texte, Exemples, Item, Propriete } from '$lib/cahier/composants/de_cours/*';
+	import {
+		Tableau,
+		LigneTableau,
+		Texte,
+		Exemples,
+		Item,
+		Propriete,
+		Definitions,
+		PourMieuxComprendre,
+		CelluleTableau
+	} from '$lib/cahier/composants/de_cours/*';
 	import { Nombre } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
@@ -23,7 +33,7 @@
 	}
 </script>
 
-<Chapitre titre="Nombres entiers" />
+<Chapitre titre="Fractions" />
 
 <DansLaMarge apres_un_titre={true}>
 	<LigneVide lignes={6} />
@@ -40,15 +50,12 @@
 	numero: number
 )}
 	{#each Array(12) as _, index}
-		{#if (surbrillances[index_surbrillance_chiffre] && index == 11 - puissance_chiffre) || (surbrillances[index_surbrillance_nombre] && index <= 11 - puissance_nombre)}
-			<td class="hover" style="border-right: 1px solid black;">
-				{chiffre_sans_zeros_inutiles(numero, 11 - index)}
-			</td>
-		{:else}
-			<td style="border-right: 1px solid black;">
-				{chiffre_sans_zeros_inutiles(numero, 11 - index)}
-			</td>
-		{/if}
+		{@const condition =
+			(surbrillances[index_surbrillance_chiffre] && index == 11 - puissance_chiffre) ||
+			(surbrillances[index_surbrillance_nombre] && index <= 11 - puissance_nombre)}
+		<CelluleTableau addStyle="border-right: 1px solid black; {condition ? 'background-color: red; color: white;' : ''}">
+			{chiffre_sans_zeros_inutiles(numero, 11 - index)}
+		</CelluleTableau>
 	{/each}
 {/snippet}
 {#snippet ligne_de_texte(index_surbrillance: number, numero: number, puissance: number, texte: string)}
@@ -80,19 +87,27 @@
 
 <Contenu apres_un_titre={true}>
 	<Partie numero={1} titre="Chiffres et nombres" />
+	<Definitions lignes={3}>
+		<Item>Un chiffre est un symbole parmi 0 ; 1 ; 2 ; 3 ; 4 ; 5 ; 6 ; 7 ; 8 ; 9</Item>
+		<Item lignes={2}>Un nombre sert à compter, mesurer ou comparer, et on peut l'écrire avec un ou plusieurs chiffres.</Item>
+	</Definitions>
+	<PourMieuxComprendre lignes={2}>
+		<Item>Le <u>mot</u> maison s'écrit avec 6 <u>lettres</u> : M-A-I-S-O-N.</Item>
+		<Item>Le <u>nombre</u> 396 s'écrit avec 3 <u>chiffres</u> : 3-9-6.</Item>
+	</PourMieuxComprendre>
 	<SousPartie numero={1} titre="Tableau de numération" />
-	<Tableau>
+	<Tableau colonnes={12} lignes={5}>
 		<LigneTableau>
-			<td colspan={3}>Milliards</td>
-			<td colspan={3}>Millions</td>
-			<td colspan={3}>Milliers</td>
-			<td colspan={3}>Unités</td>
+			<CelluleTableau colonnes={3}>Milliards</CelluleTableau>
+			<CelluleTableau colonnes={3}>Millions</CelluleTableau>
+			<CelluleTableau colonnes={3}>Milliers</CelluleTableau>
+			<CelluleTableau colonnes={3}>Unités</CelluleTableau>
 		</LigneTableau>
 		<LigneTableau>
 			{#each Array(4) as _}
-				<td>C</td>
-				<td>D</td>
-				<td style="border-right: 1px solid black;">U</td>
+				<CelluleTableau>C</CelluleTableau>
+				<CelluleTableau>D</CelluleTableau>
+				<CelluleTableau addStyle="border-right: 1px solid black;">U</CelluleTableau>
 			{/each}
 		</LigneTableau>
 		<LigneTableau>{@render ligne_de_chiffres(0, 2, 3, 1, numero_1)}</LigneTableau>
