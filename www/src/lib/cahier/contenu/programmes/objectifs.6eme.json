@@ -1,0 +1,465 @@
+{
+	"objectifs": [
+		{
+			"objectif": "Connaitre et utiliser la valeur des chiffres selon leur rang dans l’écriture d’un nombre.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Connaitre les liens entre les unités de numération unité, dizaine, centaine, millier, dixième, centième, millième.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Connaitre des grands nombres entiers.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Reconnaitre un nombre décimal.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Connaitre la définition d’un pourcentage.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Associer et utiliser différentes écritures d’un nombre décimal : écriture à virgule, fraction, nombre mixte, pourcentage.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Placer sur une demi-droite graduée un point dont l’abscisse est un nombre décimal.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Repérer un nombre décimal sur une demi-droite graduée.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Comparer deux nombres décimaux.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Ordonner une liste de nombres décimaux.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Donner la valeur arrondie à l’unité, au dixième, ou au centième d’un nombre décimal.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Déterminer ou connaitre la valeur arrondie de certains nombres non décimaux.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Encadrer un nombre décimal par deux nombres décimaux, intercaler un nombre décimal entre deux nombres décimaux.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Additionner et soustraire des nombres décimaux.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Multiplier un nombre entier ou un nombre décimal par 0,1, par 0,01, et par 0,001.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Connaitre le lien avec la division par 10, 100 et par 1 000.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Comprendre le sens de la multiplication de deux nombres décimaux.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Calculer le produit de deux nombres décimaux.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Contrôler les résultats à l’aide d’ordres de grandeur.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Résoudre des problèmes mettant en jeu des multiplications entre des nombres décimaux.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Diviser un nombre décimal par un nombre entier non nul inférieur à 10.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Résoudre des problèmes mettant en jeu des divisions décimales.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Effectuer la division euclidienne d’un nombre entier par un nombre entier inférieur à 100.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Résoudre des problèmes mettant en jeu des divisions euclidiennes.",
+			"categorie": "Nombres, calcul et résolution de problèmes",
+			"sous-catégorie": "Les nombres entiers et décimaux"
+		},
+		{
+			"objectif": "Relier une fraction au résultat exact de la division de son numérateur par son dénominateur.",
+			"categorie": "Fractions",
+			"sous-catégorie": "Le sens quotient d’une fraction"
+		},
+		{
+			"objectif": "Comprendre et connaitre la définition du quotient d’un entier a par un entier b non nul.",
+			"categorie": "Fractions",
+			"sous-catégorie": "Le sens quotient d’une fraction"
+		},
+		{
+			"objectif": "Compléter des égalités à trou multiplicatives.",
+			"categorie": "Fractions",
+			"sous-catégorie": "Le sens quotient d’une fraction"
+		},
+		{
+			"objectif": "Placer une fraction sur une demi-droite graduée dans des cas simples.",
+			"categorie": "Fractions",
+			"sous-catégorie": "Le sens quotient d’une fraction"
+		},
+		{
+			"objectif": "Graduer un segment de longueur donnée.",
+			"categorie": "Fractions",
+			"sous-catégorie": "Le sens quotient d’une fraction"
+		},
+		{
+			"objectif": "Savoir que la fraction a/b peut représenter un nombre entier, un nombre décimal non entier ou un nombre non décimal.",
+			"categorie": "Fractions",
+			"sous-catégorie": "Le sens quotient d’une fraction"
+		},
+		{
+			"objectif": "Utiliser une multiplication pour appliquer une fraction à un nombre entier.",
+			"categorie": "Fractions",
+			"sous-catégorie": "La fraction comme opérateur multiplicatif"
+		},
+		{
+			"objectif": "Établir des égalités de fractions.",
+			"categorie": "Fractions",
+			"sous-catégorie": "Comparer des fractions"
+		},
+		{
+			"objectif": "Comparer et encadrer des fractions.",
+			"categorie": "Fractions",
+			"sous-catégorie": "Comparer des fractions"
+		},
+		{
+			"objectif": "Ordonner une liste de nombres écrits sous forme de fractions ou de nombres mixtes.",
+			"categorie": "Fractions",
+			"sous-catégorie": "Comparer des fractions"
+		},
+		{
+			"objectif": "Additionner et soustraire des fractions.",
+			"categorie": "Fractions",
+			"sous-catégorie": "Effectuer des opérations sur les fractions"
+		},
+		{
+			"objectif": "Multiplier une fraction par un nombre entier.",
+			"categorie": "Fractions",
+			"sous-catégorie": "Effectuer des opérations sur les fractions"
+		},
+		{
+			"objectif": "Résoudre des problèmes mettant en jeu des fractions.",
+			"categorie": "Fractions",
+			"sous-catégorie": "Effectuer des opérations sur les fractions"
+		},
+		{
+			"objectif": "Inventer des problèmes mettant en jeu des fractions.",
+			"categorie": "Fractions",
+			"sous-catégorie": "Effectuer des opérations sur les fractions"
+		},
+		{
+			"objectif": "Comprendre le sens d’un pourcentage.",
+			"categorie": "Pourcentages"
+		},
+		{
+			"objectif": "Calculer une proportion (rapport entre une partie et le tout) et l’exprimer sous forme de pourcentage dans des cas simples.",
+			"categorie": "Pourcentages"
+		},
+		{
+			"objectif": "Appliquer un pourcentage à une grandeur ou à un nombre.",
+			"categorie": "Pourcentages"
+		},
+		{
+			"objectif": "Utiliser des modèles pré-algébraiques pour résoudre des problèmes algébriques.",
+			"categorie": "Algèbre"
+		},
+		{
+			"objectif": "Identifier la structure d’un motif évolutif en repérant une régularité et en identifiant une structure.",
+			"categorie": "Algèbre"
+		},
+		{
+			"objectif": "Savoir que le périmètre du disque est proportionnel à son diamètre.",
+			"categorie": "Grandeurs et mesures",
+			"sous-catégorie": "Les longueurs"
+		},
+		{
+			"objectif": "Connaitre la formule du périmètre d’un disque.",
+			"categorie": "Grandeurs et mesures",
+			"sous-catégorie": "Les longueurs"
+		},
+		{
+			"objectif": "Calculer le périmètre d’un disque.",
+			"categorie": "Grandeurs et mesures",
+			"sous-catégorie": "Les longueurs"
+		},
+		{
+			"objectif": "Calculer des périmètres de figures composées.",
+			"categorie": "Grandeurs et mesures",
+			"sous-catégorie": "Les longueurs"
+		},
+		{
+			"objectif": "Résoudre des problèmes impliquant des longueurs.",
+			"categorie": "Grandeurs et mesures",
+			"sous-catégorie": "Les longueurs"
+		},
+		{
+			"objectif": "Effectuer des conversions d’aire.",
+			"categorie": "Grandeurs et mesures",
+			"sous-catégorie": "Les aires"
+		},
+		{
+			"objectif": "Connaitre la formule de l’aire d’un carré ou d’un rectangle.",
+			"categorie": "Grandeurs et mesures",
+			"sous-catégorie": "Les aires"
+		},
+		{
+			"objectif": "Calculer l’aire d’un carré ou d’un rectangle.",
+			"categorie": "Grandeurs et mesures",
+			"sous-catégorie": "Les aires"
+		},
+		{
+			"objectif": "Connaitre l’unité centimètre cube.",
+			"categorie": "Grandeurs et mesures",
+			"sous-catégorie": "Les volumes"
+		},
+		{
+			"objectif": "Comparer des volumes.",
+			"categorie": "Grandeurs et mesures",
+			"sous-catégorie": "Les volumes"
+		},
+		{
+			"objectif": "Déterminer un volume.",
+			"categorie": "Grandeurs et mesures",
+			"sous-catégorie": "Les volumes"
+		},
+		{
+			"objectif": "Effectuer des calculs sur des horaires et des durées.",
+			"categorie": "Grandeurs et mesures",
+			"sous-catégorie": "Le repérage dans le temps et les durées"
+		},
+		{
+			"objectif": "Résoudre des problèmes impliquant des horaires, des durées.",
+			"categorie": "Grandeurs et mesures",
+			"sous-catégorie": "Le repérage dans le temps et les durées"
+		},
+		{
+			"objectif": "Convertir des durées.",
+			"categorie": "Grandeurs et mesures",
+			"sous-catégorie": "Le repérage dans le temps et les durées"
+		},
+		{
+			"objectif": "Connaitre et utiliser la définition de la distance entre deux points.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "Distances"
+		},
+		{
+			"objectif": "Connaitre et utiliser la définition du milieu d’un segment.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "Distances"
+		},
+		{
+			"objectif": "Connaitre les définitions d’un cercle, d’un disque, d’un rayon, d’un diamètre, d’une corde.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "Cercles et disques"
+		},
+		{
+			"objectif": "Comprendre la définition d’un cercle et celle d’un disque sous la forme d’ensembles de points.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "Cercles et disques"
+		},
+		{
+			"objectif": "Résoudre des problèmes mettant en jeu des distances à un point.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "Cercles et disques"
+		},
+		{
+			"objectif": "Connaitre la définition de la médiatrice d’un segment.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "Médiatrice d’un segment"
+		},
+		{
+			"objectif": "Comprendre et utiliser la propriété caractéristique de la médiatrice d’un segment.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "Médiatrice d’un segment"
+		},
+		{
+			"objectif": "Résoudre des problèmes en s’appuyant sur la propriété caractéristique de la médiatrice.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "Médiatrice d’un segment"
+		},
+		{
+			"objectif": "Connaitre et utiliser les angles ainsi que le lexique et les notations qui s’y rapportent.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "Angles"
+		},
+		{
+			"objectif": "Mesurer un angle.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "Angles"
+		},
+		{
+			"objectif": "Construire un angle de mesure donnée.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "Angles"
+		},
+		{
+			"objectif": "Connaitre la définition de la bissectrice d’un angle saillant.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "Bissectrice d’un angle saillant"
+		},
+		{
+			"objectif": "Utiliser la définition de la bissectrice d’un angle pour effectuer des constructions et résoudre des problèmes.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "Bissectrice d’un angle saillant"
+		},
+		{
+			"objectif": "Construire des triangles.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "Triangles"
+		},
+		{
+			"objectif": "Connaitre et utiliser les propriétés angulaires des triangles particuliers.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "Triangles"
+		},
+		{
+			"objectif": "Connaitre la valeur de la somme des mesures des angles d’un triangle.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "Triangles"
+		},
+		{
+			"objectif": "L’utiliser pour calculer des angles, effectuer des constructions et résoudre des problèmes.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "Triangles"
+		},
+		{
+			"objectif": "Savoir que les médiatrices d’un triangle sont concourantes.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "Triangles"
+		},
+		{
+			"objectif": "Connaitre et construire le cercle circonscrit à un triangle.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "Triangles"
+		},
+		{
+			"objectif": "Connaitre la définition du symétrique d’un point par rapport à une droite.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "Symétrie axiale"
+		},
+		{
+			"objectif": "Connaitre et utiliser les propriétés de la symétrie axiale pour effectuer des constructions.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "Symétrie axiale"
+		},
+		{
+			"objectif": "Voir dans l’espace des assemblages de cubes.",
+			"categorie": "Espace et géométrie",
+			"sous-catégorie": "La vision dans l’espace"
+		},
+		{
+			"objectif": "Planifier une enquête et recueillir des données.",
+			"categorie": "Organisation et gestion de données et probabilités",
+			"sous-catégorie": "Organisation et gestion de données"
+		},
+		{
+			"objectif": "Réaliser des mesures et les consigner dans un tableau.",
+			"categorie": "Organisation et gestion de données et probabilités",
+			"sous-catégorie": "Organisation et gestion de données"
+		},
+		{
+			"objectif": "Construire un tableau simple pour présenter des données (observations, caractères).",
+			"categorie": "Organisation et gestion de données et probabilités",
+			"sous-catégorie": "Organisation et gestion de données"
+		},
+		{
+			"objectif": "Faire un choix en filtrant les données d’un tableau selon un critère.",
+			"categorie": "Organisation et gestion de données et probabilités",
+			"sous-catégorie": "Organisation et gestion de données"
+		},
+		{
+			"objectif": "Savoir que la probabilité d’un évènement est un nombre compris entre 0 et 1.",
+			"categorie": "Organisation et gestion de données et probabilités",
+			"sous-catégorie": "Les probabilités"
+		},
+		{
+			"objectif": "Calculer des probabilités dans des situations simples d’équiprobabilité.",
+			"categorie": "Organisation et gestion de données et probabilités",
+			"sous-catégorie": "Les probabilités"
+		},
+		{
+			"objectif": "Comparer des résultats d’une expérience aléatoire répétée à une probabilité calculée.",
+			"categorie": "Organisation et gestion de données et probabilités",
+			"sous-catégorie": "Les probabilités"
+		},
+		{
+			"objectif": "Connaitre la définition de la proportionnalité entre deux grandeurs et la mettre en lien avec des expressions de la vie courante.",
+			"categorie": "La proportionnalité"
+		},
+		{
+			"objectif": "Identifier si une situation relève du « modèle » de la proportionnalité.",
+			"categorie": "La proportionnalité"
+		},
+		{
+			"objectif": "Résoudre un problème de proportionnalité en choisissant une procédure adaptée : propriété de linéarité pour la multiplication ou l’addition, retour à l’unité.",
+			"categorie": "La proportionnalité"
+		},
+		{
+			"objectif": "Représenter une situation de proportionnalité à l’aide d’un tableau ou de notations symboliques.",
+			"categorie": "La proportionnalité"
+		},
+		{
+			"objectif": "S’initier à la résolution de problèmes d’échelles.",
+			"categorie": "La proportionnalité"
+		},
+		{
+			"objectif": "Identifier une instruction ou une séquence d’instructions.",
+			"categorie": "Initiation à la pensée informatique"
+		},
+		{
+			"objectif": "Produire et exécuter une séquence d’instructions.",
+			"categorie": "Initiation à la pensée informatique"
+		},
+		{
+			"objectif": "Répéter à la main une séquence d’instructions pour accomplir une tâche imposée.",
+			"categorie": "Initiation à la pensée informatique"
+		},
+		{
+			"objectif": "Programmer la construction d’un chemin simple.",
+			"categorie": "Initiation à la pensée informatique"
+		}
+	]
+}

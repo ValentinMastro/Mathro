@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { Texte, type ParagrapheProps } from './*';
 
-	import { get_tailles } from '$lib/cahier/store.svelte';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
 	let {
+		addStyleNomParagraphe = '',
 		addStyle = '',
 		nom_du_paragraphe = 'Paragraphe',
 		couleur = 'noir',
@@ -14,32 +14,25 @@
 	}: ParagrapheProps = $props();
 </script>
 
-{#if children == undefined}
-	<Texte>
-		<span id="no_child" style="color: var(--{couleur})">
-			{nom_du_paragraphe} :
-		</span>
-	</Texte>
-{:else}
-	<div class="conteneur" style="color: var(--{couleur});">
+<div class="conteneur" style="color: var(--{couleur});">
+	{#if nom_du_paragraphe != ''}
 		<div class="titre_de_section">
-			<span>
-				{nom_du_paragraphe} :
+			<span style={'text-decoration: underline;' + addStyleNomParagraphe}>
+				{@html nom_du_paragraphe} :
 			</span>
 		</div>
+	{/if}
+	{#if children}
 		<div class="contenu_de_section" style="height: calc({lignes} * var(--hauteur-ligne-cahier));">
 			<div style={addStyle}>
 				{@render children()}
 			</div>
 		</div>
-	</div>
-	<LigneVide lignes={lignes_vides} />
-{/if}
+	{/if}
+</div>
+<LigneVide lignes={lignes_vides} />
 
 <style>
-	span#no_child {
-		text-decoration: underline;
-	}
 	.conteneur {
 		font-size: var(--font-size);
 		line-height: var(--line-height);

@@ -1,18 +1,17 @@
 <script lang="ts">
-	import { get_tailles } from '$lib/cahier/store.svelte';
 	import type { Snippet } from 'svelte';
+	import type { HTMLAttributes } from 'svelte/elements';
 
-	interface TableauProps {
+	type TableauProps = HTMLAttributes<HTMLTableElement> & {
 		lignes?: number;
 		colonnes?: number;
 		children?: Snippet;
-		addStyle?: string;
-	}
+	};
 
-	let { lignes = 1, colonnes = 20, children, addStyle = '' }: TableauProps = $props();
+	let { lignes = 1, colonnes = 20, children, ...props }: TableauProps = $props();
 </script>
 
-<table style="--lignes-tableau: {lignes}; --colonnes-tableau: {colonnes}; {addStyle}">
+<table style="--lignes-tableau: {lignes}; --colonnes-tableau: {colonnes};" {...props}>
 	{@render children?.()}
 </table>
 

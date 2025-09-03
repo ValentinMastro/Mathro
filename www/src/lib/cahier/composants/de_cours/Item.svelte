@@ -1,15 +1,18 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	interface Props {
+	import type { HTMLAttributes } from 'svelte/elements';
+
+	type Props = HTMLAttributes<HTMLDivElement> & {
 		bullet?: string;
 		bullet_color?: string;
 		lignes?: number;
 		children?: Snippet;
-	}
-	let { bullet = '&bullet;', bullet_color = undefined, lignes = 1, children }: Props = $props();
+	};
+
+	let { bullet = '&bullet;', bullet_color = undefined, lignes = 1, children, ...props }: Props = $props();
 </script>
 
-<div class="item" style="--lignes: {lignes};">
+<div class="item" style="--lignes: {lignes};" {...props}>
 	{#if bullet_color}
 		<span style="color: {bullet_color}">{@html bullet}</span>
 	{:else}

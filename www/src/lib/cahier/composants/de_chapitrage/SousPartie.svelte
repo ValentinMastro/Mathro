@@ -1,4 +1,6 @@
 <script lang="ts">
+	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
+
 	interface Props {
 		numero: number;
 		titre: string;
@@ -7,16 +9,13 @@
 
 	let { numero, titre, lignes_vides = 1 }: Props = $props();
 
-	import { get_tailles } from '$lib/cahier/store.svelte';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-
 	function enLettresMinuscules(n: number) {
 		return String.fromCharCode(96 + n);
 	}
 </script>
 
-<div class="partie" style="height: {get_tailles().hauteur_ligne_cahier}px;">
-	<span style="font-size: {get_tailles().titre_de_sections * 0.9}px;">
+<div class="partie">
+	<span>
 		{enLettresMinuscules(numero)}) {titre}
 	</span>
 </div>
@@ -25,12 +24,12 @@
 <style>
 	.partie {
 		width: 100%;
-		color: rgb(0, 138, 0);
-		position: relative;
+		color: var(--vert);
+		height: var(--carreau);
 	}
 	span {
-		position: absolute;
-		bottom: 0;
-		margin-bottom: -0.25em;
+		font-size: calc(var(--taille-page) / 56);
+		line-height: calc(var(--taille-page) / 56 * 2.23);
+		margin-left: calc(var(--carreau) / 2);
 	}
 </style>

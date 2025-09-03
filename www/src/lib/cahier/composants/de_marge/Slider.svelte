@@ -7,14 +7,12 @@
 		pas?: number;
 	}
 
-	import { get_tailles } from '$lib/cahier/store.svelte';
-
 	let { valeur = $bindable(), label = '', min, max, pas = 1 }: Props = $props();
 </script>
 
-<div style="height: {get_tailles().hauteur_ligne_cahier}px;">
+<div>
 	{#if label}
-		<label for="slider">{label}</label>
+		<label for="slider">{@html label}</label>
 	{/if}
 	<input id="slider" type="range" bind:value={valeur} {min} {max} step={pas} />
 </div>
@@ -24,10 +22,14 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		height: var(--carreau);
+		font-size: var(--font-size);
+		line-height: var(--line-height);
 	}
 	label {
 		margin-left: 3%;
 		margin-right: 3%;
+		width: fit-content;
 	}
 	input {
 		width: 95%;

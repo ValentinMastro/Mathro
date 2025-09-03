@@ -1,13 +1,19 @@
 <script lang="ts">
+	import LigneVide from '../LigneVide.svelte';
+
 	interface Props {
 		apres_un_titre?: boolean;
+		lignes_vides?: number;
 		children?: any;
 	}
 
-	let { apres_un_titre = false, children }: Props = $props();
+	let { apres_un_titre = false, lignes_vides = 0, children }: Props = $props();
 </script>
 
 <div id="marge" class={apres_un_titre ? 'apres_un_titre' : 'pas_de_titre'}>
+	{#if lignes_vides > 0}
+		<LigneVide lignes={lignes_vides} />
+	{/if}
 	{@render children()}
 </div>
 

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Item, Ligne, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Item, Schema } from '$lib/cahier/composants/de_cours/*';
 	import { math } from 'mathlifier';
 </script>
 

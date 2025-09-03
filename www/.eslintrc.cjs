@@ -1,11 +1,6 @@
 module.exports = {
 	root: true,
-	extends: [
-		'eslint:recommended',
-		'plugin:@typescript-eslint/recommended',
-		'plugin:svelte/recommended',
-		'prettier'
-	],
+	extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:svelte/recommended', 'prettier'],
 	parser: '@typescript-eslint/parser',
 	plugins: ['@typescript-eslint'],
 	parserOptions: {
@@ -18,6 +13,15 @@ module.exports = {
 		es2017: true,
 		node: true
 	},
+	rules: {
+		'sort-imports': [
+			'error',
+			{
+				ignoreDeclarationSort: false,
+				ignoreCase: false
+			}
+		]
+	},
 	overrides: [
 		{
 			files: ['*.svelte'],
@@ -26,5 +30,5 @@ module.exports = {
 				parser: '@typescript-eslint/parser'
 			}
 		}
-	],
+	]
 };

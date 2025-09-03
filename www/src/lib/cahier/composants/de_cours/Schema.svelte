@@ -1,18 +1,32 @@
+<!--
+  @component
+  ## Schema —
+  Permet de dessiner un schéma en SVG
+
+  ### Props
+  - `lignes` *(number)* : hauteur (en nombre de lignes de cahier) *(par défaut : 1)*
+  - `aspectRatioSVG` *(number)* : aspect ratio de la partie SVG *(par défaut : 1/1)*
+  - `svg` *(Snippet)* : Snippet contenant le code svg
+  - `html` *(Snippet)* : Snippet contenant le code html
+  - `position_html` *('gauche' | 'droite')* : position du html par rapport au svg *(par défaut : 'droite')*
+  - `height` *(number)* : hauteur INTERNE du SVG dans le viewport *(par défaut : 1000)*
+-->
 <script lang="ts">
-	interface Props {
+	import type { SVGAttributes } from 'svelte/elements';
+	type Props = SVGAttributes<SVGSVGElement> & {
 		lignes?: number;
 		aspectRatioSVG?: number;
 		svg?: any;
 		html?: any;
 		position_html?: 'gauche' | 'droite';
-	}
-	let { lignes = 1, aspectRatioSVG = 1 / 1, svg, html, position_html = 'droite' }: Props = $props();
-	import { get_tailles } from '$lib/cahier/store.svelte';
+		height?: number;
+	};
+	let { lignes = 1, aspectRatioSVG = 1 / 1, svg, html, position_html = 'droite', height = 1000, ...props }: Props = $props();
 </script>
 
 {#snippet afficher_svg()}
 	{#if svg}
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {1000 * aspectRatioSVG} 1000">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {1000 * aspectRatioSVG} {height}" {...props}>
 			{@render svg()}
 		</svg>
 	{/if}
@@ -20,13 +34,13 @@
 
 {#snippet afficher_html()}
 	{#if html}
-		<div id="html">
+		<div class="html">
 			{@render html()}
 		</div>
 	{/if}
 {/snippet}
 
-<div class="schema" style="--hauteur: {get_tailles().hauteur_ligne_cahier}px; --lignes: {lignes}; --aspectRatioSVG: {aspectRatioSVG}">
+<div class="schema" style="--lignes: {lignes}; --aspectRatioSVG: {aspectRatioSVG}">
 	{#if position_html === 'gauche'}
 		{@render afficher_html()}
 		{@render afficher_svg()}
@@ -41,17 +55,19 @@
 		display: flex;
 		align-items: center;
 		width: calc(100% * 80 / 79);
-		height: calc(var(--hauteur) * var(--lignes));
+		height: calc(var(--carreau) * var(--lignes));
 
-		--largeur-svg: calc(var(--hauteur) * var(--lignes) * var(--aspectRatioSVG));
+		--largeur-svg: calc(var(--carreau) * var(--lignes) * var(--aspectRatioSVG));
 		--largeur-html: calc(100% - var(--largeur-svg));
 	}
 	svg {
 		height: 100%;
 		width: var(--largeur-svg);
 	}
-	#html {
+	.html {
 		height: 100%;
 		width: var(--largeur-html);
+		font-size: var(--font-size);
+		line-height: var(--line-height);
 	}
 </style>

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
+
 	interface Props {
 		numero: number;
 		titre: string;
@@ -6,9 +8,6 @@
 	}
 
 	let { numero, titre, lignes_vides = 1 }: Props = $props();
-
-	import { get_tailles } from '$lib/cahier/store.svelte';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
 	function enChiffresRomains(n: number) {
 		switch (n) {
@@ -38,8 +37,8 @@
 	}
 </script>
 
-<div class="partie" style="height: {get_tailles().hauteur_ligne_cahier}px;">
-	<span style="font-size: {get_tailles().titre_de_sections * 0.85}px;">
+<div class="partie">
+	<span>
 		{enChiffresRomains(numero)}) {titre}
 	</span>
 </div>
@@ -48,12 +47,11 @@
 <style>
 	.partie {
 		width: 100%;
-		color: rgb(0, 0, 138);
-		position: relative;
+		color: var(--bleu);
+		height: var(--carreau);
 	}
 	span {
-		position: absolute;
-		bottom: 0;
-		margin-bottom: -0.25em;
+		font-size: calc(var(--taille-page) / 60);
+		line-height: calc(var(--taille-page) / 60 * 2.5);
 	}
 </style>

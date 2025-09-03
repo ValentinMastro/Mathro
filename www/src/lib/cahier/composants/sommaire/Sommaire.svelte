@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { sommaire, type Période, PÉRIODES, COULEURS_PAR_CATEGORIE } from '$lib/cahier/contenu/sommaires';
+	import { sommaire, PÉRIODES, COULEURS_PAR_CATEGORIE } from '$lib/cahier/contenu/sommaires';
 	import { page_state, get_taille_page } from '$lib/cahier/store.svelte';
+	import Bulle from './Bulle.svelte';
 
 	function scroll_lors_du_clic_sur_le_sommaire(premiere_page: number | undefined) {
 		if (premiere_page != undefined) {
@@ -9,72 +10,52 @@
 		}
 	}
 
+	// Tous les chapitres dans l'ordre
 	const chapitres = sommaire(page_state.niveau);
 
-	let afficher_bulle = $state(false);
-	let objectifs_en_cours: string[] = $state([]);
+	// On attache l'index global à chaque chapitre pour éviter les collisions d'index par période
+	const chapitres_indexés = chapitres.map((c, i) => ({ chapitre: c, indexGlobal: i }));
+
+	// Un seul chapitre survolé à la fois
+	let index_survole: number | null = $state(null);
 	let position_bulle = $state({ x: 0, y: 0 });
-
-	function montrer_objectifs(event: MouseEvent, objectifs: string[]) {
-		afficher_bulle = true;
-		objectifs_en_cours = objectifs;
-		position_bulle = { x: event.clientX + 10, y: event.clientY + 10 };
-	}
-
-	function masquer_objectifs() {
-		afficher_bulle = false;
-	}
-
-	function déplacer_bulle(event: MouseEvent) {
-		if (afficher_bulle) {
-			position_bulle = { x: event.clientX + 10, y: event.clientY + 10 };
-		}
-	}
 </script>
 
 <h2>Sommaire</h2>
 
 <div id="sommaire">
 	{#each PÉRIODES as période}
-		{@const chapitres_de_la_periode = chapitres.filter((c) => c.période == période)}
+		{@const groupe = chapitres_indexés.filter((ci) => ci.chapitre.période === période)}
 		<div class="période">
 			{période === "tout au long de l'année" ? période : `période ${période}`}
 		</div>
-		{#each chapitres_de_la_periode as chapitre}
-			<div
-				class="chapitre"
-				onclick={(e) => {
-					scroll_lors_du_clic_sur_le_sommaire(chapitre.premiere_page);
-				}}
-				role="none"
-			>
+
+		{#each groupe as { chapitre, indexGlobal }}
+			<div class="chapitre" onclick={() => scroll_lors_du_clic_sur_le_sommaire(chapitre.premiere_page)} role="none">
 				<div class="categories">
 					{#each chapitre.catégories as catégorie}
 						<span style="color: {COULEURS_PAR_CATEGORIE[catégorie]}">■</span>
 					{/each}
 				</div>
+
 				<div class="titre">
 					{chapitre.afficher_le_titre()}
 				</div>
+
 				<div
 					class="pour_objectifs"
-					onmouseenter={(e) => montrer_objectifs(e, chapitre.objectifs)}
-					onmousemove={déplacer_bulle}
-					onmouseleave={masquer_objectifs}
+					onmouseenter={(e) => {
+						index_survole = indexGlobal;
+						position_bulle = { x: e.clientX + 10, y: e.clientY + 10 };
+					}}
+					onmousemove={(e) => (position_bulle = { x: e.clientX + 10, y: e.clientY + 10 })}
+					onmouseleave={() => (index_survole = null)}
 					role="none"
 				>
 					?
 				</div>
-				{#if afficher_bulle}
-					{@const left = position_bulle.x - 0.55 * get_taille_page()}
-					<div class="bulle-objectifs" style="top: {position_bulle.y}px; left: {left}px">
-						<ul class="liste_objectifs">
-							{#each objectifs_en_cours as objectif}
-								<li class="objectif">{objectif}</li>
-							{/each}
-						</ul>
-					</div>
-				{/if}
+
+				<Bulle afficher_bulle={index_survole === indexGlobal} {position_bulle} objectifs={chapitre.objectifs} />
 			</div>
 		{/each}
 	{/each}
@@ -129,24 +110,5 @@
 		font-style: italic;
 		font-size: calc(var(--taille-page) / 80);
 		line-height: calc(var(--taille-page) / 80 * 3.3);
-	}
-
-	.bulle-objectifs {
-		position: fixed;
-		background: white;
-		border: 1px solid #ccc;
-		box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
-		border-radius: 0.5em;
-		font-size: calc(var(--taille-page) / 70);
-		min-width: calc(var(--taille-page) / 2);
-		max-width: calc(var(--taille-page) / 2);
-		z-index: 1000;
-		pointer-events: none;
-	}
-
-	.objectif {
-		text-align: left;
-		font-size: calc(var(--taille-page) / 70);
-		line-height: calc(var(--taille-page) / 50);
 	}
 </style>

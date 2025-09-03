@@ -79,4 +79,10 @@
 		left: 1%;
 		font-size: calc(var(--taille-page) / 60);
 	}
+	:global(mfrac) {
+		margin-bottom: -0.35em;
+	}
+	:global(mstyle[displaystyle='true'] mfrac) {
+		margin-bottom: -0.5em;
+	}
 </style>
