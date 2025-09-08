@@ -10,12 +10,13 @@
 	<Partie numero={2} titre="Calculs sur les fractions" />
 	<SousPartie numero={1} titre="Fractions égales" />
 	<Definition>Deux fractions sont égales si elles représentent le même quotient.</Definition>
-	<Exemples lignes={2}>
+	<Exemples lignes={3}>
 		<Item>
 			{@html math(`\\frac{3}{4} = \\frac{6}{8}`)} car {@html math(`\\frac{3}{4} = 3 \\div 4 = 0,75`)} et {@html math(
 				`\\frac{6}{8} = 6 \\div 8 = 0,75`
 			)}.
 		</Item>
+		<LigneVide />
 		<Item>
 			{@html math(`\\frac{2}{3} \\neq \\frac{3}{4}`)} car {@html math(`\\frac{2}{3} = 2 \\div 3 = 0,666...`)} et {@html math(
 				`\\frac{3}{4} = 3 \\div 4 = 0,75`
