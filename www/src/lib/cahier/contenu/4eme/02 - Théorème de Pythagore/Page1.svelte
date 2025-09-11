@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Exemples, Item, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
+	import { Rectangle } from '$lib/cahier/composants/svg/*';
 
 	import { math } from 'mathlifier';
 
 	let valeur_slider = $state(8);
+	let longueur = $derived(1000 / Math.max(valeur_slider, 8));
 </script>
 
 <Chapitre titre="Théorème de Pythagore" />
@@ -24,32 +25,17 @@
 			Le carré de 8 est 64 car {@html math('8^2 = 8 \\times 8 = 64')}.
 		</Item>
 	</Exemples>
-	<LigneVide />
 
 	<!-- Schema d'un carré de 8x8 pour comprendre le lien avec le carré géométrique -->
 	<Schema lignes={8}>
 		{#snippet svg()}
 			{#each Array(valeur_slider) as _, i}
 				{#each Array(valeur_slider) as _, j}
-					{#if valeur_slider <= 8}
-						<rect
-							x={(j * 1000) / 8 + 7}
-							y={(i * 1000) / 8 + 7}
-							width={1000 / 8 - 2 * 7}
-							height={1000 / 8 - 2 * 7}
-							fill={i % 2 == j % 2 ? 'red' : 'black'}
-							stroke="none"
-						/>
-					{:else}
-						<rect
-							x={(j * 1000) / valeur_slider + 7}
-							y={(i * 1000) / valeur_slider + 7}
-							width={1000 / valeur_slider - 2 * 7}
-							height={1000 / valeur_slider - 2 * 7}
-							fill={i % 2 == j % 2 ? 'red' : 'black'}
-							stroke="none"
-						/>
-					{/if}
+					{@const C1 = { x: j * longueur + 7, y: i * longueur + 7 }}
+					{@const C2 = { x: (j + 1) * longueur - 7, y: (i + 1) * longueur - 7 }}
+					{#key valeur_slider}
+						<Rectangle points={[C1, C2]} fill={i % 2 == j % 2 ? 'red' : 'black'} stroke="none" />
+					{/key}
 				{/each}
 			{/each}
 		{/snippet}

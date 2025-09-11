@@ -2,7 +2,7 @@
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Exemple, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-	import { Grid, Axe } from '$lib/cahier/composants/svg/*';
+	import { Grille, Axe } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 	import { fraction } from 'mathjs';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
@@ -32,7 +32,7 @@
 		{#snippet svg()}
 			<rect x={200} y={200} width={600} height={600} fill="red" stroke="none" />
 			<rect x={400} y={400} width={400} height={400} fill="white" stroke="none" />
-			<Grid x={200} y={200} width={600} height={600} couleur="black" pas={200} avec_contours />
+			<Grille point={{ x: 200, y: 200 }} width={600} height={600} pas={200} avec_contours />
 		{/snippet}
 		{#snippet html()}
 			<LigneVide lignes={2} />
@@ -47,7 +47,7 @@
 		{#snippet svg()}
 			<rect x={0} y={0} width={1000} height={1000} fill="red" stroke="none" />
 			<rect x={400} y={400} width={400} height={400} fill="white" stroke="none" />
-			<Grid x={0} y={0} width={1000} height={1000} couleur="black" pas={200} avec_contours />
+			<Grille point={{ x: 0, y: 0 }} width={1000} height={1000} pas={200} avec_contours />
 		{/snippet}
 		{#snippet html()}
 			<LigneVide lignes={2} />

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie, DansLaMarge } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Propriete, Exemples, Notation, Item, Schema } from '$lib/cahier/composants/de_cours/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
 	import { math } from 'mathlifier';
 
@@ -39,8 +38,7 @@
 
 <Chapitre titre="Fractions et proportionnalité" />
 
-<DansLaMarge apres_un_titre>
-	<LigneVide lignes={23} />
+<DansLaMarge apres_un_titre lignes_vides={23}>
 	<input type="range" min="1" max="10" bind:value={facteur_1} style="width: 80%" />
 	<input type="range" min="1" max="5" bind:value={facteur_2} style="width: 80%" />
 </DansLaMarge>
@@ -59,7 +57,6 @@
 		<Item>
 			{@html math('\\dfrac{3}{4} \\times 4 = \\dfrac{3}{\\cancel{4}} \\times \\cancel{4} = 3')}
 		</Item>
-		<LigneVide />
 		<Item>
 			{@html math('\\dfrac{7{,}2}{5{,}8} \\times 5{,}8 = \\dfrac{7{,}2}{\\cancel{5{,}8}} \\times \\cancel{5{,}8} = 7{,}2')}
 		</Item>
@@ -74,7 +71,6 @@
 		<Item>
 			{@html math(`\\dfrac{3}{4} = \\dfrac{${facteur_1} \\times 3}{${facteur_1} \\times 4} = \\dfrac{${facteur_1 * 3}}{${facteur_1 * 4}}`)}
 		</Item>
-		<LigneVide />
 		<Item>
 			{@html math(`\\dfrac{7}{15} = \\dfrac{${facteur_2} \\times 7}{${facteur_2} \\times 15} = \\dfrac{${facteur_2 * 7}}{${facteur_2 * 15}}`)}
 		</Item>

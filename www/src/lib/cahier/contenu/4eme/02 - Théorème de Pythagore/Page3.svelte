@@ -1,6 +1,22 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Propriete, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { AngleDroit, Polygone, Polylignes, TexteSVG } from '$lib/cahier/composants/svg/*';
+
+	// triangle 1
+	let A = { x: 200, y: 0 };
+	let B = { x: 200, y: 800 };
+	let C = { x: 800, y: 800 };
+
+	// triangle 2
+	let D = { x: 1200, y: 0 };
+	let E = { x: 1200, y: 600 };
+	let F = { x: 2000, y: 0 };
+
+	// triangle 3
+	let I = { x: 2200, y: 200 };
+	let J = { x: 2800, y: 800 };
+	let K = { x: 3600, y: 0 };
 </script>
 
 <Contenu>
@@ -13,25 +29,22 @@
 	<Schema lignes={5} aspectRatioSVG={4}>
 		{#snippet svg()}
 			<!-- Premier triangle -->
-			<line x1="200" y1="0" x2="200" y2="800" stroke="black" stroke-width="10" />
-			<line x1="200" y1="800" x2="800" y2="800" stroke="black" stroke-width="10" />
-			<line x1="200" y1="0" x2="800" y2="800" stroke="red" stroke-width="10" />
-			<text x="580" y="470" font-size="90" text-anchor="middle" fill="red" transform-origin="580 470" transform="rotate(53.13)">Hypoténuse</text>
-			<rect x="200" y="750" width="50" height="50" fill="black" />
+			<AngleDroit points={[A, B, C]} taille={50} />
+			<Polygone points={[A, B, C]} />
+			<Polylignes points={[A, C]} stroke="red" stroke-width={10} />
+			<TexteSVG point={{ x: 580, y: 470 }} font-size="90" fill="red" transform-origin="580 470" transform="rotate(53.13)">Hypoténuse</TexteSVG>
 
 			<!-- Deuxième triangle -->
-			<line x1="1200" y1="0" x2="1200" y2="600" stroke="black" stroke-width="10" />
-			<line x1="1200" y1="0" x2="2000" y2="0" stroke="black" stroke-width="10" />
-			<line x1="1200" y1="600" x2="2000" y2="0" stroke="red" stroke-width="10" />
-			<text x="1650" y="370" font-size="90" text-anchor="middle" fill="red" transform-origin="1650 370" transform="rotate(-36.87)">Hypoténuse</text>
-			<rect x="1200" y="0" width="50" height="50" fill="black" />
+			<AngleDroit points={[E, D, F]} taille={50} />
+			<Polygone points={[E, D, F]} />
+			<Polylignes points={[E, F]} stroke="red" stroke-width={10} />
+			<TexteSVG point={{ x: 1650, y: 370 }} font-size="90" fill="red" transform-origin="1650 370" transform="rotate(-36.87)">Hypoténuse</TexteSVG>
 
 			<!-- Troisième triangle -->
-			<line x1="2200" y1="200" x2="2800" y2="800" stroke="black" stroke-width="10" />
-			<line x1="2800" y1="800" x2="3600" y2="0" stroke="black" stroke-width="10" />
-			<line x1="2200" y1="200" x2="3600" y2="0" stroke="red" stroke-width="10" />
-			<text x="2880" y="90" font-size="90" text-anchor="middle" fill="red" transform-origin="2880 90" transform="rotate(-8.13)">Hypoténuse</text>
-			<rect x="2800" y="800" width="50" height="50" fill="black" transform-origin="2800 800" transform="rotate(-135)" />
+			<AngleDroit points={[I, J, K]} taille={50} />
+			<Polygone points={[I, J, K]} />
+			<Polylignes points={[I, K]} stroke="red" stroke-width={10} />
+			<TexteSVG point={{ x: 2880, y: 90 }} font-size="90" fill="red" transform-origin="2880 90" transform="rotate(-8.13)">Hypoténuse</TexteSVG>
 		{/snippet}
 	</Schema>
 </Contenu>

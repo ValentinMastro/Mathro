@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Notation, Item, Texte, Exemples, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Item, Exemples, MultiItem } from '$lib/cahier/composants/de_cours/*';
 	import { math } from 'mathlifier';
 </script>
 
@@ -12,9 +12,11 @@
 		<Item>d'un nombre entier {@html math('>1')}</Item>
 		<Item>d'une fraction</Item>
 	</Definition>
-	<Exemples lignes={5}>
-		<Item lignes={2}>{@html math('2\\frac{1}{3} = \\dfrac{7}{3}')}</Item>
-		<Item lignes={2}>{@html math('3\\frac{4}{5} = \\dfrac{19}{5}')}</Item>
-		<Item>{@html math('5\\frac{1}{9} = \\dfrac{46}{9}')}</Item>
+	<Exemples>
+		<MultiItem>
+			<Item>{@html math('\\large{2} \\footnotesize{\\frac{1}{3}}')}</Item>
+			<Item>{@html math('\\large{3} \\footnotesize{\\frac{4}{5}}')}</Item>
+			<Item>{@html math('\\large{5} \\footnotesize{\\frac{1}{9}}')}</Item>
+		</MultiItem>
 	</Exemples>
 </Contenu>

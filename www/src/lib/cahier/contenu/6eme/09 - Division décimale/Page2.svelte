@@ -8,8 +8,10 @@
 <Contenu>
 	<Partie numero={2} titre="Arrondir un nombre décimal" />
 
-	<Definition lignes={2}>
-		<i>Arrondir</i> un nombre décimal, c’est le remplacer par un nombre proche plus simple, en conservant un certain <i>nombre de chiffres</i>.
+	<Definition lignes={3}>
+		<i>Arrondir</i> un nombre décimal, c’est le remplacer par un nombre <br />
+		proche plus simple, en conservant un certain <i>nombre de chiffres</i>, ou <br />
+		en s'arrêtant jusqu'à un chiffre donné.
 	</Definition>
 
 	<Methode lignes={6}>
@@ -22,6 +24,8 @@
 		</Item>
 		<Item>Effacer les chiffres après la position donnée.</Item>
 	</Methode>
+
+	<!-- TODO : ANIMATION -->
 
 	<Exemples lignes={5}>
 		<Item>Arrondir à l'unité {@html math('34,27 \\, \\longrightarrow \\, 34,27 \\approx 34')}</Item>

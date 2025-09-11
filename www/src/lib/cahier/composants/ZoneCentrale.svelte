@@ -4,24 +4,9 @@
 	import { page_state } from '$lib/cahier/store.svelte';
 	import PageDeCahier from './PageDeCahier.svelte';
 	import Scroll from './Scroll.svelte';
+	import { importer_pages } from '$lib/cahier/importation_pages';
 
-	let importation_pages: Record<string, { default: Component }>;
-
-	switch (page_state.niveau) {
-		case 4:
-			importation_pages = import.meta.glob('$lib/cahier/{composants/{Page0,PageDeGarde,sommaire/Sommaire},contenu/4eme/*/*}.svelte', { eager: true });
-			break;
-		case 5:
-			importation_pages = import.meta.glob('$lib/cahier/{composants/{Page0,PageDeGarde,sommaire/Sommaire},contenu/5eme/*/*}.svelte', { eager: true });
-			break;
-		case 6:
-			importation_pages = import.meta.glob('$lib/cahier/{composants/{Page0,PageDeGarde,sommaire/Sommaire},contenu/6eme/*/*}.svelte', { eager: true });
-			break;
-		default:
-			throw new Error('Niveau inconnu');
-	}
-
-	let pages: Component[] = Object.entries(importation_pages).map(([_, page]) => page.default);
+	let pages = $derived(importer_pages(page_state.niveau));
 	let PageGauche: Component = $derived(pages[page_state.numero_de_la_page]);
 	let PageDroite: Component = $derived(pages[page_state.numero_de_la_page + 1]);
 </script>

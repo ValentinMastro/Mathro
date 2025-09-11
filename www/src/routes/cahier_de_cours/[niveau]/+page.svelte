@@ -5,6 +5,7 @@
 
 	import { page_state } from '$lib/cahier/store.svelte';
 	import ZoneCentrale from '$lib/cahier/composants/ZoneCentrale.svelte';
+	import { exporterToutesLesPagesEnPDF } from '$lib/cahier/impression';
 
 	page_state.niveau = data.niveau as 3 | 4 | 5 | 6;
 
@@ -28,6 +29,13 @@
 	}
 
 	function touche_pressee(event: KeyboardEvent) {
+		if ((event.ctrlKey || event.metaKey) && event.code === 'KeyP') {
+			event.preventDefault();
+			event.stopPropagation();
+			exporterToutesLesPagesEnPDF();
+			return;
+		}
+
 		switch (event.key) {
 			case 'm':
 				page_state.plein_ecran = !page_state.plein_ecran;
@@ -50,6 +58,10 @@
 		}
 	}
 
+	function avantImpression() {
+		alert('Utilisez le bouton Export PDF de l’appli, pas l’impression du navigateur.');
+	}
+
 	$effect(() => {
 		const on_est_sur_mobile: boolean = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent);
 		const on_est_en_mode_portrait: boolean = window.innerHeight > window.innerWidth; // aspect_ratio < 1 ?
@@ -67,7 +79,7 @@
 	});
 </script>
 
-<svelte:window on:keydown={touche_pressee} />
+<svelte:window onbeforeprint={avantImpression} onkeydown={touche_pressee} />
 
 <svelte:head>
 	<title>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, DansLaMarge, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Schema, Remarque } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Schema, Remarque, Texte } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
 	import { math } from 'mathlifier';
@@ -12,7 +12,7 @@
 
 <DansLaMarge apres_un_titre>
 	<LigneVide lignes={13} />
-	<Ligne>
+	<Texte>
 		Angle choisi :
 		<br />
 		<input type="radio" value={0} id="ABC" name="angle_choisi" bind:group={index_selection_angle} />
@@ -20,7 +20,7 @@
 		<br />
 		<input type="radio" value={1} id="BCA" name="angle_choisi" bind:group={index_selection_angle} />
 		<label for="BCA">{@html math('\\widehat{BCA}')}</label>
-	</Ligne>
+	</Texte>
 </DansLaMarge>
 
 <Contenu apres_un_titre>

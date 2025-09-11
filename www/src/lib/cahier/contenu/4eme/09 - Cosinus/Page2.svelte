@@ -43,17 +43,17 @@
 			<LigneVide />
 			<Texte>Le triangle ABC est rectangle en A, l'hypoténuse est [BC].</Texte>
 			<LigneVide />
-			<Ligne>
+			<Texte>
 				{@html math(`
                         \\cos(\\widehat{\\text{ABC}}) = \\dfrac{\\text{adj}}{\\text{hyp}}
                         = \\dfrac{\\text{AB}}{\\text{AC}}
                         = \\dfrac{3}{5}
                     `)}
-			</Ligne>
+			</Texte>
 			<LigneVide />
-			<Ligne>
+			<Texte>
 				donc {@html math('\\widehat{\\text{ABC}} = \\arccos\\left(\\dfrac{3}{5}\\right) \\approx 53{,}13^\\circ')}
-			</Ligne>
+			</Texte>
 		{/snippet}
 	</Schema>
 </Contenu>

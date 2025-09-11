@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Item, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Item, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { math } from 'mathlifier';
 </script>
 
@@ -48,12 +48,12 @@
 			<text x={1500} y={500 + 220} text-anchor="middle" font-size={120}>E</text>
 		{/snippet}
 		{#snippet html()}
-			<Ligne>
+			<Texte>
 				{@html math('\\widehat{\\text{AEB}}')} et {@html math('\\widehat{\\text{CED}}')} sont opposés par le sommet.
-			</Ligne>
-			<Ligne>
+			</Texte>
+			<Texte>
 				{@html math('\\widehat{\\text{AEC}}')} et {@html math('\\widehat{\\text{BED}}')} sont opposés par le sommet.
-			</Ligne>
+			</Texte>
 		{/snippet}
 	</Schema>
 

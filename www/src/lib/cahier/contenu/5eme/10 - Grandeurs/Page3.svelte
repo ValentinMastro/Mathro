@@ -2,6 +2,7 @@
 	import { Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Exemples, LigneTableau, Tableau } from '$lib/cahier/composants/de_cours/*';
 	import Item from '$lib/cahier/composants/de_cours/Item.svelte';
+	import Texte from '$lib/cahier/composants/de_cours/Texte.svelte';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 </script>
 
@@ -51,12 +52,12 @@
 	<Exemples lignes={11}>
 		<Item>17,5 dam = ? cm</Item>
 		<Item bullet="→">Placer le chiffre des unités dans la colonne de l'unité d'origine.</Item>
-		<Ligne>On place le 7 dans la colonne &lt; &lt; dam &gt; &gt;.</Ligne>
+		<Texte>On place le 7 dans la colonne &lt; &lt; dam &gt; &gt;.</Texte>
 		<Item bullet="→">Placer les autres chiffres.</Item>
-		<Ligne>On place le 1 et le 5.</Ligne>
+		<Texte>On place le 1 et le 5.</Texte>
 		<Item bullet="→" lignes={2}>Compléter avec des zéros jusqu'à la colonne de la nouvelle unité.</Item>
 		<Item bullet="→">Placer la virgule dans la colonne de la nouvelle unité.</Item>
-		<Ligne>17,5 dam = 17 500 cm</Ligne>
+		<Texte>17,5 dam = 17 500 cm</Texte>
 		<Item>0,5 m = 0,000 5 km</Item>
 		<Item>12 km = 12 000 000 mm</Item>
 	</Exemples>

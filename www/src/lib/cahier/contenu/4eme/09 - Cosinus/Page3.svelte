@@ -35,24 +35,24 @@
 			<LigneVide />
 			<Texte>Le triangle DEF est rectangle en E, l'hypoténuse est [DF].</Texte>
 			<LigneVide lignes={0.5} />
-			<Ligne>
+			<Texte>
 				{@html math(`
                     \\cos(\\widehat{\\text{EDF}}) = \\dfrac{\\text{adj}}{\\text{hyp}}
                     = \\dfrac{\\text{DE}}{\\text{DF}}
                 `)}
-			</Ligne>
+			</Texte>
 			<LigneVide lignes={0.5} />
 			<Texte>Remplaçons les valeurs connues.</Texte>
 			<LigneVide />
-			<Ligne>
+			<Texte>
 				{@html math(`
                     \\dfrac{\\cos(30°)}{\\color{red} 1} = \\dfrac{6}{\\text{DF}}
                 `)}
-			</Ligne>
+			</Texte>
 			<LigneVide />
-			<Ligne>
+			<Texte>
 				{@html math('\\text{DF} = 6 {\\color{red} \\times 1} \\div \\cos(30^\\circ) \\approx 6{,}93~\\text{cm}')}
-			</Ligne>
+			</Texte>
 		{/snippet}
 	</Schema>
 </Contenu>

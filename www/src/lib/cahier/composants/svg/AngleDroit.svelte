@@ -1,12 +1,19 @@
+<!--
+    @component
+    ## AngleDroit -- (extends SVGPolygonElement)
+    Tracer un angle droit
+    ### Props
+    - `points`: *{x: number, y: number}[3]* sommets de l'angle droit
+    - `taille`: *number* Taille du carré (par défaut : 100)
+    - `decalage`: *number* Décalage depuis le sommet vers l'intérieur de l'angle
+-->
+
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
 
 	type Props = Omit<SVGAttributes<SVGPolygonElement>, 'points'> & {
-		/** [A, B, C] où B est le sommet de l’angle ABC */
 		points: [{ x: number; y: number }, { x: number; y: number }, { x: number; y: number }];
-		/** Taille du carré (longueur d’un côté, en px) */
 		taille?: number;
-		/** Décalage depuis le sommet vers l’intérieur de l’angle (en px) */
 		decalage?: number;
 	};
 
@@ -26,7 +33,7 @@
 		return n > 1e-12 ? { x: v.x / n, y: v.y / n } : { x: 0, y: 0 };
 	}
 
-	// Direction BA
+	// Vecteur BA
 	const u = normalise({ x: A.x - B.x, y: A.y - B.y });
 
 	// Perpendiculaire à BA
