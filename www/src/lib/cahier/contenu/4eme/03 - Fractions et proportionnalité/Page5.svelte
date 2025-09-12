@@ -1,45 +1,63 @@
 <script lang="ts">
-    import { Contenu } from "$lib/cahier/composants/de_chapitrage/*";
-    import { Exemples, Propriete, Item, Demonstration } from "$lib/cahier/composants/de_cours/*";
-    import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
-    import { display, math } from "mathlifier";
+    import { Contenu, DansLaMarge, Partie, SousPartie } from "$lib/cahier/composants/de_chapitrage/*";
+    import { Definition, Exemple, Exemples, Item, Propriete, Texte } from "$lib/cahier/composants/de_cours/*";
+	import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
+    import { math } from "mathlifier";
+
+    let pourcentage_augmentation: number = $state(20);
+    let augmentation: number = $derived(50 * pourcentage_augmentation / 100);
+    let resultat_augmentation: number = $derived(50 * (100 + pourcentage_augmentation) / 100);
 </script>
 
+<DansLaMarge>
+    <LigneVide lignes={23} />
+    <Texte>+ {pourcentage_augmentation} %</Texte>
+    <input type="range" bind:value={pourcentage_augmentation} min="0" max="100" step="10" style="width: 80%;"/>
+</DansLaMarge>
+
 <Contenu>
-    <Propriete lignes={3.5}>
-        Pour calculer le taux de variation entre une valeur de départ et une valeur d'arrivée :<br />
-        {@html display("\\text{taux de variation} = \\dfrac{\\text{valeur d'arrivée} - \\text{valeur de départ}}{\\text{valeur de départ}} \\times 100 \\%")}
-    </Propriete>
+    <Partie numero={2} titre="Pourcentages" />
+        <SousPartie numero={1} titre="Le pourcentage d'un nombre" />
+            <Definition lignes={1.4}>
+                Calculer {@html math("p\\% \\text{ de } x")} revient à calculer {@html math("\\dfrac{p}{100} \\times x")}.
+            </Definition>
+            <Exemples lignes={5}>
+                <Item lignes={1}>
+                    {@html math("25 \\% \\text{ de } 12 = \\dfrac{25}{100} \\times 12 = 3")}
+                </Item>
+                <LigneVide />
+                <Item lignes={1}>
+                    {@html math("60 \\% \\text{ de } 50 = \\dfrac{60}{100} \\times 50 = 30")}
+                </Item>
+                <LigneVide />
+                <Item lignes={1}>
+                    {@html math("75 \\% \\text{ de } 32 = \\dfrac{75}{100} \\times 32 = 24")}
+                </Item>
+            </Exemples>
+        <SousPartie numero={2} titre="Augmentation par un pourcentage" />
+            <Propriete lignes={4}>
+                Pour augmenter une valeur de {@html math("p \\%")} :
+                <Item>
+                    je calcule {@html math("p \\%")} puis je l'ajoute à la valeur initiale
+                </Item>
+                <Item>
+                    <u>OU</u> je calcule {@html math("(100+p) \\%")} de la valeur initiale
+                </Item>
+                <Item>
+                    <u>OU</u> je calcule {@html math("\\dfrac{100+p}{100} \\times")} la valeur initiale
+                </Item>
+            </Propriete>
 
-    <Exemples lignes={8.4}>
-        <Item lignes={4}>
-            Le nombre d'habitants d'une ville est passé de 4 000 à 5 000,<br>
-            ce qui correspond à une augmentation de <br>
-            {@html display("\\dfrac{5000-4000}{4000} \\times 100 \\% = 25 \\%")}
-        </Item>
-        <Item lignes={4.4}>
-            Une voiture était vendue neuve à 25 000 €. <br>
-            Aujourd'hui, elle ne vaut plus que 5 000 €.<br>
-            Calculons son taux de variation : <br>
-            {@html display("\\dfrac{5000 - 25000}{25000} \\times 100 \\% = -80 \\%")}<br>
-            Son prix a donc baissé de 80 %.
-        </Item>
-    </Exemples>
-
-    <LigneVide lignes={2} />
-
-    <Propriete>
-        {@html math("x \\% \\text{ de } y = y \\% \\text{ de } x")}
-    </Propriete>
-    <Demonstration lignes={1.4}>
-        {@html math("x \\% \\text{ de } y = \\dfrac{x}{100} \\times y = \\dfrac{y}{100} \\times x = y \\% \\text{ de } x")}
-    </Demonstration>
-    <Exemples lignes={2}>
-        <Item>
-            {@html math("12 \\% \\text{ de } 50 = 50 \\% \\text{ de } 12 = 6")}
-        </Item>
-        <Item>
-            {@html math("20 \\% \\text{ de } 25 = 25 \\% \\text{ de } 20 = 5")}
-        </Item>
-    </Exemples>
+            <Exemple lignes={4}>
+                50 € + {pourcentage_augmentation} % :
+                <Item>
+                    {@html math(`${pourcentage_augmentation}\\% ~\\text{de}~ 50€ = \\underline{${augmentation}€} \\longrightarrow 50€+\\underline{${augmentation}€}=\\boxed{${resultat_augmentation}€}`)}
+                </Item>
+                <Item>
+                    {@html math(`${100+pourcentage_augmentation}\\% ~\\text{de}~ 50€ = \\boxed{${resultat_augmentation}€}`)}
+                </Item>
+                <Item>
+                    {@html math(`50€ \\times \\dfrac{100+${pourcentage_augmentation}}{100} = 50€ \\times ${(100+pourcentage_augmentation)/100} = \\boxed{${resultat_augmentation}€}`)}
+                </Item>
+            </Exemple>
 </Contenu>
