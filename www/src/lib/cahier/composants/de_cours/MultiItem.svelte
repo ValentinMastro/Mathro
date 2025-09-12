@@ -1,12 +1,13 @@
 <script lang="ts">
-	type Props = {
+	import { type HTMLAttributes } from 'svelte/elements';
+	type Props = HTMLAttributes<HTMLDivElement> & {
 		colonnes?: number;
 	};
 
-	let { colonnes = 1, children } = $props();
+	let { colonnes = 1, children, ...props }: Props = $props();
 </script>
 
-<div class="multi" style="--colonnes: {colonnes};">
+<div class="multi" style="--colonnes: {colonnes};" {...props}>
 	{@render children?.()}
 </div>
 
