@@ -26,15 +26,17 @@
 <div id="sommaire">
 	{#each PÉRIODES as période}
 		{@const groupe = chapitres_indexés.filter((ci) => ci.chapitre.période === période)}
-		<div class="période">
-			{période === "tout au long de l'année" ? période : `période ${période}`}
-		</div>
+		{#if groupe.length > 0}
+			<div class="période">
+				{période === "tout au long de l'année" ? période : `période ${période}`}
+			</div>
+		{/if}
 
 		{#each groupe as { chapitre, indexGlobal }}
 			<div class="chapitre" onclick={() => scroll_lors_du_clic_sur_le_sommaire(chapitre.premiere_page)} role="none">
 				<div class="categories">
 					{#each chapitre.catégories as catégorie}
-						<span style="color: {COULEURS_PAR_CATEGORIE[catégorie]}">■</span>
+						<span style="color: {COULEURS_PAR_CATEGORIE[catégorie]}" title={catégorie}>■</span>
 					{/each}
 				</div>
 
