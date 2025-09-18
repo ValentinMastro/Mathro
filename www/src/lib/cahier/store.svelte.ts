@@ -9,6 +9,7 @@ export let page_state: {
 	largeur_plein_ecran: number;
 	sur_mobile: boolean;
 	zoom_page: boolean;
+	en_cours_impression: boolean;
 } = $state({
 	numero_de_la_page: 0,
 	niveau: 6,
@@ -16,7 +17,8 @@ export let page_state: {
 	plein_ecran: false,
 	largeur_plein_ecran: 100,
 	sur_mobile: false,
-	zoom_page: false
+	zoom_page: false,
+	en_cours_impression: false
 });
 
 export function liste_des_pages() {

@@ -32,6 +32,8 @@ export async function exporterToutesLesPagesEnPDF() {
 	try {
 		// On passe en mode 2 pages (plus simple pour capturer la même mise en page que l'écran)
 		page_state.plein_ecran = false;
+		// On active l'impression
+		page_state.en_cours_impression = true;
 		await tick();
 
 		let doc: jsPDF | null = null;
@@ -47,6 +49,8 @@ export async function exporterToutesLesPagesEnPDF() {
 			const enfants = Array.from(zone.children).filter((el) => !(el as HTMLElement).matches('#largeur'));
 			// enfants[0] = Page gauche, enfants[1] = Page droite (si existe)
 			for (const el of enfants as HTMLElement[]) {
+				// Ne pas capture la page de gauche si i == 0
+				if (el.classList.contains('page_zero')) continue;
 				const { dataUrl, w, h } = await captureNoeudEnPNG(el);
 
 				if (!doc) {
@@ -73,6 +77,7 @@ export async function exporterToutesLesPagesEnPDF() {
 		// Restaure l’état d’affichage
 		page_state.plein_ecran = ancienPleinEcran;
 		page_state.numero_de_la_page = ancienNumero;
+		page_state.en_cours_impression = false;
 		await tick();
 	}
 }
