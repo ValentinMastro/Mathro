@@ -13,6 +13,7 @@
 	let is_zoom_page: string = $derived(page_state.zoom_page ? 'zoom_page' : '');
 	let is_hidden: string = $derived(numero_de_page == 0 || numero_de_page == 97 ? 'hidden' : 'visible');
 	let is_full_screen: string = $derived(page_state.plein_ecran ? `width: ${page_state.largeur_plein_ecran}%` : `height: 100%`);
+	let is_class_page_zero = $derived(numero_de_page == 0 ? 'page_zero' : '');
 
 	// Récupération des dimensions de la fenêtre
 	let composant: HTMLDivElement;
@@ -30,7 +31,7 @@
 
 <div
 	bind:this={composant}
-	class="page {is_seyes} {is_zoom_page}"
+	class="page {is_seyes} {is_zoom_page} {is_class_page_zero}"
 	style="
 	    visibility: {is_hidden}; {is_full_screen};
 		--taille-page: {taille_page}px;
