@@ -53,7 +53,7 @@
 			]
 		},
 		{
-			"période": 1,
+			"période": 2,
 			"numéro": 5,
 			"titre": "Nombres relatifs",
 			"catégories": ["Nombres, calcul et résolution de problèmes"],
@@ -66,7 +66,7 @@
 			]
 		},
 		{
-			"période": 1,
+			"période": 2,
 			"numéro": 6,
 			"titre": "Construction de triangles",
 			"catégories": ["Espace et géométrie"],
@@ -77,7 +77,7 @@
 			]
 		},
 		{
-			"période": 1,
+			"période": 2,
 			"numéro": 7,
 			"titre": "Enchaînement d'opérations",
 			"catégories": ["Nombres, calcul et résolution de problèmes"],
@@ -88,7 +88,7 @@
 			]
 		},
 		{
-			"période": 1,
+			"période": 2,
 			"numéro": 8,
 			"titre": "Parallélogrammes",
 			"catégories": ["Espace et géométrie"],
@@ -100,7 +100,7 @@
 			]
 		},
 		{
-			"période": 1,
+			"période": 2,
 			"numéro": 9,
 			"titre": "Calculs avec fractions",
 			"catégories": ["Nombres, calcul et résolution de problèmes"],
@@ -110,7 +110,7 @@
 			]
 		},
 		{
-			"période": 1,
+			"période": 3,
 			"numéro": 10,
 			"titre": "Grandeurs",
 			"catégories": ["Grandeurs et mesures"],
@@ -123,7 +123,7 @@
 			]
 		},
 		{
-			"période": 1,
+			"période": 3,
 			"numéro": 11,
 			"titre": "Construire des symétriques",
 			"catégories": ["Espace et géométrie"],
@@ -133,7 +133,7 @@
 			]
 		},
 		{
-			"période": 1,
+			"période": 3,
 			"numéro": 12,
 			"titre": "Calculer avec des relatifs",
 			"catégories": ["Nombres, calcul et résolution de problèmes"],
@@ -145,7 +145,7 @@
 			]
 		},
 		{
-			"période": 1,
+			"période": 3,
 			"numéro": 13,
 			"titre": "Droites remarquables dans un triangle",
 			"catégories": ["Espace et géométrie"],
@@ -156,7 +156,7 @@
 			]
 		},
 		{
-			"période": 1,
+			"période": 3,
 			"numéro": 14,
 			"titre": "Expressions littérales",
 			"catégories": ["Nombres, calcul et résolution de problèmes"],
@@ -168,7 +168,7 @@
 			]
 		},
 		{
-			"période": 1,
+			"période": 4,
 			"numéro": 15,
 			"titre": "Situations de proportionnalité",
 			"catégories": ["La proportionnalité"],
@@ -181,7 +181,7 @@
 			]
 		},
 		{
-			"période": 1,
+			"période": 4,
 			"numéro": 16,
 			"titre": "Solides",
 			"catégories": ["Espace et géométrie"],
@@ -192,7 +192,7 @@
 			]
 		},
 		{
-			"période": 1,
+			"période": 4,
 			"numéro": 17,
 			"titre": "Tableaux et statistiques",
 			"catégories": ["Organisation et gestion de données et probabilités"],
@@ -209,7 +209,7 @@
 			]
 		},
 		{
-			"période": 1,
+			"période": 4,
 			"numéro": 18,
 			"titre": "Calcul littéral",
 			"catégories": ["Nombres, calcul et résolution de problèmes"],
@@ -221,7 +221,7 @@
 			]
 		},
 		{
-			"période": 1,
+			"période": 5,
 			"numéro": 19,
 			"titre": "Volumes",
 			"catégories": ["Espace et géométrie"],
@@ -235,7 +235,7 @@
 			]
 		},
 		{
-			"période": 1,
+			"période": 5,
 			"numéro": 20,
 			"titre": "Utiliser la proportionnalité",
 			"catégories": ["La proportionnalité"],
@@ -247,14 +247,14 @@
 			]
 		},
 		{
-			"période": 1,
+			"période": 5,
 			"numéro": 21,
 			"titre": "Angles et parallélisme",
 			"catégories": ["Espace et géométrie"],
 			"objectifs": ["Connaître les caractérisations angulaires du parallélisme (angles alternes internes, angles correspondants)"]
 		},
 		{
-			"période": 1,
+			"période": 5,
 			"numéro": 22,
 			"titre": "Diagrammes et graphiques",
 			"catégories": ["Organisation et gestion de données et probabilités"],
@@ -264,14 +264,14 @@
 			]
 		},
 		{
-			"période": 1,
+			"période": 5,
 			"numéro": 23,
 			"titre": "Probabilités",
 			"catégories": ["Organisation et gestion de données et probabilités"],
 			"objectifs": ["Placer un événement sur une échelle de probabilités", "Calculer des probabilités dans des situations simples d’équiprobabilité"]
 		},
 		{
-			"période": 1,
+			"période": 5,
 			"numéro": 24,
 			"titre": "Dépendance de grandeurs",
 			"catégories": ["Grandeurs et mesures"],
