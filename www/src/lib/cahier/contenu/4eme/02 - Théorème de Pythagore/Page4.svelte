@@ -14,10 +14,6 @@
 	</Theoreme>
 	<Schema lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
-			<pattern id="pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-				<rect x="0" y="0" width="100" height="100" fill="none" stroke="black" stroke-width={5} stroke-dasharray="5 10" />
-			</pattern>
-
 			<!-- AB^2 -->
 			{@const P1 = { x: 100, y: 300 }}
 			{@const P2 = { x: 500, y: 700 }}
