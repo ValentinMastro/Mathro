@@ -1,3 +1,12 @@
+<!--
+    @component
+
+    ## Segment
+    Trace un segment
+    ### Props
+    - `points`: [{ x: number; y: number }, { x: number; y: number }] : extrémités du segment
+-->
+
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
 
