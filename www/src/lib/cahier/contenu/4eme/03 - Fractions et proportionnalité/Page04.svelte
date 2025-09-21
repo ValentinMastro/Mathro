@@ -7,15 +7,17 @@
 
 <Contenu>
 	<SousPartie numero={2} titre="Multiplication et division" />
-	<Propriete lignes={4.4}>
+	<Propriete lignes={4}>
 		Il suffit de multiplier les numérateurs entre eux et les dénominateurs entre eux.<br />
 		Soient quatre nombres {@html math('a, b, c, d')} avec {@html math('b \\neq 0, d \\neq 0')}.<br />
-		{@html display('\\dfrac{a}{b} \\times \\dfrac{c}{d} = \\dfrac{a \\times c}{b \\times d}')}
+		<center>
+			{@html math('\\dfrac{a}{b} \\times \\dfrac{c}{d} = \\dfrac{a \\times c}{b \\times d}')}
+		</center>
 	</Propriete>
 	<Exemple>
-		<Item>
+		<center>
 			{@html math('\\dfrac{3}{7} \\times \\dfrac{2}{5} = \\dfrac{3 \\times 2}{7 \\times 5} = \\dfrac{6}{35}')}
-		</Item>
+		</center>
 	</Exemple>
 
 	<Propriete>Diviser par un nombre revient à multiplier par son inverse.</Propriete>
@@ -23,8 +25,8 @@
 	<Exemples lignes={3}>
 		<Item>
 			{@html math(`
-			    \\dfrac{3}{4} \\colorbox{red}{$ \\div \\dfrac{2}{5} $}
-				= \\dfrac{3}{4} \\colorbox{red}{$ \\times \\dfrac{5}{2} $}
+			    \\dfrac{3}{4} \\fcolorbox{red}{white}{$ \\div \\dfrac{2}{5} $}
+				= \\dfrac{3}{4} \\fcolorbox{red}{white}{$ \\times \\dfrac{5}{2} $}
 				= \\dfrac{3 \\times 5}{4 \\times 2}
 				= \\dfrac{15}{8}`)}
 		</Item>
@@ -32,8 +34,8 @@
 		<Item>
 			{@html math(
 				`3{,}5 \\div 0{,}5
-				= \\dfrac{7}{2} \\colorbox{red}{$ \\div \\dfrac{1}{2} $}
-				= \\dfrac{7}{2} \\colorbox{red}{$ \\times 2 $}
+				= \\dfrac{7}{2} \\fcolorbox{red}{white}{$ \\div \\dfrac{1}{2} $}
+				= \\dfrac{7}{2} \\fcolorbox{red}{white}{$ \\times 2 $}
 				= \\dfrac{7 \\times 2}{2}
 				= 7`
 			)}

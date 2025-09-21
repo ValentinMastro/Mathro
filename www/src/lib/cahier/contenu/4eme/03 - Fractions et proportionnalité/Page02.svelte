@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { Contenu } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Contenu, DansLaMarge } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Exemples, Item, Propriete, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
 	import { math } from 'mathlifier';
@@ -12,6 +13,11 @@
 	let facteur_1: number = $state(2);
 	let facteur_2: number = $state(5);
 </script>
+
+<DansLaMarge apres_un_titre lignes_vides={10}>
+	<Slider min={1} max={10} bind:valeur={facteur_1} />
+	<Slider min={1} max={5} bind:valeur={facteur_2} />
+</DansLaMarge>
 
 {#snippet cercle(cx: number, cy: number, r: number, numerateur: number, denominateur: number, facteur: number)}
 	{#each Array(denominateur * facteur) as _, i}
@@ -38,9 +44,9 @@
 {/snippet}
 
 <Contenu>
-	<Propriete lignes={2.4}>
+	<Propriete lignes={2}>
 		Soient deux nombres {@html math('a')} et {@html math('b')} avec {@html math('b \\neq 0')}. Soit {@html math('k \\neq 0')}.<br />
-		Alors {@html math('\\dfrac{a}{b} = \\dfrac{k \\times a}{k \\times b}')}.
+		Alors {@html math('\\dfrac{a}{b} = \\dfrac{k \\times a}{k \\times b}')}
 	</Propriete>
 
 	<Exemples lignes={3}>
