@@ -1,17 +1,22 @@
 <script lang="ts">
-	import { Chapitre, Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Chapitre, Contenu, DansLaMarge, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Exemples, Item, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import { Rectangle } from '$lib/cahier/composants/svg/*';
 
 	import { math } from 'mathlifier';
 
-	let valeur_slider = $state(8);
-	let longueur = $derived(1000 / Math.max(valeur_slider, 8));
+	let valeur = $state(8);
+	let longueur = $derived(1000 / Math.max(valeur, 8));
 </script>
 
 <Chapitre titre="Théorème de Pythagore" />
 
-<Contenu apres_un_titre={true}>
+<DansLaMarge apres_un_titre lignes_vides={15}>
+	<Slider bind:valeur min={1} max={20} />
+</DansLaMarge>
+
+<Contenu apres_un_titre>
 	<Partie numero={1} titre="Carré et racine carrée" />
 	<SousPartie numero={1} titre="Le carré d'un nombre" />
 	<Definition lignes={2}>
@@ -29,35 +34,23 @@
 	<!-- Schema d'un carré de 8x8 pour comprendre le lien avec le carré géométrique -->
 	<Schema lignes={8}>
 		{#snippet svg()}
-			{#each Array(valeur_slider) as _, i}
-				{#each Array(valeur_slider) as _, j}
+			{#each Array(valeur) as _, i}
+				{#each Array(valeur) as _, j}
 					{@const C1 = { x: j * longueur + 7, y: i * longueur + 7 }}
 					{@const C2 = { x: (j + 1) * longueur - 7, y: (i + 1) * longueur - 7 }}
-					{#key valeur_slider}
+					{#key valeur}
 						<Rectangle points={[C1, C2]} fill={i % 2 == j % 2 ? 'red' : 'black'} stroke="none" />
 					{/key}
 				{/each}
 			{/each}
 		{/snippet}
 		{#snippet html()}
-			<Texte>
-				<input type="range" min="1" max="20" bind:value={valeur_slider} />
+			<Texte lignes={2} addStyle="display: flex; justify-content: center;">
+				Le carré de {valeur} est {valeur * valeur}.
 			</Texte>
 			<Texte lignes={2} addStyle="display: flex; justify-content: center;">
-				Le carré de {valeur_slider} est {valeur_slider * valeur_slider}.
-			</Texte>
-			<Texte lignes={2} addStyle="display: flex; justify-content: center;">
-				{@html math(valeur_slider + '^2 = ' + valeur_slider + ' \\times ' + valeur_slider + ' = ' + valeur_slider * valeur_slider)}
+				{@html math(valeur + '^2 = ' + valeur + ' \\times ' + valeur + ' = ' + valeur * valeur)}
 			</Texte>
 		{/snippet}
 	</Schema>
 </Contenu>
-
-<style>
-	input[type='range'] {
-		--margin: 5%;
-		margin-left: var(--margin);
-		margin-right: var(--margin);
-		width: calc(100% - 2 * var(--margin));
-	}
-</style>
