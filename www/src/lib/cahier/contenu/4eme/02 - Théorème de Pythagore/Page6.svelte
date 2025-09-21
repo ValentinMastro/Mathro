@@ -3,6 +3,7 @@
 	import { Schema, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { LatexAlign } from '$lib/cahier/composants/math/*';
 	import { AngleDroit, Polygone, TexteSVG } from '$lib/cahier/composants/svg/*';
+	import { math } from 'mathlifier';
 </script>
 
 <Contenu>
