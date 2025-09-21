@@ -3,8 +3,6 @@
 	import { Schema, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { LatexAlign } from '$lib/cahier/composants/math/*';
 	import { AngleDroit, Polygone, TexteSVG } from '$lib/cahier/composants/svg/*';
-
-	import { alignStar, math } from 'mathlifier';
 </script>
 
 <Contenu>
@@ -12,13 +10,13 @@
 	<Schema lignes={10} aspectRatioSVG={1.2}>
 		{#snippet svg()}
 			{@const A = { x: 800, y: 200 }}
-			{@const B = { x: 800, y: 800 }}
-			{@const C = { x: 200, y: 200 }}
+			{@const B = { x: 200, y: 200 }}
+			{@const C = { x: 800, y: 800 }}
 			<Polygone points={[A, B, C]} afficher_points />
-			<AngleDroit points={[B, A, C]} />
+			<AngleDroit taille={40} points={[B, A, C]} />
 			<TexteSVG point={{ x: (C.x + B.x) / 2, y: (C.y + B.y) / 2 }} dx={-120}>29 cm</TexteSVG>
-			<TexteSVG point={{ x: (A.x + B.x) / 2, y: (A.y + B.y) / 2 }} dx={50} fill="red">?</TexteSVG>
-			<TexteSVG point={{ x: (A.x + C.x) / 2, y: (A.y + C.y) / 2 }} dy={-50}>20 cm</TexteSVG>
+			<TexteSVG point={{ x: (A.x + C.x) / 2, y: (A.y + C.y) / 2 }} dx={50} fill="red">?</TexteSVG>
+			<TexteSVG point={{ x: (A.x + B.x) / 2, y: (A.y + B.y) / 2 }} dy={-50}>20 cm</TexteSVG>
 		{/snippet}
 	</Schema>
 	<Texte lignes={9}>
