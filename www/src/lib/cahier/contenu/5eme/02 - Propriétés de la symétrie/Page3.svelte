@@ -21,4 +21,7 @@
 			<span style="color: blue;">(le symétrique d'un angle de 90° est un angle de 90°)</span>
 		</Item>
 	</Propriete>
+
+	<Partie numero={4} titre="Lien entre symétrie centrale et parallélisme" />
+	<Propriete lignes={2}>Si deux droites sont symétriques par rapport à un point, alors elles sont parallèles.</Propriete>
 </Contenu>
