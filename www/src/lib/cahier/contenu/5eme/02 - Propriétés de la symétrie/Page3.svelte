@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Propriete, Item } from '$lib/cahier/composants/de_cours/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 </script>
 
 <Contenu>
