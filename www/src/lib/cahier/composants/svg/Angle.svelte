@@ -1,18 +1,18 @@
 <!--
   @component
   ## Angle — (extends SVGPathElement)
-  Trace le petit angle formé par trois points, avec `point2` comme sommet.
+  Trace le petit angle formé par trois points, avec le deuxième point comme sommet.
 
   ### Props
   - `r` *(number)* : rayon du secteur (distance du sommet à l’arc)
-  - `points` *{ x: number; y: number }[]* : tableau de points
+  - `points` *[{ x: number; y: number }, { x: number; y: number }, { x: number; y: number }]* : tableau de points
 -->
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
 
 	type Props = Omit<SVGAttributes<SVGPathElement>, 'points'> & {
 		r: number;
-		points: { x: number; y: number }[];
+		points: [{ x: number; y: number }, { x: number; y: number }, { x: number; y: number }];
 	};
 	let { r, points, ...props }: Props = $props();
 
