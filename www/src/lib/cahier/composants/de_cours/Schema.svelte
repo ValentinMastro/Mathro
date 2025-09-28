@@ -8,20 +8,25 @@
   - `aspectRatioSVG` *(number)* : aspect ratio de la partie SVG *(par défaut : 1/1)*
   - `svg` *(Snippet)* : Snippet contenant le code svg
   - `html` *(Snippet)* : Snippet contenant le code html
+  - `html_lignes_vides` *(number)* : nombre de lignes vides à ajouter avant le html *(par défaut : 0)*
   - `position_html` *('gauche' | 'droite')* : position du html par rapport au svg *(par défaut : 'droite')*
   - `height` *(number)* : hauteur INTERNE du SVG dans le viewport *(par défaut : 1000)*
 -->
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
+	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
+	import type { Snippet } from 'svelte';
+
 	type Props = SVGAttributes<SVGSVGElement> & {
 		lignes?: number;
 		aspectRatioSVG?: number;
-		svg?: any;
-		html?: any;
+		svg?: Snippet;
+		html?: Snippet;
+		html_lignes_vides?: number;
 		position_html?: 'gauche' | 'droite';
 		height?: number;
 	};
-	let { lignes = 1, aspectRatioSVG = 1 / 1, svg, html, position_html = 'droite', height = 1000, ...props }: Props = $props();
+	let { lignes = 1, aspectRatioSVG = 1 / 1, svg, html, html_lignes_vides = 0, position_html = 'droite', height = 1000, ...props }: Props = $props();
 </script>
 
 {#snippet afficher_svg()}
@@ -35,6 +40,9 @@
 {#snippet afficher_html()}
 	{#if html}
 		<div class="html">
+			{#if html_lignes_vides !== undefined}
+				<LigneVide lignes={html_lignes_vides} />
+			{/if}
 			{@render html()}
 		</div>
 	{/if}
