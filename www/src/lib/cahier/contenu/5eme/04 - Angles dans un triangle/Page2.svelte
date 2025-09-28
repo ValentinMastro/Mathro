@@ -1,6 +1,18 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Propriete, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Angle, AngleDroit, Codage, Polygone, TexteSVG } from '$lib/cahier/composants/svg/*';
+
+	let [A, B, C] = [
+		{ x: 0, y: 200 },
+		{ x: 800, y: 200 },
+		{ x: 800, y: 800 }
+	];
+	let [D, E, F] = [
+		{ x: 0, y: (2 * 1000) / 11 },
+		{ x: 900, y: (2 * 1000) / 11 },
+		{ x: 450, y: (9 * 1000) / 11 }
+	];
 </script>
 
 <Contenu>
@@ -8,33 +20,26 @@
 	<Definition>Un triangle rectangle possède un angle droit.</Definition>
 	<Schema lignes={5} centré>
 		{#snippet svg()}
-			<defs>
-				<polygon id="triangle_rectangle" points="200,200 800,200 800,800" />
-			</defs>
-			<use href="#triangle_rectangle" stroke="black" fill="none" stroke-width="8" />
-			<rect fill="black" x={800 - 50} y={200} width={50} height={50} />
+			<Polygone points={[A, B, C]} stroke-width={10} />
+			<AngleDroit points={[A, B, C]} taille={80} />
 		{/snippet}
 	</Schema>
+	<Definition lignes={2}>
+		Un triangle isocèle a deux côtés de même longueur. <br />
+		Le troisième côté est appelé la <i>base</i>.
+	</Definition>
 	<Propriete lignes={2}>
 		Un triangle isocèle possède deux angles de même mesure :<br />
 		il s'agit des angles adjacents à la base du triangle.
 	</Propriete>
-	<Schema lignes={5}>
+	<Schema lignes={11} centré>
 		{#snippet svg()}
-			<defs>
-				<polygon id="triangle_isocèle" points="200,200 1000,200 600,800" />
-			</defs>
-			<use href="#triangle_isocèle" stroke="black" fill="none" stroke-width="8" />
-			<text fill="red" font-size={85} x={600} y={200} dx={0} dy={-20} text-anchor="middle">base</text>
-		{/snippet}
-	</Schema>
-	<Propriete>Un triangle équilatéral possède trois angles de même mesure : 60°.</Propriete>
-	<Schema lignes={5}>
-		{#snippet svg()}
-			<defs>
-				<polygon id="triangle_équilatéral" points="200,800 800,800 {200 + 600 * Math.cos(Math.PI / 3)},{800 - 600 * Math.sin(Math.PI / 3)}" />
-			</defs>
-			<use href="#triangle_équilatéral" stroke="black" fill="none" stroke-width="8" />
+			<TexteSVG point={{ x: (D.x + E.x) / 2, y: D.y + 10 }} fill="red" font-size={70} dy={-50}>base</TexteSVG>
+			<Codage points={[D, F]} type="2 traits" stroke="red" />
+			<Codage points={[E, F]} type="2 traits" stroke="red" />
+			<Angle r={80} points={[D, E, F]} fill="green" />
+			<Angle r={80} points={[E, D, F]} fill="green" />
+			<Polygone points={[D, E, F]} stroke-width={5} />
 		{/snippet}
 	</Schema>
 </Contenu>
