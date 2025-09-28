@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Partie, Contenu } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemples, Notation, Paragraphe, Item, Tableau, LigneTableau, Methode } from '$lib/cahier/composants/de_cours/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
+	import { Definition, Exemples, Notation, Item, Methode } from '$lib/cahier/composants/de_cours/*';
 </script>
 
 <Contenu>
@@ -18,7 +17,6 @@
 		<Item>6 divise 42</Item>
 		<Item>6 est un diviseur de 42</Item>
 	</Notation>
-	<LigneVide />
 	<Methode lignes={4}>
 		Pour savoir si un nombre est divisible par un autre, on peut :
 		<Item lignes={2}>calculer le reste de la division euclidienne, et vérifier qu'il est égal à 0</Item>

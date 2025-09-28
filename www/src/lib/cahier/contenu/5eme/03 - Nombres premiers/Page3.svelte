@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { Contenu } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Paragraphe, Tableau, LigneTableau } from '$lib/cahier/composants/de_cours/*';
-	import { get_tailles } from '$lib/cahier/store.svelte';
 </script>
 
 <Contenu>
-	<Paragraphe nom_du_paragraphe="Critères de divisibilité" couleur="noir"></Paragraphe>
-	<Tableau lignes={6} addStyle="font-size: {get_tailles().texte * 0.75}px;">
+	<Paragraphe nom_du_paragraphe="Critères de divisibilité" couleur="noir" />
+	<Tableau lignes={6}>
 		<LigneTableau lignes={1}>
 			<th></th>
 			<th>règle</th>
@@ -16,7 +15,7 @@
 			<td>divisible <br />par 2</td>
 			<td>le nombre est pair <br /> le chiffre des unités est 0, 2, 4, 6 ou 8</td>
 			<td>
-				<span class="green"> 102 est pair </span>
+				<span class="vert"> 102 est pair </span>
 				<br />
 				<span class="rouge"> 113 est impair </span>
 			</td>
@@ -25,7 +24,7 @@
 			<td>divisible <br /> par 3</td>
 			<td>la somme de ses chiffres est divisible par 3</td>
 			<td>
-				<span class="green"> 102 est divisible par 3 car 1 + 0 + 2 = 3 </span>
+				<span class="vert"> 102 est divisible par 3 car 1 + 0 + 2 = 3 </span>
 				<br />
 				<span class="rouge"> 113 n'est pas divisible par 3 car 1 + 1 + 3 = 5 </span>
 			</td>
@@ -34,7 +33,7 @@
 			<td>divisible <br /> par 5</td>
 			<td>le chiffre des unités est 0 ou 5</td>
 			<td>
-				<span class="green"> 105 est divisible par 5 </span>
+				<span class="vert"> 105 est divisible par 5 </span>
 				<br />
 				<span class="rouge"> 113 n'est pas divisible par 5 </span>
 			</td>
@@ -43,7 +42,7 @@
 			<td>divisible <br /> par 9</td>
 			<td>la somme de ses chiffres est divisible par 9</td>
 			<td>
-				<span class="green"> 108 est divisible par 9 car 1 + 0 + 8 = 9 </span>
+				<span class="vert"> 108 est divisible par 9 car 1 + 0 + 8 = 9 </span>
 				<br />
 				<span class="rouge"> 113 n'est pas divisible par 9 car 1 + 1 + 3 = 5 </span>
 			</td>
@@ -52,7 +51,7 @@
 			<td>divisible <br /> par 10</td>
 			<td>le chiffre des unités est 0</td>
 			<td>
-				<span class="green"> 100 est divisible par 10 </span>
+				<span class="vert"> 100 est divisible par 10 </span>
 				<br />
 				<span class="rouge"> 113 n'est pas divisible par 10 </span>
 			</td>
@@ -61,10 +60,10 @@
 </Contenu>
 
 <style>
-	.green {
-		color: green;
+	.vert {
+		color: var(--vert);
 	}
 	.rouge {
-		color: red;
+		color: var(--rouge);
 	}
 </style>
