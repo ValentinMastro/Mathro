@@ -10,6 +10,7 @@
   - `html` *(Snippet)* : Snippet contenant le code html
   - `html_lignes_vides` *(number)* : nombre de lignes vides à ajouter avant le html *(par défaut : 0)*
   - `position_html` *('gauche' | 'droite')* : position du html par rapport au svg *(par défaut : 'droite')*
+  - `centré` *(boolean)* : centrage horizontal du SVG *(par défaut : false)*
   - `height` *(number)* : hauteur INTERNE du SVG dans le viewport *(par défaut : 1000)*
 -->
 <script lang="ts">
@@ -24,14 +25,27 @@
 		html?: Snippet;
 		html_lignes_vides?: number;
 		position_html?: 'gauche' | 'droite';
+		centré?: boolean;
 		height?: number;
 	};
-	let { lignes = 1, aspectRatioSVG = 1 / 1, svg, html, html_lignes_vides = 0, position_html = 'droite', height = 1000, ...props }: Props = $props();
+	let {
+		lignes = 1,
+		aspectRatioSVG = 1 / 1,
+		svg,
+		html,
+		html_lignes_vides = 0,
+		position_html = 'droite',
+		centré = false,
+		height = 1000,
+		...props
+	}: Props = $props();
+
+	let margin = $derived(centré ? 'margin-left: auto; margin-right: auto;' : '');
 </script>
 
 {#snippet afficher_svg()}
 	{#if svg}
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {1000 * aspectRatioSVG} {height}" {...props}>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {1000 * aspectRatioSVG} {height}" style={margin} {...props}>
 			{@render svg()}
 		</svg>
 	{/if}
@@ -48,7 +62,7 @@
 	{/if}
 {/snippet}
 
-<div class="schema" style="--lignes: {lignes}; --aspectRatioSVG: {aspectRatioSVG}">
+<div class="schema" style="--lignes: {lignes}; --aspectRatioSVG: {aspectRatioSVG};">
 	{#if position_html === 'gauche'}
 		{@render afficher_html()}
 		{@render afficher_svg()}
