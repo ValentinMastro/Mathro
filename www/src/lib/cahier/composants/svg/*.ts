@@ -5,6 +5,7 @@ export { default as Axe } from './Axe.svelte';
 export { default as Carré } from './Carré.svelte';
 export { default as Codage } from './Codage.svelte';
 export { default as DemiDroite } from './DemiDroite.svelte';
+export { default as DivisionEuclidienne } from './DivisionEuclidienne.svelte';
 export { default as Droite } from './Droite.svelte';
 export { default as DroiteVerticale } from './DroiteVerticale.svelte';
 export { default as Fleche } from './Fleche.svelte';
@@ -17,6 +18,7 @@ export { default as Rectangle } from './Rectangle.svelte';
 export { default as SecteurAngulaire } from './SecteurAngulaire.svelte';
 export { default as Segment } from './Segment.svelte';
 export { default as SegmentHorizontal } from './SegmentHorizontal.svelte';
+export { default as SegmentVertical } from './SegmentVertical.svelte';
 export { default as TexteSVG } from './TexteSVG.svelte';
 
 export { Projecteur } from './perspective_cavalière/projecteur';
