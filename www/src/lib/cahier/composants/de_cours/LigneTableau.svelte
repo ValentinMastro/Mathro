@@ -1,13 +1,12 @@
 <script lang="ts">
-	interface Props {
-		addStyle?: string;
-		children?: any;
+	import { type HTMLAttributes } from 'svelte/elements';
+	type Props = HTMLAttributes<HTMLTableRowElement> & {
 		lignes?: number;
-	}
-	let { addStyle = '', children, lignes = 1 }: Props = $props();
+	};
+	let { lignes = 1, children, ...props }: Props = $props();
 </script>
 
-<tr style="--lignes: {lignes}; {addStyle}">
+<tr style="--lignes: {lignes};" {...props}>
 	{@render children?.()}
 </tr>
 
