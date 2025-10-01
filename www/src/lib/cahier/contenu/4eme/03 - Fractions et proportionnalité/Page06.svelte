@@ -16,7 +16,7 @@
 
 <Contenu>
 	<SousPartie numero={3} titre="Augmentation par un pourcentage" />
-	<Propriete lignes={4}>
+	<Propriete lignes={3}>
 		Pour augmenter une valeur de {@html math('p \\%')} :
 		<Item>
 			je calcule {@html math('p \\%')} puis je l'ajoute à la valeur initiale
@@ -24,12 +24,9 @@
 		<Item>
 			<u>OU</u> je calcule {@html math('(100+p) \\%')} de la valeur initiale
 		</Item>
-		<Item>
-			<u>OU</u> je calcule {@html math('\\dfrac{100+p}{100} \\times')} la valeur initiale
-		</Item>
 	</Propriete>
 
-	<Exemple lignes={4}>
+	<Exemple lignes={3}>
 		50 € + {pourcentage_augmentation} % :
 		<Item>
 			{@html math(
@@ -38,10 +35,6 @@
 		</Item>
 		<Item>
 			{@html math(`${100 + pourcentage_augmentation}\\% ~\\text{de}~ 50€ = \\boxed{${resultat_augmentation}€}`)}
-		</Item>
-		<Item>
-			{@const facteur = ((100 + pourcentage_augmentation) / 100).toLocaleString('fr')}
-			{@html math(`50€ \\times \\dfrac{100+${pourcentage_augmentation}}{100} = 50€ \\times ${facteur} = \\boxed{${resultat_augmentation}€}`)}
 		</Item>
 	</Exemple>
 </Contenu>

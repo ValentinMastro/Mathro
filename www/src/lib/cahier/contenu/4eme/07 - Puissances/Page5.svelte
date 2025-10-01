@@ -1,40 +1,35 @@
 <script lang="ts">
-    import { Contenu, Partie } from "$lib/cahier/composants/de_chapitrage/*";
-    import { Definition, Remarque, Propriete, Exemples, Item } from "$lib/cahier/composants/de_cours/*";
-	import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
+	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Methode, Exemple } from '$lib/cahier/composants/de_cours/*';
+	import { LatexAlign } from '$lib/cahier/composants/math/*';
 
-    import { math } from "mathlifier";
+	import { math } from 'mathlifier';
 </script>
 
 <Contenu>
-    <Partie numero={2} titre="Puissances à base quelconque" />
-        <LigneVide />
-        <Definition lignes={4}>
-            Soit {@html math("a")} un nombre réel non nul et {@html math("n")} un nombre entier relatif.<br>
-            {@html math(`a^n = \\underbrace{a \\times a \\times \\cdots \\times a}_{n \\text{ facteurs}}`)}<br>
-            <LigneVide lignes={0.5} />
-            {@html math("a")} est la <i>base</i> de la puissance et {@html math("n")}est son <i>exposant</i>.
-        </Definition>
-        <Remarque>
-            Pour n'importe quelle base {@html math("a")}, on a {@html math("a^0=1")}.
-        </Remarque>
-        <Propriete>
-            Pour tout nombre {@html math("x")}, {@html math("x^2")} est positif.
-        </Propriete>
-        <Propriete lignes={3}>
-            Si {@html math("x")} est un nombre négatif, {@html math("x^n")} est 
-            <Item>positif si {@html math("n")} est un entier pair</Item>
-            <Item>négatif si {@html math("n")} est un entier impair</Item>
-        </Propriete>
-        <Exemples lignes={3}>
-            <Item>
-                {@html math(`(-2)^5 = -32`)} est négatif car 5 est impair.
-            </Item>
-            <Item>
-                {@html math(`(-6)^6 = 46656`)} est positif car 6 est pair.
-            </Item>
-            <Item>
-                {@html math(`(-3)^{10} = 59049`)} est positif car 10 est pair.
-            </Item>
-        </Exemples>
+	<SousPartie numero={5} titre="Conversion d'unités" />
+	<Methode>Comment convertir une valeur dans une autre unité ?</Methode>
+	<Exemple>
+		Convertir {@html math('9 \\times 10^{11}')} mW en GW <small>(Puissance électrique d'un réacteur nucléaire)</small>
+	</Exemple>
+
+	<LatexAlign
+		code={` 9 \\times 10^{11} \\color{red} \\text{ mW} \\color{blue}
+                &= 9 \\times 10^{11} \\color{red}\\times 10^{-12} \\text{ GW} \\color{blue} \\\\
+                &= 9 \\times 10^{11+(-12)} \\text{ GW} \\\\
+                &= 9 \\times 10^{-1} \\text{ GW} `}
+		lignes={4}
+	/>
+
+	<Exemple>
+		Convertir 0,000 000 84 nm en km <small>(Rayon d'un proton)</small>
+	</Exemple>
+	<LatexAlign
+		code={` 0{,}000~000~84 \\color{red} \\text{ nm} \\color{blue}
+                &= \\color{forestgreen} 8{,}4 \\times 10^{-7} \\color{blue} \\color{red} \\text{ nm} \\color{blue} \\\\
+                &= 8{,}4 \\times 10^{-7} \\color{red} \\times 10^{-12} \\text{ km} \\color{blue} \\\\
+                &= 8{,}4 \\times 10^{-7+(-12)} \\text{ km} \\\\
+                &= 8{,}4 \\times 10^{-19} \\text{ km} `}
+		lignes={5}
+	/>
 </Contenu>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page_state, set_taille_page, get_tailles } from '$lib/cahier/store.svelte';
+	import { page_state, set_taille_page } from '$lib/cahier/store.svelte';
 
 	let composant: HTMLDivElement;
 
@@ -13,7 +13,7 @@
 	});
 </script>
 
-<div id="titre" bind:this={composant} style="font-size: {get_tailles().titre}px">
+<div id="titre" bind:this={composant}>
 	<div>Cahier de cours</div>
 	<div>Mathématiques</div>
 	<div>{page_state.niveau}ème</div>
@@ -27,5 +27,6 @@
 		justify-content: center;
 		align-items: center;
 		height: 100%;
+		font-size: calc(var(--taille_page) / 20);
 	}
 </style>

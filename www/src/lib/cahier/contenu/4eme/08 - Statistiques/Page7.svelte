@@ -3,8 +3,6 @@
 	import { Definition, Exemples, Schema } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
-	import { get_tailles } from '$lib/cahier/store.svelte';
-
 	interface Population {
 		'0-14': number;
 		'15-29': number;
@@ -71,7 +69,7 @@
 		proportionnelle à l'étendue de la classe et de hauteur proportionnelle à l'effectif de la classe.
 	</Definition>
 	<Exemples lignes={3}>
-		<table class="donnees" style="--hauteur: {get_tailles().hauteur_ligne_cahier}px; --taille-texte: {get_tailles().texte}px;">
+		<table class="donnees">
 			<caption>Population de Meaux (77284) en 2019 par grandes tranches d'âge</caption>
 			<thead>
 				<tr>
@@ -165,15 +163,15 @@
 		width: calc(100 / 99 * 100%);
 		border-collapse: collapse;
 		border: 1px solid black;
-		font-size: calc(var(--taille-texte) * 0.9);
+		font-size: calc(var(--font-size) * 0.9);
 
 		tr,
 		th,
 		td {
 			padding: 0;
-			height: var(--hauteur);
+			height: var(--carreau);
 			text-align: center;
-			font-size: calc(var(--taille-texte) * 0.85);
+			font-size: calc(var(--font-size) * 0.85);
 			width: calc(2.5 / 21 * 100%);
 			border-left: 1px solid black;
 		}

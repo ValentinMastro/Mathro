@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Exemples, Notation, Item } from '$lib/cahier/composants/de_cours/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-
 	import { math } from 'mathlifier';
 </script>
 
@@ -19,10 +17,9 @@
 	</Notation>
 
 	<Exemples lignes={3}>
-		<Item>
+		<Item lignes={2}>
 			{@html math('\\dfrac{3}{4} \\times 4 = \\dfrac{3}{\\cancel{4}} \\times \\cancel{4} = 3')}
 		</Item>
-		<LigneVide />
 		<Item>
 			{@html math('\\dfrac{7{,}2}{5{,}8} \\times 5{,}8 = \\dfrac{7{,}2}{\\cancel{5{,}8}} \\times \\cancel{5{,}8} = 7{,}2')}
 		</Item>

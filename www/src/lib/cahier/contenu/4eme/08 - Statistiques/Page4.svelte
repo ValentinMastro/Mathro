@@ -1,10 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Remarque, Exemples, Schema, Tableau, LigneTableau } from '$lib/cahier/composants/de_cours/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-
-	import { get_tailles } from '$lib/cahier/store.svelte';
-
 	// Nombre d'habitant à Meaux par année
 	let donnees_1 = {
 		1982: 45005,
@@ -20,14 +16,13 @@
 <Contenu>
 	<Partie numero={2} titre="Diagrammes et graphiques" />
 	<SousPartie numero={1} titre="Diagrammes en barres/en bâtons" />
-	<LigneVide />
 	<Definition lignes={2}>
 		Un <i>diagramme en barres</i> permet de représenter des données par des barres de hauteurs proportionnelles.
 	</Definition>
 	<Remarque>On l'utilise le plus souvent pour comparer des valeurs entre elles.</Remarque>
 	<Exemples lignes={0} addStyle="margin-bottom: -0.2ex;" />
 	<Tableau>
-		<caption style="height: {get_tailles().hauteur_ligne_cahier}px;">Nombre d'habitants à Meaux par année</caption>
+		<caption>Nombre d'habitants à Meaux par année</caption>
 		<LigneTableau>
 			<th>Année</th>
 			{#each Object.keys(donnees_1) as annee}

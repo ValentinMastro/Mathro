@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Classe } from '../types';
+	import type { Classe } from '$lib/constitution_classes/donnees/types';
 	export let classe: Classe;
 </script>
 

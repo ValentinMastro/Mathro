@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { sommaire } from '$lib/cahier/contenu/sommaires';
-	import { page_state, get_tailles } from '$lib/cahier/store.svelte';
+	import { page_state } from '$lib/cahier/store.svelte';
 	import Bulle from '../sommaire/Bulle.svelte';
 
 	interface Props {

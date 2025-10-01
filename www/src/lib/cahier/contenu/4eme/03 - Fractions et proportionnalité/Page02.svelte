@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Exemples, Item, Propriete, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Exemples, Item, MultiItem, Propriete, Schema } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
+	import { Grille, Rectangle } from '$lib/cahier/composants/svg/*';
 
 	import { math } from 'mathlifier';
 
@@ -49,20 +50,40 @@
 		Alors {@html math('\\dfrac{a}{b} = \\dfrac{k \\times a}{k \\times b}')}
 	</Propriete>
 
-	<Exemples lignes={3}>
-		<Item>
-			{@html math(`\\dfrac{3}{4} = \\dfrac{${facteur_1} \\times 3}{${facteur_1} \\times 4} = \\dfrac{${facteur_1 * 3}}{${facteur_1 * 4}}`)}
-		</Item>
-		<LigneVide />
-		<Item>
-			{@html math(`\\dfrac{7}{15} = \\dfrac{${facteur_2} \\times 7}{${facteur_2} \\times 15} = \\dfrac{${facteur_2 * 7}}{${facteur_2 * 15}}`)}
-		</Item>
+	<Exemples>
+		<MultiItem>
+			<Item>
+				{@html math(`\\dfrac{3}{4} = \\dfrac{${facteur_1} \\times 3}{${facteur_1} \\times 4} = \\dfrac{${facteur_1 * 3}}{${facteur_1 * 4}}`)}
+			</Item>
+			<Item>
+				{@html math(`\\dfrac{7}{15} = \\dfrac{${facteur_2} \\times 7}{${facteur_2} \\times 15} = \\dfrac{${facteur_2 * 7}}{${facteur_2 * 15}}`)}
+			</Item>
+		</MultiItem>
 	</Exemples>
 
-	<Schema lignes={8} aspectRatioSVG={2.4}>
+	<Schema lignes={8} aspectRatioSVG={20 / 8}>
 		{#snippet svg()}
-			{@render cercle(500, 500, 300, 3, 4, facteur_1)}
-			{@render cercle(1750, 500, 300, 7, 15, facteur_2)}
+			<!-- Schéma 1 -->
+			{@const coin1 = { x: 125, y: 125 }}
+			{@const coin2 = { x: 1125, y: 875 }}
+			{@const coin3 = { x: 875, y: 125 }}
+			<Rectangle points={[coin1, coin2]} stroke="none" fill="var(--vert)" />
+			<Rectangle points={[coin3, coin2]} stroke="none" fill="var(--rouge)" />
+			<Grille points={[coin1, coin2]} pas={{ x: 250, y: 750 }} avec_contours />
+			<Grille points={[coin1, coin2]} pas={{ x: 1000, y: 750 / facteur_1 }} />
+			<!-- Schéma 2 -->
+			{@const coin4 = { x: 1375, y: 250 }}
+			{@const coin5 = { x: 2125, y: 875 }}
+			<Rectangle points={[coin4, coin5]} stroke="none" fill="var(--vert)" />
+			<Rectangle points={[{ x: coin4.x, y: 500 }, coin5]} stroke="none" fill="var(--rouge)" />
+			<Rectangle
+				points={[
+					{ x: coin4.x, y: 500 },
+					{ x: coin4.x + 250, y: 625 }
+				]}
+				fill="var(--vert)"
+			/>
+			<Grille points={[coin4, coin5]} pas={{ x: 250, y: 125 / facteur_2 }} avec_contours />
 		{/snippet}
 	</Schema>
 </Contenu>

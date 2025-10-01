@@ -3,8 +3,6 @@
 	import { Definition, Exemples, Remarque, Schema } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
-	import { get_tailles } from '$lib/cahier/store.svelte';
-
 	interface Population {
 		'0-14': number;
 		'15-29': number;
@@ -148,7 +146,7 @@
 	</Definition>
 	<Remarque lignes={2}>On l'utilise le plus souvent lorsque le total des valeurs est connu et pertinent.</Remarque>
 	<Exemples lignes={3} addStyle="margin-bottom: -0.2ex;">
-		<table class="donnees" style="--hauteur: {get_tailles().hauteur_ligne_cahier}px; --taille-texte: {get_tailles().texte}px;">
+		<table class="donnees" style="--hauteur: var(--carreau); --taille-texte: var(--font-size);">
 			<caption>
 				Population de {villes[index_ville].meta.ville} ({villes[index_ville].meta.code_insee}) en {villes[index_ville].meta.annee} par grandes tranches
 				d'âge

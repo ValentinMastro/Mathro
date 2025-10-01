@@ -2,8 +2,6 @@
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Exemples, Texte } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-
-	import { get_tailles } from '$lib/cahier/store.svelte';
 	import { math } from 'mathlifier';
 
 	// Nombre d'élèves dans une classe par sexe
@@ -36,7 +34,7 @@
 		La <i>fréquence</i> d'une valeur d'une série est son effectif divisé par l'effectif total.
 	</Definition>
 	<Exemples lignes={8}>
-		<table class="donnees" style="--hauteur: {get_tailles().hauteur_ligne_cahier}px; --taille-texte: {get_tailles().texte}px;">
+		<table class="donnees">
 			<caption>Nombre d'élèves dans une classe par sexe</caption>
 			<thead>
 				<tr>
@@ -80,15 +78,15 @@
 		width: calc(100 / 99 * 100%);
 		border-collapse: collapse;
 		border: 1px solid black;
-		font-size: calc(var(--taille-texte) * 0.9);
+		font-size: calc(var(--font-size) * 0.9);
 
 		tr,
 		th,
 		td {
 			padding: 0;
-			height: var(--hauteur);
+			height: var(--carreau);
 			text-align: center;
-			font-size: calc(var(--taille-texte) * 0.85);
+			font-size: calc(var(--font-size) * 0.85);
 			width: calc(5 / 21 * 100%);
 			border-left: 1px solid black;
 			border-top: 1px solid black;
@@ -107,7 +105,7 @@
 
 		tr.double_ligne th,
 		tr.double_ligne td {
-			height: calc(2 * var(--hauteur));
+			height: calc(2 * var(--carreau));
 		}
 	}
 </style>

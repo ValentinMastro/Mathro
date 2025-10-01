@@ -2,7 +2,7 @@ module.exports = {
 	root: true,
 	extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:svelte/recommended', 'prettier'],
 	parser: '@typescript-eslint/parser',
-	plugins: ['@typescript-eslint'],
+	plugins: ['@typescript-eslint', 'unused-imports'],
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2020,
@@ -20,7 +20,8 @@ module.exports = {
 				ignoreDeclarationSort: false,
 				ignoreCase: false
 			}
-		]
+		],
+		'unused-imports/no-unused-imports': 'error'
 	},
 	overrides: [
 		{
@@ -28,6 +29,9 @@ module.exports = {
 			parser: 'svelte-eslint-parser',
 			parserOptions: {
 				parser: '@typescript-eslint/parser'
+			},
+			rules: {
+				'unused-imports/no-unused-imports': 'error'
 			}
 		}
 	]

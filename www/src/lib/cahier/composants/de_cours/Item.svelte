@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
-	import type { HTMLAttributes } from 'svelte/elements';
+	import { type Snippet } from 'svelte';
+	import { type HTMLAttributes } from 'svelte/elements';
 
 	type Props = HTMLAttributes<HTMLDivElement> & {
 		bullet?: string;
@@ -24,7 +24,7 @@
 <style>
 	.item {
 		margin-left: 1.5em;
-		width: 95%;
+		width: fit-content;
 		font-size: var(--font-size);
 		line-height: var(--line-height);
 		height: calc(var(--lignes) * var(--carreau));
