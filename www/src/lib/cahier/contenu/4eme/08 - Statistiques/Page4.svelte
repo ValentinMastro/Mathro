@@ -1,72 +1,59 @@
 <script lang="ts">
-	import { Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Remarque, Exemples, Schema, Tableau, LigneTableau } from '$lib/cahier/composants/de_cours/*';
-	// Nombre d'habitant à Meaux par année
-	let donnees_1 = {
-		1982: 45005,
-		1990: 48305,
-		1999: 49421,
-		2007: 48653,
-		2013: 53766,
-		2019: 55750
-	};
-	let n: number = Object.keys(donnees_1).length;
+	import { Contenu } from "$lib/cahier/composants/de_chapitrage/*";
+    import { Paragraphe, Exemples, Item, Methode } from "$lib/cahier/composants/de_cours/*";
+    import { math } from 'mathlifier';
+
+    let serie_1 = [2, 6, 4, 6, 3, 1, 5, 3];
+    let serie_2 = [45, 38, 46, 39, 40];
+
+    function mediane(serie: number[]): number {
+        serie = serie.slice().sort((a, b) => a - b); // ordre croissant
+        if (serie.length % 2 == 0) {
+            return (serie[serie.length/2] + serie[serie.length/2-1]) / 2;
+        } else {
+            return serie[Math.floor(serie.length/2)];
+        }
+    }
+
+    let mediane_1 = $derived(mediane(serie_1));
+    let mediane_2 = $derived(mediane(serie_2));
 </script>
 
 <Contenu>
-	<Partie numero={2} titre="Diagrammes et graphiques" />
-	<SousPartie numero={1} titre="Diagrammes en barres/en bâtons" />
-	<Definition lignes={2}>
-		Un <i>diagramme en barres</i> permet de représenter des données par des barres de hauteurs proportionnelles.
-	</Definition>
-	<Remarque>On l'utilise le plus souvent pour comparer des valeurs entre elles.</Remarque>
-	<Exemples lignes={0} addStyle="margin-bottom: -0.2ex;" />
-	<Tableau>
-		<caption>Nombre d'habitants à Meaux par année</caption>
-		<LigneTableau>
-			<th>Année</th>
-			{#each Object.keys(donnees_1) as annee}
-				<th>{annee}</th>
-			{/each}
-		</LigneTableau>
-		<LigneTableau>
-			<th>Nombre d'habitants</th>
-			{#each Object.values(donnees_1) as valeur}
-				<td>{valeur.toLocaleString('fr-FR')}</td>
-			{/each}
-		</LigneTableau>
-	</Tableau>
-	<Schema lignes={20}>
-		{#snippet svg()}
-			<defs>
-				<style>
-					.textp33 {
-						font-size: 22px;
-						text-anchor: middle;
-					}
-				</style>
-			</defs>
-			<!-- Axes -->
-			<line x1={100} y1={950} x2={900} y2={950} stroke="black" stroke-width={2} />
-			<line x1={100} y1={950} x2={100} y2={50} stroke="black" stroke-width={2} />
-			<!-- Graduations horizontales -->
-			{#each Object.keys(donnees_1) as annees, i}
-				<line x1={100 + (800 * (i + 0.5)) / n} y1={950} x2={100 + (800 * (i + 0.5)) / n} y2={960} stroke="black" stroke-width={2} />
-				<text x={100 + (800 * (i + 0.5)) / n} y={980} class="textp33">{annees}</text>
-			{/each}
-			<!-- Graduations verticales -->
-			{#each [0, 10000, 20000, 30000, 40000, 50000, 60000] as valeur, i}
-				<line x1={90} y1={950 - (900 * valeur) / 60000} x2={100} y2={950 - (900 * valeur) / 60000} stroke="black" stroke-width={2} />
-				<text x={50} y={955 - (900 * valeur) / 60000 + 5} class="textp33">{valeur.toLocaleString('fr-FR')}</text>
-			{/each}
-			<!-- Barres -->
-			{#each Object.values(donnees_1) as valeur, i}
-				<rect x={100 + (800 * (i + 0.5)) / n - 20} y={950 - (900 * valeur) / 60000} width={40} height={(900 * valeur) / 60000} fill="black" />
-				<text x={100 + (800 * (i + 0.5)) / n} y={950 - (900 * valeur) / 60000 - 10} class="textp33">{valeur.toLocaleString('fr-FR')}</text>
-			{/each}
-			<!-- Légendes -->
-			<text x={950} y={950} class="textp33">Année</text>
-			<text x={220} y={50} class="textp33">Nombre d'habitants</text>
-		{/snippet}
-	</Schema>
+    <Methode lignes={6}>
+        Pour trouver la médiane d'une série statistique, on procède ainsi :
+        <Item bullet="1. " bullet_color="black">
+            On ordonne les valeurs de la série par ordre croissant.
+        </Item>
+        <Item bullet="2. " bullet_color="black" lignes={2}>
+            Si l'effectif total est impair, la médiane est la valeur du milieu (la {@html math(`\\frac{\\text{N}+1}{2}`)}ème valeur).
+        </Item>
+        <Item bullet="3. " bullet_color="black" lignes={2}>
+            Si l'effectif total est pair, la médiane est la moyenne des deux valeurs du milieu (la {@html math(`\\frac{\\text{N}}{2}`)}ème et la {@html math(`(\\frac{\\text{N}}{2}+1)`)}ème valeurs).
+        </Item>
+    </Methode>
+    <Exemples lignes={13}>
+        <Item lignes={7}>
+            {@html math(`\\left\\{ ${serie_1.join("~;~")}  \\right\\}`)}
+            <Item bullet="➜" lignes={2}>
+                On trie les valeurs dans l'ordre croissant : {@html math(`\\left\\{ ${serie_1.slice().sort((a,b)=> a-b).join("~;~")}  \\right\\}`)}
+            </Item>
+            <Item bullet="➜" lignes={4}>
+                {@html math(`\\text{N}=${serie_1.length}`)} est pair, donc la médiane est entre la {@html math(`\\frac{\\text{N}}{2}`)}ème et la {@html math(`(\\frac{\\text{N}}{2}+1)`)}ème valeurs :<br>
+                Autrement dit, entre la {serie_1.length/2}ème valeur et la {serie_1.length/2+1}ème valeur.<br>
+                La médiane est donc {mediane_1.toLocaleString("fr-FR", {maximumFractionDigits: 3})}.
+            </Item>
+        </Item>
+        <Item lignes={6}>
+            {@html math(`\\left\\{ ${serie_2.join("~;~")}  \\right\\}`)}
+            <Item bullet="➜" lignes={2}>
+                On trie les valeurs dans l'ordre croissant : {@html math(`\\left\\{ ${serie_2.slice().sort((a,b)=> a-b).join("~;~")}  \\right\\}`)}
+            </Item>
+            <Item bullet="➜" lignes={3}>
+                {@html math(`\\text{N}=${serie_2.length}`)} est impair, donc la médiane est la {@html math(`\\frac{\\text{N}+1}{2}`)}ème valeur :<br>
+                Autrement dit, la {Math.floor(serie_2.length/2)+1}ème valeur.<br>
+                La médiane est donc {mediane_2.toLocaleString("fr-FR", {maximumFractionDigits: 1})}.
+            </Item>
+        </Item>
+    </Exemples>
 </Contenu>

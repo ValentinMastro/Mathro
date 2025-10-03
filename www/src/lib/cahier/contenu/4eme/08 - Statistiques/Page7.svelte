@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemples, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Contenu, DansLaMarge, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Definition, Exemples, Remarque, Schema } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
 	interface Population {
@@ -10,6 +10,7 @@
 		'45-59': number;
 		'60-74': number;
 		'75 +': number;
+		TOTAL: number;
 	}
 
 	interface Metadonnees {
@@ -24,9 +25,9 @@
 		meta: Metadonnees;
 	}
 
-	let donnees_meaux = { '0-14': 12077, '15-29': 11782, '30-44': 11348, '45-59': 9860, '60-74': 6819, '75 +': 3730 };
-	let donnees_magny = { '0-14': 2243, '15-29': 1947, '30-44': 2342, '45-59': 1844, '60-74': 534, '75 +': 154 };
-	let donnees_neuilly = { '0-14': 9676, '15-29': 10480, '30-44': 10541, '45-59': 11913, '60-74': 9520, '75 +': 7137 };
+	let donnees_meaux = { '0-14': 12077, '15-29': 11782, '30-44': 11348, '45-59': 9860, '60-74': 6819, '75 +': 3730, TOTAL: 55616 };
+	let donnees_magny = { '0-14': 2243, '15-29': 1947, '30-44': 2342, '45-59': 1844, '60-74': 534, '75 +': 154, TOTAL: 9064 };
+	let donnees_neuilly = { '0-14': 9676, '15-29': 10480, '30-44': 10541, '45-59': 11913, '60-74': 9520, '75 +': 7137, TOTAL: 59267 };
 
 	let villes: Ville[] = [
 		{
@@ -59,101 +60,135 @@
 	];
 
 	let index_ville = $state(0);
+
+	function angle(index: number) {
+		let donnee = 0;
+		switch (index) {
+			case 0:
+				donnee = villes[index_ville].donnees['0-14'];
+				break;
+			case 1:
+				donnee = villes[index_ville].donnees['15-29'];
+				break;
+			case 2:
+				donnee = villes[index_ville].donnees['30-44'];
+				break;
+			case 3:
+				donnee = villes[index_ville].donnees['45-59'];
+				break;
+			case 4:
+				donnee = villes[index_ville].donnees['60-74'];
+				break;
+			case 5:
+				donnee = villes[index_ville].donnees['75 +'];
+				break;
+		}
+		return (donnee * 360) / villes[index_ville].donnees['TOTAL'];
+	}
+
+	function angle_cumule(index: number) {
+		let angles_cumules = 0;
+		switch (index) {
+			case -1:
+				return 0;
+			case 0:
+				angles_cumules += villes[index_ville].donnees['0-14'];
+			case 1:
+				angles_cumules += villes[index_ville].donnees['15-29'];
+			case 2:
+				angles_cumules += villes[index_ville].donnees['30-44'];
+			case 3:
+				angles_cumules += villes[index_ville].donnees['45-59'];
+			case 4:
+				angles_cumules += villes[index_ville].donnees['60-74'];
+			case 5:
+				angles_cumules += villes[index_ville].donnees['75 +'];
+				break;
+		}
+		return (angles_cumules * 360) / villes[index_ville].donnees['TOTAL'];
+	}
+
+	function cos(angle: number) {
+		return Math.cos((angle * Math.PI) / 180);
+	}
+	function sin(angle: number) {
+		return Math.sin((angle * Math.PI) / 180);
+	}
+
+	let couleurs_secteurs = [
+		'rgb(255, 0, 0)',
+		'rgb(255, 127, 0)',
+		'rgb(255, 255, 0)',
+		'rgb(0, 255, 0)',
+		'rgb(0, 0, 255)',
+		'rgb(75, 0, 130)',
+		'rgb(148, 0, 211)'
+	];
 </script>
 
+<DansLaMarge>
+	<LigneVide lignes={20} />
+	<input type="radio" name="ville" id="meaux" value={0} bind:group={index_ville} />
+	<label for="meaux">Meaux</label>
+	<br />
+	<input type="radio" name="ville" id="magny" value={1} bind:group={index_ville} />
+	<label for="magny">Magny-le-Hongre</label>
+	<br />
+	<input type="radio" name="ville" id="neuilly" value={2} bind:group={index_ville} />
+	<label for="neuilly">Neuilly-sur-Marne</label>
+</DansLaMarge>
+
 <Contenu>
-	<SousPartie numero={3} titre="Histogramme" />
+	<SousPartie numero={2} titre="Diagrammes circulaires" />
 	<LigneVide />
-	<Definition lignes={4}>
-		Pour représenter des classes de données, on utilise un histogramme dans lequel les classes sont représentées par des rectangles de largeur
-		proportionnelle à l'étendue de la classe et de hauteur proportionnelle à l'effectif de la classe.
+	<Definition lignes={2}>
+		Un diagramme circulaire est un disque partagé en secteurs angulaires proportionnels aux valeurs qu'ils représentent.
 	</Definition>
-	<Exemples lignes={3}>
-		<table class="donnees">
-			<caption>Population de Meaux (77284) en 2019 par grandes tranches d'âge</caption>
-			<thead>
+	<Remarque lignes={2}>On l'utilise le plus souvent lorsque le total des valeurs est connu et pertinent.</Remarque>
+	<Exemples lignes={3} addStyle="margin-bottom: -0.2ex;">
+		<table class="donnees" style="--hauteur: var(--carreau); --taille-texte: var(--font-size);">
+			<caption>
+				Population de {villes[index_ville].meta.ville} ({villes[index_ville].meta.code_insee}) en {villes[index_ville].meta.annee} par grandes tranches
+				d'âge
+			</caption>
+			<tbody>
 				<tr>
 					<th>Tranche d'âge</th>
 					{#each Object.keys(villes[index_ville].donnees) as tranche}
 						<th>{tranche}</th>
 					{/each}
 				</tr>
-			</thead>
-			<tbody>
 				<tr>
 					<th>Nombre d'habitants</th>
 					{#each Object.values(villes[index_ville].donnees) as valeur}
-						<td>{valeur.toLocaleString('fr-FR')}</td>
+						<td>{valeur}</td>
 					{/each}
 				</tr>
 			</tbody>
 		</table>
 	</Exemples>
-	<Schema lignes={20}>
+	<Schema lignes={20} aspectRatioSVG={1}>
 		{#snippet svg()}
-			<defs>
-				<style>
-					.textp36 {
-						font-size: 22px;
-						text-anchor: middle;
-					}
-					.textp36_end {
-						font-size: 22px;
-						text-anchor: end;
-					}
-				</style>
-			</defs>
-			<!-- Axes -->
-			<line x1="100" y1="950" x2="900" y2="950" stroke="black" stroke-width="2" />
-			<line x1="100" y1="950" x2="100" y2="250" stroke="black" stroke-width="2" />
-			<!-- Graduations horizontales -->
-			{@const graduation_horizontale = 150}
-			{#each [0, 15, 30, 45, 60, 75] as annee, i}
-				<line
-					x1={(annee / 15) * graduation_horizontale + 100}
-					y1="950"
-					x2={(annee / 15) * graduation_horizontale + 100}
-					y2="960"
-					stroke="black"
-					stroke-width="2"
-				/>
-				<text x={(annee / 15) * graduation_horizontale + 100} y="980" class="textp36">{annee}</text>
-			{/each}
-			<!-- Barres -->
-			{#each Object.values(villes[index_ville].donnees) as valeur, i}
-				{#if i < Object.values(villes[index_ville].donnees).length - 1}
-					<rect
-						x={100 + i * graduation_horizontale}
-						y={950 - (900 * valeur) / 18000}
-						width={graduation_horizontale}
-						height={(900 * valeur) / 18000}
-						fill="lightgray"
-						stroke="black"
+			<!-- Cercle -->
+			<circle cx="350" cy="500" r="350" stroke="black" stroke-width="2" fill="none" />
+			<!-- Secteurs et légendes -->
+			{#each Object.keys(villes[index_ville].donnees) as tranche, index}
+				{#if tranche != 'TOTAL'}
+					<path
+						d="
+                            M 350 500
+                            L {350 + 350 * cos(angle_cumule(index))} {500 + 350 * sin(angle_cumule(index))}
+                            A 350 350 0 {angle(index) > 180 ? 1 : 0} 0 {350 + 350 * cos(angle_cumule(index + 1))} {500 +
+							350 * sin(angle_cumule(index + 1))}
+                            Z"
+						fill={couleurs_secteurs[index]}
 					/>
-					<text x={100 + (i + 0.5) * graduation_horizontale} y={950 - (900 * valeur) / 18000 - 10} class="textp36"
-						>{valeur.toLocaleString('fr-FR')}</text
-					>
+					<text x="810" y={250 + index * 100} font-size="40">
+						{tranche}
+					</text>
+					<rect x="750" y={202 + index * 100} width="50" height="50" fill={couleurs_secteurs[index]} stroke="black" />
 				{/if}
 			{/each}
-			<!-- Graduations verticales -->
-			{#each Array(14)
-				.fill(0)
-				.map((valeur, i) => i * 1000) as valeur, i}
-				<line x1="90" y1={950 - (900 * valeur) / 18000} x2="100" y2={950 - (900 * valeur) / 18000} stroke="black" stroke-width="2" />
-				<line
-					x1="100"
-					y1={950 - (900 * valeur) / 18000}
-					x2="900"
-					y2={950 - (900 * valeur) / 18000}
-					stroke="black"
-					stroke-width="1"
-					stroke-dasharray="1,4"
-				/>
-				<text x="80" y={958 - (900 * valeur) / 18000} class="textp36_end">{valeur.toLocaleString('fr-FR')}</text>
-			{/each}
-			<!-- Légendes -->
-			<text x="930" y="950" class="textp36">Âge</text>
-			<text x="110" y="240" class="textp36">Nombre d'habitants</text>
 		{/snippet}
 	</Schema>
 </Contenu>
@@ -163,16 +198,16 @@
 		width: calc(100 / 99 * 100%);
 		border-collapse: collapse;
 		border: 1px solid black;
-		font-size: calc(var(--font-size) * 0.9);
+		font-size: calc(var(--taille-texte) * 0.9);
 
 		tr,
 		th,
 		td {
 			padding: 0;
-			height: var(--carreau);
+			height: var(--hauteur);
 			text-align: center;
-			font-size: calc(var(--font-size) * 0.85);
-			width: calc(2.5 / 21 * 100%);
+			font-size: calc(var(--taille-texte) * 0.85);
+			width: calc(2 / 21 * 100%);
 			border-left: 1px solid black;
 		}
 
@@ -180,6 +215,12 @@
 		th:first-child {
 			border-right: 3px double black;
 			width: calc(6 / 21 * 100%);
+		}
+
+		td:last-child,
+		th:last-child {
+			border-left: 3px double black;
+			width: calc(3 / 21 * 100%);
 		}
 	}
 </style>
