@@ -17,6 +17,11 @@ export function importer_pages(niveau: 3 | 4 | 5 | 6) {
 			throw new Error('Niveau inconnu');
 	}
 
-	let pages: Component[] = Object.entries(importation_pages).map(([_, page]) => page.default);
+	let pages: { composant: Component; nom_fichier: string }[] = Object.entries(importation_pages).map(([nom_fichier, page]) => {
+		return {
+			composant: page.default,
+			nom_fichier
+		};
+	});
 	return pages;
 }

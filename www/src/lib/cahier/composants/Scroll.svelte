@@ -7,7 +7,7 @@
 	import { nombre_de_pages, get_taille_page } from '$lib/cahier/store.svelte';
 	import PageDeCahier from './PageDeCahier.svelte';
 
-	let { pages }: { pages: Component[] } = $props();
+	let { pages }: { pages: { composant: Component; nom_fichier: string }[] } = $props();
 
 	const gap = 8;
 
@@ -17,9 +17,8 @@
 </script>
 
 <div id="scroll" style="gap: {gap}px;">
-	{#each pages as page, i}
+	{#each pages as { composant: PageNumero, nom_fichier }, i}
 		{#if i != 0 && i != nombre_de_pages}
-			{@const PageNumero: Component = page }
 			<PageDeCahier numero_de_page={i}>
 				<PageNumero />
 			</PageDeCahier>

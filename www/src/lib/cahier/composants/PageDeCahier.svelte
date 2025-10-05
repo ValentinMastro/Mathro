@@ -4,10 +4,11 @@
 
 	interface Props {
 		numero_de_page: number;
+		nom_fichier: string;
 		children: Snippet;
 	}
 
-	let { numero_de_page, children }: Props = $props();
+	let { numero_de_page, nom_fichier, children }: Props = $props();
 
 	let is_seyes: string = $derived(numero_de_page >= 2 ? 'seyes' : '');
 	let is_zoom_page: string = $derived(page_state.zoom_page ? 'zoom_page' : '');
@@ -42,7 +43,7 @@
 		"
 >
 	{@render children()}
-	<span class="numero">Page {numero_de_page}</span>
+	<span class="numero" title={nom_fichier}>Page {numero_de_page}</span>
 </div>
 
 <style>
