@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Exemple, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
+	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import { Grille, Axe } from '$lib/cahier/composants/svg/*';
+	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { math } from 'mathlifier';
 	import { fraction } from 'mathjs';
-	import { Slider } from '$lib/cahier/composants/de_marge/*';
 
 	let valeur = $state(7);
 	let subdivisions = $state(3);
@@ -16,8 +16,7 @@
 	);
 </script>
 
-<DansLaMarge>
-	<LigneVide lignes={23} />
+<DansLaMarge lignes_vides={23}>
 	<Slider bind:valeur min={0} max={15} />
 	<Slider bind:valeur={subdivisions} min={3} max={5} />
 </DansLaMarge>

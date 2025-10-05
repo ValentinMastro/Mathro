@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Chapitre, Partie, SousPartie, Contenu, DansLaMarge } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Tableau, LigneTableau, Texte, Exemples, Item, Definitions, PourMieuxComprendre, CelluleTableau } from '$lib/cahier/composants/de_cours/*';
-	import { Nombre } from '$lib/cahier/composants/de_marge/*';
+	import { Exercice, Nombre } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
 	let numero_1 = $state(1234);
@@ -24,10 +24,11 @@
 
 <Chapitre titre="Fractions" />
 
-<DansLaMarge apres_un_titre={true}>
-	<LigneVide lignes={15} />
+<DansLaMarge apres_un_titre={true} lignes_vides={15}>
 	<Nombre bind:valeur={numero_1} min={1000} max={9999} />
 	<Nombre bind:valeur={numero_2} min={1000000000} max={9999999999} />
+	<Exercice niveau={6} id_exercice={1} position={20} />
+	<Exercice niveau={6} id_exercice={2} position={23} />
 </DansLaMarge>
 
 {#snippet ligne_de_chiffres(

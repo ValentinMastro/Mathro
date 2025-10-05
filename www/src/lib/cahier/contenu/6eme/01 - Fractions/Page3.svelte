@@ -1,20 +1,19 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Exemples, Item, Propriete, Schema } from '$lib/cahier/composants/de_cours/*';
-	import { Nombre } from '$lib/cahier/composants/de_marge/*';
+	import { Exercice, Nombre } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-
 	import { math } from 'mathlifier';
 
 	let facteur_1 = $state(3);
 	let facteur_2 = $state(3);
 </script>
 
-<DansLaMarge>
-	<LigneVide lignes={7} />
+<DansLaMarge lignes_vides={7}>
 	<Nombre bind:valeur={facteur_1} min={1} max={9} label="multiplicateur" />
 	<LigneVide />
 	<Nombre bind:valeur={facteur_2} min={1} max={10} label="multiplicateur" />
+	<Exercice niveau={6} id_exercice={255002} position={11} />
 </DansLaMarge>
 
 <Contenu>
