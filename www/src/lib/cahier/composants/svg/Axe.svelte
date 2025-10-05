@@ -32,7 +32,6 @@
 	}: Props = $props();
 
 	let nombre_de_valeurs = graduations.derniere_valeur.sub(graduations.premiere_valeur).div(graduations.pas).add(1).floor().valueOf();
-	console.log(nombre_de_valeurs);
 </script>
 
 <defs>
