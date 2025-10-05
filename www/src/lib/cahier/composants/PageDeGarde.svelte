@@ -27,6 +27,6 @@
 		justify-content: center;
 		align-items: center;
 		height: 100%;
-		font-size: calc(var(--taille_page) / 20);
+		font-size: calc(var(--font-size) * 3.5);
 	}
 </style>
