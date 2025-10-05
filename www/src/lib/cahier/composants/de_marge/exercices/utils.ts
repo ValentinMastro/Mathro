@@ -1,6 +1,7 @@
 export type ExerciceProps = {
 	niveau: number;
 	id_exercice: number;
+	position?: number;
 };
 
 type Question = {

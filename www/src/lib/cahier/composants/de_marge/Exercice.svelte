@@ -2,11 +2,11 @@
 	import AffichageExercice from './exercices/AffichageExercice.svelte';
 	import { type ExerciceProps } from './exercices/utils';
 
-	let { niveau, id_exercice }: ExerciceProps = $props();
+	let { niveau, id_exercice, position }: ExerciceProps = $props();
 	let afficher_exercice = $state(false);
 </script>
 
-<div class="exercice">
+<div class="exercice" style="--position: {position};">
 	<button onclick={() => (afficher_exercice = !afficher_exercice)} title="Afficher l'exercice">
 		<img src="/haltere.png" alt="Haltère" />
 	</button>
@@ -17,10 +17,11 @@
 
 <style>
 	.exercice {
+		position: absolute;
 		width: calc(2 * var(--carreau));
 		height: calc(2 * var(--carreau));
-		margin-left: auto;
-		margin-right: auto;
+		top: calc(var(--position) * var(--carreau));
+		left: calc(50% - var(--carreau));
 	}
 	button {
 		width: 100%;
