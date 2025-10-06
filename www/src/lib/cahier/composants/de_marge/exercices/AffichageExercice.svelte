@@ -70,7 +70,7 @@
 		justify-content: space-around;
 		align-items: center;
 		width: 100%;
-		height: 20%;
+		height: 40%;
 	}
 	button {
 		width: 15%;
