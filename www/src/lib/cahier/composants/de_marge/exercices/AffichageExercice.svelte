@@ -1,13 +1,14 @@
 <script lang="ts">
-	import { type ExerciceProps, récupération_des_données } from './utils';
+	import { type ExerciceProps, afficher_énoncé, afficher_réponse, récupération_des_données } from './utils';
 	let { niveau, id_exercice }: ExerciceProps = $props();
 
 	let questions_répondues = $state(0);
 	let bonnes_réponses = $state(0);
 
-	let énoncé = $state('');
-	let réponses: string[] = $state([]);
+	let énoncé = $state({ type: '', contenu: '' });
+	let format_réponses = $state('');
 	let index_bonne_réponse = $state(-1);
+	let réponses: string[] = $state([]);
 
 	async function vérifier_réponse(index: number) {
 		if (index === index_bonne_réponse) {
@@ -20,8 +21,9 @@
 	async function charger_nouvelle_question() {
 		let nouvelle_question = await récupération_des_données(niveau, id_exercice);
 		énoncé = nouvelle_question.énoncé;
-		réponses = nouvelle_question.réponses;
+		format_réponses = nouvelle_question.format_réponses;
 		index_bonne_réponse = nouvelle_question.index_bonne_réponse;
+		réponses = nouvelle_question.réponses;
 	}
 
 	$effect.root(() => {
@@ -30,11 +32,11 @@
 </script>
 
 <div class="affichage_exercice">
-	<div class="enonce"><center>{énoncé}</center></div>
+	<div class="enonce"><center>{@html afficher_énoncé(énoncé)}</center></div>
 	<div class="reponses">
 		{#each réponses as réponse, index}
 			<button class="réponse" class:bonne={index === index_bonne_réponse} onclick={() => vérifier_réponse(index)}>
-				{réponse}
+				{@html afficher_réponse(réponse, format_réponses)}
 			</button>
 		{/each}
 	</div>

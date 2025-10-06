@@ -6,11 +6,17 @@ export type ExerciceProps = {
 
 type Question = {
 	consigne: string;
-	enonce: {
-		Texte: string;
-	};
+	enonce:
+		| {
+				Texte: string;
+				Latex: never;
+		  }
+		| {
+				Latex: string;
+				Texte: never;
+		  };
 	explication: string;
-	format_réponses: string;
+	format_reponses: string;
 	reponse: {
 		bonne: string;
 		mauvaises: string[];
@@ -38,9 +44,53 @@ export async function récupération_des_données(niveau: number, id_exercice: n
 	let réponses = shuffle([...question.reponse.mauvaises, question.reponse.bonne]);
 	let index_bonne_réponse = réponses.indexOf(question.reponse.bonne);
 
+	let énoncé;
+	let format_réponses = question.format_reponses;
+
+	if (question.enonce.Texte) {
+		énoncé = {
+			type: 'Texte',
+			contenu: question.enonce.Texte
+		};
+	} else if (question.enonce.Latex) {
+		énoncé = {
+			type: 'Latex',
+			contenu: question.enonce.Latex
+		};
+	} else {
+		énoncé = {
+			type: '',
+			contenu: ''
+		};
+	}
+
 	return {
-		énoncé: question.enonce.Texte,
-		réponses,
-		index_bonne_réponse
+		énoncé,
+		format_réponses,
+		index_bonne_réponse,
+		réponses
 	};
+}
+
+import { math } from 'mathlifier';
+export function afficher_énoncé(énoncé: { type: string; contenu: string }) {
+	if (énoncé.type === 'Texte') {
+		return énoncé.contenu;
+	} else if (énoncé.type === 'Latex') {
+		return math(énoncé.contenu);
+	} else {
+		return '';
+	}
+}
+
+export function afficher_réponse(réponse: string, format_réponses: string) {
+	if (format_réponses === 'Texte') {
+		return réponse;
+	} else if (format_réponses === 'Latex') {
+		return math(réponse);
+	} else if (format_réponses === 'Nombre') {
+		return Number(réponse).toLocaleString();
+	} else {
+		return réponse;
+	}
 }
