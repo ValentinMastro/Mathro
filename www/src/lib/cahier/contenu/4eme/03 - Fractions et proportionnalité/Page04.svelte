@@ -1,9 +1,15 @@
 <script lang="ts">
-	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Contenu, DansLaMarge, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Propriete, Exemple, Exemples, Item } from '$lib/cahier/composants/de_cours/*';
+	import { Exercice } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { math, display } from 'mathlifier';
 </script>
+
+<DansLaMarge>
+	<Exercice niveau={4} id_exercice={2003} position={9} />
+	<Exercice niveau={4} id_exercice={2007} position={15} />
+</DansLaMarge>
 
 <Contenu>
 	<SousPartie numero={2} titre="Multiplication et division" />

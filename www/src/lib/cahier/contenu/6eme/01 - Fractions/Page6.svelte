@@ -1,13 +1,18 @@
 <script lang="ts">
-	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Item, Exemples, MultiItem, Methode } from '$lib/cahier/composants/de_cours/*';
+	import { Exercice } from '$lib/cahier/composants/de_marge/*';
 	import { LatexAlign } from '$lib/cahier/composants/math/*';
 	import { math } from 'mathlifier';
 </script>
 
+<DansLaMarge>
+	<Exercice niveau={6} id_exercice={255003} position={13} />
+	<Exercice niveau={6} id_exercice={255004} position={22} />
+</DansLaMarge>
+
 <Contenu>
 	<Partie numero={6} titre="Nombres mixtes" />
-
 	<Definition lignes={3}>
 		Un nombre mixte est composé :
 		<Item>d'un nombre entier {@html math('>1')}</Item>

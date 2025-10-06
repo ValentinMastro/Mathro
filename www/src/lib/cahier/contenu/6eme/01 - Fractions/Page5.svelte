@@ -1,8 +1,14 @@
 <script lang="ts">
-	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Exemples, Item, Propriete, Methode } from '$lib/cahier/composants/de_cours/*';
+	import { Exercice } from '$lib/cahier/composants/de_marge/*';
 	import { math } from 'mathlifier';
 </script>
+
+<DansLaMarge>
+	<Exercice niveau={6} id_exercice={255_001} position={10} />
+	<Exercice niveau={6} id_exercice={255_005} position={13} />
+</DansLaMarge>
 
 <Contenu>
 	<Partie numero={5} titre="Additionner des fractions" />

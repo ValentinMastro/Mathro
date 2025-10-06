@@ -1,10 +1,13 @@
 <script lang="ts">
-	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Contenu, DansLaMarge, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Propriete, Exemple, Item } from '$lib/cahier/composants/de_cours/*';
+	import { Exercice } from '$lib/cahier/composants/de_marge/*';
 	import { LatexAlign } from '$lib/cahier/composants/math/*';
-
-	import { math } from 'mathlifier';
 </script>
+
+<DansLaMarge>
+	<Exercice niveau={4} id_exercice={2001} position={10} />
+</DansLaMarge>
 
 <Contenu>
 	<SousPartie numero={1} titre="Addition et soustraction" />
