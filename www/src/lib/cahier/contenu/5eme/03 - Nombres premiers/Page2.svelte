@@ -1,7 +1,13 @@
 <script lang="ts">
-	import { Partie, Contenu } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Partie, Contenu, DansLaMarge } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Exemples, Notation, Item, Methode } from '$lib/cahier/composants/de_cours/*';
+	import { Exercice } from '$lib/cahier/composants/de_marge/*';
 </script>
+
+<DansLaMarge>
+	<Exercice niveau={5} id_exercice={3001} position={6} />
+	<Exercice niveau={5} id_exercice={3002} position={9} />
+</DansLaMarge>
 
 <Contenu>
 	<Partie numero={2} titre="Divisibilités" />

@@ -1,8 +1,13 @@
 <script lang="ts">
-	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Item, Paragraphe, Theoreme, Exemples } from '$lib/cahier/composants/de_cours/*';
+	import { Exercice } from '$lib/cahier/composants/de_marge/*';
 	import { math } from 'mathlifier';
 </script>
+
+<DansLaMarge>
+	<Exercice niveau={5} id_exercice={255001} position={13} />
+</DansLaMarge>
 
 <Contenu>
 	<Partie numero={3} titre="Les nombres premiers" />
