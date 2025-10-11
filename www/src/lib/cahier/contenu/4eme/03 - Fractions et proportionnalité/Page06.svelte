@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Exemple, Item, Propriete, Texte } from '$lib/cahier/composants/de_cours/*';
-	import { Slider } from '$lib/cahier/composants/de_marge/*';
+	import { Exercice, Slider } from '$lib/cahier/composants/de_marge/*';
 	import { math } from 'mathlifier';
 
 	let pourcentage_augmentation: number = $state(20);
@@ -12,6 +12,8 @@
 <DansLaMarge lignes_vides={9}>
 	<Texte lignes_vides={0}><center>+ {pourcentage_augmentation}%</center></Texte>
 	<Slider min={0} max={100} pas={10} bind:valeur={pourcentage_augmentation} />
+	<Exercice niveau={4} id_exercice={2008} position={12} />
+	<Exercice niveau={4} id_exercice={2009} position={15} />
 </DansLaMarge>
 
 <Contenu>

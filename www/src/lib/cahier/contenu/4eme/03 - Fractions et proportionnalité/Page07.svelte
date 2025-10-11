@@ -1,8 +1,13 @@
 <script lang="ts">
-	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Contenu, DansLaMarge, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Exemples, Propriete, Item } from '$lib/cahier/composants/de_cours/*';
+	import { Exercice } from '$lib/cahier/composants/de_marge/*';
 	import { math } from 'mathlifier';
 </script>
+
+<DansLaMarge>
+	<Exercice niveau={4} id_exercice={2011} position={8} />
+</DansLaMarge>
 
 <Contenu>
 	<SousPartie numero={4} titre="Taux de variation" />

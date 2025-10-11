@@ -1,10 +1,14 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Exemples, Item, MultiItem, Propriete, Texte } from '$lib/cahier/composants/de_cours/*';
-	import { Slider } from '$lib/cahier/composants/de_marge/*';
+	import { Definition, Exemples, Item, MultiItem } from '$lib/cahier/composants/de_cours/*';
+	import { Exercice } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { math } from 'mathlifier';
 </script>
+
+<DansLaMarge>
+	<Exercice niveau={4} id_exercice={2010} position={16} />
+</DansLaMarge>
 
 <Contenu>
 	<Partie numero={2} titre="Pourcentages" />
