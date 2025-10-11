@@ -10,6 +10,9 @@
 
 	let { numero_de_page, nom_fichier, children }: Props = $props();
 
+	let chapitre: number = $derived(Number.parseInt(nom_fichier.split('/').at(-2)?.split('-').at(0) ?? '0'));
+	let page_du_chapitre: number = $derived(Number.parseInt(nom_fichier.split('/').at(-1)?.split('.').at(0)?.slice(4) ?? '0'));
+
 	let is_seyes: string = $derived(numero_de_page >= 2 ? 'seyes' : '');
 	let is_zoom_page: string = $derived(page_state.zoom_page ? 'zoom_page' : '');
 	let is_hidden: string = $derived(numero_de_page == 0 || numero_de_page == 97 ? 'hidden' : 'visible');
@@ -43,7 +46,7 @@
 		"
 >
 	{@render children()}
-	<span class="numero" title={nom_fichier}>Page {numero_de_page}</span>
+	<span class="numero" title={'Chapitre ' + chapitre + ', Page ' + page_du_chapitre}>Page {numero_de_page}</span>
 </div>
 
 <style>
