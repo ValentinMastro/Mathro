@@ -19,7 +19,7 @@
 <div id="scroll" style="gap: {gap}px;">
 	{#each pages as { composant: PageNumero, nom_fichier }, i}
 		{#if i != 0 && i != nombre_de_pages}
-			<PageDeCahier numero_de_page={i}>
+			<PageDeCahier numero_de_page={i} {nom_fichier}>
 				<PageNumero />
 			</PageDeCahier>
 		{/if}
