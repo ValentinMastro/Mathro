@@ -30,7 +30,7 @@
 	{#if lignes_vides > 0}
 		<LigneVide lignes={lignes_vides} />
 	{/if}
-	{@render children()}
+	{@render children?.()}
 </div>
 
 <style>
