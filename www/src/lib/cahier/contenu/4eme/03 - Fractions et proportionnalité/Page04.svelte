@@ -31,8 +31,8 @@
 	<Exemples lignes={3}>
 		<Item>
 			{@html math(`
-			    \\dfrac{3}{4} \\fcolorbox{red}{white}{$ \\div \\dfrac{2}{5} $}
-				= \\dfrac{3}{4} \\fcolorbox{red}{white}{$ \\times \\dfrac{5}{2} $}
+			    \\dfrac{3}{4} \\fcolorbox{red}{white}{$ \\div \\dfrac{2}{5} \\vphantom{\\dfrac{1}{\\frac{1}{1}}}   $}
+				= \\dfrac{3}{4} \\fcolorbox{red}{white}{$ \\times \\dfrac{5}{2} \\vphantom{\\dfrac{1}{\\frac{1}{1}}}$}
 				= \\dfrac{3 \\times 5}{4 \\times 2}
 				= \\dfrac{15}{8}`)}
 		</Item>
@@ -40,7 +40,7 @@
 		<Item>
 			{@html math(
 				`3{,}5 \\div 0{,}5
-				= \\dfrac{7}{2} \\fcolorbox{red}{white}{$ \\div \\dfrac{1}{2} $}
+				= \\dfrac{7}{2} \\fcolorbox{red}{white}{$ \\div \\dfrac{1}{2} \\vphantom{\\dfrac{1}{\\frac{1}{1}}}$}
 				= \\dfrac{7}{2} \\fcolorbox{red}{white}{$ \\times 2 $}
 				= \\dfrac{7 \\times 2}{2}
 				= 7`
