@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Texte, type ParagrapheProps } from './*';
+	import { type ParagrapheProps } from './*';
 
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
