@@ -2,7 +2,7 @@ import * as htmlToImage from 'html-to-image';
 import jsPDF from 'jspdf';
 import { tick } from 'svelte';
 
-import { importer_pages } from '$lib/cahier/importation_pages';
+import { importer_cours } from '$lib/cahier/importation_pages';
 import { page_state } from '$lib/cahier/store.svelte';
 
 async function captureNoeudEnPNG(node: HTMLElement): Promise<{ dataUrl: string; w: number; h: number }> {
@@ -27,7 +27,7 @@ async function captureNoeudEnPNG(node: HTMLElement): Promise<{ dataUrl: string; 
 export async function exporterToutesLesPagesEnPDF() {
 	const ancienPleinEcran = page_state.plein_ecran;
 	const ancienNumero = page_state.numero_de_la_page;
-	let pages = importer_pages(page_state.niveau);
+	let pages = importer_cours(page_state.niveau);
 
 	try {
 		// On passe en mode 2 pages (plus simple pour capturer la même mise en page que l'écran)

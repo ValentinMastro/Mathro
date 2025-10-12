@@ -4,10 +4,10 @@
 	import { page as interface_navigateur } from '$app/stores';
 	const scroll_jusqua_la_page: number = parseInt($interface_navigateur.url.searchParams.get('page') ?? '1');
 
-	import { nombre_de_pages, get_taille_page } from '$lib/cahier/store.svelte';
+	import { get_taille_page, PAGES } from '$lib/cahier/store.svelte';
 	import PageDeCahier from './PageDeCahier.svelte';
 
-	let { pages }: { pages: { composant: Component; nom_fichier: string }[] } = $props();
+	let pages = PAGES.liste;
 
 	const gap = 8;
 
@@ -18,7 +18,7 @@
 
 <div id="scroll" style="gap: {gap}px;">
 	{#each pages as { composant: PageNumero, nom_fichier }, i}
-		{#if i != 0 && i != nombre_de_pages}
+		{#if i != 0}
 			<PageDeCahier numero_de_page={i} {nom_fichier}>
 				<PageNumero />
 			</PageDeCahier>

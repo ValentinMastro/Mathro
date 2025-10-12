@@ -3,32 +3,21 @@
 	import type { PageData } from './$types';
 	let { data }: { data: PageData } = $props();
 
-	import { page_state } from '$lib/cahier/store.svelte';
-	import ZoneCentrale from '$lib/cahier/composants/ZoneCentrale.svelte';
+	import { importer_cours } from '$lib/cahier/importation_pages';
 	import { exporterToutesLesPagesEnPDF } from '$lib/cahier/impression';
+	import { page_state, PAGES, NOMBRE_DE_PAGES } from '$lib/cahier/store.svelte';
+	import ZoneCentrale from '$lib/cahier/composants/ZoneCentrale.svelte';
 
 	page_state.niveau = data.niveau as 3 | 4 | 5 | 6;
-
-	function nombre_de_pages(niveau: 3 | 4 | 5 | 6): number {
-		switch (niveau) {
-			case 3:
-				return 0;
-			case 4:
-				return Object.entries(import.meta.glob('$lib/cahier/{composants/{Page0,PageDeGarde,sommaire/Sommaire},contenu/4eme/*/*}.svelte')).length;
-			case 5:
-				return Object.entries(import.meta.glob('$lib/cahier/{composants/{Page0,PageDeGarde,sommaire/Sommaire},contenu/5eme/*/*}.svelte')).length;
-			case 6:
-				return Object.entries(import.meta.glob('$lib/cahier/{composants/{Page0,PageDeGarde,sommaire/Sommaire},contenu/6eme/*/*}.svelte')).length;
-		}
-	}
+	PAGES.liste = importer_cours(page_state.niveau);
 
 	function changement_de_page(diff: number) {
-		if (page_state.numero_de_la_page + diff >= 0 && page_state.numero_de_la_page + diff <= nombre_de_pages(page_state.niveau) - 2) {
+		if (page_state.numero_de_la_page + diff >= 0 && page_state.numero_de_la_page + diff <= NOMBRE_DE_PAGES() - 2) {
 			page_state.numero_de_la_page += diff;
 		}
 	}
 
-	function touche_pressee(event: KeyboardEvent) {
+	function onkeydown(event: KeyboardEvent) {
 		if ((event.ctrlKey || event.metaKey) && event.code === 'KeyP') {
 			event.preventDefault();
 			event.stopPropagation();
@@ -61,7 +50,7 @@
 		}
 	}
 
-	function avantImpression() {
+	function onbeforeprint() {
 		alert('Utilisez le bouton Export PDF de l’appli, pas l’impression du navigateur.');
 	}
 
@@ -82,7 +71,7 @@
 	});
 </script>
 
-<svelte:window onbeforeprint={avantImpression} onkeydown={touche_pressee} />
+<svelte:window {onbeforeprint} {onkeydown} />
 
 <svelte:head>
 	<title>

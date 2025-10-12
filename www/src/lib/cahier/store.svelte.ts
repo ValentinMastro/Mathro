@@ -1,5 +1,3 @@
-import { writable, derived, type Readable } from 'svelte/store';
-
 /* État de la page */
 export let page_state: {
 	numero_de_la_page: number;
@@ -11,6 +9,7 @@ export let page_state: {
 	zoom_page: boolean;
 	en_cours_impression: boolean;
 	afficher_fond_seyes: boolean;
+	type: 'de cours' | "d'exercices";
 } = $state({
 	numero_de_la_page: 0,
 	niveau: 6,
@@ -20,21 +19,17 @@ export let page_state: {
 	sur_mobile: false,
 	zoom_page: false,
 	en_cours_impression: false,
-	afficher_fond_seyes: true
+	afficher_fond_seyes: true,
+	type: 'de cours'
 });
 
-export function liste_des_pages() {
-	switch (page_state.niveau) {
-		case 4:
-			return import.meta.glob('$lib/cahier/{composants/{Page0,PageDeGarde,sommaire/Sommaire},contenu/4eme/*/*}.svelte');
-		case 5:
-			return import.meta.glob('$lib/cahier/{composants/{Page0,PageDeGarde,sommaire/Sommaire},contenu/5eme/*/*}.svelte');
-		case 6:
-			return import.meta.glob('$lib/cahier/{composants/{Page0,PageDeGarde,sommaire/Sommaire},contenu/6eme/*/*}.svelte');
-	}
-}
+export const PAGES: { liste: any[] } = $state({
+	liste: []
+});
 
-export let nombre_de_pages = 97;
+export function NOMBRE_DE_PAGES(): number {
+	return PAGES.liste.length;
+}
 
 let taille_page: number = $state(0);
 
