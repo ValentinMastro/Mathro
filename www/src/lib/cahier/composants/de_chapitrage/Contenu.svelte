@@ -8,7 +8,7 @@
 </script>
 
 <div id="contenu" class={apres_un_titre ? 'apres_un_titre' : 'pas_de_titre'}>
-	{@render children()}
+	{@render children?.()}
 </div>
 
 <style>
