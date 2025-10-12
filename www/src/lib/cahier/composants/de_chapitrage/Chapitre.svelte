@@ -37,7 +37,7 @@
 
 <style>
 	.chapitre {
-		color: rgb(225, 0, 0);
+		color: var(--rouge);
 		font-size: calc(var(--taille-page) / 42);
 		line-height: calc(var(--taille-page) / 42 * 1.22);
 	}
