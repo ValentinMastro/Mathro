@@ -1,47 +1,39 @@
 <script lang="ts">
-    import { Contenu, SousPartie } from "$lib/cahier/composants/de_chapitrage/*";
-    import { Paragraphe, Exemples, Item } from "$lib/cahier/composants/de_cours/*";
-    import LigneVide from "$lib/cahier/composants/LigneVide.svelte";
+	import { Contenu, DansLaMarge, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Definition, Exemples, Item } from '$lib/cahier/composants/de_cours/*';
+	import { Nombre } from '$lib/cahier/composants/de_marge/*';
+	import { math } from 'mathlifier';
 
-    import { math } from "mathlifier";
+	let a = $state(3);
 </script>
 
+<DansLaMarge lignes_vides={7}>
+	<Nombre label="a" bind:valeur={a} min={-20} max={20} />
+</DansLaMarge>
+
 <Contenu>
-    <SousPartie numero={2} titre="Double distributivité" />
-        <Paragraphe couleur="rouge" nom_du_paragraphe="Règle">
-            Soient a, b, c, d, quatre nombres : 
-            {@html math("(a + b) (c + d) = ac + ad + bc + b d")}
-        </Paragraphe>
-        <Exemples lignes={13}>
-            <Item lignes={4} bullet="">
-                {@html math(`
-                    \\begin{aligned}
-                        &(2x+3)(4+5x) \\\\
-                        &= 2x \\times 4 + 2x \\times 5x + 3 \\times 4 + 3 \\times 5x \\\\
-                        &= 8x + 10x^2 + 12 + 15x \\\\
-                        &= 10x^2 + 23x + 12
-                    \\end{aligned}
-                `)}
-            </Item>
-            <LigneVide />
-            <Item lignes={4} bullet="">
-                {@html math(`
-                    \\begin{aligned}
-                    &3(x+12) + 2x(x+12) \\\\
-                    &= 3 \\fbox{$(x+12)$} + 2x \\fbox{$(x+12)$} \\\\
-                    &= (x+12)(3+2x)
-                    \\end{aligned}
-                `)}
-            </Item>
-            <Item lignes={4} bullet="">
-                {@html math(`
-                    \\begin{aligned}
-                        &(-4x+7)(-2+2x) \\\\
-                        &= (-4x) \\times (-2) + (-4x) \\times 2x + 7 \\times (-2) + 7 \\times 2x \\\\
-                        &= 8x + (-8x^2) + (-14) + 14x \\\\
-                        &= -8x^2 + 22x - 14
-                    \\end{aligned}
-                `)}
-            </Item>
-        </Exemples>
+	<SousPartie numero={4} titre="Égalité d'expressions" />
+	<Definition lignes={2}>
+		Deux expressions littérales sont égales lorsque, <i>quelques soient les valeurs des variables choisies</i>, elles donnent le même résultat.
+	</Definition>
+	<Exemples lignes={6}>
+		<Item lignes={3}>
+			{@html math('a^2 + 3a')} et {@html math('a(a+3)')} sont égales.
+			<Item>
+				{@html math(`a^2 + 3a = ${a}^2 + 3 \\times ${a} = \\textcolor{forestgreen}{${a * a + 3 * a}}`)}
+			</Item>
+			<Item>
+				{@html math(`a(a+3) = ${a} \\times (${a}+3) = ${a} \\times ${a + 3} = \\textcolor{forestgreen}{${a * (a + 3)}}`)}
+			</Item>
+		</Item>
+		<Item lignes={3}>
+			{@html math('a^2')} et {@html math('2a')} ne sont pas égales. En effet, si on choisit {@html math('a=3')} :
+			<Item>
+				{@html math(`a^2 = ${a}^2 = \\textcolor{red}{${a * a}}`)}
+			</Item>
+			<Item>
+				{@html math(`2a = 2 \\times ${a} = \\textcolor{red}{${2 * a}}`)}
+			</Item>
+		</Item>
+	</Exemples>
 </Contenu>
