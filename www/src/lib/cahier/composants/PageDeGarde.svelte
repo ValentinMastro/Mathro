@@ -14,7 +14,7 @@
 </script>
 
 <div id="titre" bind:this={composant}>
-	<div>Cahier de cours</div>
+	<div>Cahier {page_state.type}</div>
 	<div>Mathématiques</div>
 	<div>{page_state.niveau}ème</div>
 	<div>2025-2026</div>
