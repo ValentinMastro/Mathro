@@ -43,6 +43,9 @@
 			case 'z':
 				page_state.zoom_page = !page_state.zoom_page;
 				break;
+			case 's':
+				page_state.afficher_fond_seyes = !page_state.afficher_fond_seyes;
+				break;
 			case 'ArrowRight':
 				changement_de_page(2);
 				break;
