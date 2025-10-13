@@ -76,7 +76,7 @@
 
 <svelte:head>
 	<title>
-		Cahier de cours - {page_state.niveau}ème
+		Cahier d'exercices - {page_state.niveau}ème
 	</title>
 </svelte:head>
 
