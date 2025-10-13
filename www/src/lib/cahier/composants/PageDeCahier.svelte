@@ -46,7 +46,9 @@
 		"
 >
 	{@render children()}
-	<span class="numero" title={'Chapitre ' + chapitre + ', Page ' + page_du_chapitre}>Page {numero_de_page}</span>
+	{#if page_state.afficher_numero_page}
+		<span class="numero" title={'Chapitre ' + chapitre + ', Page ' + page_du_chapitre}>Page {numero_de_page}</span>
+	{/if}
 </div>
 
 <style>

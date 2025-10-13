@@ -26,6 +26,9 @@
 		}
 
 		switch (event.key) {
+			case 'p':
+				page_state.afficher_numero_page = !page_state.afficher_numero_page;
+				break;
 			case 'm':
 				page_state.plein_ecran = !page_state.plein_ecran;
 				break;
