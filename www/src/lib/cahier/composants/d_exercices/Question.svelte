@@ -4,14 +4,24 @@
 </script>
 
 <div class="question" style="--lignes: {lignes};">
-	Q{numéro}) {@render children?.()}
+	<span>
+		Q{numéro}) {@render children?.()}
+	</span>
 </div>
 
 <style>
 	.question {
 		font-size: var(--font-size);
-		line-height: calc(var(--line-height) * 1.5);
+		line-height: var(--line-height);
 		height: calc(var(--lignes) * var(--carreau));
 		width: 100%;
+
+		position: relative;
+
+		span {
+			position: absolute;
+			bottom: 0;
+			margin-bottom: -0.36em;
+		}
 	}
 </style>
