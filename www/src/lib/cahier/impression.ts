@@ -2,10 +2,9 @@ import * as htmlToImage from 'html-to-image';
 import jsPDF from 'jspdf';
 import { tick } from 'svelte';
 
-import { importer_cours } from '$lib/cahier/importation_pages';
-import { page_state } from '$lib/cahier/store.svelte';
+import { NOMBRE_DE_PAGES, page_state } from '$lib/cahier/store.svelte';
 
-async function captureNoeudEnPNG(node: HTMLElement): Promise<{ dataUrl: string; w: number; h: number }> {
+async function captureNoeudEnJPEG(node: HTMLElement): Promise<{ dataUrl: string; w: number; h: number }> {
 	// Attends que la mise en page soit prête
 	await tick();
 	await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
@@ -14,7 +13,8 @@ async function captureNoeudEnPNG(node: HTMLElement): Promise<{ dataUrl: string; 
 	const w = Math.ceil(rect.width);
 	const h = Math.ceil(rect.height);
 
-	const dataUrl = await htmlToImage.toPng(node, {
+	const dataUrl = await htmlToImage.toJpeg(node, {
+		quality: 0.95,
 		pixelRatio: 2, // qualité 2x (augmente la netteté)
 		cacheBust: true,
 		skipFonts: true
@@ -27,7 +27,6 @@ async function captureNoeudEnPNG(node: HTMLElement): Promise<{ dataUrl: string; 
 export async function exporterToutesLesPagesEnPDF() {
 	const ancienPleinEcran = page_state.plein_ecran;
 	const ancienNumero = page_state.numero_de_la_page;
-	let pages = importer_cours(page_state.niveau);
 
 	try {
 		// On passe en mode 2 pages (plus simple pour capturer la même mise en page que l'écran)
@@ -39,7 +38,7 @@ export async function exporterToutesLesPagesEnPDF() {
 		let doc: jsPDF | null = null;
 
 		// On parcourt les pages 2 par 2
-		for (let i = 0; i < pages.length; i += 2) {
+		for (let i = 0; i < NOMBRE_DE_PAGES(); i += 2) {
 			page_state.numero_de_la_page = i;
 			await tick();
 			// Récupère les 2 conteneurs PageDeCahier visibles
@@ -51,7 +50,7 @@ export async function exporterToutesLesPagesEnPDF() {
 			for (const el of enfants as HTMLElement[]) {
 				// Ne pas capture la page de gauche si i == 0
 				if (el.classList.contains('page_zero')) continue;
-				const { dataUrl, w, h } = await captureNoeudEnPNG(el);
+				const { dataUrl, w, h } = await captureNoeudEnJPEG(el);
 
 				if (!doc) {
 					doc = new jsPDF({
