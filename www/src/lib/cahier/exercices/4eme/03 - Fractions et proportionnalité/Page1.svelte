@@ -1,9 +1,7 @@
 <script lang="ts">
-	import { Question, Énoncé } from '$lib/cahier/composants/d_exercices/*';
-	import { Chapitre, Contenu, DansLaMarge } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Activité, Question, Énoncé } from '$lib/cahier/composants/d_exercices/*';
+	import { Chapitre, Contenu } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Texte } from '$lib/cahier/composants/de_cours/*';
-	import { Activité } from '$lib/cahier/composants/de_marge/*';
-	import { math } from 'mathlifier';
 </script>
 
 <Chapitre titre="Fractions et proportionnalité" />

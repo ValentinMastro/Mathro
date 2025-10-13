@@ -1,9 +1,7 @@
 <script lang="ts">
-	import { Question, Énoncé } from '$lib/cahier/composants/d_exercices/*';
-	import { Contenu, DansLaMarge } from '$lib/cahier/composants/de_chapitrage/*';
-	import { CelluleTableau, Tableau, Texte } from '$lib/cahier/composants/de_cours/*';
-	import LigneTableau from '$lib/cahier/composants/de_cours/LigneTableau.svelte';
-	import { Activité } from '$lib/cahier/composants/de_marge/*';
+	import { Activité, Question, Énoncé } from '$lib/cahier/composants/d_exercices/*';
+	import { Contenu } from '$lib/cahier/composants/de_chapitrage/*';
+	import { CelluleTableau, LigneTableau, Tableau, Texte } from '$lib/cahier/composants/de_cours/*';
 </script>
 
 <Activité numéro={2} />
