@@ -12,7 +12,7 @@
 	let { bullet = '&bullet;', bullet_color = undefined, lignes = 1, children, ...props }: Props = $props();
 </script>
 
-<div class="item" style="--lignes: {lignes};" {...props}>
+<div id="item" style="--lignes: {lignes};" {...props}>
 	{#if bullet_color}
 		<span style="color: {bullet_color}">{@html bullet}</span>
 	{:else}
@@ -22,11 +22,11 @@
 </div>
 
 <style>
-	.item {
+	#item {
 		margin-left: 1.5em;
 		width: fit-content;
 		font-size: var(--font-size);
-		line-height: calc(var(--line-height) * 1.5);
+		line-height: var(--line-height);
 		height: calc(var(--lignes) * var(--carreau));
 	}
 </style>
