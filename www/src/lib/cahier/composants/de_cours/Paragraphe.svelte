@@ -25,7 +25,7 @@
 	{#if children}
 		<div class="contenu_de_section" style="height: calc({lignes} * var(--hauteur-ligne-cahier));">
 			<div style={addStyle}>
-				{@render children()}
+				{@render children?.()}
 			</div>
 		</div>
 	{/if}
@@ -39,7 +39,7 @@
 		.titre_de_section {
 			width: 100%;
 			position: relative;
-			height: var(--hauteur-ligne-cahier);
+			height: var(--carreau);
 			span {
 				position: absolute;
 				bottom: 0;
