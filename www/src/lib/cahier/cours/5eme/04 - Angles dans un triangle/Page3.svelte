@@ -1,30 +1,38 @@
 <script lang="ts">
-	import { writable } from 'svelte/store';
 	import { Contenu } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Propriete, Schema } from '$lib/cahier/composants/de_cours/*';
-	import { Angle, Codage, Polygone } from '$lib/cahier/composants/svg/*';
+	import { Definition, Exemple, Propriete, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Angle, Codage, Polygone, TexteSVG } from '$lib/cahier/composants/svg/*';
+	import { math } from 'mathlifier';
 
-	let côté = (7 * 1000) / 11;
-	let A = { x: 0, y: (9 * 1000) / 11 };
-	let B = { x: côté, y: (9 * 1000) / 11 };
-	let C = { x: côté / 2, y: (9 * 1000) / 11 - (côté * Math.sqrt(3)) / 2 };
-
-	let ABC = writable(0);
-	let BCA = writable(0);
-	let CAB = writable(0);
+	let c = 1000 / 11;
+	let [D, E, F] = [
+		{ x: 1 * c, y: 2 * c },
+		{ x: 10 * c, y: 2 * c },
+		{ x: ((1 + 10) / 2) * c, y: 9 * c }
+	];
 </script>
 
 <Contenu>
-	<Propriete>Un triangle équilatéral possède trois angles de même mesure : 60°.</Propriete>
+	<Definition lignes={2}>
+		Un triangle isocèle a deux côtés de même longueur. <br />
+		Le troisième côté est appelé la <i>base</i>.
+	</Definition>
+	<Propriete lignes={2}>
+		Un triangle isocèle possède deux angles de même mesure :<br />
+		il s'agit des angles adjacents à la base du triangle.
+	</Propriete>
 	<Schema lignes={11} centré>
 		{#snippet svg()}
-			<Polygone points={[A, B, C]} />
-			<Angle r={70} points={[A, B, C]} fill="red" afficher_mesure mesure={ABC} />
-			<Angle r={70} points={[B, C, A]} fill="red" afficher_mesure mesure={BCA} />
-			<Angle r={70} points={[C, A, B]} fill="red" afficher_mesure mesure={CAB} />
-			<Codage points={[A, B]} type="3 traits" stroke="green" />
-			<Codage points={[B, C]} type="3 traits" stroke="green" />
-			<Codage points={[C, A]} type="3 traits" stroke="green" />
+			<TexteSVG point={{ x: (D.x + E.x) / 2, y: D.y + 10 }} fill="red" font-size={70} dy={-50}>base</TexteSVG>
+			<Codage points={[D, F]} type="2 traits" stroke="red" />
+			<Codage points={[E, F]} type="2 traits" stroke="red" />
+			<Angle r={80} points={[D, E, F]} fill="green" />
+			<Angle r={80} points={[E, D, F]} fill="green" />
+			<Polygone points={[D, E, F]} stroke-width={5} afficher_points noms={['D', 'E', 'F']} />
 		{/snippet}
 	</Schema>
+	<Exemple lignes={2}>
+		Le triangle {@html math('\\widehat{\\text{DEF}}')} est isocèle en {@html math('\\text{D}')}.<br />
+		Les angles {@html math('\\widehat{\\text{DEF}}')} et {@html math('\\widehat{\\text{EDF}}')} sont égaux.
+	</Exemple>
 </Contenu>

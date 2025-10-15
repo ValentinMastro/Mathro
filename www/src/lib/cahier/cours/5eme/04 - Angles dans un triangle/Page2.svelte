@@ -1,45 +1,32 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Propriete, Schema } from '$lib/cahier/composants/de_cours/*';
-	import { Angle, AngleDroit, Codage, Polygone, TexteSVG } from '$lib/cahier/composants/svg/*';
+	import { Definition, Propriete, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Angle, AngleDroit, Polygone } from '$lib/cahier/composants/svg/*';
+	import { math } from 'mathlifier';
 
 	let [A, B, C] = [
-		{ x: 0, y: 200 },
-		{ x: 800, y: 200 },
-		{ x: 800, y: 800 }
-	];
-	let [D, E, F] = [
-		{ x: 0, y: (2 * 1000) / 11 },
-		{ x: 900, y: (2 * 1000) / 11 },
-		{ x: 450, y: (9 * 1000) / 11 }
+		{ x: 125, y: 200 },
+		{ x: 875, y: 200 },
+		{ x: 125, y: 800 }
 	];
 </script>
 
 <Contenu>
 	<Partie numero={2} titre="Les différents types de triangles et leurs angles" />
-	<Definition>Un triangle rectangle possède un angle droit.</Definition>
-	<Schema lignes={5} centré>
+	<Definition>Un triangle est rectangle s'il possède un angle droit.</Definition>
+	<Propriete>Les deux angles aigus d'un triangle rectangle sont complémentaires.</Propriete>
+	<Schema lignes={8} aspectRatioSVG={1.125}>
 		{#snippet svg()}
-			<Polygone points={[A, B, C]} stroke-width={10} />
-			<AngleDroit points={[A, B, C]} taille={80} />
+			<Angle points={[A, B, C]} r={130} fill="red" />
+			<Angle points={[B, C, A]} r={130} fill="blue" />
+			<Polygone points={[A, B, C]} stroke-width={10} noms={['P', 'U', 'K']} afficher_points />
+			<AngleDroit points={[C, A, B]} taille={60} fill="none" stroke="black" />
 		{/snippet}
-	</Schema>
-	<Definition lignes={2}>
-		Un triangle isocèle a deux côtés de même longueur. <br />
-		Le troisième côté est appelé la <i>base</i>.
-	</Definition>
-	<Propriete lignes={2}>
-		Un triangle isocèle possède deux angles de même mesure :<br />
-		il s'agit des angles adjacents à la base du triangle.
-	</Propriete>
-	<Schema lignes={11} centré>
-		{#snippet svg()}
-			<TexteSVG point={{ x: (D.x + E.x) / 2, y: D.y + 10 }} fill="red" font-size={70} dy={-50}>base</TexteSVG>
-			<Codage points={[D, F]} type="2 traits" stroke="red" />
-			<Codage points={[E, F]} type="2 traits" stroke="red" />
-			<Angle r={80} points={[D, E, F]} fill="green" />
-			<Angle r={80} points={[E, D, F]} fill="green" />
-			<Polygone points={[D, E, F]} stroke-width={5} />
+		{#snippet html()}
+			<Texte>Le triangle PUK est rectangle en P.</Texte>
+			<Texte>
+				Les angles {@html math('\\color{blue}\\widehat{\\text{PKU}}')} et {@html math('\\color{red}\\widehat{\\text{PUK}}')} sont complémentaires.
+			</Texte>
 		{/snippet}
 	</Schema>
 </Contenu>
