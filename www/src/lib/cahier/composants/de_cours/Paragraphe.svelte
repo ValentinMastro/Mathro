@@ -6,7 +6,7 @@
 	let {
 		addStyleNomParagraphe = '',
 		addStyle = '',
-		nom_du_paragraphe = 'Paragraphe',
+		nom_du_paragraphe = 'Paragraphe :',
 		couleur = 'noir',
 		lignes = 1,
 		lignes_vides = Number.isInteger(lignes) ? 1 : Math.ceil(lignes) - lignes,
@@ -18,12 +18,12 @@
 	{#if nom_du_paragraphe != ''}
 		<div class="titre_de_section">
 			<span style={'text-decoration: underline;' + addStyleNomParagraphe}>
-				{@html nom_du_paragraphe} :
+				{@html nom_du_paragraphe}
 			</span>
 		</div>
 	{/if}
 	{#if children}
-		<div class="contenu_de_section" style="height: calc({lignes} * var(--hauteur-ligne-cahier));">
+		<div class="contenu_de_section" style="height: calc({lignes} * var(--carreau));">
 			<div style={addStyle}>
 				{@render children?.()}
 			</div>

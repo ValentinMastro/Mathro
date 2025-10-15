@@ -7,8 +7,8 @@
 
 	let {
 		addStyle,
-		nom_du_paragraphe = 'Théorème',
-		nom_du_theoreme = 'Théorème',
+		nom_du_paragraphe = 'Théorème :',
+		nom_du_theoreme = 'Théorème :',
 		couleur = 'rouge',
 		lignes,
 		lignes_vides,

@@ -24,7 +24,6 @@
 <style>
 	#item {
 		margin-left: 1.5em;
-		width: fit-content;
 		font-size: var(--font-size);
 		line-height: var(--line-height);
 		height: calc(var(--lignes) * var(--carreau));
