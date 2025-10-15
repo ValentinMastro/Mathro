@@ -65,9 +65,9 @@
 		<img src="/img2.png" alt="Ce qu'il faut obtenir" width="30%" />
 	</center>
 	<LigneVide lignes={1.4} />
-	<Exercice lignes={5} nom_du_paragraphe="Exercice 3 : le théorème de Napoléon">
+	<Exercice lignes={5} nom_du_paragraphe="Exercice 3 : le problème de thébault n°1">
 		Construire une figure illustrant le théorème suivant : <br />
-		&laquo; Si nous construisons trois triangles équilatéraux à partir des côtés d'un triangle quelconque, tous à l'extérieur ou tous à l'intérieur, les
-		centres de ces triangles équilatéraux forment eux-mêmes un triangle équilatéral. &raquo;
+		&laquo; Soit un parallélogramme ABCD, quelconque, et extérieurement, quatre carrés construits sur les côtés du parallélogramme. Si M, N, O et P désignent
+		les centres de ces carrés, alors MNOP est également un carré. &raquo;
 	</Exercice>
 </Contenu>
