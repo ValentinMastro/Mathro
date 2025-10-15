@@ -46,5 +46,9 @@
 		<Question numéro={3} lignes={2}>
 			Calculer l'impôt sur le revenu pour un célibataire sans enfant (1 part) ayant un revenu annuel de 35 000 €.
 		</Question>
+		<Question numéro={4} lignes={2}>Calculer l'impôt sur le revenu d'un célibataire sans enfant ayany un revenu annuel de 100 000 €.</Question>
+		<Question numéro={5} lignes={2}>
+			Calculer l'impôt sur le revenu d'un foyer fiscal composé d'un couple et de 3 enfants ayant un revenu annuel de 100 000 €.
+		</Question>
 	</Énoncé>
 </Contenu>
