@@ -20,7 +20,7 @@
 	let { points, taille = 100, decalage = 0, ...props }: Props = $props();
 	let valeursParDefaut = {
 		stroke: props['stroke'] || 'none',
-		'stroke-width': props['stroke-width'] || '1',
+		'stroke-width': props['stroke-width'] || '10',
 		fill: props['fill'] || 'black'
 	};
 
