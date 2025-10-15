@@ -6,7 +6,7 @@
 	import { math } from 'mathlifier';
 </script>
 
-<DansLaMarge>
+<DansLaMarge à_imprimer>
 	<center>
 		<Texte>
 			<b> DM n°1 </b>
@@ -65,7 +65,7 @@
 		<img src="/img2.png" alt="Ce qu'il faut obtenir" width="30%" />
 	</center>
 	<LigneVide lignes={1.4} />
-	<Exercice lignes={5} nom_du_paragraphe="Exercice 3 : le problème de thébault n°1">
+	<Exercice lignes={5} nom_du_paragraphe="Exercice 3 : le problème de Thébault n°1">
 		Construire une figure illustrant le théorème suivant : <br />
 		&laquo; Soit un parallélogramme ABCD, quelconque, et extérieurement, quatre carrés construits sur les côtés du parallélogramme. Si M, N, O et P désignent
 		les centres de ces carrés, alors MNOP est également un carré. &raquo;

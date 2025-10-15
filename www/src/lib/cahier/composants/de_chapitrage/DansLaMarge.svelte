@@ -6,15 +6,16 @@
 		apres_un_titre?: boolean;
 		lignes_vides?: number;
 		children?: any;
+		à_imprimer?: boolean;
 	}
 
-	let { apres_un_titre = false, lignes_vides = 0, children }: Props = $props();
+	let { apres_un_titre = false, lignes_vides = 0, children, à_imprimer = false }: Props = $props();
 
 	let visible = $derived.by(() => {
-		if (page_state.en_cours_impression) {
-			return 'hidden';
-		} else {
+		if (!page_state.en_cours_impression || à_imprimer) {
 			return 'visible';
+		} else {
+			return 'hidden';
 		}
 	});
 	let _class = $derived.by(() => {
