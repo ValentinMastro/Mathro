@@ -1,6 +1,12 @@
 <script lang="ts">
 	import { type Snippet } from 'svelte';
-	let { numéro = 1, lignes = 1, children }: { numéro: number; lignes?: number; children?: Snippet } = $props();
+	import LigneVide from '../LigneVide.svelte';
+	let {
+		numéro = 1,
+		lignes = 1,
+		lignes_vides = 0,
+		children
+	}: { numéro: number; lignes?: number; lignes_vides?: number; children?: Snippet } = $props();
 </script>
 
 <div class="question" style="--lignes: {lignes};">
@@ -8,6 +14,9 @@
 		Q{numéro}) {@render children?.()}
 	</span>
 </div>
+{#if lignes_vides > 0}
+	<LigneVide lignes={lignes_vides} />
+{/if}
 
 <style>
 	.question {
