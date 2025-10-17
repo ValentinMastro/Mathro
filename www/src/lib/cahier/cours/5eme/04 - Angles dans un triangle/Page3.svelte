@@ -32,7 +32,7 @@
 		{/snippet}
 	</Schema>
 	<Exemple lignes={2}>
-		Le triangle {@html math('\\widehat{\\text{DEF}}')} est isocèle en {@html math('\\text{D}')}.<br />
+		Le triangle DEF est isocèle en {@html math('\\text{F}')} car {@html math('\\text{DF} = \\text{EF}')}.<br />
 		Les angles {@html math('\\widehat{\\text{DEF}}')} et {@html math('\\widehat{\\text{EDF}}')} sont égaux.
 	</Exemple>
 </Contenu>
