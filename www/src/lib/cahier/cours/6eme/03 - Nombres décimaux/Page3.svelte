@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Contenu, DansLaMarge, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Exemples, Item, Methode, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Exemple, Exemples, Item, Methode, Schema } from '$lib/cahier/composants/de_cours/*';
 	import { Nombre } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 

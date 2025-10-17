@@ -15,7 +15,7 @@
 </script>
 
 <Contenu>
-	<Definition>Un triangle est éqquilatéral si ses trois côtés sont de la mêe longueur.</Definition>
+	<Definition>Un triangle est équilatéral si ses trois côtés sont de la même longueur.</Definition>
 	<Propriete>Un triangle équilatéral possède trois angles de même mesure : 60°.</Propriete>
 	<Schema lignes={11} centré>
 		{#snippet svg()}
