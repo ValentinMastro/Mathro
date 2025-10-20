@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Item, LigneTableau, Tableau, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { CelluleTableau, Definition, Exemple, Item, LigneTableau, Tableau, Texte } from '$lib/cahier/composants/de_cours/*';
 
 	import { math } from 'mathlifier';
 </script>
@@ -18,16 +18,16 @@
 		Sur une carte à l'échelle {@html math('\\frac{1}{10~000}')}, sachant que la distance réelle entre Meaux et Paris est de 40 km, à quelle distance
 		cela correspond-il sur la carte ?
 	</Texte>
-	<Tableau addStyle="width: calc(15/21 * 100%); margin-left: auto; margin-right: auto;">
+	<Tableau>
 		<LigneTableau>
-			<td>Distance sur la carte (km)</td>
-			<td>1</td>
-			<td>?</td>
+			<CelluleTableau colonnes={10}>Distance sur la carte (km)</CelluleTableau>
+			<CelluleTableau colonnes={5}>1</CelluleTableau>
+			<CelluleTableau colonnes={5}>?</CelluleTableau>
 		</LigneTableau>
 		<LigneTableau>
-			<td>Distance réelle (km)</td>
-			<td>10000</td>
-			<td>40</td>
+			<CelluleTableau colonnes={10}>Distance réelle (km)</CelluleTableau>
+			<CelluleTableau colonnes={5}>10000</CelluleTableau>
+			<CelluleTableau colonnes={5}>40</CelluleTableau>
 		</LigneTableau>
 	</Tableau>
 	<Texte couleur="bleu">
