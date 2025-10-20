@@ -13,7 +13,7 @@
 
 <div class="marge">
 	<div class="input">
-		{childProps.value}
+		{childProps.value.toLocaleString()}
 	</div>
 	<div class="plus" onclick={augmenter} role="none">+</div>
 	<div class="moins" onclick={diminuer} role="none">-</div>

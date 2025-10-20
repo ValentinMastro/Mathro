@@ -157,12 +157,32 @@ export class NombreDecimal {
 		if (this.nombre_de_chiffres_après_la_virgule == BigInt(this.liste_des_chiffres().length)) {
 			caractères.unshift('0');
 		}
+
+		// Ajout des espaces pour la lisibilité tous les 3 chiffres en partant de la virgule de chaque côté
+		let index_virgule = caractères.indexOf(',');
+		let index_gauche = index_virgule - 3;
+
+		while (index_gauche > 0) {
+			caractères.splice(index_gauche, 0, ' ');
+			index_gauche -= 3;
+		}
+
+		index_virgule = caractères.indexOf(',');
+		let index_droite = index_virgule + 4;
+		while (index_droite < caractères.length) {
+			caractères.splice(index_droite, 0, ' ');
+			index_droite += 4;
+		}
+
 		// Ajout du signe "-" si nécessaire
 		if (this.signe == 'NÉGATIF') {
 			caractères.unshift('-');
 		}
-
 		return caractères.join('');
+	}
+
+	public toLocaleString(): string {
+		return this.toString();
 	}
 
 	public valeur_absolue(): NombreDecimal {

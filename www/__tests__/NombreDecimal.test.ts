@@ -138,6 +138,11 @@ describe('NombreDecimal', () => {
 			const nombre = NombreDecimal.depuisPartiesEntieresEtDecimales(0n, 45n, 'NÉGATIF');
 			expect(nombre.toString()).toBe('-0,45');
 		});
+
+		it('gère les espaces', () => {
+			const nombre = NombreDecimal.depuisPartiesEntieresEtDecimales(12345678890n, 1234567890n, 'POSITIF');
+			expect(nombre.toString()).toBe('12 345 678 890,123 456 789 0');
+		});
 	});
 
 	// Tests pour la méthode `valeur_absolue`
