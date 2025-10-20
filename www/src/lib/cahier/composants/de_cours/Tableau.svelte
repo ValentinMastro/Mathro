@@ -1,19 +1,24 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
+	import LigneVide from '../LigneVide.svelte';
 
 	type TableauProps = HTMLAttributes<HTMLTableElement> & {
-		lignes?: number;
-		colonnes?: number;
 		children?: Snippet;
+		colonnes?: number;
+		lignes?: number;
+		lignes_vides?: number;
 	};
 
-	let { lignes = 1, colonnes = 20, children, ...props }: TableauProps = $props();
+	let { lignes = 1, colonnes = 20, children, lignes_vides = 1, ...props }: TableauProps = $props();
 </script>
 
 <table style="--lignes-tableau: {lignes}; --colonnes-tableau: {colonnes};" {...props}>
 	{@render children?.()}
 </table>
+{#if lignes_vides > 0}
+	<LigneVide lignes={lignes_vides} />
+{/if}
 
 <style>
 	table {
