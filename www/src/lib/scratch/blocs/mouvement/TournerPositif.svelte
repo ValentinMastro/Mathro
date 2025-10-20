@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Bloc from "../Bloc.svelte";
+	import Bloc from '../Bloc.svelte';
 
-    export let angle: number;
+	export let angle: number;
 </script>
 
 <Bloc categorie="mouvement" type="tourner_positif">
-    tourner ↺ de {angle}°
+	tourner ↺ de {angle}°
 </Bloc>

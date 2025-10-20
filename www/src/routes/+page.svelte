@@ -17,11 +17,8 @@
 		</div>
 		<div id="scratch" class="niveau">
 			<a href="/scratch">
-				Scratch 
-				<img 	id="scratch_cat"
-						src="/for_scratch/ScratchCat3.0.svg" 
-						alt="Scratch Cat"
-						>
+				Scratch
+				<img id="scratch_cat" src="/for_scratch/ScratchCat3.0.svg" alt="Scratch Cat" />
 			</a>
 		</div>
 	</div>
@@ -59,15 +56,16 @@
 		}
 	}
 
-
-	a { text-decoration: none; }
+	a {
+		text-decoration: none;
+	}
 
 	#outils {
 		position: fixed;
 		bottom: 0;
 		left: 0;
 	}
-	
+
 	@media (min-aspect-ratio: 1) {
 		img#scratch_cat {
 			width: 4vw;

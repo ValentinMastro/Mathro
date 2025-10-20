@@ -30,26 +30,26 @@
 -->
 
 <script lang="ts">
-    import Menu from "./menu/Menu.svelte";
-    import PhaseA from "./phaseA/PhaseA.svelte";
-    import PhaseB from "./phaseB/PhaseB.svelte";
-    import PhaseC from "./phaseC/PhaseC.svelte";
+	import Menu from './menu/Menu.svelte';
+	import PhaseA from './phaseA/PhaseA.svelte';
+	import PhaseB from './phaseB/PhaseB.svelte';
+	import PhaseC from './phaseC/PhaseC.svelte';
 
-    import { phase } from "./stores";
+	import { phase } from './stores';
 
-    let phase_actuelle: "Menu" | "A" | "B" | "C" = "Menu";
+	let phase_actuelle: 'Menu' | 'A' | 'B' | 'C' = 'Menu';
 
-    phase.subscribe((valeur) => {
-        phase_actuelle = valeur;
-    });
+	phase.subscribe((valeur) => {
+		phase_actuelle = valeur;
+	});
 </script>
 
-{#if phase_actuelle == "Menu"}
-    <Menu />
-{:else if phase_actuelle == "A"}
-    <PhaseA />
-{:else if phase_actuelle == "B"}
-    <PhaseB />
-{:else if phase_actuelle == "C"}
-    <PhaseC />
+{#if phase_actuelle == 'Menu'}
+	<Menu />
+{:else if phase_actuelle == 'A'}
+	<PhaseA />
+{:else if phase_actuelle == 'B'}
+	<PhaseB />
+{:else if phase_actuelle == 'C'}
+	<PhaseC />
 {/if}

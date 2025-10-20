@@ -1,13 +1,12 @@
 <script>
-	
 </script>
 
 <header>
 	<a href="/" data-sveltekit-reload aria-label="menu">
 		<nav>
-		<div></div>
-		<div></div>
-		<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
 		</nav>
 	</a>
 </header>

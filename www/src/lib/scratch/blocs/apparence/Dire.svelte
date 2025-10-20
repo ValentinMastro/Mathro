@@ -1,9 +1,9 @@
 <script lang="ts">
-    import Bloc from "../Bloc.svelte";
+	import Bloc from '../Bloc.svelte';
 
-    export let message: string;
+	export let message: string;
 </script>
 
 <Bloc categorie="apparence" type="dire">
-    dire {message}
+	dire {message}
 </Bloc>

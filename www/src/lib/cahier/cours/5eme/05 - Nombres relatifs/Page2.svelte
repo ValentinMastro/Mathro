@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { Partie, Contenu } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Item, Notation, Remarque, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Item, Schema } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-	import { math } from 'mathlifier';
 
 	let points = {
 		A: 2,

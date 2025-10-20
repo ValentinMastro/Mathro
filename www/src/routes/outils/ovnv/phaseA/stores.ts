@@ -1,6 +1,6 @@
-import { writable } from "svelte/store";
+import { writable } from 'svelte/store';
 
-type Etape = "squelette" | "matieres" | "classes" | "enseignants";
-export let etape = writable<Etape>("squelette");
+type Etape = 'squelette' | 'matieres' | 'classes' | 'enseignants';
+export let etape = writable<Etape>('squelette');
 
 export type { Etape };

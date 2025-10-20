@@ -1,55 +1,113 @@
-import { writable } from "svelte/store";
+import { writable } from 'svelte/store';
 
 type Donnees = {
-    squelette: SqueletteEmploiDuTemps,
-    enseignants: Enseignants,
-    salles: Salles,
-    matieres: Matieres,
-}
+	squelette: SqueletteEmploiDuTemps;
+	enseignants: Enseignants;
+	salles: Salles;
+	matieres: Matieres;
+};
 
 type SqueletteEmploiDuTemps = {
-    heures: Heure[]
-}
+	heures: Heure[];
+};
 
 type Heure = {
-    jour: "lundi" | "mardi" | "mercredi" | "jeudi" | "vendredi" | "samedi" | "dimanche",
-    debut: Horaire,
-    fin: Horaire,
-}
+	jour: 'lundi' | 'mardi' | 'mercredi' | 'jeudi' | 'vendredi' | 'samedi' | 'dimanche';
+	debut: Horaire;
+	fin: Horaire;
+};
 
 type Horaire = {
-    heure: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23,
-    minute: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 
-    | 25 | 26 | 27 | 28 | 29 | 30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 
-    | 49 | 50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59,
-}
+	heure: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23;
+	minute:
+		| 0
+		| 1
+		| 2
+		| 3
+		| 4
+		| 5
+		| 6
+		| 7
+		| 8
+		| 9
+		| 10
+		| 11
+		| 12
+		| 13
+		| 14
+		| 15
+		| 16
+		| 17
+		| 18
+		| 19
+		| 20
+		| 21
+		| 22
+		| 23
+		| 24
+		| 25
+		| 26
+		| 27
+		| 28
+		| 29
+		| 30
+		| 31
+		| 32
+		| 33
+		| 34
+		| 35
+		| 36
+		| 37
+		| 38
+		| 39
+		| 40
+		| 41
+		| 42
+		| 43
+		| 44
+		| 45
+		| 46
+		| 47
+		| 48
+		| 49
+		| 50
+		| 51
+		| 52
+		| 53
+		| 54
+		| 55
+		| 56
+		| 57
+		| 58
+		| 59;
+};
 
 type Enseignants = {
-    nom: string,
-    prenom: string,
-    matieres: Matieres[],
-    heures_disponibles: Heure[]
-}[]
+	nom: string;
+	prenom: string;
+	matieres: Matieres[];
+	heures_disponibles: Heure[];
+}[];
 
 type Salles = {
-    nom: string,
-    capacite: number,
-}[]
+	nom: string;
+	capacite: number;
+}[];
 
 type Matieres = {
-    nom: string,
-}[]
+	nom: string;
+}[];
 
 export let donnees = writable<Donnees>({
-    squelette: {
-        heures: []
-    },
-    enseignants: [],
-    salles: [],
-    matieres: [],
+	squelette: {
+		heures: []
+	},
+	enseignants: [],
+	salles: [],
+	matieres: []
 });
 
 export type { Donnees };
 
-export let phase = writable<"Menu" | "A" | "B" | "C">("Menu");
+export let phase = writable<'Menu' | 'A' | 'B' | 'C'>('Menu');
 export let json = writable<File>();
