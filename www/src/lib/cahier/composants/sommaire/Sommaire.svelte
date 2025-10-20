@@ -82,7 +82,7 @@
 
 	.période,
 	.chapitre {
-		height: var(--hauteur-ligne-cahier);
+		height: var(--carreau);
 	}
 
 	.chapitre {

@@ -40,7 +40,6 @@
 	    visibility: {is_hidden}; {is_full_screen};
 		--taille-page: {taille_page}px;
 		--carreau: {taille_page / 37.1}px;
-		--hauteur-ligne-cahier: {taille_page / 37.1}px;
 		--font-size: {taille_page / 60}px;
 		--line-height: {(taille_page / 60) * 1.6}px;
 		"
