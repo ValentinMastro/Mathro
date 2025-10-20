@@ -22,11 +22,15 @@
 <style>
 	.marge {
 		position: relative;
-		height: var(--carreau);
+
 		width: 100%;
+		height: var(--carreau);
+
 		background-color: black;
 		color: white;
 		font-size: calc(var(--font-size) * 0.8);
+		user-select: none;
+
 		margin: 0;
 
 		display: flex;
