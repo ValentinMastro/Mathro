@@ -19,7 +19,7 @@
 	}
 
 	.pas_de_titre {
-		--top: 8.6%;
+		--top: 8.67%;
 		top: var(--top);
 		height: calc(92.18% - var(--top));
 	}
