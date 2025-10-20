@@ -47,11 +47,14 @@
 <style>
 	.partie {
 		width: 100%;
+		position: relative;
 		color: var(--bleu);
 		height: var(--carreau);
 	}
 	span {
+		position: absolute;
+		bottom: 0;
 		font-size: calc(var(--taille-page) / 60);
-		line-height: calc(var(--taille-page) / 60 * 2.5);
+		line-height: calc(var(--taille-page) / 60);
 	}
 </style>

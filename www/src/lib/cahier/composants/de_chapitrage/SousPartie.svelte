@@ -24,12 +24,15 @@
 <style>
 	.partie {
 		width: 100%;
+		position: relative;
 		color: var(--vert);
 		height: var(--carreau);
 	}
 	span {
+		position: absolute;
+		bottom: 0;
 		font-size: calc(var(--taille-page) / 56);
-		line-height: calc(var(--taille-page) / 56 * 2.23);
+		line-height: calc(var(--taille-page) / 56);
 		margin-left: calc(var(--carreau) / 2);
 	}
 </style>

@@ -47,15 +47,15 @@
 <style>
 	.partie {
 		width: 100%;
-		color: rgb(225, 0, 0);
 		position: relative;
+		color: var(--rouge);
 		height: var(--carreau);
 	}
 	span {
 		position: absolute;
 		bottom: 0;
-		margin-left: var(--carreau);
 		font-size: calc(var(--taille-page) / 50);
-		line-height: calc(var(--taille-page) / 50 * 0.72);
+		line-height: calc(var(--taille-page) / 50);
+		margin-left: var(--carreau);
 	}
 </style>
