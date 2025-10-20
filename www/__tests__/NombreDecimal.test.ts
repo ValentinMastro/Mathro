@@ -80,6 +80,22 @@ describe('NombreDecimal', () => {
 			expect(resultat.nombre_de_chiffres_après_la_virgule).toBe(2n);
 			expect(resultat.signe).toBe('POSITIF');
 		});
+
+		it('additionne deux nombres avec des décimales de différentes tailles', () => {
+			const a = NombreDecimal.depuisPartiesEntieresEtDecimales(1n, 23n, 'POSITIF');
+			const b = NombreDecimal.depuisPartiesEntieresEtDecimales(4n, 567n, 'POSITIF');
+			const resultat = a.plus(b);
+			const resultat_attendu = NombreDecimal.depuisPartiesEntieresEtDecimales(5n, 797n, 'POSITIF');
+			expect(resultat).toStrictEqual(resultat_attendu);
+		});
+
+		it('additionne deux nombres de signes différents où la somme fait changer le signe de this', () => {
+			const a = NombreDecimal.depuisPartiesEntieresEtDecimales(1n, 2n, 'POSITIF');
+			const b = NombreDecimal.depuisPartiesEntieresEtDecimales(4n, 0n, 'NÉGATIF');
+			const resultat = a.plus(b);
+			const resultat_attendu = NombreDecimal.depuisPartiesEntieresEtDecimales(2n, 8n, 'NÉGATIF');
+			expect(resultat).toStrictEqual(resultat_attendu);
+		});
 	});
 
 	// Tests pour la méthode `moins`

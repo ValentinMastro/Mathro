@@ -137,7 +137,7 @@ export class NombreDecimal {
 		if (a + b >= 0n) {
 			return new NombreDecimal(a + b, nombre_de_chiffres_après_la_virgule, 'POSITIF');
 		} else {
-			return new NombreDecimal(a + b, nombre_de_chiffres_après_la_virgule, 'NÉGATIF');
+			return new NombreDecimal(-(a + b), nombre_de_chiffres_après_la_virgule, 'NÉGATIF');
 		}
 	}
 
