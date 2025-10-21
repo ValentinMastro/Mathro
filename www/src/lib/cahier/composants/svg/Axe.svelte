@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { Fraction } from 'mathjs';
-	import { math } from 'mathlifier';
 
 	interface Props {
 		debut: { x: number; y: number };
