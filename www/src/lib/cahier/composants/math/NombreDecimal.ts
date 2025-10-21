@@ -40,9 +40,11 @@ export class NombreDecimal {
 		);
 		return nombre;
 	}
+	static ZERO = new NombreDecimal(0n, 0n, 'POSITIF');
+	static UN = new NombreDecimal(1n, 0n, 'POSITIF');
 
 	// MÉTHODES
-	public arrondi_au(position: keyof typeof POSITIONS | number): NombreDecimal {
+	public arrondi_au(position: keyof typeof POSITIONS | number, stratégie: 'PLUS_PROCHE' | 'INFÉRIEUR' | 'SUPÉRIEUR' = 'PLUS_PROCHE'): NombreDecimal {
 		if (typeof position === 'string') {
 			position = POSITIONS[position];
 		}
@@ -50,13 +52,31 @@ export class NombreDecimal {
 			return this;
 		}
 
-		let chiffre_apres = this.chiffre_des(position - 1);
-		if (chiffre_apres >= 5) {
-			let nombre = this.arrondi_au(position + 1);
-			return nombre;
+		let chiffres_à_garder = this.nombres_des(position);
+
+		switch (stratégie) {
+			case 'PLUS_PROCHE':
+				let chiffre_apres = this.chiffre_des(position - 1);
+				if (chiffre_apres >= 5) {
+					chiffres_à_garder += 1n;
+				}
+				break;
+			case 'INFÉRIEUR':
+				break;
+			case 'SUPÉRIEUR':
+				chiffres_à_garder += 1n;
+				break;
 		}
-		return this;
+
+		const nouvelle_précision = Math.max(0, -position);
+		if (position >= 0 && chiffres_à_garder === 1n && stratégie === 'SUPÉRIEUR') {
+			chiffres_à_garder = 10n ** BigInt(position);
+		}
+
+		let résultat = new NombreDecimal(chiffres_à_garder, BigInt(nouvelle_précision), this.signe);
+		return résultat.normalisé();
 	}
+
 	public chiffre_des(position: keyof typeof POSITIONS | number): number {
 		if (typeof position === 'string') {
 			position = POSITIONS[position];
@@ -128,6 +148,17 @@ export class NombreDecimal {
 		return BigInt(Number.parseInt(this.liste_des_chiffres().slice(0, index_dernier_chiffre).join('')));
 	}
 
+	public normalisé(): NombreDecimal {
+		if (this.nombre_de_chiffres_après_la_virgule == 0n) {
+			return this;
+		}
+		if (this.chiffres % 10n == 0n && this.nombre_de_chiffres_après_la_virgule > 0n) {
+			let n = new NombreDecimal(this.chiffres / 10n, this.nombre_de_chiffres_après_la_virgule - 1n, this.signe);
+			return n.normalisé();
+		}
+		return this;
+	}
+
 	public opposé(): NombreDecimal {
 		if (this.signe == 'POSITIF') {
 			return new NombreDecimal(this.chiffres, this.nombre_de_chiffres_après_la_virgule, 'NÉGATIF');
@@ -158,6 +189,10 @@ export class NombreDecimal {
 
 	public supérieur_à(other: number | bigint | NombreDecimal): boolean {
 		return !this.inférieur_à(other);
+	}
+
+	public toNumber(): number {
+		return Number(this.chiffres) / 10 ** Number(this.nombre_de_chiffres_après_la_virgule);
 	}
 
 	public toString(): string {

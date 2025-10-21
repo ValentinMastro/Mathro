@@ -37,6 +37,35 @@ describe('NombreDecimal', () => {
 		});
 	});
 
+	describe('arrondi_au', () => {
+		it('arrondit un NombreDecimal positif à un chiffre après la virgule', () => {
+			const nombre = NombreDecimal.depuisPartiesEntieresEtDecimales(0n, 237n, 'POSITIF');
+			const arrondi_au_dixieme = NombreDecimal.depuisPartiesEntieresEtDecimales(0n, 2n, 'POSITIF');
+			const arrondi_au_centieme = NombreDecimal.depuisPartiesEntieresEtDecimales(0n, 24n, 'POSITIF');
+			expect(nombre.arrondi_au('dixièmes')).toStrictEqual(arrondi_au_dixieme);
+			expect(nombre.arrondi_au('centièmes')).toStrictEqual(arrondi_au_centieme);
+		});
+		it("arrondit un NombreDecimal avec d'autres stratégies", () => {
+			const nombre = NombreDecimal.depuisPartiesEntieresEtDecimales(0n, 237n, 'POSITIF');
+			const arrondi_à_la_dizaine_inférieure = NombreDecimal.depuisEntier(0n);
+			const arrondi_à_la_dizaine_supérieure = NombreDecimal.depuisEntier(10n);
+			const arrondi_à_l_unité_inférieure = NombreDecimal.depuisEntier(0n);
+			const arrondi_à_l_unité_supérieure = NombreDecimal.depuisPartiesEntieresEtDecimales(1n, 0n, 'POSITIF').normalisé();
+			const arrondi_au_dixieme_inférieur = NombreDecimal.depuisPartiesEntieresEtDecimales(0n, 2n, 'POSITIF');
+			const arrondi_au_dixieme_supérieur = NombreDecimal.depuisPartiesEntieresEtDecimales(0n, 3n, 'POSITIF');
+			const arrondi_au_centieme_inférieur = NombreDecimal.depuisPartiesEntieresEtDecimales(0n, 23n, 'POSITIF');
+			const arrondi_au_centieme_supérieur = NombreDecimal.depuisPartiesEntieresEtDecimales(0n, 24n, 'POSITIF');
+			expect(nombre.arrondi_au('dizaines', 'INFÉRIEUR')).toStrictEqual(arrondi_à_la_dizaine_inférieure);
+			expect(nombre.arrondi_au('dizaines', 'SUPÉRIEUR')).toStrictEqual(arrondi_à_la_dizaine_supérieure);
+			expect(nombre.arrondi_au('unités', 'INFÉRIEUR')).toStrictEqual(arrondi_à_l_unité_inférieure);
+			expect(nombre.arrondi_au('unités', 'SUPÉRIEUR')).toStrictEqual(arrondi_à_l_unité_supérieure);
+			expect(nombre.arrondi_au('dixièmes', 'INFÉRIEUR')).toStrictEqual(arrondi_au_dixieme_inférieur);
+			expect(nombre.arrondi_au('dixièmes', 'SUPÉRIEUR')).toStrictEqual(arrondi_au_dixieme_supérieur);
+			expect(nombre.arrondi_au('centièmes', 'INFÉRIEUR')).toStrictEqual(arrondi_au_centieme_inférieur);
+			expect(nombre.arrondi_au('centièmes', 'SUPÉRIEUR')).toStrictEqual(arrondi_au_centieme_supérieur);
+		});
+	});
+
 	// Tests pour la méthode `opposé`
 	describe('opposé', () => {
 		it('retourne l’opposé d’un NombreDecimal positif', () => {
@@ -274,6 +303,19 @@ describe('NombreDecimal', () => {
 			expect(nombre.nombres_des('millièmes')).toBe(789n);
 			expect(nombre.nombres_des('dix-millièmes')).toBe(7894n);
 			expect(nombre.nombres_des('cent-millièmes')).toBe(78940n);
+		});
+	});
+
+	// Tests pour la normalisation
+	describe('normalisé', () => {
+		it('retourne le nombre normalisé', () => {
+			const nombre = new NombreDecimal(123456000n, 3n, 'POSITIF');
+			const nombre_normalisé = new NombreDecimal(123456n, 0n, 'POSITIF');
+			expect(nombre.normalisé()).toStrictEqual(nombre_normalisé);
+		});
+		it('ne touche pas aux entiers', () => {
+			const nombre = NombreDecimal.depuisEntier(10n);
+			expect(nombre.normalisé()).toStrictEqual(nombre);
 		});
 	});
 });
