@@ -1,18 +1,20 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Exemples, Item, Propriete, Schema } from '$lib/cahier/composants/de_cours/*';
-	import { Exercice, Nombre } from '$lib/cahier/composants/de_marge/*';
+	import { Exercice, SaisieNombreEntier } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { math } from 'mathlifier';
 
-	let facteur_1 = $state(3);
-	let facteur_2 = $state(3);
+	let _facteur_1 = $state(3n);
+	let _facteur_2 = $state(3n);
+	let facteur_1 = $derived(Number(_facteur_1));
+	let facteur_2 = $derived(Number(_facteur_2));
 </script>
 
 <DansLaMarge lignes_vides={7}>
-	<Nombre bind:valeur={facteur_1} min={1} max={9} label="multiplicateur" />
+	<SaisieNombreEntier bind:value={_facteur_1} min={1n} max={9n} />
 	<LigneVide />
-	<Nombre bind:valeur={facteur_2} min={1} max={10} label="multiplicateur" />
+	<SaisieNombreEntier bind:value={_facteur_2} min={1n} max={10n} />
 	<Exercice niveau={6} id_exercice={255002} position={11} />
 </DansLaMarge>
 

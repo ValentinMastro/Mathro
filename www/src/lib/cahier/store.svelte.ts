@@ -1,3 +1,5 @@
+import type { Component } from 'svelte';
+
 /* État de la page */
 export let page_state: {
 	afficher_fond_seyes: boolean;
@@ -25,7 +27,7 @@ export let page_state: {
 	zoom_page: false
 });
 
-export const PAGES: { liste: any[] } = $state({
+export const PAGES: { liste: { composant: Component; nom_fichier: string }[] } = $state({
 	liste: []
 });
 

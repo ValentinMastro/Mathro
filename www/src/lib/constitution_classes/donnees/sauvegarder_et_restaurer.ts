@@ -1,5 +1,5 @@
-import { get } from 'svelte/store';
 import { classes, eleves } from '$lib/constitution_classes/store.svelte';
+import { get } from 'svelte/store';
 
 export function sauvegarder() {
 	const data = {

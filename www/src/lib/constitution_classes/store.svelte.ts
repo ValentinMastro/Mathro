@@ -1,5 +1,5 @@
+import type { Classe, Eleve } from '$lib/constitution_classes/donnees/types';
 import { writable } from 'svelte/store';
-import { type Classe, type Donnees, type Eleve } from '$lib/constitution_classes/donnees/types';
 
 export let niveau = writable<6 | 5 | 4 | 3>(6);
 export let nombre_de_classes = writable<5 | 6>(5);

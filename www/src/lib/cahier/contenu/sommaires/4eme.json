@@ -5,27 +5,73 @@
 			"numéro": 1,
 			"titre": "Opérations sur les nombres relatifs",
 			"catégories": ["Nombres, calcul et résolution de problèmes"],
-			"objectifs": []
+			"objectifs": [],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 1,
 			"numéro": 2,
 			"titre": "Théorème de Pythagore",
 			"catégories": ["Espace et géométrie", "Nombres, calcul et résolution de problèmes", "Grandeurs et mesures"],
-			"objectifs": []
+			"objectifs": [],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 1,
 			"numéro": 3,
 			"titre": "Fractions et proportionnalité",
 			"catégories": ["Nombres, calcul et résolution de problèmes"],
-			"objectifs": []
+			"objectifs": [],
+			"première_page": 0,
+			"annexe": false
 		},
-		{ "période": 2, "numéro": 4, "titre": "Transformations du plan", "catégories": ["Espace et géométrie"], "objectifs": [] },
-		{ "période": 2, "numéro": 5, "titre": "Calcul littéral", "catégories": ["Nombres, calcul et résolution de problèmes"], "objectifs": [] },
-		{ "période": 2, "numéro": 6, "titre": "Théorème de Thalès", "catégories": ["Espace et géométrie", "Grandeurs et mesures"], "objectifs": [] },
-		{ "période": 3, "numéro": 7, "titre": "Puissances", "catégories": ["Nombres, calcul et résolution de problèmes"], "objectifs": [] },
-		{ "période": 3, "numéro": 8, "titre": "Statistiques", "catégories": ["Organisation et gestion de données et probabilités"], "objectifs": [] },
+		{
+			"période": 2,
+			"numéro": 4,
+			"titre": "Transformations du plan",
+			"catégories": ["Espace et géométrie"],
+			"objectifs": [],
+			"première_page": 0,
+			"annexe": false
+		},
+		{
+			"période": 2,
+			"numéro": 5,
+			"titre": "Calcul littéral",
+			"catégories": ["Nombres, calcul et résolution de problèmes"],
+			"objectifs": [],
+			"première_page": 0,
+			"annexe": false
+		},
+		{
+			"période": 2,
+			"numéro": 6,
+			"titre": "Théorème de Thalès",
+			"catégories": ["Espace et géométrie", "Grandeurs et mesures"],
+			"objectifs": [],
+			"première_page": 0,
+			"annexe": false
+		},
+		{
+			"période": 3,
+			"numéro": 7,
+			"titre": "Puissances",
+			"catégories": ["Nombres, calcul et résolution de problèmes"],
+			"objectifs": [],
+			"première_page": 0,
+			"annexe": false
+		},
+		{
+			"période": 3,
+			"numéro": 8,
+			"titre": "Statistiques",
+			"catégories": ["Organisation et gestion de données et probabilités"],
+			"objectifs": [],
+			"première_page": 0,
+			"annexe": false
+		},
 		{
 			"période": 3,
 			"numéro": 9,
@@ -33,9 +79,33 @@
 			"catégories": ["Espace et géométrie", "Nombres, calcul et résolution de problèmes", "Grandeurs et mesures"],
 			"objectifs": []
 		},
-		{ "période": 4, "numéro": 10, "titre": "Équations", "catégories": ["Nombres, calcul et résolution de problèmes"], "objectifs": [] },
-		{ "période": 4, "numéro": 11, "titre": "Probabilités", "catégories": ["Organisation et gestion de données et probabilités"], "objectifs": [] },
-		{ "période": 4, "numéro": 12, "titre": "Solides de l'espace", "catégories": ["Espace et géométrie"], "objectifs": [] },
+		{
+			"période": 4,
+			"numéro": 10,
+			"titre": "Équations",
+			"catégories": ["Nombres, calcul et résolution de problèmes"],
+			"objectifs": [],
+			"première_page": 0,
+			"annexe": false
+		},
+		{
+			"période": 4,
+			"numéro": 11,
+			"titre": "Probabilités",
+			"catégories": ["Organisation et gestion de données et probabilités"],
+			"objectifs": [],
+			"première_page": 0,
+			"annexe": false
+		},
+		{
+			"période": 4,
+			"numéro": 12,
+			"titre": "Solides de l'espace",
+			"catégories": ["Espace et géométrie"],
+			"objectifs": [],
+			"première_page": 0,
+			"annexe": false
+		},
 		{
 			"période": 5,
 			"numéro": 13,
@@ -43,21 +113,33 @@
 			"catégories": ["Nombres, calcul et résolution de problèmes"],
 			"objectifs": []
 		},
-		{ "période": 5, "numéro": 14, "titre": "Repérage", "catégories": ["Espace et géométrie"], "objectifs": [] },
-		{ "période": 5, "numéro": 15, "titre": "Réciproques", "catégories": ["Espace et géométrie", "Grandeurs et mesures"], "objectifs": [] },
+		{ "période": 5, "numéro": 14, "titre": "Repérage", "catégories": ["Espace et géométrie"], "objectifs": [], "première_page": 0, "annexe": false },
+		{
+			"période": 5,
+			"numéro": 15,
+			"titre": "Réciproques",
+			"catégories": ["Espace et géométrie", "Grandeurs et mesures"],
+			"objectifs": [],
+			"première_page": 0,
+			"annexe": false
+		},
 		{
 			"période": 5,
 			"numéro": 16,
 			"titre": "Médiatrices et bissectrices",
 			"catégories": ["Espace et géométrie", "Grandeurs et mesures"],
-			"objectifs": []
+			"objectifs": [],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": "tout au long de l'année",
 			"numéro": 17,
 			"titre": "Programmation",
 			"catégories": ["Algorithmique et programmation"],
-			"objectifs": []
+			"objectifs": [],
+			"première_page": 0,
+			"annexe": false
 		}
 	]
 }

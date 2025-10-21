@@ -10,7 +10,9 @@
 				"Reconnaître et produire des fractions égales",
 				"Comparer, ranger, encadrer des fractions dont les dénominateurs sont égaux ou multiples l’un de l’autre",
 				"Simplification de fractions"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 1,
@@ -25,7 +27,9 @@
 				"Reconnaître les axes et centres de symétrie d’une figure",
 				"Identifier des symétries dans des frises, des pavages, des rosaces",
 				"Mener des raisonnements en utilisant des propriétés des figures, des configurations et des symétries"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 1,
@@ -39,7 +43,9 @@
 				"Utiliser les critères de divisibilité (par 2, 3, 5, 9, 10)",
 				"Nombres premiers",
 				"Décomposition d’un nombre en produit de facteurs premiers"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 1,
@@ -50,7 +56,9 @@
 				"Connaître et utiliser la propriété sur la somme des mesures des angles d’un triangle",
 				"Reconnaître des triangles particuliers en utilisant les angles",
 				"Calculer les angles d’un triangle"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 2,
@@ -63,7 +71,9 @@
 				"Repérer sur une droite graduée les nombres décimaux relatifs",
 				"Placer des points ayant pour coordonnées des nombres relatifs dans un repère orthogonal",
 				"Comparer des nombres relatifs"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 2,
@@ -74,7 +84,9 @@
 				"Connaître l’inégalité triangulaire et l’énoncer",
 				"Connaître le lien entre l’inégalité triangulaire et la construction d’un triangle à partir de la donnée de trois longueurs",
 				"Construire un triangle à partir de la mesure d’une longueur et de deux angles ou d’un angle et de deux longueurs données"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 2,
@@ -85,7 +97,9 @@
 				"Effectuer mentalement, à la main ou à l’aide d’une calculatrice un enchaînement d’opérations en respectant les priorités opératoires",
 				"Contrôler la vraisemblance d’un résultat",
 				"Résoudre des problèmes faisant intervenir des nombres décimaux"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 2,
@@ -97,7 +111,9 @@
 				"L’autre propriété est démontrée et devient une propriété caractéristique",
 				"Savoir que les côtés opposés d’un parallélogramme sont deux à deux de même longueur grâce aux propriétés de la symétrie",
 				"Connaître et mettre en œuvre les propriétés relatives aux côtés et aux diagonales d’un parallélogramme pour effectuer des constructions et mener des raisonnements"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 2,
@@ -107,7 +123,9 @@
 			"objectifs": [
 				"Additionner ou soustraire des fractions dont les dénominateurs sont égaux ou multiples l’un de l’autre",
 				"Résoudre des problèmes faisant intervenir des fractions"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 3,
@@ -120,7 +138,9 @@
 				"Calculer le périmètre et l’aire du parallélogramme",
 				"Effectuer des conversions d’unités de durées",
 				"Effectuer des conversions d’unités de longueurs, d’aires"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 3,
@@ -130,7 +150,9 @@
 			"objectifs": [
 				"Construire les images par une symétrie axiale de segments, de droites, de cercles, de triangles ou d’assemblages de ces figures",
 				"Transformer une figure par symétrie axiale"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 3,
@@ -142,7 +164,9 @@
 				"Soustraire des nombres décimaux relatifs",
 				"Savoir que soustraire revient à additionner l’opposé",
 				"Savoir simplifier des écritures et calculer des sommes"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 3,
@@ -153,7 +177,9 @@
 				"Connaître deux droites remarquables du triangle : les hauteurs et médiatrices",
 				"Utiliser la médiatrice dans le cadre de résolution de problèmes",
 				"Démontrer que les médiatrices d’un triangle sont concourantes"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 3,
@@ -165,7 +191,9 @@
 				"Substituer une valeur numérique à une lettre pour calculer la valeur d’une expression littérale",
 				"Utiliser la distributivité simple pour réduire une expression littérale de la forme ax + bx où a et b sont des nombres décimaux",
 				"Utiliser les notations 2a pour a × 2 ou 2 × a et ab pour a × b, a² pour a × a et a3 pour a × a × a"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 4,
@@ -178,7 +206,9 @@
 				"Reconnaître des tableaux de proportionnalité",
 				"Partager une quantité en deux ou trois parts selon un ratio donné",
 				"Remobiliser les procédures déjà étudiées pour résoudre des problèmes relevant de la proportionnalité (linéaire additive, linéarité multiplicative, retour à l’unité et coefficient de proportionnalité)"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 4,
@@ -189,7 +219,9 @@
 				"Reconnaître des solides (pavé droit, cube, cylindre, prisme droit, pyramide, cône, boule) à partir d’un objet réel, d’une image, d’une représentation en perspective cavalière",
 				"Construire une représentation en perspective cavalière d’un prisme droit, d’un cylindre",
 				"Construire et mettre en relation une représentation en perspective cavalière et un patron d’un pavé droit, d’un cylindre"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 4,
@@ -206,7 +238,9 @@
 				"Représenter, sur papier ou à l’aide d’un tableur-grapheur, des données sous la forme d’un tableau",
 				"Calculer des fréquences",
 				"Exprimer des fréquences sous forme fractionnaire, en écriture décimale ou sous la forme d’un pourcentage"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 4,
@@ -218,7 +252,9 @@
 				"Utiliser une lettre pour traduire des propriétés générales",
 				"Utiliser une lettre pour démontrer une propriété générale",
 				"Tester une égalité"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 5,
@@ -232,7 +268,9 @@
 				"Vérifier la cohérence des résultats du point de vue des unités",
 				"Effectuer des conversions d’unités de volumes",
 				"Utiliser la correspondance entre les unités de volume et de contenance (1 L = 1 dm3, 1 000 L = 1 m3) pour effectuer des conversions"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 5,
@@ -244,14 +282,18 @@
 				"Mettre en œuvre des procédures variées (additivité, homogénéité, passage à l’unité, coefficient de proportionnalité). Calculer un pourcentage",
 				"Calculer une remise",
 				"Calculer un prix avant réduction"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 5,
 			"numéro": 21,
 			"titre": "Angles et parallélisme",
 			"catégories": ["Espace et géométrie"],
-			"objectifs": ["Connaître les caractérisations angulaires du parallélisme (angles alternes internes, angles correspondants)"]
+			"objectifs": ["Connaître les caractérisations angulaires du parallélisme (angles alternes internes, angles correspondants)"],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 5,
@@ -261,14 +303,18 @@
 			"objectifs": [
 				"Lire et interpréter des données brutes ou présentées sous forme de diagrammes et de graphiques",
 				"Représenter, sur papier ou à l’aide d’un tableur-grapheur, des données sous la forme d’un diagramme ou d’un graphique"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 5,
 			"numéro": 23,
 			"titre": "Probabilités",
 			"catégories": ["Organisation et gestion de données et probabilités"],
-			"objectifs": ["Placer un événement sur une échelle de probabilités", "Calculer des probabilités dans des situations simples d’équiprobabilité"]
+			"objectifs": ["Placer un événement sur une échelle de probabilités", "Calculer des probabilités dans des situations simples d’équiprobabilité"],
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 5,
@@ -278,7 +324,9 @@
 			"objectifs": [
 				"Traduire la relation de dépendance entre deux grandeurs par un tableau de valeurs",
 				"Produire une formule représentant la dépendance de deux grandeurs"
-			]
+			],
+			"première_page": 0,
+			"annexe": false
 		}
 	]
 }

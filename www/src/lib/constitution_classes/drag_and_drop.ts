@@ -1,4 +1,4 @@
-export interface DropzoneOptions<T = any> {
+export interface DropzoneOptions<T> {
 	on_dropzone: (data: T, event: DragEvent) => void;
 	dropEffect?: 'move' | 'copy' | 'link' | 'none';
 	dragover_class?: string;
@@ -43,11 +43,11 @@ export function dropzone<T>(node: HTMLElement, options: DropzoneOptions<T>) {
 		...options
 	};
 
-	function handle_dragenter(event: DragEvent) {
+	function handle_dragenter() {
 		node.classList.add(state.dragover_class!);
 	}
 
-	function handle_dragleave(event: DragEvent) {
+	function handle_dragleave() {
 		node.classList.remove(state.dragover_class!);
 	}
 

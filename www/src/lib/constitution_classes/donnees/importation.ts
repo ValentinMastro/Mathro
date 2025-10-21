@@ -1,6 +1,6 @@
 import * as XLSX from 'xlsx';
+import { classes, eleves, niveau } from '$lib/constitution_classes/store.svelte';
 import { get } from 'svelte/store';
-import { niveau, classes, eleves } from '$lib/constitution_classes/store.svelte';
 
 export async function importerDonnees(fichier: File) {
 	const data = await fichier.arrayBuffer();

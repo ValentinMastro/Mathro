@@ -32,8 +32,6 @@ function shuffle(array: string[]) {
 	return array;
 }
 
-export function onclick(event: MouseEvent) {}
-
 import init, * as wasm from '@vmastro/exercices';
 export async function récupération_des_données(niveau: number, id_exercice: number) {
 	await init();

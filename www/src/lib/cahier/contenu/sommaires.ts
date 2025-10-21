@@ -27,7 +27,7 @@ export class Chapitre {
 		public titre: string,
 		public objectifs: string[],
 		public catégories: Catégorie[],
-		public premiere_page?: number,
+		public première_page?: number,
 		public annexe?: boolean
 	) {}
 
@@ -36,12 +36,14 @@ export class Chapitre {
 	}
 }
 
-import json_6eme from '$lib/cahier/contenu/sommaires/6eme.json';
-import json_5eme from '$lib/cahier/contenu/sommaires/5eme.json';
 import json_4eme from '$lib/cahier/contenu/sommaires/4eme.json';
+import json_5eme from '$lib/cahier/contenu/sommaires/5eme.json';
+import json_6eme from '$lib/cahier/contenu/sommaires/6eme.json';
 
-function construire_chapitres(json: any[]): Chapitre[] {
-	return json.map((c) => new Chapitre(c.période, c.numéro, c.titre, c.objectifs, c.catégories, c.premiere_page, c.annexe));
+function construire_chapitres(json: typeof json_6eme.chapitres | typeof json_5eme.chapitres | typeof json_4eme.chapitres): Chapitre[] {
+	return json.map(
+		(c) => new Chapitre(c.période as Période, c.numéro, c.titre, c.objectifs, c.catégories as Catégorie[], c.première_page ?? 0, c.annexe ?? false)
+	);
 }
 
 export function sommaire(niveau: 3 | 4 | 5 | 6): Chapitre[] {

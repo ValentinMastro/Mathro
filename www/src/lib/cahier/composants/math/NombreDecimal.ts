@@ -42,6 +42,21 @@ export class NombreDecimal {
 	}
 
 	// MÉTHODES
+	public arrondi_au(position: keyof typeof POSITIONS | number): NombreDecimal {
+		if (typeof position === 'string') {
+			position = POSITIONS[position];
+		}
+		if (position < -this.nombre_de_chiffres_après_la_virgule) {
+			return this;
+		}
+
+		let chiffre_apres = this.chiffre_des(position - 1);
+		if (chiffre_apres >= 5) {
+			let nombre = this.arrondi_au(position + 1);
+			return nombre;
+		}
+		return this;
+	}
 	public chiffre_des(position: keyof typeof POSITIONS | number): number {
 		if (typeof position === 'string') {
 			position = POSITIONS[position];

@@ -7,6 +7,7 @@
 	import { math } from 'mathlifier';
 	import { bignumber, type BigNumber } from 'mathjs';
 	import { Decimal } from 'decimal.js';
+	import { NombreDecimal } from '$lib/cahier/composants/math/NombreDecimal';
 
 	function digitAtPlace(nombre: number, place: number): BigNumber {
 		// Renvoie le chiffre des   ...
@@ -24,10 +25,10 @@
 		return floored.mod(10);
 	}
 
-	let nombre = $state(0.237);
-	let chiffre_des_dixiemes = $derived(digitAtPlace(nombre, 1).toNumber());
-	let chiffre_des_centiemes = $derived(digitAtPlace(nombre, 2).toNumber());
-	let chiffre_des_milliemes = $derived(digitAtPlace(nombre, 3).toNumber());
+	let nombre = $state(NombreDecimal.depuisPartiesEntieresEtDecimales(0n, 237n, 'POSITIF'));
+	let chiffre_des_dixiemes = $derived(nombre.chiffre_des('dixièmes'));
+	let chiffre_des_centiemes = $derived(nombre.chiffre_des('centièmes'));
+	let chiffre_des_milliemes = $derived(nombre.chiffre_des('millièmes'));
 
 	let arrondi_au_dixieme = $derived(bignumber(nombre).toDecimalPlaces(1, Decimal.ROUND_DOWN).toNumber());
 	let arrondi_au_centieme = $derived(bignumber(nombre).toDecimalPlaces(2, Decimal.ROUND_DOWN).toNumber());

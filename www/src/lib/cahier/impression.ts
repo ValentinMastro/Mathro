@@ -1,8 +1,7 @@
 import * as htmlToImage from 'html-to-image';
+import { NOMBRE_DE_PAGES, page_state } from '$lib/cahier/store.svelte';
 import jsPDF from 'jspdf';
 import { tick } from 'svelte';
-
-import { NOMBRE_DE_PAGES, page_state } from '$lib/cahier/store.svelte';
 
 async function captureNoeudEnJPEG(node: HTMLElement): Promise<{ dataUrl: string; w: number; h: number }> {
 	// Attends que la mise en page soit prête

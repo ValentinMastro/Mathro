@@ -14,7 +14,8 @@
 				"Additionner et soustraire des fractions"
 			],
 			"catégories": ["Nombres, calcul et résolution de problèmes"],
-			"premiere_page": 3
+			"première_page": 3,
+			"annexe": false
 		},
 		{
 			"période": 1,
@@ -29,7 +30,8 @@
 				"Médiatrice d’un segment (définition + construction à l’équerre)"
 			],
 			"catégories": ["Espace et géométrie"],
-			"premiere_page": 9
+			"première_page": 9,
+			"annexe": false
 		},
 		{
 			"période": 1,
@@ -45,7 +47,8 @@
 				"Encadrer un nombre décimal par deux nombres décimaux, intercaler un nombre décimal entre deux nombres décimaux"
 			],
 			"catégories": ["Nombres, calcul et résolution de problèmes"],
-			"premiere_page": 18
+			"première_page": 18,
+			"annexe": false
 		},
 		{
 			"période": 2,
@@ -58,7 +61,8 @@
 				"Bissectrice d’un angle saillant"
 			],
 			"catégories": ["Espace et géométrie"],
-			"premiere_page": 21
+			"première_page": 21,
+			"annexe": false
 		},
 		{
 			"période": 2,
@@ -75,7 +79,8 @@
 				"Connaitre le lien avec la division par 10, 100 et par 1 000"
 			],
 			"catégories": ["Nombres, calcul et résolution de problèmes"],
-			"premiere_page": 29
+			"première_page": 29,
+			"annexe": false
 		},
 		{
 			"période": 2,
@@ -88,7 +93,8 @@
 				"Somme des mesures des angles d’un triangle"
 			],
 			"catégories": ["Espace et géométrie"],
-			"premiere_page": 33
+			"première_page": 33,
+			"annexe": false
 		},
 		{
 			"période": 2,
@@ -100,7 +106,8 @@
 				"Rappels : Multiples et diviseurs"
 			],
 			"catégories": ["Nombres, calcul et résolution de problèmes"],
-			"premiere_page": 41
+			"première_page": 41,
+			"annexe": false
 		},
 		{
 			"période": 3,
@@ -114,7 +121,8 @@
 				"Médiatrices d’un triangle et cercle circonscrit à un triangle"
 			],
 			"catégories": ["Espace et géométrie"],
-			"premiere_page": 43
+			"première_page": 43,
+			"annexe": false
 		},
 		{
 			"période": 3,
@@ -128,7 +136,8 @@
 				"Differentes écritures d’un nombre décimal : écriture à virgule, fraction"
 			],
 			"catégories": ["Nombres, calcul et résolution de problèmes"],
-			"premiere_page": 48
+			"première_page": 48,
+			"annexe": false
 		},
 		{
 			"période": 3,
@@ -139,7 +148,8 @@
 				"Constructions (carré, rectangle, assemblage de figure)"
 			],
 			"catégories": ["Espace et géométrie"],
-			"premiere_page": 0
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 3,
@@ -153,7 +163,8 @@
 				"S’initier à la résolution de problèmes d’échelles"
 			],
 			"catégories": ["La proportionnalité"],
-			"premiere_page": 0
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 4,
@@ -167,7 +178,8 @@
 				"Aire d’un carré ou d’un rectangle (formule)"
 			],
 			"catégories": ["Grandeurs et mesures"],
-			"premiere_page": 0
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 4,
@@ -180,7 +192,8 @@
 				"Rappels : axes de symétrie d’une figure (médiatrice + bissectrice)"
 			],
 			"catégories": ["Espace et géométrie"],
-			"premiere_page": 0
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 4,
@@ -194,7 +207,8 @@
 				"Appliquer un pourcentage à une grandeur ou à un nombre"
 			],
 			"catégories": ["La proportionnalité", "Nombres, calcul et résolution de problèmes"],
-			"premiere_page": 0
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 5,
@@ -207,7 +221,8 @@
 				"Déterminer un volume (assemblage de cubes)"
 			],
 			"catégories": ["Espace et géométrie"],
-			"premiere_page": 0
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 5,
@@ -220,7 +235,8 @@
 				"Comprendre, utiliser et produire une suite d’instructions qui décrivent un déplacement en utilisant un vocabulaire spatial précis"
 			],
 			"catégories": ["Grandeurs et mesures"],
-			"premiere_page": 0
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 5,
@@ -233,7 +249,8 @@
 				"Faire un choix en filtrant les données d’un tableau selon un critère"
 			],
 			"catégories": ["Organisation et gestion de données et probabilités"],
-			"premiere_page": 0
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": 5,
@@ -245,7 +262,8 @@
 				"Comparer des résultats d’une expérience aléatoire répétée à une probabilité calculée"
 			],
 			"catégories": ["Organisation et gestion de données et probabilités"],
-			"premiere_page": 0
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": "tout au long de l'année",
@@ -256,7 +274,8 @@
 				"Identifier la structure d’un motif évolutif en repérant une régularité et en identifiant une structure"
 			],
 			"catégories": ["Nombres, calcul et résolution de problèmes"],
-			"premiere_page": 0
+			"première_page": 0,
+			"annexe": false
 		},
 		{
 			"période": "tout au long de l'année",
@@ -269,7 +288,8 @@
 				"Programmer la construction d’un chemin simple"
 			],
 			"catégories": ["Initiation à la pensée informatique"],
-			"premiere_page": 0
+			"première_page": 0,
+			"annexe": false
 		}
 	]
 }

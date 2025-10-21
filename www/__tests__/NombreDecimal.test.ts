@@ -1,4 +1,4 @@
-import { expect, describe, it } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { NombreDecimal } from '../src/lib/cahier/composants/math/NombreDecimal';
 
 describe('NombreDecimal', () => {
