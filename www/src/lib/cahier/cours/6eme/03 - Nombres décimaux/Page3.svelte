@@ -1,42 +1,32 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Exemple, Exemples, Item, Methode, Schema } from '$lib/cahier/composants/de_cours/*';
-	import { Nombre } from '$lib/cahier/composants/de_marge/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-
+	import { SaisieNombreDecimal } from '$lib/cahier/composants/de_marge/*';
+	import { NombreDecimal } from '$lib/cahier/composants/math/*';
+	import { Point } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
-	import { bignumber, type BigNumber } from 'mathjs';
-	import { Decimal } from 'decimal.js';
-	import { NombreDecimal } from '$lib/cahier/composants/math/NombreDecimal';
-
-	function digitAtPlace(nombre: number, place: number): BigNumber {
-		// Renvoie le chiffre des   ...
-		//    place = 1   ->        dixièmes
-		//    place = 2   ->        centièmes
-		//    place = 3   ->        millièmes
-		//    etc.
-		const d = bignumber(nombre);
-		if (place < 1 || !Number.isInteger(place)) {
-			throw new Error('place doit être un entier ≥ 1');
-		}
-		const facteur = bignumber(10).pow(place);
-		const shifted = d.times(facteur);
-		const floored = shifted.floor();
-		return floored.mod(10);
-	}
 
 	let nombre = $state(NombreDecimal.depuisPartiesEntieresEtDecimales(0n, 237n, 'POSITIF'));
 	let chiffre_des_dixiemes = $derived(nombre.chiffre_des('dixièmes'));
 	let chiffre_des_centiemes = $derived(nombre.chiffre_des('centièmes'));
 	let chiffre_des_milliemes = $derived(nombre.chiffre_des('millièmes'));
 
-	let arrondi_au_dixieme = $derived(bignumber(nombre).toDecimalPlaces(1, Decimal.ROUND_DOWN).toNumber());
-	let arrondi_au_centieme = $derived(bignumber(nombre).toDecimalPlaces(2, Decimal.ROUND_DOWN).toNumber());
+	let A1 = $derived({
+		x: 400 + 1000 * nombre.toNumber(),
+		y: 200
+	});
+	let A2 = $derived({
+		x: 400 + 100 * chiffre_des_centiemes + 10 * chiffre_des_milliemes,
+		y: 500
+	});
+	let A3 = $derived({
+		x: 400 + 100 * chiffre_des_milliemes,
+		y: 800
+	});
 </script>
 
-<DansLaMarge>
-	<LigneVide lignes={5} />
-	<Nombre bind:valeur={nombre} min={0} max={1} step={0.001} />
+<DansLaMarge lignes_vides={5}>
+	<SaisieNombreDecimal bind:value={nombre} min={NombreDecimal.ZERO} max={NombreDecimal.UN} step={new NombreDecimal(1n, 3n, 'POSITIF')} />
 </DansLaMarge>
 
 <Contenu>
@@ -44,19 +34,10 @@
 	<Exemple />
 	<Schema lignes={10} aspectRatioSVG={1.7}>
 		{#snippet svg()}
-			{@const position_du_nombre_sur_le_1er_axe = 400 + 1000 * nombre}
-			{@const position_du_nombre_sur_le_2e__axe = 400 + (1000 * (nombre - arrondi_au_dixieme)) / 0.1}
-			{@const position_du_nombre_sur_le_3e__axe = 400 + (1000 * (nombre - arrondi_au_centieme)) / 0.01}
-			<circle cx={position_du_nombre_sur_le_1er_axe} cy={200} r={10} fill="red" />
-			<circle cx={position_du_nombre_sur_le_2e__axe} cy={500} r={12} fill="red" />
-			<circle cx={position_du_nombre_sur_le_3e__axe} cy={800} r={14} fill="red" />
-			<!-- Nombre -->
-			<text x={position_du_nombre_sur_le_1er_axe} y={200 + 80} font-size={45} text-anchor="middle" fill="red">{nombre.toLocaleString('fr-FR')}</text>
-			<text x={position_du_nombre_sur_le_2e__axe} y={500 + 80} font-size={45} text-anchor="middle" fill="red">{nombre.toLocaleString('fr-FR')}</text>
-			{#if chiffre_des_milliemes != 0}
-				<text x={position_du_nombre_sur_le_3e__axe} y={800 + 80} font-size={45} text-anchor="middle" fill="red">{nombre.toLocaleString('fr-FR')}</text
-				>
-			{/if}
+			<Point point={A1} nom={nombre.toString()} type={{ forme: 'disque', taille: 10 }} fill="red" font-size={45} dy={60} />
+			<Point point={A2} nom={nombre.toString()} type={{ forme: 'disque', taille: 12 }} fill="red" font-size={45} dy={60} />
+			<Point point={A3} nom={nombre.toString()} type={{ forme: 'disque', taille: 14 }} fill="red" font-size={45} dy={60} />
+
 			<!-- Axes -->
 			{#each [200, 500, 800] as y, index}
 				<!-- Axe -->
@@ -69,8 +50,8 @@
 				{/each}
 				<!-- Graduations de début et de fin -->
 				{@const grande_graduation = 30}
-				{@const debut = bignumber(nombre).toDecimalPlaces(index, Decimal.ROUND_DOWN).toNumber().toLocaleString('fr-FR')}
-				{@const fin = bignumber(nombre).toDecimalPlaces(index, Decimal.ROUND_UP).toNumber().toLocaleString('fr-FR')}
+				{@const debut = nombre.arrondi_au(-index, 'INFÉRIEUR')}
+				{@const fin = nombre.arrondi_au(-index, 'SUPÉRIEUR')}
 				<text x={400} y={y + 80} font-size={45} text-anchor="middle">{debut}</text>
 				<text x={1400} y={y + 80} font-size={45} text-anchor="middle">{fin}</text>
 				<line x1={400} x2={400} y1={y - grande_graduation} y2={y + grande_graduation} stroke="black" stroke-width={5} />
