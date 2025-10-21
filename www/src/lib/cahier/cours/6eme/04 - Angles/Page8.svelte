@@ -23,7 +23,7 @@
 			<Point nom="C" point={C} type={{ forme: 'croix', taille: 20 }} dx={0} dy={100} />
 			<Point nom="D" point={D} type={{ forme: 'croix', taille: 20 }} dx={0} dy={100} stroke="red" />
 			<Angle r={80} points={[A, B, D]} fill="skyblue" />
-			<Angle r={120} points={[D, B, C]} fill="skyblue" />
+			<Angle r={120} points={[C, B, D]} fill="skyblue" />
 			<DemiDroite origine={B} passantPar={A} stroke="black" stroke-width={5} />
 			<DemiDroite origine={B} passantPar={C} stroke="black" stroke-width={5} />
 			<DemiDroite origine={B} passantPar={D} stroke="red" stroke-width={5} />

@@ -23,7 +23,7 @@
 			{@const B = { x: 1100, y: 900 }}
 			{@const C = { x: 1300, y: 500 }}
 			<Angle points={[A, O, C]} r={100} fill="forestgreen" />
-			<Angle points={[C, O, B]} r={120} fill="red" />
+			<Angle points={[B, O, C]} r={150} fill="red" />
 			<DemiDroite origine={O} passantPar={A} stroke="black" stroke-width={5} />
 			<DemiDroite origine={O} passantPar={B} stroke="black" stroke-width={5} />
 			<DemiDroite origine={O} passantPar={C} stroke="black" stroke-width={5} />

@@ -25,7 +25,7 @@
 			{@const F = { x: 1500, y: 100 }}
 			{@const G = { x: 1400, y: 500 }}
 			<Angle points={[D, G, F]} r={100} fill="skyblue" />
-			<Angle points={[F, G, E]} r={100} fill="forestgreen" />
+			<Angle points={[E, G, F]} r={100} fill="forestgreen" />
 			<Droite passantPar={[D, E]} stroke="black" stroke-width={5} />
 			<Point nom="D" point={D} type={{ forme: 'croix', taille: 20 }} font-size={60} dx={0} dy={80} />
 			<Point nom="E" point={E} type={{ forme: 'croix', taille: 20 }} font-size={60} dx={0} dy={80} />
