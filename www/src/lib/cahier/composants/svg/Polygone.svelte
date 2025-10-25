@@ -7,6 +7,7 @@
   - `points` *{ x: number; y: number }[]* : sommets du polygone
   - `noms` *string[]* : noms des sommets *(par défaut : A, B, C, ...)*
   - `afficher_points` *boolean* : afficher les points *(par défaut : false)*
+  - `afficher_noms` *boolean* : afficher les noms *(par défaut : false)*
   - `distance_nom` *number* : distance entre le point et son nom *(par défaut : 60)*
   - `taille_nom` *number* : taille du texte des noms *(par défaut : même valeur que distance_nom)*
   - `type` *{ forme: 'croix' | 'disque' | string; taille: number }* : type et taille des points *(par défaut : { forme: 'croix', taille: 20 })*
