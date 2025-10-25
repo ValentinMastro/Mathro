@@ -1,3 +1,12 @@
+<!--
+    @component
+    ## Item (extends HTMLDivElement)
+    ### Props
+    `bullet` *string* : symbole à gauche de la ligne (par défaut : '&bullet;')
+    `bullet_color` *string | undefined* : couleur du symbole (par défaut : 'undefined')
+    `lignes` *number* : nombre de lignes (par défaut : 1)
+ -->
+
 <script lang="ts">
 	import { type Snippet } from 'svelte';
 	import { type HTMLAttributes } from 'svelte/elements';
@@ -23,7 +32,7 @@
 
 <style>
 	#item {
-		margin-left: 1.5em;
+		margin-left: var(--carreau);
 		font-size: var(--font-size);
 		line-height: var(--line-height);
 		height: calc(var(--lignes) * var(--carreau));
