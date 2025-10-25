@@ -7,7 +7,7 @@
 			y: number;
 		};
 		type: {
-			forme: 'croix' | 'disque' | string;
+			forme: 'croix' | 'disque' | 'rien' | string;
 			taille: number;
 		};
 		nom?: string;
