@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { SousPartie, Contenu } from '$lib/cahier/composants/de_chapitrage/*';
 	import { CelluleTableau, LigneTableau, Paragraphe, Schema, Tableau } from '$lib/cahier/composants/de_cours/*';
+	import { Disque, SecteurDeCouronne, TexteSVG } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 
 	const PREFIXES: Record<number, { préfixe: string; symbole: string }> = {
@@ -85,13 +86,6 @@
 		}
 		return result;
 	}
-
-	function cos(angle: number): number {
-		return Math.cos((angle * Math.PI) / 180);
-	}
-	function sin(angle: number): number {
-		return Math.sin((angle * Math.PI) / 180);
-	}
 </script>
 
 <Tableau style="position:absolute; top: 18.8%; font-size: calc(var(--font-size) * 0.8); width: 100%; background-color: white;" lignes={4}>
@@ -128,74 +122,49 @@
 	<Paragraphe couleur="noir" nom_du_paragraphe="Tableau des préfixes du SI" lignes_vides={6} />
 	<Paragraphe couleur="noir" nom_du_paragraphe="Les sept unités de base du Système International" />
 
-	<Tableau style="font-size: calc(var(--font-size) * 0.8); width: 100%; background-color: white;">
+	<Tableau style="font-size: calc(var(--font-size) * 0.8); background-color: white;" colonnes={20}>
 		<LigneTableau style="font-weight: bold; color: white; background-color: #777;" --lignes={1}>
-			<CelluleTableau>Grandeur physique</CelluleTableau>
-			<CelluleTableau>Unité</CelluleTableau>
-			<CelluleTableau>Symbole de l'unité</CelluleTableau>
+			<CelluleTableau colonnes={9}>Grandeur physique</CelluleTableau>
+			<CelluleTableau colonnes={7}>Unité</CelluleTableau>
+			<CelluleTableau colonnes={4}>Symbole</CelluleTableau>
 		</LigneTableau>
 		{#each unites as { grandeur, unite, symbole }}
 			<LigneTableau>
-				<CelluleTableau>{grandeur}</CelluleTableau>
-				<CelluleTableau>{unite}</CelluleTableau>
-				<CelluleTableau>{symbole}</CelluleTableau>
+				<CelluleTableau colonnes={9}>{grandeur}</CelluleTableau>
+				<CelluleTableau colonnes={7}>{unite}</CelluleTableau>
+				<CelluleTableau colonnes={4}>{symbole}</CelluleTableau>
 			</LigneTableau>
 		{/each}
 	</Tableau>
 	<Schema lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
-			{#snippet secteur(cx: number, cy: number, r1: number, r2: number, r3: number, couleur: string, angle: number)}
-				<path
-					class="petit_secteur"
-					d="M {r1 * cos(angle - 22.5)} {r1 * sin(angle - 22.5)}
-                        L {r2 * cos(angle - 22.5)} {r2 * sin(angle - 22.5)}
-                        A {r2} {r2} 0 0 1 {r2 * cos(angle + 22.5)} {r2 * sin(angle + 22.5)}
-                        L {r1 * cos(angle + 22.5)} {r1 * sin(angle + 22.5)}
-                        A {r1} {r1} 0 0 0 {r1 * cos(angle - 22.5)} {r1 * sin(angle - 22.5)}
-                        Z"
-					transform={`translate(${cx}, ${cy})`}
-					opacity="50%"
-					fill={couleur}
-				></path>
-				<path
-					class="grand_secteur"
-					d="M {r2 * cos(angle - 22.5)} {r2 * sin(angle - 22.5)}
-                        L {r3 * cos(angle - 22.5)} {r3 * sin(angle - 22.5)}
-                        A {r3} {r3} 0 0 1 {r3 * cos(angle + 22.5)} {r3 * sin(angle + 22.5)}
-                        L {r2 * cos(angle + 22.5)} {r2 * sin(angle + 22.5)}
-                        A {r2} {r2} 0 0 0 {r2 * cos(angle - 22.5)} {r2 * sin(angle - 22.5)}
-                        Z"
-					transform={`translate(${cx}, ${cy})`}
-					fill={couleur}
-				></path>
-			{/snippet}
+			<Disque centre={{ x: 1000, y: 500 }} rayon={450} fill="white" />
 			{#each unites as { couleur, constante, lien, symbole }, i}
-				{@render secteur(1000, 500, 160, 256, 448, couleur, -90 + 51 * i)}
-				<text
-					x={1000}
-					y={500 - (160 + 256) / 2}
+				{@const [rayon1, rayon2, rayon3] = [160, 256, 448]}
+				{@const [angle1, angle2] = [((-90 + 51 * i - 22.5) * Math.PI) / 180, ((-90 + 51 * i + 22.5) * Math.PI) / 180]}
+				<SecteurDeCouronne centre={{ x: 1000, y: 500 }} {rayon1} {rayon2} {angle1} {angle2} fill={couleur} opacity={0.5} />
+				<SecteurDeCouronne centre={{ x: 1000, y: 500 }} rayon1={rayon2} rayon2={rayon3} {angle1} {angle2} fill={couleur} />
+				<TexteSVG
+					point={{ x: 1000, y: 500 - (rayon1 + rayon2) / 2 }}
 					font-size="75"
 					font-style="italic"
-					text-anchor="middle"
-					dominant-baseline="middle"
 					transform={`rotate(${51 * i}, 1000, 500)`}
+					style="user-select: none;"
 				>
 					{@html constante}
-				</text>
-				<text
-					x={1000}
-					y={500 - (256 + 448) / 2}
+				</TexteSVG>
+				<TexteSVG
+					point={{ x: 1000, y: 500 - (rayon2 + rayon3) / 2 }}
 					font-size="100"
 					font-weight="bold"
 					fill="white"
-					text-anchor="middle"
-					dominant-baseline="middle"
 					transform={`rotate(${51 * i}, 1000, 500)`}
+					style="user-select: none;"
 				>
 					{symbole}
-				</text>
+				</TexteSVG>
 			{/each}
-			<text x="1000" y="510" font-size="180" text-anchor="middle" dominant-baseline="middle">SI</text>
+			<TexteSVG point={{ x: 1000, y: 510 }} font-size={180}>SI</TexteSVG>
 		{/snippet}
 	</Schema>
 </Contenu>
