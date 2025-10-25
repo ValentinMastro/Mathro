@@ -20,10 +20,11 @@
 		points: { x: number; y: number }[];
 		noms?: string[];
 		afficher_points?: boolean;
+		afficher_noms?: boolean;
 		distance_nom?: number;
 		taille_nom?: number;
 		type?: {
-			forme: 'croix' | 'disque' | string;
+			forme: 'croix' | 'disque' | 'rien' | string;
 			taille: number;
 		};
 	};
@@ -34,6 +35,7 @@
 			.fill('')
 			.map((_, index) => String.fromCharCode(index + 65)),
 		afficher_points = false,
+		afficher_noms = false,
 		distance_nom = 60,
 		taille_nom = distance_nom,
 		type = { forme: 'croix', taille: 20 },
@@ -138,5 +140,12 @@
 		{@const nom = noms[index]}
 		{@const { dx, dy } = positions_noms[index]}
 		<Point {nom} {point} {dx} {dy} {type} font-size={taille_nom} />
+	{/each}
+{/if}
+{#if afficher_noms}
+	{#each points as point, index}
+		{@const nom = noms[index]}
+		{@const { dx, dy } = positions_noms[index]}
+		<Point {nom} {point} {dx} {dy} type={{ forme: 'rien', taille: 0 }} font-size={taille_nom} />
 	{/each}
 {/if}
