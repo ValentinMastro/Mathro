@@ -1,60 +1,85 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Schema, Exemple, Item } from '$lib/cahier/composants/de_cours/*';
+	import { Schema, Exemple, Item, Paragraphe } from '$lib/cahier/composants/de_cours/*';
+	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
+	import { LatexAlign } from '$lib/cahier/composants/math/*';
+	import { Fleche, Polygone, Rectangle, Segment, TexteSVG } from '$lib/cahier/composants/svg/*';
 	import { math, alignStar } from 'mathlifier';
+
+	const U = { x: 100, y: 500 };
+	const V = { x: 560, y: 252 };
+	const W = { x: 600, y: 748 };
+	const X = { x: 840, y: 100 };
+	const Y = { x: 900, y: 900 };
+
+	const milieuUV = { x: (U.x + V.x) / 2, y: (U.y + V.y) / 2 };
+	const milieuUW = { x: (U.x + W.x) / 2, y: (U.y + W.y) / 2 };
 </script>
 
 <Contenu>
 	<Partie numero={2} titre="Rédaction" />
-	<Exemple lignes={25}>
-		<Schema lignes={10} aspectRatioSVG={2}>
-			{#snippet svg()}
-				<defs>
-					<marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-						<path d="M 0 0 L 10 5 L 0 10 z" />
-					</marker>
-					<style>
-						text {
-							font-size: 60px;
-							fill: black;
-						}
-					</style>
-				</defs>
+	<Exemple />
+	<Schema lignes={10} aspectRatioSVG={1.3} html_lignes_vides={3}>
+		{#snippet svg()}
+			<!-- Cadre -->
+			<Rectangle
+				points={[
+					{ x: 0, y: 2 },
+					{ x: 1000 - 1, y: 1000 }
+				]}
+			/>
 
-				<path d="M 100 500 L 840 100 L 900 900 Z" stroke="black" fill="none" stroke-width={4} />
-				<line x1="560" x2="600" y1="252" y2="748" stroke="black" stroke-width={4} />
-				<text x="80" y="500" text-anchor="end">U</text>
-				<text x="860" y="100" text-anchor="start">X</text>
-				<text x="920" y="900" text-anchor="start">Y</text>
-				<text x="560" y="220" text-anchor="middle">V</text>
-				<text x="600" y="810" text-anchor="middle">W</text>
+			<Polygone points={[U, X, Y]} noms={['U', 'X', 'Y']} afficher_noms distance_nom={45} />
+			<Segment points={[V, W]} />
+			<TexteSVG point={{ x: 560, y: 220 }}>V</TexteSVG>
+			<TexteSVG point={{ x: 600, y: 810 }}>W</TexteSVG>
 
-				<line x1="100" x2="520" y1="460" y2="240" stroke="red" stroke-width={4} marker-start="url(#arrow)" marker-end="url(#arrow)" />
-				<line x1="100" x2="560" y1="540" y2="780" stroke="red" stroke-width={4} marker-start="url(#arrow)" marker-end="url(#arrow)" />
-				<text x="260" y="340" text-anchor="middle" fill="red">4 cm</text>
-				<text x="280" y="740" text-anchor="middle" fill="red">4,5 cm</text>
+			<Segment points={[U, V]} stroke="red" stroke-dasharray="30,10" stroke-width={12} />
+			<Segment points={[U, W]} stroke="red" stroke-dasharray="30,10" stroke-width={12} />
+			<TexteSVG
+				point={milieuUV}
+				style="fill: red; transform-origin: {milieuUV.x}px {milieuUV.y}px; transform: rotateZ(-28deg) translate(-30px, -30px)"
+			>
+				4 cm
+			</TexteSVG>
+			<TexteSVG point={milieuUW} style="fill: red; transform-origin: {milieuUW.x}px {milieuUW.y}px; transform: rotateZ(28deg) translate(50px, 50px)">
+				4,5 cm
+			</TexteSVG>
 
-				<line x1="140" x2="820" y1="500" y2="140" stroke="green" stroke-width={4} marker-start="url(#arrow)" marker-end="url(#arrow)" />
-				<line x1="140" x2="860" y1="500" y2="840" stroke="green" stroke-width={4} marker-start="url(#arrow)" marker-end="url(#arrow)" />
-				<text x="500" y="400" text-anchor="middle" fill="green">8 cm</text>
+			{@const U95X = { x: 0.95 * U.x + 0.05 * X.x, y: 0.95 * U.y + 0.05 * X.y }}
+			{@const U47_5X = { x: 0.475 * U.x + 0.525 * X.x, y: 0.475 * U.y + 0.525 * X.y }}
+			<Fleche points={[U95X, X]} fill="green" stroke="green" style="transform: translate(0px, 30px);" />
+			<Fleche points={[X, U95X]} fill="green" stroke="green" style="transform: translate(0px, 30px);" />
+			<TexteSVG point={U47_5X} style="fill: green; transform-origin: {U47_5X.x}px {U47_5X.y}px; transform: rotateZ(-30deg) translate(0, 60px)">
+				8 cm
+			</TexteSVG>
 
-				<text x="600" y="980" text-anchor="middle">Les droites (WV) et (XY) sont parallèles.</text>
-				<text x="1000" y="500" text-anchor="start">Question :</text>
-				<line x1="1000" x2="1240" y1="510" y2="510" stroke="black" stroke-width={4} />
-				<text x="1000" y="620" text-anchor="start">Calculer la longueur UY.</text>
-			{/snippet}
-		</Schema>
+			<Rectangle
+				points={[
+					{ x: 270 - 200, y: 80 - 40 },
+					{ x: 270 + 200, y: 80 + 40 }
+				]}
+			/>
+			<TexteSVG point={{ x: 270, y: 80 }}>(WV) // (XY)</TexteSVG>
+		{/snippet}
+		{#snippet html()}
+			<Paragraphe nom_du_paragraphe="Question :">Calculer UY.</Paragraphe>
+		{/snippet}
+	</Schema>
 
-		<u>On sait que :</u>
+	<LigneVide lignes={2} />
+
+	<Paragraphe nom_du_paragraphe="On sait que : " couleur="bleu" lignes={3}>
 		<Item>les points U, V, X sont alignés</Item>
 		<Item>les points U, W, Y sont alignés</Item>
 		<Item>{@html math('(\\text{WV})//(\\text{XY})')}</Item>
-		<u>D'après</u> le théorème de Thalès : <br />
+	</Paragraphe>
 
-		{@html alignStar(`
-                \\frac{\\text{UX}}{\\text{UV}} &= \\frac{\\text{UY}}{\\text{UW}} = \\frac{\\text{XY}}{\\text{VW}} \\\\[0.5cm]
-                \\frac{8}{4} &= \\frac{\\text{UY}}{4{,}5} = \\frac{\\text{XY}}{\\text{VW}} \\\\[0.5cm]
-                \\text{UY} &= \\frac{8 \\times 4{,}5}{4} = 9 & \\text{(produit en croix)} \\\\[0.5cm]
-            `)}
-	</Exemple>
+	<Paragraphe nom_du_paragraphe="D'après le théorème de Thalès :" couleur="bleu" lignes={6}>
+		<center>
+			{@html math('\\dfrac{\\text{UX}}{\\text{UV}} = \\dfrac{\\text{UY}}{\\text{UW}} = \\dfrac{\\text{XY}}{\\text{VW}}')} <br /><br />
+			{@html math('\\dfrac{8}{4} = \\dfrac{\\text{UY}}{4,5} = \\dfrac{\\text{XY}}{\\text{VW}}')} <br /><br />
+			{@html math('\\text{UY} = \\frac{8 \\times 4,5}{4} = 9 \\quad \\text{(produit en croix)}')}
+		</center>
+	</Paragraphe>
 </Contenu>

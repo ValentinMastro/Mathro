@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Exemples, Item } from '$lib/cahier/composants/de_cours/*';
-	import { Nombre } from '$lib/cahier/composants/de_marge/*';
+	import { SaisieNombreEntier } from '$lib/cahier/composants/de_marge/*';
 	import { math } from 'mathlifier';
 
-	let a = $state(3);
+	let a = $state(3n);
 </script>
 
 <DansLaMarge lignes_vides={7}>
-	<Nombre label="a" bind:valeur={a} min={-20} max={20} />
+	<SaisieNombreEntier bind:value={a} min={-20n} max={20n} />
 </DansLaMarge>
 
 <Contenu>
@@ -20,10 +20,10 @@
 		<Item lignes={3}>
 			{@html math('a^2 + 3a')} et {@html math('a(a+3)')} sont égales.
 			<Item>
-				{@html math(`a^2 + 3a = ${a}^2 + 3 \\times ${a} = \\textcolor{forestgreen}{${a * a + 3 * a}}`)}
+				{@html math(`a^2 + 3a = ${a}^2 + 3 \\times ${a} = \\textcolor{forestgreen}{${a * a + 3n * a}}`)}
 			</Item>
 			<Item>
-				{@html math(`a(a+3) = ${a} \\times (${a}+3) = ${a} \\times ${a + 3} = \\textcolor{forestgreen}{${a * (a + 3)}}`)}
+				{@html math(`a(a+3) = ${a} \\times (${a}+3) = ${a} \\times ${a + 3n} = \\textcolor{forestgreen}{${a * (a + 3n)}}`)}
 			</Item>
 		</Item>
 		<Item lignes={3}>
@@ -32,7 +32,7 @@
 				{@html math(`a^2 = ${a}^2 = \\textcolor{red}{${a * a}}`)}
 			</Item>
 			<Item>
-				{@html math(`2a = 2 \\times ${a} = \\textcolor{red}{${2 * a}}`)}
+				{@html math(`2a = 2 \\times ${a} = \\textcolor{red}{${2n * a}}`)}
 			</Item>
 		</Item>
 	</Exemples>

@@ -11,7 +11,6 @@
 		Développer une expression littérale, c'est transformer un produit en une somme.<br />
 		Factoriser une expression littérale, c'est transformer une somme en un produit.
 	</Definition>
-	<SousPartie numero={1} titre="Distributivité" />
 	<Paragraphe couleur="rouge" nom_du_paragraphe="Règle">
 		Soient {@html math('a')}, {@html math('b')} et {@html math('k')} trois nombres :
 		{@html math('k (a + b) = ka + kb')}
