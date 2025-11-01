@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { Partie, Contenu } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Item, Schema } from '$lib/cahier/composants/de_cours/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
+	import { Definition, Exemple, Item, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import MultiItem from '$lib/cahier/composants/de_cours/MultiItem.svelte';
+	import { AxeGradué, Fleche, Point, TexteSVG } from '$lib/cahier/composants/svg/*';
+	import { math } from 'mathlifier';
 
 	let points = {
 		A: 2,
@@ -9,60 +11,59 @@
 		C: 0.5,
 		D: -2.5
 	};
+
+	const début = { x: 500, y: 500 };
+	const fin = { x: 5000, y: 500 };
 </script>
 
 <Contenu>
 	<Partie numero={2} titre="Repérage sur une droite graduée" />
+	<Definition lignes={4}>
+		Un <i>axe</i> est composé de 3 éléments :
+		<Item>une droite graduée</Item>
+		<Item><i>l'origine</i>, un point associé au nombre 0</Item>
+		<Item>un point associé au nombre 1</Item>
+	</Definition>
+	<Exemple />
 	<Schema lignes={4} aspectRatioSVG={5}>
 		{#snippet svg()}
-			<line x1={50} y1={500} x2={4950} y2={500} stroke="black" stroke-width={10} />
-			{#each [-3, -2, -1, 0, 1, 2, 3] as x}
-				<line x1={2500 + 500 * x} y1={450} x2={2500 + 500 * x} y2={550} stroke="black" stroke-width={10} />
-				<text x={2500 + 500 * x} y={650} font-size={100} text-anchor="middle">{x}</text>
-			{/each}
-			{#each Object.entries(points) as [point, x], index}
-				<line x1={2500 + 500 * x - 50} y1={450} x2={2500 + 500 * x + 50} y2={550} stroke="red" stroke-width={10} />
-				<line x1={2500 + 500 * x + 50} y1={450} x2={2500 + 500 * x - 50} y2={550} stroke="red" stroke-width={10} />
-				<text x={2500 + 500 * x} y={400} font-size={130} text-anchor="middle" fill="red">{point}</text>
-				<text x={1250 * (index + 0.5)} y={950} font-size={160} text-anchor="middle">{point}({x.toLocaleString('fr')})</text>
-			{/each}
+			<AxeGradué nombre_de_graduations={8} points={[début, fin]} stroke="black" stroke-width={10} />
+			{@const origine = { x: 2000, y: 500 }}
+			{@const unité = { x: 2500, y: 500 }}
+			<Point point={origine} nom="0" font-size={150} dy={200} type={{ forme: 'croix', taille: 40 }} />
+			<Point point={unité} nom="1" font-size={150} dy={200} type={{ forme: 'croix', taille: 40 }} />
+			{@const debut_flèche_origine = { x: 2000, y: 150 }}
+			{@const fin_flèche_origine = { x: 2000, y: 420 }}
+			<Fleche points={[debut_flèche_origine, fin_flèche_origine]} stroke="red" fill="red" stroke-width={8} />
+			<TexteSVG point={debut_flèche_origine} dy={-80} fill="red" font-size={110}>origine</TexteSVG>
+			<Fleche points={[origine, unité]} stroke="blue" fill="blue" stroke-width={8} style="transform: translateY(250px);" />
+			<Fleche points={[unité, origine]} stroke="blue" fill="blue" stroke-width={8} style="transform: translateY(250px);" />
+			{@const demi_unité = { x: (origine.x + unité.x) / 2, y: 900 }}
+			<TexteSVG point={demi_unité} dy={-50} fill="blue" font-size={110}>unité</TexteSVG>
 		{/snippet}
 	</Schema>
-	<LigneVide />
 	<Definition>
 		À chaque point de l'axe, on peut associer un nombre : son <i>abscisse</i>.
 	</Definition>
-	<LigneVide />
-	<Partie numero={3} titre="Repérage dans le plan" />
-	<LigneVide />
-	<Definition lignes={5}>
-		Un repère orthogonal est constitué :
-		<Item>
-			d'un point : <i>l'origine</i>
-		</Item>
-		<Item>
-			d'un axe horizontal : <i>l'axe des abscisses</i>
-		</Item>
-		<Item>
-			d'un axe vertical : <i>l'axe des ordonnées</i>
-		</Item>
-		Les deux axes sont perpendiculaires et se coupent en l'origine.
-	</Definition>
-	<LigneVide lignes={2} />
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Exemple />
+	<Schema lignes={4} aspectRatioSVG={5}>
 		{#snippet svg()}
-			<line x1={50} y1={500} x2={1950} y2={500} stroke="black" stroke-width={10} />
-			<line x1={1000} y1={50} x2={1000} y2={950} stroke="black" stroke-width={10} />
-			<!-- flèches -->
-			<polygon points="1950,500 1900,525 1900,475" fill="black" stroke="black" stroke-width={10} />
-			<polygon points="1000,50 975,100 1025,100" fill="black" stroke="black" stroke-width={10} />
-			<!-- origine -->
-			<line x1={1000 - 20} y1={500 - 20} x2={1000 + 20} y2={500 + 20} stroke="red" stroke-width={10} />
-			<line x1={1000 + 20} y1={500 - 20} x2={1000 - 20} y2={500 + 20} stroke="red" stroke-width={10} />
-			<!-- texte -->
-			<text x={1120} y={550} font-size={50} text-anchor="middle" fill="red">Origine</text>
-			<text x={1780} y={600} font-size={50} text-anchor="middle">axe des abscisses</text>
-			<text x={750} y={50} font-size={50} text-anchor="middle">axe des ordonnées</text>
+			<AxeGradué nombre_de_graduations={8} points={[début, fin]} stroke="black" stroke-width={10} />
+			{#each [-3, -2, -1, 0, 1, 2, 3] as x}
+				<TexteSVG point={{ x: 2500 + 500 * x, y: 650 }} font-size={120}>{x}</TexteSVG>
+			{/each}
+			{#each Object.entries(points) as [point, x], index}
+				<Point point={{ x: 2500 + 500 * x, y: 500 }} dy={-100} font-size={130} nom={point} type={{ forme: 'croix', taille: 40 }} stroke="red" />
+			{/each}
 		{/snippet}
 	</Schema>
+	<Texte>
+		<MultiItem>
+			{#each Object.entries(points).map(([point, x]) => [point, x.toLocaleString()]) as [point, x]}
+				<Item bullet="">
+					{@html math(`\\text{${point}}(${x})`)}
+				</Item>
+			{/each}
+		</MultiItem>
+	</Texte>
 </Contenu>
