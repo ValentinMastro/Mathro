@@ -63,6 +63,7 @@
 				debut={{ x: 500, y: 500 }}
 				fin={{ x: 4500, y: 500 }}
 				graduations={{
+					type_de_graduation: 'fraction',
 					premiere_valeur: fraction(`0/${subdivisions}`),
 					derniere_valeur: fraction(`15/${subdivisions}`),
 					pas: fraction(`1/${subdivisions}`),

@@ -33,7 +33,7 @@
 		{/if}
 
 		{#each groupe as { chapitre, indexGlobal }}
-			<div class="chapitre" onclick={() => scroll_lors_du_clic_sur_le_sommaire(chapitre.premiere_page)} role="none">
+			<div class="chapitre" onclick={() => scroll_lors_du_clic_sur_le_sommaire(chapitre.première_page)} role="none">
 				<div class="categories">
 					{#each chapitre.catégories as catégorie}
 						<span style="color: {COULEURS_PAR_CATEGORIE[catégorie]}" title={catégorie}>■</span>
