@@ -4,7 +4,7 @@
   Trace le polygone formé par les points donnés
 
   ### Props
-  - `points` *{ x: number; y: number }[]* : sommets du polygone
+  - `points` *Coordonnées2D[]* : sommets du polygone
   - `noms` *string[]* : noms des sommets *(par défaut : A, B, C, ...)*
   - `afficher_points` *boolean* : afficher les points *(par défaut : false)*
   - `distance_nom` *number* : distance entre le point et son nom *(par défaut : 60)*
@@ -14,10 +14,10 @@
 
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
-	import { Point } from './*';
+	import { Point, type Coordonnées2D } from './*';
 
 	type Props = Omit<SVGAttributes<SVGPolylineElement>, 'points' | 'type'> & {
-		points: { x: number; y: number }[];
+		points: Coordonnées2D[];
 		noms?: string[];
 		afficher_points?: boolean;
 		distance_nom?: number;

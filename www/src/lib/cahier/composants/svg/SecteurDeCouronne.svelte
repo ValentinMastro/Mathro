@@ -4,7 +4,7 @@
   Trace le secteur angulaire connaissant 2 angles
 
   ### Props
-  - `centre` *{ x: number, y: number }* : abscisse et ordonnée du centre du cercle
+  - `centre` *Coordonnées2D* : abscisse et ordonnée du centre du cercle
   - `rayon1` *(number)* : petit rayon du secteur
   - `rayon2` *(number)* : grand rayon du secteur
   - `angle1` *(number)* : angle de départ en radians
@@ -13,9 +13,10 @@
 
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
+	import type { Coordonnées2D } from './*';
 
 	type Props = SVGAttributes<SVGPathElement> & {
-		centre: { x: number; y: number };
+		centre: Coordonnées2D;
 		rayon1: number;
 		rayon2: number;
 		angle1: number;

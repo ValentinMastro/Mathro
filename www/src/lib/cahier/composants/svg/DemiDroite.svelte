@@ -1,9 +1,10 @@
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
+	import type { Coordonnées2D } from './*';
 
 	type Props = Omit<SVGAttributes<SVGLineElement>, 'x1' | 'y1' | 'x2' | 'y2'> & {
-		origine: { x: number; y: number };
-		passantPar: { x: number; y: number };
+		origine: Coordonnées2D;
+		passantPar: Coordonnées2D;
 	};
 
 	let { origine, passantPar, ...props }: Props = $props();

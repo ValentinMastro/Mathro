@@ -11,9 +11,10 @@
 -->
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
+	import type { ExtrémitésSegment } from './*';
 
 	type Props = Omit<SVGAttributes<SVGPathElement>, 'd' | 'points'> & {
-		points: [{ x: number; y: number }, { x: number; y: number }];
+		points: ExtrémitésSegment;
 		position?: number;
 		type?: '1 trait' | '2 traits' | '3 traits';
 		taille?: number;

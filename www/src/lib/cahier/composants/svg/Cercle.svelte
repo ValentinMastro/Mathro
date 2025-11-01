@@ -3,15 +3,16 @@
     ## Cercle
     Trace un cercle (extends SVGCircleElement)
     ### Props
-    - `centre` *{ x: number; y: number }* : centre du cercle
+    - `centre` *Coordonnées2D* : centre du cercle
     - `rayon` *number* : rayon du cercle
  -->
 
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
+	import type { Coordonnées2D } from './*';
 
 	type Props = SVGAttributes<SVGCircleElement> & {
-		centre: { x: number; y: number };
+		centre: Coordonnées2D;
 		rayon: number;
 	};
 

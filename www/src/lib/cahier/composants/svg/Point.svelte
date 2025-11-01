@@ -1,11 +1,9 @@
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
+	import type { Coordonnées2D } from './*';
 
 	type Props = Omit<SVGAttributes<SVGPathElement>, 'd' | 'points' | 'type'> & {
-		point: {
-			x: number;
-			y: number;
-		};
+		point: Coordonnées2D;
 		type: {
 			forme: 'croix' | 'disque' | 'rien' | string;
 			taille: number;

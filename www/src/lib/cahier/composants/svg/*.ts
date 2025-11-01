@@ -1,7 +1,11 @@
+export type Coordonnées2D = { x: number; y: number };
+export type ExtrémitésSegment = [Coordonnées2D, Coordonnées2D];
+
 export { default as ArcDeCercle } from './ArcDeCercle.svelte';
 export { default as Angle } from './Angle.svelte';
 export { default as AngleDroit } from './AngleDroit.svelte';
 export { default as Axe } from './Axe.svelte';
+export { default as AxeGradué } from './AxeGradué.svelte';
 export { default as Carré } from './Carré.svelte';
 export { default as Cercle } from './Cercle.svelte';
 export { default as Codage } from './Codage.svelte';

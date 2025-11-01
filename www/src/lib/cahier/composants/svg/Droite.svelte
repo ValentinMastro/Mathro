@@ -1,8 +1,9 @@
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
+	import type { ExtrémitésSegment } from './*';
 
 	export type Props = Omit<SVGAttributes<SVGLineElement>, 'x1' | 'y1' | 'x2' | 'y2'> & {
-		passantPar: [{ x: number; y: number }, { x: number; y: number }];
+		passantPar: ExtrémitésSegment;
 	};
 
 	let { passantPar, ...props }: Props = $props();

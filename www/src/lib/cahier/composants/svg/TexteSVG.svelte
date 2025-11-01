@@ -3,13 +3,14 @@
     ## TexteSVG
     Affiche du texte dans un SVG (extends SVGTextElement)
     ### Props
-    - `point` *{ x: number; y: number }* : point d'ancrage du texte
+    - `point` *Coordonnées2D* : point d'ancrage du texte
  -->
 
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
+	import type { Coordonnées2D } from './*';
 	type Props = Omit<SVGAttributes<SVGTextElement>, 'x' | 'y'> & {
-		point: { x: number; y: number };
+		point: Coordonnées2D;
 	};
 
 	let { point, children, ...props }: Props = $props();

@@ -3,15 +3,16 @@
     ## Disque
     Trace un disque (extends SVGCircleElement)
     ### Props
-    - `centre` *{ x: number; y: number }* : centre du disque
+    - `centre` *Coordonnées2D* : centre du disque
     - `rayon` *number* : rayon du disque
  -->
 
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
+	import type { Coordonnées2D } from './*';
 
 	type Props = SVGAttributes<SVGCircleElement> & {
-		centre: { x: number; y: number };
+		centre: Coordonnées2D;
 		rayon: number;
 	};
 

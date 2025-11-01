@@ -4,15 +4,16 @@
   Tracer un carré
 
   ### Props
-  - `coin` *{x: number, y: number}* : coin du carré supérieur gauche
+  - `coin` *Coordonnées2D* : coin du carré supérieur gauche
   - `côté` *number* : côté du carré
 -->
 
 <script lang="ts">
 	import { type SVGAttributes } from 'svelte/elements';
+	import type { Coordonnées2D } from './*';
 
 	type Props = Omit<SVGAttributes<SVGRectElement>, 'x' | 'y' | 'width' | 'height'> & {
-		coin: { x: number; y: number };
+		coin: Coordonnées2D;
 		côté: number;
 	};
 	let { coin, côté, ...props }: Props = $props();

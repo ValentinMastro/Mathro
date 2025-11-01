@@ -4,16 +4,17 @@
   Trace un arc de cercle à partir du centre et des deux angles
 
   ### Props
-  - `centre` *{ x: number; y: number }* : centre du cercle
+  - `centre` *Coordonnées2D* : centre du cercle
   - `r` *(number)* : rayon du secteur (distance du sommet à l’arc)
   - `angle1` *(number)* : angle de départ de l'arc en radians
   - `angle2` *(number)* : angle de fin de l'arc en radians
 -->
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
+	import type { Coordonnées2D } from './*';
 
 	type Props = SVGAttributes<SVGPathElement> & {
-		centre: { x: number; y: number };
+		centre: Coordonnées2D;
 		r: number;
 		angle1: number;
 		angle2: number;

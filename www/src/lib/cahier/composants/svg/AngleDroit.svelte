@@ -10,9 +10,10 @@
 
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
+	import type { Coordonnées2D } from './*';
 
 	type Props = Omit<SVGAttributes<SVGPolygonElement>, 'points'> & {
-		points: [{ x: number; y: number }, { x: number; y: number }, { x: number; y: number }];
+		points: [Coordonnées2D, Coordonnées2D, Coordonnées2D];
 		taille?: number;
 		decalage?: number;
 	};

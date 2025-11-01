@@ -4,14 +4,15 @@
     ## Segment
     Trace un segment
     ### Props
-    - `points`: [{ x: number; y: number }, { x: number; y: number }] : extrémités du segment
+    - `points` *ExtrémitésSegment* : extrémités du segment
 -->
 
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
+	import type { ExtrémitésSegment } from './*';
 
 	type Props = Omit<SVGAttributes<SVGLineElement>, 'x1' | 'y1' | 'x2' | 'y2' | 'points'> & {
-		points: [{ x: number; y: number }, { x: number; y: number }];
+		points: ExtrémitésSegment;
 	};
 
 	let { points, ...props }: Props = $props();

@@ -1,23 +1,24 @@
 <!--
   @component
-  ## Flèche
+  ## Flèche (extends SVGPathElement)
   Trace une flèche entre deux points.
 
   ### Props
-  - `points` *[{ x: number; y: number }, { x: number; y: number }]* : extrémités de la flèche
+  - `points` **ExtrémitésSegment** : extrémités de la flèche
   - `taille` *(number)* : longueur de la pointe
   - `largeur` *(number)* : demi-largeur de la pointe
 -->
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
+	import type { ExtrémitésSegment } from './*';
 
-	type Props = Omit<SVGAttributes<SVGPathElement>, 'x1' | 'y1' | 'x2' | 'y2' | 'points'> & {
-		points: [{ x: number; y: number }, { x: number; y: number }];
+	export type FlècheProps = Omit<SVGAttributes<SVGPathElement>, 'x1' | 'y1' | 'x2' | 'y2' | 'points'> & {
+		points: ExtrémitésSegment;
 		taille?: number;
 		largeur?: number;
 	};
 
-	let { points, taille = 30, largeur, ...props }: Props = $props();
+	let { points, taille = 30, largeur, ...props }: FlècheProps = $props();
 	let valeursParDefault = {
 		stroke: props['stroke'] || 'black',
 		fill: props['fill'] || 'black',

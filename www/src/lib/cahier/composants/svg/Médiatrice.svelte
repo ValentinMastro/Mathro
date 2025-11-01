@@ -1,16 +1,13 @@
 <!-- Médiatrice.svelte -->
 <script lang="ts">
-	import Droite from './Droite.svelte';
+	import { Droite, type ExtrémitésSegment } from './*';
 	import type { SVGAttributes } from 'svelte/elements';
 
-	// On évite les recombinaisons de gros types : on tape "léger"
-	type LigneAttrs = Omit<SVGAttributes<SVGLineElement>, 'x1' | 'y1' | 'x2' | 'y2'>;
+	type Props = Omit<SVGAttributes<SVGLineElement>, 'x1' | 'y1' | 'x2' | 'y2'> & {
+		extrémités_segment: ExtrémitésSegment;
+	};
 
-	type PropsMediatrice = {
-		extrémités_segment: [{ x: number; y: number }, { x: number; y: number }];
-	} & LigneAttrs;
-
-	let { extrémités_segment, ...rest }: PropsMediatrice = $props();
+	let { extrémités_segment, ...props }: Props = $props();
 	let [A, B] = extrémités_segment;
 
 	// Milieu
@@ -20,7 +17,7 @@
 	const v = $derived({ x: B.y - A.y, y: -(B.x - A.x) });
 
 	// Deux points pour définir la médiatrice : milieu et milieu+v
-	const passantPar = $derived<[{ x: number; y: number }, { x: number; y: number }]>([M, { x: M.x + v.x, y: M.y + v.y }]);
+	const passantPar: ExtrémitésSegment = $derived([M, { x: M.x + v.x, y: M.y + v.y }]);
 </script>
 
-<Droite {passantPar} {...rest} />
+<Droite {passantPar} {...props} />

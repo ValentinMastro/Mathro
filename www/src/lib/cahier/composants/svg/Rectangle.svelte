@@ -9,9 +9,10 @@
 
 <script lang="ts">
 	import { type SVGAttributes } from 'svelte/elements';
+	import type { ExtrémitésSegment } from './*';
 
 	type Props = Omit<SVGAttributes<SVGRectElement>, 'points'> & {
-		points: [{ x: number; y: number }, { x: number; y: number }];
+		points: ExtrémitésSegment;
 	};
 
 	let { points, ...props }: Props = $props();

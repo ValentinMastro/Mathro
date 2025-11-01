@@ -4,21 +4,21 @@
   Trace le petit angle formé par trois points, avec le deuxième point comme sommet.
 
   ### Props
-  - `r` *(number)* : rayon du secteur (distance du sommet à l’arc)
-  - `points` *[{ x: number; y: number }, { x: number; y: number }, { x: number; y: number }]* : tableau de points
   - `afficher_mesure` *(boolean)* : affiche la mesure de l’angle
   - `mesure` *(Writable<number>)* : mesure de l’angle en degrés
+  - `points` *[Coordonnées2D, Coordonnées2D, Coordonnées2D]* : tableau de points
+  - `r` *(number)* : rayon du secteur (distance du sommet à l’arc)
 -->
 <script lang="ts">
 	import { type SVGAttributes } from 'svelte/elements';
 	import { type Writable } from 'svelte/store';
-	import { TexteSVG } from './*';
+	import { type Coordonnées2D, TexteSVG } from './*';
 
 	type Props = Omit<SVGAttributes<SVGPathElement>, 'points'> & {
-		r: number;
-		points: [{ x: number; y: number }, { x: number; y: number }, { x: number; y: number }];
 		afficher_mesure?: boolean;
 		mesure?: Writable<number>;
+		points: [Coordonnées2D, Coordonnées2D, Coordonnées2D];
+		r: number;
 	};
 	let { r, points, afficher_mesure = false, mesure, ...props }: Props = $props();
 
