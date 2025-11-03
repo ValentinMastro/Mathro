@@ -64,8 +64,9 @@
 <Contenu>
 	<Partie numero={1} titre="Lexique" />
 	<Definition lignes={2}>La mesure d'un angle quantifie l'écartement entre les deux côtés de l'angle.</Definition>
-	<Schema lignes={8} aspectRatioSVG={1.5} onclick={calculer_angle}>
+	<Schema lignes={8} aspectRatioSVG={1.5} onclick={calculer_angle} html_lignes_vides={1}>
 		{#snippet svg()}
+			<SecteurAngulaire cx={750} cy={500} r={100} angle1={Math.PI / 2} angle2={-radians + Math.PI / 2} fill="red" />
 			<line x1="50%" y1="50%" x2="50%" y2={100} stroke="black" stroke-width={5} />
 			<line
 				x1="50%"
@@ -75,7 +76,6 @@
 				stroke="blue"
 				stroke-width={5}
 			/>
-			<SecteurAngulaire cx={750} cy={500} r={100} angle1={Math.PI / 2} angle2={-radians + Math.PI / 2} fill="red" />
 			<!-- Points -->
 			<circle cx="50%" cy="50%" r={10} fill="black" />
 			<text x="50%" y="50%" text-anchor="middle" dy="1em" font-size={80} fill="black">O</text>
@@ -85,12 +85,19 @@
 			<text x={B.x} y={B.y} text-anchor="middle" dy="1em" font-size={80} fill="blue">B</text>
 		{/snippet}
 		{#snippet html()}
-			<LigneVide />
 			<Texte>
-				{@html math(`\\widehat{\\text{AOB}} = ${angle}^{\\circ}`)}
+				{#if angle > 180}
+					{@html math(`\\widecheck{\\text{AOB}} = ${angle}^{\\circ}`)}
+				{:else if angle <= 180}
+					{@html math(`\\widehat{\\text{AOB}} = ${angle}^{\\circ}`)}
+				{/if}
 			</Texte>
 			<Texte>
-				{@html math(`\\widehat{\\text{AOB}}`)} est un angle {typeAngle(angle)}.
+				{#if angle > 180}
+					{@html math(`\\widecheck{\\text{AOB}}`)} est un angle {typeAngle(angle)}.
+				{:else if angle <= 180}
+					{@html math(`\\widehat{\\text{AOB}}`)} est un angle {typeAngle(angle)}.
+				{/if}
 			</Texte>
 		{/snippet}
 	</Schema>
@@ -115,6 +122,7 @@
 						{ x: x + 250 * Math.cos(angle), y: y - 250 * Math.sin(angle) }
 					]}
 					stroke="red"
+					fill="red"
 					stroke-width={5}
 				/>
 				<text {x} y={840} text-anchor="middle" font-size={80} fill="black">{typeAngle(degres)}</text>
