@@ -1,9 +1,7 @@
 <script lang="ts">
-	import { Chapitre, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import DansLaMarge from '$lib/cahier/composants/de_chapitrage/DansLaMarge.svelte';
+	import { Chapitre, Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Propriete, Item, Schema, Texte, Exemple } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { Polygone, Segment, TexteSVG, type ExtrémitésSegment } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 
