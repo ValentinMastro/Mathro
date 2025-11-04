@@ -1,10 +1,8 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Item, Protocole, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Exemple, Item, Protocole, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { ArcDeCercle, Point, Polygone, Segment } from '$lib/cahier/composants/svg/*';
-
 	import { math } from 'mathlifier';
 
 	let AB = '4';
@@ -14,8 +12,7 @@
 	let etape = $state(4);
 </script>
 
-<DansLaMarge>
-	<LigneVide lignes={16} />
+<DansLaMarge lignes_vides={16}>
 	<Slider bind:valeur={etape} min={0} max={4} pas={1} />
 </DansLaMarge>
 
@@ -61,14 +58,12 @@
 			Tracer {@html math('[\\text{AB}]')} de longueur {AB} cm.
 		</Item>
 		<Item lignes={2}>
-			Puisque {@html math(`\\text{AC} = ${AC}\\,\\text{cm}`)}, tracer un arc de cercle de centre {@html math('\\text{A}')} et de rayon {@html math(
-				`${AC}~\\text{cm}`
-			)}.
+			Puisque {@html math(`\\text{AC} = ${AC}\\,\\text{cm}`)}, tracer un arc de cercle de centre {@html math('\\text{A}')}
+			et de rayon {@html math(`${AC}~\\text{cm}`)}.
 		</Item>
 		<Item lignes={2}>
-			Puisque {@html math(`\\text{BC} = ${BC}\\,\\text{cm}`)}, tracer un arc de cercle de centre {@html math('\\text{B}')} et de rayon {@html math(
-				`${BC}~\\text{cm}`
-			)}.
+			Puisque {@html math(`\\text{BC} = ${BC}\\,\\text{cm}`)}, tracer un arc de cercle de centre {@html math('\\text{B}')}
+			et de rayon {@html math(`${BC}~\\text{cm}`)}.
 		</Item>
 		<Item>
 			Relier le point d'intersection à {@html math('\\text{A}')} et à {@html math('\\text{B}')}.
