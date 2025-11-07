@@ -1,7 +1,6 @@
 import type { Component } from 'svelte';
 
-/* État de la page */
-export let page_state: {
+type ÉTAT_DE_LA_PAGE = {
 	afficher_fond_seyes: boolean;
 	afficher_numero_page: boolean;
 	deux_pages: boolean;
@@ -13,7 +12,10 @@ export let page_state: {
 	sur_mobile: boolean;
 	type: 'de cours' | "d'exercices";
 	zoom_page: boolean;
-} = $state({
+};
+
+/* État de la page */
+export const page_state: ÉTAT_DE_LA_PAGE = $state({
 	afficher_fond_seyes: true,
 	afficher_numero_page: true,
 	deux_pages: true,

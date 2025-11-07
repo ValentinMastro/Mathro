@@ -1,14 +1,10 @@
 <script lang="ts">
-	import type { Component } from 'svelte';
-	// TODO: depreciated
-	import { page as interface_navigateur } from '$app/stores';
-	const scroll_jusqua_la_page: number = parseInt($interface_navigateur.url.searchParams.get('page') ?? '1');
-
-	import { get_taille_page, PAGES } from '$lib/cahier/store.svelte';
+	import { page as interface_navigateur } from '$app/state';
+	import { get_taille_page, PAGES, page_state } from '$lib/cahier/store.svelte';
 	import PageDeCahier from './PageDeCahier.svelte';
-
-	let pages = PAGES.liste;
-
+	
+	const numero_de_page_dans_la_barre_URL = interface_navigateur.url.searchParams.get('page');
+	const scroll_jusqua_la_page: number = numero_de_page_dans_la_barre_URL == null ? page_state.numero_de_la_page : parseInt(numero_de_page_dans_la_barre_URL);
 	const gap = 8;
 
 	$effect(() => {
@@ -17,9 +13,9 @@
 </script>
 
 <div id="scroll" style="gap: {gap}px;">
-	{#each pages as { composant: PageNumero, nom_fichier }, i}
+	{#each PAGES.liste as { composant: PageNumero, nom_fichier }, i}
 		{#if i != 0}
-			<PageDeCahier numero_de_page={i} {nom_fichier}>
+			<PageDeCahier numero_de_page={i} {nom_fichier} onmouseenter={() => page_state.numero_de_la_page = i} >
 				<PageNumero />
 			</PageDeCahier>
 		{/if}
