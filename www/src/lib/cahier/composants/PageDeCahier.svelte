@@ -1,14 +1,15 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
+	import { type Snippet } from 'svelte';
+	import { type HTMLAttributes } from 'svelte/elements';
 	import { page_state, set_taille_page } from '$lib/cahier/store.svelte';
 
-	interface Props {
+	type Props = Omit<HTMLAttributes<HTMLDivElement>, "class" | "style"> & {
 		numero_de_page: number;
 		nom_fichier: string;
 		children: Snippet;
 	}
 
-	let { numero_de_page, nom_fichier, children }: Props = $props();
+	let { numero_de_page, nom_fichier, children, ...div_props }: Props = $props();
 
 	let chapitre: number = $derived(Number.parseInt(nom_fichier.split('/').at(-2)?.split('-').at(0) ?? '0'));
 	let page_du_chapitre: number = $derived(Number.parseInt(nom_fichier.split('/').at(-1)?.split('.').at(0)?.slice(4) ?? '0'));
@@ -43,6 +44,7 @@
 		--font-size: {taille_page / 60}px;
 		--line-height: {(taille_page / 60) * 1.6}px;
 		"
+	{...div_props}
 >
 	{@render children()}
 	{#if page_state.afficher_numero_page}
