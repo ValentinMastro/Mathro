@@ -2,9 +2,7 @@
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Schema, Texte, Vocabulaire } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-	import { Point, SecteurAngulaire, Fleche } from '$lib/cahier/composants/svg/*';
-
+	import { Point, SecteurAngulaire, Fleche, DemiDroite } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 
 	let angle = $state(45);
@@ -24,6 +22,7 @@
 	let O = { x: 750, y: 500 };
 	let A = { x: 750, y: 500 - 300 };
 	let B = $derived({ x: 750 - 250 * Math.cos(radians + Math.PI / 2), y: 500 - 250 * Math.sin(radians + Math.PI / 2) });
+	let type = { forme: 'disque', taille: 12 };
 
 	function calculer_angle(event: MouseEvent) {
 		let P: DOMPoint;
@@ -56,8 +55,7 @@
 	}
 </script>
 
-<DansLaMarge>
-	<LigneVide lignes={9} />
+<DansLaMarge lignes_vides={9}>
 	<Slider bind:valeur={angle} min={0} max={360} pas={1} />
 </DansLaMarge>
 
@@ -67,22 +65,11 @@
 	<Schema lignes={8} aspectRatioSVG={1.5} onclick={calculer_angle} html_lignes_vides={1}>
 		{#snippet svg()}
 			<SecteurAngulaire cx={750} cy={500} r={100} angle1={Math.PI / 2} angle2={-radians + Math.PI / 2} fill="red" />
-			<line x1="50%" y1="50%" x2="50%" y2={100} stroke="black" stroke-width={5} />
-			<line
-				x1="50%"
-				y1="50%"
-				x2={750 - 400 * Math.cos(radians + Math.PI / 2)}
-				y2={500 - 400 * Math.sin(radians + Math.PI / 2)}
-				stroke="blue"
-				stroke-width={5}
-			/>
-			<!-- Points -->
-			<circle cx="50%" cy="50%" r={10} fill="black" />
-			<text x="50%" y="50%" text-anchor="middle" dy="1em" font-size={80} fill="black">O</text>
-			<circle cx={A.x} cy={A.y} r={10} fill="black" />
-			<text x={A.x} y={A.y} text-anchor="middle" dx="0.7em" dy="0.2em" font-size={80} fill="black">A</text>
-			<circle cx={B.x} cy={B.y} r={10} fill="blue" />
-			<text x={B.x} y={B.y} text-anchor="middle" dy="1em" font-size={80} fill="blue">B</text>
+			<DemiDroite origine={O} passantPar={A} />
+			<DemiDroite origine={O} passantPar={B} stroke="blue" />
+			<Point point={O} nom="O" {type} dy={90} />
+			<Point point={A} nom="A" {type} dx={60} dy={0} />
+			<Point point={B} nom="B" {type} dy={90} />
 		{/snippet}
 		{#snippet html()}
 			<Texte>
@@ -107,18 +94,18 @@
 			{#snippet afficher_angle(degres: number, x: number, y: number)}
 				{@const angle = ((90 - degres) * Math.PI) / 180}
 				<SecteurAngulaire cx={x} cy={y} r={100} angle1={Math.PI / 2} angle2={angle} fill="forestgreen" />
-				<Point point={{ x: x, y: y }} type={{ forme: 'croix', taille: 30 }} />
+				<Point point={{ x, y }} type={{ forme: 'croix', taille: 30 }} />
 				<Fleche
 					points={[
-						{ x: x, y: y },
-						{ x: x, y: y - 333.33 }
+						{ x, y },
+						{ x, y: y - 333.33 }
 					]}
 					stroke="black"
 					stroke-width={5}
 				/>
 				<Fleche
 					points={[
-						{ x: x, y: y },
+						{ x, y },
 						{ x: x + 250 * Math.cos(angle), y: y - 250 * Math.sin(angle) }
 					]}
 					stroke="red"
