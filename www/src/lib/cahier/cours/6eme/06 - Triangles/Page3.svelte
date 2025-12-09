@@ -1,9 +1,7 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Exemple, Item, Protocole, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { Angle, DemiDroite, Polygone } from '$lib/cahier/composants/svg/*';
-
 	import { math } from 'mathlifier';
 </script>
 
@@ -32,13 +30,13 @@
 	</Schema>
 	<Texte couleur="bleu" lignes={3}>
 		<Item>
-			Tracer le segment {@html math('\\text{DE}')} de longueur 5 cm.
+			Tracer le segment {@html math('\\text{DE}')} de longueur 4,8 cm.
 		</Item>
 		<Item>
 			Tracer un angle de 45° en partant de {@html math('\\text{E}')}.
 		</Item>
 		<Item>
-			Placer le point {@html math('\\text{F}')} sur la demi-droite en utilisant la longueur 3 cm.
+			Placer le point {@html math('\\text{F}')} sur la demi-droite en utilisant la longueur 4,2 cm.
 		</Item>
 	</Texte>
 </Contenu>

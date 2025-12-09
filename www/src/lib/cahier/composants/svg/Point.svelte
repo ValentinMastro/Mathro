@@ -4,7 +4,7 @@
 
 	type Props = Omit<SVGAttributes<SVGPathElement>, 'd' | 'points' | 'type'> & {
 		point: Coordonnées2D;
-		type: {
+		type?: {
 			forme: 'croix' | 'disque' | 'rien' | string;
 			taille: number;
 		};
@@ -14,7 +14,7 @@
 		dy?: number;
 	};
 
-	let { point, type, nom, 'font-size': fontSize = 80, dx = 0, dy = 2 * fontSize, ...props }: Props = $props();
+	let { point, type = { forme: 'croix', taille: 20 }, nom, 'font-size': fontSize = 80, dx = 0, dy = 2 * fontSize, ...props }: Props = $props();
 	let { x, y } = $derived(point);
 
 	function couleur() {

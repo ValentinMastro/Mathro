@@ -2,17 +2,14 @@
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Exemple, Item, Protocole, Schema } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { Angle, DemiDroite, Point, Segment } from '$lib/cahier/composants/svg/*';
-
 	import { math } from 'mathlifier';
 
 	let GH = '4';
 	let etape = $state(4);
 </script>
 
-<DansLaMarge>
-	<LigneVide lignes={15} />
+<DansLaMarge lignes_vides={15}>
 	<Slider bind:valeur={etape} min={0} max={4} />
 </DansLaMarge>
 

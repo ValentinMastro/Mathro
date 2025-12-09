@@ -19,7 +19,7 @@
 		C: { x: 0.5, y: -2.5 },
 		D: { x: -2.5, y: 2 }
 	};
-	let type = { forme: 'croix', taille: 30 };
+	let type = { forme: 'croix', taille: 20 };
 </script>
 
 <Contenu>
