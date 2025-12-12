@@ -10,7 +10,6 @@
 
 <Contenu apres_un_titre>
 	<Partie numero={1} titre="Priorité des opérations" />
-	<LigneVide />
 	<Propriete lignes={4}>
 		Dans un calcul contenant plusieurs opérations de natures différentes :
 		<Item>on effectue d'abord les calculs entre parenthèses</Item>
@@ -20,7 +19,6 @@
 	<Remarque lignes={2}>
 		Lorsqu'il y a un trait de fraction, on calcule d'abord le numérateur et le dénominateur, puis on effectue la division.
 	</Remarque>
-	<LigneVide />
 	<Exemples lignes={13}>
 		<div style="width: 100%; height: 100%; display: flex;">
 			<div style="width: 50%; height: 100%;">

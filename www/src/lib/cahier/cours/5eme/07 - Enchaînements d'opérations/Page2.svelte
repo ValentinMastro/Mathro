@@ -8,7 +8,6 @@
 
 <Contenu>
 	<Partie numero={2} titre="Vérifier la vraisemblance d'un résultat" />
-	<LigneVide />
 	<Methode lignes={2}>Pour vérifier qu'un calcul est juste, on peut effectuer un calcul approché.</Methode>
 	<Exemples lignes={6}>
 		<Item lignes={3}>
