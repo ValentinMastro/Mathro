@@ -11,7 +11,7 @@
 				"Comparer, ranger, encadrer des fractions dont les dénominateurs sont égaux ou multiples l’un de l’autre",
 				"Simplification de fractions"
 			],
-			"première_page": 0,
+			"première_page": 3,
 			"annexe": false
 		},
 		{
@@ -28,7 +28,7 @@
 				"Identifier des symétries dans des frises, des pavages, des rosaces",
 				"Mener des raisonnements en utilisant des propriétés des figures, des configurations et des symétries"
 			],
-			"première_page": 0,
+			"première_page": 7,
 			"annexe": false
 		},
 		{
@@ -44,7 +44,7 @@
 				"Nombres premiers",
 				"Décomposition d’un nombre en produit de facteurs premiers"
 			],
-			"première_page": 0,
+			"première_page": 10,
 			"annexe": false
 		},
 		{
@@ -57,7 +57,7 @@
 				"Reconnaître des triangles particuliers en utilisant les angles",
 				"Calculer les angles d’un triangle"
 			],
-			"première_page": 0,
+			"première_page": 15,
 			"annexe": false
 		},
 		{
@@ -72,7 +72,7 @@
 				"Placer des points ayant pour coordonnées des nombres relatifs dans un repère orthogonal",
 				"Comparer des nombres relatifs"
 			],
-			"première_page": 0,
+			"première_page": 19,
 			"annexe": false
 		},
 		{
@@ -85,7 +85,7 @@
 				"Connaître le lien entre l’inégalité triangulaire et la construction d’un triangle à partir de la donnée de trois longueurs",
 				"Construire un triangle à partir de la mesure d’une longueur et de deux angles ou d’un angle et de deux longueurs données"
 			],
-			"première_page": 0,
+			"première_page": 23,
 			"annexe": false
 		},
 		{
@@ -98,7 +98,7 @@
 				"Contrôler la vraisemblance d’un résultat",
 				"Résoudre des problèmes faisant intervenir des nombres décimaux"
 			],
-			"première_page": 0,
+			"première_page": 27,
 			"annexe": false
 		},
 		{
@@ -112,7 +112,7 @@
 				"Savoir que les côtés opposés d’un parallélogramme sont deux à deux de même longueur grâce aux propriétés de la symétrie",
 				"Connaître et mettre en œuvre les propriétés relatives aux côtés et aux diagonales d’un parallélogramme pour effectuer des constructions et mener des raisonnements"
 			],
-			"première_page": 0,
+			"première_page": 29,
 			"annexe": false
 		},
 		{
@@ -124,7 +124,7 @@
 				"Additionner ou soustraire des fractions dont les dénominateurs sont égaux ou multiples l’un de l’autre",
 				"Résoudre des problèmes faisant intervenir des fractions"
 			],
-			"première_page": 0,
+			"première_page": 31,
 			"annexe": false
 		},
 		{
@@ -139,7 +139,7 @@
 				"Effectuer des conversions d’unités de durées",
 				"Effectuer des conversions d’unités de longueurs, d’aires"
 			],
-			"première_page": 0,
+			"première_page": 33,
 			"annexe": false
 		},
 		{
