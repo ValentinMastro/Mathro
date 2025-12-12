@@ -36,7 +36,7 @@
 	// angles
 	const angle1 = $derived((Math.atan2(v1.y, v1.x) + 2 * Math.PI) % (2 * Math.PI));
 	const angle3 = $derived((Math.atan2(v3.y, v3.x) + 2 * Math.PI) % (2 * Math.PI));
-	const angleMoitié = $derived((angle1 + angle3) / 2);
+	const angleMoitié = $derived(angle1 + differenceAngle(angle1, angle3) / 2);
 
 	// extrémités de l’arc à distance r du sommet
 	const extremite1 = $derived({ x: P2.x + r * Math.cos(angle1), y: P2.y + r * Math.sin(angle1) });
@@ -57,7 +57,8 @@
 	);
 
 	$effect(() => {
-		const angle = Math.abs(Math.max(angle3, angle1) - Math.min(angle3, angle1)) % (2 * Math.PI);
+		const diff = differenceAngle(angle1, angle3);
+		const angle = Math.abs(diff);
 		const en_degres = (angle * 180) / Math.PI;
 		mesure?.set(en_degres);
 	});
