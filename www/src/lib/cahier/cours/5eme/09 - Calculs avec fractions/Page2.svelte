@@ -8,13 +8,12 @@
 <Contenu>
 	<Partie numero={2} titre="Exemples d'exercices" />
 
-	<Paragraphe nom_du_paragraphe="Énoncé" lignes={6}>
+	<Paragraphe nom_du_paragraphe="Énoncé" lignes={3}>
 		Un gâteau est coupé en 4 morceaux.<br />
-		Albert a {@html math('\\frac{1}{2}')} du gâteau.<br />
-		Bernard a {@html math('\\frac{1}{8}')} du gâteau.<br />
-		Camille a {@html math('\\frac{3}{16}')} du gâteau.<br />
-		Que reste-t-il pour Danielle ?<br />
-		<LigneVide />
+		Albert a {@html math('\\frac{1}{2}')} du gâteau, Bernard a {@html math('\\frac{1}{8}')} du gâteau, Camille a {@html math('\\frac{3}{16}')} du gâteau.
+		<br />
+		Que reste-t-il pour Danielle ?
+		<br />
 	</Paragraphe>
 	<Paragraphe nom_du_paragraphe="Solution" lignes={6}>
 		{@html alignStar(`

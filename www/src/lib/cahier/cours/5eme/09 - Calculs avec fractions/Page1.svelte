@@ -9,31 +9,25 @@
 
 <Contenu apres_un_titre>
 	<Partie numero={1} titre="Addition et soustraction" />
-	<LigneVide />
 
-	<Texte lignes={2.75}>
+	<Texte lignes={2} couleur="bleu">
 		Partons de l'exemple suivant :
 		{@html display('\\dfrac{3}{7} + \\dfrac{2}{21} = ?')}
 	</Texte>
-	<LigneVide lignes={1.25} />
-	<Paragraphe nom_du_paragraphe="Problème">Les dénominateurs ne sont pas égaux.</Paragraphe>
-	<LigneVide />
+
+	<Paragraphe nom_du_paragraphe="Problème :">Les dénominateurs ne sont pas égaux.</Paragraphe>
+
 	<Texte>
 		{@html display(
 			'\\dfrac{ 3 {\\color{red} \\times 3 } }{ 7 {\\color{red} \\times 3} } + \\dfrac{2}{21} = \\dfrac{9}{21} + \\dfrac{2}{21} = \\dfrac{11}{21}'
 		)}
 	</Texte>
 
-	<LigneVide />
-	<Texte lignes={2.75}>
+	<Texte lignes={2} couleur="bleu">
 		Partons de l'exemple suivant :
-		{@html display(`
-            \\dfrac{3}{8} - \\dfrac{1}{4}
-        `)}
+		{@html display(`\\dfrac{3}{8} - \\dfrac{1}{4} = ?`)}
 	</Texte>
-	<LigneVide lignes={1.25} />
-	<Paragraphe nom_du_paragraphe="Problème">Les dénominateurs ne sont pas égaux.</Paragraphe>
-	<LigneVide />
+	<Paragraphe nom_du_paragraphe="Problème :">Les dénominateurs ne sont pas égaux.</Paragraphe>
 	<Texte>
 		{@html display(`
             \\dfrac{3}{8}
