@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Exemples, LigneTableau, Tableau } from '$lib/cahier/composants/de_cours/*';
-	import Item from '$lib/cahier/composants/de_cours/Item.svelte';
-	import Texte from '$lib/cahier/composants/de_cours/Texte.svelte';
+	import { Exemples, Item, LigneTableau, Tableau, Texte } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 </script>
 

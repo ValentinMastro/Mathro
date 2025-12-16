@@ -2,7 +2,6 @@
 	import { Chapitre, Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Exemple, Formules, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
 	import Item from '$lib/cahier/composants/de_cours/Item.svelte';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
 	import { math } from 'mathlifier';
 </script>
@@ -13,12 +12,11 @@
 	<Partie numero={1} titre="Périmètres" />
 	<Definition>Le périmètre d'une figure est la longueur de son contour.</Definition>
 	<Exemple />
-	<Schema lignes={5}>
+	<Schema lignes={5} html_lignes_vides={1}>
 		{#snippet svg()}
 			<path d="M 200 200 L 800 200 L 800 800 L 600 800 L 600 400 L 200 400 Z" fill="none" stroke="black" stroke-width={8} />
 		{/snippet}
 		{#snippet html()}
-			<LigneVide lignes={1} />
 			<Texte>Cette figure a un périmètre de 12 carreaux.</Texte>
 		{/snippet}
 	</Schema>

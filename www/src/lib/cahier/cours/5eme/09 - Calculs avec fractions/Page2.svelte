@@ -8,14 +8,14 @@
 <Contenu>
 	<Partie numero={2} titre="Exemples d'exercices" />
 
-	<Paragraphe nom_du_paragraphe="Énoncé" lignes={3}>
+	<Paragraphe nom_du_paragraphe="Énoncé :" lignes={3} couleur="bleu">
 		Un gâteau est coupé en 4 morceaux.<br />
 		Albert a {@html math('\\frac{1}{2}')} du gâteau, Bernard a {@html math('\\frac{1}{8}')} du gâteau, Camille a {@html math('\\frac{3}{16}')} du gâteau.
 		<br />
 		Que reste-t-il pour Danielle ?
 		<br />
 	</Paragraphe>
-	<Paragraphe nom_du_paragraphe="Solution" lignes={6}>
+	<Paragraphe nom_du_paragraphe="Solution :" lignes={6}>
 		{@html alignStar(`
             &\\dfrac{1}{\\color{green}1}
             - \\dfrac{1}{2}
@@ -38,21 +38,14 @@
             \\dfrac{3}{16}
         `)}
 	</Paragraphe>
-	<Paragraphe nom_du_paragraphe="Énoncé" lignes={5}>
+	<Paragraphe nom_du_paragraphe="Énoncé :" lignes={5} couleur="bleu">
 		Sur mon disque dur :
-		<Item>
-			{@html math('\\frac{1}{3}')} de l'espace est utilisé pour les vidéos.
-		</Item>
-		<Item>
-			{@html math('\\frac{1}{6}')} de l'espace est utilisé pour les images.
-		</Item>
-		<Item>
-			{@html math('\\frac{1}{24}')} de l'espace est utilisé pour des logiciels.
-		</Item>
+		<Item>Un tiers de l'espace est utilisé pour les vidéos.</Item>
+		<Item>Un sixième de l'espace est utilisé pour les images.</Item>
+		<Item>Un vingt-quatrième de l'espace est utilisé pour des logiciels.</Item>
 		Quelle fraction de l'espace disque n'est pas utilisé ?
 	</Paragraphe>
-	<LigneVide />
-	<Paragraphe nom_du_paragraphe="Solution" lignes={6}>
+	<Paragraphe nom_du_paragraphe="Solution :" lignes={6}>
 		{@html alignStar(`
             & 1 - \\frac{1}{3} - \\frac{1}{6} - \\frac{1}{24}
             \\\\
