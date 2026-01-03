@@ -2,7 +2,7 @@
 	"name": "www",
 	"version": "0.0.1",
 	"engines": {
-		"node": "22.x"
+		"node": "25.x"
 	},
 	"scripts": {
 		"dev": "vite dev",
