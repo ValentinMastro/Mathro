@@ -3,11 +3,11 @@
 	import { type HTMLAttributes } from 'svelte/elements';
 	import { page_state, set_taille_page } from '$lib/cahier/store.svelte';
 
-	type Props = Omit<HTMLAttributes<HTMLDivElement>, "class" | "style"> & {
+	type Props = Omit<HTMLAttributes<HTMLDivElement>, 'class' | 'style'> & {
 		numero_de_page: number;
 		nom_fichier: string;
 		children: Snippet;
-	}
+	};
 
 	let { numero_de_page, nom_fichier, children, ...div_props }: Props = $props();
 
@@ -60,7 +60,7 @@
 		display: flex;
 		flex-direction: column;
 		background-color: white;
-		font-family: 'Noto Serif', serif;
+		font-family: 'Noto Serif';
 
 		--bleu: rgb(0, 0, 138);
 		--rouge: rgb(225, 0, 0);

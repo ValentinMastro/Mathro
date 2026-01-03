@@ -1,3 +1,13 @@
+@font-face {
+	font-family: 'STIX Two Math';
+	src:
+		url('https://cdn.jsdelivr.net/npm/stix@2.0.2/fonts/STIX2Math.woff2') format('woff2'),
+		url('https://cdn.jsdelivr.net/npm/stix@2.0.2/fonts/STIX2Math.woff') format('woff');
+	font-style: normal;
+	font-weight: normal;
+	font-display: swap;
+}
+
 body {
 	margin: 0;
 	width: 100%;
