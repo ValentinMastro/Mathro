@@ -1,10 +1,8 @@
 <script lang="ts">
 	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Exemples, Formules, Item, Texte } from '$lib/cahier/composants/de_cours/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
+	import { Definition, Exemple, Formules } from '$lib/cahier/composants/de_cours/*';
 	import { LatexAlign } from '$lib/cahier/composants/math/*';
-
-	import { math, alignStar } from 'mathlifier';
+	import { math } from 'mathlifier';
 </script>
 
 <Contenu>

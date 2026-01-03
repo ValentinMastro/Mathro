@@ -1,62 +1,29 @@
 <script lang="ts">
-	import { Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Exemples, Item, LigneTableau, Tableau, Texte } from '$lib/cahier/composants/de_cours/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
+	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Convention, Definition, Exemple, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Rectangle, TexteSVG, type ExtrémitésSegment } from '$lib/cahier/composants/svg/*';
+
+	let points: ExtrémitésSegment = [
+		{ x: 0, y: 0 },
+		{ x: 1000, y: 1000 }
+	];
 </script>
 
 <Contenu>
-	<Partie numero={2} titre="Conversion d'unités de longueurs et d'aires" />
-	<SousPartie numero={1} titre="Longueur" />
-	<LigneVide />
-
-	<Tableau lignes={4}>
-		<LigneTableau>
-			<td>km</td>
-			<td>hm</td>
-			<td>dam</td>
-			<td>m</td>
-			<td>dm</td>
-			<td>cm</td>
-			<td>mm</td>
-		</LigneTableau>
-		<LigneTableau>
-			<td></td>
-			<td>1</td>
-			<td>7</td>
-			<td>5</td>
-			<td>0</td>
-			<td>0,</td>
-		</LigneTableau>
-		<LigneTableau>
-			<td>0,</td>
-			<td>0</td>
-			<td>0</td>
-			<td>0</td>
-			<td>5</td>
-		</LigneTableau>
-		<LigneTableau>
-			<td>12</td>
-			<td>0</td>
-			<td>0</td>
-			<td>0</td>
-			<td>0</td>
-			<td>0</td>
-			<td>0,</td>
-		</LigneTableau>
-	</Tableau>
-
-	<LigneVide />
-
-	<Exemples lignes={11}>
-		<Item>17,5 dam = ? cm</Item>
-		<Item bullet="→">Placer le chiffre des unités dans la colonne de l'unité d'origine.</Item>
-		<Texte>On place le 7 dans la colonne &lt; &lt; dam &gt; &gt;.</Texte>
-		<Item bullet="→">Placer les autres chiffres.</Item>
-		<Texte>On place le 1 et le 5.</Texte>
-		<Item bullet="→" lignes={2}>Compléter avec des zéros jusqu'à la colonne de la nouvelle unité.</Item>
-		<Item bullet="→">Placer la virgule dans la colonne de la nouvelle unité.</Item>
-		<Texte>17,5 dam = 17 500 cm</Texte>
-		<Item>0,5 m = 0,000 5 km</Item>
-		<Item>12 km = 12 000 000 mm</Item>
-	</Exemples>
+	<Partie numero={2} titre="Aires" />
+	<Definition>L'aire d'une figure est la mesure de la surface intérieure de la figure.</Definition>
+	<Exemple>La figure ci-dessous a une aire de 5 carreaux.</Exemple>
+	<Schema lignes={5}>
+		{#snippet svg()}
+			<polygon points="200,200 200,800 400,800 400,400 800,400 800,200" fill="none" stroke="black" stroke-width={8} />
+		{/snippet}
+	</Schema>
+	<Convention>L'unité légale de l'aire est le mètre carré (m²).</Convention>
+	<Schema lignes={4} aspectRatioSVG={1.5}>
+		{#snippet svg()}
+			<Rectangle {points} fill="lightblue" fill-opacity={0.4} stroke="black" stroke-width={20} />
+			<TexteSVG point={{ x: 1200, y: 500 }} font-size={160}>1 m</TexteSVG>
+		{/snippet}
+	</Schema>
+	<Texte>La surface intérieure de ce carré mesure 1 m².</Texte>
 </Contenu>
