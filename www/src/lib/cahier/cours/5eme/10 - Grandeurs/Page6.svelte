@@ -1,62 +1,47 @@
 <script lang="ts">
 	import { Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Exemples, Item, LigneTableau, Tableau, Texte } from '$lib/cahier/composants/de_cours/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
+	import { CelluleTableau, Exemples, Item, LigneTableau, Paragraphe, Tableau } from '$lib/cahier/composants/de_cours/*';
+	import { math } from 'mathlifier';
 </script>
 
 <Contenu>
 	<Partie numero={2} titre="Conversion d'unités de longueurs et d'aires" />
-	<SousPartie numero={1} titre="Longueur" />
-	<LigneVide />
 
-	<Tableau lignes={4}>
-		<LigneTableau>
-			<td>km</td>
-			<td>hm</td>
-			<td>dam</td>
-			<td>m</td>
-			<td>dm</td>
-			<td>cm</td>
-			<td>mm</td>
+	<SousPartie numero={1} titre="Longueur" />
+
+	<Paragraphe nom_du_paragraphe="Tableau de conversion" />
+
+	<Tableau lignes={6} colonnes={14}>
+		<LigneTableau lignes={1}>
+			<CelluleTableau colonnes={2}>km</CelluleTableau>
+			<CelluleTableau colonnes={2}>hm</CelluleTableau>
+			<CelluleTableau colonnes={2}>dam</CelluleTableau>
+			<CelluleTableau colonnes={2}>m</CelluleTableau>
+			<CelluleTableau colonnes={2}>dm</CelluleTableau>
+			<CelluleTableau colonnes={2}>cm</CelluleTableau>
+			<CelluleTableau colonnes={2}>mm</CelluleTableau>
 		</LigneTableau>
-		<LigneTableau>
-			<td></td>
-			<td>1</td>
-			<td>7</td>
-			<td>5</td>
-			<td>0</td>
-			<td>0,</td>
-		</LigneTableau>
-		<LigneTableau>
-			<td>0,</td>
-			<td>0</td>
-			<td>0</td>
-			<td>0</td>
-			<td>5</td>
-		</LigneTableau>
-		<LigneTableau>
-			<td>12</td>
-			<td>0</td>
-			<td>0</td>
-			<td>0</td>
-			<td>0</td>
-			<td>0</td>
-			<td>0,</td>
-		</LigneTableau>
+		{#each Array(5) as _}
+			<LigneTableau>
+				{#each Array(7) as _}
+					<CelluleTableau colonnes={2} />
+				{/each}
+			</LigneTableau>
+		{/each}
 	</Tableau>
 
-	<LigneVide />
-
-	<Exemples lignes={11}>
-		<Item>17,5 dam = ? cm</Item>
-		<Item bullet="→">Placer le chiffre des unités dans la colonne de l'unité d'origine.</Item>
-		<Texte>On place le 7 dans la colonne &lt; &lt; dam &gt; &gt;.</Texte>
-		<Item bullet="→">Placer les autres chiffres.</Item>
-		<Texte>On place le 1 et le 5.</Texte>
-		<Item bullet="→" lignes={2}>Compléter avec des zéros jusqu'à la colonne de la nouvelle unité.</Item>
-		<Item bullet="→">Placer la virgule dans la colonne de la nouvelle unité.</Item>
-		<Texte>17,5 dam = 17 500 cm</Texte>
-		<Item>0,5 m = 0,000 5 km</Item>
-		<Item>12 km = 12 000 000 mm</Item>
+	<Exemples lignes={4}>
+		<Item>
+			{@html math('85~\\text{cm} = 850~\\text{mm}')}
+		</Item>
+		<Item>
+			{@html math('5~\\text{m} = 0,005~\\text{km}')}
+		</Item>
+		<Item>
+			{@html math('3,2~\\text{dam} = 32~\\text{dm}')}
+		</Item>
+		<Item>
+			{@html math('7,3~\\text{hm} = 730~000~\\text{mm}')}
+		</Item>
 	</Exemples>
 </Contenu>

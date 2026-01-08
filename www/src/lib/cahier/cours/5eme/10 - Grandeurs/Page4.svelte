@@ -81,11 +81,10 @@
 			<Codage points={[points_parallélogramme[1], points_parallélogramme[2]]} stroke="blue" type="3 traits" taille={50} />
 			<Codage points={[points_parallélogramme[2], points_parallélogramme[3]]} stroke="blue" type="2 traits" taille={50} />
 			<Codage points={[points_parallélogramme[3], points_parallélogramme[0]]} stroke="blue" type="3 traits" taille={50} />
-			<TexteSVG point={points_parallélogramme[0]} dx={200} dy={-70} fill="blue">a</TexteSVG>
-			<TexteSVG point={points_parallélogramme[1]} dx={100} dy={100} fill="blue">b</TexteSVG>
+			<TexteSVG point={points_parallélogramme[0]} dx={200} dy={-70} fill="blue">base</TexteSVG>
 			{@const pied_hauteur_parallélogramme = { x: points_parallélogramme[1].x, y: points_parallélogramme[1].y + 300 }}
 			<Segment points={[points_parallélogramme[1], pied_hauteur_parallélogramme]} stroke="red" />
-			<TexteSVG point={points_parallélogramme[1]} fill="red" dx={-50} dy={150}>h</TexteSVG>
+			<TexteSVG point={points_parallélogramme[1]} fill="red" dx={-120} dy={150}>hauteur</TexteSVG>
 		{/snippet}
 	</Schema>
 </Contenu>
