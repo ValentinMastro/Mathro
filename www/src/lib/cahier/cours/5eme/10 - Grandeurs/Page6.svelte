@@ -38,7 +38,7 @@
 			{@html math('5~\\text{m} = 0,005~\\text{km}')}
 		</Item>
 		<Item>
-			{@html math('3,2~\\text{dam} = 32~\\text{dm}')}
+			{@html math('3,2~\\text{dam} = 320~\\text{dm}')}
 		</Item>
 		<Item>
 			{@html math('7,3~\\text{hm} = 730~000~\\text{mm}')}
