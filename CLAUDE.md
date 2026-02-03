@@ -13,12 +13,25 @@ All commands run from the `www/` directory:
 ```bash
 npm run dev              # Start dev server (localhost:5173)
 npm run build            # Production build
-npm run check            # TypeScript type checking
+npm run check            # TypeScript type checking (svelte-check)
 npm run lint             # Prettier + ESLint check
 npm run format           # Auto-format with Prettier
 npm run test             # Run tests once
 npm run test:watch       # Watch mode
 npm run test:ui          # Interactive Vitest UI
+```
+
+### Vérification complète
+
+```bash
+npm run check && npm run lint    # TypeScript + Prettier + ESLint
+```
+
+Pour lancer les vérifications séparément :
+
+```bash
+npx eslint .                     # ESLint seul (problèmes de code)
+npx prettier --check .           # Prettier seul (formatage)
 ```
 
 ## Tech Stack
