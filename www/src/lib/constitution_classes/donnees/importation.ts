@@ -1,6 +1,5 @@
 import * as XLSX from 'xlsx';
 import { classes, eleves, niveau } from '$lib/constitution_classes/store.svelte';
-import { get } from 'svelte/store';
 
 export async function importerDonnees(fichier: File) {
 	const data = await fichier.arrayBuffer();
@@ -27,9 +26,9 @@ function recupererLesClassesEtLeursOptions(workbook: XLSX.WorkBook) {
 	console.log(json_classes);
 
 	for (const classe of json_classes) {
-		if (classe['Classe'].includes((get(niveau) as number).toString())) {
-			classes.update((c) => [
-				...c,
+		if (classe['Classe'].includes((niveau.value as number).toString())) {
+			classes.value = [
+				...classes.value,
 				{
 					index: classe['Classe'],
 					eleves: [],
@@ -42,14 +41,14 @@ function recupererLesClassesEtLeursOptions(workbook: XLSX.WorkBook) {
 						CHAAP: 'CHAAP ?' in classe ? true : false
 					}
 				}
-			]);
+			];
 		}
 	}
 }
 
 function recupererLesEleves(workbook: XLSX.WorkBook) {
 	let liste_des_eleves;
-	switch (get(niveau)) {
+	switch (niveau.value) {
 		case 3:
 			liste_des_eleves = workbook.Sheets['Liste des élèves de 4èmes'];
 			break;
@@ -83,8 +82,8 @@ function recupererLesEleves(workbook: XLSX.WorkBook) {
 	});
 
 	for (const eleve of json_eleves) {
-		eleves.update((e) => [
-			...e,
+		eleves.value = [
+			...eleves.value,
 			{
 				id: eleve['ID'],
 				nom: eleve['NOM'],
@@ -99,6 +98,6 @@ function recupererLesEleves(workbook: XLSX.WorkBook) {
 					chaap: 'CHAAP' in eleve ? eleve['CHAAP'] == 'CHAAP' : false
 				}
 			}
-		]);
+		];
 	}
 }

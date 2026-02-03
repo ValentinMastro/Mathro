@@ -16,14 +16,14 @@
 	}
 
 	function preremplissage() {
-		$eleves
+		eleves.value
 			// Parmi les élèves qui ne sont pas encore placés
-			.filter((eleve) => !$classes.some((classe) => classe.eleves.map((e) => e.id).includes(eleve.id)))
+			.filter((eleve) => !classes.value.some((classe) => classe.eleves.map((e) => e.id).includes(eleve.id)))
 			// On ne garde que les élèves qui n'ont qu'une seule classe possible (suite aux options)
 			.map((eleve) => {
 				let nombre_de_classes_compatibles = 0;
 				let classe_trouvee: Classe | undefined = undefined;
-				for (let classe of $classes) {
+				for (let classe of classes.value) {
 					if (!eleve_et_classe_incompatibles(eleve, classe)) {
 						nombre_de_classes_compatibles += 1;
 						classe_trouvee = classe;
@@ -34,7 +34,7 @@
 			.filter(([_eleve, nombre_de_classes_compatibles, _classe_trouvee]) => nombre_de_classes_compatibles == 1)
 			// Chacun d'entre eux est ajouté à la classe correspondante
 			.forEach(([eleve, _nombre_de_classes_compatibles, classe_trouvee]) => {
-				$classes.find((classe) => (classe_trouvee as Classe).index == classe.index)?.eleves.push(eleve as Eleve);
+				classes.value.find((classe) => (classe_trouvee as Classe).index == classe.index)?.eleves.push(eleve as Eleve);
 			});
 	}
 
@@ -86,8 +86,8 @@
 			>
 			<div style="height: 3vh;"><!-- Espace --></div>
 			<div id="liste_des_eleves_a_placer" style="overflow-y: auto;">
-				{#each $eleves.filter((eleve: any) => {
-					for (let classe of $classes) {
+				{#each eleves.value.filter((eleve: any) => {
+					for (let classe of classes.value) {
 						if (classe.eleves.map((eleve) => eleve.id).includes(eleve.id)) {
 							return false;
 						}

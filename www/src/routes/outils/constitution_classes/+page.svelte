@@ -13,8 +13,8 @@
 	function handleKeydown(event: KeyboardEvent) {
 		if (event.ctrlKey && event.altKey && event.key.toLowerCase() === 'c') {
 			console.log('Ctrl + Alt + C détecté !');
-			classes.set([]);
-			eleves.set([]);
+			classes.value = [];
+			eleves.value = [];
 		}
 		if (event.ctrlKey && event.altKey && event.key.toLowerCase() === 'j') {
 			afficher_classe_eleves_trier_par_ordre_croissant();

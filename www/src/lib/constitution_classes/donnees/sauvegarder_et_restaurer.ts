@@ -1,10 +1,9 @@
 import { classes, eleves } from '$lib/constitution_classes/store.svelte';
-import { get } from 'svelte/store';
 
 export function sauvegarder() {
 	const data = {
-		classes: get(classes),
-		eleves: get(eleves)
+		classes: classes.value,
+		eleves: eleves.value
 	};
 
 	const blob = new Blob([JSON.stringify(data, null, 2)], {
@@ -26,8 +25,8 @@ export function restaurerDepuisJSON(fichier: File) {
 		try {
 			const contenu = JSON.parse(event.target?.result as string);
 			if (contenu.classes && contenu.eleves) {
-				classes.set(contenu.classes);
-				eleves.set(contenu.eleves);
+				classes.value = contenu.classes;
+				eleves.value = contenu.eleves;
 			} else {
 				console.error('Fichier invalide : données manquantes');
 			}
@@ -39,7 +38,7 @@ export function restaurerDepuisJSON(fichier: File) {
 }
 
 export function afficher_classe_eleves_trier_par_ordre_croissant() {
-	let mes_classes = get(classes);
+	let mes_classes = classes.value;
 	let mes_eleves = mes_classes.flatMap((classe) => classe.eleves);
 	mes_eleves.sort((e1, e2) => e1.nom.localeCompare(e2.nom));
 	let affichage_des_classes = mes_eleves.map((eleve) => mes_classes.find((c) => c.eleves.includes(eleve))?.index);
