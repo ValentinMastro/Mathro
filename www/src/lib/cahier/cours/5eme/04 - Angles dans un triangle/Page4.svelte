@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { writable } from 'svelte/store';
 	import { Contenu } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Propriete, Schema } from '$lib/cahier/composants/de_cours/*';
 	import { Angle, Codage, Polygone } from '$lib/cahier/composants/svg/*';
