@@ -10,9 +10,9 @@
 	let B = $state({ x: 800, y: 300 });
 	let C = $state({ x: 500, y: 800 });
 
-	let ABC = writable(0);
-	let BCA = writable(0);
-	let CAB = writable(0);
+	let ABC = $state(0);
+	let BCA = $state(0);
+	let CAB = $state(0);
 
 	$inspect(ABC);
 </script>
@@ -34,16 +34,16 @@
 	</Exemples>
 	<Schema lignes={10} html_lignes_vides={3}>
 		{#snippet svg()}
-			<Angle r={70} points={[A, B, C]} fill="red" afficher_mesure mesure={ABC} />
-			<Angle r={70} points={[B, C, A]} fill="blue" afficher_mesure mesure={BCA} />
-			<Angle r={70} points={[C, A, B]} fill="green" afficher_mesure mesure={CAB} />
+			<Angle r={70} points={[A, B, C]} fill="red" afficher_mesure bind:mesure={ABC} />
+			<Angle r={70} points={[B, C, A]} fill="blue" afficher_mesure bind:mesure={BCA} />
+			<Angle r={70} points={[C, A, B]} fill="green" afficher_mesure bind:mesure={CAB} />
 			<Polygone points={[A, B, C]} afficher_points />
 		{/snippet}
 		{#snippet html()}
 			<Texte lignes={3}>
 				Après avoir mesuré les angles au <br />
 				rapporteur, je remarque que <br />
-				{@html math(`${$ABC.toFixed()}^\\circ + ${$BCA.toFixed()}^\\circ + ${$CAB.toFixed()}^\\circ = ${$ABC + $BCA + $CAB}^\\circ`)}.
+				{@html math(`${ABC.toFixed()}^\\circ + ${BCA.toFixed()}^\\circ + ${CAB.toFixed()}^\\circ = ${ABC + BCA + CAB}^\\circ`)}.
 			</Texte>
 		{/snippet}
 	</Schema>
