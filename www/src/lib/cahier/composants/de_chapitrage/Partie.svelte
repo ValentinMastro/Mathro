@@ -1,5 +1,6 @@
 <script lang="ts">
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
+	import { chiffres_romains } from '$lib/cahier/composants/math/*';
 
 	interface Props {
 		numero: number;
@@ -8,38 +9,11 @@
 	}
 
 	let { numero, titre, lignes_vides = 1 }: Props = $props();
-
-	function enChiffresRomains(n: number) {
-		switch (n) {
-			case 1:
-				return 'I';
-			case 2:
-				return 'II';
-			case 3:
-				return 'III';
-			case 4:
-				return 'IV';
-			case 5:
-				return 'V';
-			case 6:
-				return 'VI';
-			case 7:
-				return 'VII';
-			case 8:
-				return 'VIII';
-			case 9:
-				return 'IX';
-			case 10:
-				return 'X';
-			default:
-				return n.toString();
-		}
-	}
 </script>
 
 <div class="partie">
 	<span>
-		{enChiffresRomains(numero)} - {titre}
+		{chiffres_romains(numero)} - {titre}
 	</span>
 </div>
 <LigneVide lignes={lignes_vides} />
