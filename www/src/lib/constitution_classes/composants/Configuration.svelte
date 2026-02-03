@@ -5,7 +5,7 @@
 
 <div id="configuration">
 	<div>
-		Niveau <select bind:value={$niveau}>
+		Niveau <select bind:value={niveau.value}>
 			<option value={6}>6ème</option>
 			<option value={5}>5ème</option>
 			<option value={4}>4ème</option>

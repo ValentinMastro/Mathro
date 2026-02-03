@@ -8,7 +8,7 @@
 	let erreur_option = $state(false);
 
 	function detecter_erreur_option(): boolean {
-		let classe = $classes.find((c) => c.eleves.includes(eleve));
+		let classe = classes.value.find((c) => c.eleves.includes(eleve));
 		if (!classe) return false;
 
 		return eleve_et_classe_incompatibles(eleve, classe);

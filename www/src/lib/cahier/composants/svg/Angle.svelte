@@ -11,16 +11,15 @@
 -->
 <script lang="ts">
 	import { type SVGAttributes } from 'svelte/elements';
-	import { type Writable } from 'svelte/store';
 	import { type Coordonnées2D, TexteSVG } from './*';
 
 	type Props = Omit<SVGAttributes<SVGPathElement>, 'points'> & {
 		afficher_mesure?: boolean;
-		mesure?: Writable<number>;
+		mesure?: number;
 		points: [Coordonnées2D, Coordonnées2D, Coordonnées2D];
 		r: number;
 	};
-	let { r, points, afficher_mesure = false, mesure, ...props }: Props = $props();
+	let { r, points, afficher_mesure = false, mesure = $bindable(0), ...props }: Props = $props();
 
 	let [P1, P2, P3] = $derived(points);
 
@@ -60,13 +59,13 @@
 		const diff = differenceAngle(angle1, angle3);
 		const angle = Math.abs(diff);
 		const en_degres = (angle * 180) / Math.PI;
-		mesure?.set(en_degres);
+		mesure = en_degres;
 	});
 </script>
 
 <path {d} {...props} />
 {#if afficher_mesure}
 	<TexteSVG point={{ x: P2.x + 2 * r * Math.cos(angleMoitié), y: P2.y + 2 * r * Math.sin(angleMoitié) }} fill={props['fill']}>
-		{$mesure?.toFixed()}°
+		{mesure.toFixed()}°
 	</TexteSVG>
 {/if}

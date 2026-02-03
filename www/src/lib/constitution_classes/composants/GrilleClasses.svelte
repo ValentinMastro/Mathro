@@ -14,13 +14,13 @@
 </script>
 
 <div id="classes">
-	{#each $classes as classe}
+	{#each classes.value as classe}
 		<div
 			class="classe"
-			style="width: {(100 - $nombre_de_classes * 0.1) / $nombre_de_classes}%"
+			style="width: {(100 - nombre_de_classes.value * 0.1) / nombre_de_classes.value}%"
 			use:dropzone={{
 				on_dropzone(id: any) {
-					const eleve_a_deplacer = $eleves.find((e) => e.id == id);
+					const eleve_a_deplacer = eleves.value.find((e) => e.id == id);
 					if (!eleve_a_deplacer) {
 						console.log('Erreur : élève introuvable');
 						return;
@@ -29,22 +29,18 @@
 					// Important : copie la clé de la classe courante (celle sur laquelle on drop)
 					const index_classe_cible = classe.index;
 
-					classes.update((liste) => {
-						// 1. Enlever l'élève de toutes les classes
-						for (const c of liste) {
-							c.eleves = c.eleves.filter((e) => e.id !== eleve_a_deplacer.id);
-						}
+					// 1. Enlever l'élève de toutes les classes
+					for (const c of classes.value) {
+						c.eleves = c.eleves.filter((e) => e.id !== eleve_a_deplacer.id);
+					}
 
-						// 2. Ajouter dans la classe ciblée
-						const classe_cible = liste.find((c) => c.index === index_classe_cible);
-						if (classe_cible) {
-							classe_cible.eleves.push(eleve_a_deplacer);
-						} else {
-							console.warn('Classe cible introuvable :', index_classe_cible);
-						}
-
-						return liste;
-					});
+					// 2. Ajouter dans la classe ciblée
+					const classe_cible = classes.value.find((c) => c.index === index_classe_cible);
+					if (classe_cible) {
+						classe_cible.eleves.push(eleve_a_deplacer);
+					} else {
+						console.warn('Classe cible introuvable :', index_classe_cible);
+					}
 				}
 			}}
 		>

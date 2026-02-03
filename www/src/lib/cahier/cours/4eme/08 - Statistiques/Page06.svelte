@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Remarque, Exemples, Schema, Tableau, LigneTableau } from '$lib/cahier/composants/de_cours/*';
+	import { Contenu } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Exemples, Schema, Tableau, LigneTableau } from '$lib/cahier/composants/de_cours/*';
 	// Nombre d'habitant à Meaux par année
 	let donnees_1 = {
 		1982: 45005,
@@ -14,12 +14,6 @@
 </script>
 
 <Contenu>
-	<Partie numero={2} titre="Diagrammes et graphiques" />
-	<SousPartie numero={1} titre="Diagrammes en barres/en bâtons" />
-	<Definition lignes={2}>
-		Un <i>diagramme en barres</i> permet de représenter des données par des barres de hauteurs proportionnelles.
-	</Definition>
-	<Remarque>On l'utilise le plus souvent pour comparer des valeurs entre elles.</Remarque>
 	<Exemples lignes={0} addStyle="margin-bottom: -0.2ex;" />
 	<Tableau>
 		<caption>Nombre d'habitants à Meaux par année</caption>
