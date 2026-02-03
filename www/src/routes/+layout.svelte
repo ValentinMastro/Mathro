@@ -2,23 +2,25 @@
 	import Header from './Header.svelte';
 	import { page } from '$app/state';
 	import './styles.css';
+
+	let { children } = $props();
 </script>
 
 {#if page.url.pathname === '/'}
 	<div class="app">
-		<slot />
+		{@render children()}
 	</div>
 {:else if page.url.pathname.includes('scratch')}
-	<slot />
+	{@render children()}
 {:else if page.url.pathname.includes('outils')}
-	<slot />
+	{@render children()}
 {:else if page.url.pathname.includes('cahier')}
-	<slot />
+	{@render children()}
 {:else}
 	<div class="app">
 		<Header />
 		<main>
-			<slot />
+			{@render children()}
 		</main>
 	</div>
 {/if}
