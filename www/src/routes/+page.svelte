@@ -16,7 +16,7 @@
 			<a href="/cahier_de_cours/6eme">6ème</a>
 		</div>
 		<div id="scratch" class="niveau">
-			<a href="/scratch">
+			<a href="/">
 				Scratch
 				<img id="scratch_cat" src="/for_scratch/ScratchCat3.0.svg" alt="Scratch Cat" />
 			</a>
