@@ -1,11 +1,12 @@
 <script lang="ts">
 	import LigneVide from '../LigneVide.svelte';
 	import { page_state } from '$lib/cahier/store.svelte';
+	import type { Snippet } from 'svelte';
 
 	interface Props {
 		apres_un_titre?: boolean;
 		lignes_vides?: number;
-		children?: any;
+		children?: Snippet;
 		à_imprimer?: boolean;
 	}
 

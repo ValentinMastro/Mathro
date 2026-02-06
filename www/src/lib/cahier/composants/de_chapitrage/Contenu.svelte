@@ -1,7 +1,9 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
+
 	interface Props {
 		apres_un_titre?: boolean;
-		children?: any;
+		children?: Snippet;
 	}
 
 	let { apres_un_titre = false, children }: Props = $props();

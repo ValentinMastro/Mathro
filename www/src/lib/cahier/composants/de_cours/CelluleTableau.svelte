@@ -1,7 +1,9 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
+
 	interface Props {
 		addStyle?: string;
-		children?: any;
+		children?: Snippet;
 		colonnes?: number;
 		texte_vertical?: boolean;
 	}
