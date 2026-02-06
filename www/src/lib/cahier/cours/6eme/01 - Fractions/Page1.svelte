@@ -64,7 +64,7 @@
 	</Item>
 {/snippet}
 
-<Contenu apres_un_titre={true}>
+<Contenu apres_un_titre>
 	<Partie numero={1} titre="Chiffres et nombres" />
 	<Definitions lignes={3}>
 		<Item>Un chiffre est un symbole parmi 0 ; 1 ; 2 ; 3 ; 4 ; 5 ; 6 ; 7 ; 8 ; 9</Item>

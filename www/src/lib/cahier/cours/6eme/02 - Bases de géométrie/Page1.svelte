@@ -7,7 +7,7 @@
 
 <Chapitre titre="Bases de géométrie" />
 
-<Contenu apres_un_titre={true}>
+<Contenu apres_un_titre>
 	<Partie numero={1} titre="Droite, demi-droite, segment, milieu" />
 	<Definition lignes={2}>
 		Une <i>droite</i> est un ensemble de points alignés. <br />

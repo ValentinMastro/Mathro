@@ -8,7 +8,7 @@
 
 <Chapitre titre="Fractions" />
 
-<Contenu apres_un_titre={true}>
+<Contenu apres_un_titre>
 	<Partie numero={1} titre="Concept" />
 	<Definition lignes={2}>
 		Soient deux nombres entiers {@html math('a')} et {@html math('b')} avec {@html math('b \\neq 0')}.<br />

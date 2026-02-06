@@ -6,7 +6,7 @@
 
 <Chapitre titre="Opérations sur les nombres relatifs" />
 
-<Contenu apres_un_titre={true}>
+<Contenu apres_un_titre>
 	<Partie numero={1} titre="Natures des nombres" />
 	<SousPartie numero={1} titre="Nombres entiers" />
 	<Definition lignes={2}>
