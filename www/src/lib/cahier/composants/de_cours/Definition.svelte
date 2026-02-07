@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Paragraphe, type ParagrapheProps } from './*';
-	let { addStyle, nom_du_paragraphe = 'Définition :', couleur = 'vert', lignes, lignes_vides, children }: ParagrapheProps = $props();
+	let props: ParagrapheProps = $props();
 </script>
 
-<Paragraphe {addStyle} {nom_du_paragraphe} {couleur} {lignes} {lignes_vides} {children} />
+<Paragraphe nom_du_paragraphe="Définition :" couleur="vert" {...props} />
