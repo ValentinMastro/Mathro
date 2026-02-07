@@ -8,7 +8,7 @@
 -->
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
-	import type { ExtrémitésSegment } from './*';
+	import { SVG_INFINI, type ExtrémitésSegment } from './*';
 
 	export type Props = Omit<SVGAttributes<SVGLineElement>, 'x1' | 'y1' | 'x2' | 'y2'> & {
 		passantPar: ExtrémitésSegment;
@@ -37,11 +37,11 @@
 </script>
 
 {#if x1 == x2}
-	<line {x1} {x2} y1={0} y2={1000} {...valeursParDefaut} {...props} />
+	<line {x1} {x2} y1={-SVG_INFINI} y2={SVG_INFINI} {...valeursParDefaut} {...props} />
 {:else if y1 == y2}
-	<line x1="0%" x2="100%" {y1} {y2} {...valeursParDefaut} {...props} />
+	<line x1={-SVG_INFINI} x2={SVG_INFINI} {y1} {y2} {...valeursParDefaut} {...props} />
 {:else}
-	{@const fx1 = equationDeDroite(0)}
-	{@const fx2 = equationDeDroite(10000)}
-	<line x1={0} x2={10000} y1={fx1} y2={fx2} {...valeursParDefaut} {...props} />
+	{@const fx1 = equationDeDroite(-SVG_INFINI)}
+	{@const fx2 = equationDeDroite(SVG_INFINI)}
+	<line x1={-SVG_INFINI} x2={SVG_INFINI} y1={fx1} y2={fx2} {...valeursParDefaut} {...props} />
 {/if}

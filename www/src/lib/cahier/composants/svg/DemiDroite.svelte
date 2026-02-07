@@ -9,7 +9,7 @@
 -->
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
-	import type { Coordonnées2D } from './*';
+	import { SVG_INFINI, type Coordonnées2D } from './*';
 
 	type Props = Omit<SVGAttributes<SVGLineElement>, 'x1' | 'y1' | 'x2' | 'y2'> & {
 		origine: Coordonnées2D;
@@ -39,14 +39,14 @@
 
 {#if origine.x == passantPar.x}
 	{@const x = origine.x}
-	{@const extremite = origine.y <= passantPar.y ? 1000 : 0}
+	{@const extremite = origine.y <= passantPar.y ? SVG_INFINI : -SVG_INFINI}
 	<line x1={x} x2={x} y1={origine.y} y2={extremite} {...valeursParDefaut} {...props} />
 {:else if origine.y == passantPar.y}
 	{@const y = origine.y}
-	{@const extremite = origine.x <= passantPar.x ? '100%' : '0%'}
+	{@const extremite = origine.x <= passantPar.x ? SVG_INFINI : -SVG_INFINI}
 	<line x1={origine.x} x2={extremite} y1={y} y2={y} {...valeursParDefaut} {...props} />
 {:else}
-	{@const extremite = origine.x <= passantPar.x ? 10000 : 0}
+	{@const extremite = origine.x <= passantPar.x ? SVG_INFINI : -SVG_INFINI}
 	{@const y1 = equationDeDroite(origine.x)}
 	{@const y2 = equationDeDroite(extremite)}
 	<line x1={origine.x} x2={extremite} {y1} {y2} {...valeursParDefaut} {...props} />

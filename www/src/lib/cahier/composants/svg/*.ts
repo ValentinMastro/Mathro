@@ -1,6 +1,9 @@
 export type Coordonnées2D = { x: number; y: number };
 export type ExtrémitésSegment = [Coordonnées2D, Coordonnées2D];
 
+/** Valeur arbitrairement grande pour prolonger une droite au-delà du viewport SVG */
+export const SVG_INFINI = 1e6;
+
 export { default as ArcDeCercle } from './ArcDeCercle.svelte';
 export { default as Angle } from './Angle.svelte';
 export { default as AngleDroit } from './AngleDroit.svelte';
