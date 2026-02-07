@@ -58,41 +58,41 @@
 	</Formules>
 	<Schema lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
-			<Carré coin={points_carré[0]} côté={côté_carré} />
+			<Carré coin={points_carré[0]!} côté={côté_carré} />
 			{#each points_carré as p, index}
-				<Codage points={[p, points_carré[(index + 1) % 4]]} stroke="red" />
+				<Codage points={[p, points_carré[(index + 1) % 4]!]} stroke="red" />
 			{/each}
-			<TexteSVG point={points_carré[1]} dx={côté_carré / 2} dy={80}>côté</TexteSVG>
+			<TexteSVG point={points_carré[1]!} dx={côté_carré / 2} dy={80}>côté</TexteSVG>
 
-			<Rectangle points={[points_rectangle[0], points_rectangle[2]]} />
-			<Codage points={[points_rectangle[0], points_rectangle[1]]} stroke="red" type="2 traits" />
-			<Codage points={[points_rectangle[1], points_rectangle[2]]} stroke="red" type="3 traits" />
-			<Codage points={[points_rectangle[2], points_rectangle[3]]} stroke="red" type="2 traits" />
-			<Codage points={[points_rectangle[3], points_rectangle[0]]} stroke="red" type="3 traits" />
+			<Rectangle points={[points_rectangle[0]!, points_rectangle[2]!]} />
+			<Codage points={[points_rectangle[0]!, points_rectangle[1]!]} stroke="red" type="2 traits" />
+			<Codage points={[points_rectangle[1]!, points_rectangle[2]!]} stroke="red" type="3 traits" />
+			<Codage points={[points_rectangle[2]!, points_rectangle[3]!]} stroke="red" type="2 traits" />
+			<Codage points={[points_rectangle[3]!, points_rectangle[0]!]} stroke="red" type="3 traits" />
 
 			<Polygone points={points_triangle} />
-			<TexteSVG point={{ x: (points_triangle[0].x + points_triangle[1].x) / 2, y: (points_triangle[0].y + points_triangle[1].y) / 2 }} dx={-50}>
+			<TexteSVG point={{ x: (points_triangle[0]!.x + points_triangle[1]!.x) / 2, y: (points_triangle[0]!.y + points_triangle[1]!.y) / 2 }} dx={-50}>
 				a
 			</TexteSVG>
-			<TexteSVG point={{ x: (points_triangle[1].x + points_triangle[2].x) / 2, y: (points_triangle[1].y + points_triangle[2].y) / 2 }} dx={50}>
+			<TexteSVG point={{ x: (points_triangle[1]!.x + points_triangle[2]!.x) / 2, y: (points_triangle[1]!.y + points_triangle[2]!.y) / 2 }} dx={50}>
 				b
 			</TexteSVG>
-			<TexteSVG point={{ x: (points_triangle[2].x + points_triangle[0].x) / 2, y: (points_triangle[2].y + points_triangle[0].y) / 2 }} dy={50}>
+			<TexteSVG point={{ x: (points_triangle[2]!.x + points_triangle[0]!.x) / 2, y: (points_triangle[2]!.y + points_triangle[0]!.y) / 2 }} dy={50}>
 				c
 			</TexteSVG>
 
 			<Polygone points={points_losange} />
 			{#each points_losange as p, index}
-				<Codage points={[p, points_losange[(index + 1) % 4]]} stroke="green" taille={50} />
+				<Codage points={[p, points_losange[(index + 1) % 4]!]} stroke="green" taille={50} />
 			{/each}
 
 			<Polygone points={points_parallélogramme} />
-			<Codage points={[points_parallélogramme[0], points_parallélogramme[1]]} stroke="blue" type="2 traits" taille={50} />
-			<Codage points={[points_parallélogramme[1], points_parallélogramme[2]]} stroke="blue" type="3 traits" taille={50} />
-			<Codage points={[points_parallélogramme[2], points_parallélogramme[3]]} stroke="blue" type="2 traits" taille={50} />
-			<Codage points={[points_parallélogramme[3], points_parallélogramme[0]]} stroke="blue" type="3 traits" taille={50} />
-			<TexteSVG point={points_parallélogramme[0]} dx={200} dy={-70} fill="blue">a</TexteSVG>
-			<TexteSVG point={points_parallélogramme[1]} dx={100} dy={100} fill="blue">b</TexteSVG>
+			<Codage points={[points_parallélogramme[0]!, points_parallélogramme[1]!]} stroke="blue" type="2 traits" taille={50} />
+			<Codage points={[points_parallélogramme[1]!, points_parallélogramme[2]!]} stroke="blue" type="3 traits" taille={50} />
+			<Codage points={[points_parallélogramme[2]!, points_parallélogramme[3]!]} stroke="blue" type="2 traits" taille={50} />
+			<Codage points={[points_parallélogramme[3]!, points_parallélogramme[0]!]} stroke="blue" type="3 traits" taille={50} />
+			<TexteSVG point={points_parallélogramme[0]!} dx={200} dy={-70} fill="blue">a</TexteSVG>
+			<TexteSVG point={points_parallélogramme[1]!} dx={100} dy={100} fill="blue">b</TexteSVG>
 		{/snippet}
 	</Schema>
 </Contenu>

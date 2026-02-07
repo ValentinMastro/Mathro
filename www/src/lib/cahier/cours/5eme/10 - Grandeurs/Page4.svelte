@@ -43,48 +43,48 @@
 	</Formules>
 	<Schema lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
-			<Carré coin={points_carré[0]} côté={côté_carré} />
+			<Carré coin={points_carré[0]!} côté={côté_carré} />
 			{#each points_carré as p, index}
-				<Codage points={[p, points_carré[(index + 1) % 4]]} stroke="red" />
+				<Codage points={[p, points_carré[(index + 1) % 4]!]} stroke="red" />
 			{/each}
-			<TexteSVG point={points_carré[1]} dx={côté_carré / 2} dy={80}>côté</TexteSVG>
+			<TexteSVG point={points_carré[1]!} dx={côté_carré / 2} dy={80}>côté</TexteSVG>
 
-			<Rectangle points={[points_rectangle[0], points_rectangle[2]]} />
-			<Codage points={[points_rectangle[0], points_rectangle[1]]} stroke="red" type="2 traits" />
-			<Codage points={[points_rectangle[1], points_rectangle[2]]} stroke="red" type="3 traits" />
-			<Codage points={[points_rectangle[2], points_rectangle[3]]} stroke="red" type="2 traits" />
-			<Codage points={[points_rectangle[3], points_rectangle[0]]} stroke="red" type="3 traits" />
+			<Rectangle points={[points_rectangle[0]!, points_rectangle[2]!]} />
+			<Codage points={[points_rectangle[0]!, points_rectangle[1]!]} stroke="red" type="2 traits" />
+			<Codage points={[points_rectangle[1]!, points_rectangle[2]!]} stroke="red" type="3 traits" />
+			<Codage points={[points_rectangle[2]!, points_rectangle[3]!]} stroke="red" type="2 traits" />
+			<Codage points={[points_rectangle[3]!, points_rectangle[0]!]} stroke="red" type="3 traits" />
 
 			<Polygone points={points_triangle} />
 			<TexteSVG
-				point={{ x: (points_triangle[0].x + points_triangle[1].x) / 2 + 50, y: (points_triangle[0].y + points_triangle[1].y) / 2 }}
+				point={{ x: (points_triangle[0]!.x + points_triangle[1]!.x) / 2 + 50, y: (points_triangle[0]!.y + points_triangle[1]!.y) / 2 }}
 				dx={-50}
 				fill="red"
 			>
 				hauteur
 			</TexteSVG>
-			<TexteSVG point={{ x: (points_triangle[2].x + points_triangle[0].x) / 2, y: (points_triangle[2].y + points_triangle[0].y) / 2 }} dy={50}>
+			<TexteSVG point={{ x: (points_triangle[2]!.x + points_triangle[0]!.x) / 2, y: (points_triangle[2]!.y + points_triangle[0]!.y) / 2 }} dy={50}>
 				base
 			</TexteSVG>
-			{@const pied_hauteur_triangle = { x: points_triangle[1].x, y: points_triangle[1].y + 200 }}
-			<Segment points={[points_triangle[1], pied_hauteur_triangle]} stroke="red" />
+			{@const pied_hauteur_triangle = { x: points_triangle[1]!.x, y: points_triangle[1]!.y + 200 }}
+			<Segment points={[points_triangle[1]!, pied_hauteur_triangle]} stroke="red" />
 
 			<Polygone points={points_losange} />
 			{#each points_losange as p, index}
-				<Codage points={[p, points_losange[(index + 1) % 4]]} stroke="green" taille={50} />
+				<Codage points={[p, points_losange[(index + 1) % 4]!]} stroke="green" taille={50} />
 			{/each}
-			<Segment points={[points_losange[0], points_losange[2]]} stroke="red" />
-			<Segment points={[points_losange[1], points_losange[3]]} stroke="red" />
+			<Segment points={[points_losange[0]!, points_losange[2]!]} stroke="red" />
+			<Segment points={[points_losange[1]!, points_losange[3]!]} stroke="red" />
 
 			<Polygone points={points_parallélogramme} />
-			<Codage points={[points_parallélogramme[0], points_parallélogramme[1]]} stroke="blue" type="2 traits" taille={50} />
-			<Codage points={[points_parallélogramme[1], points_parallélogramme[2]]} stroke="blue" type="3 traits" taille={50} />
-			<Codage points={[points_parallélogramme[2], points_parallélogramme[3]]} stroke="blue" type="2 traits" taille={50} />
-			<Codage points={[points_parallélogramme[3], points_parallélogramme[0]]} stroke="blue" type="3 traits" taille={50} />
-			<TexteSVG point={points_parallélogramme[0]} dx={200} dy={-70} fill="blue">base</TexteSVG>
-			{@const pied_hauteur_parallélogramme = { x: points_parallélogramme[1].x, y: points_parallélogramme[1].y + 300 }}
-			<Segment points={[points_parallélogramme[1], pied_hauteur_parallélogramme]} stroke="red" />
-			<TexteSVG point={points_parallélogramme[1]} fill="red" dx={-120} dy={150}>hauteur</TexteSVG>
+			<Codage points={[points_parallélogramme[0]!, points_parallélogramme[1]!]} stroke="blue" type="2 traits" taille={50} />
+			<Codage points={[points_parallélogramme[1]!, points_parallélogramme[2]!]} stroke="blue" type="3 traits" taille={50} />
+			<Codage points={[points_parallélogramme[2]!, points_parallélogramme[3]!]} stroke="blue" type="2 traits" taille={50} />
+			<Codage points={[points_parallélogramme[3]!, points_parallélogramme[0]!]} stroke="blue" type="3 traits" taille={50} />
+			<TexteSVG point={points_parallélogramme[0]!} dx={200} dy={-70} fill="blue">base</TexteSVG>
+			{@const pied_hauteur_parallélogramme = { x: points_parallélogramme[1]!.x, y: points_parallélogramme[1]!.y + 300 }}
+			<Segment points={[points_parallélogramme[1]!, pied_hauteur_parallélogramme]} stroke="red" />
+			<TexteSVG point={points_parallélogramme[1]!} fill="red" dx={-120} dy={150}>hauteur</TexteSVG>
 		{/snippet}
 	</Schema>
 </Contenu>

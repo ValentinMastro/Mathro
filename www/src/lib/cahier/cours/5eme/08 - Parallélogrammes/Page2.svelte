@@ -37,8 +37,8 @@
 	<Schema lignes={5} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<Polygone {points} afficher_points />
-			<Segment points={[points[0], points[2]]} stroke="red" />
-			<Segment points={[points[1], points[3]]} stroke="red" />
+			<Segment points={[points[0]!, points[2]!]} stroke="red" />
+			<Segment points={[points[1]!, points[3]!]} stroke="red" />
 		{/snippet}
 	</Schema>
 </Contenu>

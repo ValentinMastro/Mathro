@@ -58,7 +58,7 @@
 		}
 	];
 
-	let index_ville = $state(0);
+	let index_ville: 0 | 1 | 2 = $state(0);
 </script>
 
 <Contenu>
@@ -74,7 +74,7 @@
 			<thead>
 				<tr>
 					<th>Tranche d'âge</th>
-					{#each Object.keys(villes[index_ville].donnees) as tranche}
+					{#each Object.keys(villes[index_ville]!.donnees) as tranche}
 						<th>{tranche}</th>
 					{/each}
 				</tr>
@@ -82,7 +82,7 @@
 			<tbody>
 				<tr>
 					<th>Nombre d'habitants</th>
-					{#each Object.values(villes[index_ville].donnees) as valeur}
+					{#each Object.values(villes[index_ville]!.donnees) as valeur}
 						<td>{valeur.toLocaleString('fr-FR')}</td>
 					{/each}
 				</tr>
@@ -120,8 +120,8 @@
 				<text x={(annee / 15) * graduation_horizontale + 100} y="980" class="textp36">{annee}</text>
 			{/each}
 			<!-- Barres -->
-			{#each Object.values(villes[index_ville].donnees) as valeur, i}
-				{#if i < Object.values(villes[index_ville].donnees).length - 1}
+			{#each Object.values(villes[index_ville]!.donnees) as valeur, i}
+				{#if i < Object.values(villes[index_ville]!.donnees).length - 1}
 					<rect
 						x={100 + i * graduation_horizontale}
 						y={950 - (900 * valeur) / 18000}

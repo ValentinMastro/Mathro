@@ -32,7 +32,7 @@
 		];
 
 		if (n <= 19) {
-			return polygones_de_1_à_19[n];
+			return polygones_de_1_à_19[n]!;
 		}
 
 		/* Entre 20 et 99 côtés */

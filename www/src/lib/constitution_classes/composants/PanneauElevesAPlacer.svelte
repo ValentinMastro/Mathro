@@ -11,7 +11,7 @@
 		const input = e.target as HTMLInputElement;
 		if (!input.files || input.files.length === 0) return;
 
-		const fichier_xlsx = input.files[0];
+		const fichier_xlsx = input.files[0]!;
 		await importerDonnees(fichier_xlsx);
 	}
 
@@ -86,7 +86,7 @@
 			>
 			<div style="height: 3vh;"><!-- Espace --></div>
 			<div id="liste_des_eleves_a_placer" style="overflow-y: auto;">
-				{#each eleves.value.filter((eleve: any) => {
+				{#each eleves.value.filter((eleve: Eleve) => {
 					for (let classe of classes.value) {
 						if (classe.eleves.map((eleve) => eleve.id).includes(eleve.id)) {
 							return false;

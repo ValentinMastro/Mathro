@@ -39,7 +39,7 @@
 	let données_étapes = $derived.by(() => {
 		let étapes = [];
 		for (let i = 0; i < nombre_étapes; i++) {
-			let chiffre_quotient = Number.parseInt(quotient.toString().split('')[i]);
+			let chiffre_quotient = Number.parseInt(quotient.toString().split('')[i]!);
 			let fill = COULEURS[i % COULEURS.length];
 			let numéro = i + 1;
 			let nombre_soustrait = 0;
@@ -59,9 +59,9 @@
 				}
 			} else {
 				// Accès sécurisé à l'élément précédent
-				let element_precedent = étapes[i - 1];
+				let element_precedent = étapes[i - 1]!;
 				position_dernier_chiffre = element_precedent.position_dernier_chiffre + 1;
-				nombre_soustrait = element_precedent.reste * 10 + Number.parseInt(dividende.toString().split('')[position_dernier_chiffre - 1]);
+				nombre_soustrait = element_precedent.reste * 10 + Number.parseInt(dividende.toString().split('')[position_dernier_chiffre - 1]!);
 			}
 
 			let reste = nombre_soustrait - nombre_à_soustraire;
@@ -102,7 +102,7 @@
 			{@const UP = { x: (position_dernier_chiffre + 0.5) * c, y: 1 * c }}
 			{@const DOWN = { x: UP.x, y: 2 * c }}
 			<Fleche points={[UP, DOWN]} taille={10} />
-			{@const chiffre_a_descendre = Number.parseInt(dividende.toString().split('')[position_dernier_chiffre - 1])}
+			{@const chiffre_a_descendre = Number.parseInt(dividende.toString().split('')[position_dernier_chiffre - 1]!)}
 			<text x={(position_dernier_chiffre + 1) * c} y={(2 * numéro - 1) * c}>{chiffre_a_descendre}</text>
 		{/if}
 		<SegmentHorizontal x1={0} x2={(1 + position_dernier_chiffre) * c} y={2 * numéro * c} stroke={fill} />

@@ -54,14 +54,13 @@
 		return `M ${ax} ${ay} L ${bx} ${by}`;
 	}
 
-	function d() {
+	function d(): string {
 		if (type === '1 trait') {
 			return trait(cx, cy);
 		} else if (type === '2 traits') {
 			return [trait(cx - (espacement / 2) * ux, cy - (espacement / 2) * uy), trait(cx + (espacement / 2) * ux, cy + (espacement / 2) * uy)].join(' ');
-		} else if (type === '3 traits') {
-			return [trait(cx, cy), trait(cx - espacement * ux, cy - espacement * uy), trait(cx + espacement * ux, cy + espacement * uy)].join(' ');
 		}
+		return [trait(cx, cy), trait(cx - espacement * ux, cy - espacement * uy), trait(cx + espacement * ux, cy + espacement * uy)].join(' ');
 	}
 </script>
 

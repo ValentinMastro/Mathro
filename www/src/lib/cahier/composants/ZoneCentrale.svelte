@@ -5,10 +5,10 @@
 	import PageDeCahier from './PageDeCahier.svelte';
 	import Scroll from './Scroll.svelte';
 
-	let PageGauche: Component = $derived(PAGES.liste[page_state.numero_de_la_page].composant);
-	let PageDroite: Component = $derived(PAGES.liste[page_state.numero_de_la_page + 1].composant);
-	let nom_fichier_gauche = $derived(PAGES.liste[page_state.numero_de_la_page].nom_fichier);
-	let nom_fichier_droite = $derived(PAGES.liste[page_state.numero_de_la_page + 1].nom_fichier);
+	let PageGauche: Component = $derived(PAGES.liste[page_state.numero_de_la_page]!.composant);
+	let PageDroite: Component = $derived(PAGES.liste[page_state.numero_de_la_page + 1]!.composant);
+	let nom_fichier_gauche = $derived(PAGES.liste[page_state.numero_de_la_page]!.nom_fichier);
+	let nom_fichier_droite = $derived(PAGES.liste[page_state.numero_de_la_page + 1]!.nom_fichier);
 </script>
 
 <div id="zone">

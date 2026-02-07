@@ -36,7 +36,7 @@
 
 	function importer_projet() {
 		if (file_list.length == 1) {
-			json.set(file_list[0]);
+			json.set(file_list[0]!);
 			phase.set('B');
 		}
 	}

@@ -9,9 +9,9 @@ export function chiffres_romains(n: number, en_minuscules: boolean = false): str
 
 	let result = '';
 	for (let i = 0; i < romans.length; i++) {
-		while (n >= values[i]) {
-			result += romans[i];
-			n -= values[i];
+		while (n >= values[i]!) {
+			result += romans[i]!;
+			n -= values[i]!;
 		}
 	}
 

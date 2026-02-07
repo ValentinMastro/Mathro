@@ -36,7 +36,10 @@
 		{#snippet svg()}
 			<Polygone points={sommets_triangle} afficher_points />
 			<Polygone points={sommets_triangle_translaté} afficher_points={translation >= 1} noms={["A'", "B'", "C'"]} stroke="red" />
-			<Fleche points={[sommets_triangle[0], { x: sommets_triangle[0].x + vecteur.x, y: sommets_triangle[0].y + vecteur.y }]} stroke="var(--vert)" />
+			<Fleche
+				points={[sommets_triangle[0]!, { x: sommets_triangle[0]!.x + vecteur.x, y: sommets_triangle[0]!.y + vecteur.y }]}
+				stroke="var(--vert)"
+			/>
 		{/snippet}
 	</Schema>
 	<Notation lignes={4}>

@@ -34,7 +34,7 @@
 		const arcs = `a ${rPoint1} ${rPoint1} 0 1 1 ${2 * rPoint1} 0 a ${rPoint1} ${rPoint1} 0 1 1 ${-2 * rPoint1} 0`;
 		const segs: string[] = new Array(slider_1);
 		for (let i = 0; i < slider_1; i++) {
-			const { cos, sin } = angles_aleatoires[i];
+			const { cos, sin } = angles_aleatoires[i]!;
 			const x = O.x + r * cos,
 				y = O.y + r * sin;
 			segs[i] = `M ${x - rPoint1} ${y}${arcs}`;
@@ -47,8 +47,8 @@
 		const arcs = ` a ${rPoint2} ${rPoint2} 0 1 1 ${2 * rPoint2} 0 a ${rPoint2} ${rPoint2} 0 1 1 ${-2 * rPoint2} 0 `;
 		const segs: string[] = new Array(slider_1);
 		for (let i = 0; i < slider_1; i++) {
-			const { cos, sin } = angles_aleatoires[i];
-			const R = r * rayons_aleatoires[i];
+			const { cos, sin } = angles_aleatoires[i]!;
+			const R = r * rayons_aleatoires[i]!;
 			const x = O2.x + R * cos,
 				y = O2.y + R * sin;
 			segs[i] = ` M ${x - rPoint2} ${y} `;
@@ -58,14 +58,14 @@
 
 	const dernier_point_cercle = $derived.by(() => {
 		const i = Math.min(slider_1, nombre_de_points) - 1;
-		const { cos, sin } = angles_aleatoires[i];
+		const { cos, sin } = angles_aleatoires[i]!;
 		return { x: O.x + r * cos, y: O.y + r * sin };
 	});
 
 	const dernier_point_disque = $derived.by(() => {
 		const i = Math.min(slider_1, nombre_de_points) - 1;
-		const { cos, sin } = angles_aleatoires[i];
-		const R = r * rayons_aleatoires[i];
+		const { cos, sin } = angles_aleatoires[i]!;
+		const R = r * rayons_aleatoires[i]!;
 		return { x: O2.x + R * cos, y: O2.y + R * sin };
 	});
 </script>

@@ -85,8 +85,8 @@
 		const n = sommets_base_3d.length;
 		const res: boolean[] = new Array(n);
 		for (let i = 0; i < n; i++) {
-			const Si = sommets_base_3d[i];
-			const Sj = sommets_base_3d[(i + 1) % n];
+			const Si = sommets_base_3d[i]!;
+			const Sj = sommets_base_3d[(i + 1) % n]!;
 			const e1 = Si.soustraire(apex_v3); // APEX->Si
 			const e2 = Sj.soustraire(apex_v3); // APEX->Sj
 			const normale = e1.cross(e2);
@@ -102,7 +102,7 @@
 
 <!-- Arêtes de base cachées : héritent de la face (APEX, Si, S(i+1)) -->
 {#each SOMMETS_BASE as S, i}
-	{@const S_NEXT = SOMMETS_BASE[(i + 1) % SOMMETS_BASE.length]}
+	{@const S_NEXT = SOMMETS_BASE[(i + 1) % SOMMETS_BASE.length]!}
 	{#if !faces_visibles[i]}
 		<Polylignes points={[S, S_NEXT]} stroke="#666" stroke-width={6} stroke-dasharray="25 15" />
 	{/if}
@@ -120,7 +120,7 @@
 
 <!-- Arêtes de base visibles -->
 {#each SOMMETS_BASE as S, i}
-	{@const S_NEXT = SOMMETS_BASE[(i + 1) % SOMMETS_BASE.length]}
+	{@const S_NEXT = SOMMETS_BASE[(i + 1) % SOMMETS_BASE.length]!}
 	{#if faces_visibles[i]}
 		<Polylignes points={[S, S_NEXT]} stroke="#111" stroke-width={6} />
 	{/if}

@@ -86,7 +86,7 @@
 				{@const cy = 500}
 				<circle {cx} {cy} {r} fill="white" stroke="black" stroke-width={5} />
 				{#each angles as angle, angle_index}
-					{@const angle_suivant = angles[(angle_index + 1) % angles.length]}
+					{@const angle_suivant = angles[(angle_index + 1) % angles.length]!}
 					<defs>
 						<clipPath id="secteur{numéro_cercle}_{angle_index}">
 							<polygon

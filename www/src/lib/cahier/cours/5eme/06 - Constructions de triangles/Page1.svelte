@@ -13,7 +13,7 @@
 		{ x: 666, y: 833 }
 	];
 	const [A, B, C] = points;
-	let segment_selectionné: ExtrémitésSegment = $derived([points[slider], points[(slider + 1) % points.length]]);
+	let segment_selectionné: ExtrémitésSegment = $derived([points[slider]!, points[(slider + 1) % points.length]!]);
 
 	const triangle2 = [
 		{ x: 200, y: 400 },
@@ -21,9 +21,9 @@
 		{ x: 600, y: 1000 }
 	];
 	const milieux_triangle2 = $derived([
-		{ x: (triangle2[0].x + triangle2[1].x) / 2, y: (triangle2[0].y + triangle2[1].y) / 2 },
-		{ x: (triangle2[1].x + triangle2[2].x) / 2, y: (triangle2[1].y + triangle2[2].y) / 2 },
-		{ x: (triangle2[2].x + triangle2[0].x) / 2, y: (triangle2[2].y + triangle2[0].y) / 2 }
+		{ x: (triangle2[0]!.x + triangle2[1]!.x) / 2, y: (triangle2[0]!.y + triangle2[1]!.y) / 2 },
+		{ x: (triangle2[1]!.x + triangle2[2]!.x) / 2, y: (triangle2[1]!.y + triangle2[2]!.y) / 2 },
+		{ x: (triangle2[2]!.x + triangle2[0]!.x) / 2, y: (triangle2[2]!.y + triangle2[0]!.y) / 2 }
 	]);
 </script>
 
@@ -44,7 +44,7 @@
 	</Propriete>
 	<Schema lignes={6} aspectRatioSVG={2} html_lignes_vides={1}>
 		{#snippet svg()}
-			<Polygone points={[A, B, C]} afficher_noms stroke="red" taille_nom={100} />
+			<Polygone points={[A!, B!, C!]} afficher_noms stroke="red" taille_nom={100} />
 			<Segment points={segment_selectionné} stroke="blue" stroke-width={15} />
 		{/snippet}
 		{#snippet html()}
@@ -59,9 +59,9 @@
 	<Schema lignes={5} aspectRatioSVG={1.6}>
 		{#snippet svg()}
 			<Polygone points={triangle2} stroke-width={10} />
-			<TexteSVG point={milieux_triangle2[0]} font-size={100} dx={-50} dy={-60}>2 cm</TexteSVG>
-			<TexteSVG point={milieux_triangle2[1]} font-size={100} dx={200}>7 cm</TexteSVG>
-			<TexteSVG point={milieux_triangle2[2]} font-size={100} dx={-150}>3 cm</TexteSVG>
+			<TexteSVG point={milieux_triangle2[0]!} font-size={100} dx={-50} dy={-60}>2 cm</TexteSVG>
+			<TexteSVG point={milieux_triangle2[1]!} font-size={100} dx={200}>7 cm</TexteSVG>
+			<TexteSVG point={milieux_triangle2[2]!} font-size={100} dx={-150}>3 cm</TexteSVG>
 		{/snippet}
 		{#snippet html()}
 			<Texte lignes={4}>

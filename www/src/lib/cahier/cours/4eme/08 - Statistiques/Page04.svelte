@@ -9,9 +9,9 @@
 	function mediane(serie: number[]): number {
 		serie = serie.slice().sort((a, b) => a - b); // ordre croissant
 		if (serie.length % 2 == 0) {
-			return (serie[serie.length / 2] + serie[serie.length / 2 - 1]) / 2;
+			return (serie[serie.length / 2]! + serie[serie.length / 2 - 1]!) / 2;
 		} else {
-			return serie[Math.floor(serie.length / 2)];
+			return serie[Math.floor(serie.length / 2)]!;
 		}
 	}
 

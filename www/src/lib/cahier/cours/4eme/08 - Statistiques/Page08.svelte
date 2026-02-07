@@ -59,53 +59,47 @@
 		}
 	];
 
-	let index_ville = $state(0);
+	let index_ville: 0 | 1 | 2 = $state(0);
+
+	function ville() {
+		return villes[index_ville]!;
+	}
 
 	function angle(index: number) {
+		const v = ville();
 		let donnee = 0;
 		switch (index) {
 			case 0:
-				donnee = villes[index_ville].donnees['0-14'];
+				donnee = v.donnees['0-14'];
 				break;
 			case 1:
-				donnee = villes[index_ville].donnees['15-29'];
+				donnee = v.donnees['15-29'];
 				break;
 			case 2:
-				donnee = villes[index_ville].donnees['30-44'];
+				donnee = v.donnees['30-44'];
 				break;
 			case 3:
-				donnee = villes[index_ville].donnees['45-59'];
+				donnee = v.donnees['45-59'];
 				break;
 			case 4:
-				donnee = villes[index_ville].donnees['60-74'];
+				donnee = v.donnees['60-74'];
 				break;
 			case 5:
-				donnee = villes[index_ville].donnees['75 +'];
+				donnee = v.donnees['75 +'];
 				break;
 		}
-		return (donnee * 360) / villes[index_ville].donnees['TOTAL'];
+		return (donnee * 360) / v.donnees['TOTAL'];
 	}
 
-	function angle_cumule(index: number) {
-		let angles_cumules = 0;
-		switch (index) {
-			case -1:
-				return 0;
-			case 0:
-				angles_cumules += villes[index_ville].donnees['0-14'];
-			case 1:
-				angles_cumules += villes[index_ville].donnees['15-29'];
-			case 2:
-				angles_cumules += villes[index_ville].donnees['30-44'];
-			case 3:
-				angles_cumules += villes[index_ville].donnees['45-59'];
-			case 4:
-				angles_cumules += villes[index_ville].donnees['60-74'];
-			case 5:
-				angles_cumules += villes[index_ville].donnees['75 +'];
-				break;
+	function angle_cumule(index: number): number {
+		if (index === -1) return 0;
+		const v = ville();
+		const tranches: (keyof Population)[] = ['0-14', '15-29', '30-44', '45-59', '60-74', '75 +'];
+		let somme = 0;
+		for (let i = index; i < tranches.length; i++) {
+			somme += v.donnees[tranches[i]!];
 		}
-		return (angles_cumules * 360) / villes[index_ville].donnees['TOTAL'];
+		return (somme * 360) / v.donnees['TOTAL'];
 	}
 
 	function cos(angle: number) {
@@ -148,19 +142,18 @@
 	<Exemples lignes={3} addStyle="margin-bottom: -0.2ex;">
 		<table class="donnees" style="--hauteur: var(--carreau); --taille-texte: var(--font-size);">
 			<caption>
-				Population de {villes[index_ville].meta.ville} ({villes[index_ville].meta.code_insee}) en {villes[index_ville].meta.annee} par grandes tranches
-				d'âge
+				Population de {ville().meta.ville} ({ville().meta.code_insee}) en {ville().meta.annee} par grandes tranches d'âge
 			</caption>
 			<tbody>
 				<tr>
 					<th>Tranche d'âge</th>
-					{#each Object.keys(villes[index_ville].donnees) as tranche}
+					{#each Object.keys(ville().donnees) as tranche}
 						<th>{tranche}</th>
 					{/each}
 				</tr>
 				<tr>
 					<th>Nombre d'habitants</th>
-					{#each Object.values(villes[index_ville].donnees) as valeur}
+					{#each Object.values(ville().donnees) as valeur}
 						<td>{valeur}</td>
 					{/each}
 				</tr>
@@ -172,7 +165,7 @@
 			<!-- Cercle -->
 			<circle cx="350" cy="500" r="350" stroke="black" stroke-width="2" fill="none" />
 			<!-- Secteurs et légendes -->
-			{#each Object.keys(villes[index_ville].donnees) as tranche, index}
+			{#each Object.keys(ville().donnees) as tranche, index}
 				{#if tranche != 'TOTAL'}
 					<path
 						d="

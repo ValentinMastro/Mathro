@@ -17,12 +17,13 @@
 	let { point, type = { forme: 'croix', taille: 20 }, nom, 'font-size': fontSize = 80, dx = 0, dy = 2 * fontSize, ...props }: Props = $props();
 	let { x, y } = $derived(point);
 
-	function couleur() {
+	function couleur(): string {
 		if (type.forme == 'croix') {
-			return props['stroke'] || 'black';
+			return (props['stroke'] as string) || 'black';
 		} else if (type.forme == 'disque') {
-			return props['fill'] || 'black';
+			return (props['fill'] as string) || 'black';
 		}
+		return 'black';
 	}
 
 	let valeursParDefault = {

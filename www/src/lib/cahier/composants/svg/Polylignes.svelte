@@ -63,11 +63,11 @@
 
 		// Cas particuliers : 0, 1 ou 2 points
 		if (nombreSommets === 0) return { x: NaN, y: NaN };
-		if (nombreSommets === 1) return { x: sommets[0].x, y: sommets[0].y };
+		if (nombreSommets === 1) return { x: sommets[0]!.x, y: sommets[0]!.y };
 		if (nombreSommets === 2) {
 			return {
-				x: (sommets[0].x + sommets[1].x) / 2,
-				y: (sommets[0].y + sommets[1].y) / 2
+				x: (sommets[0]!.x + sommets[1]!.x) / 2,
+				y: (sommets[0]!.y + sommets[1]!.y) / 2
 			};
 		}
 
@@ -79,10 +79,10 @@
 		// Parcours de chaque arête du polygone
 		for (let i = 0; i < nombreSommets; i++) {
 			const j = (i + 1) % nombreSommets; // sommet suivant (boucle fermée)
-			const xi = sommets[i].x;
-			const yi = sommets[i].y;
-			const xj = sommets[j].x;
-			const yj = sommets[j].y;
+			const xi = sommets[i]!.x;
+			const yi = sommets[i]!.y;
+			const xj = sommets[j]!.x;
+			const yj = sommets[j]!.y;
 
 			const produitCroise = xi * yj - xj * yi; // x_i * y_{i+1} - x_{i+1} * y_i
 
@@ -135,8 +135,8 @@
 <polyline points={points.map(({ x, y }) => `${x},${y}`).join(' ')} {...rest} {...autreProps} />
 {#if afficher_points}
 	{#each points as point, index}
-		{@const nom = noms[index]}
-		{@const { dx, dy } = positions_noms[index]}
+		{@const nom = noms[index]!}
+		{@const { dx, dy } = positions_noms[index]!}
 		<Point {nom} {point} {dx} {dy} {type} font-size={taille_nom} />
 	{/each}
 {/if}

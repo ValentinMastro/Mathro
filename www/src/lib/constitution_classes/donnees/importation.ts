@@ -22,7 +22,7 @@ function recupererLesClassesEtLeursOptions(workbook: XLSX.WorkBook) {
 		'CHAAP ?': string;
 	}
 
-	const json_classes: to_json[] = XLSX.utils.sheet_to_json(liste_des_classes);
+	const json_classes: to_json[] = XLSX.utils.sheet_to_json(liste_des_classes!);
 	console.log(json_classes);
 
 	for (const classe of json_classes) {
@@ -33,12 +33,12 @@ function recupererLesClassesEtLeursOptions(workbook: XLSX.WorkBook) {
 					index: classe['Classe'],
 					eleves: [],
 					options: {
-						LATIN: 'LATIN ?' in classe ? true : false,
-						GREC: 'GREC ?' in classe ? true : false,
-						'ALLEMAND LV2': 'ALLEMAND LV2 ?' in classe ? true : false,
-						'ESPAGNOL LV2': 'ESPAGNOL LV2 ?' in classe ? true : false,
-						HISPANICA: 'HISPANICA ?' in classe ? true : false,
-						CHAAP: 'CHAAP ?' in classe ? true : false
+						LATIN: classe['LATIN ?'] === 'LATIN',
+						GREC: classe['GREC ?'] === 'GREC',
+						'ALLEMAND LV2': classe['ALLEMAND LV2 ?'] === 'ALLEMAND LV2',
+						'ESPAGNOL LV2': classe['ESPAGNOL LV2 ?'] === 'ESPAGNOL LV2',
+						HISPANICA: classe['HISPANICA ?'] === 'HISPANICA',
+						CHAAP: classe['CHAAP ?'] === 'CHAAP'
 					}
 				}
 			];
@@ -77,7 +77,7 @@ function recupererLesEleves(workbook: XLSX.WorkBook) {
 		"Langue et \nCulture de l'Antiquité"?: 'LATIN' | 'GREC';
 	}
 
-	const json_eleves: eleve_to_json[] = XLSX.utils.sheet_to_json(liste_des_eleves, {
+	const json_eleves: eleve_to_json[] = XLSX.utils.sheet_to_json(liste_des_eleves!, {
 		range: 2 // commence à la ligne 3 (0-indexé)
 	});
 
