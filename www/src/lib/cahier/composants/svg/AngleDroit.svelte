@@ -20,9 +20,9 @@
 
 	let { points, taille = 100, decalage = 0, ...props }: Props = $props();
 	let valeursParDefaut = {
-		stroke: props['stroke'] || 'none',
-		'stroke-width': props['stroke-width'] || '10',
-		fill: props['fill'] || 'black'
+		stroke: 'none',
+		'stroke-width': '10',
+		fill: 'black'
 	};
 
 	const A = points[0];
@@ -60,4 +60,4 @@
 	const pointsCarre = `${P0.x},${P0.y} ${P1.x},${P1.y} ${P2.x},${P2.y} ${P3.x},${P3.y}`;
 </script>
 
-<polygon points={pointsCarre} {...props} {...valeursParDefaut} />
+<polygon points={pointsCarre} {...valeursParDefaut} {...props} />

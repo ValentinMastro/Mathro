@@ -17,9 +17,9 @@
 
 	let { points, ...props }: Props = $props();
 	let valeursParDefaut = {
-		stroke: props['stroke'] || 'black',
-		'stroke-width': props['stroke-width'] || 5,
-		fill: props['fill'] || 'none'
+		stroke: 'black',
+		'stroke-width': 5,
+		fill: 'none'
 	};
 
 	let x1 = $derived(points[0].x);
@@ -28,4 +28,4 @@
 	let y2 = $derived(points[1].y);
 </script>
 
-<line {x1} {x2} {y1} {y2} {...props} {...valeursParDefaut} />
+<line {x1} {x2} {y1} {y2} {...valeursParDefaut} {...props} />

@@ -20,14 +20,12 @@
 	};
 
 	let { x1, x2, y, ...props }: Props = $props();
-	let y1 = $derived(y);
-	let y2 = $derived(y);
 </script>
 
 <Segment
 	points={[
-		{ x: x1, y: y1 },
-		{ x: x2, y: y2 }
+		{ x: x1, y },
+		{ x: x2, y }
 	]}
 	{...props}
 />

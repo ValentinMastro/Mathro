@@ -1,12 +1,12 @@
 <!--
     @component
 
-    ## Segment
+    ## SegmentVertical
     Trace un segment vertical
     ### Props
-    - `y1`: number : abscisse du premier point
-    - `y2`: number : abscisse du deuxième point
-    - `x`: number : ordonnée du segment
+    - `y1`: number : ordonnée du premier point
+    - `y2`: number : ordonnée du deuxième point
+    - `x`: number : abscisse du segment
 -->
 
 <script lang="ts">
@@ -20,14 +20,12 @@
 	};
 
 	let { y1, y2, x, ...props }: Props = $props();
-	let x1 = $derived(x);
-	let x2 = $derived(x);
 </script>
 
 <Segment
 	points={[
-		{ x: x1, y: y1 },
-		{ x: x2, y: y2 }
+		{ x, y: y1 },
+		{ x, y: y2 }
 	]}
 	{...props}
 />

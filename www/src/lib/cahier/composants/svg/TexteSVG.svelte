@@ -15,10 +15,10 @@
 
 	let { point, children, ...props }: Props = $props();
 	let valeursParDefaut = {
-		'font-size': props['font-size'] || 60,
+		'font-size': 60,
 		'dominant-baseline': 'middle',
 		'text-anchor': 'middle'
 	};
 </script>
 
-<text x={point.x} y={point.y} {...props} {...valeursParDefaut}>{@render children?.()}</text>
+<text x={point.x} y={point.y} {...valeursParDefaut} {...props}>{@render children?.()}</text>

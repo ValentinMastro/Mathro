@@ -35,8 +35,8 @@
 	let { pas, avec_contours = false, ...props }: Props = $props();
 
 	let valeursParDefaut = {
-		stroke: props['stroke'] || 'black',
-		'stroke-width': props['stroke-width'] || 5
+		stroke: 'black',
+		'stroke-width': 5
 	};
 
 	const dims = $derived.by(() => {
@@ -86,9 +86,9 @@
 </script>
 
 {#each valeurs_x as xx}
-	<line x1={xx} y1={y} x2={xx} y2={y + largeur} {...attrs} {...valeursParDefaut} />
+	<line x1={xx} y1={y} x2={xx} y2={y + largeur} {...valeursParDefaut} {...attrs} />
 {/each}
 
 {#each valeurs_y as yy}
-	<line x1={x} y1={yy} x2={x + longueur} y2={yy} {...attrs} {...valeursParDefaut} />
+	<line x1={x} y1={yy} x2={x + longueur} y2={yy} {...valeursParDefaut} {...attrs} />
 {/each}

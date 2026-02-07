@@ -78,7 +78,7 @@
 		return étapes;
 	});
 
-	$inspect(données_étapes);
+
 </script>
 
 <!-- Structure -->

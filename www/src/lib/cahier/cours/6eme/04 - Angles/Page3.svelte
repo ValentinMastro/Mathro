@@ -55,7 +55,7 @@
 				<Point nom="C" point={C} {type} font-size={120} {dx} {dy} />
 			{/if}
 			{#if étape >= 2}
-				<SecteurAngulaire cx={B.x} cy={B.y} r={300} angle1={0} angle2={Math.PI / 6} fill="darkgreen" />
+				<SecteurAngulaire centre={B} r={300} angle1={0} angle2={Math.PI / 6} fill="darkgreen" />
 				<text x={650} y={750} text-anchor="middle" alignment-baseline="middle" font-size={120} fill="darkgreen">30°</text>
 			{/if}
 			{#if étape >= 3}

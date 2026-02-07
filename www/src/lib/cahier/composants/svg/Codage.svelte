@@ -21,10 +21,10 @@
 	};
 
 	let { points, position = 0.5, type = '1 trait', taille = 80, ...props }: Props = $props();
-	let valeursParDefault = {
-		fill: props['fill'] || 'none',
-		stroke: props['stroke'] || 'black',
-		'stroke-width': props['stroke-width'] || 5
+	let valeursParDefaut = {
+		fill: 'none',
+		stroke: 'black',
+		'stroke-width': 5
 	};
 
 	const [P, Q] = points;
@@ -43,7 +43,7 @@
 	const cy = P.y + position * vy;
 
 	// Espacement entre traits (si 2 ou 3 traits)
-	const espacement = typeof valeursParDefault['stroke-width'] === 'number' ? valeursParDefault['stroke-width'] * 5 : 0.6 * taille;
+	const espacement = typeof valeursParDefaut['stroke-width'] === 'number' ? valeursParDefaut['stroke-width'] * 5 : 0.6 * taille;
 
 	function trait(x: number, y: number) {
 		const demi = taille / 2;
@@ -64,4 +64,4 @@
 	}
 </script>
 
-<path d={d()} {...props} {...valeursParDefault} />
+<path d={d()} {...valeursParDefaut} {...props} />

@@ -64,7 +64,7 @@
 	<Definition lignes={2}>La mesure d'un angle quantifie l'écartement entre les deux côtés de l'angle.</Definition>
 	<Schema lignes={8} aspectRatioSVG={1.5} onclick={calculer_angle} html_lignes_vides={1}>
 		{#snippet svg()}
-			<SecteurAngulaire cx={750} cy={500} r={100} angle1={Math.PI / 2} angle2={-radians + Math.PI / 2} fill="red" />
+			<SecteurAngulaire centre={{ x: 750, y: 500 }} r={100} angle1={Math.PI / 2} angle2={-radians + Math.PI / 2} fill="red" />
 			<DemiDroite origine={O} passantPar={A} />
 			<DemiDroite origine={O} passantPar={B} stroke="blue" />
 			<Point point={O} nom="O" {type} dy={90} />
@@ -93,7 +93,7 @@
 		{#snippet svg()}
 			{#snippet afficher_angle(degres: number, x: number, y: number)}
 				{@const angle = ((90 - degres) * Math.PI) / 180}
-				<SecteurAngulaire cx={x} cy={y} r={100} angle1={Math.PI / 2} angle2={angle} fill="forestgreen" />
+				<SecteurAngulaire centre={{ x, y }} r={100} angle1={Math.PI / 2} angle2={angle} fill="forestgreen" />
 				<Point point={{ x, y }} type={{ forme: 'croix', taille: 30 }} />
 				<Fleche
 					points={[

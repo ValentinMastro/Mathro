@@ -19,10 +19,10 @@
 	let { coin, côté, ...props }: Props = $props();
 
 	let valeursParDefaut = {
-		stroke: props['stroke'] || 'black',
-		'stroke-width': props['stroke-width'] || 5,
-		fill: props['fill'] || 'none'
+		stroke: 'black',
+		'stroke-width': 5,
+		fill: 'none'
 	};
 </script>
 
-<rect x={coin.x} y={coin.y} width={côté} height={côté} {...props} {...valeursParDefaut} />
+<rect x={coin.x} y={coin.y} width={côté} height={côté} {...valeursParDefaut} {...props} />

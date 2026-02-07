@@ -44,9 +44,9 @@
 	}: Props = $props();
 
 	let autreProps = {
-		fill: rest['fill'] || 'none',
-		stroke: rest['stroke'] || 'black',
-		'stroke-width': rest['stroke-width'] || 5
+		fill: 'none',
+		stroke: 'black',
+		'stroke-width': 5
 	};
 
 	/**
@@ -135,7 +135,7 @@
 	);
 </script>
 
-<polygon points={points.map(({ x, y }) => `${x},${y}`).join(' ')} {...rest} {...autreProps} />
+<polygon points={points.map(({ x, y }) => `${x},${y}`).join(' ')} {...autreProps} {...rest} />
 {#if afficher_points}
 	{#each points as point, index}
 		{@const nom = noms[index]!}

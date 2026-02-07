@@ -4,23 +4,23 @@
   Trace le secteur angulaire connaissant 2 angles
 
   ### Props
-  - `cx` *(number)* : abscisse du centre du cercle
-  - `cy` *(number)* : ordonnée du centre du cercle
-  - `r` *(number)* : rayon du secteur (distance du sommet à l’arc)
+  - `centre` *Coordonnées2D* : centre du cercle
+  - `r` *(number)* : rayon du secteur (distance du sommet à l'arc)
   - `angle1` *(number)* : angle de départ en radians
   - `angle2` *(number)* : angle de fin en radians
 -->
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
+	import type { Coordonnées2D } from './*';
 
 	type Props = SVGAttributes<SVGPathElement> & {
-		cx: number;
-		cy: number;
+		centre: Coordonnées2D;
 		r: number;
 		angle1: number;
 		angle2: number;
 	};
-	let { cx, cy, r, angle1, angle2, ...props }: Props = $props();
+	let { centre, r, angle1, angle2, ...props }: Props = $props();
+	let { x: cx, y: cy } = $derived(centre);
 
 	// Pour que l'angle ne soit pas concave
 	if (angle1 < angle2) [angle1, angle2] = [angle2, angle1];

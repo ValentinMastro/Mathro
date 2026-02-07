@@ -28,9 +28,9 @@
 	if (angle1 > angle2) [angle2, angle1] = [angle1, angle2];
 
 	let valeursParDefaut = {
-		stroke: props['stroke'] || 'none',
-		'stroke-width': props['stroke-width'] || 5,
-		fill: props['fill'] || 'black'
+		stroke: 'none',
+		'stroke-width': 5,
+		fill: 'black'
 	};
 
 	let petitRayonAngle1 = { x: centre.x + rayon1 * Math.cos(angle1), y: centre.y + rayon1 * Math.sin(angle1) };
@@ -48,4 +48,4 @@
 	`;
 </script>
 
-<path {d} {...props} {...valeursParDefaut} />
+<path {d} {...valeursParDefaut} {...props} />

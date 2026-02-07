@@ -1,3 +1,11 @@
+<!--
+	@component
+	## Droite — (extends SVGLineElement)
+	Trace une droite passant par deux points
+
+	### Props
+	- `passantPar` *ExtrémitésSegment* : deux points par lesquels passe la droite
+-->
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
 	import type { ExtrémitésSegment } from './*';
@@ -8,8 +16,8 @@
 
 	let { passantPar, ...props }: Props = $props();
 	let valeursParDefaut = {
-		stroke: props['stroke'] || 'black',
-		'stroke-width': props['stroke-width'] || 5
+		stroke: 'black',
+		'stroke-width': 5
 	};
 
 	let x1 = $derived(passantPar[0].x);
@@ -29,11 +37,11 @@
 </script>
 
 {#if x1 == x2}
-	<line {x1} {x2} y1={0} y2={1000} {...props} {...valeursParDefaut} />
+	<line {x1} {x2} y1={0} y2={1000} {...valeursParDefaut} {...props} />
 {:else if y1 == y2}
-	<line x1="0%" x2="100%" {y1} {y2} {...props} {...valeursParDefaut} />
+	<line x1="0%" x2="100%" {y1} {y2} {...valeursParDefaut} {...props} />
 {:else}
 	{@const fx1 = equationDeDroite(0)}
 	{@const fx2 = equationDeDroite(10000)}
-	<line x1={0} x2={10000} y1={fx1} y2={fx2} {...props} {...valeursParDefaut} />
+	<line x1={0} x2={10000} y1={fx1} y2={fx2} {...valeursParDefaut} {...props} />
 {/if}

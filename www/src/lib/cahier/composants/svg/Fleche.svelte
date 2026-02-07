@@ -19,10 +19,10 @@
 	};
 
 	let { points, taille = 30, largeur, ...props }: FlècheProps = $props();
-	let valeursParDefault = {
-		stroke: props['stroke'] || 'black',
-		fill: props['fill'] || 'black',
-		'stroke-width': props['stroke-width'] || 5
+	let valeursParDefaut = {
+		stroke: 'black',
+		fill: 'black',
+		'stroke-width': 5
 	};
 
 	let x1 = points[0].x;
@@ -54,4 +54,4 @@
 	let d = `M ${x1} ${y1} L ${bx} ${by} M ${x2} ${y2} L ${p1x} ${p1y} L ${p2x} ${p2y} Z`;
 </script>
 
-<path {d} {...props} {...valeursParDefault} />
+<path {d} {...valeursParDefaut} {...props} />

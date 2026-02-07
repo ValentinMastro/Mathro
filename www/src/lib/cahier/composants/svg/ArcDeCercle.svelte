@@ -21,10 +21,10 @@
 	};
 	let { centre, r, angle1, angle2, ...props }: Props = $props();
 	let { x: cx, y: cy } = centre;
-	let valeursParDefault = {
-		fill: props['fill'] || 'none',
-		stroke: props['stroke'] || 'black',
-		'stroke-width': props['stroke-width'] || 5
+	let valeursParDefaut = {
+		fill: 'none',
+		stroke: 'black',
+		'stroke-width': 5
 	};
 
 	// Pour que l'angle ne soit pas concave
@@ -37,8 +37,8 @@
     M {cx + r * Math.cos(angle1)} {cy - r * Math.sin(angle1)}
     A {r} {r} 0 0 1 {cx + r * Math.cos(angle2)} {cy - r * Math.sin(angle2)}
     "
+		{...valeursParDefaut}
 		{...props}
-		{...valeursParDefault}
 	/>
 {:else}
 	<path
@@ -46,15 +46,15 @@
     M {cx + r * Math.cos(angle1)} {cy - r * Math.sin(angle1)}
     A {r} {r} 0 0 1 {cx + r * Math.cos(angle1 + Math.PI)} {cy - r * Math.sin(angle1 + Math.PI)}
     "
+		{...valeursParDefaut}
 		{...props}
-		{...valeursParDefault}
 	/>
 	<path
 		d="
     M {cx + r * Math.cos(angle1 + Math.PI)} {cy - r * Math.sin(angle1 + Math.PI)}
     A {r} {r} 0 0 1 {cx + r * Math.cos(angle2)} {cy - r * Math.sin(angle2)}
     "
+		{...valeursParDefaut}
 		{...props}
-		{...valeursParDefault}
 	/>
 {/if}

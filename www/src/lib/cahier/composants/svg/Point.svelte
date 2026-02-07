@@ -1,3 +1,16 @@
+<!--
+	@component
+	## Point — (extends SVGPathElement)
+	Trace un point (croix ou disque) avec un nom optionnel
+
+	### Props
+	- `point` *Coordonnées2D* : coordonnées du point
+	- `type` *{ forme: 'croix' | 'disque' | 'rien'; taille: number }* : forme et taille du point *(par défaut : { forme: 'croix', taille: 20 })*
+	- `nom` *string* : nom affiché à côté du point
+	- `font-size` *number* : taille du texte *(par défaut : 80)*
+	- `dx` *number* : décalage horizontal du nom *(par défaut : 0)*
+	- `dy` *number* : décalage vertical du nom *(par défaut : 2 * font-size)*
+-->
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
 	import type { Coordonnées2D } from './*';
@@ -26,8 +39,8 @@
 		return 'black';
 	}
 
-	let valeursParDefault = {
-		'stroke-width': props['stroke-width'] || type.taille / 5
+	let valeursParDefaut = {
+		'stroke-width': type.taille / 5
 	};
 
 	let t = type.taille;
@@ -46,9 +59,9 @@
 </script>
 
 {#if type.forme == 'croix'}
-	<path d={d_croix} {...props} {...valeursParDefault} fill="none" stroke={couleur()} />
+	<path d={d_croix} {...valeursParDefaut} {...props} fill="none" stroke={couleur()} />
 {:else if type.forme == 'disque'}
-	<path d={d_disque} {...props} {...valeursParDefault} fill={couleur()} stroke="none" />
+	<path d={d_disque} {...valeursParDefaut} {...props} fill={couleur()} stroke="none" />
 {/if}
 
 {#if nom}

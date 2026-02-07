@@ -1,4 +1,11 @@
-<!-- Médiatrice.svelte -->
+<!--
+	@component
+	## Médiatrice — (extends Droite)
+	Trace la médiatrice d'un segment
+
+	### Props
+	- `extrémités_segment` *ExtrémitésSegment* : extrémités du segment dont on trace la médiatrice
+-->
 <script lang="ts">
 	import { Droite, type ExtrémitésSegment } from './*';
 	import type { SVGAttributes } from 'svelte/elements';

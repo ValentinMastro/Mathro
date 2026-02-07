@@ -18,13 +18,13 @@
 	let { points, ...props }: Props = $props();
 
 	let valeursParDefaut = {
-		stroke: props['stroke'] || 'black',
-		'stroke-width': props['stroke-width'] || '5',
-		fill: props['fill'] || 'none'
+		stroke: 'black',
+		'stroke-width': 5,
+		fill: 'none'
 	};
 
 	let A = { x: Math.min(points[0].x, points[1].x), y: Math.min(points[0].y, points[1].y) };
 	let B = { x: Math.max(points[0].x, points[1].x), y: Math.max(points[0].y, points[1].y) };
 </script>
 
-<rect x={A.x} y={A.y} width={B.x - A.x} height={B.y - A.y} {...props} {...valeursParDefaut} />
+<rect x={A.x} y={A.y} width={B.x - A.x} height={B.y - A.y} {...valeursParDefaut} {...props} />

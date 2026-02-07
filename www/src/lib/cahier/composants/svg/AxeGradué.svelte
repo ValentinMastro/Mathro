@@ -49,7 +49,7 @@
 				];
 			})
 	);
-	$inspect(extrémités_graduations);
+
 </script>
 
 <Flèche {...flèche_props} />
