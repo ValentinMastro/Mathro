@@ -5,7 +5,7 @@
 </script>
 
 <Chapitre titre="Calculer avec des relatifs" />
-<Contenu>
+<Contenu apres_un_titre>
 	<Partie numero={1} titre="Valeur absolue" />
 	<Definition>La valeur absolue d'un nombre est le nombre "sans le signe".</Definition>
 	<Exemples lignes={2}>
