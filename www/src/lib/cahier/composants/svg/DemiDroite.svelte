@@ -27,13 +27,18 @@
 		let y1 = origine.y;
 		let x2 = passantPar.x;
 		let y2 = passantPar.y;
-		if (x1 != x2 && y1 != y2) {
-			const m = (y2 - y1) / (x2 - x1);
-			const p = y1 - m * x1;
-			return m * x + p;
-		} else {
+		// Droite verticale : pas d'équation y = f(x)
+		if (x1 == x2) {
 			return undefined;
 		}
+		// Droite horizontale : y constant
+		if (y1 == y2) {
+			return y1;
+		}
+		// Droite oblique : calculer avec la pente
+		const m = (y2 - y1) / (x2 - x1);
+		const p = y1 - m * x1;
+		return m * x + p;
 	}
 </script>
 
