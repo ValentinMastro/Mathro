@@ -134,7 +134,6 @@
 
 <Contenu>
 	<SousPartie numero={2} titre="Diagrammes circulaires" />
-	<LigneVide />
 	<Definition lignes={2}>
 		Un diagramme circulaire est un disque partagé en secteurs angulaires proportionnels aux valeurs qu'ils représentent.
 	</Definition>

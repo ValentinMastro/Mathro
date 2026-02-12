@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Exemples, Schema } from '$lib/cahier/composants/de_cours/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
 	interface Population {
 		'0-14': number;
@@ -63,7 +62,6 @@
 
 <Contenu>
 	<SousPartie numero={3} titre="Histogramme" />
-	<LigneVide />
 	<Definition lignes={4}>
 		Pour représenter des classes de données, on utilise un histogramme dans lequel les classes sont représentées par des rectangles de largeur
 		proportionnelle à l'étendue de la classe et de hauteur proportionnelle à l'effectif de la classe.
