@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemple, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Angle, DemiDroite, Point } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 </script>
@@ -12,7 +12,7 @@
 		deux autres de même mesure.
 	</Definition>
 	<Exemple />
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			{@const A = { x: 200, y: 200 }}
 			{@const B = { x: 200, y: 800 }}
@@ -28,7 +28,7 @@
 			<DemiDroite origine={B} passantPar={C} stroke="black" stroke-width={5} />
 			<DemiDroite origine={B} passantPar={D} stroke="red" stroke-width={5} />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Texte lignes={3} couleur="bleu">
 		{@html math('[\\text{BD})')} est la bissectrice de l'angle {@html math('\\widehat{\\text{ABC}}')}, coupés en deux angles <br />
 		{@html math('\\widehat{\\text{ABD}}')} et {@html math('\\widehat{\\text{DBC}}')} de 45°.

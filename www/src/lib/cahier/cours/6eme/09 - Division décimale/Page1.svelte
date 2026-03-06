@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Item, Propriete, Methode, Exemples, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Item, Propriete, Methode, Exemples, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import { Fleche } from '$lib/cahier/composants/svg/*';
 
@@ -26,7 +26,7 @@
 	</Methode>
 	<Exemples />
 	<!-- Division de 253 par 8 -->
-	<Schema lignes={15} aspectRatioSVG={20 / 15}>
+	<Schéma lignes={15} aspectRatioSVG={20 / 15}>
 		{#snippet svg()}
 			{@const c = 1000 / 15}
 			<!-- Barres + diviseur + dividende (étape 0) -->
@@ -174,7 +174,7 @@
 				<text x={6 * c} y={11 * c}>0</text>
 			{/if}
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>
 
 <style>

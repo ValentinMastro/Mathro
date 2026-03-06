@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Formules, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemple, Formules, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import Item from '$lib/cahier/composants/de_cours/Item.svelte';
 
 	import { math } from 'mathlifier';
@@ -12,14 +12,14 @@
 	<Partie numero={1} titre="Périmètres" />
 	<Definition>Le périmètre d'une figure est la longueur de son contour.</Definition>
 	<Exemple />
-	<Schema lignes={5} html_lignes_vides={1}>
+	<Schéma lignes={5} html_lignes_vides={1}>
 		{#snippet svg()}
 			<path d="M 200 200 L 800 200 L 800 800 L 600 800 L 600 400 L 200 400 Z" fill="none" stroke="black" stroke-width={8} />
 		{/snippet}
 		{#snippet html()}
 			<Texte>Cette figure a un périmètre de 12 carreaux.</Texte>
 		{/snippet}
-	</Schema>
+	</Schéma>
 
 	<Formules lignes={4}>
 		<Item>
@@ -35,7 +35,7 @@
 			{@html math('\\mathcal{P}_{\\text{cercle}} = 2 \\times \\pi \\times \\text{rayon}')}
 		</Item>
 	</Formules>
-	<Schema lignes={5} aspectRatioSVG={4}>
+	<Schéma lignes={5} aspectRatioSVG={4}>
 		{#snippet svg()}
 			<!-- Carré -->
 			<rect x={200} y={200} width={600} height={600} fill="none" stroke="black" stroke-width={8} />
@@ -55,5 +55,5 @@
 			<circle cx={3400} cy={500} fill="black" stroke="none" r={12} />
 			<text x={3300} y={600} font-size={100}>rayon</text>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Exemple, Exemples, Item, Methode, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Exemple, Exemples, Item, Methode, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { SaisieNombreDecimal } from '$lib/cahier/composants/de_marge/*';
 	import { NombreDecimal } from '$lib/cahier/composants/math/*';
 	import { Point } from '$lib/cahier/composants/svg/*';
@@ -32,7 +32,7 @@
 <Contenu>
 	<Partie numero={3} titre="Repérage sur une droite graduée" />
 	<Exemple />
-	<Schema lignes={10} aspectRatioSVG={1.7}>
+	<Schéma lignes={10} aspectRatioSVG={1.7}>
 		{#snippet svg()}
 			<Point point={A1} nom={nombre.toString()} type={{ forme: 'disque', taille: 10 }} fill="red" font-size={45} dy={60} />
 			<Point point={A2} nom={nombre.toString()} type={{ forme: 'disque', taille: 12 }} fill="red" font-size={45} dy={60} />
@@ -63,7 +63,7 @@
 			<line x1={400 + 100 * chiffre_des_centiemes} y1={500} x2={400} y2={800} stroke="green" stroke-width={5} />
 			<line x1={400 + 100 * (chiffre_des_centiemes + 1)} y1={500} x2={1400} y2={800} stroke="green" stroke-width={5} />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Partie numero={4} titre="Comparaison" />
 	<Methode lignes={4}>
 		Pour comparer deux nombres décimaux :

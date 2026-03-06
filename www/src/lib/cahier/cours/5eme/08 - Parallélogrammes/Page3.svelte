@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Propriete, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Propriete, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Polygone, type Coordonnées2D } from '$lib/cahier/composants/svg/*';
 
 	let losange: Coordonnées2D[] = [
@@ -21,18 +21,18 @@
 <Contenu>
 	<Definition>Un losange est un parallélogramme qui a ses côtés de même longueur.</Definition>
 	<Propriete>Les diagonales d'un losange sont perpendiculaires.</Propriete>
-	<Schema lignes={5}>
+	<Schéma lignes={5}>
 		{#snippet svg()}
 			<Polygone points={losange} />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Definition lignes={2}>
 		Un carré est un rectangle et un losange.<br />
 		Il hérite des propriétés du rectangle et du losange.
 	</Definition>
-	<Schema lignes={8}>
+	<Schéma lignes={8}>
 		{#snippet svg()}
 			<Polygone points={carré} />
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

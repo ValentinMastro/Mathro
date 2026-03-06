@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie, DansLaMarge } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Notation, Exemples, Schema, Item, Exemple, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Notation, Exemples, Schéma, Item, Exemple, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { math } from 'mathlifier';
@@ -25,7 +25,7 @@
 		Si le point A n'est pas sur le segment [BC], on note {@html math('\\text{A} \\notin [\\text{BC}]')}.
 	</Notation>
 	<Exemples lignes={5}>
-		<Schema lignes={5} aspectRatioSVG={4}>
+		<Schéma lignes={5} aspectRatioSVG={4}>
 			{#snippet svg()}
 				<line x1="200" y1="200" x2="3600" y2="800" stroke="black" stroke-width="10"></line>
 				<line x1="300" x2="300" y1="170" y2="270" stroke="black" stroke-width="10"></line>
@@ -38,10 +38,10 @@
 				<text x={2500} y={780} font-size="150" fill="black">B</text>
 				<text x={3200} y={200} font-size="150" fill="black">C</text>
 			{/snippet}
-		</Schema>
+		</Schéma>
 	</Exemples>
 	<LigneVide lignes={3} />
-	<Schema lignes={5} aspectRatioSVG={3.4}>
+	<Schéma lignes={5} aspectRatioSVG={3.4}>
 		{#snippet svg()}
 			<line x1="200" y1="200" x2="3000" y2="700" stroke="black" stroke-width="10"></line>
 			<line x1="1000" x2="1000" y1="300" y2="400" stroke="black" stroke-width="10"></line>
@@ -77,5 +77,5 @@
 				{@html math('\\text{N} \\in (\\text{OP})')}
 			</Texte>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

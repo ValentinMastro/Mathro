@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Partie, Contenu } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Item, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemple, Item, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import MultiItem from '$lib/cahier/composants/de_cours/MultiItem.svelte';
 	import { AxeGradué, Fleche, Point, TexteSVG } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
@@ -25,7 +25,7 @@
 		<Item>un point associé au nombre 1</Item>
 	</Definition>
 	<Exemple />
-	<Schema lignes={4} aspectRatioSVG={5}>
+	<Schéma lignes={4} aspectRatioSVG={5}>
 		{#snippet svg()}
 			<AxeGradué nombre_de_graduations={8} points={[début, fin]} stroke="black" stroke-width={10} />
 			{@const origine = { x: 2000, y: 500 }}
@@ -41,12 +41,12 @@
 			{@const demi_unité = { x: (origine.x + unité.x) / 2, y: 900 }}
 			<TexteSVG point={demi_unité} dy={-50} fill="blue" font-size={110}>unité</TexteSVG>
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Definition>
 		À chaque point de l'axe, on peut associer un nombre : son <i>abscisse</i>.
 	</Definition>
 	<Exemple />
-	<Schema lignes={4} aspectRatioSVG={5}>
+	<Schéma lignes={4} aspectRatioSVG={5}>
 		{#snippet svg()}
 			<AxeGradué nombre_de_graduations={8} points={[début, fin]} stroke="black" stroke-width={10} />
 			{#each [-3, -2, -1, 0, 1, 2, 3] as x}
@@ -56,7 +56,7 @@
 				<Point point={{ x: 2500 + 500 * x, y: 500 }} dy={-100} font-size={130} nom={point} type={{ forme: 'croix', taille: 40 }} stroke="red" />
 			{/each}
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Texte>
 		<MultiItem>
 			{#each Object.entries(points).map(([point, x]) => [point, x.toLocaleString()]) as [point, x]}

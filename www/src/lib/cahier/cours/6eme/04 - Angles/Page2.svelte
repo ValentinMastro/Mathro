@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Schema, Texte, Vocabulaire } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Schéma, Texte, Vocabulaire } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import { Point, SecteurAngulaire, Fleche, DemiDroite } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
@@ -62,7 +62,7 @@
 <Contenu>
 	<Partie numero={1} titre="Lexique" />
 	<Definition lignes={2}>La mesure d'un angle quantifie l'écartement entre les deux côtés de l'angle.</Definition>
-	<Schema lignes={8} aspectRatioSVG={1.5} onclick={calculer_angle} html_lignes_vides={1}>
+	<Schéma lignes={8} aspectRatioSVG={1.5} onclick={calculer_angle} html_lignes_vides={1}>
 		{#snippet svg()}
 			<SecteurAngulaire centre={{ x: 750, y: 500 }} r={100} angle1={Math.PI / 2} angle2={-radians + Math.PI / 2} fill="red" />
 			<DemiDroite origine={O} passantPar={A} />
@@ -87,9 +87,9 @@
 				{/if}
 			</Texte>
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Vocabulaire />
-	<Schema lignes={6} aspectRatioSVG={3.5}>
+	<Schéma lignes={6} aspectRatioSVG={3.5}>
 		{#snippet svg()}
 			{#snippet afficher_angle(degres: number, x: number, y: number)}
 				{@const angle = ((90 - degres) * Math.PI) / 180}
@@ -123,5 +123,5 @@
 			{@render afficher_angle(225, 15 * carreau, 500)}
 			{@render afficher_angle(360, 18 * carreau, 500)}
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Theoreme, Item, Exemple, Schema, Texte, Paragraphe, Remarque } from '$lib/cahier/composants/de_cours/*';
+	import { Theoreme, Item, Exemple, Schéma, Texte, Paragraphe, Remarque } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
 	import { math } from 'mathlifier';
@@ -20,7 +20,7 @@
 		alors les droites (BC) et (DE) sont parallèles.
 	</Theoreme>
 	<Exemple lignes={10}>
-		<Schema lignes={10}>
+		<Schéma lignes={10}>
 			{#snippet svg()}
 				<polygon points="400,100 {400 + 150},{100 + 150} {400 - 200},{100 + 300}" fill="none" stroke="black" stroke-width="8" />
 				<polygon
@@ -47,7 +47,7 @@
 				<Item>AC = 5,1 cm</Item>
 				<Item>AE = 6,8 cm</Item>
 			{/snippet}
-		</Schema>
+		</Schéma>
 	</Exemple>
 	<Paragraphe couleur="noir" nom_du_paragraphe="Rédaction" lignes={6}>
 		<u>D'une part :</u>

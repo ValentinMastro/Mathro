@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Exemple, Item, Protocole, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Exemple, Item, Protocole, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import { ArcDeCercle, Point, Polygone, Segment } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
@@ -30,7 +30,7 @@
 		{@html math(`\\text{AC} = ${AC}\\,\\text{cm}`)} et
 		{@html math(`\\text{BC} = ${BC}\\,\\text{cm}`)}.
 	</Exemple>
-	<Schema lignes={5} aspectRatioSVG={4}>
+	<Schéma lignes={5} aspectRatioSVG={4}>
 		{#snippet svg()}
 			{@const A = { x: 1200, y: 800 }}
 			{@const B = { x: 2200, y: 800 }}
@@ -52,7 +52,7 @@
 				<Point nom="C" point={C} type={{ forme: 'croix', taille: 30 }} font-size={120} dy={-100} stroke-width={10} stroke="red" />
 			{/if}
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Texte couleur="bleu" lignes={6}>
 		<Item lignes={1}>
 			Tracer {@html math('[\\text{AB}]')} de longueur {AB} cm.

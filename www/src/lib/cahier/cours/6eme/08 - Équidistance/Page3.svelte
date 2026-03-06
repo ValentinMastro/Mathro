@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { Point, Segment } from '$lib/cahier/composants/svg/*';
@@ -61,7 +61,7 @@
 
 <Contenu>
 	<Definition>Une corde est un segment reliant deux points du cercle.</Definition>
-	<Schema lignes={8} aspectRatioSVG={1}>
+	<Schéma lignes={8} aspectRatioSVG={1}>
 		{#snippet svg()}
 			<circle cx={O.x} cy={O.y} {r} fill="none" stroke="black" stroke-width={5} />
 			<Segment points={[A, B]} stroke="red" stroke-width={10} />
@@ -80,10 +80,10 @@
 				{@html math('\\color{blue} [\\text{CD}]')} est une corde de {@html math('(\\mathscr{C})')}.
 			</Texte>
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<LigneVide />
 	<Definition lignes={2}>Un arc de cercle est une portion de cercle délimitée par deux points du cercle.</Definition>
-	<Schema lignes={8} aspectRatioSVG={1}>
+	<Schéma lignes={8} aspectRatioSVG={1}>
 		{#snippet svg()}
 			<circle cx={500} cy={500} r={375} fill="none" stroke="black" stroke-width={5} />
 			<path
@@ -126,5 +126,5 @@
 				{@html math('\\color{blue} \\overgroup{\\text{CD}}')} est un arc de cercle de {@html math('(\\mathscr{C})')}.
 			</Texte>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

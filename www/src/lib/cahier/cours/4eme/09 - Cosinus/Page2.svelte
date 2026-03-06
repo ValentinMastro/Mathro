@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Paragraphe, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemple, Paragraphe, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { math, alignStar } from 'mathlifier';
 </script>
@@ -18,7 +18,7 @@
 		l'angle {@html math('\\widehat{\\text{ABC}}')}.
 	</Exemple>
 	<LigneVide />
-	<Schema lignes={10}>
+	<Schéma lignes={10}>
 		{#snippet svg()}
 			<defs>
 				<polygon id="trianglep39" points="100,100 100,900, 700,900" />
@@ -55,5 +55,5 @@
 				donc {@html math('\\widehat{\\text{ABC}} = \\arccos\\left(\\dfrac{3}{5}\\right) \\approx 53{,}13^\\circ')}
 			</Texte>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

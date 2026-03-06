@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, DansLaMarge, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemples, Item, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemples, Item, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import { Rectangle } from '$lib/cahier/composants/svg/*';
 
@@ -32,7 +32,7 @@
 	</Exemples>
 
 	<!-- Schema d'un carré de 8x8 pour comprendre le lien avec le carré géométrique -->
-	<Schema lignes={8}>
+	<Schéma lignes={8}>
 		{#snippet svg()}
 			{#each Array(valeur) as _, i}
 				{#each Array(valeur) as _, j}
@@ -52,5 +52,5 @@
 				{@html math(valeur + '^2 = ' + valeur + ' \\times ' + valeur + ' = ' + valeur * valeur)}
 			</Texte>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

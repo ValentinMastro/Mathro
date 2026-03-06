@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Exemple, Item, Protocole, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Exemple, Item, Protocole, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { AngleDroit, Codage, DemiDroite, Droite, Point, TexteSVG } from '$lib/cahier/composants/svg/*';
 
 	import { math } from 'mathlifier';
@@ -19,7 +19,7 @@
 		<Item>Placer {@html math("\\text{A'}")} tel que {@html math('\\text{I}')} soit le milieu de {@html math("[\\text{AA'}]")}.</Item>
 	</Protocole>
 	<Exemple />
-	<Schema lignes={10}>
+	<Schéma lignes={10}>
 		{#snippet svg()}
 			<AngleDroit points={[A, I, { x: 0, y: 1000 }]} fill="orange" taille={60} />
 			<Droite
@@ -39,5 +39,5 @@
 			<Codage points={[A, I]} type="2 traits" stroke="red" />
 			<Codage points={[A2, I]} type="2 traits" stroke="red" />
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

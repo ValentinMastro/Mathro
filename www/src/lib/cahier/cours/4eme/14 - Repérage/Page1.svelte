@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Notation, Item, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemple, Notation, Item, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
 	import { math } from 'mathlifier';
@@ -17,7 +17,7 @@
 		<Item>un sens</Item>
 	</Definition>
 	<Exemple></Exemple>
-	<Schema lignes={2} aspectRatioSVG={6}>
+	<Schéma lignes={2} aspectRatioSVG={6}>
 		{#snippet svg()}
 			<line x1={(6 * 1000) / 12} x2={((10 + 1) * 6 * 1000) / 12} y1="500" y2="500" stroke="black" stroke-width="15" />
 			<path d="M {((10 + 1) * 6 * 1000) / 12} 500 l -100 -100 l 0 200 z" fill="black" />
@@ -26,10 +26,10 @@
 			{/each}
 			<text x={(6 * 1000) / 12} y={330} font-size="250" text-anchor="middle">0</text>
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Definition lignes={2}>L'abscisse d'un point est le nombre permettant de le repérer sur la droite graduée</Definition>
 	<Exemple></Exemple>
-	<Schema lignes={2} aspectRatioSVG={6}>
+	<Schéma lignes={2} aspectRatioSVG={6}>
 		{#snippet svg()}
 			<line x1={(6 * 1000) / 12} x2={((10 + 1) * 6 * 1000) / 12} y1="500" y2="500" stroke="black" stroke-width="15" />
 			<path d="M {((10 + 1) * 6 * 1000) / 12} 500 l -100 -100 l 0 200 z" fill="black" />
@@ -42,7 +42,7 @@
 				<text x={((abscisse + 5) * 6 * 1000) / 12} y={330} font-size={300} text-anchor="middle">{point}</text>
 			{/each}
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Notation>
 		{@html math('\\text{A}(-3) \\quad \\text{B}(-1) \\quad \\text{C}(2) \\quad \\text{D}(4)')}
 	</Notation>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemples, Paragraphe, Propriete, Item, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemples, Paragraphe, Propriete, Item, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
 	import { math, display } from 'mathlifier';
@@ -40,7 +40,7 @@
 		<Item bullet="2. " lignes={2}>Si on s’intéresse au numéro écrit sur la boule, quelles sont les issues possibles ?</Item>
 		<Item bullet="3. ">Donne un événement certain de se réaliser.</Item>
 		<Item bullet="4. ">Donne un événement impossible.</Item>
-		<Schema lignes={5} aspectRatioSVG={2}>
+		<Schéma lignes={5} aspectRatioSVG={2}>
 			{#snippet svg()}
 				{#each Array(12) as _, index}
 					<circle
@@ -63,7 +63,7 @@
 					</text>
 				{/each}
 			{/snippet}
-		</Schema>
+		</Schéma>
 	</Paragraphe>
 	<LigneVide lignes={1.2} />
 	<Item bullet="1. ">Les issues possibles sont : {@html math(`\\Omega = \\{ \\text{Blanche}, \\text{Grise} \\}`)}</Item>

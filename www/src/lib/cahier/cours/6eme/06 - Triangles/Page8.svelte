@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Propriete, Item, Paragraphe, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemple, Propriete, Item, Paragraphe, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { Angle, AngleDroit, DemiDroite, Point, Segment } from '$lib/cahier/composants/svg/*';
@@ -29,7 +29,7 @@
 		</Item>
 		<Item bullet="Q3)">Quelle est la nature du triangle IJK ?</Item>
 	</Paragraphe>
-	<Schema lignes={7} aspectRatioSVG={20 / 7}>
+	<Schéma lignes={7} aspectRatioSVG={20 / 7}>
 		{#snippet svg()}
 			{@const carreau = 1000 / 7}
 			{@const I = { x: 6 * carreau, y: 1 * carreau }}
@@ -55,7 +55,7 @@
 				<Point nom="I" point={I} type={{ forme: 'disque', taille: 15 }} stroke-width={10} font-size={100} dx={-100} dy={0} fill="blue" />
 			{/if}
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Texte couleur="bleu" lignes={11}>
 		Q2) D'après la <span style="color: var(--rouge)">propriété</span> : <br />
 		<div class="center">

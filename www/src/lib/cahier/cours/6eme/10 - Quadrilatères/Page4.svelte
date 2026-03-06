@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Item, Proprietes, Remarque, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemple, Item, Proprietes, Remarque, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { AngleDroit, Codage, Polygone, Segment } from '$lib/cahier/composants/svg/*';
 
 	import { math } from 'mathlifier';
@@ -23,7 +23,7 @@
 		<Item>Ses diagonales sont de la même longueur.</Item>
 		<Item>Ses diagonales sont perpendiculaires.</Item>
 	</Proprietes>
-	<Schema lignes={8} aspectRatioSVG={20 / 8}>
+	<Schéma lignes={8} aspectRatioSVG={20 / 8}>
 		{#snippet svg()}
 			<AngleDroit points={[A, B, C]} taille={50} fill="orange" />
 			<AngleDroit points={[B, C, D]} taille={50} fill="orange" />
@@ -42,7 +42,7 @@
 			<Codage points={[C, O]} type="2 traits" />
 			<Codage points={[D, O]} type="2 traits" />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Exemple lignes={6}>
 		Dans le carré ABCD ci-dessus :
 		<Item bullet_color="var(--vert)">

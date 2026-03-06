@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie, SousPartie, SousSousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Schema, Propriete, Texte, Exemple } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Schéma, Propriete, Texte, Exemple } from '$lib/cahier/composants/de_cours/*';
 	import { Angle, AngleDroit, Polygone } from '$lib/cahier/composants/svg/*';
 
 	import { math } from 'mathlifier';
@@ -12,7 +12,7 @@
 	<Definition>Un triangle rectangle possède un angle droit.</Definition>
 	<Propriete>Les deux angles aigus sont complémentaires.</Propriete>
 	<Exemple />
-	<Schema lignes={5} aspectRatioSVG={4}>
+	<Schéma lignes={5} aspectRatioSVG={4}>
 		{#snippet svg()}
 			{@const A = { x: 400, y: 200 }}
 			{@const B = { x: 2000, y: 200 }}
@@ -22,7 +22,7 @@
 			<Angle r={200} points={[C, A, B]} fill="forestgreen" />
 			<Polygone points={[A, B, C]} afficher_points stroke-width={10} distance_nom={110} />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Texte couleur="bleu" lignes={2}>
 		Le triangle est <i>rectangle en B</i>, car l'angle droit est à côté du point B. <br />
 		De plus, {@html math('\\widehat{\\text{ACB}}')} et {@html math('\\widehat{\\text{CAB}}')} sont complémentaires.

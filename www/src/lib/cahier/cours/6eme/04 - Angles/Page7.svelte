@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definitions, Exemples, Item, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definitions, Exemples, Item, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Angle, DemiDroite, Droite, Point, Polygone } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 </script>
@@ -12,7 +12,7 @@
 		<Item lignes={2}>Deux angles sont supplémentaires si la somme de leur mesure est égale à 180°.</Item>
 	</Definitions>
 	<Exemples />
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			{@const A = { x: 200, y: 100 }}
 			{@const B = { x: 200, y: 800 }}
@@ -33,7 +33,7 @@
 			<Point nom="G" point={G} type={{ forme: 'croix', taille: 20 }} font-size={60} dx={-40} dy={80} stroke="red" />
 			<DemiDroite origine={G} passantPar={F} stroke="black" stroke-width={5} />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Texte couleur="bleu" lignes={2}>
 		{@html math('\\color{orange}\\widehat{\\text{BAC}}')} et {@html math('\\color{purple}\\widehat{\\text{ACB}}')} sont complémentaires. <br />
 		{@html math('\\color{skyblue}\\widehat{\\text{DEF}}')} et {@html math('\\color{forestgreen}\\widehat{\\text{EFG}}')} sont supplémentaires (et adjacents).

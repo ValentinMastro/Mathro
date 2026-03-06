@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Paragraphe, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Paragraphe, Schéma } from '$lib/cahier/composants/de_cours/*';
 
 	// Prix moyen d'un kg de baguette de pain en France par année
 	// source : https://www.insee.fr/fr/statistiques/serie/000442423?idbank=000442423
@@ -36,7 +36,7 @@
 			</tbody>
 		</table>
 	</Paragraphe>
-	<Schema lignes={20}>
+	<Schéma lignes={20}>
 		{#snippet svg()}
 			<!-- Axes -->
 			<line x1="100" y1="950" x2="900" y2="950" stroke="black" stroke-width="2" />
@@ -77,7 +77,7 @@
 			<text x="950" y="950" text-anchor="middle" font-size="22">Année</text>
 			<text x="150" y="50" text-anchor="middle" font-size="22">Prix (€)</text>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>
 
 <style>

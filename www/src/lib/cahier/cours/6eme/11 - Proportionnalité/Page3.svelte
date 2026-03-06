@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Methode, Paragraphe, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Methode, Paragraphe, Schéma } from '$lib/cahier/composants/de_cours/*';
 </script>
 
 <Contenu>
@@ -9,7 +9,7 @@
 		Dans cette partie, nous allons étudier plusieurs méthodes permettant de calculer la quatrième valeur d'un tableau de proportionnalité, lorsque 3
 		autres valeurs sont connues.
 	</Paragraphe>
-	<Schema lignes={4} aspectRatioSVG={5}>
+	<Schéma lignes={4} aspectRatioSVG={5}>
 		{#snippet svg()}
 			<rect x={500} y={250} width={3750} height={500} stroke="black" stroke-width={10} fill="none" />
 			<line x1={500} y1={500} x2={4250} y2={500} stroke="black" stroke-width={10} />
@@ -23,10 +23,10 @@
 			<text x={3750} y={400} font-size={150} fill="black" text-anchor="middle" dominant-baseline="middle">6</text>
 			<text x={3750} y={650} font-size={150} fill="black" text-anchor="middle" dominant-baseline="middle">?</text>
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<SousPartie numero={1} titre="Homogénéité" />
 	<Methode>Multiplier (ou diviser) toute une colonne par une même valeur.</Methode>
-	<Schema lignes={4} aspectRatioSVG={5}>
+	<Schéma lignes={4} aspectRatioSVG={5}>
 		{#snippet svg()}
 			<defs>
 				<marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
@@ -49,10 +49,10 @@
 			<text x={3250} y={150} font-size={120} fill="blue" text-anchor="middle" dominant-baseline="middle">×2</text>
 			<text x={3250} y={900} font-size={120} fill="blue" text-anchor="middle" dominant-baseline="middle">×2</text>
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<SousPartie numero={2} titre="Passage à l'unité" />
 	<Methode>Se ramener à une colonne contenant le nombre 1.</Methode>
-	<Schema lignes={4} aspectRatioSVG={5}>
+	<Schéma lignes={4} aspectRatioSVG={5}>
 		{#snippet svg()}
 			<defs>
 				<marker id="blue_arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
@@ -84,5 +84,5 @@
 			<path d="M 3400,825 l 0 125 l 450 0 l 0 -75 " stroke="red" fill="none" stroke-width={10} marker-end="url(#red_arrow)" />
 			<text x={3625} y={880} font-size={130} fill="red" text-anchor="middle" dominant-baseline="middle">×6</text>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

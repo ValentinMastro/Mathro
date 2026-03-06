@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Item, MultiItem, Notation, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemple, Item, MultiItem, Notation, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { AxeGradué, Point } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 
@@ -37,7 +37,7 @@
 			{/each}
 		</MultiItem>
 	</Exemple>
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<AxeGradué points={axe_abscisses} nombre_de_graduations={7} taille_graduations={25} />
 			<AxeGradué points={axe_ordonnées} nombre_de_graduations={7} taille_graduations={25} />
@@ -47,5 +47,5 @@
 				<Point {point} {nom} {type} stroke="forestgreen" dy={-50} />
 			{/each}
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

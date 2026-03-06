@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Schema, Definition, Propriete, Texte, Formules, Item } from '$lib/cahier/composants/de_cours/*';
+	import { Schéma, Definition, Propriete, Texte, Formules, Item } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import { Point, Segment, TexteSVG } from '$lib/cahier/composants/svg/*';
 
@@ -17,7 +17,7 @@
 <Contenu>
 	<Definition lignes={2}>Le diamètre d'un cercle est un segment reliant deux points du cercle et passant par le centre.</Definition>
 	<Propriete>Le diamètre d'un cercle mesure le double de son rayon.</Propriete>
-	<Schema lignes={8} aspectRatioSVG={20 / 8}>
+	<Schéma lignes={8} aspectRatioSVG={20 / 8}>
 		{#snippet svg()}
 			{@const rayon = 500}
 			{@const O = { x: 1250, y: 500 }}
@@ -28,7 +28,7 @@
 			<Segment points={[A, B]} stroke="red" />
 			<TexteSVG point={O} dy={-40} fill="red" transform={`rotate(${slider} ${O.x} ${O.y})`}>diamètre</TexteSVG>
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Formules lignes={2}>
 		<Item>
 			{@html math('\\text{diamètre}~= 2 \\times \\text{rayon}')}

@@ -1,19 +1,19 @@
 <script lang="ts">
 	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Item, Paragraphe, Protocole, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Item, Paragraphe, Protocole, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { math } from 'mathlifier';
 </script>
 
 <Contenu>
 	<SousPartie numero={2} titre="Mesurer un angle" />
 	<Paragraphe couleur="bleu" nom_du_paragraphe="Partons de l'exemple" />
-	<Schema lignes={5} aspectRatioSVG={3}>
+	<Schéma lignes={5} aspectRatioSVG={3}>
 		{#snippet svg()}
 			<line x1={200} y1={800} x2={2800} y2={800} stroke="black" stroke-width={8} />
 			{@const rayon = 1000}
 			<line x1={200} y1={800} x2={200 + rayon * Math.cos(Math.PI / 4)} y2={800 - rayon * Math.sin(Math.PI / 4)} stroke="black" stroke-width={8} />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Protocole lignes={6}>
 		<Item lignes={3}>
 			Placer le rapporteur tel que :

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemples, Remarque, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemples, Remarque, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
 	interface Population {
@@ -159,7 +159,7 @@
 			</tbody>
 		</table>
 	</Exemples>
-	<Schema lignes={20} aspectRatioSVG={1}>
+	<Schéma lignes={20} aspectRatioSVG={1}>
 		{#snippet svg()}
 			<!-- Cercle -->
 			<circle cx="350" cy="500" r="350" stroke="black" stroke-width="2" fill="none" />
@@ -182,7 +182,7 @@
 				{/if}
 			{/each}
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>
 
 <style>

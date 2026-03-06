@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Item, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Item, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { math } from 'mathlifier';
 </script>
 
@@ -13,7 +13,7 @@
 		Deux angles sont opposés par le sommet s'ils partagent le même sommet et que leurs côtés se prolongent l'un l'autre.
 	</Definition>
 
-	<Schema lignes={4} aspectRatioSVG={3}>
+	<Schéma lignes={4} aspectRatioSVG={3}>
 		{#snippet svg()}
 			<defs>
 				<clipPath id="AEC">
@@ -55,7 +55,7 @@
 				{@html math('\\widehat{\\text{AEC}}')} et {@html math('\\widehat{\\text{BED}}')} sont opposés par le sommet.
 			</Texte>
 		{/snippet}
-	</Schema>
+	</Schéma>
 
 	<Definition lignes={6}>
 		Deux angles sont correspondants si, lorsque deux droites sont coupées par une troisième (la sécante) :
@@ -64,7 +64,7 @@
 		<Item lignes={2}>l'un des angles est à l'intérieur des deux droites, l'autre est à l'extérieur</Item>
 	</Definition>
 
-	<Schema lignes={5} aspectRatioSVG={4}>
+	<Schéma lignes={5} aspectRatioSVG={4}>
 		{#snippet svg()}
 			<line x1={250} y1={200} x2={3750} y2={200} stroke="black" stroke-width={8} />
 			<line x1={250} y1={800} x2={3750} y2={800} stroke="black" stroke-width={8} />
@@ -75,5 +75,5 @@
 			<text x={1850 - 50} y={200 + 50} text-anchor="middle" font-size={120}>3</text>
 			<text x={1850 + 50} y={200 + 50} text-anchor="middle" font-size={120}>4</text>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

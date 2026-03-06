@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { SousPartie, Contenu } from '$lib/cahier/composants/de_chapitrage/*';
-	import { CelluleTableau, LigneTableau, Paragraphe, Schema, Tableau } from '$lib/cahier/composants/de_cours/*';
+	import { CelluleTableau, LigneTableau, Paragraphe, Schéma, Tableau } from '$lib/cahier/composants/de_cours/*';
 	import { Disque, SecteurDeCouronne, TexteSVG } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 
@@ -136,7 +136,7 @@
 			</LigneTableau>
 		{/each}
 	</Tableau>
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<Disque centre={{ x: 1000, y: 500 }} rayon={450} fill="white" />
 			{#each unites as { couleur, constante, lien, symbole }, i}
@@ -166,5 +166,5 @@
 			{/each}
 			<TexteSVG point={{ x: 1000, y: 510 }} font-size={180}>SI</TexteSVG>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

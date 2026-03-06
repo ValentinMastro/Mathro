@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Item, Remarque, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemple, Item, Remarque, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Angle, DemiDroite, Point } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 </script>
@@ -13,7 +13,7 @@
 		<Item>Ils ont un côté en commun.</Item>
 	</Definition>
 	<Exemple />
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			{@const type = { forme: 'croix', taille: 20 }}
 			{@const taille_nom = 60}
@@ -32,7 +32,7 @@
 			<Point nom="B" point={B} {type} font-size={taille_nom} {dx} {dy} stroke-width={5} />
 			<Point nom="C" point={C} {type} font-size={taille_nom} {dx} {dy} stroke-width={5} />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Texte couleur="bleu" lignes={3}>
 		{@html math('\\color{darkgreen}\\widehat{\\text{AOC}}')} et {@html math('\\color{red}\\widehat{\\text{COB}}')} sont adjacents car :
 		<Item>Ils ont le même sommet : {@html math('\\color{black}\\text{O}')}.</Item>

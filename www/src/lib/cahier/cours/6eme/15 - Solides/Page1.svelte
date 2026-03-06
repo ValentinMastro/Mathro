@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Cube, Polylignes, TexteSVG, Projecteur, PavéDroit, Sphere, Cylindre, Cône, Pyramide } from '$lib/cahier/composants/svg/*';
 
 	const projecteur = new Projecteur();
@@ -11,7 +11,7 @@
 <Contenu apres_un_titre>
 	<Partie numero={1} titre="Différents types de solides" />
 
-	<Schema lignes={6} aspectRatioSVG={20 / 6}>
+	<Schéma lignes={6} aspectRatioSVG={20 / 6}>
 		{#snippet svg()}
 			<!-- Fond blanc -->
 			<rect x="0%" y="0%" width="100%" height="100%" fill="white" stroke="none" />
@@ -30,12 +30,12 @@
 			<Cylindre rayon={150} centre1={{ x: 1300, y: 350, z: 0 }} centre2={{ x: 1300, y: 90, z: 0 }} {projecteur} />
 			<Cône rayon={170} apex={{ x: 2400, y: 30, z: 0 }} centre={{ x: 2400, y: 350, z: 0 }} {projecteur} />
 		{/snippet}
-	</Schema>
+	</Schéma>
 
 	<SousPartie numero={1} titre="Le cube" />
 	<Definition>Un cube est un solide à six faces carrées identiques.</Definition>
 
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<!-- Cube en perspective cavalière -->
 			<Cube arête={500} {projecteur} coin={{ x: 200, y: 800 }} />
@@ -49,5 +49,5 @@
 			{/each}
 			<TexteSVG point={{ x: 1500, y: 880 }}>patron d'un cube</TexteSVG>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Propriete, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Propriete, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import { math } from 'mathlifier';
 
@@ -19,7 +19,7 @@
 		et les volumes (en mètres cubes) sont multipliés par {@html math('k^3')}.
 	</Propriete>
 
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			{@const cx = 1500}
 			{@const cy = 450}
@@ -64,5 +64,5 @@
 			{/each}
 			<text x="1600" y="1000" font-size="60" fill="black">× {longueur * longueur * longueur}</text>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

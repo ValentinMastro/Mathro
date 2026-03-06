@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemple, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import { Grille, Axe } from '$lib/cahier/composants/svg/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
@@ -27,7 +27,7 @@
 	<Exemple>
 		Dans {@html math('\\dfrac{2}{3}')}, le numérateur est 2 et le dénominateur est 3.
 	</Exemple>
-	<Schema lignes={5}>
+	<Schéma lignes={5}>
 		{#snippet svg()}
 			<rect x={200} y={200} width={600} height={600} fill="red" stroke="none" />
 			<rect x={400} y={400} width={400} height={400} fill="white" stroke="none" />
@@ -40,9 +40,9 @@
 				{@html math('\\longrightarrow \\dfrac{5}{9}')}
 			</Texte>
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<LigneVide />
-	<Schema lignes={5} aspectRatioSVG={1.2}>
+	<Schéma lignes={5} aspectRatioSVG={1.2}>
 		{#snippet svg()}
 			<rect x={0} y={0} width={1000} height={1000} fill="red" stroke="none" />
 			<rect x={400} y={400} width={400} height={400} fill="white" stroke="none" />
@@ -55,9 +55,9 @@
 				{@html math('\\longrightarrow \\dfrac{21}{25}')}
 			</Texte>
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<LigneVide />
-	<Schema lignes={4} aspectRatioSVG={5}>
+	<Schéma lignes={4} aspectRatioSVG={5}>
 		{#snippet svg()}
 			<Axe
 				debut={{ x: 500, y: 500 }}
@@ -75,8 +75,8 @@
 			/>
 			<path d="M {500 + 250 * valeur} 200 l 0 200 l -50 -50 l 50 50 l 50 -50 l -50 50" stroke="red" stroke-width={10} />
 		{/snippet}
-	</Schema>
-	<Schema lignes={4} aspectRatioSVG={5}>
+	</Schéma>
+	<Schéma lignes={4} aspectRatioSVG={5}>
 		{#snippet svg()}
 			{#each Array(Math.ceil(14 / subdivisions))
 				.fill(0)
@@ -105,5 +105,5 @@
 				{/each}
 			{/each}
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

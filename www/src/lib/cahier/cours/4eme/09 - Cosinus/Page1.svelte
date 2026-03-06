@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, DansLaMarge, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Schema, Remarque, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Schéma, Remarque, Texte } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
 	import { math } from 'mathlifier';
@@ -33,7 +33,7 @@
 		Le côté du triangle qui forme l'angle choisi et qui n'est pas l'hypoténuse est appelé le <i>côté adjacent</i>.<br />
 	</Definition>
 	<LigneVide />
-	<Schema lignes={10}>
+	<Schéma lignes={10}>
 		{#snippet svg()}
 			<defs>
 				<polygon id="trianglep38" points="100,100 100,900 700,900" />
@@ -68,7 +68,7 @@
 			<line x1="100" y1="100" x2="700" y2="900" stroke="blue" stroke-width="8" />
 			<text x="470" y="470" fill="blue" font-size="70" text-anchor="middle" transform-origin="470px 470px" transform="rotate(53.13)">Hypoténuse</text>
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Remarque>
 		Le côté qui "ne touche pas" l'angle droit est appelé <i>côté opposé</i>.
 	</Remarque>

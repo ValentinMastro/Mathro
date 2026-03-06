@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { LatexAlign } from '$lib/cahier/composants/math/*';
 	import { AngleDroit, Polygone, TexteSVG } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
@@ -8,7 +8,7 @@
 
 <Contenu>
 	<Texte>Dans le cas où on souhaite calculer un côté de l'angle droit :</Texte>
-	<Schema lignes={10} aspectRatioSVG={1.2}>
+	<Schéma lignes={10} aspectRatioSVG={1.2}>
 		{#snippet svg()}
 			{@const A = { x: 800, y: 200 }}
 			{@const B = { x: 200, y: 200 }}
@@ -19,7 +19,7 @@
 			<TexteSVG point={{ x: (A.x + C.x) / 2, y: (A.y + C.y) / 2 }} dx={50} fill="red">?</TexteSVG>
 			<TexteSVG point={{ x: (A.x + B.x) / 2, y: (A.y + B.y) / 2 }} dy={-50}>20 cm</TexteSVG>
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Texte lignes={9}>
 		<u>On sait que : </u> le triangle ABC est rectangle en A, l'hypoténuse est {@html math('[\\text{BC}]')}.<br />
 		<u>D'après</u> le théorème de Pythagore <br />

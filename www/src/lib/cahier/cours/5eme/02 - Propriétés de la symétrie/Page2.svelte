@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Schema, Propriete } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Schéma, Propriete } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { Carré, Point, Polygone, Segment } from '$lib/cahier/composants/svg/*';
@@ -41,7 +41,7 @@
 		Deux figures sont symétriques par rapport à un point O si en "pivotant le plan" autour de O, les deux figures se superposent.<br />
 		Ce point O est le <i>centre de symétrie</i>.
 	</Definition>
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<!-- Centres de symétrie -->
 			<Point point={{ x: 600, y: 500 }} {type} fill="red" nom="O" dx={50} dy={70} />
@@ -62,12 +62,12 @@
 			<use href="#centrale2" stroke="black" />
 			<use href="#centrale2" stroke="red" style="transform-origin: 1500px 400px; transform: rotate({rotate_2}deg);" />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Propriete lignes={2}>
 		Si deux points {@html math('\\text{A}')} et {@html math("\\text{A}'")} sont symétriques par rapport à O, <br />
 		alors O est le milieu du segment {@html math("\\text{AA}'")}.
 	</Propriete>
-	<Schema lignes={10}>
+	<Schéma lignes={10}>
 		{#snippet svg()}
 			<Segment points={[A1, A2]} stroke="green" />
 			<Segment points={[B1, B2]} stroke="green" />
@@ -76,5 +76,5 @@
 			<Carré coin={{ x: 100, y: 100 }} côté={300} stroke="red" style="transform-origin: 500px 500px; transform: rotate({rotate_3}deg);" />
 			<Point point={CENTRE} {type} fill="red" />
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

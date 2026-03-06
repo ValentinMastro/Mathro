@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Propriete, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Propriete, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Angle, Codage, Polygone } from '$lib/cahier/composants/svg/*';
 
 	import { math } from 'mathlifier';
@@ -10,7 +10,7 @@
 	<SousPartie numero={3} titre="Triangle équilatéral" />
 	<Definition>Un triangle équilatéral possède 3 côtés de même longueur.</Definition>
 	<Propriete>Les 3 angles sont égaux et mesurent chacun 60°.</Propriete>
-	<Schema lignes={8} aspectRatioSVG={20 / 8}>
+	<Schéma lignes={8} aspectRatioSVG={20 / 8}>
 		{#snippet svg()}
 			{@const A = { x: 750, y: 875 }}
 			{@const B = { x: 1500, y: 875 }}
@@ -23,7 +23,7 @@
 			<Codage points={[C, B]} stroke="red" />
 			<Codage points={[A, C]} stroke="red" />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Texte couleur="bleu" lignes={2}>
 		{@html math('\\text{AB} ~=\\text{AC} ~=\\text{BC}')} <br />
 		{@html math('\\widehat{\\text{ABC}} = \\widehat{\\text{BCA}} = \\widehat{\\text{CAB}} = 60^\\circ')}

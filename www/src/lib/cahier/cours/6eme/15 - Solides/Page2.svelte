@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Convention, Definition, Definitions, Exemples, Item, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Convention, Definition, Definitions, Exemples, Item, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { PavéDroit, Projecteur, TexteSVG } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 
@@ -10,13 +10,13 @@
 <Contenu>
 	<SousPartie numero={2} titre="Pavé droit" />
 	<Definition>Un pavé droit est un solide à six faces rectangulaires.</Definition>
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<PavéDroit {projecteur} coin={{ x: 300, y: 900 }} longueur={900} largeur={600} hauteur={600} />
 			<TexteSVG point={{ x: 800, y: 970 }}>pavé droit en perspective cavalière</TexteSVG>
 		{/snippet}
-	</Schema>
-	<Schema lignes={10} aspectRatioSVG={2}>
+	</Schéma>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<!-- 6 rectangles : dimensions 600x300x200 -->
 			{@const L = 400}
@@ -34,5 +34,5 @@
 
 			<TexteSVG point={{ x: 800, y: 970 }}>patron d'un pavé droit</TexteSVG>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

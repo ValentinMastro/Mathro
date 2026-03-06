@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Exemples, Item, Propriete, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Exemples, Item, Propriete, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Angle, Polygone } from '$lib/cahier/composants/svg/*';
 
 	import { math } from 'mathlifier';
@@ -31,7 +31,7 @@
 			alors {@html math('\\widehat{\\text{EDF}} = 180 - 90 - 30 = 60^\\circ')}.
 		</Item>
 	</Exemples>
-	<Schema lignes={10} html_lignes_vides={3}>
+	<Schéma lignes={10} html_lignes_vides={3}>
 		{#snippet svg()}
 			<Angle r={70} points={[A, B, C]} fill="red" afficher_mesure bind:mesure={ABC} />
 			<Angle r={70} points={[B, C, A]} fill="blue" afficher_mesure bind:mesure={BCA} />
@@ -45,5 +45,5 @@
 				{@html math(`${ABC.toFixed()}^\\circ + ${BCA.toFixed()}^\\circ + ${CAB.toFixed()}^\\circ = ${ABC + BCA + CAB}^\\circ`)}.
 			</Texte>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

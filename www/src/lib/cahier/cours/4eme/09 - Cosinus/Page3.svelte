@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Exemple, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Exemple, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { math } from 'mathlifier';
 </script>
@@ -10,7 +10,7 @@
 		Dans le triangle DEF rectangle en E, on a {@html math('\\text{DE} = 6~\\text{cm}')} et {@html math('\\widehat{\\text{EDF}} = 30^\\circ')}.<br />
 		Calculer la longueur DF.
 	</Exemple>
-	<Schema lignes={10} aspectRatioSVG={0.9}>
+	<Schéma lignes={10} aspectRatioSVG={0.9}>
 		{#snippet svg()}
 			<defs>
 				<polygon id="triangle" points="100,100 100,900, 700,900" />
@@ -54,5 +54,5 @@
 				{@html math('\\text{DF} = 6 {\\color{red} \\times 1} \\div \\cos(30^\\circ) \\approx 6{,}93~\\text{cm}')}
 			</Texte>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

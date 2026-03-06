@@ -34,7 +34,8 @@ export { default as Tableau } from './Tableau.svelte';
 export { default as LigneTableau } from './LigneTableau.svelte';
 export { default as CelluleTableau } from './CelluleTableau.svelte';
 
-export { default as Schema } from './Schema.svelte';
+export { default as Schéma } from './Schéma.svelte';
+export { default as SchémaIntéractif } from './SchémaIntéractif.svelte';
 
 export type couleur = 'bleu' | 'rouge' | 'vert' | 'noir';
 

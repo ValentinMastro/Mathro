@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Item, Proprietes, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemple, Item, Proprietes, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Angle, AngleDroit, Codage, Point, Polygone, Segment } from '$lib/cahier/composants/svg/*';
 
 	import { math } from 'mathlifier';
@@ -22,7 +22,7 @@
 		<Item>Les angles opposés sont de même mesure.</Item>
 		<Item>Deux angles successifs sont supplémentaires.</Item>
 	</Proprietes>
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<Angle r={100} points={[A, B, C]} fill="orange" />
 			<Angle r={100} points={[A, D, C]} fill="orange" />
@@ -42,7 +42,7 @@
 			<Codage points={[D, O]} type="3 traits" stroke="blue" />
 			<Point nom="O" point={O} type={{ forme: 'croix', taille: 20 }} dx={-50} dy={-30} />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Exemple lignes={6}>
 		Dans le losange ABCD ci-dessus :
 		<Item bullet_color="var(--vert)">

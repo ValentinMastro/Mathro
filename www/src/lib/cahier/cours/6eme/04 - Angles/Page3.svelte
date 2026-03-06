@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Paragraphe, Protocole, Item, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Paragraphe, Protocole, Item, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { DemiDroite, Point, SecteurAngulaire } from '$lib/cahier/composants/svg/*';
@@ -42,7 +42,7 @@
 			Tracer le deuxième côté de l'angle {@html math('\\color{blue} [\\text{BA})')}
 		</Item>
 	</Protocole>
-	<Schema lignes={5} aspectRatioSVG={3}>
+	<Schéma lignes={5} aspectRatioSVG={3}>
 		{#snippet svg()}
 			{@const A = { x: 1200, y: 220 }}
 			{@const B = { x: 200, y: 800 }}
@@ -63,5 +63,5 @@
 				<Point nom="A" point={A} {type} font-size={120} {dx} {dy} />
 			{/if}
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

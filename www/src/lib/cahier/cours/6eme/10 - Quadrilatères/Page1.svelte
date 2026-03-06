@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definitions, Exemples, Item, Nomenclature, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definitions, Exemples, Item, Nomenclature, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Polygone } from '$lib/cahier/composants/svg/*';
 
 	type Pt = { x: number; y: number };
@@ -120,7 +120,7 @@
 	</Definitions>
 	<Exemples />
 
-	<Schema
+	<Schéma
 		lignes={10}
 		aspectRatioSVG={2}
 		onpointerdown={onPointerDown}
@@ -135,5 +135,5 @@
 			<Polygone points={pentagone} afficher_points noms={['E', 'F', 'G', 'H', 'I']} />
 			<Polygone points={hexagone} afficher_points noms={['J', 'K', 'L', 'M', 'N', 'O']} />
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

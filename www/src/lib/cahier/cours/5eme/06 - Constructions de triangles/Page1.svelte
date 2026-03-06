@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Propriete, Item, Schema, Texte, Exemple } from '$lib/cahier/composants/de_cours/*';
+	import { Propriete, Item, Schéma, Texte, Exemple } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import { Polygone, Segment, TexteSVG, type ExtrémitésSegment } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
@@ -42,7 +42,7 @@
 		<Item>{@html math('\\text{BC}~ \\leqslant \\text{AB}~ + \\text{AC}')}</Item>
 		<Item>{@html math('\\text{AC}~ \\leqslant \\text{AB}~ + \\text{BC}')}</Item>
 	</Propriete>
-	<Schema lignes={6} aspectRatioSVG={2} html_lignes_vides={1}>
+	<Schéma lignes={6} aspectRatioSVG={2} html_lignes_vides={1}>
 		{#snippet svg()}
 			<Polygone points={[A!, B!, C!]} afficher_noms stroke="red" taille_nom={100} />
 			<Segment points={segment_selectionné} stroke="blue" stroke-width={15} />
@@ -53,10 +53,10 @@
 				que le chemin rouge.
 			</Texte>
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Propriete lignes={2}>Un triangle ne peut pas avoir un côté plus long que la somme des deux autres.</Propriete>
 	<Exemple />
-	<Schema lignes={5} aspectRatioSVG={1.6}>
+	<Schéma lignes={5} aspectRatioSVG={1.6}>
 		{#snippet svg()}
 			<Polygone points={triangle2} stroke-width={10} />
 			<TexteSVG point={milieux_triangle2[0]!} font-size={100} dx={-50} dy={-60}>2 cm</TexteSVG>
@@ -70,5 +70,5 @@
 				Cela signifierait qu'il serait plus court de faire un détour {@html math('\\Rightarrow')} impossible.
 			</Texte>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

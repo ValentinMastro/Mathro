@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemples, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemples, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import { Polygone } from '$lib/cahier/composants/svg/*';
 
@@ -31,7 +31,7 @@
 		{@html math('(d)')} est appelée <i>axe</i> de symétrie.
 	</Definition>
 	<Exemples />
-	<Schema lignes={20}>
+	<Schéma lignes={20}>
 		{#snippet svg()}
 			<defs>
 				<g id="figure2">
@@ -65,5 +65,5 @@
 			/>
 			<line x1={400} y1={500} x2={400 - 300} y2={500 + 300} stroke="red" stroke-width={3} />
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Propriete, Schema, Notation, Item } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Propriete, Schéma, Notation, Item } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import { Fleche, Polygone } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
@@ -32,7 +32,7 @@
 	<Propriete>
 		Une translation est une <i>isométrie du plan</i>.
 	</Propriete>
-	<Schema lignes={10} aspectRatioSVG={1.5}>
+	<Schéma lignes={10} aspectRatioSVG={1.5}>
 		{#snippet svg()}
 			<Polygone points={sommets_triangle} afficher_points />
 			<Polygone points={sommets_triangle_translaté} afficher_points={translation >= 1} noms={["A'", "B'", "C'"]} stroke="red" />
@@ -41,7 +41,7 @@
 				stroke="var(--vert)"
 			/>
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Notation lignes={4}>
 		<Item>La translation qui transforme A en A'</Item>
 		<Item>La translation de vecteur {@html math("\\overrightarrow{\\text{AA'}}")}</Item>

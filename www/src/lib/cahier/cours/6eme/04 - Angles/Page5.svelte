@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemple, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Angle, Droite, Point, SecteurAngulaire } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 </script>
@@ -13,7 +13,7 @@
 		Dans ce cas, deux angles "face à face" sont appelés angles opposés par le sommet.
 	</Definition>
 	<Exemple />
-	<Schema lignes={8} aspectRatioSVG={2.5}>
+	<Schéma lignes={8} aspectRatioSVG={2.5}>
 		{#snippet svg()}
 			{@const type = { forme: 'croix', taille: 20 }}
 			{@const taille_nom = 80}
@@ -35,7 +35,7 @@
 			<Droite passantPar={[A, B]} stroke="black" stroke-width={5} />
 			<Droite passantPar={[C, D]} stroke="black" stroke-width={5} />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Texte couleur="bleu" lignes={2}>
 		Les angles
 		{@html math('\\color{forestgreen}\\widehat{\\text{AOD}}')} et

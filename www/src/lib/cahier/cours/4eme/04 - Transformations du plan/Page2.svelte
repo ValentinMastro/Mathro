@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Schema, Propriete } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Schéma, Propriete } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import { math } from 'mathlifier';
 
@@ -20,7 +20,7 @@
 	<Definition lignes={2}>
 		Deux figures sont symétriques par rapport à un point O si en "pivotant le plan" autour de O, les deux figures se superposent.
 	</Definition>
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<defs>
 				<path id="trapeze2" fill="none" stroke-width={5} d="M 100 400 L 200 200 L 500 200 L 600 400 Z" />
@@ -41,12 +41,12 @@
 			<circle cx="1500" cy="400" r="10" fill="red" />
 			<use href="#centrale2" stroke="red" style="transform-origin: 1500px 400px; transform: rotate({rotate_2}deg);" />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Propriete lignes={2}>
 		Si deux points {@html math('\\text{A}')} et {@html math("\\text{A}'")} sont symétriques par rapport à O, <br />
 		alors O est le milieu du segment {@html math("\\text{AA'}")}.
 	</Propriete>
-	<Schema lignes={10}>
+	<Schéma lignes={10}>
 		{#snippet svg()}
 			<defs>
 				<rect id="carre" width="300" height="300" fill="none" stroke-width={5} />
@@ -60,5 +60,5 @@
 			<line x1="400" y1="100" x2="600" y2="900" stroke="green" stroke-width={5} />
 			<line x1="100" y1="400" x2="900" y2="600" stroke="green" stroke-width={5} />
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

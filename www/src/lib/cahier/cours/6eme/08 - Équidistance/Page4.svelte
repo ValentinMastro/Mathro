@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import SousPartie from '$lib/cahier/composants/de_chapitrage/SousPartie.svelte';
-	import { Item, Methode, Paragraphe, Propriete, Protocole, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Item, Methode, Paragraphe, Propriete, Protocole, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import { ArcDeCercle, Droite, Point, Segment, TexteSVG } from '$lib/cahier/composants/svg/*';
 
@@ -56,7 +56,7 @@
 		alors il est <i title="à la même distance">équidistant</i> des extrémités du segment.
 	</Propriete>
 
-	<Schema lignes={5} aspectRatioSVG={4} onmousemove={majMDepuisEvenement}>
+	<Schéma lignes={5} aspectRatioSVG={4} onmousemove={majMDepuisEvenement}>
 		{#snippet svg()}
 			{@const type = { forme: 'croix', taille: 30 }}
 
@@ -81,7 +81,7 @@
 				BM = {BM.toLocaleString('fr', { maximumFractionDigits: 2 })} cm
 			</TexteSVG>
 		{/snippet}
-	</Schema>
+	</Schéma>
 
 	<SousPartie numero={1} titre="Construction d'une médiatrice avec le compas" />
 	<Protocole lignes={4}>
@@ -90,7 +90,7 @@
 		<Item>Relier les deux points d'intersection.</Item>
 	</Protocole>
 
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			{@const type = { forme: 'croix', taille: 20 }}
 			{@const A2 = { x: 500, y: 500 }}
@@ -113,5 +113,5 @@
 				<Droite passantPar={[I1, I2]} stroke-width={10} stroke="blue" />
 			{/if}
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

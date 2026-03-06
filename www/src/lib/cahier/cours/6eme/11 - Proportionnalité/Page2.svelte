@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Exemples, Propriete, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Exemples, Propriete, Schéma } from '$lib/cahier/composants/de_cours/*';
 
 	let donnees_tableau_1 = [
 		{ abscisse: 800, x: 1, y: 0.3 },
@@ -47,10 +47,10 @@
 		construire un tableau de proportionnalité.
 	</Propriete>
 	<Exemples />
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			{@render tableau(donnees_tableau_1, 'Masse (kg)', 'Prix (€)', 200, '0,30 €/kg')}
 			{@render tableau(donnees_tableau_2, 'Durée (h)', 'Distance (km)', 700, '50 km/h')}
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

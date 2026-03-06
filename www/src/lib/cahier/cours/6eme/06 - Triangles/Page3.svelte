@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Exemple, Item, Protocole, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Exemple, Item, Protocole, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Angle, DemiDroite, Polygone } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 </script>
@@ -18,7 +18,7 @@
 		{@html math('\\text{EF} = 4{,}2\\,\\text{cm}')} et
 		{@html math('\\widehat{\\text{DEF}} = 45^{\\circ}')}.
 	</Exemple>
-	<Schema lignes={5} aspectRatioSVG={4}>
+	<Schéma lignes={5} aspectRatioSVG={4}>
 		{#snippet svg()}
 			{@const D = { x: 1200, y: 800 }}
 			{@const E = { x: 2400, y: 800 }}
@@ -27,7 +27,7 @@
 			<Angle r={120} points={[D, E, F]} fill="forestgreen" />
 			<Polygone points={[D, E, F]} afficher_points noms={['D', 'E', 'F']} taille_nom={100} />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Texte couleur="bleu" lignes={3}>
 		<Item>
 			Tracer le segment {@html math('\\text{DE}')} de longueur 4,8 cm.

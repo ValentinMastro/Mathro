@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Propriete, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Propriete, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Angle, AngleDroit, Polygone } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 
@@ -15,7 +15,7 @@
 	<Partie numero={2} titre="Les différents types de triangles et leurs angles" />
 	<Definition>Un triangle est rectangle s'il possède un angle droit.</Definition>
 	<Propriete>Les deux angles aigus d'un triangle rectangle sont complémentaires.</Propriete>
-	<Schema lignes={8} aspectRatioSVG={1.125}>
+	<Schéma lignes={8} aspectRatioSVG={1.125}>
 		{#snippet svg()}
 			<Angle points={[A, B, C]} r={130} fill="red" />
 			<Angle points={[B, C, A]} r={130} fill="blue" />
@@ -28,5 +28,5 @@
 				Les angles {@html math('\\color{blue}\\widehat{\\text{PKU}}')} et {@html math('\\color{red}\\widehat{\\text{PUK}}')} sont complémentaires.
 			</Texte>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Exemples, Item, Propriete, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Exemples, Item, Propriete, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Exercice, SaisieNombreEntier } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { math } from 'mathlifier';
@@ -52,7 +52,7 @@
                 `)}
 		</Item>
 	</Exemples>
-	<Schema lignes={5} aspectRatioSVG={2}>
+	<Schéma lignes={5} aspectRatioSVG={2}>
 		{#snippet svg()}
 			// 2/3
 			<rect x={200} y={200} width={600} height={600} fill="white" />
@@ -78,8 +78,8 @@
 				{/each}
 			</g>
 		{/snippet}
-	</Schema>
-	<Schema lignes={5} aspectRatioSVG={2}>
+	</Schéma>
+	<Schéma lignes={5} aspectRatioSVG={2}>
 		{#snippet svg()}
 			// 4/5
 			<rect x={200} y={0} width={600} height={1000} fill="white" />
@@ -105,5 +105,5 @@
 				{/each}
 			</g>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

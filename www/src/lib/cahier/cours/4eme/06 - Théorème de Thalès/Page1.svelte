@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Schema, Theoreme, Item } from '$lib/cahier/composants/de_cours/*';
+	import { Schéma, Theoreme, Item } from '$lib/cahier/composants/de_cours/*';
 	import { Polygone, TexteSVG } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 
@@ -31,7 +31,7 @@
 			{@html math(`\\dfrac{\\text{AD}}{\\text{AB}} = \\dfrac{\\text{AE}}{\\text{AC}} = \\dfrac{\\text{DE}}{\\text{BC}}`)}
 		</center>
 	</Theoreme>
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<Polygone points={[A, D, E]} noms={['A', 'D', 'E']} afficher_points />
 			<Polygone points={[A, B, C]} noms={['', 'B', 'C']} afficher_points />
@@ -42,5 +42,5 @@
 			<TexteSVG point={{ x: 1500, y: 880 }}>Configuration n°2</TexteSVG>
 			<TexteSVG point={{ x: 1500, y: 970 }}>dite &laquo; du papillon &raquo;</TexteSVG>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

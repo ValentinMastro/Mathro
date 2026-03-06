@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Exemples, Item, Schema, TheoremeDefinition } from '$lib/cahier/composants/de_cours/*';
+	import { Exemples, Item, Schéma, TheoremeDefinition } from '$lib/cahier/composants/de_cours/*';
 	import { Nombre } from '$lib/cahier/composants/de_marge/*';
 	import { DivisionEuclidienne, Fleche, Polylignes, SegmentHorizontal, SegmentVertical } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
@@ -35,9 +35,9 @@
 		<Item>le reste est {reste}</Item>
 	</Exemples>
 
-	<Schema lignes={15}>
+	<Schéma lignes={15}>
 		{#snippet svg()}
 			<DivisionEuclidienne c={1000 / 15} {dividende} {diviseur} {étape} />
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

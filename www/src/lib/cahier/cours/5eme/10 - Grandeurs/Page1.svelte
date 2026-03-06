@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Formules, Item, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemple, Formules, Item, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Carré, Codage, Polygone, Rectangle, TexteSVG } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 
@@ -28,14 +28,14 @@
 	<Partie numero={1} titre="Périmètre" />
 	<Definition>Le périmètre d'une figure est la longueur de son contour.</Definition>
 	<Exemple />
-	<Schema lignes={4} aspectRatioSVG={1.5}>
+	<Schéma lignes={4} aspectRatioSVG={1.5}>
 		{#snippet svg()}
 			<path d="M 250 0 h 750 v 750 h -250 v -500 h -500 Z" fill="none" stroke="black" stroke-width={15} />
 		{/snippet}
 		{#snippet html()}
 			<Texte>Cette figure a un périmètre de 12 carreaux.</Texte>
 		{/snippet}
-	</Schema>
+	</Schéma>
 
 	<SousPartie numero={1} titre="Polygones" />
 
@@ -56,7 +56,7 @@
 			{@html math('\\mathcal{P}_{\\text{parallélogramme}} = 2 \\times (a + b)')}
 		</Item>
 	</Formules>
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<Carré coin={points_carré[0]!} côté={côté_carré} />
 			{#each points_carré as p, index}
@@ -94,5 +94,5 @@
 			<TexteSVG point={points_parallélogramme[0]!} dx={200} dy={-70} fill="blue">a</TexteSVG>
 			<TexteSVG point={points_parallélogramme[1]!} dx={100} dy={100} fill="blue">b</TexteSVG>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

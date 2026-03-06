@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Formules, Item, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Formules, Item, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Carré, Codage, Polygone, Rectangle, Segment, TexteSVG } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 
@@ -41,7 +41,7 @@
 			{@html math('\\mathcal{A}_{\\text{parallélogramme}} = \\text{Base} \\times \\text{Hauteur}')}
 		</Item>
 	</Formules>
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<Carré coin={points_carré[0]!} côté={côté_carré} />
 			{#each points_carré as p, index}
@@ -86,5 +86,5 @@
 			<Segment points={[points_parallélogramme[1]!, pied_hauteur_parallélogramme]} stroke="red" />
 			<TexteSVG point={points_parallélogramme[1]!} fill="red" dx={-120} dy={150}>hauteur</TexteSVG>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

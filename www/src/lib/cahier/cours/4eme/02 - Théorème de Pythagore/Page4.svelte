@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Schema, Theoreme } from '$lib/cahier/composants/de_cours/*';
+	import { Schéma, Theoreme } from '$lib/cahier/composants/de_cours/*';
 	import { AngleDroit, Grille, Polygone, Rectangle, TexteSVG } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 </script>
@@ -12,7 +12,7 @@
 		<br />
 		Si {@html math('\\text{ABC}')} est rectangle en {@html math('\\text{B}')}, alors {@html math('\\text{AC}^2 = \\text{AB}^2 + \\text{BC}^2')}.
 	</Theoreme>
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<!-- AB^2 -->
 			{@const P1 = { x: 100, y: 300 }}
@@ -66,5 +66,5 @@
 				stroke-dasharray="5 10"
 			/>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

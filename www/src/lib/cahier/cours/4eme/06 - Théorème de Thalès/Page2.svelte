@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Schema, Exemple, Item, Paragraphe } from '$lib/cahier/composants/de_cours/*';
+	import { Schéma, Exemple, Item, Paragraphe } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { LatexAlign } from '$lib/cahier/composants/math/*';
 	import { Fleche, Polygone, Rectangle, Segment, TexteSVG } from '$lib/cahier/composants/svg/*';
@@ -19,7 +19,7 @@
 <Contenu>
 	<Partie numero={2} titre="Rédaction" />
 	<Exemple />
-	<Schema lignes={10} aspectRatioSVG={1.3} html_lignes_vides={3}>
+	<Schéma lignes={10} aspectRatioSVG={1.3} html_lignes_vides={3}>
 		{#snippet svg()}
 			<!-- Cadre -->
 			<Rectangle
@@ -65,7 +65,7 @@
 		{#snippet html()}
 			<Paragraphe nom_du_paragraphe="Question :">Calculer UY.</Paragraphe>
 		{/snippet}
-	</Schema>
+	</Schéma>
 
 	<LigneVide lignes={2} />
 

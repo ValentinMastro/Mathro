@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Notation, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Notation, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
@@ -26,7 +26,7 @@
 		Sur un schéma, le symbole {@html math('\\blacksquare')} ou {@html math('\\square')} indique un angle droit.
 	</Notation>
 	<LigneVide />
-	<Schema lignes={10} aspectRatioSVG={1.1}>
+	<Schéma lignes={10} aspectRatioSVG={1.1}>
 		{#snippet svg()}
 			<defs>
 				<style>
@@ -60,5 +60,5 @@
 				De plus, {@html math("{\\color{red} (d)} // {\\color{darkgreen} (d'')}")}
 			</Texte>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

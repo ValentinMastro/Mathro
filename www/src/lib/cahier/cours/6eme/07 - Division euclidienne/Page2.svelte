@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemples, Item, LigneTableau, Paragraphe, Schema, Tableau } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemples, Item, LigneTableau, Paragraphe, Schéma, Tableau } from '$lib/cahier/composants/de_cours/*';
 	import { Segment } from '$lib/cahier/composants/svg/*';
 
 	import { math } from 'mathlifier';
@@ -9,7 +9,7 @@
 <Contenu>
 	<Partie numero={2} titre="Multiples et diviseurs" />
 	<Definition lignes={2}>Dans une division euclidienne, si le reste est égal à 0, le dividende est un multiple du diviseur.</Definition>
-	<Schema lignes={7} position_html="gauche" aspectRatioSVG={9 / 7}>
+	<Schéma lignes={7} position_html="gauche" aspectRatioSVG={9 / 7}>
 		{#snippet svg()}
 			{@const carreau = 1000 / 7}
 			{@const I1 = { x: 4 * carreau, y: 1 * carreau }}
@@ -43,7 +43,7 @@
 				<Item>15 est dans la table de 5</Item>
 			</Exemples>
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Paragraphe nom_du_paragraphe="Critères de divisibilité" />
 	<Tableau lignes={15}>
 		<LigneTableau lignes={2}>

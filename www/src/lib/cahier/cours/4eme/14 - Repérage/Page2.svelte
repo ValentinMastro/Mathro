@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Item, Schema, Notation, Exemples } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Item, Schéma, Notation, Exemples } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
 	import { math } from 'mathlifier';
@@ -15,7 +15,7 @@
 		<Item>l'axe des ordonnées</Item>
 		Les axes des abscisses et des ordonnées sont perpendiculaires.
 	</Definition>
-	<Schema lignes={8}>
+	<Schéma lignes={8}>
 		{#snippet svg()}
 			<!-- Axes -->
 			<line x1="125" y1="500" x2="875" y2="500" stroke="black" stroke-width="5" />
@@ -28,7 +28,7 @@
 			<!-- Point O -->
 			<text x="470" y="560" font-size="60" text-anchor="middle">O</text>
 		{/snippet}
-	</Schema>
+	</Schéma>
 
 	<Notation lignes={2} lignes_vides={0}>
 		{@html math('(\\text{O};x;y)')} est le repère orthogonal constitué de l'origine {@html math('\\text{O}')}, de l'axe des abscisses {@html math(
@@ -38,7 +38,7 @@
 	<Definition lignes={3} lignes_vides={0}>
 		À chaque point du plan, on associe deux nombres que l'on appellent ses coordonnées : son <i>abscisse</i> (horizontale) et son <i>ordonnée</i> (verticale).
 	</Definition>
-	<Schema lignes={10}>
+	<Schéma lignes={10}>
 		{#snippet svg()}
 			<!-- Axes -->
 			<line x1="100" y1="500" x2="980" y2="500" stroke="black" stroke-width="5" />
@@ -69,5 +69,5 @@
 				<Item>{@html math('\\text{W}(4~;~0)')}</Item>
 			</Exemples>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

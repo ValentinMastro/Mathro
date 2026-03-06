@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Partie, Contenu } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Theoreme, Schema, Texte, Exemple, Paragraphe, Remarque } from '$lib/cahier/composants/de_cours/*';
+	import { Theoreme, Schéma, Texte, Exemple, Paragraphe, Remarque } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
 	import { math } from 'mathlifier';
@@ -15,7 +15,7 @@
 		Si, dans un triangle, le carré de la plus grande longueur est égal à la somme des carrés des deux autres côtés, alors ce triangle est rectangle.
 	</Theoreme>
 	<Exemple lignes={10}>
-		<Schema lignes={10}>
+		<Schéma lignes={10}>
 			{#snippet svg()}
 				<polygon
 					points="400,100 {400 + Math.sqrt(12) * 150},{100 + Math.sqrt(12) * 150} {400 - Math.sqrt(5) * 150},{100 + Math.sqrt(5) * 150}"
@@ -34,7 +34,7 @@
 				<LigneVide lignes={0.7} />
 				<Texte lignes={2}>Peut-on prouver que le triangle EFG est rectangle en E ?</Texte>
 			{/snippet}
-		</Schema>
+		</Schéma>
 	</Exemple>
 	<Paragraphe couleur="noir" nom_du_paragraphe="Rédaction" lignes={4}>
 		<u>D'une part :</u>

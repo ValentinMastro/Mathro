@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Exemples, Illustration, Item, Propriete, Protocole, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemple, Exemples, Illustration, Item, Propriete, Protocole, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { Fleche, Point, Polygone } from '$lib/cahier/composants/svg/*';
 
@@ -17,7 +17,7 @@
 	<Definition>Un triangle est une figure ayant 3 côtés et 3 angles.</Definition>
 	<Partie numero={1} titre="Inégalité triangulaire" />
 	<Illustration />
-	<Schema lignes={5} aspectRatioSVG={4}>
+	<Schéma lignes={5} aspectRatioSVG={4}>
 		{#snippet svg()}
 			{@const A = { x: 200, y: 200 }}
 			{@const B = { x: 1800, y: 400 }}
@@ -32,7 +32,7 @@
 				<Polygone points={[A, B, C]} afficher_points taille_nom={120} distance_nom={120} />
 			</g>
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Texte>
 		Le chemin noir est plus court que le rouge :
 		{@html math('\\text{AB}~ \\leqslant \\text{AC} + \\text{CB} ')}

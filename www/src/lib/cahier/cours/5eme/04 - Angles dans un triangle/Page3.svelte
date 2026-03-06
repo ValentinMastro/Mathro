@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Propriete, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemple, Propriete, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Angle, Codage, Polygone, TexteSVG } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 
@@ -21,7 +21,7 @@
 		Un triangle isocèle possède deux angles de même mesure :<br />
 		il s'agit des angles adjacents à la base du triangle.
 	</Propriete>
-	<Schema lignes={11} centré>
+	<Schéma lignes={11} centré>
 		{#snippet svg()}
 			<TexteSVG point={{ x: (D.x + E.x) / 2, y: D.y + 10 }} fill="red" font-size={70} dy={-50}>base</TexteSVG>
 			<Codage points={[D, F]} type="2 traits" stroke="red" />
@@ -30,7 +30,7 @@
 			<Angle r={80} points={[E, D, F]} fill="green" />
 			<Polygone points={[D, E, F]} stroke-width={5} afficher_points noms={['D', 'E', 'F']} />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Exemple lignes={2}>
 		Le triangle DEF est isocèle en {@html math('\\text{F}')} car {@html math('\\text{DF} = \\text{EF}')}.<br />
 		Les angles {@html math('\\widehat{\\text{DEF}}')} et {@html math('\\widehat{\\text{EDF}}')} sont égaux.

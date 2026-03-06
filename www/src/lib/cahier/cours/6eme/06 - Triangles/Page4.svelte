@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Exemple, Item, Protocole, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Exemple, Item, Protocole, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import { Angle, DemiDroite, Point, Segment } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
@@ -26,7 +26,7 @@
 		{@html math('\\widehat{\\text{GHI}} = 60^{\\circ}')},
 		{@html math('\\widehat{\\text{HGI}} = 30^{\\circ}')}.
 	</Exemple>
-	<Schema lignes={7} aspectRatioSVG={20 / 7}>
+	<Schéma lignes={7} aspectRatioSVG={20 / 7}>
 		{#snippet svg()}
 			{@const carreau = 1000 / 7}
 			{@const G = { x: 6 * carreau, y: 6 * carreau }}
@@ -53,7 +53,7 @@
 				<Point nom="I" point={I} {type} dy={120} />
 			{/if}
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Protocole lignes={3}>
 		<Item>
 			Tracer le segment {@html math('\\text{GH}')} de longueur {GH} cm.

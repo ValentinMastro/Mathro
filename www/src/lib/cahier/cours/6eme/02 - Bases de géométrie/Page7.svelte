@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Item, Paragraphe, Protocole, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Item, Paragraphe, Protocole, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
 	import { math } from 'mathlifier';
@@ -12,7 +12,7 @@
 	<Paragraphe nom_du_paragraphe="Consigne">
 		Tracer une droite {@html math("(d')")} perpendiculaire à {@html math('(d)')} passant par {@html math('\\text{A}')}.
 	</Paragraphe>
-	<Schema lignes={8} aspectRatioSVG={1.25}>
+	<Schéma lignes={8} aspectRatioSVG={1.25}>
 		{#snippet svg()}
 			<defs>
 				<style>
@@ -37,7 +37,7 @@
 			<circle cx={625} cy={500} r={10} fill="black" />
 			<rect x={625} y={500} width={30} height={30} fill="black" />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Protocole lignes={2}>
 		<Item>
 			Faire glisser l'équerre le long de {@html math('\\color{red} (d)')}, jusqu'à alignement avec {@html math('\\text{A}')}.

@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Methode, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Methode, Schéma } from '$lib/cahier/composants/de_cours/*';
 </script>
 
 <Contenu>
 	<SousPartie numero={3} titre="Coefficient de proportionnalité" />
 	<Methode lignes={2}>Calculer le coefficient de proportionnalité, pour passer d'une ligne à l'autre.</Methode>
-	<Schema lignes={4} aspectRatioSVG={5}>
+	<Schéma lignes={4} aspectRatioSVG={5}>
 		{#snippet svg()}
 			<rect x={500} y={250} width={2750} height={500} stroke="black" stroke-width={10} fill="none" />
 			<line x1={500} y1={500} x2={3250} y2={500} stroke="black" stroke-width={10} />
@@ -22,10 +22,10 @@
 			<path d="M 3400 350 a 150 150 0 0 1 0 300 l -50 0 l 50 25 l 0 -50 l -50 25 " stroke="red" stroke-width={10} fill="none" />
 			<text x={3600} y={500} font-size={150} fill="black" text-anchor="left" dominant-baseline="middle">× 2,60 €/kg</text>
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<SousPartie numero={4} titre="Additivité" />
 	<Methode>Additionner deux colonnes pour en obtenir une troisième.</Methode>
-	<Schema lignes={4} aspectRatioSVG={5}>
+	<Schéma lignes={4} aspectRatioSVG={5}>
 		{#snippet svg()}
 			<defs>
 				<marker id="blue_arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
@@ -55,5 +55,5 @@
 			<path d="M 3000,125 l 0 -50 l 850 0 l 0 75 " stroke="blue" fill="none" stroke-width={10} marker-end="url(#blue_arrow)" />
 			<path d="M 3000,875 l 0 50 l 850 0 l 0 -75 " stroke="blue" fill="none" stroke-width={10} marker-end="url(#blue_arrow)" />
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

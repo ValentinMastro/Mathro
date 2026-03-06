@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemples, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemples, Schéma } from '$lib/cahier/composants/de_cours/*';
 
 	interface Population {
 		'0-14': number;
@@ -87,7 +87,7 @@
 			</tbody>
 		</table>
 	</Exemples>
-	<Schema lignes={20}>
+	<Schéma lignes={20}>
 		{#snippet svg()}
 			<defs>
 				<style>
@@ -153,7 +153,7 @@
 			<text x="930" y="950" class="textp36">Âge</text>
 			<text x="110" y="240" class="textp36">Nombre d'habitants</text>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>
 
 <style>

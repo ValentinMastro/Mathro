@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Item, Notation, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Item, Notation, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Angle, DemiDroite, Point } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 
@@ -22,7 +22,7 @@
 			ses deux <i>côtés</i> : les deux demi-droites,
 		</Item>
 	</Definition>
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<Angle r={100} points={[C, A, B]} fill="red" />
 			<Point point={A} nom="A" type={{ forme: 'disque', taille: 10 }} dx={-50} dy={0} />
@@ -31,7 +31,7 @@
 			<DemiDroite origine={A} passantPar={B} stroke-width={5} />
 			<DemiDroite origine={A} passantPar={C} stroke-width={5} />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Texte couleur="noir" lignes={3}>
 		<Item>
 			L'angle se nomme {@html math('\\widehat{\\text{BAC}}')} ou {@html math('\\widehat{\\text{CAB}}')}.

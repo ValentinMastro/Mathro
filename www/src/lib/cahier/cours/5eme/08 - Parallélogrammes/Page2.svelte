@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Demonstration, Donc, Item, OnSaitQue, Or, Propriete, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Demonstration, Donc, Item, OnSaitQue, Or, Propriete, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Polygone, Segment, type Coordonnées2D } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 
@@ -16,11 +16,11 @@
 	<Partie numero={2} titre="Les différents types de parallélogrammes" />
 	<Definition>Un rectangle est un parallélogramme qui a un angle droit.</Definition>
 	<Demonstration />
-	<Schema lignes={5} aspectRatioSVG={2}>
+	<Schéma lignes={5} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<Polygone {points} afficher_points />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<OnSaitQue lignes={2}>
 		<Item>ABCD est un parallélogramme.</Item>
 		<Item>{@html math('\\widehat{\\text{DAB}} = 90^\\circ')}</Item>
@@ -34,11 +34,11 @@
 		{@html math('\\widehat{\\text{ABC}} = \\widehat{\\text{BCD}} = \\widehat{\\text{CDA}} = \\widehat{\\text{DAB}} = 90^\\circ')}
 	</Donc>
 	<Propriete>Les diagonales d'un rectangle sont de même longueur.</Propriete>
-	<Schema lignes={5} aspectRatioSVG={2}>
+	<Schéma lignes={5} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<Polygone {points} afficher_points />
 			<Segment points={[points[0]!, points[2]!]} stroke="red" />
 			<Segment points={[points[1]!, points[3]!]} stroke="red" />
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

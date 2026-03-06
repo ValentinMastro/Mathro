@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, SousSousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Formule, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Formule, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { math } from 'mathlifier';
 </script>
 
@@ -12,7 +12,7 @@
 	<Formule>
 		Si l'arête d'un cube mesure {@html math('c')}, alors {@html math(`\\text{V}_{\\text{cube}} = c^3`)}.
 	</Formule>
-	<Schema lignes={8}>
+	<Schéma lignes={8}>
 		{#snippet svg()}
 			<rect x="125" y="375" width="500" height="500" fill="none" stroke="black" stroke-width="4" />
 			<path d="M 125 375 l 250 -250 l 500 0 l -250 250 Z" fill="none" stroke="black" stroke-width="4" />
@@ -24,7 +24,7 @@
 				Cube en perspective cavalière
 			</text>
 		{/snippet}
-	</Schema>
+	</Schéma>
 
 	<SousSousPartie numero={2} titre="Le pavé droit" />
 	<Definition lignes={3}>
@@ -35,7 +35,7 @@
 		Si le pavé droit est de longueur {@html math(`\\text{L}`)}, de largeur {@html math('\\ell')}
 		et de hauteur {@html math(`\\text{h}`)}, alors {@html math(`\\text{V}_{\\text{pave}} = \\text{L} \\times \\ell \\times h`)}.
 	</Formule>
-	<Schema lignes={8} aspectRatioSVG={1.25}>
+	<Schéma lignes={8} aspectRatioSVG={1.25}>
 		{#snippet svg()}
 			<rect x="125" y="375" width="625" height="375" fill="none" stroke="black" stroke-width="4" />
 			<path d="M 125 375 l 250 -250 l 625 0 l -250 250 Z" fill="none" stroke="black" stroke-width="4" />
@@ -47,5 +47,5 @@
 				Pavé droit en perspective cavalière
 			</text>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

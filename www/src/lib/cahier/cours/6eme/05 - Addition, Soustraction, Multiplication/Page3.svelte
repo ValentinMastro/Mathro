@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Nombre } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
@@ -28,7 +28,7 @@
 
 <Contenu>
 	<Partie numero={3} titre="Poser des calculs" />
-	<Schema lignes={10}>
+	<Schéma lignes={10}>
 		{#snippet svg()}
 			<defs>
 				<style>
@@ -97,9 +97,9 @@
 				{/if}
 			{/each}
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<LigneVide lignes={2} />
-	<Schema lignes={10}>
+	<Schéma lignes={10}>
 		{#snippet svg()}
 			<defs>
 				<style>
@@ -161,5 +161,5 @@
 				Il y a autant de chiffres après la virgule dans les <i>facteurs</i> que dans le <i>produit</i>.
 			</Texte>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

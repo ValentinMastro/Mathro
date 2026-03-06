@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Item, Proprietes, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemple, Item, Proprietes, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { AngleDroit, Codage, Point, Polygone, Segment } from '$lib/cahier/composants/svg/*';
 
 	import { math } from 'mathlifier';
@@ -21,7 +21,7 @@
 		<Item>Ses diagonales se coupent en leur milieu.</Item>
 		<Item>Ses diagonales sont de la même longueur.</Item>
 	</Proprietes>
-	<Schema lignes={8} aspectRatioSVG={20 / 8}>
+	<Schéma lignes={8} aspectRatioSVG={20 / 8}>
 		{#snippet svg()}
 			<AngleDroit points={[A, B, C]} taille={50} fill="orange" />
 			<AngleDroit points={[B, C, D]} taille={50} fill="orange" />
@@ -40,7 +40,7 @@
 			<Codage points={[C, O]} type="3 traits" stroke="blue" />
 			<Codage points={[D, O]} type="3 traits" stroke="blue" />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Exemple lignes={6}>
 		Dans le rectangle ABCD ci-dessus :
 		<Item bullet_color="var(--vert)">

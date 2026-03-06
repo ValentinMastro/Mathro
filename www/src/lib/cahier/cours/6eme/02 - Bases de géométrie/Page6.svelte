@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Notation, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Notation, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
@@ -15,7 +15,7 @@
 	<Notation>
 		La distance entre {@html math('\\text{A}')} et {@html math('\\text{B}')} se note {@html math('\\text{AB}')}, sans parenthèses ni crochets.
 	</Notation>
-	<Schema lignes={6} aspectRatioSVG={2.75}>
+	<Schéma lignes={6} aspectRatioSVG={2.75}>
 		{#snippet svg()}
 			<defs>
 				<style>
@@ -38,5 +38,5 @@
 				{@html math('\\text{AB} ~\\approx~ 9{,}7~\\text{cm}')}
 			</Texte>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

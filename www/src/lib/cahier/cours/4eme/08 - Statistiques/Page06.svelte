@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Exemples, Schema, Tableau, LigneTableau } from '$lib/cahier/composants/de_cours/*';
+	import { Exemples, Schéma, Tableau, LigneTableau } from '$lib/cahier/composants/de_cours/*';
 	// Nombre d'habitant à Meaux par année
 	let donnees_1 = {
 		1982: 45005,
@@ -30,7 +30,7 @@
 			{/each}
 		</LigneTableau>
 	</Tableau>
-	<Schema lignes={20}>
+	<Schéma lignes={20}>
 		{#snippet svg()}
 			<defs>
 				<style>
@@ -62,5 +62,5 @@
 			<text x={950} y={950} class="textp33">Année</text>
 			<text x={220} y={50} class="textp33">Nombre d'habitants</text>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

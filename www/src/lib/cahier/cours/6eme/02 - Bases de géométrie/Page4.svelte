@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie, DansLaMarge } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Item, Notation, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Item, Notation, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
@@ -42,7 +42,7 @@
 		Si {@html math('(d)')} et {@html math("(d')")} sont parallèles, on note {@html math("(d) // (d')")}.
 	</Notation>
 	<LigneVide lignes={2} />
-	<Schema lignes={10}>
+	<Schéma lignes={10}>
 		{#snippet svg()}
 			<defs>
 				<style>
@@ -84,5 +84,5 @@
 			<Texte>{@html math('{\\color{red} (d)}')} et {@html math("{\\color{darkgreen} (d'')}")} sont sécantes en {@html math('\\text{I}')}.</Texte>
 			<Texte>{@html math("{\\color{blue} (d')}")} et {@html math("{\\color{darkgreen} (d'')}")} sont sécantes en {@html math('\\text{K}')}.</Texte>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

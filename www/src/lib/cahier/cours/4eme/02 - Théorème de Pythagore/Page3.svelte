@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Propriete, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Propriete, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { AngleDroit, Polygone, Polylignes, TexteSVG } from '$lib/cahier/composants/svg/*';
 
 	// triangle 1
@@ -26,7 +26,7 @@
 		L'hypoténuse d'un triangle rectangle est le côté opposé à l'angle droit.
 	</Definition>
 	<Propriete>L'hypoténuse est le côté le plus long d'un triangle rectangle.</Propriete>
-	<Schema lignes={5} aspectRatioSVG={4}>
+	<Schéma lignes={5} aspectRatioSVG={4}>
 		{#snippet svg()}
 			<!-- Premier triangle -->
 			<AngleDroit points={[A, B, C]} taille={50} />
@@ -46,5 +46,5 @@
 			<Polylignes points={[I, K]} stroke="red" stroke-width={10} />
 			<TexteSVG point={{ x: 2880, y: 90 }} font-size="90" fill="red" transform-origin="2880 90" transform="rotate(-8.13)">Hypoténuse</TexteSVG>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

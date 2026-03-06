@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definitions, Exemple, Exemples, Item, Propriete, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definitions, Exemple, Exemples, Item, Propriete, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import { Fleche } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
@@ -37,7 +37,7 @@
 	</Definitions>
 	<Exemple />
 	<!-- Division de 200 par 9 -->
-	<Schema lignes={15} aspectRatioSVG={20 / 15}>
+	<Schéma lignes={15} aspectRatioSVG={20 / 15}>
 		{#snippet svg()}
 			{@const c = 1000 / 15}
 			<!-- Barres + diviseur + dividende (étape 0) -->
@@ -202,7 +202,7 @@
 				<text x={14 * c} y={9.8 * c} style="fill: blue; font-size: 40px;">valeur exacte</text>
 			{/if}
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>
 
 <style>

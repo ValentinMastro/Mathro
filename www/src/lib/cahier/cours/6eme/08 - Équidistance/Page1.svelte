@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge, Chapitre, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Schema, Propriete, Texte, Definitions } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Schéma, Propriete, Texte, Definitions } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { Point, Segment } from '$lib/cahier/composants/svg/*';
@@ -89,7 +89,7 @@
 		disque de centre {@html math('\\text{0}')} et de rayon {@html math('r')}. <br />
 	</Definitions>
 
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<Point nom="O" point={O} type={{ forme: 'disque', taille: 13 }} dy={-30} />
 			<Point nom="O" point={O2} type={{ forme: 'disque', taille: 13 }} dy={-30} />
@@ -98,5 +98,5 @@
 			<Segment points={[O, dernier_point_cercle]} stroke="red" />
 			<Segment points={[O2, dernier_point_disque]} stroke="red" />
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

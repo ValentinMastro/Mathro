@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Annexe, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Item, Protocole, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Item, Protocole, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { math } from 'mathlifier';
 </script>
 
@@ -10,7 +10,7 @@
 	<Partie numero={1} titre="Bissectrice d'un angle" />
 	<Definition lignes={2}>La bissectrice d'un angle est la (demi-)droite qui coupe son angle en deux autres de même mesure.</Definition>
 
-	<Schema lignes={5} aspectRatioSVG={2}>
+	<Schéma lignes={5} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<defs>
 				<clipPath id="angle1">
@@ -43,7 +43,7 @@
 				de 45°.
 			</Texte>
 		{/snippet}
-	</Schema>
+	</Schéma>
 
 	<Protocole lignes={6}>
 		Tracer une bissectrice avec le compas
@@ -53,7 +53,7 @@
 		<Item>Relier le dernier point d'intersection avec le sommet de l'angle.</Item>
 	</Protocole>
 
-	<Schema lignes={5} aspectRatioSVG={2}>
+	<Schéma lignes={5} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<defs>
 				<clipPath id="zone1">
@@ -93,5 +93,5 @@
 				clip-path="url(#zone3)"
 			/>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

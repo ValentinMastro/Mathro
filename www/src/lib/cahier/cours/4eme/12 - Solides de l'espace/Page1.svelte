@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Schéma } from '$lib/cahier/composants/de_cours/*';
 </script>
 
 <Chapitre titre="Solides de l'espace" />
@@ -12,7 +12,7 @@
 		Une arête est un segment commun à deux faces.<br />
 		Un sommet est le point commun à plusieurs arêtes.
 	</Definition>
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<defs>
 				<marker id="fleche" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -36,5 +36,5 @@
 			<text x="1460" y="100" text-anchor="start" dominant-baseline="middle" font-size="60px" stroke="none" fill="black"> Sommet </text>
 			<line x1="1450" y1="100" x2="1310" y2="100" stroke="black" stroke-width="4" marker-end="url(#fleche)" />
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

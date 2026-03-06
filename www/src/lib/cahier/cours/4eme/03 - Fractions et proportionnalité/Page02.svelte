@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, DansLaMarge } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Exemples, Item, MultiItem, Propriete, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Exemples, Item, MultiItem, Propriete, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { Grille, Rectangle } from '$lib/cahier/composants/svg/*';
@@ -61,7 +61,7 @@
 		</MultiItem>
 	</Exemples>
 
-	<Schema lignes={8} aspectRatioSVG={20 / 8}>
+	<Schéma lignes={8} aspectRatioSVG={20 / 8}>
 		{#snippet svg()}
 			<!-- Schéma 1 -->
 			{@const coin1 = { x: 125, y: 125 }}
@@ -85,5 +85,5 @@
 			/>
 			<Grille points={[coin4, coin5]} pas={{ x: 250, y: 125 / facteur_2 }} avec_contours />
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

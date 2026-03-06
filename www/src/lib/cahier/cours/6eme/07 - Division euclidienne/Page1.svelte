@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Exemples, Item, Definition, TheoremeDefinition, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Exemples, Item, Definition, TheoremeDefinition, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Segment } from '$lib/cahier/composants/svg/*';
 
 	import { math } from 'mathlifier';
@@ -23,7 +23,7 @@
 		<Item>{@html math('19 = 3 \\times 6 + 1')}</Item>
 		<Item>{@html math('255 = 16 \\times 15 + 15')}</Item>
 	</Exemples>
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<!-- Vocabulaire -->
 			{@const I = { x: 300, y: 100 }}
@@ -94,7 +94,7 @@
 			<text class="chiffre rouge" x={1700} y={200}>1</text>
 			<text class="chiffre vert" x={1800} y={200}>5</text>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>
 
 <style>

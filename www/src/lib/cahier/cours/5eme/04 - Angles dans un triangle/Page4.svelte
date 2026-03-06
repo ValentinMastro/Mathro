@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Propriete, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Propriete, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Angle, Codage, Polygone } from '$lib/cahier/composants/svg/*';
 
 	let carreau = 1000 / 11;
@@ -17,7 +17,7 @@
 <Contenu>
 	<Definition>Un triangle est équilatéral si ses trois côtés sont de la même longueur.</Definition>
 	<Propriete>Un triangle équilatéral possède trois angles de même mesure : 60°.</Propriete>
-	<Schema lignes={11} centré>
+	<Schéma lignes={11} centré>
 		{#snippet svg()}
 			<Polygone points={[A, B, C]} afficher_points />
 			<Angle r={70} points={[A, B, C]} fill="red" afficher_mesure bind:mesure={ABC} />
@@ -27,5 +27,5 @@
 			<Codage points={[B, C]} type="3 traits" stroke="green" />
 			<Codage points={[C, A]} type="3 traits" stroke="green" />
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

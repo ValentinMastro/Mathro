@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Item, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Item, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { math } from 'mathlifier';
 </script>
@@ -14,7 +14,7 @@
 		<Item>l'axe des ordonnées, {@html math('(\\text{OJ})')}, avec {@html math('\\text{J} (0,1,0)')}</Item>
 		<Item>l'axe des cotes, ou des altitudes, {@html math('(\\text{OK})')} avec {@html math('\\text{K} (0,0,1)')}</Item>
 	</Definition>
-	<Schema lignes={10} aspectRatioSVG={1.6}>
+	<Schéma lignes={10} aspectRatioSVG={1.6}>
 		{#snippet svg()}
 			<!-- Axes -->
 			<path d="M 500 600 l 1000 0" stroke="black" stroke-width={5} />
@@ -78,5 +78,5 @@
 			<Item>{@html math('\\text{G}(8;4;7)')}</Item>
 			<Item>{@html math('\\text{H}(2;4;7)')}</Item>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

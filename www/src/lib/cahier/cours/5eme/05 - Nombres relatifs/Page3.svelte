@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Item, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Item, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Fleche, Point, TexteSVG } from '$lib/cahier/composants/svg/*';
 
 	let origine = { x: 1000, y: 500 };
@@ -29,7 +29,7 @@
 		</Item>
 		Les deux axes sont perpendiculaires et se coupent en l'origine.
 	</Definition>
-	<Schema lignes={10} aspectRatioSVG={2}>
+	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
 			<Fleche points={axe_abscisses} />
 			<Fleche points={axe_ordonnées} />
@@ -37,5 +37,5 @@
 			<TexteSVG point={{ x: 1750, y: 580 }}>axe des abscisses</TexteSVG>
 			<TexteSVG point={{ x: 700, y: 80 }}>axe des ordonnées</TexteSVG>
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

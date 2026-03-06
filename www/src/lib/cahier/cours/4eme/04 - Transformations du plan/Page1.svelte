@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Schema, Propriete } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Schéma, Propriete } from '$lib/cahier/composants/de_cours/*';
 	import { AngleDroit, Codage, DroiteVerticale, Médiatrice, Point, Polygone, Segment, SegmentHorizontal } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 
@@ -27,7 +27,7 @@
 	<Definition lignes={2}>
 		Deux figures sont symétriques par rapport à une droite si, en repliant le plan le long de cette droite, les deux figures se superposent.
 	</Definition>
-	<Schema lignes={10} aspectRatioSVG={2.05}>
+	<Schéma lignes={10} aspectRatioSVG={2.05}>
 		{#snippet svg()}
 			<!-- Axes de symétrie -->
 			<SegmentHorizontal x1={0} x2={800} y={500} stroke-dasharray="30,30" />
@@ -49,13 +49,13 @@
 			<use href="#figure2" stroke="black" />
 			<use href="#figure2" style="transform-origin: 1500px 400px; transform: scaleX({-scale_2});" stroke="red" />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Propriete lignes={2}>
 		Si deux points {@html math('\\text{A}')} et {@html math("\\text{A}'")} sont symétriques par rapport à {@html math('(d)')}, <br />
 		alors {@html math('(d)')} est la médiatrice du segment {@html math("[\\text{AA}']")}.
 	</Propriete>
 
-	<Schema lignes={8} aspectRatioSVG={2}>
+	<Schéma lignes={8} aspectRatioSVG={2}>
 		{#snippet svg()}
 			{@const c = 1000 / 8}
 			{@const type = { forme: 'croix', taille: 20 }}
@@ -71,5 +71,5 @@
 			<Codage points={[A, C]} />
 			<Codage points={[B, C]} />
 		{/snippet}
-	</Schema>
+	</Schéma>
 </Contenu>

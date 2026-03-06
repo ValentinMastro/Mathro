@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Item, Paragraphe, Propriete, Proprietes, Schema, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Item, Paragraphe, Propriete, Proprietes, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 	import { Codage, Polygone, TexteSVG } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
@@ -18,15 +18,15 @@
 <Contenu apres_un_titre>
 	<Partie numero={1} titre="Définition et constructions" />
 	<Definition lignes={2}>Un parallélogramme est un quadrilatère qui a ses côtés opposés parallèles.</Definition>
-	<Schema lignes={5} aspectRatioSVG={3}>
+	<Schéma lignes={5} aspectRatioSVG={3}>
 		{#snippet svg()}
 			<Polygone {points} afficher_noms taille_nom={110} distance_nom={100} stroke-width={10} />
 			<TexteSVG point={{ x: 2500, y: 300 }} font-size={110}>(AB) // (DC)</TexteSVG>
 			<TexteSVG point={{ x: 2500, y: 500 }} font-size={110}>(AD) // (BC)</TexteSVG>
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Propriete>Les côtés opposés d'un parallélogramme sont de même longueur.</Propriete>
-	<Schema lignes={5} aspectRatioSVG={3}>
+	<Schéma lignes={5} aspectRatioSVG={3}>
 		{#snippet svg()}
 			<Polygone {points} afficher_noms taille_nom={110} distance_nom={100} stroke-width={10} />
 			<Codage points={[A, B]} type="2 traits" stroke="red" stroke-width={10} />
@@ -34,7 +34,7 @@
 			<Codage points={[A, D]} type="3 traits" stroke="green" stroke-width={10} />
 			<Codage points={[B, C]} type="3 traits" stroke="green" stroke-width={10} />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Proprietes lignes={5}>
 		<Item>Les angles opposés d'un parallélogramme sont de même mesure.</Item>
 		<Item>Deux angles intérieurs consécutifs sont supplémentaires.</Item>

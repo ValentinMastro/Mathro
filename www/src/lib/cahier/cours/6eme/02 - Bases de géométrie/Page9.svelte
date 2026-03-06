@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Item, Paragraphe, Protocole, Schema } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Item, Paragraphe, Protocole, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
 	import { math } from 'mathlifier';
@@ -14,7 +14,7 @@
 	<Paragraphe nom_du_paragraphe="Consigne">
 		Tracer {@html math('\\color{red} (m)')} la médiatrice du segment {@html math('[\\text{AB}]')}.
 	</Paragraphe>
-	<Schema lignes={10}>
+	<Schéma lignes={10}>
 		{#snippet svg()}
 			<defs>
 				<style>
@@ -47,7 +47,7 @@
 			<!-- Angle droit -->
 			<rect x={500} y={500} width={25} height={25} fill="black" transform="rotate(-45,500,500)" />
 		{/snippet}
-	</Schema>
+	</Schéma>
 	<Protocole lignes={3}>
 		<Item>
 			Avec la règle, déterminer {@html math('\\textcolor{darkgreen}{\\text{I}}')} le milieu du segment {@html math('[\\text{AB}]')}.
