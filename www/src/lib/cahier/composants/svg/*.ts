@@ -1,5 +1,4 @@
-export type Coordonnées2D = { x: number; y: number };
-export type ExtrémitésSegment = [Coordonnées2D, Coordonnées2D];
+export { type Coordonnées2D, type ExtrémitésSegment, Point2D } from './géométrie2D/*';
 
 /** Valeur arbitrairement grande pour prolonger une droite au-delà du viewport SVG */
 export const SVG_INFINI = 1e6;
