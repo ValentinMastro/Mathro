@@ -1,11 +1,15 @@
 <!--
-    @component
-    ## AngleDroit -- (extends SVGPolygonElement)
-    Tracer un angle droit
-    ### Props
-    - `points`: *{x: number, y: number}[3]* sommets de l'angle droit
-    - `taille`: *number* Taille du carré (par défaut : 100)
-    - `decalage`: *number* Décalage depuis le sommet vers l'intérieur de l'angle
+  @component
+  ## AngleDroit — (extends SVGPolygonElement)
+  Tracer un angle droit
+
+  ### Props
+  - `points` *[Coordonnées2D, Coordonnées2D, Coordonnées2D]* : sommets de l'angle droit
+  - `taille?` *number* : taille du carré *(par défaut : 100)*
+  - `decalage?` *number* : décalage depuis le sommet vers l'intérieur de l'angle *(par défaut : 0)*
+  - `stroke?` *string* : couleur du trait *(par défaut : 'none')*
+  - `stroke-width?` *number* : épaisseur du trait *(par défaut : 10)*
+  - `fill?` *string* : couleur de remplissage *(par défaut : 'black')*
 -->
 
 <script lang="ts">

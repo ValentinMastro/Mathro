@@ -1,11 +1,13 @@
 <!--
-	@component
-	## DemiDroite — (extends SVGLineElement)
-	Trace une demi-droite à partir d'une origine, passant par un point
+  @component
+  ## DemiDroite — (extends SVGLineElement)
+  Trace une demi-droite à partir d'une origine, passant par un point
 
-	### Props
-	- `origine` *Coordonnées2D* : point de départ de la demi-droite
-	- `passantPar` *Coordonnées2D* : point par lequel passe la demi-droite
+  ### Props
+  - `origine` *Coordonnées2D* : point de départ de la demi-droite
+  - `passantPar` *Coordonnées2D* : point par lequel passe la demi-droite
+  - `stroke?` *string* : couleur du trait *(par défaut : 'black')*
+  - `stroke-width?` *number* : épaisseur du trait *(par défaut : 10)*
 -->
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';

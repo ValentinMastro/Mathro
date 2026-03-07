@@ -1,17 +1,23 @@
-<!---
-    @component
-    ## Grille  (extends SVGLineElement)
-    Grillage SVG
-    ### Props
-    - `pas`: *number | { x: number; y: number }* : pas de la grille
-    - `avec_contours`: boolean : faut-il afficher le contour de la grille ? (par défaut : false)
+<!--
+  @component
+  ## Grille — (extends SVGLineElement)
+  Grillage SVG
 
-    ### Cas n°1
-    - `points` *[{x: number, y: number}, {x: number, y: number}]* : coins opposés de la grille
-    ### Cas n°2
-    - `point` *{x: number, y: number}* : coin en haut à gauche
-    - `width` *number* : largeur de la grille
-    - `height` *number* : hauteur de la grille
+  ### Props
+  - `pas` *number | { x: number; y: number }* : pas de la grille
+  - `avec_contours?` *boolean* : faut-il afficher le contour de la grille ? *(par défaut : false)*
+
+  ### Cas n°1
+  - `points` *[{ x: number; y: number }, { x: number; y: number }]* : coins opposés de la grille
+
+  ### Cas n°2
+  - `point` *{ x: number; y: number }* : coin en haut à gauche
+  - `width` *number* : largeur de la grille
+  - `height` *number* : hauteur de la grille
+
+  ### Attributs SVG hérités
+  - `stroke?` *string* : couleur du trait *(par défaut : 'black')*
+  - `stroke-width?` *number* : épaisseur du trait *(par défaut : 5)*
 -->
 
 <script lang="ts">

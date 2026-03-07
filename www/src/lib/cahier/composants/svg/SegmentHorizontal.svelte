@@ -1,12 +1,12 @@
 <!--
-    @component
+  @component
+  ## SegmentHorizontal — (extends SVGLineElement)
+  Trace un segment horizontal
 
-    ## Segment
-    Trace un segment horizontal
-    ### Props
-    - `x1`: number : abscisse du premier point
-    - `x2`: number : abscisse du deuxième point
-    - `y`: number : ordonnée du segment
+  ### Props
+  - `x1` *number* : abscisse du premier point
+  - `x2` *number* : abscisse du deuxième point
+  - `y` *number* : ordonnée du segment
 -->
 
 <script lang="ts">

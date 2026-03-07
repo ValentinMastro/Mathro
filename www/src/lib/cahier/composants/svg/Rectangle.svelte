@@ -1,10 +1,13 @@
 <!--
   @component
-  ## Rectangle -- (extends SVGRectElement)
+  ## Rectangle — (extends SVGRectElement)
   Tracer un rectangle
 
   ### Props
-  - `points`: *[{x: number, y: number}, {x: number, y: number}]* deux sommets opposés du rectangle
+  - `points` *ExtrémitésSegment* : deux sommets opposés du rectangle
+  - `stroke?` *string* : couleur du trait *(par défaut : 'black')*
+  - `stroke-width?` *number* : épaisseur du trait *(par défaut : 5)*
+  - `fill?` *string* : couleur de remplissage *(par défaut : 'none')*
 -->
 
 <script lang="ts">

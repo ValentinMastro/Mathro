@@ -1,16 +1,19 @@
 <!--
   @component
-  ## Polygone -- (extends SVGPolygonElement)
+  ## Polygone — (extends SVGPolygonElement)
   Trace le polygone formé par les points donnés
 
   ### Props
   - `points` *Coordonnées2D[]* : sommets du polygone
-  - `noms` *string[]* : noms des sommets *(par défaut : A, B, C, ...)*
-  - `afficher_points` *boolean* : afficher les points *(par défaut : false)*
-  - `afficher_noms` *boolean* : afficher les noms *(par défaut : false)*
-  - `distance_nom` *number* : distance entre le point et son nom *(par défaut : 60)*
-  - `taille_nom` *number* : taille du texte des noms *(par défaut : même valeur que distance_nom)*
-  - `type` *{ forme: 'croix' | 'disque' | string; taille: number }* : type et taille des points *(par défaut : { forme: 'croix', taille: 20 })*
+  - `noms?` *string[]* : noms des sommets *(par défaut : A, B, C, ...)*
+  - `afficher_points?` *boolean* : afficher les points *(par défaut : false)*
+  - `afficher_noms?` *boolean* : afficher les noms *(par défaut : false)*
+  - `distance_nom?` *number* : distance entre le point et son nom *(par défaut : 60)*
+  - `taille_nom?` *number* : taille du texte des noms *(par défaut : même valeur que distance_nom)*
+  - `type?` *{ forme: 'croix' | 'disque' | string; taille: number }* : type et taille des points *(par défaut : { forme: 'croix', taille: 20 })*
+  - `fill?` *string* : couleur de remplissage *(par défaut : 'none')*
+  - `stroke?` *string* : couleur du trait *(par défaut : 'black')*
+  - `stroke-width?` *number* : épaisseur du trait *(par défaut : 5)*
 -->
 
 <script lang="ts">

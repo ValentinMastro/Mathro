@@ -1,3 +1,19 @@
+<!--
+  @component
+  ## Axe
+  Trace un axe gradué avec des valeurs décimales ou fractionnaires
+
+  ### Props
+  - `debut` *Coordonnées2D* : point de départ de l'axe
+  - `fin` *Coordonnées2D* : point d'arrivée de l'axe (avec flèche)
+  - `graduations` *{ type_de_graduation: 'fraction'; premiere_valeur: Fraction; derniere_valeur: Fraction; pas: Fraction; premiere_graduation: Fraction; pas_graduation: Fraction } | { type_de_graduation: 'decimal'; premiere_valeur: number; derniere_valeur: number; pas: number; premiere_graduation: number; pas_graduation: number }* : paramètres des graduations
+  - `affichage?` *'décimal' | 'fraction' | 'fraction simplifiée'* : mode d'affichage des valeurs *(par défaut : 'décimal')*
+  - `taille_graduations?` *number* : demi-longueur des traits de graduation *(par défaut : 25)*
+  - `font_size_valeurs_graduations?` *number* : taille de police des valeurs *(par défaut : 100)*
+  - `couleur?` *string* : couleur de l'axe et des graduations *(par défaut : 'black')*
+  - `couleur_texte?` *string* : couleur du texte des valeurs *(par défaut : valeur de `couleur`)*
+  - `stroke_width?` *number* : épaisseur du trait *(par défaut : 10)*
+-->
 <script lang="ts">
 	import type { Fraction } from 'mathjs';
 	import { type Coordonnées2D } from './*';

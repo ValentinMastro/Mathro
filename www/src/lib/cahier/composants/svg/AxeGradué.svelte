@@ -1,10 +1,13 @@
 <!--
-    @component
-    ## Axe Gradué (extends Flèche)
+  @component
+  ## AxeGradué — (extends Flèche)
+  Trace un axe gradué avec une flèche et des traits de graduation réguliers
 
-    ### Props
-    - `nombre_de_graduations`: number
- -->
+  ### Props
+  - `nombre_de_graduations` *number* : nombre de graduations sur l'axe
+  - `taille_graduations?` *number* : demi-longueur des traits de graduation *(par défaut : 50)*
+  - (hérite de toutes les props de `Flèche`)
+-->
 <script lang="ts">
 	import type { ExtrémitésSegment } from './*';
 	import { type FlècheProps, default as Flèche } from './Fleche.svelte';

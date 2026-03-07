@@ -1,12 +1,15 @@
 <!--
   @component
-  ## Flèche (extends SVGPathElement)
+  ## Flèche — (extends SVGPathElement)
   Trace une flèche entre deux points.
 
   ### Props
-  - `points` **ExtrémitésSegment** : extrémités de la flèche
-  - `taille` *(number)* : longueur de la pointe
-  - `largeur` *(number)* : demi-largeur de la pointe
+  - `points` *ExtrémitésSegment* : extrémités de la flèche
+  - `taille?` *number* : longueur de la pointe *(par défaut : 30)*
+  - `largeur?` *number* : demi-largeur de la pointe *(par défaut : taille / √3)*
+  - `stroke?` *string* : couleur du trait *(par défaut : 'black')*
+  - `stroke-width?` *number* : épaisseur du trait *(par défaut : 5)*
+  - `fill?` *string* : couleur de remplissage *(par défaut : 'black')*
 -->
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';

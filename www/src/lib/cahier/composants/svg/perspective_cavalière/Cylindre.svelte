@@ -1,13 +1,13 @@
 <!--
   @component
-  ## Sphere
-  Trace une sphère en perspective cavalière
+  ## Cylindre
+  Trace un cylindre en perspective cavalière
 
   ### Props
   - `projecteur` *(Projecteur)* : projecteur utilisé pour la perspective cavalière
   - `centre1` *{ x: number; y: number; z: number }* : centre de la base 1
   - `centre2` *{ x: number; y: number; z: number }* : centre de la base 2
-  - `rayon` *number* : rayon de la sphère
+  - `rayon` *number* : rayon du cylindre
 -->
 <script lang="ts">
 	import { Polylignes } from '../*';

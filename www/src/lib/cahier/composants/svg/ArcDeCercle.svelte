@@ -1,13 +1,16 @@
 <!--
   @component
-  ## ArcDeCercle -- (extends SVGPathElement)
+  ## ArcDeCercle — (extends SVGPathElement)
   Trace un arc de cercle à partir du centre et des deux angles
 
   ### Props
   - `centre` *Coordonnées2D* : centre du cercle
-  - `r` *(number)* : rayon du secteur (distance du sommet à l’arc)
-  - `angle1` *(number)* : angle de départ de l'arc en radians
-  - `angle2` *(number)* : angle de fin de l'arc en radians
+  - `r` *number* : rayon du secteur (distance du sommet à l’arc)
+  - `angle1` *number* : angle de départ de l’arc en radians
+  - `angle2` *number* : angle de fin de l’arc en radians
+  - `fill?` *string* : couleur de remplissage *(par défaut : ‘none’)*
+  - `stroke?` *string* : couleur du trait *(par défaut : ‘black’)*
+  - `stroke-width?` *number* : épaisseur du trait *(par défaut : 5)*
 -->
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';

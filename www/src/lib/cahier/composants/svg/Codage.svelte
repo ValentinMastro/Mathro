@@ -1,13 +1,16 @@
 <!--
   @component
-  ## Codage
+  ## Codage — (extends SVGPathElement)
   Code le segment selon le type de codage choisi
 
   ### Props
-  - `points` *[{ x: number; y: number }, { x: number; y: number }]* : extrémités du segment
-  - `position` *number* : position du codage sur le segment (entre 0 et 1 ; 0.5 = milieu du segment)
-  - `type` *'1 trait' | '2 traits' | '3 traits'* : type de codage
-  - `taille` *number* : longueur du petit trait
+  - `points` *ExtrémitésSegment* : extrémités du segment
+  - `position?` *number* : position du codage sur le segment (entre 0 et 1) *(par défaut : 0.5)*
+  - `type?` *'1 trait' | '2 traits' | '3 traits'* : type de codage *(par défaut : '1 trait')*
+  - `taille?` *number* : longueur du petit trait *(par défaut : 80)*
+  - `fill?` *string* : couleur de remplissage *(par défaut : 'none')*
+  - `stroke?` *string* : couleur du trait *(par défaut : 'black')*
+  - `stroke-width?` *number* : épaisseur du trait *(par défaut : 5)*
 -->
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';

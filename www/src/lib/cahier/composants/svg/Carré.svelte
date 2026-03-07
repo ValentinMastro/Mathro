@@ -1,11 +1,14 @@
 <!--
   @component
-  ## Carré -- (extends SVGRectElement)
+  ## Carré — (extends SVGRectElement)
   Tracer un carré
 
   ### Props
   - `coin` *Coordonnées2D* : coin du carré supérieur gauche
   - `côté` *number* : côté du carré
+  - `stroke?` *string* : couleur du trait *(par défaut : 'black')*
+  - `stroke-width?` *number* : épaisseur du trait *(par défaut : 5)*
+  - `fill?` *string* : couleur de remplissage *(par défaut : 'none')*
 -->
 
 <script lang="ts">

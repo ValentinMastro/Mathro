@@ -1,10 +1,12 @@
 <!--
-	@component
-	## Droite — (extends SVGLineElement)
-	Trace une droite passant par deux points
+  @component
+  ## Droite — (extends SVGLineElement)
+  Trace une droite passant par deux points
 
-	### Props
-	- `passantPar` *ExtrémitésSegment* : deux points par lesquels passe la droite
+  ### Props
+  - `passantPar` *ExtrémitésSegment* : deux points par lesquels passe la droite
+  - `stroke?` *string* : couleur du trait *(par défaut : 'black')*
+  - `stroke-width?` *number* : épaisseur du trait *(par défaut : 5)*
 -->
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';

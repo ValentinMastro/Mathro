@@ -1,10 +1,14 @@
 <!--
-@component
-    ## TexteSVG
-    Affiche du texte dans un SVG (extends SVGTextElement)
-    ### Props
-    - `point` *Coordonnées2D* : point d'ancrage du texte
- -->
+  @component
+  ## TexteSVG — (extends SVGTextElement)
+  Affiche du texte dans un SVG
+
+  ### Props
+  - `point` *Coordonnées2D* : point d'ancrage du texte
+  - `font-size?` *number* : taille de police *(par défaut : 60)*
+  - `dominant-baseline?` *string* : alignement vertical *(par défaut : 'middle')*
+  - `text-anchor?` *string* : alignement horizontal *(par défaut : 'middle')*
+-->
 
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';

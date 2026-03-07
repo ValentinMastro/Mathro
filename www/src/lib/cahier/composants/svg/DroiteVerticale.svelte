@@ -1,10 +1,10 @@
 <!--
-    @component
+  @component
+  ## DroiteVerticale — (extends SVGLineElement)
+  Trace une droite verticale
 
-    ## Droite verticale
-    Trace une droite verticale
-    ### Props
-    - `x`: number : abscisse de la droite
+  ### Props
+  - `x` *number* : abscisse de la droite
 -->
 
 <script lang="ts">

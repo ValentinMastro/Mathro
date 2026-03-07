@@ -1,11 +1,15 @@
 <!--
-@component
-    ## Cercle
-    Trace un cercle (extends SVGCircleElement)
-    ### Props
-    - `centre` *Coordonnées2D* : centre du cercle
-    - `rayon` *number* : rayon du cercle
- -->
+  @component
+  ## Cercle — (extends SVGCircleElement)
+  Trace un cercle
+
+  ### Props
+  - `centre` *Coordonnées2D* : centre du cercle
+  - `rayon` *number* : rayon du cercle
+  - `stroke?` *string* : couleur du trait *(par défaut : 'black')*
+  - `stroke-width?` *number* : épaisseur du trait *(par défaut : 5)*
+  - `fill?` *string* : couleur de remplissage *(par défaut : 'none')*
+-->
 
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';

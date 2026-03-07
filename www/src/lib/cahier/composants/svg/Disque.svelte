@@ -1,11 +1,15 @@
 <!--
-@component
-    ## Disque
-    Trace un disque (extends SVGCircleElement)
-    ### Props
-    - `centre` *Coordonnées2D* : centre du disque
-    - `rayon` *number* : rayon du disque
- -->
+  @component
+  ## Disque — (extends SVGCircleElement)
+  Trace un disque
+
+  ### Props
+  - `centre` *Coordonnées2D* : centre du disque
+  - `rayon` *number* : rayon du disque
+  - `stroke?` *string* : couleur du trait *(par défaut : 'none')*
+  - `stroke-width?` *number* : épaisseur du trait *(par défaut : 5)*
+  - `fill?` *string* : couleur de remplissage *(par défaut : 'black')*
+-->
 
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';

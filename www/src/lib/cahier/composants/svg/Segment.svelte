@@ -1,10 +1,13 @@
 <!--
-    @component
+  @component
+  ## Segment — (extends SVGLineElement)
+  Trace un segment
 
-    ## Segment
-    Trace un segment
-    ### Props
-    - `points` *ExtrémitésSegment* : extrémités du segment
+  ### Props
+  - `points` *ExtrémitésSegment* : extrémités du segment
+  - `stroke?` *string* : couleur du trait *(par défaut : 'black')*
+  - `stroke-width?` *number* : épaisseur du trait *(par défaut : 5)*
+  - `fill?` *string* : couleur de remplissage *(par défaut : 'none')*
 -->
 
 <script lang="ts">
