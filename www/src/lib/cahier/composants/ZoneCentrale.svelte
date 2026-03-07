@@ -16,12 +16,16 @@
 		<input id="largeur" type="range" min="0" max="100" bind:value={page_state.largeur_plein_ecran} />
 		<Scroll />
 	{:else}
-		<PageDeCahier numero_de_page={page_state.numero_de_la_page} nom_fichier={nom_fichier_gauche}>
-			<PageGauche />
-		</PageDeCahier>
-		<PageDeCahier numero_de_page={page_state.numero_de_la_page + 1} nom_fichier={nom_fichier_droite}>
-			<PageDroite />
-		</PageDeCahier>
+		<div class="page-wrapper" class:zoom={page_state.zoom_page}>
+			<PageDeCahier numero_de_page={page_state.numero_de_la_page} nom_fichier={nom_fichier_gauche}>
+				<PageGauche />
+			</PageDeCahier>
+		</div>
+		<div class="page-wrapper" class:zoom={page_state.zoom_page}>
+			<PageDeCahier numero_de_page={page_state.numero_de_la_page + 1} nom_fichier={nom_fichier_droite}>
+				<PageDroite />
+			</PageDeCahier>
+		</div>
 	{/if}
 </div>
 
@@ -47,5 +51,14 @@
 		#largeur {
 			display: none;
 		}
+	}
+	.page-wrapper {
+		height: 100%;
+		display: contents;
+	}
+	.page-wrapper.zoom {
+		display: block;
+		overflow: hidden;
+		aspect-ratio: 168 / 248;
 	}
 </style>

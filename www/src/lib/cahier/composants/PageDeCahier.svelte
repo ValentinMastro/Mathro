@@ -79,7 +79,8 @@
 		background-size: contain;
 	}
 	.zoom_page {
-		margin-left: -20%;
+		transform-origin: top left;
+		transform: scale(1.1974) translate(-20%, -8.67%);
 	}
 	.numero {
 		position: absolute;
