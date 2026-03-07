@@ -13,7 +13,7 @@
 	import type { Snippet } from 'svelte';
 	import type { SVGAttributes } from 'svelte/elements';
 	import type { Coordonnées2D } from '$lib/cahier/composants/svg/*';
-	import Schema from './Schema.svelte';
+	import Schema from './Schéma.svelte';
 
 	type Props = SVGAttributes<SVGSVGElement> & {
 		lignes?: number;
@@ -32,7 +32,7 @@
 	let { points_intéractifs, seuil = 40, style = '', ...schemaProps }: Props = $props();
 
 	const SEUIL2 = seuil * seuil;
-	let enDrag: Coordonnées2D | null = $state(null);
+	let enDrag: Coordonnées2D | null = null;
 	let pointerId: number | null = null;
 
 	function getSVG(e: Event): SVGSVGElement | null {

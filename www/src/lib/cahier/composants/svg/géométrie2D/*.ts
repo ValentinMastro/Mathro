@@ -21,6 +21,41 @@ export class Point2D implements Coordonnées2D {
 		return Math.sqrt(this.distance2(p1, p2));
 	}
 
+	static normaliser(v: Coordonnées2D): Coordonnées2D {
+		const n = Math.hypot(v.x, v.y);
+		return n > 1e-12 ? { x: v.x / n, y: v.y / n } : { x: 0, y: 0 };
+	}
+
+	static projeté_orthogonal(sommet: Coordonnées2D, p1: Coordonnées2D, p2: Coordonnées2D): Coordonnées2D {
+		const dx = p2.x - p1.x,
+			dy = p2.y - p1.y;
+		const t = ((sommet.x - p1.x) * dx + (sommet.y - p1.y) * dy) / (dx * dx + dy * dy);
+		return { x: p1.x + t * dx, y: p1.y + t * dy };
+	}
+
+	static orthocentre(A: Coordonnées2D, B: Coordonnées2D, C: Coordonnées2D): Coordonnées2D | null {
+		const dA = { x: B.y - C.y, y: C.x - B.x }; // direction altitude depuis A
+		const dB = { x: A.y - C.y, y: C.x - A.x }; // direction altitude depuis B
+		const denom = -dA.x * dB.y + dB.x * dA.y;
+		if (Math.abs(denom) < 1e-9) return null;
+		const t = (-(B.x - A.x) * dB.y + dB.x * (B.y - A.y)) / denom;
+		return { x: A.x + t * dA.x, y: A.y + t * dA.y };
+	}
+
+	static direction_bissectrice(s: Coordonnées2D, p1: Coordonnées2D, p2: Coordonnées2D): Coordonnées2D {
+		const v1 = Point2D.normaliser({ x: p1.x - s.x, y: p1.y - s.y });
+		const v2 = Point2D.normaliser({ x: p2.x - s.x, y: p2.y - s.y });
+		return { x: v1.x + v2.x, y: v1.y + v2.y };
+	}
+
+	static centre_cercle_inscrit(A: Coordonnées2D, B: Coordonnées2D, C: Coordonnées2D): Coordonnées2D {
+		const a = Point2D.distance(B, C);
+		const b = Point2D.distance(A, C);
+		const c = Point2D.distance(A, B);
+		const s = a + b + c;
+		return { x: (a * A.x + b * B.x + c * C.x) / s, y: (a * A.y + b * B.y + c * C.y) / s };
+	}
+
 	static centre_cercle_circonscrit(p1: Coordonnées2D, p2: Coordonnées2D, p3: Coordonnées2D): Coordonnées2D | null {
 		const { x: ax, y: ay } = p1;
 		const { x: bx, y: by } = p2;
