@@ -1,68 +1,61 @@
 <script lang="ts">
-	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Item, Notation, Propriete, Schéma, SchémaIntéractif } from '$lib/cahier/composants/de_cours/*';
+	import { Contenu, DansLaMarge } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Demonstration, Propriete, SchémaIntéractif } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
-	import { AngleDroit, Droite, Point, Point2D, Polygone, type Coordonnées2D } from '$lib/cahier/composants/svg/*';
+	import { Cercle, Médiatrice, Point, Point2D, Polygone, TexteSVG, type Coordonnées2D } from '$lib/cahier/composants/svg/*';
 	import { math } from 'mathlifier';
 
-	// --- Exemple statique ---
-	const Aex: Coordonnées2D = { x: 1000, y: 150 };
-	const Bex: Coordonnées2D = { x: 200, y: 900 };
-	const Cex: Coordonnées2D = { x: 1800, y: 700 };
-	const HA_ex = Point2D.projeté_orthogonal(Aex, Bex, Cex);
+	let étape: number = $state(4);
+	let C: Coordonnées2D = $state({ x: 300, y: 200 });
+	let D: Coordonnées2D = $state({ x: 1200, y: 400 });
+	let E: Coordonnées2D = $state({ x: 900, y: 900 });
+	let O = $derived(Point2D.centre_cercle_circonscrit(C, D, E));
 
-	// --- Schéma interactif ---
-	let étape = $state(0);
-	let C: Coordonnées2D = $state({ x: 400, y: 200 });
-	let D: Coordonnées2D = $state({ x: 1500, y: 250 });
-	let E: Coordonnées2D = $state({ x: 800, y: 900 });
+	let type = { forme: 'disque', taille: 15 };
+	let rayon = $derived(O ? Point2D.distance(O, C) : 0);
 
-	const type = { forme: 'disque', taille: 15 };
-	let H = $derived(Point2D.orthocentre(C, D, E));
+	let milieuCD = $derived({ x: (C.x + D.x) / 2, y: (C.y + D.y) / 2 });
+	let milieuDE = $derived({ x: (D.x + E.x) / 2, y: (D.y + E.y) / 2 });
+	let milieuCE = $derived({ x: (C.x + E.x) / 2, y: (C.y + E.y) / 2 });
 </script>
 
-<DansLaMarge lignes_vides={20}>
-	<Slider min={0} max={3} bind:valeur={étape} />
+<DansLaMarge lignes_vides={3}>
+	<Slider min={0} max={4} bind:valeur={étape} />
 </DansLaMarge>
 
 <Contenu>
-	<Partie numero={2} titre="Hauteurs" />
-	<Definition lignes={2}>
-		La hauteur d'un côté d'un triangle issue est la droite perpendiculaire à <br />
-		ce côté passant par le sommet opposé.
-	</Definition>
-	<Exemple lignes_vides={0} />
-	<Schéma lignes={5} aspectRatioSVG={2}>
-		{#snippet svg()}
-			<Polygone points={[Aex, Bex, Cex]} noms={['A', 'B', 'C']} afficher_points distance_nom={50} taille_nom={150} />
-			<Droite passantPar={[Aex, { x: Aex.x + (Bex.y - Cex.y), y: Aex.y + (Cex.x - Bex.x) }]} stroke="red" />
-			<AngleDroit points={[Aex, HA_ex, Cex]} taille={80} />
-		{/snippet}
-	</Schéma>
-	<Notation lignes={3}>
-		<Item>La hauteur du côté {@html math('[\\text{BC}]')}</Item>
-		<Item>La hauteur relative à {@html math('[\\text{BC}]')}</Item>
-		<Item>La hauteur issue de A</Item>
-	</Notation>
 	<Propriete lignes={2}>
-		Les 3 hauteurs d'un triangle sont concourantes en un point :<br />
-		<i title="peut se trouver à l'extérieur du triangle si celui-ci est obtus">l'orthocentre</i>.
+		Les 3 médiatrices d'un triangle sont concourantes en un point :<br />
+		<i title="le centre du cercle qui entoure le triangle">le centre du cercle circonscrit</i>.
 	</Propriete>
 	<SchémaIntéractif lignes={10} aspectRatioSVG={2} points_intéractifs={[C, D, E]}>
 		{#snippet svg()}
 			<Polygone points={[C, D, E]} noms={['C', 'D', 'E']} afficher_points {type} distance_nom={70} />
 			{#if étape >= 1}
-				<Droite passantPar={[C, { x: C.x + (D.y - E.y), y: C.y + (E.x - D.x) }]} stroke="red" />
+				<Médiatrice extrémités_segment={[C, D]} stroke="red" />
+				<TexteSVG point={milieuCD} dy={-50} fill="red">(m₁)</TexteSVG>
 			{/if}
 			{#if étape >= 2}
-				<Droite passantPar={[D, { x: D.x + (C.y - E.y), y: D.y + (E.x - C.x) }]} stroke="blue" />
+				<Médiatrice extrémités_segment={[D, E]} stroke="blue" />
+				<TexteSVG point={milieuDE} dx={80} fill="blue">(m₂)</TexteSVG>
 			{/if}
 			{#if étape >= 3}
-				<Droite passantPar={[E, { x: E.x + (C.y - D.y), y: E.y + (D.x - C.x) }]} stroke="forestgreen" />
+				<Médiatrice extrémités_segment={[C, E]} stroke="forestgreen" />
+				<TexteSVG point={milieuCE} dx={-80} fill="forestgreen">(m₃)</TexteSVG>
 			{/if}
-			{#if étape >= 3 && H}
-				<Point point={H} nom="H" type={{ forme: 'disque', taille: 10 }} font-size={80} />
+			{#if étape >= 4 && O}
+				<Cercle centre={O} {rayon} stroke-dasharray="12,12" />
+				<Point point={O} nom="O" type={{ forme: 'disque', taille: 10 }} font-size={80} dy={100} />
 			{/if}
 		{/snippet}
 	</SchémaIntéractif>
+	<Demonstration lignes={6}>
+		Soient {@html math('(m_1)')}, la médiatrice de [AB], et {@html math('(m_2)')}, la médiatrice de [BC].<br />
+		Soit O le point d'intersection de {@html math('(m_1)')} et {@html math('(m_2)')}<br />
+		<br />
+		Si {@html math('\\text{O} \\in (m_1)')}, la médiatrice de [AB], alors OA = OB.<br />
+		Si {@html math('\\text{O} \\in (m_2)')}, la médiatrice de [BC], alors OB = OC.<br />
+
+		Donc OA = OB = OC.
+	</Demonstration>
 </Contenu>

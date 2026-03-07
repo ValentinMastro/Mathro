@@ -14,7 +14,7 @@
 	import { type Coordonnées2D, TexteSVG } from './*';
 
 	type Props = Omit<SVGAttributes<SVGPathElement>, 'points'> & {
-		afficher_mesure?: boolean;
+		afficher_mesure?: boolean | number;
 		mesure?: number;
 		points: [Coordonnées2D, Coordonnées2D, Coordonnées2D];
 		r: number;
@@ -65,7 +65,8 @@
 
 <path {d} {...props} />
 {#if afficher_mesure}
-	<TexteSVG point={{ x: P2.x + 2 * r * Math.cos(angleMoitié), y: P2.y + 2 * r * Math.sin(angleMoitié) }} fill={props['fill']}>
+	{@const r_diff = afficher_mesure === true ? 2 : afficher_mesure}
+	<TexteSVG point={{ x: P2.x + r_diff * r * Math.cos(angleMoitié), y: P2.y + r_diff * r * Math.sin(angleMoitié) }} fill={props['fill']}>
 		{mesure.toFixed()}°
 	</TexteSVG>
 {/if}
