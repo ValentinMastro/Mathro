@@ -1,8 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import LigneVide from '../LigneVide.svelte';
-
+	import LigneVide from '../../LigneVide.svelte';
 	type TableauProps = HTMLAttributes<HTMLTableElement> & {
 		children?: Snippet;
 		colonnes?: number;

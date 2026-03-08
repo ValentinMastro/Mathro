@@ -1,5 +1,17 @@
 import type { Snippet } from 'svelte';
 
+export type couleur = 'bleu' | 'rouge' | 'vert' | 'noir';
+
+export interface ParagrapheProps {
+	addStyleNomParagraphe?: string;
+	addStyle?: string;
+	nom_du_paragraphe?: string;
+	couleur?: couleur;
+	lignes?: number;
+	lignes_vides?: number;
+	children?: Snippet;
+}
+
 export { default as Paragraphe } from './Paragraphe.svelte';
 // Composants dérivés de Paragraphe
 export { default as Definition } from './Definition.svelte';
@@ -30,21 +42,9 @@ export { default as Vocabulaire } from './Vocabulaire.svelte';
 export { default as Item } from './Item.svelte';
 export { default as MultiItem } from './MultiItem.svelte';
 
-export { default as Tableau } from './Tableau.svelte';
-export { default as LigneTableau } from './LigneTableau.svelte';
-export { default as CelluleTableau } from './CelluleTableau.svelte';
+export { default as Tableau } from './tableau/Tableau.svelte';
+export { default as LigneTableau } from './tableau/LigneTableau.svelte';
+export { default as CelluleTableau } from './tableau/CelluleTableau.svelte';
 
-export { default as Schéma } from './Schéma.svelte';
-export { default as SchémaIntéractif } from './SchémaIntéractif.svelte';
-
-export type couleur = 'bleu' | 'rouge' | 'vert' | 'noir';
-
-export interface ParagrapheProps {
-	addStyleNomParagraphe?: string;
-	addStyle?: string;
-	nom_du_paragraphe?: string;
-	couleur?: couleur;
-	lignes?: number;
-	lignes_vides?: number;
-	children?: Snippet;
-}
+export { default as Schéma } from './schéma/Schéma.svelte';
+export { default as SchémaIntéractif } from './schéma/SchémaIntéractif.svelte';
