@@ -3,7 +3,6 @@
 	import { Exemples, Methode, Remarque, Item } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-
 	import { math } from 'mathlifier';
 
 	let puissance = $state(2);

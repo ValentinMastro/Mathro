@@ -3,7 +3,6 @@
 	import { Exemples, Nomenclature, Tableau, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Item, LigneTableau } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-
 	import { math } from 'mathlifier';
 </script>
 
