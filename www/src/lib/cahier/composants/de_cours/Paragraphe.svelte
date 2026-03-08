@@ -1,3 +1,17 @@
+<!--
+  @component
+  ## Paragraphe
+  Composant de base pour les paragraphes de cours.
+  Affiche un titre coloré souligné suivi d'un contenu dimensionné en carreaux.
+
+  ### Props
+  - `nom_du_paragraphe?` *string* : titre du paragraphe *(par défaut : 'Paragraphe :')*
+  - `couleur?` *couleur* : couleur du texte — 'bleu', 'rouge', 'vert' ou 'noir' *(par défaut : 'noir')*
+  - `lignes?` *number* : hauteur du contenu en carreaux *(par défaut : 1)*
+  - `lignes_vides?` *number* : nombre de lignes vides après le contenu
+  - `addStyleNomParagraphe?` *string* : styles CSS additionnels pour le titre
+  - `addStyle?` *string* : styles CSS additionnels pour le contenu
+-->
 <script lang="ts">
 	import { type ParagrapheProps } from './*';
 

@@ -1,3 +1,8 @@
+<!--
+  @component
+  ## PourMieuxComprendre
+  Paragraphe de type « Pour mieux comprendre » (bleu).
+-->
 <script lang="ts">
 	import { Paragraphe, type ParagrapheProps } from './*';
 	let props: ParagrapheProps = $props();

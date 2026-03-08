@@ -1,3 +1,8 @@
+<!--
+  @component
+  ## Definition
+  Paragraphe de type « Définition » (vert).
+-->
 <script lang="ts">
 	import { Paragraphe, type ParagrapheProps } from './*';
 	let props: ParagrapheProps = $props();

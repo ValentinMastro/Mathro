@@ -1,3 +1,8 @@
+<!--
+  @component
+  ## Texte
+  Paragraphe sans titre, pour du texte libre.
+-->
 <script lang="ts">
 	import { Paragraphe, type ParagrapheProps } from './*';
 

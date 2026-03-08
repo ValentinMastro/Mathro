@@ -1,3 +1,8 @@
+<!--
+  @component
+  ## Protocole
+  Paragraphe de type « Protocole » (noir).
+-->
 <script lang="ts">
 	import { Paragraphe, type ParagrapheProps } from './*';
 	let props: ParagrapheProps = $props();

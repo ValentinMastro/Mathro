@@ -1,3 +1,8 @@
+<!--
+  @component
+  ## Convention
+  Paragraphe de type « Convention » (rouge).
+-->
 <script lang="ts">
 	import { Paragraphe, type ParagrapheProps } from './*';
 	let props: ParagrapheProps = $props();

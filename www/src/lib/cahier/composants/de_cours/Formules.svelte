@@ -1,3 +1,8 @@
+<!--
+  @component
+  ## Formules
+  Paragraphe de type « Formules » (rouge).
+-->
 <script lang="ts">
 	import { Paragraphe, type ParagrapheProps } from './*';
 	let props: ParagrapheProps = $props();

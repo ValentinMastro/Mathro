@@ -1,3 +1,12 @@
+<!--
+  @component
+  ## MultiItem — (extends HTMLDivElement)
+  Conteneur multi-colonnes pour disposer des items côte à côte.
+
+  ### Props
+  - `colonnes?` *number* : nombre de colonnes *(par défaut : 1)*
+  - `lignes_vides?` *number* : nombre de lignes vides après le conteneur *(par défaut : 0)*
+-->
 <script lang="ts">
 	import { type HTMLAttributes } from 'svelte/elements';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';

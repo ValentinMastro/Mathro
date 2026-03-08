@@ -1,12 +1,13 @@
 <!--
-    @component
-    ## Item (extends HTMLDivElement)
-    ### Props
-    `bullet` *string* : symbole à gauche de la ligne (par défaut : '&bullet;')
-    `bullet_color` *string | undefined* : couleur du symbole (par défaut : 'undefined')
-    `lignes` *number* : nombre de lignes (par défaut : 1)
- -->
+  @component
+  ## Item — (extends HTMLDivElement)
+  Élément à puce pour listes dans les paragraphes de cours.
 
+  ### Props
+  - `bullet?` *string* : symbole HTML à gauche de la ligne *(par défaut : '&bullet;')*
+  - `bullet_color?` *string* : couleur du symbole
+  - `lignes?` *number* : hauteur en carreaux *(par défaut : 1)*
+-->
 <script lang="ts">
 	import { type Snippet } from 'svelte';
 	import { type HTMLAttributes } from 'svelte/elements';
