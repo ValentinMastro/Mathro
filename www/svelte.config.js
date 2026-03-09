@@ -17,8 +17,11 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter({
 			node: '22.x'
-		})
+		}),
 		//adapter: adapter({ out: 'build' }),
+		alias: {
+			$activité: 'src/activité'
+		}
 	}
 };
 

@@ -44,6 +44,7 @@
 		"jspdf": "^4.1.0",
 		"mathjs": "^14.8.2",
 		"mathlifier": "^3.4.0",
+		"motion": "^12.35.1",
 		"svelte-preprocess": "^6.0.3",
 		"vite-plugin-wasm": "^3.5.0",
 		"vite-plugin-wasm-pack": "^0.1.12",
