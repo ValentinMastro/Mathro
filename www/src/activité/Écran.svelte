@@ -2,13 +2,7 @@
 	/**
 	 * @component Écran — section plein écran avec scroll-snap
 	 */
-	let {
-		children,
-		couleur_fond = 'transparent',
-		avec_solution = false,
-		solution_visible = false,
-		on_toggle_solution = () => {}
-	} = $props();
+	let { children, couleur_fond = 'transparent', avec_solution = false, solution_visible = false, on_toggle_solution = () => {} } = $props();
 </script>
 
 <section class="écran" style:background-color={couleur_fond}>
@@ -47,7 +41,9 @@
 		color: #555;
 		cursor: pointer;
 		opacity: 0.7;
-		transition: opacity 0.15s, background-color 0.15s;
+		transition:
+			opacity 0.15s,
+			background-color 0.15s;
 	}
 	.bouton-solution:hover {
 		opacity: 1;
