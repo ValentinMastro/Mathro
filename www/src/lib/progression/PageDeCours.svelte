@@ -13,16 +13,16 @@
 
 	const Composant = $derived(résoudre_page(niveau, chapitre, page));
 
-	let conteneur: HTMLDivElement;
+	let conteneur = $state<HTMLDivElement | undefined>(undefined);
 	let taille_page = $state(0);
 
 	$effect(() => {
+		if (!conteneur) return;
+		const el = conteneur;
 		const observer = new ResizeObserver(() => {
-			if (conteneur) {
-				taille_page = conteneur.clientHeight;
-			}
+			taille_page = el.clientHeight;
 		});
-		observer.observe(conteneur);
+		observer.observe(el);
 		return () => observer.disconnect();
 	});
 

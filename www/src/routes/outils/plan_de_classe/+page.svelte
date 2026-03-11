@@ -252,25 +252,26 @@
 	.grille {
 		display: flex;
 		flex-direction: column;
-		gap: 1.2rem;
+		gap: 1vh;
 		flex: 1;
 		justify-content: center;
+		width: 100%;
 	}
 
 	.rangée {
 		display: flex;
-		gap: 1.8rem;
+		gap: 2vw;
 		justify-content: center;
 	}
 
 	.paire {
 		display: flex;
-		gap: 0.3rem;
+		gap: 0.3vw;
 	}
 
 	.cellule {
-		width: 7rem;
-		height: 4rem;
+		width: 10vw;
+		height: 8vh;
 		border-radius: 0.5rem;
 		display: flex;
 		flex-direction: column;
@@ -316,13 +317,13 @@
 	}
 
 	.prénom {
-		font-size: 0.85rem;
+		font-size: clamp(0.85rem, 1.4vw, 1.3rem);
 		font-weight: 600;
 		line-height: 1.2;
 	}
 
 	.nom {
-		font-size: 0.75rem;
+		font-size: clamp(0.7rem, 1.1vw, 1.1rem);
 		color: #374151;
 		line-height: 1.2;
 	}
