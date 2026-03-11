@@ -115,10 +115,12 @@
 		input_fichier.value = '';
 	}
 
+	let mode_noir = $state(false);
+
 	function on_keydown(event: KeyboardEvent) {
-		if (event.key === 'r' && !event.ctrlKey && !event.metaKey && !event.altKey) {
-			assigner_aléatoirement();
-		}
+		if (event.ctrlKey || event.metaKey || event.altKey) return;
+		if (event.key === 'r') assigner_aléatoirement();
+		if (event.key === 'b') mode_noir = !mode_noir;
 	}
 
 	// Indices de colonnes groupées par paire pour chaque rangée
@@ -152,8 +154,9 @@
 							<div
 								class="cellule"
 								class:vide={!élève}
-								class:fille={élève?.sexe === 'F'}
-								class:garçon={élève?.sexe === 'G'}
+								class:fille={!mode_noir && élève?.sexe === 'F'}
+								class:garçon={!mode_noir && élève?.sexe === 'G'}
+								class:noir={mode_noir && !!élève}
 								use:dropzone={{
 									on_dropzone: (source_idx: number) => gérer_drop(idx, source_idx),
 									dragover_class: 'survol'
@@ -295,6 +298,16 @@
 	.cellule.garçon {
 		background: #dbeafe;
 		border: 1.5px solid #93c5fd;
+	}
+
+	.cellule.noir {
+		background: #1a1a1a;
+		border: 1.5px solid #444;
+		color: white;
+	}
+
+	.cellule.noir .nom {
+		color: #ccc;
 	}
 
 	.cellule.vide {
