@@ -1,7 +1,55 @@
 <script lang="ts">
 	import PageExercices from '../../PageExercices.svelte';
 	import Exercice from '../../Exercice.svelte';
+
+	const ÉPAISSEUR_SÉPARATEUR = 6;
+	const HAUTEUR_MIN = 40;
+
+	let hauteur_colonne_droite = $state(0);
+
+	// Ratios initiaux : 1:1 entre ex-43 et ex-44
+	let ratios = [1, 1];
+	let hauteurs = $state([0, 0]);
+
+	$effect(() => {
+		if (hauteur_colonne_droite > 0) {
+			const disponible = hauteur_colonne_droite - ÉPAISSEUR_SÉPARATEUR;
+			const somme = ratios.reduce((a, b) => a + b, 0);
+			hauteurs = ratios.map((r) => (r / somme) * disponible);
+		}
+	});
+
+	let drag: { start_y: number; start_hauteurs: number[] } | null = $state(null);
+
+	function start_drag(event: MouseEvent) {
+		event.preventDefault();
+		drag = { start_y: event.clientY, start_hauteurs: [...hauteurs] };
+	}
+
+	function on_mousemove(event: MouseEvent) {
+		if (!drag) return;
+		const delta = event.clientY - drag.start_y;
+		const somme = drag.start_hauteurs[0]! + drag.start_hauteurs[1]!;
+		let h1 = drag.start_hauteurs[0]! + delta;
+		let h2 = drag.start_hauteurs[1]! - delta;
+		if (h1 < HAUTEUR_MIN) {
+			h1 = HAUTEUR_MIN;
+			h2 = somme - HAUTEUR_MIN;
+		}
+		if (h2 < HAUTEUR_MIN) {
+			h2 = HAUTEUR_MIN;
+			h1 = somme - HAUTEUR_MIN;
+		}
+		hauteurs[0] = h1;
+		hauteurs[1] = h2;
+	}
+
+	function on_mouseup() {
+		drag = null;
+	}
 </script>
+
+<svelte:window onmousemove={on_mousemove} onmouseup={on_mouseup} />
 
 <PageExercices>
 	<div class="disposition">
@@ -83,68 +131,72 @@
 			</Exercice>
 		</div>
 
-		<!-- Exercice 43 — quart supérieur droit -->
-		<div class="ex-43">
-			<Exercice référence="Exercice 43 p.244">
-				<ol class="questions">
-					<li>Calculer le périmètre d'un carré de longueur de côté 3,2 cm.</li>
-					<li>Calculer le périmètre d'un rectangle de longueur 6,8 cm et de largeur 52 mm.</li>
-					<li>Calculer le périmètre d'un triangle équilatéral dont la longueur d'un côté est 5,7 dm.</li>
-					<li>Calculer le périmètre d'un triangle isocèle dont la base mesure 5,3 cm et dont les deux autres côtés mesurent 1,2 dm.</li>
-				</ol>
-			</Exercice>
-		</div>
+		<!-- Colonne droite avec séparateur draggable -->
+		<div class="colonne-droite" bind:clientHeight={hauteur_colonne_droite}>
+			<div class="ex-droit" style="height: {hauteurs[0]}px">
+				<Exercice référence="Exercice 43 p.244">
+					<ol class="questions">
+						<li>Calculer le périmètre d'un carré de longueur de côté 3,2 cm.</li>
+						<li>Calculer le périmètre d'un rectangle de longueur 6,8 cm et de largeur 52 mm.</li>
+						<li>Calculer le périmètre d'un triangle équilatéral dont la longueur d'un côté est 5,7 dm.</li>
+						<li>Calculer le périmètre d'un triangle isocèle dont la base mesure 5,3 cm et dont les deux autres côtés mesurent 1,2 dm.</li>
+					</ol>
+				</Exercice>
+			</div>
 
-		<!-- Exercice 44 — quart inférieur droit -->
-		<div class="ex-44">
-			<Exercice référence="Exercice 44 p.244">
-				<p class="énoncé">En utilisant des ordres de grandeur, relier chaque disque à un arrondi de son périmètre.</p>
-				<div class="disques">
-					<svg viewBox="0 0 520 130" class="svg-disques">
-						<!-- D₁ — grand cercle, diamètre 10,5 cm -->
-						<circle cx="65" cy="65" r="55" fill="none" stroke="#555" stroke-width="2" />
-						<line x1="10" y1="65" x2="120" y2="65" stroke="#555" stroke-width="1.5" />
-						<line x1="65" y1="10" x2="65" y2="120" stroke="#555" stroke-width="1.5" />
-						<circle cx="65" cy="65" r="2.5" fill="#555" />
-						<text x="55" y="10" font-size="11" fill="#e74c3c" font-weight="bold">𝒟₁</text>
-						<text x="72" y="58" font-size="10" fill="#555">10,5 cm</text>
+			<!-- svelte-ignore a11y_no_static_element_interactions -->
+			<div class="séparateur" onmousedown={start_drag}></div>
 
-						<!-- D₂ — petit cercle, diamètre 3,9 cm -->
-						<circle cx="195" cy="65" r="30" fill="none" stroke="#555" stroke-width="2" />
-						<line x1="165" y1="65" x2="225" y2="65" stroke="#555" stroke-width="1.5" />
-						<line x1="195" y1="35" x2="195" y2="95" stroke="#555" stroke-width="1.5" />
-						<circle cx="195" cy="65" r="2.5" fill="#555" />
-						<text x="187" y="30" font-size="11" fill="#e74c3c" font-weight="bold">𝒟₂</text>
-						<text x="200" y="58" font-size="10" fill="#555">3,9 cm</text>
+			<div class="ex-droit" style="height: {hauteurs[1]}px">
+				<Exercice référence="Exercice 44 p.244">
+					<p class="énoncé">En utilisant des ordres de grandeur, relier chaque disque à un arrondi de son périmètre.</p>
+					<div class="disques">
+						<svg viewBox="0 0 520 130" class="svg-disques">
+							<!-- D₁ — grand cercle, diamètre 10,5 cm -->
+							<circle cx="65" cy="65" r="55" fill="none" stroke="#555" stroke-width="2" />
+							<line x1="10" y1="65" x2="120" y2="65" stroke="#555" stroke-width="1.5" />
+							<line x1="65" y1="10" x2="65" y2="120" stroke="#555" stroke-width="1.5" />
+							<circle cx="65" cy="65" r="2.5" fill="#555" />
+							<text x="55" y="10" font-size="11" fill="#e74c3c" font-weight="bold">𝒟₁</text>
+							<text x="72" y="58" font-size="10" fill="#555">10,5 cm</text>
 
-						<!-- D₃ — moyen cercle, rayon 3,9 cm (diamètre 7,8 cm) -->
-						<circle cx="320" cy="65" r="45" fill="none" stroke="#555" stroke-width="2" />
-						<line x1="275" y1="65" x2="365" y2="65" stroke="#555" stroke-width="1.5" />
-						<line x1="320" y1="20" x2="320" y2="110" stroke="#555" stroke-width="1.5" />
-						<circle cx="320" cy="65" r="2.5" fill="#555" />
-						<text x="310" y="16" font-size="11" fill="#e74c3c" font-weight="bold">𝒟₃</text>
-						<!-- Flèche rayon -->
-						<line x1="320" y1="55" x2="365" y2="55" stroke="#e74c3c" stroke-width="1.5" />
-						<text x="330" y="50" font-size="10" fill="#555">3,9 cm</text>
+							<!-- D₂ — petit cercle, diamètre 3,9 cm -->
+							<circle cx="195" cy="65" r="30" fill="none" stroke="#555" stroke-width="2" />
+							<line x1="165" y1="65" x2="225" y2="65" stroke="#555" stroke-width="1.5" />
+							<line x1="195" y1="35" x2="195" y2="95" stroke="#555" stroke-width="1.5" />
+							<circle cx="195" cy="65" r="2.5" fill="#555" />
+							<text x="187" y="30" font-size="11" fill="#e74c3c" font-weight="bold">𝒟₂</text>
+							<text x="200" y="58" font-size="10" fill="#555">3,9 cm</text>
 
-						<!-- D₄ — petit cercle, rayon 3 cm (diamètre 6 cm) -->
-						<circle cx="455" cy="65" r="35" fill="none" stroke="#555" stroke-width="2" />
-						<line x1="420" y1="65" x2="490" y2="65" stroke="#555" stroke-width="1.5" />
-						<line x1="455" y1="30" x2="455" y2="100" stroke="#555" stroke-width="1.5" />
-						<circle cx="455" cy="65" r="2.5" fill="#555" />
-						<text x="445" y="26" font-size="11" fill="#e74c3c" font-weight="bold">𝒟₄</text>
-						<!-- Flèche rayon -->
-						<line x1="455" y1="55" x2="490" y2="55" stroke="#e74c3c" stroke-width="1.5" />
-						<text x="462" y="50" font-size="10" fill="#555">3 cm</text>
-					</svg>
-				</div>
-				<div class="réponses">
-					<span class="étiquette">12,25 cm</span>
-					<span class="étiquette">3,3 dm</span>
-					<span class="étiquette">1,9 dm</span>
-					<span class="étiquette">24,5 cm</span>
-				</div>
-			</Exercice>
+							<!-- D₃ — moyen cercle, rayon 3,9 cm (diamètre 7,8 cm) -->
+							<circle cx="320" cy="65" r="45" fill="none" stroke="#555" stroke-width="2" />
+							<line x1="275" y1="65" x2="365" y2="65" stroke="#555" stroke-width="1.5" />
+							<line x1="320" y1="20" x2="320" y2="110" stroke="#555" stroke-width="1.5" />
+							<circle cx="320" cy="65" r="2.5" fill="#555" />
+							<text x="310" y="16" font-size="11" fill="#e74c3c" font-weight="bold">𝒟₃</text>
+							<!-- Flèche rayon -->
+							<line x1="320" y1="55" x2="365" y2="55" stroke="#e74c3c" stroke-width="1.5" />
+							<text x="330" y="50" font-size="10" fill="#555">3,9 cm</text>
+
+							<!-- D₄ — petit cercle, rayon 3 cm (diamètre 6 cm) -->
+							<circle cx="455" cy="65" r="35" fill="none" stroke="#555" stroke-width="2" />
+							<line x1="420" y1="65" x2="490" y2="65" stroke="#555" stroke-width="1.5" />
+							<line x1="455" y1="30" x2="455" y2="100" stroke="#555" stroke-width="1.5" />
+							<circle cx="455" cy="65" r="2.5" fill="#555" />
+							<text x="445" y="26" font-size="11" fill="#e74c3c" font-weight="bold">𝒟₄</text>
+							<!-- Flèche rayon -->
+							<line x1="455" y1="55" x2="490" y2="55" stroke="#e74c3c" stroke-width="1.5" />
+							<text x="462" y="50" font-size="10" fill="#555">3 cm</text>
+						</svg>
+					</div>
+					<div class="réponses">
+						<span class="étiquette">12,25 cm</span>
+						<span class="étiquette">3,3 dm</span>
+						<span class="étiquette">1,9 dm</span>
+						<span class="étiquette">24,5 cm</span>
+					</div>
+				</Exercice>
+			</div>
 		</div>
 	</div>
 </PageExercices>
@@ -155,32 +207,37 @@
 		height: 100%;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 1fr;
 		gap: 0.5rem;
 	}
 
 	.ex-42 {
-		grid-row: 1 / 3;
-		grid-column: 1;
 		background: #fefefe;
 		border-radius: 8px;
 		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 	}
 
-	.ex-43 {
-		grid-row: 1;
-		grid-column: 2;
-		background: #fefefe;
-		border-radius: 8px;
-		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+	.colonne-droite {
+		display: flex;
+		flex-direction: column;
 	}
 
-	.ex-44 {
-		grid-row: 2;
-		grid-column: 2;
+	.ex-droit {
 		background: #fefefe;
 		border-radius: 8px;
 		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+		overflow: hidden;
+	}
+
+	.séparateur {
+		height: 6px;
+		cursor: row-resize;
+		background: transparent;
+		transition: background 0.15s;
+		flex-shrink: 0;
+	}
+
+	.séparateur:hover {
+		background: #6366f180;
 	}
 
 	.énoncé {

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import PageDeCours from '../PageDeCours.svelte';
 	import Exercices1 from '../../../exercices/6eme/12 - Périmètre et aire/Exercices1.svelte';
+	import Exercices2 from '../../../exercices/6eme/12 - Périmètre et aire/Exercices2.svelte';
 
 	let zoom = $state(false);
 
@@ -20,6 +21,22 @@
 		</div>
 	</div>
 	<Exercices1 />
+	<div class="écran-cours" class:zoom>
+		<div class="cadre-page">
+			<PageDeCours niveau={6} chapitre={12} page={2} extrait={[8, 93]} afficher_seyes />
+		</div>
+	</div>
+	<Exercices2 />
+	<div class="écran-cours" class:zoom>
+		<div class="cadre-page">
+			<PageDeCours niveau={6} chapitre={12} page={3} extrait={[8, 93]} afficher_seyes />
+		</div>
+	</div>
+	<div class="écran-cours" class:zoom>
+		<div class="cadre-page">
+			<PageDeCours niveau={6} chapitre={12} page={4} extrait={[8, 93]} afficher_seyes />
+		</div>
+	</div>
 </div>
 
 <style>
