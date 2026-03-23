@@ -5,7 +5,7 @@
 
 	import { importer_cours } from '$lib/cahier/importation_pages';
 	import { exporterToutesLesPagesEnPDF } from '$lib/cahier/impression';
-	import { page_state, PAGES, NOMBRE_DE_PAGES } from '$lib/cahier/store.svelte';
+	import { page_state, PAGES, NOMBRE_DE_PAGES, trouver_page_par_chapitre } from '$lib/cahier/store.svelte';
 	import ZoneCentrale from '$lib/cahier/composants/ZoneCentrale.svelte';
 
 	page_state.niveau = data.niveau as 3 | 4 | 5 | 6;
@@ -70,7 +70,12 @@
 			page_state.plein_ecran = true;
 		}
 
-		page_state.numero_de_la_page = parseInt(navigateur.url.searchParams.get('page') ?? '0');
+		const chapitre_param = navigateur.url.searchParams.get('chapitre');
+		if (chapitre_param !== null) {
+			page_state.numero_de_la_page = trouver_page_par_chapitre(parseInt(chapitre_param));
+		} else {
+			page_state.numero_de_la_page = parseInt(navigateur.url.searchParams.get('page') ?? '0');
+		}
 	});
 </script>
 

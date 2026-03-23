@@ -6,7 +6,6 @@
 			"titre": "Opérations sur les nombres relatifs",
 			"catégories": ["Nombres, calcul et résolution de problèmes"],
 			"objectifs": [],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -15,7 +14,6 @@
 			"titre": "Théorème de Pythagore",
 			"catégories": ["Espace et géométrie", "Nombres, calcul et résolution de problèmes", "Grandeurs et mesures"],
 			"objectifs": [],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -24,7 +22,6 @@
 			"titre": "Fractions et proportionnalité",
 			"catégories": ["Nombres, calcul et résolution de problèmes"],
 			"objectifs": [],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -33,7 +30,6 @@
 			"titre": "Transformations du plan",
 			"catégories": ["Espace et géométrie"],
 			"objectifs": [],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -42,7 +38,6 @@
 			"titre": "Calcul littéral",
 			"catégories": ["Nombres, calcul et résolution de problèmes"],
 			"objectifs": [],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -51,7 +46,6 @@
 			"titre": "Théorème de Thalès",
 			"catégories": ["Espace et géométrie", "Grandeurs et mesures"],
 			"objectifs": [],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -60,7 +54,6 @@
 			"titre": "Puissances",
 			"catégories": ["Nombres, calcul et résolution de problèmes"],
 			"objectifs": [],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -69,7 +62,6 @@
 			"titre": "Statistiques",
 			"catégories": ["Organisation et gestion de données et probabilités"],
 			"objectifs": [],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -85,7 +77,6 @@
 			"titre": "Équations",
 			"catégories": ["Nombres, calcul et résolution de problèmes"],
 			"objectifs": [],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -94,7 +85,6 @@
 			"titre": "Probabilités",
 			"catégories": ["Organisation et gestion de données et probabilités"],
 			"objectifs": [],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -103,7 +93,6 @@
 			"titre": "Solides de l'espace",
 			"catégories": ["Espace et géométrie"],
 			"objectifs": [],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -113,14 +102,12 @@
 			"catégories": ["Nombres, calcul et résolution de problèmes"],
 			"objectifs": []
 		},
-		{ "période": 5, "numéro": 14, "titre": "Repérage", "catégories": ["Espace et géométrie"], "objectifs": [], "première_page": 0, "annexe": false },
 		{
 			"période": 5,
 			"numéro": 15,
 			"titre": "Réciproques",
 			"catégories": ["Espace et géométrie", "Grandeurs et mesures"],
 			"objectifs": [],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -129,7 +116,6 @@
 			"titre": "Médiatrices et bissectrices",
 			"catégories": ["Espace et géométrie", "Grandeurs et mesures"],
 			"objectifs": [],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -138,7 +124,6 @@
 			"titre": "Programmation",
 			"catégories": ["Algorithmique et programmation"],
 			"objectifs": [],
-			"première_page": 0,
 			"annexe": false
 		}
 	]

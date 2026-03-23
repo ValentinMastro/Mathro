@@ -11,7 +11,6 @@
 				"Comparer, ranger, encadrer des fractions dont les dénominateurs sont égaux ou multiples l’un de l’autre",
 				"Simplification de fractions"
 			],
-			"première_page": 3,
 			"annexe": false
 		},
 		{
@@ -28,7 +27,6 @@
 				"Identifier des symétries dans des frises, des pavages, des rosaces",
 				"Mener des raisonnements en utilisant des propriétés des figures, des configurations et des symétries"
 			],
-			"première_page": 7,
 			"annexe": false
 		},
 		{
@@ -44,7 +42,6 @@
 				"Nombres premiers",
 				"Décomposition d’un nombre en produit de facteurs premiers"
 			],
-			"première_page": 10,
 			"annexe": false
 		},
 		{
@@ -57,7 +54,6 @@
 				"Reconnaître des triangles particuliers en utilisant les angles",
 				"Calculer les angles d’un triangle"
 			],
-			"première_page": 15,
 			"annexe": false
 		},
 		{
@@ -72,7 +68,6 @@
 				"Placer des points ayant pour coordonnées des nombres relatifs dans un repère orthogonal",
 				"Comparer des nombres relatifs"
 			],
-			"première_page": 19,
 			"annexe": false
 		},
 		{
@@ -85,7 +80,6 @@
 				"Connaître le lien entre l’inégalité triangulaire et la construction d’un triangle à partir de la donnée de trois longueurs",
 				"Construire un triangle à partir de la mesure d’une longueur et de deux angles ou d’un angle et de deux longueurs données"
 			],
-			"première_page": 23,
 			"annexe": false
 		},
 		{
@@ -98,7 +92,6 @@
 				"Contrôler la vraisemblance d’un résultat",
 				"Résoudre des problèmes faisant intervenir des nombres décimaux"
 			],
-			"première_page": 27,
 			"annexe": false
 		},
 		{
@@ -112,7 +105,6 @@
 				"Savoir que les côtés opposés d’un parallélogramme sont deux à deux de même longueur grâce aux propriétés de la symétrie",
 				"Connaître et mettre en œuvre les propriétés relatives aux côtés et aux diagonales d’un parallélogramme pour effectuer des constructions et mener des raisonnements"
 			],
-			"première_page": 29,
 			"annexe": false
 		},
 		{
@@ -124,7 +116,6 @@
 				"Additionner ou soustraire des fractions dont les dénominateurs sont égaux ou multiples l’un de l’autre",
 				"Résoudre des problèmes faisant intervenir des fractions"
 			],
-			"première_page": 31,
 			"annexe": false
 		},
 		{
@@ -139,7 +130,6 @@
 				"Effectuer des conversions d’unités de durées",
 				"Effectuer des conversions d’unités de longueurs, d’aires"
 			],
-			"première_page": 33,
 			"annexe": false
 		},
 		{
@@ -151,7 +141,6 @@
 				"Construire les images par une symétrie axiale de segments, de droites, de cercles, de triangles ou d’assemblages de ces figures",
 				"Transformer une figure par symétrie axiale"
 			],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -165,7 +154,6 @@
 				"Savoir que soustraire revient à additionner l’opposé",
 				"Savoir simplifier des écritures et calculer des sommes"
 			],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -178,7 +166,6 @@
 				"Utiliser la médiatrice dans le cadre de résolution de problèmes",
 				"Démontrer que les médiatrices d’un triangle sont concourantes"
 			],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -192,7 +179,6 @@
 				"Utiliser la distributivité simple pour réduire une expression littérale de la forme ax + bx où a et b sont des nombres décimaux",
 				"Utiliser les notations 2a pour a × 2 ou 2 × a et ab pour a × b, a² pour a × a et a3 pour a × a × a"
 			],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -207,7 +193,6 @@
 				"Partager une quantité en deux ou trois parts selon un ratio donné",
 				"Remobiliser les procédures déjà étudiées pour résoudre des problèmes relevant de la proportionnalité (linéaire additive, linéarité multiplicative, retour à l’unité et coefficient de proportionnalité)"
 			],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -220,7 +205,6 @@
 				"Construire une représentation en perspective cavalière d’un prisme droit, d’un cylindre",
 				"Construire et mettre en relation une représentation en perspective cavalière et un patron d’un pavé droit, d’un cylindre"
 			],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -239,7 +223,6 @@
 				"Calculer des fréquences",
 				"Exprimer des fréquences sous forme fractionnaire, en écriture décimale ou sous la forme d’un pourcentage"
 			],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -253,7 +236,6 @@
 				"Utiliser une lettre pour démontrer une propriété générale",
 				"Tester une égalité"
 			],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -269,7 +251,6 @@
 				"Effectuer des conversions d’unités de volumes",
 				"Utiliser la correspondance entre les unités de volume et de contenance (1 L = 1 dm3, 1 000 L = 1 m3) pour effectuer des conversions"
 			],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -283,7 +264,6 @@
 				"Calculer une remise",
 				"Calculer un prix avant réduction"
 			],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -292,7 +272,6 @@
 			"titre": "Angles et parallélisme",
 			"catégories": ["Espace et géométrie"],
 			"objectifs": ["Connaître les caractérisations angulaires du parallélisme (angles alternes internes, angles correspondants)"],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -304,7 +283,6 @@
 				"Lire et interpréter des données brutes ou présentées sous forme de diagrammes et de graphiques",
 				"Représenter, sur papier ou à l’aide d’un tableur-grapheur, des données sous la forme d’un diagramme ou d’un graphique"
 			],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -313,7 +291,6 @@
 			"titre": "Probabilités",
 			"catégories": ["Organisation et gestion de données et probabilités"],
 			"objectifs": ["Placer un événement sur une échelle de probabilités", "Calculer des probabilités dans des situations simples d’équiprobabilité"],
-			"première_page": 0,
 			"annexe": false
 		},
 		{
@@ -325,7 +302,6 @@
 				"Traduire la relation de dépendance entre deux grandeurs par un tableau de valeurs",
 				"Produire une formule représentant la dépendance de deux grandeurs"
 			],
-			"première_page": 0,
 			"annexe": false
 		}
 	]

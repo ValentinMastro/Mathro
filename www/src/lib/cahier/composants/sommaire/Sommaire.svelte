@@ -1,13 +1,12 @@
 <script lang="ts">
 	import { sommaire, PÉRIODES, COULEURS_PAR_CATEGORIE } from '$lib/cahier/contenu/sommaires';
-	import { page_state, get_taille_page } from '$lib/cahier/store.svelte';
+	import { page_state, get_taille_page, trouver_page_par_chapitre } from '$lib/cahier/store.svelte';
 	import Bulle from './Bulle.svelte';
 
-	function scroll_lors_du_clic_sur_le_sommaire(premiere_page: number | undefined) {
-		if (premiere_page != undefined) {
-			page_state.numero_de_la_page = premiere_page - (premiere_page % 2);
-			window.scrollTo(0, (get_taille_page() + 2 * 8) * (premiere_page - 1));
-		}
+	function scroll_lors_du_clic_sur_le_sommaire(chapitre_numero: number) {
+		const index = trouver_page_par_chapitre(chapitre_numero);
+		page_state.numero_de_la_page = index - (index % 2);
+		window.scrollTo(0, (get_taille_page() + 2 * 8) * index);
 	}
 
 	// Tous les chapitres dans l'ordre
@@ -33,7 +32,7 @@
 		{/if}
 
 		{#each groupe as { chapitre, indexGlobal }}
-			<div class="chapitre" onclick={() => scroll_lors_du_clic_sur_le_sommaire(chapitre.première_page)} role="none">
+			<div class="chapitre" onclick={() => scroll_lors_du_clic_sur_le_sommaire(chapitre.numéro)} role="none">
 				<div class="categories">
 					{#each chapitre.catégories as catégorie}
 						<span style="color: {COULEURS_PAR_CATEGORIE[catégorie]}" title={catégorie}>■</span>

@@ -37,6 +37,11 @@ export function NOMBRE_DE_PAGES(): number {
 	return PAGES.liste.length;
 }
 
+export function trouver_page_par_chapitre(chapitre: number): number {
+	const index = PAGES.liste.findIndex(({ nom_fichier }) => new RegExp(`/${chapitre} - [^/]+/Page\\d+\\.svelte$`).test(nom_fichier));
+	return index >= 0 ? index : 0;
+}
+
 let taille_page: number = $state(0);
 
 export function get_taille_page(): number {
