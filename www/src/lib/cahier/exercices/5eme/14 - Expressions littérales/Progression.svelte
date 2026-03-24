@@ -9,17 +9,21 @@
 <Chapitre titre="Expressions littérales" />
 
 <ExerciceMarge numéro={1} position={3} />
-<ExerciceMarge numéro={2} position={7} />
-<ExerciceMarge numéro={3} position={15} />
-<ExerciceMarge numéro={4} position={20} />
+<ExerciceMarge numéro={2} position={10} />
+<ExerciceMarge numéro={3} position={18} />
+<ExerciceMarge numéro={4} position={23} />
 
 <Contenu apres_un_titre>
 	<!-- Exercice 1 : carré et cube (simple) -->
-	<Énoncé lignes={3}>
+	<Énoncé lignes={6}>
 		<Question numéro={1} lignes={1}>Calculer : {@html math('3^2')} ; {@html math('5^2')} ; {@html math('8^2')} ; {@html math('12^2')}.</Question>
 		<Question numéro={2} lignes={1}>Calculer : {@html math('2^3')} ; {@html math('4^3')} ; {@html math('10^3')}.</Question>
 		<Question numéro={3} lignes={1}>Calculer : {@html math('(-2)^2')} ; {@html math('(-3)^3')} ; {@html math('(-5)^2')}.</Question>
-		<Question numéro={4} lignes={2}>Calculer : {@html math('\\left(\\dfrac{1}{2}\\right)^2')} ; {@html math('\\left(\\dfrac{2}{3}\\right)^2')} ; {@html math('\\left(\\dfrac{1}{3}\\right)^3')}.</Question>
+		<Question numéro={4} lignes={2}
+			>Calculer : {@html math('\\left(\\dfrac{1}{2}\\right)^2')} ; {@html math('\\left(\\dfrac{2}{3}\\right)^2')} ; {@html math(
+				'\\left(\\dfrac{1}{3}\\right)^3'
+			)}.</Question
+		>
 		<Question numéro={5} lignes={1}>Un carré a un côté de 7 cm. Calculer son aire.</Question>
 	</Énoncé>
 	<LigneVide lignes={1} />
