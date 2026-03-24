@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Activité, Énoncé, Question } from '$lib/cahier/composants/d_exercices/*';
+	import { Énoncé, ExerciceMarge, Question } from '$lib/cahier/composants/d_exercices/*';
 	import { Chapitre, Contenu } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Texte } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
@@ -8,14 +8,14 @@
 
 <Chapitre titre="Expressions littérales" />
 
-<Activité numéro={1} position={3} />
-<Activité numéro={2} position={7} />
-<Activité numéro={3} position={12} />
-<Activité numéro={4} position={18} />
+<ExerciceMarge numéro={1} position={3} />
+<ExerciceMarge numéro={2} position={7} />
+<ExerciceMarge numéro={3} position={15} />
+<ExerciceMarge numéro={4} position={20} />
 
 <Contenu apres_un_titre>
 	<!-- Exercice 1 : carré et cube (simple) -->
-	<Énoncé>
+	<Énoncé lignes={3}>
 		<Question numéro={1} lignes={1}>Calculer : {@html math('3^2')} ; {@html math('5^2')} ; {@html math('8^2')} ; {@html math('12^2')}.</Question>
 		<Question numéro={2} lignes={1}>Calculer : {@html math('2^3')} ; {@html math('4^3')} ; {@html math('10^3')}.</Question>
 		<Question numéro={3} lignes={1}>Un carré a un côté de 7 cm. Calculer son aire.</Question>
@@ -23,7 +23,7 @@
 	<LigneVide lignes={1} />
 
 	<!-- Exercice 2 : carré et cube (plus difficile) -->
-	<Énoncé>
+	<Énoncé lignes={4}>
 		<Question numéro={1} lignes={1}>
 			Comparer {@html math('2^3')} et {@html math('3^2')} sans calculatrice. Justifier.
 		</Question>
@@ -35,7 +35,7 @@
 	<LigneVide lignes={1} />
 
 	<!-- Exercice 3 : distributivité avec lettres -->
-	<Énoncé>
+	<Énoncé lignes={5}>
 		<Texte lignes={1}>Réduire les expressions suivantes si possible, sinon expliquer pourquoi.</Texte>
 		<Question numéro={1} lignes={2}>
 			a) {@html math('3x + 5x')} &emsp; b) {@html math('4a - 2a')} &emsp; c) {@html math('3x + 2y')} &emsp; d) {@html math('5a - 3b + 2a')}
@@ -45,11 +45,11 @@
 			{@html math('y = 3')}.
 		</Question>
 	</Énoncé>
-	<LigneVide lignes={1} />
+	<LigneVide lignes={3} />
 
 	<!-- Exercice 4 : distributivité avec nombres -->
-	<Énoncé>
-		<Texte lignes={1}>Utiliser la distributivité pour simplifier les calculs. Montrer les étapes.</Texte>
+	<Énoncé lignes={7}>
+		<Texte lignes={2} lignes_vides={0}>Utiliser la distributivité pour simplifier les calculs. <br /> Montrer les étapes.</Texte>
 		<Question numéro={1} lignes={1}>{@html math('21 \\times 11 + 79 \\times 11')}</Question>
 		<Question numéro={2} lignes={1}>{@html math('35 \\times 7 + 65 \\times 7')}</Question>
 		<Question numéro={3} lignes={1}>{@html math('48 \\times 13 - 48 \\times 3')}</Question>
