@@ -18,9 +18,9 @@
 		Deux grandeurs sont <i>proportionnelles</i> si on passe des valeurs de l'une aux valeurs de l'autre <br />
 		en multipliant par un même nombre appelé <i>coefficient de proportionnalité</i>.
 	</Definition>
-	<Exemples lignes={3}>
+	<Exemples lignes={5}>
 		<Item>Le côté et le périmètre d'un carré sont proportionnels (coefficient : 4).</Item>
-		<Item>Le nombre d'articles et le prix total sont proportionnels (coefficient : prix unitaire).</Item>
-		<Item>L'âge et la taille d'une personne ne sont pas proportionnels.</Item>
+		<Item lignes={2}>Le nombre d'articles et le prix total sont proportionnels (coefficient : prix unitaire).</Item>
+		<Item lignes={2}>L'âge et la taille d'une personne ne sont pas proportionnels.</Item>
 	</Exemples>
 </Contenu>
