@@ -14,7 +14,7 @@
 	<Exemples lignes={2}>
 		Prix (€), Masse (kg), Durée (h), Distance (km), Volume ({@html '(L)'}), Température (°C)
 	</Exemples>
-	<Definition lignes={3}>
+	<Definition lignes={4}>
 		Deux grandeurs sont <i>proportionnelles</i> si on passe des valeurs de l'une aux valeurs de l'autre <br />
 		en multipliant par un même nombre appelé <i>coefficient de proportionnalité</i>.
 	</Definition>
