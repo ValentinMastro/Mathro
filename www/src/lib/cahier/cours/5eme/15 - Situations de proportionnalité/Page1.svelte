@@ -12,14 +12,14 @@
 		souvent associée à une unité de mesure.
 	</Definition>
 	<Exemples lignes={2}>
-		Prix (€), Masse (kg), Durée (h), Distance (km), Volume ({@html '(L)'}), Température (°C)
+		Prix (€), Masse (kg), Durée (h), Distance (km), Volume ({@html '\\ell'}), Température (°C)
 	</Exemples>
 	<Definition lignes={4}>
 		Deux grandeurs sont <i>proportionnelles</i> si on passe des valeurs de l'une aux valeurs de l'autre <br />
 		en multipliant par un même nombre appelé <i>coefficient de proportionnalité</i>.
 	</Definition>
-	<Exemples lignes={5}>
-		<Item>Le côté et le périmètre d'un carré sont proportionnels (coefficient : 4).</Item>
+	<Exemples lignes={6}>
+		<Item lignes={2}>Le côté et le périmètre d'un carré sont proportionnels (coefficient : 4).</Item>
 		<Item lignes={2}>Le nombre d'articles et le prix total sont proportionnels (coefficient : prix unitaire).</Item>
 		<Item lignes={2}>L'âge et la taille d'une personne ne sont pas proportionnels.</Item>
 	</Exemples>
