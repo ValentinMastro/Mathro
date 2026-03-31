@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Exemples, Item } from '$lib/cahier/composants/de_cours/*';
+	import { math } from 'mathlifier';
 </script>
 
 <Chapitre titre="Situations de proportionnalité" />
@@ -12,7 +13,7 @@
 		souvent associée à une unité de mesure.
 	</Definition>
 	<Exemples lignes={2}>
-		Prix (€), Masse (kg), Durée (h), Distance (km), Volume ({@html '\\ell'}), Température (°C)
+		Prix (€), Masse (kg), Durée (h), Distance (km), Volume ({@html math('\\ell')}), Température (°C)
 	</Exemples>
 	<Definition lignes={4}>
 		Deux grandeurs sont <i>proportionnelles</i> si on passe des valeurs de l'une aux valeurs de l'autre <br />
