@@ -1,32 +1,84 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemples, Item, Methode } from '$lib/cahier/composants/de_cours/*';
+	import { CelluleTableau, Definition, Exemples, LigneTableau, Tableau } from '$lib/cahier/composants/de_cours/*';
 	import { math } from 'mathlifier';
 </script>
 
 <Contenu>
 	<Partie numero={3} titre="Partage selon un ratio" />
-	<Definition lignes={3}>
-		Partager une quantité selon le ratio {@html math('a:b')} signifie la répartir en deux parts proportionnelles à {@html math('a')} et {@html math(
-			'b'
-		)}.
+	<Definition lignes={2}>
+		Partager une quantité selon le ratio {@html math('a:b')} signifie la répartir en deux <br />
+		parts proportionnelles à {@html math('a')} et {@html math('b')}.
 	</Definition>
-	<Methode lignes={5}>
-		<Item>Calculer le nombre total de parts : {@html math('a + b')}.</Item>
-		<Item>Calculer la valeur d'une part : quantité {@html math('\\div (a + b)')}.</Item>
-		<Item>Calculer la première part : valeur d'une part {@html math('\\times a')}.</Item>
-		<Item>Calculer la deuxième part : valeur d'une part {@html math('\\times b')}.</Item>
-	</Methode>
-	<Exemples lignes={8}>
-		<Item lignes={3}>
-			Partager 120 € selon le ratio 1:2. <br />
-			Nombre de parts : {@html math('1 + 2 = 3')} ; une part vaut {@html math('120 \\div 3 = 40')} €. <br />
-			Première part : {@html math('40 \\times 1 = 40')} € ; deuxième part : {@html math('40 \\times 2 = 80')} €.
-		</Item>
-		<Item lignes={3}>
-			Partager 60 km selon le ratio 2:3. <br />
-			Nombre de parts : {@html math('2 + 3 = 5')} ; une part vaut {@html math('60 \\div 5 = 12')} km. <br />
-			Première part : {@html math('12 \\times 2 = 24')} km ; deuxième part : {@html math('12 \\times 3 = 36')} km.
-		</Item>
+	<Exemples lignes={9}>
+		On répartit 80 € entre deux amis selon le ratio 2:3. Quelle est la part de chacun ?<br /><br />
+		<div class="tableau-ouvert">
+			<Tableau lignes={3} colonnes={20} lignes_vides={0}>
+				<thead>
+					<LigneTableau>
+						<CelluleTableau colonnes={6} addStyle="border: none;"></CelluleTableau>
+						<CelluleTableau colonnes={4} addStyle="border-top: none; border-left: none; border-right: none;">Ami A</CelluleTableau>
+						<CelluleTableau colonnes={4} addStyle="border-top: none; border-left: none; border-right: none;">Ami B</CelluleTableau>
+						<CelluleTableau colonnes={6} addStyle="border-top: none; border-right: none; border-left: 3px double black;">Total</CelluleTableau>
+					</LigneTableau>
+				</thead>
+				<tbody>
+					<LigneTableau>
+						<CelluleTableau colonnes={6}>Ratio</CelluleTableau>
+						<CelluleTableau colonnes={4}>2</CelluleTableau>
+						<CelluleTableau colonnes={4}>3</CelluleTableau>
+						<CelluleTableau colonnes={6} addStyle="border-left: 3px double black;">5</CelluleTableau>
+					</LigneTableau>
+					<LigneTableau>
+						<CelluleTableau colonnes={6}>Montant (€)</CelluleTableau>
+						<CelluleTableau colonnes={4}>32</CelluleTableau>
+						<CelluleTableau colonnes={4}>48</CelluleTableau>
+						<CelluleTableau colonnes={6} addStyle="border-left: 3px double black;">80</CelluleTableau>
+					</LigneTableau>
+				</tbody>
+			</Tableau>
+		</div>
+		Le coefficient est {@html math('80 \\div 5 = 16')} €.<br />
+		Ami A reçoit {@html math('2 \\times 16 = 32')} € et Ami B reçoit {@html math('3 \\times 16 = 48')} €.
+	</Exemples>
+	<Exemples lignes={10}>
+		On prépare {@html math('420~\\text{m}\\ell')} d'une boisson en mélangeant du jus d'orange, du jus de pomme et de l'eau selon le ratio 2:5:7. Quelle quantité faut-il de chaque ingrédient ?<br /><br />
+		<div class="tableau-ouvert">
+			<Tableau lignes={3} colonnes={20} lignes_vides={0}>
+				<thead>
+					<LigneTableau>
+						<CelluleTableau colonnes={4} addStyle="border: none;"></CelluleTableau>
+						<CelluleTableau colonnes={4} addStyle="border-top: none; border-left: none; border-right: none;">Jus d'orange</CelluleTableau>
+						<CelluleTableau colonnes={4} addStyle="border-top: none; border-left: none; border-right: none;">Jus de pomme</CelluleTableau>
+						<CelluleTableau colonnes={4} addStyle="border-top: none; border-left: none; border-right: none;">Eau</CelluleTableau>
+						<CelluleTableau colonnes={4} addStyle="border-top: none; border-right: none; border-left: 3px double black;">Total</CelluleTableau>
+					</LigneTableau>
+				</thead>
+				<tbody>
+					<LigneTableau>
+						<CelluleTableau colonnes={4}>Ratio</CelluleTableau>
+						<CelluleTableau colonnes={4}>2</CelluleTableau>
+						<CelluleTableau colonnes={4}>5</CelluleTableau>
+						<CelluleTableau colonnes={4}>7</CelluleTableau>
+						<CelluleTableau colonnes={4} addStyle="border-left: 3px double black;">14</CelluleTableau>
+					</LigneTableau>
+					<LigneTableau>
+						<CelluleTableau colonnes={4}>Volume ({@html math('\\text{m}\\ell')})</CelluleTableau>
+						<CelluleTableau colonnes={4}>60</CelluleTableau>
+						<CelluleTableau colonnes={4}>150</CelluleTableau>
+						<CelluleTableau colonnes={4}>210</CelluleTableau>
+						<CelluleTableau colonnes={4} addStyle="border-left: 3px double black;">420</CelluleTableau>
+					</LigneTableau>
+				</tbody>
+			</Tableau>
+		</div>
+		Le coefficient est {@html math('420 \\div 14 = 30~\\text{m}\\ell')}.<br />
+		On obtient {@html math('2 \\times 30 = 60~\\text{m}\\ell')} de jus d'orange, {@html math('5 \\times 30 = 150~\\text{m}\\ell')} de jus de pomme et {@html math('7 \\times 30 = 210~\\text{m}\\ell')} d'eau.
 	</Exemples>
 </Contenu>
+
+<style>
+	.tableau-ouvert :global(table) {
+		border-top: none;
+	}
+</style>
