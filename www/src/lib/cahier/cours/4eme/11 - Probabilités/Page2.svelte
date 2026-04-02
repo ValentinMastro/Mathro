@@ -1,15 +1,16 @@
 <script lang="ts">
-	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemples, Paragraphe, Propriete, Item, Schéma } from '$lib/cahier/composants/de_cours/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-
-	import { math, display } from 'mathlifier';
-
-	let numero_boules: number[] = [1, 1, 1, 5, 2, 6, 6, 2, 2, 4, 4, 6];
-	let couleur_boules: string[] = ['gray', 'gray', 'white', 'white', 'gray', 'gray', 'white', 'white', 'white', 'gray', 'gray', 'gray'];
+	import { Contenu } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Definition, Exemples, Item } from '$lib/cahier/composants/de_cours/*';
+	import { math } from 'mathlifier';
 </script>
 
 <Contenu>
+	<Definition>Un évènement est un ensemble d'issues de l'expérience aléatoire.</Definition>
+	<Exemples lignes={4}>
+		<Item>Pour un pile ou face, {@html math(`\\Omega = \\{ \\text{Pile}, \\text{Face} \\}`)}</Item>
+		<Item>Pour un lancer de dé, {@html math(`\\Omega = \\{ 1, 2, 3, 4, 5, 6 \\}`)}</Item>
+		<Item lignes={2}>Tirer une lettre au hasard dans l'alphabet français, {@html math(`\\Omega = \\{ \\text{A}, \\text{B}, \\text{C}, \\dots, \\text{Z} \\}`)}</Item>
+	</Exemples>
 	<Exemples lignes={6}>
 		<Item lignes={3}>
 			Expérience : lancer un dé<br />
@@ -33,41 +34,4 @@
 			Certain si {@html math(`A = \\Omega`)}, autrement dit si A se réalise à chaque fois
 		</Item>
 	</Definition>
-	<LigneVide />
-	<Paragraphe nom_du_paragraphe="Récapitulatif" couleur="rouge" lignes={12} addStyle="color: black; border: 1px black solid; width: fit-content;">
-		Dans une urne contenant des boules colorées et numérotées :
-		<Item bullet="1. " lignes={2}>Si on s’intéresse à la couleur de la boule, quelles sont les issues possibles ?</Item>
-		<Item bullet="2. " lignes={2}>Si on s’intéresse au numéro écrit sur la boule, quelles sont les issues possibles ?</Item>
-		<Item bullet="3. ">Donne un événement certain de se réaliser.</Item>
-		<Item bullet="4. ">Donne un événement impossible.</Item>
-		<Schéma lignes={5} aspectRatioSVG={2}>
-			{#snippet svg()}
-				{#each Array(12) as _, index}
-					<circle
-						cx={(2000 / 4) * ((index % 4) + 0.5)}
-						cy={(1000 / 3) * (Math.floor(index / 4) + 0.5)}
-						r="150"
-						stroke="black"
-						stroke-width="10"
-						fill={couleur_boules[index]}
-					/>
-					<text
-						x={(2000 / 4) * ((index % 4) + 0.5)}
-						y={(1000 / 3) * (Math.floor(index / 4) + 0.6)}
-						text-anchor="middle"
-						alignment-baseline="middle"
-						font-size="130"
-						fill={couleur_boules[index] === 'white' ? 'black' : 'white'}
-					>
-						{numero_boules[index]}
-					</text>
-				{/each}
-			{/snippet}
-		</Schéma>
-	</Paragraphe>
-	<LigneVide lignes={1.2} />
-	<Item bullet="1. ">Les issues possibles sont : {@html math(`\\Omega = \\{ \\text{Blanche}, \\text{Grise} \\}`)}</Item>
-	<Item bullet="2. ">Les issues possibles sont : {@html math(`\\Omega = \\{ 1, 2, 4, 5, 6 \\}`)}</Item>
-	<Item bullet="3. ">Un événement certain est : « Obtenir une boule »</Item>
-	<Item bullet="4. ">Un événement impossible est : « Obtenir une boule rouge »</Item>
 </Contenu>

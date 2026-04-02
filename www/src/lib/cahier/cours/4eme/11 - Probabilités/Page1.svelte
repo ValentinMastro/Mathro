@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { Contenu, Chapitre, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemples, Item, Paragraphe, Propriete } from '$lib/cahier/composants/de_cours/*';
+	import { Chapitre, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Definition, Exemples, Item } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-	import { math, display } from 'mathlifier';
+	import { math } from 'mathlifier';
 </script>
 
 <Chapitre titre="Probabilités" />
@@ -23,17 +23,8 @@
 	<Exemples lignes={4}>
 		<Item>Pour un pile ou face, {@html math(`\\Omega = \\{ \\text{Pile}, \\text{Face} \\}`)}</Item>
 		<Item>Pour un lancer de dé, {@html math(`\\Omega = \\{ 1, 2, 3, 4, 5, 6 \\}`)}</Item>
-		<Item lignes={2}
-			>Tirer une lettre au hasard dans l'alphabet français, {@html math(`\\Omega = \\{ \\text{A}, \\text{B}, \\text{C}, \\dots, \\text{Z} \\}`)}</Item
-		>
+		<Item lignes={2}>
+			Tirer une lettre au hasard dans l'alphabet français, {@html math(`\\Omega = \\{ \\text{A}, \\text{B}, \\text{C}, \\dots, \\text{Z} \\}`)}
+		</Item>
 	</Exemples>
-	<Definition>Un évènement est un ensemble d'issues de l'expérience aléatoire.</Definition>
-	<Exemples lignes={4}>
-		<Item>Pour un pile ou face, {@html math(`\\Omega = \\{ \\text{Pile}, \\text{Face} \\}`)}</Item>
-		<Item>Pour un lancer de dé, {@html math(`\\Omega = \\{ 1, 2, 3, 4, 5, 6 \\}`)}</Item>
-		<Item lignes={2}
-			>Tirer une lettre au hasard dans l'alphabet français, {@html math(`\\Omega = \\{ \\text{A}, \\text{B}, \\text{C}, \\dots, \\text{Z} \\}`)}</Item
-		>
-	</Exemples>
-	<Definition>Un évènement est un ensemble d'issues de l'expérience aléatoire.</Definition>
 </Contenu>
