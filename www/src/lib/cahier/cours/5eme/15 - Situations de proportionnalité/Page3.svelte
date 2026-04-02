@@ -10,7 +10,7 @@
 		Partager une quantité selon le ratio {@html math('a:b')} signifie la répartir en deux <br />
 		parts proportionnelles à {@html math('a')} et {@html math('b')}.
 	</Definition>
-	<Exemples lignes={9}>
+	<Exemples lignes={8}>
 		On répartit 80 € entre deux amis selon le ratio 2:3. Quelle est la part de chacun ?<br /><br />
 		<div class="tableau-ouvert">
 			<Tableau lignes={3} colonnes={20} lignes_vides={0}>
@@ -41,8 +41,9 @@
 		Le coefficient est {@html math('80 \\div 5 = 16')} €.<br />
 		Ami A reçoit {@html math('2 \\times 16 = 32')} € et Ami B reçoit {@html math('3 \\times 16 = 48')} €.
 	</Exemples>
-	<Exemples lignes={10}>
-		On prépare {@html math('420~\\text{m}\\ell')} d'une boisson en mélangeant du jus d'orange, du jus de pomme et de l'eau selon le ratio 2:5:7. Quelle quantité faut-il de chaque ingrédient ?<br /><br />
+	<Exemples lignes={11}>
+		On prépare {@html math('420~\\text{m}\\ell')} d'une boisson en mélangeant du jus d'orange, du jus de pomme et de l'eau selon le ratio 2:5:7. Quelle
+		quantité faut-il de chaque ingrédient ?<br /><br />
 		<div class="tableau-ouvert">
 			<Tableau lignes={3} colonnes={20} lignes_vides={0}>
 				<thead>
@@ -73,7 +74,9 @@
 			</Tableau>
 		</div>
 		Le coefficient est {@html math('420 \\div 14 = 30~\\text{m}\\ell')}.<br />
-		On obtient {@html math('2 \\times 30 = 60~\\text{m}\\ell')} de jus d'orange, {@html math('5 \\times 30 = 150~\\text{m}\\ell')} de jus de pomme et {@html math('7 \\times 30 = 210~\\text{m}\\ell')} d'eau.
+		On obtient {@html math('2 \\times 30 = 60~\\text{m}\\ell')} de jus d'orange, {@html math('5 \\times 30 = 150~\\text{m}\\ell')} de jus de pomme et {@html math(
+			'7 \\times 30 = 210~\\text{m}\\ell'
+		)} d'eau.
 	</Exemples>
 </Contenu>
 
