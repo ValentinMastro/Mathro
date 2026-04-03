@@ -35,5 +35,6 @@ export { default as Cône } from './perspective_cavalière/Cône.svelte';
 export { default as Cube } from './perspective_cavalière/Cube.svelte';
 export { default as Cylindre } from './perspective_cavalière/Cylindre.svelte';
 export { default as PavéDroit } from './perspective_cavalière/PavéDroit.svelte';
+export { default as Prisme } from './perspective_cavalière/Prisme.svelte';
 export { default as Pyramide } from './perspective_cavalière/Pyramide.svelte';
 export { default as Sphere } from './perspective_cavalière/Sphere.svelte';

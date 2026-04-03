@@ -32,7 +32,7 @@
 
 	<LigneVide />
 
-	<Definitions lignes={3}>
+	<Definitions lignes={4}>
 		<Item>Une <i>face</i> est une surface (plane ou courbe) délimitant le solide.</Item>
 		<Item>Une <i>arête</i> est un segment où se rejoignent deux faces.</Item>
 		<Item>Un <i>sommet</i> est un point où se rejoignent plusieurs arêtes.</Item>

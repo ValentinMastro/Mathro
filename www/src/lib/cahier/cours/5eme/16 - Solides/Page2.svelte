@@ -1,32 +1,86 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Methode, Item, Remarque, Schéma } from '$lib/cahier/composants/de_cours/*';
-	import { PavéDroit, Projecteur, TexteSVG } from '$lib/cahier/composants/svg/*';
+	import { Definition, Remarque, Schéma } from '$lib/cahier/composants/de_cours/*';
+	import { Prisme, Projecteur, Pyramide, TexteSVG } from '$lib/cahier/composants/svg/*';
 
 	const projecteur = new Projecteur(0.46);
 </script>
 
 <Contenu>
-	<Partie numero={2} titre="Représentation en perspective cavalière" />
+	<Partie numero={2} titre="Les polyèdres" />
+
 	<Definition lignes={2}>
-		La <i>perspective cavalière</i> est une façon de représenter un solide en 2D sur papier. <br />
-		Les arêtes cachées (non visibles) sont tracées en pointillés.
+		Un <i>prisme droit</i> est un solide dont les deux bases sont des polygones identiques et parallèles, et dont les faces latérales sont des rectangles.
 	</Definition>
-	<Schéma lignes={8} aspectRatioSVG={2}>
+	<Remarque lignes={1}>Le cube et le pavé droit sont des prismes droits à base rectangulaire.</Remarque>
+
+	<Schéma lignes={7} aspectRatioSVG={3.5}>
 		{#snippet svg()}
-			<PavéDroit {projecteur} coin={{ x: 200, y: 900 }} longueur={900} largeur={500} hauteur={500} />
-			<TexteSVG point={{ x: 700, y: 980 }} font-size={80}>pavé droit en perspective cavalière</TexteSVG>
-			<TexteSVG point={{ x: 190, y: 880 }} font-size={70} fill="red">A</TexteSVG>
-			<TexteSVG point={{ x: 1110, y: 880 }} font-size={70} fill="red">B</TexteSVG>
-			<TexteSVG point={{ x: 1110, y: 380 }} font-size={70} fill="red">C</TexteSVG>
-			<TexteSVG point={{ x: 190, y: 380 }} font-size={70} fill="red">D</TexteSVG>
+			<rect x="0%" y="0%" width="100%" height="100%" fill="white" stroke="none" />
+
+			<!-- Perspective cavalière : prisme triangulaire -->
+			<Prisme nature={3} {projecteur} centre1={{ x: 700, y: 820, z: 0 }} centre2={{ x: 700, y: 300, z: 0 }} rayon={260} />
+			<TexteSVG point={{ x: 700, y: 960 }} font-size={75} text-anchor="middle">prisme triangulaire</TexteSVG>
+
+			<!-- Séparateur -->
+			<line x1={1500} y1={50} x2={1500} y2={950} stroke="#ccc" stroke-width={3} stroke-dasharray="10 8" />
+
+			<!-- Patron : prisme triangulaire -->
+			{@const a = 200}
+			{@const h_rect = 350}
+			{@const h_tri = Math.round((a * Math.sqrt(3)) / 2)}
+			{@const x0 = 2300}
+			{@const y0 = Math.round((1000 - h_tri * 2 - h_rect) / 2) + h_tri}
+			<!-- Trois rectangles -->
+			<rect x={x0} y={y0} width={3 * a} height={h_rect} fill="none" stroke="black" stroke-width={5} />
+			<line x1={x0 + a} y1={y0} x2={x0 + a} y2={y0 + h_rect} stroke="black" stroke-width={5} />
+			<line x1={x0 + 2 * a} y1={y0} x2={x0 + 2 * a} y2={y0 + h_rect} stroke="black" stroke-width={5} />
+			<!-- Triangle supérieur (au-dessus du rectangle central) -->
+			<polygon points={`${x0 + a},${y0} ${x0 + 2 * a},${y0} ${x0 + 1.5 * a},${y0 - h_tri}`} fill="none" stroke="black" stroke-width={5} />
+			<!-- Triangle inférieur -->
+			<polygon
+				points={`${x0 + a},${y0 + h_rect} ${x0 + 2 * a},${y0 + h_rect} ${x0 + 1.5 * a},${y0 + h_rect + h_tri}`}
+				fill="none"
+				stroke="black"
+				stroke-width={5}
+			/>
+			<TexteSVG point={{ x: 2600, y: 960 }} font-size={75} text-anchor="middle">patron du prisme droit</TexteSVG>
 		{/snippet}
 	</Schéma>
-	<Methode lignes={4}>
-		<Item>Tracer la face avant (rectangle visible).</Item>
-		<Item>Tracer les arêtes obliques partant des sommets, avec le même angle et la même longueur réduite.</Item>
-		<Item>Tracer la face arrière (parallèle à la face avant).</Item>
-		<Item>Mettre les arêtes cachées en pointillés.</Item>
-	</Methode>
-	<Remarque lignes={2}>En perspective cavalière, les arêtes parallèles restent parallèles et de même longueur.</Remarque>
+
+	<Definition lignes={2}>
+		Une <i>pyramide</i> est un solide dont la base est un polygone et dont les faces latérales sont des triangles se rejoignant en un point appelé
+		<i>apex</i>.
+	</Definition>
+
+	<Schéma lignes={7} aspectRatioSVG={3.5}>
+		{#snippet svg()}
+			<rect x="0%" y="0%" width="100%" height="100%" fill="white" stroke="none" />
+
+			<!-- Perspective cavalière : pyramide à base carrée -->
+			<Pyramide nature={4} {projecteur} apex={{ x: 700, y: 180, z: 0 }} centre={{ x: 700, y: 760, z: 0 }} rayon={320} />
+			<TexteSVG point={{ x: 700, y: 960 }} font-size={75} text-anchor="middle">pyramide à base carrée</TexteSVG>
+
+			<!-- Séparateur -->
+			<line x1={1500} y1={50} x2={1500} y2={950} stroke="#ccc" stroke-width={3} stroke-dasharray="10 8" />
+
+			<!-- Patron : pyramide à base carrée -->
+			{@const b = 260}
+			{@const l = 290}
+			{@const cx = 2600}
+			{@const cy = 500}
+			{@const hb = b / 2}
+			<!-- Base carrée -->
+			<rect x={cx - hb} y={cy - hb} width={b} height={b} fill="none" stroke="black" stroke-width={5} />
+			<!-- Face supérieure -->
+			<polygon points={`${cx - hb},${cy - hb} ${cx + hb},${cy - hb} ${cx},${cy - hb - l}`} fill="none" stroke="black" stroke-width={5} />
+			<!-- Face inférieure -->
+			<polygon points={`${cx - hb},${cy + hb} ${cx + hb},${cy + hb} ${cx},${cy + hb + l}`} fill="none" stroke="black" stroke-width={5} />
+			<!-- Face gauche -->
+			<polygon points={`${cx - hb},${cy - hb} ${cx - hb},${cy + hb} ${cx - hb - l},${cy}`} fill="none" stroke="black" stroke-width={5} />
+			<!-- Face droite -->
+			<polygon points={`${cx + hb},${cy - hb} ${cx + hb},${cy + hb} ${cx + hb + l},${cy}`} fill="none" stroke="black" stroke-width={5} />
+			<TexteSVG point={{ x: 2600, y: 960 }} font-size={75} text-anchor="middle">patron de la pyramide</TexteSVG>
+		{/snippet}
+	</Schéma>
 </Contenu>
