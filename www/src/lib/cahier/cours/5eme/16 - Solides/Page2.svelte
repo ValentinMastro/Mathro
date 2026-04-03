@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Remarque, Schéma } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Item, Remarque, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Prisme, Projecteur, Pyramide, TexteSVG } from '$lib/cahier/composants/svg/*';
 
 	const projecteur = new Projecteur(0.46);
@@ -12,12 +12,13 @@
 	<Definition lignes={2}>
 		Un <i>prisme droit</i> est un solide dont les deux bases sont des polygones identiques et parallèles, et dont les faces latérales sont des rectangles.
 	</Definition>
-	<Remarque lignes={1}>Le cube et le pavé droit sont des prismes droits à base rectangulaire.</Remarque>
+	<Remarque lignes={2}>
+		<Item>Le pavé droit est un prisme droit à base rectangulaire.</Item>
+		<Item>Le cube est un prisme droit à base carrée.</Item>
+	</Remarque>
 
 	<Schéma lignes={7} aspectRatioSVG={3.5}>
 		{#snippet svg()}
-			<rect x="0%" y="0%" width="100%" height="100%" fill="white" stroke="none" />
-
 			<!-- Perspective cavalière : prisme triangulaire -->
 			<Prisme nature={3} {projecteur} centre1={{ x: 700, y: 820, z: 0 }} centre2={{ x: 700, y: 300, z: 0 }} rayon={260} />
 			<TexteSVG point={{ x: 700, y: 960 }} font-size={75} text-anchor="middle">prisme triangulaire</TexteSVG>
@@ -48,15 +49,13 @@
 		{/snippet}
 	</Schéma>
 
-	<Definition lignes={2}>
+	<Definition lignes={3}>
 		Une <i>pyramide</i> est un solide dont la base est un polygone et dont les faces latérales sont des triangles se rejoignant en un point appelé
 		<i>apex</i>.
 	</Definition>
 
 	<Schéma lignes={7} aspectRatioSVG={3.5}>
 		{#snippet svg()}
-			<rect x="0%" y="0%" width="100%" height="100%" fill="white" stroke="none" />
-
 			<!-- Perspective cavalière : pyramide à base carrée -->
 			<Pyramide nature={4} {projecteur} apex={{ x: 700, y: 180, z: 0 }} centre={{ x: 700, y: 760, z: 0 }} rayon={320} />
 			<TexteSVG point={{ x: 700, y: 960 }} font-size={75} text-anchor="middle">pyramide à base carrée</TexteSVG>
