@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Item, Remarque, Schéma } from '$lib/cahier/composants/de_cours/*';
-	import { Prisme, Projecteur, Pyramide, TexteSVG } from '$lib/cahier/composants/svg/*';
+	import { Prisme, Projecteur, Pyramide, SegmentVertical, TexteSVG } from '$lib/cahier/composants/svg/*';
 
 	const projecteur = new Projecteur(0.46);
 </script>
@@ -20,11 +20,11 @@
 	<Schéma lignes={7} aspectRatioSVG={3.5}>
 		{#snippet svg()}
 			<!-- Perspective cavalière : prisme triangulaire -->
-			<Prisme nature={3} {projecteur} centre1={{ x: 700, y: 820, z: 0 }} centre2={{ x: 700, y: 300, z: 0 }} rayon={260} />
-			<TexteSVG point={{ x: 700, y: 960 }} font-size={75} text-anchor="middle">prisme triangulaire</TexteSVG>
+			<Prisme nature={3} {projecteur} centre1={{ x: 705, y: 810, z: 0 }} centre2={{ x: 705, y: 190, z: 0 }} rayon={375} />
+			<TexteSVG point={{ x: 670, y: 1020 }} font-size={75} text-anchor="middle">prisme triangulaire</TexteSVG>
 
 			<!-- Séparateur -->
-			<line x1={1500} y1={50} x2={1500} y2={950} stroke="#ccc" stroke-width={3} stroke-dasharray="10 8" />
+			<SegmentVertical x={1500} y1={50} y2={950} stroke="#ccc" stroke-width={3} stroke-dasharray="10 8" />
 
 			<!-- Patron : prisme triangulaire -->
 			{@const a = 200}
@@ -61,7 +61,7 @@
 			<TexteSVG point={{ x: 700, y: 960 }} font-size={75} text-anchor="middle">pyramide à base carrée</TexteSVG>
 
 			<!-- Séparateur -->
-			<line x1={1500} y1={50} x2={1500} y2={950} stroke="#ccc" stroke-width={3} stroke-dasharray="10 8" />
+			<SegmentVertical x={1500} y1={50} y2={950} stroke="#ccc" stroke-width={3} stroke-dasharray="10 8" />
 
 			<!-- Patron : pyramide à base carrée -->
 			{@const b = 260}

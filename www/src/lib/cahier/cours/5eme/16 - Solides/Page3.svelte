@@ -44,7 +44,7 @@
 	<Definition lignes={2}>
 		Un <i>cône</i> est un solide dont la base est un disque et dont la surface latérale courbe se termine en un point appelé <i>apex</i>.
 	</Definition>
-	<Remarque lignes={1}>La sphère, le cylindre et le cône ne sont pas des polyèdres car ils ont des faces courbes.</Remarque>
+	<Remarque lignes={2}>La sphère, le cylindre et le cône ne sont pas des polyèdres car ils ont des faces courbes.</Remarque>
 
 	<Schéma lignes={7} aspectRatioSVG={3.5}>
 		{#snippet svg()}
@@ -58,8 +58,8 @@
 			<line x1={1500} y1={50} x2={1500} y2={950} stroke="#ccc" stroke-width={3} stroke-dasharray="10 8" />
 
 			<!-- Patron : cône -->
-			{@const r_base = 110}
-			{@const l_slant = 320}
+			{@const r_base = 132}
+			{@const l_slant = 384}
 			{@const theta = (2 * Math.PI * r_base) / l_slant}
 			{@const cx_s = 2600}
 			{@const cy_s = 120}
@@ -76,8 +76,8 @@
 				stroke="black"
 				stroke-width={5}
 			/>
-			<!-- Disque (base du cône) -->
-			<circle cx={cx_s} cy={cy_s + l_slant + r_base + 30} r={r_base} fill="none" stroke="black" stroke-width={5} />
+			<!-- Disque (base du cône) — tangent au bas de l'arc : centre à cy_s + l_slant + r_base -->
+			<circle cx={cx_s} cy={cy_s + l_slant + r_base} r={r_base} fill="none" stroke="black" stroke-width={5} />
 			<TexteSVG point={{ x: cx_s, y: 960 }} font-size={75} text-anchor="middle">patron du cône</TexteSVG>
 		{/snippet}
 	</Schéma>
