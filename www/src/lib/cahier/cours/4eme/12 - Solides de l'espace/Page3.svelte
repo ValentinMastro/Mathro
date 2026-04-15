@@ -107,8 +107,7 @@
 </DansLaMarge>
 
 <Contenu>
-	<Partie numero={2} titre="Solides de l'espace" />
-	<SousPartie numero={1} titre="Polyèdres" />
+	<Partie numero={2} titre="Polyèdres" />
 	<Definition>Un polyèdre est un solide dont toutes les faces sont des polygones.</Definition>
 	<Nomenclature lignes={5}>
 		<Item>Un tétraèdre a 4 faces.</Item>

@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { Contenu, SousSousPartie } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Formule } from '$lib/cahier/composants/de_cours/*';
 	import { math } from 'mathlifier';
 </script>
 
 <Contenu>
-	<SousSousPartie numero={3} titre="Pyramide" />
+	<SousPartie numero={3} titre="Pyramide" />
 	<Definition lignes={3}>
 		Une pyramide est un polyèdre dont une face est un polygone (la base) et les autres des triangles (les faces latérales).<br />
 		Tous les sommets de la base sont reliés en un point appelé <i>l'apex.</i><br />
@@ -16,7 +16,7 @@
 		)}.
 	</Formule>
 
-	<SousSousPartie numero={4} titre="Prisme droit" />
+	<SousPartie numero={4} titre="Prisme droit" />
 	<Definition lignes={3}>
 		Un prisme droit est un polyèdre dont deux des faces - les bases - sont des polygones identiques et parallèles.<br />
 		Les autres faces - les faces latérales - sont des rectangles.<br />

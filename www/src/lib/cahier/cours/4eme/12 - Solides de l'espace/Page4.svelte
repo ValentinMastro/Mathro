@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { Contenu, SousSousPartie } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Formule, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { math } from 'mathlifier';
 </script>
 
 <Contenu>
-	<SousSousPartie numero={1} titre="Le cube" />
+	<SousPartie numero={1} titre="Le cube" />
 	<Definition lignes={2}>
 		Un cube est un hexaèdre régulier, c'est-à-dire un polyèdre dont toutes les faces sont des carrés. Il a 12 arêtes et 8 sommets.
 	</Definition>
@@ -26,7 +26,7 @@
 		{/snippet}
 	</Schéma>
 
-	<SousSousPartie numero={2} titre="Le pavé droit" />
+	<SousPartie numero={2} titre="Le pavé droit" />
 	<Definition lignes={3}>
 		Un pavé droit (ou parallélépipède rectangle) est un hexaèdre (un polyèdre à 6 faces) dont toutes les faces sont des rectangles. Il a 12 arêtes et
 		8 sommets.
