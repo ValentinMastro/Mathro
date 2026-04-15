@@ -101,8 +101,7 @@
 	}
 </script>
 
-<DansLaMarge>
-	<LigneVide lignes={12} />
+<DansLaMarge lignes_vides={10}>
 	<Nombre min={5} max={99} bind:valeur={nombre_de_côtés} />
 </DansLaMarge>
 
