@@ -7,35 +7,35 @@
 
 	let nombre_de_côtés: number = $state(12);
 
-	function nom_du_polygone_selon_Kepler(n: number): string {
-		let polygones_de_1_à_19 = [
+	function nom_du_polyèdre(n: number): string {
+		let polyèdres_de_1_à_19 = [
 			'',
-			'monogone',
-			'digone',
-			'triangle',
-			'quadrilatère',
-			'pentagone',
-			'hexagone',
-			'heptagone',
-			'octogone',
-			'nonagone',
-			'décagone',
-			'hendécagone',
-			'dodécagone',
-			'tridécagone',
-			'tétradécagone',
-			'pentadécagone',
-			'hexadécagone',
-			'heptadécagone',
-			'octadécagone',
-			'ennéadécagone'
+			'',
+			'',
+			'',
+			'tétraèdre',
+			'pentaèdre',
+			'hexaèdre',
+			'heptaèdre',
+			'octaèdre',
+			'ennéaèdre',
+			'décaèdre',
+			'hendécaèdre',
+			'dodécaèdre',
+			'tridécaèdre',
+			'tétradécaèdre',
+			'pentadécaèdre',
+			'hexadécaèdre',
+			'heptadécaèdre',
+			'octadécaèdre',
+			'ennéadécaèdre'
 		];
 
 		if (n <= 19) {
-			return polygones_de_1_à_19[n]!;
+			return polyèdres_de_1_à_19[n]!;
 		}
 
-		/* Entre 20 et 99 côtés */
+		/* Entre 20 et 99 faces */
 		let dizaines = (n - (n % 10)) / 10;
 		let unites = n % 10;
 
@@ -97,7 +97,7 @@
 				nom_unite = 'ennéa';
 				break;
 		}
-		return nom_dizaine + 'kai' + nom_unite + 'èdre';
+		return nom_dizaine + (nom_unite ? 'kai' : '') + nom_unite + 'èdre';
 	}
 </script>
 
@@ -115,6 +115,6 @@
 		<Item>Un hexaèdre a 6 faces.</Item>
 		<Item>Un octaèdre a 8 faces.</Item>
 		<Item>Un décaèdre a 10 faces.</Item>
-		<Item>Un {nom_du_polygone_selon_Kepler(nombre_de_côtés)} a {nombre_de_côtés} faces.</Item>
+		<Item>Un {nom_du_polyèdre(nombre_de_côtés)} a {nombre_de_côtés} faces.</Item>
 	</Nomenclature>
 </Contenu>
