@@ -47,9 +47,7 @@
 	const cy = $derived(P.y + position * vy);
 
 	// Espacement entre traits (si 2 ou 3 traits)
-	const espacement = $derived(
-		typeof valeursParDefaut['stroke-width'] === 'number' ? valeursParDefaut['stroke-width'] * 5 : 0.6 * taille
-	);
+	const espacement = $derived(typeof valeursParDefaut['stroke-width'] === 'number' ? valeursParDefaut['stroke-width'] * 5 : 0.6 * taille);
 
 	function trait(x: number, y: number) {
 		const demi = taille / 2;

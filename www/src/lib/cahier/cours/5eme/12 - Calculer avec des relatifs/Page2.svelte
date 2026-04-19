@@ -19,11 +19,9 @@
 	</Exemples>
 
 	<Partie numero={3} titre="Soustraction" />
-	<Propriete>
-	    Soustraire un nombre revient à ajouter son opposé.
-	</Propriete>
+	<Propriete>Soustraire un nombre revient à ajouter son opposé.</Propriete>
 	<Exemples lignes={2}>
-	    <Item>{@html math("(-7) - (-4) = (-7) \\textcolor{red}{+} ( \\textcolor{red}{+}4) = -3")}</Item>
-		<Item>{@html math("(+4) - (+7) = (+4) \\textcolor{red}{+} ( \\textcolor{red}{-}7) = -3")}</Item>
+		<Item>{@html math('(-7) - (-4) = (-7) \\textcolor{red}{+} ( \\textcolor{red}{+}4) = -3')}</Item>
+		<Item>{@html math('(+4) - (+7) = (+4) \\textcolor{red}{+} ( \\textcolor{red}{-}7) = -3')}</Item>
 	</Exemples>
 </Contenu>

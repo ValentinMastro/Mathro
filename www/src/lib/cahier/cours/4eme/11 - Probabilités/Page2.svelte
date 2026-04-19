@@ -9,7 +9,9 @@
 	<Exemples lignes={4}>
 		<Item>Pour un pile ou face, {@html math(`\\Omega = \\{ \\text{Pile}, \\text{Face} \\}`)}</Item>
 		<Item>Pour un lancer de dé, {@html math(`\\Omega = \\{ 1, 2, 3, 4, 5, 6 \\}`)}</Item>
-		<Item lignes={2}>Tirer une lettre au hasard dans l'alphabet français, {@html math(`\\Omega = \\{ \\text{A}, \\text{B}, \\text{C}, \\dots, \\text{Z} \\}`)}</Item>
+		<Item lignes={2}>
+			Tirer une lettre au hasard dans l'alphabet français, {@html math(`\\Omega = \\{ \\text{A}, \\text{B}, \\text{C}, \\dots, \\text{Z} \\}`)}
+		</Item>
 	</Exemples>
 	<Exemples lignes={6}>
 		<Item lignes={3}>

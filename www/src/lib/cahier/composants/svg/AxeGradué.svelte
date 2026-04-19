@@ -54,7 +54,6 @@
 				];
 			})
 	);
-
 </script>
 
 <Flèche {...flèche_props} />
