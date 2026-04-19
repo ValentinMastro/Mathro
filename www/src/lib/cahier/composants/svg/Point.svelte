@@ -39,12 +39,12 @@
 		return 'black';
 	}
 
-	let valeursParDefaut = {
+	let valeursParDefaut = $derived({
 		'stroke-width': type.taille / 5
-	};
+	});
 
-	let t = type.taille;
-	let r = type.taille;
+	let t = $derived(type.taille);
+	let r = $derived(type.taille);
 	let d_croix = $derived(`
 	    M ${x - t} ${y - t}
 		L ${x + t} ${y + t}

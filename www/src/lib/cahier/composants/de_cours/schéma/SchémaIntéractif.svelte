@@ -30,8 +30,8 @@
 	};
 
 	let { points_intéractifs, seuil = 40, style = '', ...schemaProps }: Props = $props();
+	let seuil_au_carre = $derived(seuil * seuil);
 
-	const SEUIL2 = seuil * seuil;
 	let enDrag: Coordonnées2D | null = null;
 	let pointerId: number | null = null;
 
@@ -61,7 +61,7 @@
 				meilleur = pt;
 			}
 		}
-		return dmin <= SEUIL2 ? meilleur : null;
+		return dmin <= seuil_au_carre ? meilleur : null;
 	}
 
 	function onpointerdown(e: PointerEvent) {

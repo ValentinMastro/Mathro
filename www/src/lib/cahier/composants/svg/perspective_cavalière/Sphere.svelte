@@ -21,7 +21,7 @@
 
 	let { projecteur, centre, rayon }: Props = $props();
 
-	let CENTRE = projecteur.P(centre);
+	let CENTRE = $derived(projecteur.P(centre));
 </script>
 
 <circle cx={CENTRE.x} cy={CENTRE.y} r={rayon} fill="none" stroke="black" stroke-width={5} />

@@ -19,11 +19,13 @@
 		angle1: number;
 		angle2: number;
 	};
-	let { centre, r, angle1, angle2, ...props }: Props = $props();
-	let { x: cx, y: cy } = $derived(centre);
+	let { centre, r, angle1: angle1_brut, angle2: angle2_brut, ...props }: Props = $props();
+	let cx = $derived(centre.x);
+	let cy = $derived(centre.y);
 
 	// Pour que l'angle ne soit pas concave
-	if (angle1 < angle2) [angle1, angle2] = [angle2, angle1];
+	let angle1 = $derived(angle1_brut < angle2_brut ? angle2_brut : angle1_brut);
+	let angle2 = $derived(angle1_brut < angle2_brut ? angle1_brut : angle2_brut);
 </script>
 
 {#if Math.abs(angle1 - angle2) < Math.PI}

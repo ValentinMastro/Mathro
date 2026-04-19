@@ -23,13 +23,13 @@
 
 	let { projecteur, centre1, centre2, rayon }: Props = $props();
 
-	let CENTRE1 = projecteur.P(centre1);
-	let CENTRE2 = projecteur.P(centre2);
+	let CENTRE1 = $derived(projecteur.P(centre1));
+	let CENTRE2 = $derived(projecteur.P(centre2));
 
-	let A1 = { x: CENTRE1.x - rayon, y: CENTRE1.y };
-	let A2 = { x: CENTRE1.x + rayon, y: CENTRE1.y };
-	let B1 = { x: CENTRE2.x - rayon, y: CENTRE2.y };
-	let B2 = { x: CENTRE2.x + rayon, y: CENTRE2.y };
+	let A1 = $derived({ x: CENTRE1.x - rayon, y: CENTRE1.y });
+	let A2 = $derived({ x: CENTRE1.x + rayon, y: CENTRE1.y });
+	let B1 = $derived({ x: CENTRE2.x - rayon, y: CENTRE2.y });
+	let B2 = $derived({ x: CENTRE2.x + rayon, y: CENTRE2.y });
 </script>
 
 {#each [CENTRE1, CENTRE2] as centre, index}

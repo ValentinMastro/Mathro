@@ -8,8 +8,10 @@
 	import { page_state, PAGES, NOMBRE_DE_PAGES, trouver_page_par_chapitre } from '$lib/cahier/store.svelte';
 	import ZoneCentrale from '$lib/cahier/composants/ZoneCentrale.svelte';
 
-	page_state.niveau = data.niveau as 3 | 4 | 5 | 6;
-	PAGES.liste = importer_cours(page_state.niveau);
+	$effect.pre(() => {
+		page_state.niveau = data.niveau as 3 | 4 | 5 | 6;
+		PAGES.liste = importer_cours(page_state.niveau);
+	});
 
 	function changement_de_page(diff: number) {
 		if (page_state.numero_de_la_page + diff >= 0 && page_state.numero_de_la_page + diff <= NOMBRE_DE_PAGES() - 2) {

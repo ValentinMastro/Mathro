@@ -18,10 +18,6 @@
 	};
 
 	let { arête, projecteur, coin }: Props = $props();
-
-	let longueur = arête;
-	let largeur = arête;
-	let hauteur = arête;
 </script>
 
-<PavéDroit {longueur} {largeur} {hauteur} {projecteur} {coin} />
+<PavéDroit longueur={arête} largeur={arête} hauteur={arête} {projecteur} {coin} />

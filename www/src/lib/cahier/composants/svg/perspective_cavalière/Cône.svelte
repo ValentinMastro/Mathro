@@ -21,8 +21,8 @@
 
 	let { projecteur, apex, centre, rayon }: Props = $props();
 
-	let APEX = projecteur.P(apex);
-	let CENTRE = projecteur.P(centre);
+	let APEX = $derived(projecteur.P(apex));
+	let CENTRE = $derived(projecteur.P(centre));
 </script>
 
 <!-- Partie basse de l’ellipse -->

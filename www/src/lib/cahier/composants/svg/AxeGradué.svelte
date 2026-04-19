@@ -29,7 +29,9 @@
 	let delta_y = $derived(B.y - A.y);
 	let angle = $derived(delta_x == 0 ? ((Math.PI / 2) * delta_y) / Math.abs(delta_y) : Math.atan2(delta_y, delta_x));
 
-	if (nombre_de_graduations < 2) throw new Error('Pas assez de graduations');
+	$effect(() => {
+		if (nombre_de_graduations < 2) throw new Error('Pas assez de graduations');
+	});
 	let extrémités_graduations: ExtrémitésSegment[] = $derived(
 		Array.from({ length: nombre_de_graduations })
 			.map((_, index) => index + 1)

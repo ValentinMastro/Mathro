@@ -15,7 +15,8 @@
 	};
 
 	let { extrémités_segment, ...props }: Props = $props();
-	let [A, B] = extrémités_segment;
+	let A = $derived(extrémités_segment[0]);
+	let B = $derived(extrémités_segment[1]);
 
 	// Milieu
 	const M = $derived({ x: (A.x + B.x) / 2, y: (A.y + B.y) / 2 });

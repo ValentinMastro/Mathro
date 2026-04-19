@@ -29,9 +29,9 @@
 		fill: 'black'
 	};
 
-	const A = points[0];
-	const B = points[1];
-	const C = points[2];
+	const A = $derived(points[0]);
+	const B = $derived(points[1]);
+	const C = $derived(points[2]);
 
 	function normalise(v: { x: number; y: number }) {
 		const n = Math.hypot(v.x, v.y);
@@ -39,29 +39,27 @@
 	}
 
 	// Vecteur BA
-	const u = normalise({ x: A.x - B.x, y: A.y - B.y });
+	const u = $derived(normalise({ x: A.x - B.x, y: A.y - B.y }));
 
-	// Perpendiculaire à BA
-	const vC = { x: C.x - B.x, y: C.y - B.y };
-	let v = { x: -u.y, y: u.x }; // rotation +90°
-
-	// Oriente v vers BC
-	if (v.x * vC.x + v.y * vC.y < 0) {
-		v = { x: -v.x, y: -v.y };
-	}
+	// Perpendiculaire à BA, orientée vers BC
+	const v = $derived.by(() => {
+		const vC = { x: C.x - B.x, y: C.y - B.y };
+		const v0 = { x: -u.y, y: u.x }; // rotation +90°
+		return v0.x * vC.x + v0.y * vC.y < 0 ? { x: -v0.x, y: -v0.y } : v0;
+	});
 
 	// Premier point du carré (proche du sommet)
-	const P0 = {
+	const P0 = $derived({
 		x: B.x + u.x * decalage + v.x * decalage,
 		y: B.y + u.y * decalage + v.y * decalage
-	};
+	});
 
 	// Autres points du carré
-	const P1 = { x: P0.x + u.x * taille, y: P0.y + u.y * taille };
-	const P2 = { x: P1.x + v.x * taille, y: P1.y + v.y * taille };
-	const P3 = { x: P0.x + v.x * taille, y: P0.y + v.y * taille };
+	const P1 = $derived({ x: P0.x + u.x * taille, y: P0.y + u.y * taille });
+	const P2 = $derived({ x: P1.x + v.x * taille, y: P1.y + v.y * taille });
+	const P3 = $derived({ x: P0.x + v.x * taille, y: P0.y + v.y * taille });
 
-	const pointsCarre = `${P0.x},${P0.y} ${P1.x},${P1.y} ${P2.x},${P2.y} ${P3.x},${P3.y}`;
+	const pointsCarre = $derived(`${P0.x},${P0.y} ${P1.x},${P1.y} ${P2.x},${P2.y} ${P3.x},${P3.y}`);
 </script>
 
 <polygon points={pointsCarre} {...valeursParDefaut} {...props} />
