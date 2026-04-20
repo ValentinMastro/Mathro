@@ -77,8 +77,6 @@
 		}
 		return étapes;
 	});
-
-
 </script>
 
 <!-- Structure -->

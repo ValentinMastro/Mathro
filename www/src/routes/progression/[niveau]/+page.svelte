@@ -4,14 +4,16 @@
 
 	let { data }: { data: PageData } = $props();
 
-	page_state.niveau = data.niveau;
+	$effect.pre(() => {
+		page_state.niveau = data.niveau;
+	});
 
 	const composants = import.meta.glob('$lib/progression/*/Progression.svelte', { eager: true }) as Record<
 		string,
 		{ default: typeof import('svelte').SvelteComponent }
 	>;
 
-	const Progression = composants[`/src/lib/progression/${data.niveau}eme/Progression.svelte`]?.default;
+	const Progression = $derived(composants[`/src/lib/progression/${data.niveau}eme/Progression.svelte`]?.default);
 </script>
 
 <svelte:head>

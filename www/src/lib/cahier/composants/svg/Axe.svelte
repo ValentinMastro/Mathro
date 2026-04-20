@@ -57,13 +57,14 @@
 		stroke_width = 10
 	}: Props = $props();
 
-	let nombre_de_valeurs: number = $state(0);
-
-	if (graduations.type_de_graduation == 'fraction') {
-		nombre_de_valeurs = graduations.derniere_valeur.sub(graduations.premiere_valeur).div(graduations.pas).add(1).floor().valueOf();
-	} else if (graduations.type_de_graduation == 'decimal') {
-		nombre_de_valeurs = Math.floor((graduations.derniere_valeur - graduations.premiere_valeur) / graduations.pas + 1);
-	}
+	let nombre_de_valeurs: number = $derived.by(() => {
+		if (graduations.type_de_graduation == 'fraction') {
+			return graduations.derniere_valeur.sub(graduations.premiere_valeur).div(graduations.pas).add(1).floor().valueOf();
+		} else if (graduations.type_de_graduation == 'decimal') {
+			return Math.floor((graduations.derniere_valeur - graduations.premiere_valeur) / graduations.pas + 1);
+		}
+		return 0;
+	});
 </script>
 
 <defs>

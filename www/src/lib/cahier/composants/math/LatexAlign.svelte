@@ -10,7 +10,7 @@
 	};
 
 	let { code, lignes = 1, lignes_vides = 0, ...props }: Props = $props();
-	let style = (props.style ?? '') + `--lignes: ${lignes};`;
+	let style = $derived((props.style ?? '') + `--lignes: ${lignes};`);
 </script>
 
 <div class="align" {...props} {style}>

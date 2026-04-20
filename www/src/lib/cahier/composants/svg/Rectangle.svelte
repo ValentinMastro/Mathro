@@ -26,8 +26,8 @@
 		fill: 'none'
 	};
 
-	let A = { x: Math.min(points[0].x, points[1].x), y: Math.min(points[0].y, points[1].y) };
-	let B = { x: Math.max(points[0].x, points[1].x), y: Math.max(points[0].y, points[1].y) };
+	let A = $derived({ x: Math.min(points[0].x, points[1].x), y: Math.min(points[0].y, points[1].y) });
+	let B = $derived({ x: Math.max(points[0].x, points[1].x), y: Math.max(points[0].y, points[1].y) });
 </script>
 
 <rect x={A.x} y={A.y} width={B.x - A.x} height={B.y - A.y} {...valeursParDefaut} {...props} />

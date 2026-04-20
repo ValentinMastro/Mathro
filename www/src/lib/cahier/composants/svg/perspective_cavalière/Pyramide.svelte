@@ -26,8 +26,8 @@
 
 	let { nature, projecteur, apex, centre, rayon: r, rotation = 0 }: Props = $props();
 
-	let apex_v3 = new V3(apex.x, apex.y, apex.z);
-	let centre_v3 = new V3(centre.x, centre.y, centre.z);
+	let apex_v3 = $derived.by(() => new V3(apex.x, apex.y, apex.z));
+	let centre_v3 = $derived.by(() => new V3(centre.x, centre.y, centre.z));
 
 	// Axe de la pyramide (du centre vers l’apex)
 	const axe = $derived(apex_v3.soustraire(centre_v3));

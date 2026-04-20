@@ -30,23 +30,24 @@
 		'stroke-width': 5
 	};
 
-	const [P, Q] = points;
-	const vx = Q.x - P.x;
-	const vy = Q.y - P.y;
-	const L = Math.hypot(vx, vy);
+	const P = $derived(points[0]);
+	const Q = $derived(points[1]);
+	const vx = $derived(Q.x - P.x);
+	const vy = $derived(Q.y - P.y);
+	const L = $derived(Math.hypot(vx, vy));
 
 	// vecteurs unité
-	const ux = vx / L;
-	const uy = vy / L;
-	const px = -uy;
-	const py = ux;
+	const ux = $derived(vx / L);
+	const uy = $derived(vy / L);
+	const px = $derived(-uy);
+	const py = $derived(ux);
 
 	// Centre du codage
-	const cx = P.x + position * vx;
-	const cy = P.y + position * vy;
+	const cx = $derived(P.x + position * vx);
+	const cy = $derived(P.y + position * vy);
 
 	// Espacement entre traits (si 2 ou 3 traits)
-	const espacement = typeof valeursParDefaut['stroke-width'] === 'number' ? valeursParDefaut['stroke-width'] * 5 : 0.6 * taille;
+	const espacement = $derived(typeof valeursParDefaut['stroke-width'] === 'number' ? valeursParDefaut['stroke-width'] * 5 : 0.6 * taille);
 
 	function trait(x: number, y: number) {
 		const demi = taille / 2;
