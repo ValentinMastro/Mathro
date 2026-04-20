@@ -18,7 +18,7 @@
 			{@const r = 300}
 			<Sphere rayon={r} centre={{ x: cx, y: cy, z: 0 }} {projecteur} />
 			<!-- Centre O -->
-			<circle cx={cx} cy={cy} r={12} fill="black" />
+			<circle {cx} {cy} r={12} fill="black" />
 			<TexteSVG point={{ x: cx - 50, y: cy - 35 }} font-size={80}>O</TexteSVG>
 			<!-- Rayon r -->
 			<line x1={cx} y1={cy} x2={cx + r} y2={cy} stroke="black" stroke-width={5} />
