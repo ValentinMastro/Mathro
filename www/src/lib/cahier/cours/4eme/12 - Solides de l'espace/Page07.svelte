@@ -20,7 +20,7 @@
 	</Formule>
 	<Schéma lignes={8}>
 		{#snippet svg()}
-			<Prisme nature={3} {projecteur} centre1={{ x: 500, y: 800, z: 0 }} centre2={{ x: 500, y: 200, z: 0 }} rayon={300} />
+			<Prisme nature={3} {projecteur} centre1={{ x: 500, y: 750, z: 0 }} centre2={{ x: 500, y: 150, z: 0 }} rayon={300} />
 			<TexteSVG point={{ x: 500, y: 900 }} font-size={70} text-anchor="middle">Prisme droit triangulaire</TexteSVG>
 			<TexteSVG point={{ x: 500, y: 970 }} font-size={70} text-anchor="middle">en perspective cavalière</TexteSVG>
 		{/snippet}

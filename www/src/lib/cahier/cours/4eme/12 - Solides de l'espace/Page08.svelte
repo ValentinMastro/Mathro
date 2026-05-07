@@ -19,7 +19,7 @@
 	</Formule>
 	<Schéma lignes={8}>
 		{#snippet svg()}
-			<Cylindre rayon={170} centre1={{ x: 500, y: 800, z: 0 }} centre2={{ x: 500, y: 200, z: 0 }} {projecteur} />
+			<Cylindre rayon={170} centre1={{ x: 500, y: 700, z: 0 }} centre2={{ x: 500, y: 100, z: 0 }} {projecteur} />
 			<TexteSVG point={{ x: 500, y: 900 }} font-size={70} text-anchor="middle">Cylindre de révolution</TexteSVG>
 			<TexteSVG point={{ x: 500, y: 970 }} font-size={70} text-anchor="middle">en perspective cavalière</TexteSVG>
 		{/snippet}
