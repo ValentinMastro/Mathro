@@ -35,7 +35,7 @@
 	</Tableau>
 
 	<Definition lignes={2}>
-		La <i>fréquence</i> d'une modalité {@html math('=')} effectif de la modalité {@html math('\\div')} effectif total.
+		La <i>fréquence</i> d'une valeur {@html math('=')} effectif de la valeur {@html math('\\div')} effectif total.
 	</Definition>
 	<Methode lignes={3}>
 		<Item>En fraction : {@html math('\\dfrac{\\text{effectif}}{\\text{effectif total}}')}.</Item>
