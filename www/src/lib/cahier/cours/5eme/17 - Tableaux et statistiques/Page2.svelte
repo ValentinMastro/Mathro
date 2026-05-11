@@ -6,9 +6,9 @@
 
 <Contenu>
 	<Partie numero={2} titre="Effectifs et fréquences" />
-	<Definitions lignes={3}>
-		<Item>L'<i>effectif</i> d'une modalité est le nombre d'individus ayant cette modalité.</Item>
-		<Item>L'<i>effectif total</i> est le nombre total d'individus dans la population.</Item>
+	<Definitions lignes={4}>
+		<Item lignes={2}>L'<i>effectif</i> d'une valeur est le nombre d'individus ayant cette valeur.</Item>
+		<Item lignes={2}>L'<i>effectif total</i> est le nombre total d'individus dans la population.</Item>
 	</Definitions>
 
 	<Tableau lignes={4} colonnes={20}>
