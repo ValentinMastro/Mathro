@@ -19,7 +19,7 @@
 	const y0 = 75;
 </script>
 
-<Chapitre titre="Se repérer dans le temps et l'espace" />
+<Chapitre titre="Se repérer dans le temps" />
 
 <Contenu apres_un_titre>
 	<Partie numero={1} titre="Horaires et durées" />
