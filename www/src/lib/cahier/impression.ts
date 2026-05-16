@@ -3,6 +3,8 @@ import { NOMBRE_DE_PAGES, page_state } from '$lib/cahier/store.svelte';
 import jsPDF from 'jspdf';
 import { tick } from 'svelte';
 
+const PX_TO_PT = 0.75; // 72pt / 96dpi
+
 async function captureNoeudEnJPEG(node: HTMLElement): Promise<{ dataUrl: string; w: number; h: number }> {
 	// Attends que la mise en page soit prête
 	await tick();
@@ -44,23 +46,25 @@ export async function exporterToutesLesPagesEnPDF() {
 			const zone = document.getElementById('zone');
 			if (!zone) throw new Error('Zone non trouvée');
 
-			const enfants = Array.from(zone.children).filter((el) => !(el as HTMLElement).matches('#largeur'));
+			const enfants = Array.from(zone.querySelectorAll('.page')) as HTMLElement[];
 			// enfants[0] = Page gauche, enfants[1] = Page droite (si existe)
-			for (const el of enfants as HTMLElement[]) {
+			for (const el of enfants) {
 				// Ne pas capture la page de gauche si i == 0
 				if (el.classList.contains('page_zero')) continue;
 				const { dataUrl, w, h } = await captureNoeudEnJPEG(el);
 
+				const wPt = w * PX_TO_PT;
+				const hPt = h * PX_TO_PT;
 				if (!doc) {
 					doc = new jsPDF({
-						orientation: w > h ? 'landscape' : 'portrait',
-						unit: 'px',
-						format: [w, h]
+						orientation: wPt > hPt ? 'landscape' : 'portrait',
+						unit: 'pt',
+						format: [wPt, hPt]
 					});
 				} else {
-					doc.addPage([w, h], w > h ? 'landscape' : 'portrait');
+					doc.addPage([wPt, hPt], wPt > hPt ? 'landscape' : 'portrait');
 				}
-				doc.addImage(dataUrl, 'PNG', 0, 0, w, h);
+				doc.addImage(dataUrl, 'JPEG', 0, 0, wPt, hPt);
 			}
 		}
 
