@@ -1,31 +1,31 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemples, Item, Methode, Remarque } from '$lib/cahier/composants/de_cours/*';
+	import { Exemple, Exemples, Item, Methode, Remarque } from '$lib/cahier/composants/de_cours/*';
 	import { math } from 'mathlifier';
 </script>
 
-<Contenu apres_un_titre>
+<Contenu>
 	<Partie numero={2} titre="Produire une expression littérale" />
 	<Methode lignes={3}>
 		Pour traduire un programme de calcul en expression littérale : remplacer la valeur inconnue par une lettre, puis écrire les opérations.
 	</Methode>
-	<Exemples lignes={8}>
-		<Item lignes={3}>
-			Programme : « Choisir un nombre, le multiplier par 3, puis ajouter 5. » <br />
-			On note {@html math('x')} le nombre choisi. <br />
-			Expression littérale : {@html math('3x + 5')}.
-		</Item>
-		<Item lignes={2}>
-			Périmètre d'un rectangle de longueur {@html math('L')} et largeur {@html math('\\ell')} : <br />
-			{@html math('P = 2 \\times (L + \\ell) = 2L + 2\\ell')}.
-		</Item>
-		<Item lignes={2}>
-			Aire d'un triangle de base {@html math('b')} et de hauteur {@html math('h')} : <br />
-			{@html math('\\mathcal{A} = \\dfrac{b \\times h}{2}')}.
-		</Item>
+	<Exemples lignes={4}>
+		<u>Programme de calcul :</u>
+		<Item>Choisir un nombre <span class="noir">(On note {@html math('x')} le nombre choisi.)</span></Item>
+		<Item>Le multiplier par 3 <span class="noir">({@html math('3 \\times x = 3x')})</span></Item>
+		<Item>Ajouter 5 <span class="noir">({@html math('3x + 5')})</span></Item>
 	</Exemples>
 	<Remarque lignes={2}>
 		On peut utiliser une lettre pour exprimer une propriété générale valable pour tout nombre. <br />
-		Exemple : la somme de deux nombres consécutifs {@html math('n')} et {@html math('n+1')} vaut {@html math('2n + 1')}.
 	</Remarque>
+	<Exemple lignes={3}>
+		La somme de deux nombres consécutifs est égale au nombre qui suit le double du premier. <br />
+		Soit {@html math('n')} un nombre entier, alors {@html math('(n) + (n+1) = 2n + 1')}
+	</Exemple>
 </Contenu>
+
+<style>
+	.noir {
+		color: var(--noir);
+	}
+</style>
