@@ -39,8 +39,16 @@
 		</Schéma>
 	</Paragraphe>
 	<LigneVide lignes={1.2} />
-	<Item bullet="1. ">Les issues possibles sont : <math><mi>Ω</mi><mo>=</mo><mo>{</mo><mtext>Blanche</mtext><mo>,</mo><mtext>Grise</mtext><mo>}</mo></math></Item>
-	<Item bullet="2. ">Les issues possibles sont : <math><mi>Ω</mi><mo>=</mo><mo>{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>}</mo></math></Item>
+	<Item bullet="1. "
+		>Les issues possibles sont : <math><mi>Ω</mi><mo>=</mo><mo>{'{'}</mo><mtext>Blanche</mtext><mo>,</mo><mtext>Grise</mtext><mo>{'}'}</mo></math
+		></Item
+	>
+	<Item bullet="2. "
+		>Les issues possibles sont : <math
+			><mi>Ω</mi><mo>=</mo><mo>{'{'}</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>{'}'}</mo
+			></math
+		></Item
+	>
 	<Item bullet="3. ">Un événement certain est : « Obtenir une boule »</Item>
 	<Item bullet="4. ">Un événement impossible est : « Obtenir une boule rouge »</Item>
 </Contenu>
