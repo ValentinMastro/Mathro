@@ -2,14 +2,13 @@
 	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Methode, Exemple } from '$lib/cahier/composants/de_cours/*';
 	import { LatexAlign } from '$lib/cahier/composants/math/*';
-	import { math } from 'mathlifier';
 </script>
 
 <Contenu>
 	<SousPartie numero={5} titre="Conversion d'unités" />
 	<Methode>Comment convertir une valeur dans une autre unité ?</Methode>
 	<Exemple>
-		Convertir {@html math('900~000~000')} W en GW <small>(Puissance électrique d'un réacteur nucléaire)</small>
+		Convertir <math><mn>900 000 000</mn></math> W en GW <small>(Puissance électrique d'un réacteur nucléaire)</small>
 	</Exemple>
 
 	<LatexAlign

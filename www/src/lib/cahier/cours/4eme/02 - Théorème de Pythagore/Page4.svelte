@@ -2,7 +2,6 @@
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Schéma, Theoreme } from '$lib/cahier/composants/de_cours/*';
 	import { AngleDroit, Grille, Polygone, Rectangle, TexteSVG } from '$lib/cahier/composants/svg/*';
-	import { math } from 'mathlifier';
 </script>
 
 <Contenu>
@@ -10,7 +9,7 @@
 	<Theoreme nom_du_theoreme="Théorème de Pythagore" lignes={4}>
 		Si un triangle est rectangle, alors le carré de la longueur de l'hypoténuse est égale à la somme des carrés des longueurs des autres côtés.
 		<br />
-		Si {@html math('\\text{ABC}')} est rectangle en {@html math('\\text{B}')}, alors {@html math('\\text{AC}^2 = \\text{AB}^2 + \\text{BC}^2')}.
+		Si <math><mi>ABC</mi></math> est rectangle en <math><mi>B</mi></math>, alors <math><msup><mi>AC</mi><mn>2</mn></msup><mo>=</mo><msup><mi>AB</mi><mn>2</mn></msup><mo>+</mo><msup><mi>BC</mi><mn>2</mn></msup></math>.
 	</Theoreme>
 	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}

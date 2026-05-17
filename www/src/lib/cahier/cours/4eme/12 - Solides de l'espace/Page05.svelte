@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Formule, Schéma } from '$lib/cahier/composants/de_cours/*';
-	import { math } from 'mathlifier';
+
 </script>
 
 <Contenu>
@@ -11,8 +11,8 @@
 		8 sommets.
 	</Definition>
 	<Formule lignes={2}>
-		Si le pavé droit est de longueur {@html math(`\\text{L}`)}, de largeur {@html math('\\ell')}
-		et de hauteur {@html math(`\\text{h}`)}, alors {@html math(`\\text{V}_{\\text{pave}} = \\text{L} \\times \\ell \\times h`)}.
+		Si le pavé droit est de longueur <math><mtext>L</mtext></math>, de largeur <math><mi>ℓ</mi></math>
+		et de hauteur <math><mtext>h</mtext></math>, alors <math><msub><mi>V</mi><mtext>pave</mtext></msub><mo>=</mo><mtext>L</mtext><mo>×</mo><mi>ℓ</mi><mo>×</mo><mi>h</mi></math>.
 	</Formule>
 	<Schéma lignes={8} aspectRatioSVG={1.25}>
 		{#snippet svg()}

@@ -2,9 +2,7 @@
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Schéma, Exemple, Item, Paragraphe } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-	import { LatexAlign } from '$lib/cahier/composants/math/*';
 	import { Fleche, Polygone, Rectangle, Segment, TexteSVG } from '$lib/cahier/composants/svg/*';
-	import { math, alignStar } from 'mathlifier';
 
 	const U = { x: 100, y: 500 };
 	const V = { x: 560, y: 252 };
@@ -72,14 +70,14 @@
 	<Paragraphe nom_du_paragraphe="On sait que : " couleur="bleu" lignes={3}>
 		<Item>les points U, V, X sont alignés</Item>
 		<Item>les points U, W, Y sont alignés</Item>
-		<Item>{@html math('(\\text{WV})//(\\text{XY})')}</Item>
+		<Item><math><mo>(</mo><mi>WV</mi><mo>)</mo><mo>//</mo><mo>(</mo><mi>XY</mi><mo>)</mo></math></Item>
 	</Paragraphe>
 
 	<Paragraphe nom_du_paragraphe="D'après le théorème de Thalès :" couleur="bleu" lignes={6}>
 		<center>
-			{@html math('\\dfrac{\\text{UX}}{\\text{UV}} = \\dfrac{\\text{UY}}{\\text{UW}} = \\dfrac{\\text{XY}}{\\text{VW}}')} <br /><br />
-			{@html math('\\dfrac{8}{4} = \\dfrac{\\text{UY}}{4,5} = \\dfrac{\\text{XY}}{\\text{VW}}')} <br /><br />
-			{@html math('\\text{UY} = \\frac{8 \\times 4,5}{4} = 9 \\quad \\text{(produit en croix)}')}
+			<math><mfrac><mi>UX</mi><mi>UV</mi></mfrac><mo>=</mo><mfrac><mi>UY</mi><mi>UW</mi></mfrac><mo>=</mo><mfrac><mi>XY</mi><mi>VW</mi></mfrac></math> <br /><br />
+			<math><mfrac><mn>8</mn><mn>4</mn></mfrac><mo>=</mo><mfrac><mi>UY</mi><mn>4,5</mn></mfrac><mo>=</mo><mfrac><mi>XY</mi><mi>VW</mi></mfrac></math> <br /><br />
+			<math><mi>UY</mi><mo>=</mo><mfrac><mrow><mn>8</mn><mo>×</mo><mn>4,5</mn></mrow><mn>4</mn></mfrac><mo>=</mo><mn>9</mn><mspace width="1em"/><mtext>(produit en croix)</mtext></math>
 		</center>
 	</Paragraphe>
 </Contenu>

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Exemples, Item } from '$lib/cahier/composants/de_cours/*';
-	import { math } from 'mathlifier';
 </script>
 
 <Contenu>
@@ -18,7 +17,7 @@
 	<Exemples lignes={6}>
 		<Item lignes={3}>
 			Le côté d'un carré et son périmètre sont proportionnels. <br />
-			En effet, {@html math('\\mathcal{P}_{\\text{carré}} = 4 \\times c')} où {@html math('c')} est la longueur du côté.<br />
+			En effet, <math><msub><mi>𝒫</mi><mtext>carré</mtext></msub><mo>=</mo><mn>4</mn><mo>×</mo><mi>c</mi></math> où <math><mi>c</mi></math> est la longueur du côté.<br />
 			4 est ici le coefficient de proportionnalité.
 		</Item>
 		<Item lignes={3}>

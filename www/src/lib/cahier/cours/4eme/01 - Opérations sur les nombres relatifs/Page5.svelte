@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Propriete, Item, Remarque, Exemple } from '$lib/cahier/composants/de_cours/*';
-	import { math } from 'mathlifier';
 </script>
 
 <Contenu>
@@ -17,22 +16,22 @@
 	</Remarque>
 	<Exemple lignes={6}>
 		<Item bullet="">
-			{@html math('\\text{A} = 3 \\times \\colorbox{red}{$(4 + 2)$} \\times 5 - 6 \\div 2')}
+			<math><mi>A</mi><mo>=</mo><mn>3</mn><mo>×</mo><mrow style="background:red;color:white;padding:0 2px"><mo>(</mo><mn>4</mn><mo>+</mo><mn>2</mn><mo>)</mo></mrow><mo>×</mo><mn>5</mn><mo>-</mo><mn>6</mn><mo>÷</mo><mn>2</mn></math>
 		</Item>
 		<Item bullet="">
-			{@html math('\\text{A} = \\colorbox{red}{$3 \\times 6$} \\times 5 - 6 \\div 2')}
+			<math><mi>A</mi><mo>=</mo><mrow style="background:red;color:white;padding:0 2px"><mn>3</mn><mo>×</mo><mn>6</mn></mrow><mo>×</mo><mn>5</mn><mo>-</mo><mn>6</mn><mo>÷</mo><mn>2</mn></math>
 		</Item>
 		<Item bullet="">
-			{@html math('\\text{A} = \\colorbox{red}{$18 \\times 5$} - 6 \\div 2')}
+			<math><mi>A</mi><mo>=</mo><mrow style="background:red;color:white;padding:0 2px"><mn>18</mn><mo>×</mo><mn>5</mn></mrow><mo>-</mo><mn>6</mn><mo>÷</mo><mn>2</mn></math>
 		</Item>
 		<Item bullet="">
-			{@html math('\\text{A} = 90 - \\colorbox{red}{$6 \\div 2$}')}
+			<math><mi>A</mi><mo>=</mo><mn>90</mn><mo>-</mo><mrow style="background:red;color:white;padding:0 2px"><mn>6</mn><mo>÷</mo><mn>2</mn></mrow></math>
 		</Item>
 		<Item bullet="">
-			{@html math('\\text{A} = 90 - 3')}
+			<math><mi>A</mi><mo>=</mo><mn>90</mn><mo>-</mo><mn>3</mn></math>
 		</Item>
 		<Item bullet="">
-			{@html math('\\text{A} = 87')}
+			<math><mi>A</mi><mo>=</mo><mn>87</mn></math>
 		</Item>
 	</Exemple>
 </Contenu>

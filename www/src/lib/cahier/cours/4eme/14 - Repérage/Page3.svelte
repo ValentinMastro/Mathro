@@ -2,17 +2,16 @@
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Item, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-	import { math } from 'mathlifier';
 </script>
 
 <Contenu>
 	<Partie numero={3} titre="Dans l'espace, sur un pavé droit (3 dimensions)" />
 	<Definition lignes={6}>
-		Dans l'espace, un repère orthogonal {@html math('(\\text{O}, \\text{I}, \\text{J}, \\text{K})')} est constitué de plusieurs éléments :
+		Dans l'espace, un repère orthogonal <math><mo>(</mo><mi>O</mi><mo>,</mo><mi>I</mi><mo>,</mo><mi>J</mi><mo>,</mo><mi>K</mi><mo>)</mo></math> est constitué de plusieurs éléments :
 		<Item>un point O appelé origine</Item>
-		<Item>l'axe des abscisses, {@html math('(\\text{OI})')}, avec {@html math('\\text{I} (1,0,0)')}</Item>
-		<Item>l'axe des ordonnées, {@html math('(\\text{OJ})')}, avec {@html math('\\text{J} (0,1,0)')}</Item>
-		<Item>l'axe des cotes, ou des altitudes, {@html math('(\\text{OK})')} avec {@html math('\\text{K} (0,0,1)')}</Item>
+		<Item>l'axe des abscisses, <math><mo>(</mo><mi>OI</mi><mo>)</mo></math>, avec <math><mi>I</mi><mo>(</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo>)</mo></math></Item>
+		<Item>l'axe des ordonnées, <math><mo>(</mo><mi>OJ</mi><mo>)</mo></math>, avec <math><mi>J</mi><mo>(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo>)</mo></math></Item>
+		<Item>l'axe des cotes, ou des altitudes, <math><mo>(</mo><mi>OK</mi><mo>)</mo></math> avec <math><mi>K</mi><mo>(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>)</mo></math></Item>
 	</Definition>
 	<Schéma lignes={10} aspectRatioSVG={1.6}>
 		{#snippet svg()}
@@ -69,14 +68,14 @@
 		{/snippet}
 		{#snippet html()}
 			<LigneVide lignes={1.35} />
-			<Item>{@html math('\\text{A}(2;0;0)')}</Item>
-			<Item>{@html math('\\text{B}(8;0;0)')}</Item>
-			<Item>{@html math('\\text{C}(8;4;0)')}</Item>
-			<Item>{@html math('\\text{D}(2;4;0)')}</Item>
-			<Item>{@html math('\\text{E}(2;0;7)')}</Item>
-			<Item>{@html math('\\text{F}(8;0;7)')}</Item>
-			<Item>{@html math('\\text{G}(8;4;7)')}</Item>
-			<Item>{@html math('\\text{H}(2;4;7)')}</Item>
+			<Item><math><mi>A</mi><mo>(</mo><mn>2</mn><mo>;</mo><mn>0</mn><mo>;</mo><mn>0</mn><mo>)</mo></math></Item>
+			<Item><math><mi>B</mi><mo>(</mo><mn>8</mn><mo>;</mo><mn>0</mn><mo>;</mo><mn>0</mn><mo>)</mo></math></Item>
+			<Item><math><mi>C</mi><mo>(</mo><mn>8</mn><mo>;</mo><mn>4</mn><mo>;</mo><mn>0</mn><mo>)</mo></math></Item>
+			<Item><math><mi>D</mi><mo>(</mo><mn>2</mn><mo>;</mo><mn>4</mn><mo>;</mo><mn>0</mn><mo>)</mo></math></Item>
+			<Item><math><mi>E</mi><mo>(</mo><mn>2</mn><mo>;</mo><mn>0</mn><mo>;</mo><mn>7</mn><mo>)</mo></math></Item>
+			<Item><math><mi>F</mi><mo>(</mo><mn>8</mn><mo>;</mo><mn>0</mn><mo>;</mo><mn>7</mn><mo>)</mo></math></Item>
+			<Item><math><mi>G</mi><mo>(</mo><mn>8</mn><mo>;</mo><mn>4</mn><mo>;</mo><mn>7</mn><mo>)</mo></math></Item>
+			<Item><math><mi>H</mi><mo>(</mo><mn>2</mn><mo>;</mo><mn>4</mn><mo>;</mo><mn>7</mn><mo>)</mo></math></Item>
 		{/snippet}
 	</Schéma>
 </Contenu>

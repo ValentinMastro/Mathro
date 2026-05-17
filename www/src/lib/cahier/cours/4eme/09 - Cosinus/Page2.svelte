@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Definition, Exemple, Paragraphe, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
+	import { Definition, Exemple, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-	import { math, alignStar } from 'mathlifier';
 </script>
 
 <Contenu>
@@ -14,8 +13,8 @@
 	</Definition>
 	<LigneVide />
 	<Exemple lignes={2}>
-		Dans le triangle ABC rectangle en A tel que {@html math('\\text{AB} = 3~\\text{cm}')} et {@html math('\\text{BC} = 5~\\text{cm}')}, calculer
-		l'angle {@html math('\\widehat{\\text{ABC}}')}.
+		Dans le triangle ABC rectangle en A tel que <math><mi>AB</mi><mo>=</mo><mn>3</mn><mspace width="0.2em"/><mi>cm</mi></math> et <math><mi>BC</mi><mo>=</mo><mn>5</mn><mspace width="0.2em"/><mi>cm</mi></math>, calculer
+		l'angle <math><mover><mrow><mi>A</mi><mi>B</mi><mi>C</mi></mrow><mo>^</mo></mover></math>.
 	</Exemple>
 	<LigneVide />
 	<Schéma lignes={10}>
@@ -44,15 +43,19 @@
 			<Texte>Le triangle ABC est rectangle en A, l'hypoténuse est [BC].</Texte>
 			<LigneVide />
 			<Texte>
-				{@html math(`
-                        \\cos(\\widehat{\\text{ABC}}) = \\dfrac{\\text{adj}}{\\text{hyp}}
-                        = \\dfrac{\\text{AB}}{\\text{AC}}
-                        = \\dfrac{3}{5}
-                    `)}
+				<math>
+				<mi>cos</mi><mo>(</mo><mover><mrow><mi>A</mi><mi>B</mi><mi>C</mi></mrow><mo>^</mo></mover><mo>)</mo>
+				<mo>=</mo>
+				<mfrac><mi>adj</mi><mi>hyp</mi></mfrac>
+				<mo>=</mo>
+				<mfrac><mi>AB</mi><mi>AC</mi></mfrac>
+				<mo>=</mo>
+				<mfrac><mn>3</mn><mn>5</mn></mfrac>
+			</math>
 			</Texte>
 			<LigneVide />
 			<Texte>
-				donc {@html math('\\widehat{\\text{ABC}} = \\arccos\\left(\\dfrac{3}{5}\\right) \\approx 53{,}13^\\circ')}
+				donc <math><mover><mrow><mi>A</mi><mi>B</mi><mi>C</mi></mrow><mo>^</mo></mover><mo>=</mo><mi>arccos</mi><mo>(</mo><mfrac><mn>3</mn><mn>5</mn></mfrac><mo>)</mo><mo>≈</mo><mn>53</mn><mo>,</mo><mn>13</mn><mo>°</mo></math>
 			</Texte>
 		{/snippet}
 	</Schéma>

@@ -2,7 +2,6 @@
 	import { Chapitre, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Exemples, Item, Propriete, Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { Angle, Polygone } from '$lib/cahier/composants/svg/*';
-
 	import { math } from 'mathlifier';
 
 	let A = $state({ x: 200, y: 200 });

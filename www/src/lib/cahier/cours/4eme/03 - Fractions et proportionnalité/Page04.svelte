@@ -3,7 +3,7 @@
 	import { Propriete, Exemple, Exemples, Item } from '$lib/cahier/composants/de_cours/*';
 	import { Exercice } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-	import { math, display } from 'mathlifier';
+	import { math } from 'mathlifier';
 </script>
 
 <DansLaMarge>
@@ -15,14 +15,14 @@
 	<SousPartie numero={2} titre="Multiplication et division" />
 	<Propriete lignes={4}>
 		Il suffit de multiplier les numérateurs entre eux et les dénominateurs entre eux.<br />
-		Soient quatre nombres {@html math('a, b, c, d')} avec {@html math('b \\neq 0, d \\neq 0')}.<br />
+		Soient quatre nombres <math><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>d</mi></math> avec <math><mi>b</mi><mo>≠</mo><mn>0</mn><mo>,</mo><mi>d</mi><mo>≠</mo><mn>0</mn></math>.<br />
 		<center>
-			{@html math('\\dfrac{a}{b} \\times \\dfrac{c}{d} = \\dfrac{a \\times c}{b \\times d}')}
+			<math><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>×</mo><mfrac><mi>c</mi><mi>d</mi></mfrac><mo>=</mo><mfrac><mrow><mi>a</mi><mo>×</mo><mi>c</mi></mrow><mrow><mi>b</mi><mo>×</mo><mi>d</mi></mrow></mfrac></math>
 		</center>
 	</Propriete>
 	<Exemple>
 		<center>
-			{@html math('\\dfrac{3}{7} \\times \\dfrac{2}{5} = \\dfrac{3 \\times 2}{7 \\times 5} = \\dfrac{6}{35}')}
+			<math><mfrac><mn>3</mn><mn>7</mn></mfrac><mo>×</mo><mfrac><mn>2</mn><mn>5</mn></mfrac><mo>=</mo><mfrac><mrow><mn>3</mn><mo>×</mo><mn>2</mn></mrow><mrow><mn>7</mn><mo>×</mo><mn>5</mn></mrow></mfrac><mo>=</mo><mfrac><mn>6</mn><mn>35</mn></mfrac></math>
 		</center>
 	</Exemple>
 

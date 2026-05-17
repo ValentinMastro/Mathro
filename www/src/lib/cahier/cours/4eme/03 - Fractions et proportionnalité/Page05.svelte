@@ -3,7 +3,6 @@
 	import { Definition, Exemples, Item, MultiItem } from '$lib/cahier/composants/de_cours/*';
 	import { Exercice } from '$lib/cahier/composants/de_marge/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-	import { math } from 'mathlifier';
 </script>
 
 <DansLaMarge>
@@ -14,36 +13,43 @@
 	<Partie numero={2} titre="Pourcentages" />
 	<SousPartie numero={1} titre="En tant que fraction" />
 	<Definition>
-		{@html math('p\\% = \\dfrac{p}{100}')}
+		<math><mi>p</mi><mo>%</mo><mo>=</mo><mfrac><mi>p</mi><mn>100</mn></mfrac></math>
 	</Definition>
 	<Exemples>
 		<MultiItem colonnes={3}>
 			<Item>
-				{@html math('50 \\% = \\dfrac{50}{100} = \\dfrac{1}{2}')}
+				<math><mn>50</mn><mo>%</mo><mo>=</mo><mfrac><mn>50</mn><mn>100</mn></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></math>
 			</Item>
 			<Item>
-				{@html math('75 \\% = \\dfrac{75}{100} = \\dfrac{3}{4}')}
+				<math><mn>75</mn><mo>%</mo><mo>=</mo><mfrac><mn>75</mn><mn>100</mn></mfrac><mo>=</mo><mfrac><mn>3</mn><mn>4</mn></mfrac></math>
 			</Item>
 			<Item>
-				{@html math('25 \\% = \\dfrac{25}{100} = \\dfrac{1}{4}')}
+				<math><mn>25</mn><mo>%</mo><mo>=</mo><mfrac><mn>25</mn><mn>100</mn></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>4</mn></mfrac></math>
 			</Item>
 		</MultiItem>
 	</Exemples>
 	<SousPartie numero={2} titre="Le pourcentage d'un nombre" />
 	<Definition>
-		Calculer {@html math('p\\% \\text{ de } x')} revient à calculer {@html math('\\dfrac{p}{100} \\times x')}.
+		Calculer <math><mi>p</mi><mo>%</mo><mo> de </mo><mi>x</mi></math> revient à calculer
+		<math><mfrac><mi>p</mi><mn>100</mn></mfrac><mo>×</mo><mi>x</mi></math>.
 	</Definition>
 	<Exemples lignes={5}>
 		<Item lignes={1}>
-			{@html math('25 \\% \\text{ de } 12 = \\dfrac{25}{100} \\times 12 = 3')}
+			<math
+				><mn>25</mn><mo>%</mo><mo> de </mo><mn>12</mn><mo>=</mo><mfrac><mn>25</mn><mn>100</mn></mfrac><mo>×</mo><mn>12</mn><mo>=</mo><mn>3</mn></math
+			>
 		</Item>
 		<LigneVide />
 		<Item lignes={1}>
-			{@html math('60 \\% \\text{ de } 50 = \\dfrac{60}{100} \\times 50 = 30')}
+			<math
+				><mn>60</mn><mo>%</mo><mo> de </mo><mn>50</mn><mo>=</mo><mfrac><mn>60</mn><mn>100</mn></mfrac><mo>×</mo><mn>50</mn><mo>=</mo><mn>30</mn></math
+			>
 		</Item>
 		<LigneVide />
 		<Item lignes={1}>
-			{@html math('75 \\% \\text{ de } 32 = \\dfrac{75}{100} \\times 32 = 24')}
+			<math
+				><mn>75</mn><mo>%</mo><mo> de </mo><mn>32</mn><mo>=</mo><mfrac><mn>75</mn><mn>100</mn></mfrac><mo>×</mo><mn>32</mn><mo>=</mo><mn>24</mn></math
+			>
 		</Item>
 	</Exemples>
 </Contenu>

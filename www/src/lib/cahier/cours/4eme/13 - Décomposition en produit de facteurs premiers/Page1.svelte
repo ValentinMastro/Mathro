@@ -2,7 +2,6 @@
 	import { Chapitre, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Exemples, Item, Paragraphe, Remarque } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-	import { math } from 'mathlifier';
 </script>
 
 <Chapitre titre="Décomposition en facteurs premiers" />
@@ -11,30 +10,30 @@
 	<Partie numero={1} titre="Nombres premiers" />
 	<LigneVide />
 	<Definition lignes={3}>
-		Soient {@html math('a')} et {@html math('b')} deux entiers naturels.<br />
-		On dit que {@html math('a')} est un <i>diviseur</i> de {@html math('b')} si {@html math('b')} est un multiple de {@html math('a')}.<br />
-		Autrement dit, le reste de la division euclidienne de {@html math('b')} par {@html math('a')} est nul.
+		Soient <math><mi>a</mi></math> et <math><mi>b</mi></math> deux entiers naturels.<br />
+		On dit que <math><mi>a</mi></math> est un <i>diviseur</i> de <math><mi>b</mi></math> si <math><mi>b</mi></math> est un multiple de <math><mi>a</mi></math>.<br />
+		Autrement dit, le reste de la division euclidienne de <math><mi>b</mi></math> par <math><mi>a</mi></math> est nul.
 	</Definition>
 	<Exemples lignes={5}>
-		<Item>3 est un diviseur de 15 car {@html math('15 = 3 \\times 5')}.</Item>
-		<Item>7 est un diviseur de 21 car {@html math('21 = 7 \\times 3')}.</Item>
-		<Item>5 est un diviseur de 25 car {@html math('25 = 5 \\times 5')}.</Item>
-		<Item>1 est un diviseur de 43 car {@html math('43 = 1 \\times 43')}.</Item>
-		<Item>78 est un diviseur de 78 car {@html math('78 = 78 \\times 1')}.</Item>
+		<Item>3 est un diviseur de 15 car <math><mn>15</mn><mo>=</mo><mn>3</mn><mo>×</mo><mn>5</mn></math>.</Item>
+		<Item>7 est un diviseur de 21 car <math><mn>21</mn><mo>=</mo><mn>7</mn><mo>×</mo><mn>3</mn></math>.</Item>
+		<Item>5 est un diviseur de 25 car <math><mn>25</mn><mo>=</mo><mn>5</mn><mo>×</mo><mn>5</mn></math>.</Item>
+		<Item>1 est un diviseur de 43 car <math><mn>43</mn><mo>=</mo><mn>1</mn><mo>×</mo><mn>43</mn></math>.</Item>
+		<Item>78 est un diviseur de 78 car <math><mn>78</mn><mo>=</mo><mn>78</mn><mo>×</mo><mn>1</mn></math>.</Item>
 	</Exemples>
 	<Definition lignes={2}>
 		Un entier naturel est <i>premier</i> s'il n'a que deux diviseurs : 1 et lui-même. S'il n'est pas premier, on dit qu'il est <i>composé</i>.
 	</Definition>
 	<Remarque>1 n'est pas considéré comme un nombre premier.</Remarque>
 	<Exemples lignes={3}>
-		<Item>17 est premier, il ne peut s'écrire que {@html math('1 \\times 17')}.</Item>
-		<Item>15 est composé, il peut s'écrire {@html math('1 \\times 15')} ou {@html math('3 \\times 5')}.</Item>
+		<Item>17 est premier, il ne peut s'écrire que <math><mn>1</mn><mo>×</mo><mn>17</mn></math>.</Item>
+		<Item>15 est composé, il peut s'écrire <math><mn>1</mn><mo>×</mo><mn>15</mn></math> ou <math><mn>3</mn><mo>×</mo><mn>5</mn></math>.</Item>
 		<Item>
 			24 est composé, il peut s'écrire
-			{@html math('1 \\times 24')},
-			{@html math('2 \\times 12')},
-			{@html math('3 \\times 8')},
-			{@html math('4 \\times 6')}.
+			<math><mn>1</mn><mo>×</mo><mn>24</mn></math>,
+			<math><mn>2</mn><mo>×</mo><mn>12</mn></math>,
+			<math><mn>3</mn><mo>×</mo><mn>8</mn></math>,
+			<math><mn>4</mn><mo>×</mo><mn>6</mn></math>.
 		</Item>
 	</Exemples>
 	<Paragraphe couleur="rouge" nom_du_paragraphe="À connaître par cœur" lignes={2}>

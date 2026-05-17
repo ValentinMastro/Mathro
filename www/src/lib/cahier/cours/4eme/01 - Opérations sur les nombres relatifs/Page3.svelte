@@ -1,9 +1,6 @@
 <script lang="ts">
 	import { Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Propriete, Item, Exemples } from '$lib/cahier/composants/de_cours/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-
-	import { math } from 'mathlifier';
 </script>
 
 <Contenu>
@@ -19,31 +16,41 @@
 	</Propriete>
 	<Exemples lignes={4}>
 		<Item>
-			{@html math('17 + 5 = 22')}
+			<math><mn>17</mn><mo>+</mo><mn>5</mn><mo>=</mo><mn>22</mn></math>
 		</Item>
 		<Item>
-			{@html math('12 + (-4) = 8')}
+			<math><mn>12</mn><mo>+</mo><mo>(</mo><mo>-</mo><mn>4</mn><mo>)</mo><mo>=</mo><mn>8</mn></math>
 		</Item>
 		<Item>
-			{@html math('-3 + (-6) = -9')}
+			<math><mo>-</mo><mn>3</mn><mo>+</mo><mo>(</mo><mo>-</mo><mn>6</mn><mo>)</mo><mo>=</mo><mo>-</mo><mn>9</mn></math>
 		</Item>
 		<Item>
-			{@html math('-5 + (+14) = 9')}
+			<math><mo>-</mo><mn>5</mn><mo>+</mo><mo>(</mo><mo>+</mo><mn>14</mn><mo>)</mo><mo>=</mo><mn>9</mn></math>
 		</Item>
 	</Exemples>
 	<Propriete>Soustraire un nombre revient à ajouter son opposé</Propriete>
 	<Exemples lignes={4}>
 		<Item>
-			{@html math('124 - 95 = 29')}
+			<math><mn>124</mn><mo>-</mo><mn>95</mn><mo>=</mo><mn>29</mn></math>
 		</Item>
 		<Item>
-			{@html math('12 - (-4) = 12 + (+4) = 16')}
+			<math
+				><mn>12</mn><mo>-</mo><mo>(</mo><mo>-</mo><mn>4</mn><mo>)</mo><mo>=</mo><mn>12</mn><mo>+</mo><mo>(</mo><mo>+</mo><mn>4</mn><mo>)</mo><mo>=</mo
+				><mn>16</mn></math
+			>
 		</Item>
 		<Item>
-			{@html math('-12 - (+6) = -12 + (-6) = -18')}
+			<math
+				><mo>-</mo><mn>12</mn><mo>-</mo><mo>(</mo><mo>+</mo><mn>6</mn><mo>)</mo><mo>=</mo><mo>-</mo><mn>12</mn><mo>+</mo><mo>(</mo><mo>-</mo><mn>6</mn
+				><mo>)</mo><mo>=</mo><mo>-</mo><mn>18</mn></math
+			>
 		</Item>
 		<Item>
-			{@html math('-89 - (-51) = -89 + (+51) = -38')}
+			<math
+				><mo>-</mo><mn>89</mn><mo>-</mo><mo>(</mo><mo>-</mo><mn>51</mn><mo>)</mo><mo>=</mo><mo>-</mo><mn>89</mn><mo>+</mo><mo>(</mo><mo>+</mo><mn
+					>51</mn
+				><mo>)</mo><mo>=</mo><mo>-</mo><mn>38</mn></math
+			>
 		</Item>
 	</Exemples>
 </Contenu>

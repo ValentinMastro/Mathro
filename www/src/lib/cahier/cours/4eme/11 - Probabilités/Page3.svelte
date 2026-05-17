@@ -2,8 +2,6 @@
 	import { Contenu } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Item, Paragraphe, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-	import { math } from 'mathlifier';
-
 	let numero_boules: number[] = [1, 1, 1, 5, 2, 6, 6, 2, 2, 4, 4, 6];
 	let couleur_boules: string[] = ['gray', 'gray', 'white', 'white', 'gray', 'gray', 'white', 'white', 'white', 'gray', 'gray', 'gray'];
 </script>
@@ -41,8 +39,8 @@
 		</Schéma>
 	</Paragraphe>
 	<LigneVide lignes={1.2} />
-	<Item bullet="1. ">Les issues possibles sont : {@html math(`\\Omega = \\{ \\text{Blanche}, \\text{Grise} \\}`)}</Item>
-	<Item bullet="2. ">Les issues possibles sont : {@html math(`\\Omega = \\{ 1, 2, 4, 5, 6 \\}`)}</Item>
+	<Item bullet="1. ">Les issues possibles sont : <math><mi>Ω</mi><mo>=</mo><mo>{</mo><mtext>Blanche</mtext><mo>,</mo><mtext>Grise</mtext><mo>}</mo></math></Item>
+	<Item bullet="2. ">Les issues possibles sont : <math><mi>Ω</mi><mo>=</mo><mo>{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>}</mo></math></Item>
 	<Item bullet="3. ">Un événement certain est : « Obtenir une boule »</Item>
 	<Item bullet="4. ">Un événement impossible est : « Obtenir une boule rouge »</Item>
 </Contenu>

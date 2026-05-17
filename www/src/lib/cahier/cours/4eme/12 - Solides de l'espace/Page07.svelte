@@ -2,7 +2,7 @@
 	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Formule, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Projecteur, Prisme, TexteSVG } from '$lib/cahier/composants/svg/*';
-	import { math } from 'mathlifier';
+
 
 	const projecteur = new Projecteur(0.46);
 </script>
@@ -14,9 +14,7 @@
 		Les autres faces - les faces latérales - sont des rectangles.<br />
 	</Definition>
 	<Formule lignes={2}>
-		Si le prisme droit a une hauteur {@html math(`h`)} et une base d'aire {@html math(`A_{\\text{base}}`)}, alors {@html math(
-			`V_{\\text{prisme}} = A_{\\text{base}} \\times h`
-		)}.
+		Si le prisme droit a une hauteur <math><mi>h</mi></math> et une base d'aire <math><msub><mi>A</mi><mtext>base</mtext></msub></math>, alors <math><msub><mi>V</mi><mtext>prisme</mtext></msub><mo>=</mo><msub><mi>A</mi><mtext>base</mtext></msub><mo>×</mo><mi>h</mi></math>.
 	</Formule>
 	<Schéma lignes={8}>
 		{#snippet svg()}

@@ -15,8 +15,8 @@
 	<SousPartie numero={2} titre="Évaluer une expression" />
 	<Definition lignes={2}>Évaluer une expression signifie remplacer chacune des variables par une valeur numérique donnée.</Definition>
 	<Exemple lignes={3}>
-		Évaluer l'expression {@html math('3 \\times \\textcolor{red}{a} + 8')} en {@html math(`a=${a}`)} <br />
-		signifie remplacer {@html math('a')} par {@html math(a.toLocaleString())}, <br />
+		Évaluer l'expression <math><mn>3</mn><mo>×</mo><mstyle mathcolor="red"><mi>a</mi></mstyle><mo>+</mo><mn>8</mn></math> en {@html math(`a=${a}`)} <br />
+		signifie remplacer <math><mi>a</mi></math> par {@html math(a.toLocaleString())}, <br />
 		ce qui donne : {@html math(`3 \\times \\textcolor{red}{${a < 0 ? '(' + a.toLocaleString() + ')' : a}} + 8 = ${3n * a} + 8 = ${3n * a + 8n}`)}
 	</Exemple>
 </Contenu>

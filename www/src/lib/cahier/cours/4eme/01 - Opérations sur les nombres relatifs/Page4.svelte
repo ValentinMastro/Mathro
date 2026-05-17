@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Propriete, Item, Remarque, Exemples } from '$lib/cahier/composants/de_cours/*';
-	import { math } from 'mathlifier';
 </script>
 
 <Contenu>
@@ -18,10 +17,10 @@
 	<Remarque>Pour les divisions, on utilise la même règle de signes.</Remarque>
 	<Exemples lignes={2}>
 		<Item>
-			{@html math('(-2) \\times (-6) \\times (+6) \\times 4 \\times (-2) = -576')}
+			<math><mo>(</mo><mo>-</mo><mn>2</mn><mo>)</mo><mo>×</mo><mo>(</mo><mo>-</mo><mn>6</mn><mo>)</mo><mo>×</mo><mo>(</mo><mo>+</mo><mn>6</mn><mo>)</mo><mo>×</mo><mn>4</mn><mo>×</mo><mo>(</mo><mo>-</mo><mn>2</mn><mo>)</mo><mo>=</mo><mo>-</mo><mn>576</mn></math>
 		</Item>
 		<Item>
-			{@html math('(-2) \\times (-6) \\times 6 \\times (+4) \\times (-2) \\div (-2) = 288')}
+			<math><mo>(</mo><mo>-</mo><mn>2</mn><mo>)</mo><mo>×</mo><mo>(</mo><mo>-</mo><mn>6</mn><mo>)</mo><mo>×</mo><mn>6</mn><mo>×</mo><mo>(</mo><mo>+</mo><mn>4</mn><mo>)</mo><mo>×</mo><mo>(</mo><mo>-</mo><mn>2</mn><mo>)</mo><mo>÷</mo><mo>(</mo><mo>-</mo><mn>2</mn><mo>)</mo><mo>=</mo><mn>288</mn></math>
 		</Item>
 	</Exemples>
 </Contenu>

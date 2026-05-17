@@ -3,7 +3,7 @@
 	import { Definition, Formule, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import { Cylindre, Projecteur, TexteSVG } from '$lib/cahier/composants/svg/*';
-	import { math } from 'mathlifier';
+
 
 	let slider = $state(0);
 	const projecteur = new Projecteur(0.46);
@@ -50,9 +50,7 @@
 	<SousPartie numero={1} titre="Cylindre de révolution" />
 	<Definition lignes={2}>Un cylindre de révolution est un solide obtenu en faisant tourner un rectangle autour d'un de ses côtés.</Definition>
 	<Formule lignes={2}>
-		Si le cylindre a une hauteur {@html math(`h`)} et un rayon de base {@html math(`r`)}, alors {@html math(
-			`V_{\\text{cylindre}} = \\pi r^2 \\times h`
-		)}.
+		Si le cylindre a une hauteur <math><mi>h</mi></math> et un rayon de base <math><mi>r</mi></math>, alors <math><msub><mi>V</mi><mtext>cylindre</mtext></msub><mo>=</mo><mi>π</mi><msup><mi>r</mi><mn>2</mn></msup><mo>×</mo><mi>h</mi></math>.
 	</Formule>
 	<Schéma lignes={8}>
 		{#snippet svg()}

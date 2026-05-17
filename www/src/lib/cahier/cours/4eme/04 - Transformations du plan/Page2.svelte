@@ -2,8 +2,6 @@
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Schéma, Propriete } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
-	import { math } from 'mathlifier';
-
 	let rotate_1 = $state(180);
 	let rotate_2 = $state(180);
 	let rotate_3 = $state(180);
@@ -43,8 +41,8 @@
 		{/snippet}
 	</Schéma>
 	<Propriete lignes={2}>
-		Si deux points {@html math('\\text{A}')} et {@html math("\\text{A}'")} sont symétriques par rapport à O, <br />
-		alors O est le milieu du segment {@html math("\\text{AA'}")}.
+		Si deux points <math><mi>A</mi></math> et <math><mi>A</mi><mo>′</mo></math> sont symétriques par rapport à O, <br />
+		alors O est le milieu du segment <math><mi>A</mi><mi>A</mi><mo>′</mo></math>.
 	</Propriete>
 	<Schéma lignes={10}>
 		{#snippet svg()}

@@ -3,7 +3,6 @@
 	import { Definition, Exemple, Notation, Item, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
-	import { math } from 'mathlifier';
 </script>
 
 <Chapitre titre="Repérage" />
@@ -44,6 +43,6 @@
 		{/snippet}
 	</Schéma>
 	<Notation>
-		{@html math('\\text{A}(-3) \\quad \\text{B}(-1) \\quad \\text{C}(2) \\quad \\text{D}(4)')}
+		<math><mi>A</mi><mo>(</mo><mo>-</mo><mn>3</mn><mo>)</mo><mspace width="1em"/><mi>B</mi><mo>(</mo><mo>-</mo><mn>1</mn><mo>)</mo><mspace width="1em"/><mi>C</mi><mo>(</mo><mn>2</mn><mo>)</mo><mspace width="1em"/><mi>D</mi><mo>(</mo><mn>4</mn><mo>)</mo></math>
 	</Notation>
 </Contenu>

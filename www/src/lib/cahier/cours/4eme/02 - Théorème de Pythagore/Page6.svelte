@@ -3,7 +3,6 @@
 	import { Schéma, Texte } from '$lib/cahier/composants/de_cours/*';
 	import { LatexAlign } from '$lib/cahier/composants/math/*';
 	import { AngleDroit, Polygone, TexteSVG } from '$lib/cahier/composants/svg/*';
-	import { math } from 'mathlifier';
 </script>
 
 <Contenu>
@@ -21,7 +20,7 @@
 		{/snippet}
 	</Schéma>
 	<Texte lignes={9}>
-		<u>On sait que : </u> le triangle ABC est rectangle en A, l'hypoténuse est {@html math('[\\text{BC}]')}.<br />
+		<u>On sait que : </u> le triangle ABC est rectangle en A, l'hypoténuse est <math><mo>[</mo><mi>BC</mi><mo>]</mo></math>.<br />
 		<u>D'après</u> le théorème de Pythagore <br />
 
 		<LatexAlign

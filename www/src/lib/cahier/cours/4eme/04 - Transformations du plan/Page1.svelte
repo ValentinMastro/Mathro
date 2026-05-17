@@ -2,8 +2,6 @@
 	import { Chapitre, Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Schéma, Propriete } from '$lib/cahier/composants/de_cours/*';
 	import { AngleDroit, Codage, DroiteVerticale, Médiatrice, Point, Polygone, Segment, SegmentHorizontal } from '$lib/cahier/composants/svg/*';
-	import { math } from 'mathlifier';
-
 	let scale_1 = $state(1);
 	let scale_2 = $state(1);
 
@@ -51,8 +49,8 @@
 		{/snippet}
 	</Schéma>
 	<Propriete lignes={2}>
-		Si deux points {@html math('\\text{A}')} et {@html math("\\text{A}'")} sont symétriques par rapport à {@html math('(d)')}, <br />
-		alors {@html math('(d)')} est la médiatrice du segment {@html math("[\\text{AA}']")}.
+		Si deux points <math><mi>A</mi></math> et <math><mi>A</mi><mo>′</mo></math> sont symétriques par rapport à <math><mo>(</mo><mi>d</mi><mo>)</mo></math>, <br />
+		alors <math><mo>(</mo><mi>d</mi><mo>)</mo></math> est la médiatrice du segment <math><mo>[</mo><mi>A</mi><mi>A</mi><mo>′</mo><mo>]</mo></math>.
 	</Propriete>
 
 	<Schéma lignes={8} aspectRatioSVG={2}>

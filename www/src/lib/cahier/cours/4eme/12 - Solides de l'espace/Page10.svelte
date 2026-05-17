@@ -2,7 +2,7 @@
 	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Formule, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Projecteur, Sphere, TexteSVG } from '$lib/cahier/composants/svg/*';
-	import { math } from 'mathlifier';
+
 
 	const projecteur = new Projecteur();
 </script>
@@ -13,8 +13,8 @@
 		Une sphère est un solide de révolution obtenu en faisant tourner un cercle autour de son diamètre. Une boule est une sphère pleine.
 	</Definition>
 	<Formule lignes={2}>
-		Si la sphère a un rayon {@html math(`r`)}, alors <br />
-		{@html math(`A_{\\text{sphere}} = 4 \\times \\pi r^2 \\quad \\text{et} \\quad V_{\\text{boule}} = \\frac{4}{3} \\times \\pi r^3`)}
+		Si la sphère a un rayon <math><mi>r</mi></math>, alors <br />
+		<math><msub><mi>A</mi><mtext>sphere</mtext></msub><mo>=</mo><mn>4</mn><mo>×</mo><mi>π</mi><msup><mi>r</mi><mn>2</mn></msup><mspace width="1em" /><mtext>et</mtext><mspace width="1em" /><msub><mi>V</mi><mtext>boule</mtext></msub><mo>=</mo><mfrac><mn>4</mn><mn>3</mn></mfrac><mo>×</mo><mi>π</mi><msup><mi>r</mi><mn>3</mn></msup></math>
 	</Formule>
 	<Schéma lignes={8} centré>
 		{#snippet svg()}

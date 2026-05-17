@@ -3,7 +3,6 @@
 	import { Theoreme, Item, Exemple, Schéma, Texte, Paragraphe, Remarque } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
-	import { math } from 'mathlifier';
 </script>
 
 <Contenu>
@@ -15,7 +14,7 @@
 		<Item>les points A, C, E sont alignés</Item>
 		<Item
 			>au moins 2 des fractions suivantes sont égales :
-			{@html math('\\frac{\\text{AB}}{\\text{AD}} ; \\frac{\\text{AC}}{\\text{AE}} ; \\frac{\\text{BC}}{\\text{DE}}')}</Item
+			<math><mfrac><mi>AB</mi><mi>AD</mi></mfrac><mo>;</mo><mfrac><mi>AC</mi><mi>AE</mi></mfrac><mo>;</mo><mfrac><mi>BC</mi><mi>DE</mi></mfrac></math></Item
 		>
 		alors les droites (BC) et (DE) sont parallèles.
 	</Theoreme>
@@ -51,10 +50,10 @@
 	</Exemple>
 	<Paragraphe couleur="noir" nom_du_paragraphe="Rédaction" lignes={6}>
 		<u>D'une part :</u>
-		{@html math('\\dfrac{\\text{AC}}{\\text{AE}} = \\dfrac{5{,}1}{6{,}8} = 0{,}75')} <br />
+		<math><mfrac><mi>AC</mi><mi>AE</mi></mfrac><mo>=</mo><mfrac><mn>5,1</mn><mn>6,8</mn></mfrac><mo>=</mo><mn>0,75</mn></math> <br />
 		<LigneVide lignes={0.6} />
 		<u>D'autre part :</u>
-		{@html math('\\dfrac{\\text{AB}}{\\text{AD}} = \\dfrac{3}{4} = 0{,}75')}<br />
+		<math><mfrac><mi>AB</mi><mi>AD</mi></mfrac><mo>=</mo><mfrac><mn>3</mn><mn>4</mn></mfrac><mo>=</mo><mn>0,75</mn></math><br />
 		D'après la réciproque du théorème de Thalès,<br />
 		les droites (BC) et (DE) sont parallèles.
 	</Paragraphe>

@@ -24,10 +24,10 @@
 	</Definition>
 	<Exemples lignes={2}>
 		<Item>
-			Le carré de 12 est 144 car {@html math('12^2 = 12 \\times 12 = 144')}.
+			Le carré de 12 est 144 car <math><msup><mn>12</mn><mn>2</mn></msup><mo>=</mo><mn>12</mn><mo>×</mo><mn>12</mn><mo>=</mo><mn>144</mn></math>.
 		</Item>
 		<Item>
-			Le carré de 8 est 64 car {@html math('8^2 = 8 \\times 8 = 64')}.
+			Le carré de 8 est 64 car <math><msup><mn>8</mn><mn>2</mn></msup><mo>=</mo><mn>8</mn><mo>×</mo><mn>8</mn><mo>=</mo><mn>64</mn></math>.
 		</Item>
 	</Exemples>
 

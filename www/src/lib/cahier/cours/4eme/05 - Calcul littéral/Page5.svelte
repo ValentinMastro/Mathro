@@ -2,7 +2,6 @@
 	import { Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Exemples, Item, Paragraphe } from '$lib/cahier/composants/de_cours/*';
 	import { LatexAlign } from '$lib/cahier/composants/math/*';
-	import { math } from 'mathlifier';
 </script>
 
 <Contenu>
@@ -12,8 +11,8 @@
 		Factoriser une expression littérale, c'est transformer une somme en un produit.
 	</Definition>
 	<Paragraphe couleur="rouge" nom_du_paragraphe="Règle">
-		Soient {@html math('a')}, {@html math('b')} et {@html math('k')} trois nombres :
-		{@html math('k (a + b) = ka + kb')}
+		Soient <math><mi>a</mi></math>, <math><mi>b</mi></math> et <math><mi>k</mi></math> trois nombres :
+		<math><mi>k</mi><mo>(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo>)</mo><mo>=</mo><mi>k</mi><mi>a</mi><mo>+</mo><mi>k</mi><mi>b</mi></math>
 	</Paragraphe>
 	<Exemples lignes={11}>
 		<LatexAlign

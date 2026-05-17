@@ -3,8 +3,6 @@
 	import { Definition, Propriete, Schéma, Notation, Item } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
 	import { Fleche, Polygone } from '$lib/cahier/composants/svg/*';
-	import { math } from 'mathlifier';
-
 	let translation = $state(1);
 	let vecteur = { x: 600, y: 200 };
 
@@ -44,7 +42,7 @@
 	</Schéma>
 	<Notation lignes={4}>
 		<Item>La translation qui transforme A en A'</Item>
-		<Item>La translation de vecteur {@html math("\\overrightarrow{\\text{AA'}}")}</Item>
+		<Item>La translation de vecteur <math><mover><mrow><mi>A</mi><mi>A</mi><mo>′</mo></mrow><mo stretchy="true">→</mo></mover></math></Item>
 		<Item>A' est l'image de A par cette translation</Item>
 		<Item>B' est le translaté de B par la translation qui transforme A en A'</Item>
 	</Notation>

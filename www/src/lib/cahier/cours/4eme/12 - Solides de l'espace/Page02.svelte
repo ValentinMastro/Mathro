@@ -11,8 +11,8 @@
 		La contenance d'un récipient est le volume de liquide qu'il peut contenir.
 	</Definition>
 	<Convention lignes={3} lignes_vides={2}>
-		Dans le Système International d'unités (SI), le volume s'exprime en mètres cubes ({@html math('\\text{m}^3')}).<br />
-		On exprime la contenance en litres ({@html math('\\ell')}), sachant que {@html math('1000 \\ell = 1~\\text{m}^3')}.
+		Dans le Système International d'unités (SI), le volume s'exprime en mètres cubes (<math><msup><mtext>m</mtext><mn>3</mn></msup></math>).<br />
+		On exprime la contenance en litres (<math><mi>ℓ</mi></math>), sachant que <math><mn>1000</mn><mo> </mo><mi>ℓ</mi><mo>=</mo><mn>1</mn><mtext> m</mtext><msup><mrow></mrow><mn>3</mn></msup></math>.
 	</Convention>
 
 	<Texte couleur="noir">
@@ -25,13 +25,13 @@
 			{#each Array(11) as _}
 				<CelluleTableau />
 			{/each}
-			<CelluleTableau>{@html math('\\text{k}\\ell')}</CelluleTableau>
-			<CelluleTableau>{@html math('\\text{h}\\ell')}</CelluleTableau>
-			<CelluleTableau>{@html math('\\text{da}\\ell')}</CelluleTableau>
-			<CelluleTableau>{@html math('\\ell')}</CelluleTableau>
-			<CelluleTableau>{@html math('\\text{d}\\ell')}</CelluleTableau>
-			<CelluleTableau>{@html math('\\text{c}\\ell')}</CelluleTableau>
-			<CelluleTableau>{@html math('\\text{m}\\ell')}</CelluleTableau>
+			<CelluleTableau><math><mtext>kℓ</mtext></math></CelluleTableau>
+			<CelluleTableau><math><mtext>hℓ</mtext></math></CelluleTableau>
+			<CelluleTableau><math><mtext>daℓ</mtext></math></CelluleTableau>
+			<CelluleTableau><math><mi>ℓ</mi></math></CelluleTableau>
+			<CelluleTableau><math><mtext>dℓ</mtext></math></CelluleTableau>
+			<CelluleTableau><math><mtext>cℓ</mtext></math></CelluleTableau>
+			<CelluleTableau><math><mtext>mℓ</mtext></math></CelluleTableau>
 			{#each Array(3) as _}
 				<CelluleTableau />
 			{/each}

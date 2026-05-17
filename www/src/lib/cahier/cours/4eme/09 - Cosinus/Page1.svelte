@@ -3,8 +3,6 @@
 	import { Definition, Schéma, Remarque, Texte } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
-	import { math } from 'mathlifier';
-
 	let index_selection_angle: 0 | 1 = $state(0);
 </script>
 
@@ -16,10 +14,10 @@
 		Angle choisi :
 		<br />
 		<input type="radio" value={0} id="ABC" name="angle_choisi" bind:group={index_selection_angle} />
-		<label for="ABC">{@html math('\\widehat{ABC}')}</label>
+		<label for="ABC"><math><mover><mrow><mi>A</mi><mi>B</mi><mi>C</mi></mrow><mo>^</mo></mover></math></label>
 		<br />
 		<input type="radio" value={1} id="BCA" name="angle_choisi" bind:group={index_selection_angle} />
-		<label for="BCA">{@html math('\\widehat{BCA}')}</label>
+		<label for="BCA"><math><mover><mrow><mi>B</mi><mi>C</mi><mi>A</mi></mrow><mo>^</mo></mover></math></label>
 	</Texte>
 </DansLaMarge>
 

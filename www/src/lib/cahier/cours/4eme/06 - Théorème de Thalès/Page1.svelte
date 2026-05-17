@@ -2,7 +2,6 @@
 	import { Chapitre, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Schéma, Theoreme, Item } from '$lib/cahier/composants/de_cours/*';
 	import { Polygone, TexteSVG } from '$lib/cahier/composants/svg/*';
-	import { math } from 'mathlifier';
 
 	const A = { x: 100, y: 500 };
 	const B = { x: 500, y: 300 };
@@ -25,10 +24,10 @@
 		Si :
 		<Item>les point A, B et D sont alignés</Item>
 		<Item>les points A, C et E sont alignés</Item>
-		<Item>{@html math('(\\text{BC}) // (\\text{DE})')}</Item>
+		<Item><math><mo>(</mo><mi>BC</mi><mo>)</mo><mo>//</mo><mo>(</mo><mi>DE</mi><mo>)</mo></math></Item>
 		alors :
 		<center>
-			{@html math(`\\dfrac{\\text{AD}}{\\text{AB}} = \\dfrac{\\text{AE}}{\\text{AC}} = \\dfrac{\\text{DE}}{\\text{BC}}`)}
+			<math><mfrac><mi>AD</mi><mi>AB</mi></mfrac><mo>=</mo><mfrac><mi>AE</mi><mi>AC</mi></mfrac><mo>=</mo><mfrac><mi>DE</mi><mi>BC</mi></mfrac></math>
 		</center>
 	</Theoreme>
 	<Schéma lignes={10} aspectRatioSVG={2}>

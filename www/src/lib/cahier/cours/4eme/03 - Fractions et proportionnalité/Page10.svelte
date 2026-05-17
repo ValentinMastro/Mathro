@@ -2,7 +2,6 @@
 	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Propriete, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Slider } from '$lib/cahier/composants/de_marge/*';
-	import { math } from 'mathlifier';
 
 	let longueur: number = $state(5);
 </script>
@@ -14,9 +13,9 @@
 <Contenu>
 	<Partie numero={4} titre="Échelles" />
 	<Propriete lignes={3}>
-		Si les longueurs (en mètres) sont multipliées par un facteur {@html math('k')}, <br />
-		alors les aires (en mètres carrés) sont multipliées par {@html math('k^2')}, <br />
-		et les volumes (en mètres cubes) sont multipliés par {@html math('k^3')}.
+		Si les longueurs (en mètres) sont multipliées par un facteur <math><mi>k</mi></math>, <br />
+		alors les aires (en mètres carrés) sont multipliées par <math><msup><mi>k</mi><mn>2</mn></msup></math>, <br />
+		et les volumes (en mètres cubes) sont multipliés par <math><msup><mi>k</mi><mn>3</mn></msup></math>.
 	</Propriete>
 
 	<Schéma lignes={10} aspectRatioSVG={2}>

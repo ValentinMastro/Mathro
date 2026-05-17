@@ -2,8 +2,6 @@
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Exemples, Paragraphe, Propriete, Item } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-
-	import { math } from 'mathlifier';
 </script>
 
 <Contenu>
@@ -17,39 +15,39 @@
 		<Item>quand ce nombre est égal à 1, l'évènement est certain</Item>
 	</Definition>
 	<Paragraphe couleur="noir" nom_du_paragraphe="Conséquence">
-		{@html math(`P(\\emptyset) = 0`)} et {@html math(`P(\\Omega) = 1`)}
+		<math><mi>P</mi><mo>(</mo><mo>∅</mo><mo>)</mo><mo>=</mo><mn>0</mn></math> et <math><mi>P</mi><mo>(</mo><mi>Ω</mi><mo>)</mo><mo>=</mo><mn>1</mn></math>
 	</Paragraphe>
 	<Definition lignes={2}>
 		Soit A un évènement.<br />
-		{@html math(`\\overline{A}`)} est l'évènement contraire de A.
+		<math><mover><mi>A</mi><mo>‾</mo></mover></math> est l'évènement contraire de A.
 	</Definition>
 	<Exemples lignes={6}>
 		<Item lignes={3}>
 			Je lance un dé : <br />
 			A = « Avoir un 6 » <br />
-			{@html math(`\\overline{A}`)} = « Ne pas avoir un 6 » = « Avoir un 1, 2, 3, 4 ou 5 »
+			<math><mover><mi>A</mi><mo>‾</mo></mover></math> = « Ne pas avoir un 6 » = « Avoir un 1, 2, 3, 4 ou 5 »
 		</Item>
 		<Item lignes={3}>
 			Je tire au sort une lettre dans l'alphabet : <br />
 			B = « Avoir une consonne » <br />
-			{@html math(`\\overline{B}`)} = « Ne pas avoir une consonne » = « Avoir une voyelle »
+			<math><mover><mi>B</mi><mo>‾</mo></mover></math> = « Ne pas avoir une consonne » = « Avoir une voyelle »
 		</Item>
 	</Exemples>
 	<Propriete lignes={3}>
 		Soit A un évènement.<br />
-		{@html math(`p(A)+p(\\overline{A}) = 1`)}<br />
-		{@html math(`p(\\overline{A}) = 1 - p(A)`)}
+		<math><mi>p</mi><mo>(</mo><mi>A</mi><mo>)</mo><mo>+</mo><mi>p</mi><mo>(</mo><mover><mi>A</mi><mo>‾</mo></mover><mo>)</mo><mo>=</mo><mn>1</mn></math><br />
+		<math><mi>p</mi><mo>(</mo><mover><mi>A</mi><mo>‾</mo></mover><mo>)</mo><mo>=</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo>(</mo><mi>A</mi><mo>)</mo></math>
 	</Propriete>
 	<Exemples lignes={4.8}>
 		<u>Expérience aléatoire : </u> Tirer une carte dans un jeu de 32 cartes <br />
 		<u>Question : </u>
-		{@html math(`p(\\text{ne pas avoir un valet ou une dame}) = ?`)}<br />
+		<math><mi>p</mi><mo>(</mo><mtext>ne pas avoir un valet ou une dame</mtext><mo>)</mo><mo>=</mo><mo>?</mo></math><br />
 		<u>Solution : </u>
 		<Item>
-			{@html math(`p(\\text{avoir un valet ou une dame}) = \\dfrac{8}{32}`)}
+			<math><mi>p</mi><mo>(</mo><mtext>avoir un valet ou une dame</mtext><mo>)</mo><mo>=</mo><mfrac><mn>8</mn><mn>32</mn></mfrac></math>
 		</Item>
 		<Item>
-			{@html math(`p(\\text{ne pas avoir un valet ou une dame}) = 1 - \\dfrac{8}{32} = \\dfrac{32}{32} - \\dfrac{8}{32} = \\dfrac{24}{32}`)}
+			<math><mi>p</mi><mo>(</mo><mtext>ne pas avoir un valet ou une dame</mtext><mo>)</mo><mo>=</mo><mn>1</mn><mo>−</mo><mfrac><mn>8</mn><mn>32</mn></mfrac><mo>=</mo><mfrac><mn>32</mn><mn>32</mn></mfrac><mo>−</mo><mfrac><mn>8</mn><mn>32</mn></mfrac><mo>=</mo><mfrac><mn>24</mn><mn>32</mn></mfrac></math>
 		</Item>
 	</Exemples>
 </Contenu>
