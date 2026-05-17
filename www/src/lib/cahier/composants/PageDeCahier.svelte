@@ -60,7 +60,7 @@
 		display: flex;
 		flex-direction: column;
 		background-color: white;
-		font-family: 'Noto Serif';
+		font-family: 'Arial', sans-serif;
 
 		--bleu: rgb(0, 0, 138);
 		--rouge: rgb(225, 0, 0);
@@ -87,11 +87,5 @@
 		bottom: 1%;
 		left: 1%;
 		font-size: calc(var(--taille-page) / 60);
-	}
-	:global(mfrac) {
-		margin-bottom: -0.35em;
-	}
-	:global(mstyle[displaystyle='true'] mfrac) {
-		margin-bottom: -0.5em;
 	}
 </style>
