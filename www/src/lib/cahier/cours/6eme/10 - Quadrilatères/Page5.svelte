@@ -14,7 +14,10 @@
 
 <Contenu>
 	<SousPartie numero={4} titre="Trapèze" />
-	<Definition>Un <i>trapèze</i> est un quadrilatère ayant deux côtés parallèles.</Definition>
+	<Definition>
+		Un <i>trapèze</i>
+		 est un quadrilatère ayant deux côtés parallèles.
+	</Definition>
 	<Exemple />
 	<Schéma lignes={5} aspectRatioSVG={20 / 5}>
 		{#snippet svg()}
@@ -26,7 +29,8 @@
 	</Texte>
 
 	<Definition>
-		Un <i>trapèze rectangle</i> est un trapèze possédant deux angles droits.
+		Un <i>trapèze rectangle</i>
+		 est un trapèze possédant deux angles droits.
 	</Definition>
 	<Exemple />
 	<Schéma lignes={5} aspectRatioSVG={20 / 5}>
@@ -37,7 +41,8 @@
 		{/snippet}
 	</Schéma>
 	<Texte couleur="bleu" lignes={2}>
-		{@html math('\\text{ABED}')} a deux côtés parallèles : {@html math('(\\text{AB}) // (\\text{ED})')} <br />
+		{@html math('\\text{ABED}')} a deux côtés parallèles : {@html math('(\\text{AB}) // (\\text{ED})')}
+		<br />
 		et deux angles droits : {@html math('\\widehat{\\text{ABE}} = \\widehat{\\text{BED}} = 90^\\circ')}
 	</Texte>
 </Contenu>

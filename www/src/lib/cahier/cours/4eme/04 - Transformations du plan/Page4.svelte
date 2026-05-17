@@ -6,8 +6,11 @@
 <Contenu>
 	<Partie numero={4} titre="Propriété de conservation" />
 	<Propriete lignes={12}>
-		La symétrie axiale, la symétrie centrale et la translation sont des <i>isométries du plan</i>, ce qui signifie que : <br />
-		→ la nature des objets est conservée <br />
+		La symétrie axiale, la symétrie centrale et la translation sont des <i>isométries du plan</i>
+		, ce qui signifie que :
+		<br />
+		→ la nature des objets est conservée
+		<br />
 		<div class="bleu">(Le symétrique d'un carré est un carré.)</div>
 
 		→ les longueurs sont conservées

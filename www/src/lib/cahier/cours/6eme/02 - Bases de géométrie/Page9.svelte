@@ -9,7 +9,8 @@
 <Contenu>
 	<SousPartie numero={3} titre="Construire une médiatrice" />
 	<Definition lignes={2}>
-		La <i>médiatrice</i> d'un segment est la droite perpendiculaire à ce segment qui passe par son milieu.
+		La <i>médiatrice</i>
+		 d'un segment est la droite perpendiculaire à ce segment qui passe par son milieu.
 	</Definition>
 	<Paragraphe nom_du_paragraphe="Consigne">
 		Tracer {@html math('\\color{red} (m)')} la médiatrice du segment {@html math('[\\text{AB}]')}.
@@ -53,7 +54,8 @@
 			Avec la règle, déterminer {@html math('\\textcolor{darkgreen}{\\text{I}}')} le milieu du segment {@html math('[\\text{AB}]')}.
 		</Item>
 		<Item lignes={2}>
-			Avec l'équerre, tracer la droite {@html math('\\color{red} (m)')} perpendiculaire à {@html math('[\\text{AB}]')} <br />
+			Avec l'équerre, tracer la droite {@html math('\\color{red} (m)')} perpendiculaire à {@html math('[\\text{AB}]')}
+			<br />
 			passant par {@html math('\\textcolor{darkgreen}{\\text{I}}')}.
 		</Item>
 	</Protocole>

@@ -13,9 +13,26 @@
 <Contenu>
 	<Partie numero={4} titre="Échelles" />
 	<Propriete lignes={3}>
-		Si les longueurs (en mètres) sont multipliées par un facteur <math><mi>k</mi></math>, <br />
-		alors les aires (en mètres carrés) sont multipliées par <math><msup><mi>k</mi><mn>2</mn></msup></math>, <br />
-		et les volumes (en mètres cubes) sont multipliés par <math><msup><mi>k</mi><mn>3</mn></msup></math>.
+		Si les longueurs (en mètres) sont multipliées par un facteur <math><mi>k</mi></math>
+		,
+		<br />
+		alors les aires (en mètres carrés) sont multipliées par
+		<math>
+			<msup>
+				<mi>k</mi>
+				<mn>2</mn>
+			</msup>
+		</math>
+		,
+		<br />
+		et les volumes (en mètres cubes) sont multipliés par
+		<math>
+			<msup>
+				<mi>k</mi>
+				<mn>3</mn>
+			</msup>
+		</math>
+		.
 	</Propriete>
 
 	<Schéma lignes={10} aspectRatioSVG={2}>

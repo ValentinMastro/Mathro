@@ -16,41 +16,127 @@
 	</Propriete>
 	<Exemples lignes={4}>
 		<Item>
-			<math><mn>17</mn><mo>+</mo><mn>5</mn><mo>=</mo><mn>22</mn></math>
+			<math>
+				<mn>17</mn>
+				<mo>+</mo>
+				<mn>5</mn>
+				<mo>=</mo>
+				<mn>22</mn>
+			</math>
 		</Item>
 		<Item>
-			<math><mn>12</mn><mo>+</mo><mo>(</mo><mo>-</mo><mn>4</mn><mo>)</mo><mo>=</mo><mn>8</mn></math>
+			<math>
+				<mn>12</mn>
+				<mo>+</mo>
+				<mo>(</mo>
+				<mo>-</mo>
+				<mn>4</mn>
+				<mo>)</mo>
+				<mo>=</mo>
+				<mn>8</mn>
+			</math>
 		</Item>
 		<Item>
-			<math><mo>-</mo><mn>3</mn><mo>+</mo><mo>(</mo><mo>-</mo><mn>6</mn><mo>)</mo><mo>=</mo><mo>-</mo><mn>9</mn></math>
+			<math>
+				<mo>-</mo>
+				<mn>3</mn>
+				<mo>+</mo>
+				<mo>(</mo>
+				<mo>-</mo>
+				<mn>6</mn>
+				<mo>)</mo>
+				<mo>=</mo>
+				<mo>-</mo>
+				<mn>9</mn>
+			</math>
 		</Item>
 		<Item>
-			<math><mo>-</mo><mn>5</mn><mo>+</mo><mo>(</mo><mo>+</mo><mn>14</mn><mo>)</mo><mo>=</mo><mn>9</mn></math>
+			<math>
+				<mo>-</mo>
+				<mn>5</mn>
+				<mo>+</mo>
+				<mo>(</mo>
+				<mo>+</mo>
+				<mn>14</mn>
+				<mo>)</mo>
+				<mo>=</mo>
+				<mn>9</mn>
+			</math>
 		</Item>
 	</Exemples>
 	<Propriete>Soustraire un nombre revient à ajouter son opposé</Propriete>
 	<Exemples lignes={4}>
 		<Item>
-			<math><mn>124</mn><mo>-</mo><mn>95</mn><mo>=</mo><mn>29</mn></math>
+			<math>
+				<mn>124</mn>
+				<mo>-</mo>
+				<mn>95</mn>
+				<mo>=</mo>
+				<mn>29</mn>
+			</math>
 		</Item>
 		<Item>
-			<math
-				><mn>12</mn><mo>-</mo><mo>(</mo><mo>-</mo><mn>4</mn><mo>)</mo><mo>=</mo><mn>12</mn><mo>+</mo><mo>(</mo><mo>+</mo><mn>4</mn><mo>)</mo><mo>=</mo
-				><mn>16</mn></math
-			>
+			<math>
+				<mn>12</mn>
+				<mo>-</mo>
+				<mo>(</mo>
+				<mo>-</mo>
+				<mn>4</mn>
+				<mo>)</mo>
+				<mo>=</mo>
+				<mn>12</mn>
+				<mo>+</mo>
+				<mo>(</mo>
+				<mo>+</mo>
+				<mn>4</mn>
+				<mo>)</mo>
+				<mo>=</mo>
+				<mn>16</mn>
+			</math>
 		</Item>
 		<Item>
-			<math
-				><mo>-</mo><mn>12</mn><mo>-</mo><mo>(</mo><mo>+</mo><mn>6</mn><mo>)</mo><mo>=</mo><mo>-</mo><mn>12</mn><mo>+</mo><mo>(</mo><mo>-</mo><mn>6</mn
-				><mo>)</mo><mo>=</mo><mo>-</mo><mn>18</mn></math
-			>
+			<math>
+				<mo>-</mo>
+				<mn>12</mn>
+				<mo>-</mo>
+				<mo>(</mo>
+				<mo>+</mo>
+				<mn>6</mn>
+				<mo>)</mo>
+				<mo>=</mo>
+				<mo>-</mo>
+				<mn>12</mn>
+				<mo>+</mo>
+				<mo>(</mo>
+				<mo>-</mo>
+				<mn>6</mn>
+				<mo>)</mo>
+				<mo>=</mo>
+				<mo>-</mo>
+				<mn>18</mn>
+			</math>
 		</Item>
 		<Item>
-			<math
-				><mo>-</mo><mn>89</mn><mo>-</mo><mo>(</mo><mo>-</mo><mn>51</mn><mo>)</mo><mo>=</mo><mo>-</mo><mn>89</mn><mo>+</mo><mo>(</mo><mo>+</mo><mn
-					>51</mn
-				><mo>)</mo><mo>=</mo><mo>-</mo><mn>38</mn></math
-			>
+			<math>
+				<mo>-</mo>
+				<mn>89</mn>
+				<mo>-</mo>
+				<mo>(</mo>
+				<mo>-</mo>
+				<mn>51</mn>
+				<mo>)</mo>
+				<mo>=</mo>
+				<mo>-</mo>
+				<mn>89</mn>
+				<mo>+</mo>
+				<mo>(</mo>
+				<mo>+</mo>
+				<mn>51</mn>
+				<mo>)</mo>
+				<mo>=</mo>
+				<mo>-</mo>
+				<mn>38</mn>
+			</math>
 		</Item>
 	</Exemples>
 </Contenu>

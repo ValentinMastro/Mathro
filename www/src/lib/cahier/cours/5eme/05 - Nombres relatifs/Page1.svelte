@@ -10,12 +10,17 @@
 <Contenu apres_un_titre>
 	<Partie numero={1} titre="Positif et négatif" />
 	<Definition lignes={2}>
-		Un nombre <i>positif</i> est supérieur ou égal à O. <br />
-		Un nombre <i>négatif</i> est inférieur ou égal à 0.
+		Un nombre <i>positif</i>
+		est supérieur ou égal à O.
+		<br />
+		Un nombre
+		<i>négatif</i>
+		 est inférieur ou égal à 0.
 	</Definition>
 	<Remarque>0 est à la fois positif et négatif.</Remarque>
 	<Notation lignes={2}>
-		Un nombre positif est noté avec un signe {@html math('+')} devant, ou sans signe. <br />
+		Un nombre positif est noté avec un signe {@html math('+')} devant, ou sans signe.
+		<br />
 		Un nombre négatif est noté avec un signe {@html math('-')} devant.
 	</Notation>
 	<Exemples lignes={4}>
@@ -33,12 +38,18 @@
 		</Item>
 	</Exemples>
 	<Definition lignes={4}>
-		Un nombre <i>relatif</i> est un nombre positif ou négatif. <br />
+		Un nombre <i>relatif</i>
+		est un nombre positif ou négatif.
+		<br />
 		Il s'écrit avec 2 éléments :
 		<Item>
-			son <i>signe</i> : {@html math('+')} ou {@html math('-')}
+			son <i>signe</i>
+			: {@html math('+')} ou {@html math('-')}
 		</Item>
-		<Item>sa <i>valeur absolue</i> : un nombre positif ou nul</Item>
+		<Item>
+			sa <i>valeur absolue</i>
+			 : un nombre positif ou nul
+		</Item>
 	</Definition>
 	<Exemple>
 		Dans le nombre {@html math('-123')}, le signe est {@html math('-')} et la valeur absolue est {@html math('123')}.

@@ -46,8 +46,43 @@
 
 <Contenu>
 	<Propriete lignes={2}>
-		Soient deux nombres <math><mi>a</mi></math> et <math><mi>b</mi></math> avec <math><mi>b</mi><mo>≠</mo><mn>0</mn></math>. Soit <math><mi>k</mi><mo>≠</mo><mn>0</mn></math>.<br />
-		Alors <math><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>=</mo><mfrac><mrow><mi>k</mi><mo>×</mo><mi>a</mi></mrow><mrow><mi>k</mi><mo>×</mo><mi>b</mi></mrow></mfrac></math>
+		Soient deux nombres <math><mi>a</mi></math>
+		et
+		<math><mi>b</mi></math>
+		avec
+		<math>
+			<mi>b</mi>
+			<mo>≠</mo>
+			<mn>0</mn>
+		</math>
+		. Soit
+		<math>
+			<mi>k</mi>
+			<mo>≠</mo>
+			<mn>0</mn>
+		</math>
+		.
+		<br />
+		Alors
+		<math>
+			<mfrac>
+				<mi>a</mi>
+				<mi>b</mi>
+			</mfrac>
+			<mo>=</mo>
+			<mfrac>
+				<mrow>
+					<mi>k</mi>
+					<mo>×</mo>
+					<mi>a</mi>
+				</mrow>
+				<mrow>
+					<mi>k</mi>
+					<mo>×</mo>
+					<mi>b</mi>
+				</mrow>
+			</mfrac>
+		</math>
 	</Propriete>
 
 	<Exemples>

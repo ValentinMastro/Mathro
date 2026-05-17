@@ -6,7 +6,29 @@
 
 <Contenu>
 	<Exemple lignes={2}>
-		Dans le triangle DEF rectangle en E, on a <math><mi>DE</mi><mo>=</mo><mn>6</mn><mspace width="0.2em"/><mi>cm</mi></math> et <math><mover><mrow><mi>E</mi><mi>D</mi><mi>F</mi></mrow><mo>^</mo></mover><mo>=</mo><mn>30</mn><mo>°</mo></math>.<br />
+		Dans le triangle DEF rectangle en E, on a <math>
+			<mi>DE</mi>
+			<mo>=</mo>
+			<mn>6</mn>
+			<mspace width="0.2em" />
+			<mi>cm</mi>
+		</math>
+		et
+		<math>
+			<mover>
+				<mrow>
+					<mi>E</mi>
+					<mi>D</mi>
+					<mi>F</mi>
+				</mrow>
+				<mo>^</mo>
+			</mover>
+			<mo>=</mo>
+			<mn>30</mn>
+			<mo>°</mo>
+		</math>
+		.
+		<br />
 		Calculer la longueur DF.
 	</Exemple>
 	<Schéma lignes={10} aspectRatioSVG={0.9}>
@@ -36,34 +58,74 @@
 			<LigneVide lignes={0.5} />
 			<Texte>
 				<math>
-				<mi>cos</mi><mo>(</mo><mover><mrow><mi>E</mi><mi>D</mi><mi>F</mi></mrow><mo>^</mo></mover><mo>)</mo>
-				<mo>=</mo>
-				<mfrac><mi>adj</mi><mi>hyp</mi></mfrac>
-				<mo>=</mo>
-				<mfrac><mi>DE</mi><mi>DF</mi></mfrac>
-			</math>
+					<mi>cos</mi>
+					<mo>(</mo>
+					<mover>
+						<mrow>
+							<mi>E</mi>
+							<mi>D</mi>
+							<mi>F</mi>
+						</mrow>
+						<mo>^</mo>
+					</mover>
+					<mo>)</mo>
+					<mo>=</mo>
+					<mfrac>
+						<mi>adj</mi>
+						<mi>hyp</mi>
+					</mfrac>
+					<mo>=</mo>
+					<mfrac>
+						<mi>DE</mi>
+						<mi>DF</mi>
+					</mfrac>
+				</math>
 			</Texte>
 			<LigneVide lignes={0.5} />
 			<Texte>Remplaçons les valeurs connues.</Texte>
 			<LigneVide />
 			<Texte>
 				<math>
-				<mfrac>
-					<mrow><mi>cos</mi><mo>(</mo><mn>30</mn><mo>°</mo><mo>)</mo></mrow>
-					<mstyle mathcolor="red"><mn>1</mn></mstyle>
-				</mfrac>
-				<mo>=</mo>
-				<mfrac><mn>6</mn><mi>DF</mi></mfrac>
-			</math>
+					<mfrac>
+						<mrow>
+							<mi>cos</mi>
+							<mo>(</mo>
+							<mn>30</mn>
+							<mo>°</mo>
+							<mo>)</mo>
+						</mrow>
+						<mstyle mathcolor="red"><mn>1</mn></mstyle>
+					</mfrac>
+					<mo>=</mo>
+					<mfrac>
+						<mn>6</mn>
+						<mi>DF</mi>
+					</mfrac>
+				</math>
 			</Texte>
 			<LigneVide />
 			<Texte>
 				<math>
-				<mi>DF</mi><mo>=</mo><mn>6</mn>
-				<mstyle mathcolor="red"><mo>×</mo><mn>1</mn></mstyle>
-				<mo>÷</mo><mi>cos</mi><mo>(</mo><mn>30</mn><mo>°</mo><mo>)</mo>
-				<mo>≈</mo><mn>6</mn><mo>,</mo><mn>93</mn><mspace width="0.2em"/><mi>cm</mi>
-			</math>
+					<mi>DF</mi>
+					<mo>=</mo>
+					<mn>6</mn>
+					<mstyle mathcolor="red">
+						<mo>×</mo>
+						<mn>1</mn>
+					</mstyle>
+					<mo>÷</mo>
+					<mi>cos</mi>
+					<mo>(</mo>
+					<mn>30</mn>
+					<mo>°</mo>
+					<mo>)</mo>
+					<mo>≈</mo>
+					<mn>6</mn>
+					<mo>,</mo>
+					<mn>93</mn>
+					<mspace width="0.2em" />
+					<mi>cm</mi>
+				</math>
 			</Texte>
 		{/snippet}
 	</Schéma>

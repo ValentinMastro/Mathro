@@ -43,11 +43,13 @@
 	</Propriete>
 	<Exemples lignes={4}>
 		<Item lignes={2}>
-			Le triangle IJK avec {@html math('\\text{IJ} = 7~\\text{cm}, \\text{IK} = 5~\\text{cm}, \\text{JK} = 3~\\text{cm}')} peut être <br />
+			Le triangle IJK avec {@html math('\\text{IJ} = 7~\\text{cm}, \\text{IK} = 5~\\text{cm}, \\text{JK} = 3~\\text{cm}')} peut être
+			<br />
 			construit, car {@html math('7 \\leqslant 5 + 3')}.
 		</Item>
 		<Item lignes={2}>
-			Le triangle MNP avec {@html math('\\text{MN} = 8~\\text{cm}, \\text{MP} = 6~\\text{cm}, \\text{NP} = 1~\\text{cm}')} ne peut <br />
+			Le triangle MNP avec {@html math('\\text{MN} = 8~\\text{cm}, \\text{MP} = 6~\\text{cm}, \\text{NP} = 1~\\text{cm}')} ne peut
+			<br />
 			pas être construit, car {@html math('8 > 6 + 1')}.
 		</Item>
 	</Exemples>

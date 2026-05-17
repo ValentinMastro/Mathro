@@ -24,10 +24,35 @@
 		Si :
 		<Item>les point A, B et D sont alignés</Item>
 		<Item>les points A, C et E sont alignés</Item>
-		<Item><math><mo>(</mo><mi>BC</mi><mo>)</mo><mo>//</mo><mo>(</mo><mi>DE</mi><mo>)</mo></math></Item>
+		<Item>
+			<math>
+				<mo>(</mo>
+				<mi>BC</mi>
+				<mo>)</mo>
+				<mo>//</mo>
+				<mo>(</mo>
+				<mi>DE</mi>
+				<mo>)</mo>
+			</math>
+		</Item>
 		alors :
 		<center>
-			<math><mfrac><mi>AD</mi><mi>AB</mi></mfrac><mo>=</mo><mfrac><mi>AE</mi><mi>AC</mi></mfrac><mo>=</mo><mfrac><mi>DE</mi><mi>BC</mi></mfrac></math>
+			<math>
+				<mfrac>
+					<mi>AD</mi>
+					<mi>AB</mi>
+				</mfrac>
+				<mo>=</mo>
+				<mfrac>
+					<mi>AE</mi>
+					<mi>AC</mi>
+				</mfrac>
+				<mo>=</mo>
+				<mfrac>
+					<mi>DE</mi>
+					<mi>BC</mi>
+				</mfrac>
+			</math>
 		</center>
 	</Theoreme>
 	<Schéma lignes={10} aspectRatioSVG={2}>

@@ -2,7 +2,6 @@
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Item, Schéma, Notation, Exemples } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-
 </script>
 
 <Contenu>
@@ -30,10 +29,28 @@
 	</Schéma>
 
 	<Notation lignes={2} lignes_vides={0}>
-		<math><mo>(</mo><mi>O</mi><mo>;</mo><mi>x</mi><mo>;</mo><mi>y</mi><mo>)</mo></math> est le repère orthogonal constitué de l'origine <math><mi>O</mi></math>, de l'axe des abscisses <math><mi>x</mi></math> et de l'axe des ordonnées <math><mi>y</mi></math>.
+		<math>
+			<mo>(</mo>
+			<mi>O</mi>
+			<mo>;</mo>
+			<mi>x</mi>
+			<mo>;</mo>
+			<mi>y</mi>
+			<mo>)</mo>
+		</math>
+		est le repère orthogonal constitué de l'origine
+		<math><mi>O</mi></math>
+		, de l'axe des abscisses
+		<math><mi>x</mi></math>
+		et de l'axe des ordonnées
+		<math><mi>y</mi></math>
+		.
 	</Notation>
 	<Definition lignes={3} lignes_vides={0}>
-		À chaque point du plan, on associe deux nombres que l'on appellent ses coordonnées : son <i>abscisse</i> (horizontale) et son <i>ordonnée</i> (verticale).
+		À chaque point du plan, on associe deux nombres que l'on appellent ses coordonnées : son <i>abscisse</i>
+		(horizontale) et son
+		<i>ordonnée</i>
+		 (verticale).
 	</Definition>
 	<Schéma lignes={10}>
 		{#snippet svg()}
@@ -60,10 +77,48 @@
 		{/snippet}
 		{#snippet html()}
 			<Exemples lignes={4}>
-				<Item><math><mi>T</mi><mo>(</mo><mo>-</mo><mn>2</mn><mo>;</mo><mo>-</mo><mn>1</mn><mo>)</mo></math></Item>
-				<Item><math><mi>U</mi><mo>(</mo><mn>3</mn><mo>;</mo><mn>4</mn><mo>)</mo></math></Item>
-				<Item><math><mi>V</mi><mo>(</mo><mn>0</mn><mo>;</mo><mn>2</mn><mo>)</mo></math></Item>
-				<Item><math><mi>W</mi><mo>(</mo><mn>4</mn><mo>;</mo><mn>0</mn><mo>)</mo></math></Item>
+				<Item>
+					<math>
+						<mi>T</mi>
+						<mo>(</mo>
+						<mo>-</mo>
+						<mn>2</mn>
+						<mo>;</mo>
+						<mo>-</mo>
+						<mn>1</mn>
+						<mo>)</mo>
+					</math>
+				</Item>
+				<Item>
+					<math>
+						<mi>U</mi>
+						<mo>(</mo>
+						<mn>3</mn>
+						<mo>;</mo>
+						<mn>4</mn>
+						<mo>)</mo>
+					</math>
+				</Item>
+				<Item>
+					<math>
+						<mi>V</mi>
+						<mo>(</mo>
+						<mn>0</mn>
+						<mo>;</mo>
+						<mn>2</mn>
+						<mo>)</mo>
+					</math>
+				</Item>
+				<Item>
+					<math>
+						<mi>W</mi>
+						<mo>(</mo>
+						<mn>4</mn>
+						<mo>;</mo>
+						<mn>0</mn>
+						<mo>)</mo>
+					</math>
+				</Item>
 			</Exemples>
 		{/snippet}
 	</Schéma>

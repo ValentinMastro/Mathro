@@ -128,9 +128,9 @@
 						fill="lightgray"
 						stroke="black"
 					/>
-					<text x={100 + (i + 0.5) * graduation_horizontale} y={950 - (900 * valeur) / 18000 - 10} class="textp36"
-						>{valeur.toLocaleString('fr-FR')}</text
-					>
+					<text x={100 + (i + 0.5) * graduation_horizontale} y={950 - (900 * valeur) / 18000 - 10} class="textp36">
+						{valeur.toLocaleString('fr-FR')}
+					</text>
 				{/if}
 			{/each}
 			<!-- Graduations verticales -->

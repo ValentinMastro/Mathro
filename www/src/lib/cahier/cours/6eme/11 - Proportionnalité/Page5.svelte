@@ -9,7 +9,9 @@
 	<Partie numero={3} titre="Échelles" />
 	<Definition lignes={4}>
 		Sur une carte, une échelle est le rapport entre une distance sur la <br />
-		carte et la distance réelle correspondante. <br /><br />
+		carte et la distance réelle correspondante.
+		<br />
+		<br />
 		<div class="center">{@html math('\\text{échelle} = \\dfrac{\\text{distance sur la carte}}{\\text{distance réelle}}')}</div>
 	</Definition>
 

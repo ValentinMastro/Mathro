@@ -16,22 +16,86 @@
 	</Remarque>
 	<Exemple lignes={6}>
 		<Item bullet="">
-			<math><mi>A</mi><mo>=</mo><mn>3</mn><mo>×</mo><mrow style="background:red;color:white;padding:0 2px"><mo>(</mo><mn>4</mn><mo>+</mo><mn>2</mn><mo>)</mo></mrow><mo>×</mo><mn>5</mn><mo>-</mo><mn>6</mn><mo>÷</mo><mn>2</mn></math>
+			<math>
+				<mi>A</mi>
+				<mo>=</mo>
+				<mn>3</mn>
+				<mo>×</mo>
+				<mrow style="background:red;color:white;padding:0 2px">
+					<mo>(</mo>
+					<mn>4</mn>
+					<mo>+</mo>
+					<mn>2</mn>
+					<mo>)</mo>
+				</mrow>
+				<mo>×</mo>
+				<mn>5</mn>
+				<mo>-</mo>
+				<mn>6</mn>
+				<mo>÷</mo>
+				<mn>2</mn>
+			</math>
 		</Item>
 		<Item bullet="">
-			<math><mi>A</mi><mo>=</mo><mrow style="background:red;color:white;padding:0 2px"><mn>3</mn><mo>×</mo><mn>6</mn></mrow><mo>×</mo><mn>5</mn><mo>-</mo><mn>6</mn><mo>÷</mo><mn>2</mn></math>
+			<math>
+				<mi>A</mi>
+				<mo>=</mo>
+				<mrow style="background:red;color:white;padding:0 2px">
+					<mn>3</mn>
+					<mo>×</mo>
+					<mn>6</mn>
+				</mrow>
+				<mo>×</mo>
+				<mn>5</mn>
+				<mo>-</mo>
+				<mn>6</mn>
+				<mo>÷</mo>
+				<mn>2</mn>
+			</math>
 		</Item>
 		<Item bullet="">
-			<math><mi>A</mi><mo>=</mo><mrow style="background:red;color:white;padding:0 2px"><mn>18</mn><mo>×</mo><mn>5</mn></mrow><mo>-</mo><mn>6</mn><mo>÷</mo><mn>2</mn></math>
+			<math>
+				<mi>A</mi>
+				<mo>=</mo>
+				<mrow style="background:red;color:white;padding:0 2px">
+					<mn>18</mn>
+					<mo>×</mo>
+					<mn>5</mn>
+				</mrow>
+				<mo>-</mo>
+				<mn>6</mn>
+				<mo>÷</mo>
+				<mn>2</mn>
+			</math>
 		</Item>
 		<Item bullet="">
-			<math><mi>A</mi><mo>=</mo><mn>90</mn><mo>-</mo><mrow style="background:red;color:white;padding:0 2px"><mn>6</mn><mo>÷</mo><mn>2</mn></mrow></math>
+			<math>
+				<mi>A</mi>
+				<mo>=</mo>
+				<mn>90</mn>
+				<mo>-</mo>
+				<mrow style="background:red;color:white;padding:0 2px">
+					<mn>6</mn>
+					<mo>÷</mo>
+					<mn>2</mn>
+				</mrow>
+			</math>
 		</Item>
 		<Item bullet="">
-			<math><mi>A</mi><mo>=</mo><mn>90</mn><mo>-</mo><mn>3</mn></math>
+			<math>
+				<mi>A</mi>
+				<mo>=</mo>
+				<mn>90</mn>
+				<mo>-</mo>
+				<mn>3</mn>
+			</math>
 		</Item>
 		<Item bullet="">
-			<math><mi>A</mi><mo>=</mo><mn>87</mn></math>
+			<math>
+				<mi>A</mi>
+				<mo>=</mo>
+				<mn>87</mn>
+			</math>
 		</Item>
 	</Exemple>
 </Contenu>

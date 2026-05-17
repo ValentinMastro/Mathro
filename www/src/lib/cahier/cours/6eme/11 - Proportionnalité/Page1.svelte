@@ -18,8 +18,11 @@
 	</Exemples>
 	<Definition lignes={3}>
 		Deux grandeurs sont proportionnelles si, pour obtenir les valeurs <br />
-		de la première grandeur, on peut multiplier celles de la deuxième <br />
-		par un même nombre : le <i>coefficient de proportionnalité</i>.
+		de la première grandeur, on peut multiplier celles de la deuxième
+		<br />
+		par un même nombre : le
+		<i>coefficient de proportionnalité</i>
+		.
 	</Definition>
 	<Exemples lignes={2}>
 		<Item>Le côté et le périmètre d'un carré sont proportionnels.</Item>

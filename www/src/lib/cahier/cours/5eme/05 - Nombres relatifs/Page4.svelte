@@ -24,7 +24,10 @@
 
 <Contenu>
 	<Definition lignes={2}>
-		À chaque point du repère, on associe deux nombres : son <i>abscisse</i> et son <i>ordonnée</i>.
+		À chaque point du repère, on associe deux nombres : son <i>abscisse</i>
+		et son
+		<i>ordonnée</i>
+		.
 	</Definition>
 	<Notation>
 		Si le point A a pour abscisse {@html math('2')} et pour ordonnée {@html math('-3')}, on note {@html math('\\text{A}(2;-3)')}.

@@ -31,13 +31,16 @@
 		{/snippet}
 		{#snippet html()}
 			<Texte lignes={3}>
-				Ce cube a toutes ses arêtes de la même longueur : {@html math('1~\\text{cm}')}. <br />
+				Ce cube a toutes ses arêtes de la même longueur : {@html math('1~\\text{cm}')}.
+				<br />
 				Son volume est égal à {@html math('1~\\text{cm}^3')}.
 			</Texte>
 		{/snippet}
 	</Schéma>
 	<Formule lignes={2}>
-		Le volume d'un cube de côté {@html math('a')} cm est égal à {@html math('a \\times a \\times a')} cm<sup>3</sup>.
+		Le volume d'un cube de côté {@html math('a')} cm est égal à {@html math('a \\times a \\times a')} cm
+		<sup>3</sup>
+		.
 		<center>{@html math('\\mathcal{V}_{\\text{cube}} = a \\times a \\times a')}</center>
 	</Formule>
 	<Schéma lignes={10} aspectRatioSVG={2}>

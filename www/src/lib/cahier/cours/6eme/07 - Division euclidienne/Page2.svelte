@@ -57,7 +57,11 @@
 		</LigneTableau>
 		<LigneTableau lignes={2}>
 			<td>Divisible par 3</td>
-			<td>La somme des chiffres<br /> est dans la table de 3</td>
+			<td>
+				La somme des chiffres
+				<br />
+				 est dans la table de 3
+			</td>
 			<td class="liste">
 				<span class="vert">{@html math('51 \\longrightarrow 5 + 1 = 6')}</span>
 				<span class="vert">{@html math('48 \\longrightarrow 4 + 8 = 12')}</span>
@@ -66,7 +70,11 @@
 		</LigneTableau>
 		<LigneTableau lignes={2}>
 			<td>Divisible par 5</td>
-			<td>Le chiffre des unités<br /> est un 0 ou un 5</td>
+			<td>
+				Le chiffre des unités
+				<br />
+				 est un 0 ou un 5
+			</td>
 			<td class="liste">
 				<span class="vert">50</span>
 				<span class="vert">15</span>
@@ -75,7 +83,11 @@
 		</LigneTableau>
 		<LigneTableau lignes={2}>
 			<td>Divisible par 9</td>
-			<td>La somme des chiffres<br /> est dans la table de 9</td>
+			<td>
+				La somme des chiffres
+				<br />
+				 est dans la table de 9
+			</td>
 			<td class="liste">
 				<span class="vert">{@html math('54 \\longrightarrow 5 + 4 = 9')}</span>
 				<span class="vert">{@html math('81 \\longrightarrow 8 + 1 = 9')}</span>
@@ -84,7 +96,11 @@
 		</LigneTableau>
 		<LigneTableau lignes={2}>
 			<td>Divisible par 10</td>
-			<td>Le chiffre des unités<br /> est un 0</td>
+			<td>
+				Le chiffre des unités
+				<br />
+				 est un 0
+			</td>
 			<td class="liste">
 				<span class="vert">50</span>
 				<span class="vert">100</span>

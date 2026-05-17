@@ -8,7 +8,9 @@
 	<SousPartie numero={5} titre="Conversion d'unités" />
 	<Methode>Comment convertir une valeur dans une autre unité ?</Methode>
 	<Exemple>
-		Convertir <math><mn>900 000 000</mn></math> W en GW <small>(Puissance électrique d'un réacteur nucléaire)</small>
+		Convertir <math><mn>900 000 000</mn></math>
+		W en GW
+		<small>(Puissance électrique d'un réacteur nucléaire)</small>
 	</Exemple>
 
 	<LatexAlign

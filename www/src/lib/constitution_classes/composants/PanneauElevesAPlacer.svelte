@@ -49,7 +49,7 @@
 	{:else}
 		<div id="non_retracte" style="display: flex; flex-direction: column; background-color: black;">
 			<div>
-				<label for="input_xlsx" style="color: white">Importer depuis un XLSX </label>
+				<label for="input_xlsx" style="color: white">Importer depuis un XLSX</label>
 				<input
 					id="input_xlsx"
 					type="file"
@@ -82,8 +82,10 @@
 				onclick={(e) => {
 					e.stopPropagation();
 					preremplissage();
-				}}>Pré-remplissage</button
+				}}
 			>
+				Pré-remplissage
+			</button>
 			<div style="height: 3vh;"><!-- Espace --></div>
 			<div id="liste_des_eleves_a_placer" style="overflow-y: auto;">
 				{#each eleves.value.filter((eleve: Eleve) => {

@@ -7,7 +7,9 @@
 <Contenu>
 	<Partie numero={3} titre="Moyenne" />
 	<Definition lignes={2}>
-		La <i>moyenne</i> d'une série de données est la somme de toutes les valeurs <br />
+		La <i>moyenne</i>
+		d'une série de données est la somme de toutes les valeurs
+		<br />
 		divisée par l'effectif total.
 	</Definition>
 	<Formule lignes={2}>
@@ -21,8 +23,10 @@
 	<Exemples lignes={7}>
 		<Item lignes={4}>
 			Notes de 5 élèves : 8 ; 10 ; 12 ; 14 ; 16. <br />
-			Somme : {@html math('8 + 10 + 12 + 14 + 16 = 60')}. <br />
-			Effectif total : 5. <br />
+			Somme : {@html math('8 + 10 + 12 + 14 + 16 = 60')}.
+			<br />
+			Effectif total : 5.
+			<br />
 			Moyenne : {@html math('\\bar{x} = 60 \\div 5 = 12')}.
 		</Item>
 		<Item lignes={2}>

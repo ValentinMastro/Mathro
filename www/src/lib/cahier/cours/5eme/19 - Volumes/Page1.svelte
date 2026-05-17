@@ -20,7 +20,8 @@
 		</Item>
 	</Definitions>
 	<Convention lignes={2}>
-		Le volume se mesure en mètres cubes ({@html math('m^3')}).<br />
+		Le volume se mesure en mètres cubes ({@html math('m^3')}).
+		<br />
 		La contenance se mesure en litres ({@html math('\\ell')}).
 	</Convention>
 	<Exemples lignes={3}>

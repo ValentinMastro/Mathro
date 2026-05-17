@@ -37,7 +37,8 @@
 	<Partie numero={1} titre="Inégalité triangulaire" />
 	<Propriete lignes={6}>
 		Dans un triangle, la longueur d'un côté est inférieure à la somme des longueurs des deux autres côtés. <br />
-		Autrement dit, dans le triangle ABC : <br />
+		Autrement dit, dans le triangle ABC :
+		<br />
 		<Item>{@html math('\\text{AB}~ \\leqslant \\text{AC}~ + \\text{BC}')}</Item>
 		<Item>{@html math('\\text{BC}~ \\leqslant \\text{AB}~ + \\text{AC}')}</Item>
 		<Item>{@html math('\\text{AC}~ \\leqslant \\text{AB}~ + \\text{BC}')}</Item>
@@ -66,7 +67,8 @@
 		{#snippet html()}
 			<Texte lignes={4}>
 				Ce triangle n'existe pas. <br />
-				En effet, {@html math(' 7 > 2 + 3')}. <br />
+				En effet, {@html math(' 7 > 2 + 3')}.
+				<br />
 				Cela signifierait qu'il serait plus court de faire un détour {@html math('\\Rightarrow')} impossible.
 			</Texte>
 		{/snippet}

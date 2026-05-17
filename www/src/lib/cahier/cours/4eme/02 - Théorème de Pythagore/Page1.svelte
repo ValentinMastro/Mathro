@@ -24,10 +24,34 @@
 	</Definition>
 	<Exemples lignes={2}>
 		<Item>
-			Le carré de 12 est 144 car <math><msup><mn>12</mn><mn>2</mn></msup><mo>=</mo><mn>12</mn><mo>×</mo><mn>12</mn><mo>=</mo><mn>144</mn></math>.
+			Le carré de 12 est 144 car <math>
+				<msup>
+					<mn>12</mn>
+					<mn>2</mn>
+				</msup>
+				<mo>=</mo>
+				<mn>12</mn>
+				<mo>×</mo>
+				<mn>12</mn>
+				<mo>=</mo>
+				<mn>144</mn>
+			</math>
+			.
 		</Item>
 		<Item>
-			Le carré de 8 est 64 car <math><msup><mn>8</mn><mn>2</mn></msup><mo>=</mo><mn>8</mn><mo>×</mo><mn>8</mn><mo>=</mo><mn>64</mn></math>.
+			Le carré de 8 est 64 car <math>
+				<msup>
+					<mn>8</mn>
+					<mn>2</mn>
+				</msup>
+				<mo>=</mo>
+				<mn>8</mn>
+				<mo>×</mo>
+				<mn>8</mn>
+				<mo>=</mo>
+				<mn>64</mn>
+			</math>
+			.
 		</Item>
 	</Exemples>
 

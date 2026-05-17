@@ -11,7 +11,11 @@
 	<Exemples lignes={4}>
 		<Item>Encadrer {@html math('3,2')} à l'unité {@html math('\\longrightarrow 3 < 3,2 < 4')}</Item>
 		<Item>Encadrer {@html math('5,126')} au dixième {@html math('\\longrightarrow 5,1 < 5,126 < 5,2')}</Item>
-		<Item lignes={2}>Encadrer {@html math('100,876~54')} au dix-millième : <br /> {@html math('100,876~5 < 100,876~54 < 100,876~6')}</Item>
+		<Item lignes={2}>
+			Encadrer {@html math('100,876~54')} au dix-millième :
+			<br />
+			{@html math('100,876~5 < 100,876~54 < 100,876~6')}
+		</Item>
 	</Exemples>
 	<Definition lignes={2}>
 		Arrondir un nombre décimal, c’est le simplifier en gardant seulement <br />

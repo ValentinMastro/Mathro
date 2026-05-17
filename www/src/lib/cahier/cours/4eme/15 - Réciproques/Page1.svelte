@@ -2,7 +2,6 @@
 	import { Chapitre, Partie, Contenu } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Theoreme, Schéma, Texte, Exemple, Paragraphe, Remarque } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-
 </script>
 
 <Chapitre titre="Réciproques" />
@@ -37,10 +36,51 @@
 	</Exemple>
 	<Paragraphe couleur="noir" nom_du_paragraphe="Rédaction" lignes={4}>
 		<u>D'une part :</u>
-		<math><msup><mi>GF</mi><mn>2</mn></msup><mo>=</mo><msup><mn>13</mn><mn>2</mn></msup><mo>=</mo><mstyle mathcolor="red"><mn>169</mn></mstyle></math> <br />
+		<math>
+			<msup>
+				<mi>GF</mi>
+				<mn>2</mn>
+			</msup>
+			<mo>=</mo>
+			<msup>
+				<mn>13</mn>
+				<mn>2</mn>
+			</msup>
+			<mo>=</mo>
+			<mstyle mathcolor="red"><mn>169</mn></mstyle>
+		</math>
+		<br />
 		<u>D'autre part :</u>
-		<math><msup><mi>EG</mi><mn>2</mn></msup><mo>+</mo><msup><mi>EF</mi><mn>2</mn></msup><mo>=</mo><msup><mn>5</mn><mn>2</mn></msup><mo>+</mo><msup><mn>12</mn><mn>2</mn></msup><mo>=</mo><mn>25</mn><mo>+</mo><mn>144</mn><mo>=</mo><mstyle mathcolor="red"><mn>169</mn></mstyle></math><br />
-		D'après la réciproque du théorème de Pythagore,<br />
+		<math>
+			<msup>
+				<mi>EG</mi>
+				<mn>2</mn>
+			</msup>
+			<mo>+</mo>
+			<msup>
+				<mi>EF</mi>
+				<mn>2</mn>
+			</msup>
+			<mo>=</mo>
+			<msup>
+				<mn>5</mn>
+				<mn>2</mn>
+			</msup>
+			<mo>+</mo>
+			<msup>
+				<mn>12</mn>
+				<mn>2</mn>
+			</msup>
+			<mo>=</mo>
+			<mn>25</mn>
+			<mo>+</mo>
+			<mn>144</mn>
+			<mo>=</mo>
+			<mstyle mathcolor="red"><mn>169</mn></mstyle>
+		</math>
+		<br />
+		D'après la réciproque du théorème de Pythagore,
+		<br />
 		le triangle EFG est rectangle en E.
 	</Paragraphe>
 	<LigneVide />

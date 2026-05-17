@@ -2,7 +2,6 @@
 	import { Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Theoreme, Item, Exemple, Schéma, Texte, Paragraphe, Remarque } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
-
 </script>
 
 <Contenu>
@@ -12,10 +11,25 @@
 		Si :
 		<Item>les points A, B, D sont alignés</Item>
 		<Item>les points A, C, E sont alignés</Item>
-		<Item
-			>au moins 2 des fractions suivantes sont égales :
-			<math><mfrac><mi>AB</mi><mi>AD</mi></mfrac><mo>;</mo><mfrac><mi>AC</mi><mi>AE</mi></mfrac><mo>;</mo><mfrac><mi>BC</mi><mi>DE</mi></mfrac></math></Item
-		>
+		<Item>
+			au moins 2 des fractions suivantes sont égales :
+			<math>
+				<mfrac>
+					<mi>AB</mi>
+					<mi>AD</mi>
+				</mfrac>
+				<mo>;</mo>
+				<mfrac>
+					<mi>AC</mi>
+					<mi>AE</mi>
+				</mfrac>
+				<mo>;</mo>
+				<mfrac>
+					<mi>BC</mi>
+					<mi>DE</mi>
+				</mfrac>
+			</math>
+		</Item>
 		alors les droites (BC) et (DE) sont parallèles.
 	</Theoreme>
 	<Exemple lignes={10}>
@@ -50,11 +64,38 @@
 	</Exemple>
 	<Paragraphe couleur="noir" nom_du_paragraphe="Rédaction" lignes={6}>
 		<u>D'une part :</u>
-		<math><mfrac><mi>AC</mi><mi>AE</mi></mfrac><mo>=</mo><mfrac><mn>5,1</mn><mn>6,8</mn></mfrac><mo>=</mo><mn>0,75</mn></math> <br />
+		<math>
+			<mfrac>
+				<mi>AC</mi>
+				<mi>AE</mi>
+			</mfrac>
+			<mo>=</mo>
+			<mfrac>
+				<mn>5,1</mn>
+				<mn>6,8</mn>
+			</mfrac>
+			<mo>=</mo>
+			<mn>0,75</mn>
+		</math>
+		<br />
 		<LigneVide lignes={0.6} />
 		<u>D'autre part :</u>
-		<math><mfrac><mi>AB</mi><mi>AD</mi></mfrac><mo>=</mo><mfrac><mn>3</mn><mn>4</mn></mfrac><mo>=</mo><mn>0,75</mn></math><br />
-		D'après la réciproque du théorème de Thalès,<br />
+		<math>
+			<mfrac>
+				<mi>AB</mi>
+				<mi>AD</mi>
+			</mfrac>
+			<mo>=</mo>
+			<mfrac>
+				<mn>3</mn>
+				<mn>4</mn>
+			</mfrac>
+			<mo>=</mo>
+			<mn>0,75</mn>
+		</math>
+		<br />
+		D'après la réciproque du théorème de Thalès,
+		<br />
 		les droites (BC) et (DE) sont parallèles.
 	</Paragraphe>
 	<LigneVide />

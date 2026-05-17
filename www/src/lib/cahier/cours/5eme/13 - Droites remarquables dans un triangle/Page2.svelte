@@ -25,8 +25,10 @@
 
 <Contenu>
 	<Propriete lignes={2}>
-		Les 3 médiatrices d'un triangle sont concourantes en un point :<br />
-		<i title="le centre du cercle qui entoure le triangle">le centre du cercle circonscrit</i>.
+		Les 3 médiatrices d'un triangle sont concourantes en un point :
+		<br />
+		<i title="le centre du cercle qui entoure le triangle">le centre du cercle circonscrit</i>
+		.
 	</Propriete>
 	<SchémaIntéractif lignes={10} aspectRatioSVG={2} points_intéractifs={[C, D, E]}>
 		{#snippet svg()}
@@ -50,11 +52,15 @@
 		{/snippet}
 	</SchémaIntéractif>
 	<Demonstration lignes={6}>
-		Soient {@html math('(m_1)')}, la médiatrice de [AB], et {@html math('(m_2)')}, la médiatrice de [BC].<br />
-		Soit O le point d'intersection de {@html math('(m_1)')} et {@html math('(m_2)')}<br />
+		Soient {@html math('(m_1)')}, la médiatrice de [AB], et {@html math('(m_2)')}, la médiatrice de [BC].
 		<br />
-		Si {@html math('\\text{O} \\in (m_1)')}, la médiatrice de [AB], alors OA = OB.<br />
-		Si {@html math('\\text{O} \\in (m_2)')}, la médiatrice de [BC], alors OB = OC.<br />
+		Soit O le point d'intersection de {@html math('(m_1)')} et {@html math('(m_2)')}
+		<br />
+		<br />
+		Si {@html math('\\text{O} \\in (m_1)')}, la médiatrice de [AB], alors OA = OB.
+		<br />
+		Si {@html math('\\text{O} \\in (m_2)')}, la médiatrice de [BC], alors OB = OC.
+		<br />
 
 		Donc OA = OB = OC.
 	</Demonstration>

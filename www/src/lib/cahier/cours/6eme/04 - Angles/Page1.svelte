@@ -13,13 +13,16 @@
 
 <Contenu apres_un_titre>
 	<Definition lignes={5}>
-		Un angle est une portion de plan délimitée par deux demi-droites ayant la même origine.<br />
+		Un angle est une portion de plan délimitée par deux demi-droites ayant la même origine.
+		<br />
 		Il est composé de trois éléments :
 		<Item>
-			son <i>sommet</i> : l'origine des deux demi-droites,
+			son <i>sommet</i>
+			 : l'origine des deux demi-droites,
 		</Item>
 		<Item>
-			ses deux <i>côtés</i> : les deux demi-droites,
+			ses deux <i>côtés</i>
+			 : les deux demi-droites,
 		</Item>
 	</Definition>
 	<Schéma lignes={10} aspectRatioSVG={2}>
@@ -44,6 +47,7 @@
 		</Item>
 	</Texte>
 	<Notation>
-		Un angle se nomme avec trois lettres, le sommet est la <i>lettre du milieu</i>.
+		Un angle se nomme avec trois lettres, le sommet est la <i>lettre du milieu</i>
+		.
 	</Notation>
 </Contenu>

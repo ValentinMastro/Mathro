@@ -74,9 +74,13 @@
 		{/snippet}
 		{#snippet html()}
 			<Texte lignes={6}>
-				{@html math('\\text{A} \\in (\\mathcal{C})')}, {@html math('\\text{B} \\in (\\mathscr{C})')}<br />
-				{@html math('\\text{C} \\in (\\mathscr{C})')}, {@html math('\\text{D} \\in (\\mathscr{C})')}<br /><br />
-				{@html math('\\color{red} [\\text{AB}]')} est une corde de {@html math('(\\mathscr{C})')}.<br />
+				{@html math('\\text{A} \\in (\\mathcal{C})')}, {@html math('\\text{B} \\in (\\mathscr{C})')}
+				<br />
+				{@html math('\\text{C} \\in (\\mathscr{C})')}, {@html math('\\text{D} \\in (\\mathscr{C})')}
+				<br />
+				<br />
+				{@html math('\\color{red} [\\text{AB}]')} est une corde de {@html math('(\\mathscr{C})')}.
+				<br />
 				{@html math('\\color{blue} [\\text{CD}]')} est une corde de {@html math('(\\mathscr{C})')}.
 			</Texte>
 		{/snippet}
@@ -120,9 +124,13 @@
 		{/snippet}
 		{#snippet html()}
 			<Texte lignes={6}>
-				{@html math('\\text{A} \\in (\\mathscr{C})')}, {@html math('\\text{B} \\in (\\mathscr{C})')}<br />
-				{@html math('\\text{C} \\in (\\mathscr{C})')}, {@html math('\\text{D} \\in (\\mathscr{C})')}<br /><br />
-				{@html math('\\color{red} \\overgroup{\\text{AB}}')} est un arc de cercle de {@html math('(\\mathscr{C})')}.<br />
+				{@html math('\\text{A} \\in (\\mathscr{C})')}, {@html math('\\text{B} \\in (\\mathscr{C})')}
+				<br />
+				{@html math('\\text{C} \\in (\\mathscr{C})')}, {@html math('\\text{D} \\in (\\mathscr{C})')}
+				<br />
+				<br />
+				{@html math('\\color{red} \\overgroup{\\text{AB}}')} est un arc de cercle de {@html math('(\\mathscr{C})')}.
+				<br />
 				{@html math('\\color{blue} \\overgroup{\\text{CD}}')} est un arc de cercle de {@html math('(\\mathscr{C})')}.
 			</Texte>
 		{/snippet}

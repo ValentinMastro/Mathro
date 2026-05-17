@@ -13,8 +13,18 @@
 	<Partie numero={2} titre="Divisibilités" />
 	<Definition>"Être divisible par" signifie "être dans la table de multiplication de".</Definition>
 	<Exemples lignes={2}>
-		<Item>42 est divisible par <span class="rouge">6</span> car 42 = <span class="rouge">6</span> × 7</Item>
-		<Item>35 est divisible par <span class="rouge">5</span> car 35 = <span class="rouge">5</span> × 7</Item>
+		<Item>
+			42 est divisible par <span class="rouge">6</span>
+			car 42 =
+			<span class="rouge">6</span>
+			 × 7
+		</Item>
+		<Item>
+			35 est divisible par <span class="rouge">5</span>
+			car 35 =
+			<span class="rouge">5</span>
+			 × 7
+		</Item>
 	</Exemples>
 	<Notation lignes={5}>
 		On peut dire que :

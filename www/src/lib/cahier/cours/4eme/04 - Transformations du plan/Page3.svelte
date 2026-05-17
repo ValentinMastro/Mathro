@@ -28,7 +28,8 @@
 	<Partie numero={3} titre="Translation" />
 	<Definition>Une translation est un déplacement rectiligne dans le plan.</Definition>
 	<Propriete>
-		Une translation est une <i>isométrie du plan</i>.
+		Une translation est une <i>isométrie du plan</i>
+		.
 	</Propriete>
 	<Schéma lignes={10} aspectRatioSVG={1.5}>
 		{#snippet svg()}
@@ -42,7 +43,18 @@
 	</Schéma>
 	<Notation lignes={4}>
 		<Item>La translation qui transforme A en A'</Item>
-		<Item>La translation de vecteur <math><mover><mrow><mi>A</mi><mi>A</mi><mo>′</mo></mrow><mo stretchy="true">→</mo></mover></math></Item>
+		<Item>
+			La translation de vecteur <math>
+				<mover>
+					<mrow>
+						<mi>A</mi>
+						<mi>A</mi>
+						<mo>′</mo>
+					</mrow>
+					<mo stretchy="true">→</mo>
+				</mover>
+			</math>
+		</Item>
 		<Item>A' est l'image de A par cette translation</Item>
 		<Item>B' est le translaté de B par la translation qui transforme A en A'</Item>
 	</Notation>

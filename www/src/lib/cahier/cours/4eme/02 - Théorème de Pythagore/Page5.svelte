@@ -7,7 +7,10 @@
 
 <Contenu>
 	<Exemples lignes={2}>
-		Le théorème de Pythagore permet de calculer <i>une longueur dans un triangle rectangle</i>, si on connaît les <i>deux autres</i>.
+		Le théorème de Pythagore permet de calculer <i>une longueur dans un triangle rectangle</i>
+		, si on connaît les
+		<i>deux autres</i>
+		.
 	</Exemples>
 	<Texte>Dans le cas où on souhaite calculer la longueur de l'hypoténuse :</Texte>
 	<Schéma lignes={10} aspectRatioSVG={1.2}>
@@ -23,8 +26,18 @@
 		{/snippet}
 	</Schéma>
 	<Texte lignes={8}>
-		<u>On sait que : </u> le triangle ABC est rectangle en A, l'hypoténuse est <math><mo>[</mo><mi>BC</mi><mo>]</mo></math>.<br />
-		<u>D'après</u> le théorème de Pythagore : <br />
+		<u>On sait que :</u>
+		le triangle ABC est rectangle en A, l'hypoténuse est
+		<math>
+			<mo>[</mo>
+			<mi>BC</mi>
+			<mo>]</mo>
+		</math>
+		.
+		<br />
+		<u>D'après</u>
+		le théorème de Pythagore :
+		<br />
 		<LatexAlign
 			lignes={6}
 			code={`

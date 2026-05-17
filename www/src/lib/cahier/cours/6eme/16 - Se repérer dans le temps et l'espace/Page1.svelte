@@ -25,8 +25,14 @@
 	<Partie numero={1} titre="Horaires et durées" />
 	<SousPartie numero={1} titre="Vocabulaire" />
 	<Definition lignes={2}>
-		<Item>Une <i>année</i> est la durée d'un tour de la Terre autour du Soleil.</Item>
-		<Item>Un <i>jour</i> est la durée d'un tour complet de la Terre sur elle-même.</Item>
+		<Item>
+			Une <i>année</i>
+			 est la durée d'un tour de la Terre autour du Soleil.
+		</Item>
+		<Item>
+			Un <i>jour</i>
+			 est la durée d'un tour complet de la Terre sur elle-même.
+		</Item>
 	</Definition>
 	<Schéma lignes={20} aspectRatioSVG={1} centré>
 		{#snippet svg()}

@@ -35,7 +35,8 @@
 		{/snippet}
 	</Schéma>
 	<Texte couleur="bleu" lignes={2}>
-		{@html math('\\color{orange}\\widehat{\\text{BAC}}')} et {@html math('\\color{purple}\\widehat{\\text{ACB}}')} sont complémentaires. <br />
+		{@html math('\\color{orange}\\widehat{\\text{BAC}}')} et {@html math('\\color{purple}\\widehat{\\text{ACB}}')} sont complémentaires.
+		<br />
 		{@html math('\\color{skyblue}\\widehat{\\text{DEF}}')} et {@html math('\\color{forestgreen}\\widehat{\\text{EFG}}')} sont supplémentaires (et adjacents).
 	</Texte>
 </Contenu>

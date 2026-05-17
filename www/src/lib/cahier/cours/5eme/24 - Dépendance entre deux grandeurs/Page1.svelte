@@ -14,15 +14,28 @@
 	</Definition>
 	<Exemples lignes={8}>
 		<Item lignes={4}>
-			L'<b>aire d'un disque</b> dépend de son <b>rayon.</b> <br />
-			En effet, il est possible d'écrire la formule de l'aire d'un disque en <br />
-			fonction de son rayon.<br />
+			L'
+			<b>aire d'un disque</b>
+			dépend de son
+			<b>rayon.</b>
+			<br />
+			En effet, il est possible d'écrire la formule de l'aire d'un disque en
+			<br />
+			fonction de son rayon.
+			<br />
 			{@html math('\\mathcal{A}_{\\text{disque}} = \\pi \\times \\text{rayon}^2')}
 		</Item>
 		<Item lignes={4}>
 			Lorsqu'il fait froid et qu'il y a du vent, la température ressentie <br />
-			est plus basse. La <b>température ressentie</b> est dépendante de la <br />
-			<b>température ambiante</b> et de la <b>vitesse du vent</b>. <br />
+			est plus basse. La
+			<b>température ressentie</b>
+			est dépendante de la
+			<br />
+			<b>température ambiante</b>
+			et de la
+			<b>vitesse du vent</b>
+			.
+			<br />
 			{@html math(
 				'T_{\\text{ressentie}} = T_{\\text{ambiante}} + 0{,}2 \\times (0{,}1235 \\times T_{\\text{ambiante}} - 1{,}59) \\times V_{\\text{vent}}'
 			)}
@@ -31,10 +44,12 @@
 	<Notation lignes={4}>
 		On dit que :
 		<Item>
-			L'aire d'un disque s'exprime <b>en fonction de</b> son rayon.
+			L'aire d'un disque s'exprime <b>en fonction de</b>
+			 son rayon.
 		</Item>
 		<Item lignes={2}>
-			La température ressentie s'exprime <b>en fonction de</b> la température ambiante et de la vitesse du vent.
+			La température ressentie s'exprime <b>en fonction de</b>
+			 la température ambiante et de la vitesse du vent.
 		</Item>
 	</Notation>
 </Contenu>

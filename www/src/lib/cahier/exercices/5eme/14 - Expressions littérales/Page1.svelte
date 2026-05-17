@@ -19,11 +19,11 @@
 		<Question numéro={1} lignes={1}>Calculer : {@html math('3^2')} ; {@html math('5^2')} ; {@html math('8^2')} ; {@html math('12^2')}.</Question>
 		<Question numéro={2} lignes={1}>Calculer : {@html math('2^3')} ; {@html math('4^3')} ; {@html math('10^3')}.</Question>
 		<Question numéro={3} lignes={1}>Calculer : {@html math('(-2)^2')} ; {@html math('(-3)^3')} ; {@html math('(-5)^2')}.</Question>
-		<Question numéro={4} lignes={2}
-			>Calculer : {@html math('\\left(\\dfrac{1}{2}\\right)^2')} ; {@html math('\\left(\\dfrac{2}{3}\\right)^2')} ; {@html math(
+		<Question numéro={4} lignes={2}>
+			Calculer : {@html math('\\left(\\dfrac{1}{2}\\right)^2')} ; {@html math('\\left(\\dfrac{2}{3}\\right)^2')} ; {@html math(
 				'\\left(\\dfrac{1}{3}\\right)^3'
-			)}.</Question
-		>
+			)}.
+		</Question>
 		<Question numéro={5} lignes={1}>Un carré a un côté de 7 cm. Calculer son aire.</Question>
 	</Énoncé>
 	<LigneVide lignes={1} />
@@ -55,7 +55,10 @@
 
 	<!-- Exercice 4 : distributivité avec nombres -->
 	<Énoncé lignes={7}>
-		<Texte lignes={2} lignes_vides={0}>Utiliser la distributivité pour simplifier les calculs. <br /> Montrer les étapes.</Texte>
+		<Texte lignes={2} lignes_vides={0}>
+			Utiliser la distributivité pour simplifier les calculs. <br />
+			 Montrer les étapes.
+		</Texte>
 		<Question numéro={1} lignes={1}>{@html math('21 \\times 11 + 79 \\times 11')}</Question>
 		<Question numéro={2} lignes={1}>{@html math('35 \\times 7 + 65 \\times 7')}</Question>
 		<Question numéro={3} lignes={1}>{@html math('48 \\times 13 - 48 \\times 3')}</Question>

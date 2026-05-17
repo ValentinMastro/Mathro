@@ -44,10 +44,14 @@
 		<Item lignes={2}>si tous les rapports sont égaux, les grandeurs sont proportionnelles.</Item>
 	</Methode>
 	<Exemples lignes={5}>
-		Pour le 1er tableau, on calcule les rapports :<br />
+		Pour le 1er tableau, on calcule les rapports :
+		<br />
 		{@html math('\\dfrac{1{,}60}{2} = \\dfrac{4{,}00}{5} = \\dfrac{8{,}00}{10} = 0{,}80')}
-		→ les grandeurs sont proportionnelles<br /><br />
-		Pour le 2ème tableau, on calcule les rapports :<br />
+		→ les grandeurs sont proportionnelles
+		<br />
+		<br />
+		Pour le 2ème tableau, on calcule les rapports :
+		<br />
 		{@html math('\\dfrac{60}{1} = \\dfrac{180}{3} = \\dfrac{300}{5} = 60')}
 		→ les grandeurs sont proportionnelles
 	</Exemples>

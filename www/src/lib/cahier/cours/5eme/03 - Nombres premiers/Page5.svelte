@@ -12,20 +12,26 @@
 	</Methode>
 	<Exemples lignes={9}>
 		<Item lignes={4}>
-			Simplifier la fraction {@html math('\\dfrac{12}{18}')}.<br />
-			{@html math('12 = 2 \\times 2 \\times 3')} et {@html math('18 = 2 \\times 3 \\times 3')}.<br />
-			On a donc {@html math('\\frac{12}{18} = \\frac{2 \\times 2 \\times 3}{2 \\times 3 \\times 3}')}.<br />
+			Simplifier la fraction {@html math('\\dfrac{12}{18}')}.
+			<br />
+			{@html math('12 = 2 \\times 2 \\times 3')} et {@html math('18 = 2 \\times 3 \\times 3')}.
+			<br />
+			On a donc {@html math('\\frac{12}{18} = \\frac{2 \\times 2 \\times 3}{2 \\times 3 \\times 3}')}.
+			<br />
 			En simplifiant par les facteurs communs, on obtient {@html math('\\frac{12}{18} = \\frac{2}{3}')}.
 		</Item>
 		<br />
 		<Item lignes={4}>
-			Simplifier la fraction {@html math('\\dfrac{540}{720}')}.<br />
+			Simplifier la fraction {@html math('\\dfrac{540}{720}')}.
+			<br />
 			{@html math('540 = 2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 5')} et {@html math(
 				'720 = 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 5'
-			)}.<br />
+			)}.
+			<br />
 			On a donc {@html math(
 				'\\frac{540}{720} = \\frac{2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 5}{2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 5}'
-			)}.<br />
+			)}.
+			<br />
 			En simplifiant par les facteurs communs, on obtient {@html math('\\frac{540}{720} = \\frac{3}{4}')}.
 		</Item>
 	</Exemples>

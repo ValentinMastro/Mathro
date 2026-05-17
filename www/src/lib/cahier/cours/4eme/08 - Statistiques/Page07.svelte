@@ -56,9 +56,9 @@
 			<!-- Graduations verticales -->
 			{#each [0, 1, 2, 3, 4, 5] as valeur, i}
 				<line x1="90" y1={950 - (750 * valeur) / 5} x2="100" y2={950 - (750 * valeur) / 5} stroke="black" stroke-width="2" />
-				<text x="80" y={950 - (750 * valeur) / 5 + 5} text-anchor="end" font-size="22"
-					>{valeur.toLocaleString('fr-FR', { maximumFractionDigits: 2 })} €</text
-				>
+				<text x="80" y={950 - (750 * valeur) / 5 + 5} text-anchor="end" font-size="22">
+					{valeur.toLocaleString('fr-FR', { maximumFractionDigits: 2 })} €
+				</text>
 			{/each}
 			<!-- Barres -->
 			{#each Object.values(donnees_2) as valeur, i}
@@ -69,9 +69,9 @@
 					height={(750 * valeur) / 5}
 					fill="black"
 				/>
-				<text x={100 + (800 * (i + 0.5)) / Object.values(donnees_2).length} y={950 - (750 * valeur) / 5 - 10} text-anchor="middle" font-size="22"
-					>{valeur.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €</text
-				>
+				<text x={100 + (800 * (i + 0.5)) / Object.values(donnees_2).length} y={950 - (750 * valeur) / 5 - 10} text-anchor="middle" font-size="22">
+					{valeur.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €
+				</text>
 			{/each}
 			<!-- Légendes -->
 			<text x="950" y="950" text-anchor="middle" font-size="22">Année</text>

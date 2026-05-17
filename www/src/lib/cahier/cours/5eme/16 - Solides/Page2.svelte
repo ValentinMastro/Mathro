@@ -10,7 +10,8 @@
 	<Partie numero={2} titre="Les polyèdres" />
 
 	<Definition lignes={2}>
-		Un <i>prisme droit</i> est un solide dont les deux bases sont des polygones identiques et parallèles, et dont les faces latérales sont des rectangles.
+		Un <i>prisme droit</i>
+		 est un solide dont les deux bases sont des polygones identiques et parallèles, et dont les faces latérales sont des rectangles.
 	</Definition>
 	<Remarque lignes={2}>
 		<Item>Le pavé droit est un prisme droit à base rectangulaire.</Item>
@@ -50,8 +51,10 @@
 	</Schéma>
 
 	<Definition lignes={3}>
-		Une <i>pyramide</i> est un solide dont la base est un polygone et dont les faces latérales sont des triangles se rejoignant en un point appelé
-		<i>apex</i>.
+		Une <i>pyramide</i>
+		est un solide dont la base est un polygone et dont les faces latérales sont des triangles se rejoignant en un point appelé
+		<i>apex</i>
+		.
 	</Definition>
 
 	<Schéma lignes={7} aspectRatioSVG={3.5}>

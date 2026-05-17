@@ -10,7 +10,15 @@
 	</Paragraphe>
 	<Exemples lignes={10}>
 		<Item lignes={6}>
-			Dans l'équation <math><mn>2</mn><mi>x</mi><mo>=</mo><mo>-</mo><mn>2</mn></math>, on peut diviser chaque membre de l'équation par 2.<br />
+			Dans l'équation <math>
+				<mn>2</mn>
+				<mi>x</mi>
+				<mo>=</mo>
+				<mo>-</mo>
+				<mn>2</mn>
+			</math>
+			, on peut diviser chaque membre de l'équation par 2.
+			<br />
 			{@html display(`
                 \\begin{aligned}
                     2x &= -2 \\\\
@@ -20,7 +28,16 @@
             `)}
 		</Item>
 		<Item lignes={4}>
-			Dans l'équation <math><mfrac><mi>x</mi><mn>5</mn></mfrac><mo>=</mo><mn>22</mn></math>, on peut multiplier chaque membre de l'équation par 5.<br />
+			Dans l'équation <math>
+				<mfrac>
+					<mi>x</mi>
+					<mn>5</mn>
+				</mfrac>
+				<mo>=</mo>
+				<mn>22</mn>
+			</math>
+			, on peut multiplier chaque membre de l'équation par 5.
+			<br />
 			{@html display(`
                 \\begin{aligned}
                     \\dfrac{x}{5} &= 22 \\\\

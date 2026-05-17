@@ -53,7 +53,9 @@
 	<Partie numero={2} titre="Médiatrice" />
 	<Propriete lignes={2}>
 		Si un point appartient à la médiatrice d'un segment, <br />
-		alors il est <i title="à la même distance">équidistant</i> des extrémités du segment.
+		alors il est
+		<i title="à la même distance">équidistant</i>
+		 des extrémités du segment.
 	</Propriete>
 
 	<Schéma lignes={5} aspectRatioSVG={4} onmousemove={majMDepuisEvenement}>
@@ -85,7 +87,10 @@
 
 	<SousPartie numero={1} titre="Construction d'une médiatrice avec le compas" />
 	<Protocole lignes={4}>
-		<Item>Avec le compas, tracer un <i title="d'un rayon supérieur à la moitié de la longueur du segment">grand</i> arc de cercle de centre A.</Item>
+		<Item>
+			Avec le compas, tracer un <i title="d'un rayon supérieur à la moitié de la longueur du segment">grand</i>
+			 arc de cercle de centre A.
+		</Item>
 		<Item lignes={2}>Avec le compas, tracer un arc de cercle de centre B du même rayon que le premier.</Item>
 		<Item>Relier les deux points d'intersection.</Item>
 	</Protocole>

@@ -31,7 +31,8 @@
 	<Partie numero={3} titre="Fréquences" />
 	<LigneVide />
 	<Definition lignes={2}>
-		La <i>fréquence</i> d'une valeur d'une série est son effectif divisé par l'effectif total.
+		La <i>fréquence</i>
+		 d'une valeur d'une série est son effectif divisé par l'effectif total.
 	</Definition>
 	<Exemples lignes={8}>
 		<table class="donnees">
@@ -46,7 +47,10 @@
 			</thead>
 			<tbody>
 				<tr class="double_ligne">
-					<th>Nombre d'élèves <br />(Effectif)</th>
+					<th>
+						Nombre d'élèves <br />
+						(Effectif)
+					</th>
 					{#each Object.values(donnees_5) as valeur}
 						<td>{valeur.toLocaleString('fr-FR')}</td>
 					{/each}

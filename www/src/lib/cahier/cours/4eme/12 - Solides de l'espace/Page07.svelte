@@ -3,18 +3,41 @@
 	import { Definition, Formule, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Projecteur, Prisme, TexteSVG } from '$lib/cahier/composants/svg/*';
 
-
 	const projecteur = new Projecteur(0.46);
 </script>
 
 <Contenu>
 	<SousPartie numero={4} titre="Prisme droit" />
 	<Definition lignes={3}>
-		Un prisme droit est un polyèdre dont deux des faces - les bases - sont des polygones identiques et parallèles.<br />
-		Les autres faces - les faces latérales - sont des rectangles.<br />
+		Un prisme droit est un polyèdre dont deux des faces - les bases - sont des polygones identiques et parallèles.
+		<br />
+		Les autres faces - les faces latérales - sont des rectangles.
+		<br />
 	</Definition>
 	<Formule lignes={2}>
-		Si le prisme droit a une hauteur <math><mi>h</mi></math> et une base d'aire <math><msub><mi>A</mi><mtext>base</mtext></msub></math>, alors <math><msub><mi>V</mi><mtext>prisme</mtext></msub><mo>=</mo><msub><mi>A</mi><mtext>base</mtext></msub><mo>×</mo><mi>h</mi></math>.
+		Si le prisme droit a une hauteur <math><mi>h</mi></math>
+		et une base d'aire
+		<math>
+			<msub>
+				<mi>A</mi>
+				<mtext>base</mtext>
+			</msub>
+		</math>
+		, alors
+		<math>
+			<msub>
+				<mi>V</mi>
+				<mtext>prisme</mtext>
+			</msub>
+			<mo>=</mo>
+			<msub>
+				<mi>A</mi>
+				<mtext>base</mtext>
+			</msub>
+			<mo>×</mo>
+			<mi>h</mi>
+		</math>
+		.
 	</Formule>
 	<Schéma lignes={8}>
 		{#snippet svg()}

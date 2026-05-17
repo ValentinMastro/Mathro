@@ -30,7 +30,8 @@
 		{/snippet}
 	</Schéma>
 	<Texte lignes={3} couleur="bleu">
-		{@html math('[\\text{BD})')} est la bissectrice de l'angle {@html math('\\widehat{\\text{ABC}}')}, coupés en deux angles <br />
+		{@html math('[\\text{BD})')} est la bissectrice de l'angle {@html math('\\widehat{\\text{ABC}}')}, coupés en deux angles
+		<br />
 		{@html math('\\widehat{\\text{ABD}}')} et {@html math('\\widehat{\\text{DBC}}')} de 45°.
 	</Texte>
 </Contenu>

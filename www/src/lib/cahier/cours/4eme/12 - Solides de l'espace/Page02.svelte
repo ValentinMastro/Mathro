@@ -7,12 +7,36 @@
 <Contenu>
 	<Partie numero={1} titre="Unités de volume et contenance" />
 	<Definition lignes={3}>
-		Le volume d'un solide est la place qu'il occupe dans l'espace.<br />
+		Le volume d'un solide est la place qu'il occupe dans l'espace.
+		<br />
 		La contenance d'un récipient est le volume de liquide qu'il peut contenir.
 	</Definition>
 	<Convention lignes={3} lignes_vides={2}>
-		Dans le Système International d'unités (SI), le volume s'exprime en mètres cubes (<math><msup><mtext>m</mtext><mn>3</mn></msup></math>).<br />
-		On exprime la contenance en litres (<math><mi>ℓ</mi></math>), sachant que <math><mn>1000</mn><mo> </mo><mi>ℓ</mi><mo>=</mo><mn>1</mn><mtext> m</mtext><msup><mrow></mrow><mn>3</mn></msup></math>.
+		Dans le Système International d'unités (SI), le volume s'exprime en mètres cubes (
+		<math>
+			<msup>
+				<mtext>m</mtext>
+				<mn>3</mn>
+			</msup>
+		</math>
+		).
+		<br />
+		On exprime la contenance en litres (
+		<math><mi>ℓ</mi></math>
+		), sachant que
+		<math>
+			<mn>1000</mn>
+			<mo></mo>
+			<mi>ℓ</mi>
+			<mo>=</mo>
+			<mn>1</mn>
+			<mtext>m</mtext>
+			<msup>
+				<mrow></mrow>
+				<mn>3</mn>
+			</msup>
+		</math>
+		.
 	</Convention>
 
 	<Texte couleur="noir">

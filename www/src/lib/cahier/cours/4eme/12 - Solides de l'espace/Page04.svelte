@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Contenu, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { Definition, Formule, Schéma } from '$lib/cahier/composants/de_cours/*';
-
 </script>
 
 <Contenu>
@@ -10,7 +9,20 @@
 		Un cube est un hexaèdre régulier, c'est-à-dire un polyèdre dont toutes les faces sont des carrés. Il a 12 arêtes et 8 sommets.
 	</Definition>
 	<Formule>
-		Si l'arête d'un cube mesure <math><mi>c</mi></math>, alors <math><msub><mi>V</mi><mtext>cube</mtext></msub><mo>=</mo><msup><mi>c</mi><mn>3</mn></msup></math>.
+		Si l'arête d'un cube mesure <math><mi>c</mi></math>
+		, alors
+		<math>
+			<msub>
+				<mi>V</mi>
+				<mtext>cube</mtext>
+			</msub>
+			<mo>=</mo>
+			<msup>
+				<mi>c</mi>
+				<mn>3</mn>
+			</msup>
+		</math>
+		.
 	</Formule>
 	<Schéma lignes={8}>
 		{#snippet svg()}

@@ -10,7 +10,8 @@
 	<Partie numero={1} titre="Écriture" />
 	<Definition lignes={2}>Une expression littérale est un ensemble d'opérations contenant des nombres et des lettres.</Definition>
 	<Definition lignes={2}>
-		Dans une expression littérale, une lettre représente un nombre, cette lettre est appelée <i>une variable</i>.
+		Dans une expression littérale, une lettre représente un nombre, cette lettre est appelée <i>une variable</i>
+		.
 	</Definition>
 	<Exemple lignes={2}>
 		{@html math('3 \\times a + 2 \\times b')} est une expression littérale contenant 2 variables : {@html math('a')} et {@html math('b')}. Elle est

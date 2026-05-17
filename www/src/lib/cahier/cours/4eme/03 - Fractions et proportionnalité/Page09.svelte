@@ -17,11 +17,26 @@
 	<Exemples lignes={6}>
 		<Item lignes={3}>
 			Le côté d'un carré et son périmètre sont proportionnels. <br />
-			En effet, <math><msub><mi>𝒫</mi><mtext>carré</mtext></msub><mo>=</mo><mn>4</mn><mo>×</mo><mi>c</mi></math> où <math><mi>c</mi></math> est la longueur du côté.<br />
+			En effet,
+			<math>
+				<msub>
+					<mi>𝒫</mi>
+					<mtext>carré</mtext>
+				</msub>
+				<mo>=</mo>
+				<mn>4</mn>
+				<mo>×</mo>
+				<mi>c</mi>
+			</math>
+			où
+			<math><mi>c</mi></math>
+			est la longueur du côté.
+			<br />
 			4 est ici le coefficient de proportionnalité.
 		</Item>
 		<Item lignes={3}>
-			L'âge et la taille d'une personne ne sont pas proportionnels.<br />
+			L'âge et la taille d'une personne ne sont pas proportionnels.
+			<br />
 			En effet, si une personne a 10 ans et qu'elle mesure 1,20 m, cela ne signifie pas qu'à 20 ans, elle mesurera 2,40 m.
 		</Item>
 	</Exemples>

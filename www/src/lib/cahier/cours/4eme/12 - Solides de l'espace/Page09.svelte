@@ -3,7 +3,6 @@
 	import { Definition, Formule, Schéma } from '$lib/cahier/composants/de_cours/*';
 	import { Cône, Projecteur, TexteSVG } from '$lib/cahier/composants/svg/*';
 
-
 	const projecteur = new Projecteur(0.46);
 </script>
 
@@ -13,7 +12,30 @@
 		Un cône de révolution est un solide obtenu en faisant tourner un triangle rectangle autour d'un des deux côtés qui n'est pas l'hypoténuse.
 	</Definition>
 	<Formule lignes={2}>
-		Si le cône a une hauteur <math><mi>h</mi></math> et un rayon de base <math><mi>r</mi></math>, alors <math><msub><mi>V</mi><mtext>cone</mtext></msub><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mo>×</mo><mi>π</mi><msup><mi>r</mi><mn>2</mn></msup><mo>×</mo><mi>h</mi></math>.
+		Si le cône a une hauteur <math><mi>h</mi></math>
+		et un rayon de base
+		<math><mi>r</mi></math>
+		, alors
+		<math>
+			<msub>
+				<mi>V</mi>
+				<mtext>cone</mtext>
+			</msub>
+			<mo>=</mo>
+			<mfrac>
+				<mn>1</mn>
+				<mn>3</mn>
+			</mfrac>
+			<mo>×</mo>
+			<mi>π</mi>
+			<msup>
+				<mi>r</mi>
+				<mn>2</mn>
+			</msup>
+			<mo>×</mo>
+			<mi>h</mi>
+		</math>
+		.
 	</Formule>
 	<Schéma lignes={8}>
 		{#snippet svg()}

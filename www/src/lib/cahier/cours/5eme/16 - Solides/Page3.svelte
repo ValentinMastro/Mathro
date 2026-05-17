@@ -10,7 +10,8 @@
 	<Partie numero={3} titre="Le cylindre et le cône" />
 
 	<Definition lignes={2}>
-		Un <i>cylindre</i> est un solide délimité par deux disques parallèles (les bases) et une surface latérale courbe.
+		Un <i>cylindre</i>
+		 est un solide délimité par deux disques parallèles (les bases) et une surface latérale courbe.
 	</Definition>
 
 	<Schéma lignes={7} aspectRatioSVG={3.5}>
@@ -42,7 +43,10 @@
 	</Schéma>
 
 	<Definition lignes={2}>
-		Un <i>cône</i> est un solide dont la base est un disque et dont la surface latérale courbe se termine en un point appelé <i>apex</i>.
+		Un <i>cône</i>
+		est un solide dont la base est un disque et dont la surface latérale courbe se termine en un point appelé
+		<i>apex</i>
+		.
 	</Definition>
 	<Remarque lignes={2}>La sphère, le cylindre et le cône ne sont pas des polyèdres car ils ont des faces courbes.</Remarque>
 

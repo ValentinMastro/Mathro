@@ -13,10 +13,14 @@
 		<Item>enfin les additions et les soustractions (de gauche à droite)</Item>
 	</Propriete>
 	<Exemple lignes={5} addStyle="margin-left: calc((2/21)* 100%);">
-		{@html math('3 + 4 \\times (2 + {\\color{red} 3 \\times 7})')} <br />
-		{@html math('= 3 + 4 \\times {\\color{red} (2 + 21)}')} <br />
-		{@html math('= 3 + {\\color{red} 4 \\times  23}')} <br />
-		{@html math('= 3 + 92')} <br />
+		{@html math('3 + 4 \\times (2 + {\\color{red} 3 \\times 7})')}
+		<br />
+		{@html math('= 3 + 4 \\times {\\color{red} (2 + 21)}')}
+		<br />
+		{@html math('= 3 + {\\color{red} 4 \\times  23}')}
+		<br />
+		{@html math('= 3 + 92')}
+		<br />
 		{@html math('= \\fbox{95}')}
 	</Exemple>
 	<Propriete lignes={2}>Lorsqu'il n'y a que des additions, on peut additionner les nombres dans l'ordre que l'on veut.</Propriete>

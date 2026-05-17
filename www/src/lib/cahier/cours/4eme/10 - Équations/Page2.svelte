@@ -12,7 +12,16 @@
 	</Paragraphe>
 	<Exemples lignes={17}>
 		<Item lignes={5}>
-			Dans l'équation <math><mn>2</mn><mi>x</mi><mo>+</mo><mn>5</mn><mo>=</mo><mn>3</mn></math>, on peut retirer 5 dans chaque membre de l'équation.<br />
+			Dans l'équation <math>
+				<mn>2</mn>
+				<mi>x</mi>
+				<mo>+</mo>
+				<mn>5</mn>
+				<mo>=</mo>
+				<mn>3</mn>
+			</math>
+			, on peut retirer 5 dans chaque membre de l'équation.
+			<br />
 			{@html display(`
                     \\begin{aligned}
                         2x+5 &= 3 \\\\
@@ -22,7 +31,24 @@
                 `)}
 		</Item>
 		<Item lignes={10}>
-			Dans l'équation <math><mn>7</mn><mi>x</mi><mo>+</mo><mn>5</mn><mo>=</mo><mn>6</mn><mi>x</mi><mo>+</mo><mn>6</mn></math>, on peut retirer <math><mn>6</mn><mi>x</mi></math> dans chaque membre de l'équation.<br />
+			Dans l'équation <math>
+				<mn>7</mn>
+				<mi>x</mi>
+				<mo>+</mo>
+				<mn>5</mn>
+				<mo>=</mo>
+				<mn>6</mn>
+				<mi>x</mi>
+				<mo>+</mo>
+				<mn>6</mn>
+			</math>
+			, on peut retirer
+			<math>
+				<mn>6</mn>
+				<mi>x</mi>
+			</math>
+			dans chaque membre de l'équation.
+			<br />
 			{@html display(`
                     \\begin{aligned}
                         7x+5 &= 6x+6 \\\\
@@ -31,7 +57,8 @@
                     \\end{aligned}
                 `)}
 			<LigneVide lignes={0.5} />
-			On peut également retirer 5 dans chaque membre de l'équation.<br />
+			On peut également retirer 5 dans chaque membre de l'équation.
+			<br />
 			{@html display(`
                     \\begin{aligned}
                         x+5 &= 6 \\\\

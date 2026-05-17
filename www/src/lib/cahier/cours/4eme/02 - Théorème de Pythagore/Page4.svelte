@@ -9,7 +9,28 @@
 	<Theoreme nom_du_theoreme="Théorème de Pythagore" lignes={4}>
 		Si un triangle est rectangle, alors le carré de la longueur de l'hypoténuse est égale à la somme des carrés des longueurs des autres côtés.
 		<br />
-		Si <math><mi>ABC</mi></math> est rectangle en <math><mi>B</mi></math>, alors <math><msup><mi>AC</mi><mn>2</mn></msup><mo>=</mo><msup><mi>AB</mi><mn>2</mn></msup><mo>+</mo><msup><mi>BC</mi><mn>2</mn></msup></math>.
+		Si
+		<math><mi>ABC</mi></math>
+		est rectangle en
+		<math><mi>B</mi></math>
+		, alors
+		<math>
+			<msup>
+				<mi>AC</mi>
+				<mn>2</mn>
+			</msup>
+			<mo>=</mo>
+			<msup>
+				<mi>AB</mi>
+				<mn>2</mn>
+			</msup>
+			<mo>+</mo>
+			<msup>
+				<mi>BC</mi>
+				<mn>2</mn>
+			</msup>
+		</math>
+		.
 	</Theoreme>
 	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}

@@ -49,8 +49,35 @@
 		{/snippet}
 	</Schéma>
 	<Propriete lignes={2}>
-		Si deux points <math><mi>A</mi></math> et <math><mi>A</mi><mo>′</mo></math> sont symétriques par rapport à <math><mo>(</mo><mi>d</mi><mo>)</mo></math>, <br />
-		alors <math><mo>(</mo><mi>d</mi><mo>)</mo></math> est la médiatrice du segment <math><mo>[</mo><mi>A</mi><mi>A</mi><mo>′</mo><mo>]</mo></math>.
+		Si deux points <math><mi>A</mi></math>
+		et
+		<math>
+			<mi>A</mi>
+			<mo>′</mo>
+		</math>
+		sont symétriques par rapport à
+		<math>
+			<mo>(</mo>
+			<mi>d</mi>
+			<mo>)</mo>
+		</math>
+		,
+		<br />
+		alors
+		<math>
+			<mo>(</mo>
+			<mi>d</mi>
+			<mo>)</mo>
+		</math>
+		est la médiatrice du segment
+		<math>
+			<mo>[</mo>
+			<mi>A</mi>
+			<mi>A</mi>
+			<mo>′</mo>
+			<mo>]</mo>
+		</math>
+		.
 	</Propriete>
 
 	<Schéma lignes={8} aspectRatioSVG={2}>

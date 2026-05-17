@@ -27,8 +27,11 @@
 <Contenu apres_un_titre>
 	<Partie numero={1} titre="Symétrie axiale" />
 	<Definition lignes={3}>
-		Deux figures sont symétriques par rapport à une droite si, en repliant le plan le long de cette droite, les deux figures se superposent.<br />
-		Cette droite est <i>l'axe de symétrie</i>.
+		Deux figures sont symétriques par rapport à une droite si, en repliant le plan le long de cette droite, les deux figures se superposent.
+		<br />
+		Cette droite est
+		<i>l'axe de symétrie</i>
+		.
 	</Definition>
 	<Schéma lignes={10} aspectRatioSVG={2.05}>
 		{#snippet svg()}
@@ -54,7 +57,8 @@
 		{/snippet}
 	</Schéma>
 	<Propriete lignes={2}>
-		Si deux points {@html math('\\text{A}')} et {@html math("\\text{A}'")} sont symétriques par rapport à {@html math('(d)')}, <br />
+		Si deux points {@html math('\\text{A}')} et {@html math("\\text{A}'")} sont symétriques par rapport à {@html math('(d)')},
+		<br />
 		alors {@html math('(d)')} est la médiatrice du segment {@html math("[\\text{AA}']")}.
 	</Propriete>
 

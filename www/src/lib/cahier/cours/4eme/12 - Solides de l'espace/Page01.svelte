@@ -7,9 +7,12 @@
 
 <Contenu apres_un_titre>
 	<Definition lignes={6}>
-		Un solide est un objet de l'espace, possédant trois dimensions : longueur, largeur, hauteur.<br />
-		La face d'un solide est une figure plane, en deux dimensions, qui le délimite.<br />
-		Une arête est un segment commun à deux faces.<br />
+		Un solide est un objet de l'espace, possédant trois dimensions : longueur, largeur, hauteur.
+		<br />
+		La face d'un solide est une figure plane, en deux dimensions, qui le délimite.
+		<br />
+		Une arête est un segment commun à deux faces.
+		<br />
 		Un sommet est le point commun à plusieurs arêtes.
 	</Definition>
 	<Schéma lignes={10} aspectRatioSVG={2}>
@@ -29,11 +32,11 @@
 			<line x1="800" y1="600" x2="1300" y2="600" stroke="black" stroke-width="4" stroke-dasharray="20 20" />
 
 			<!-- Légendes -->
-			<text x="1410" y="450" text-anchor="start" dominant-baseline="middle" font-size="60px" stroke="none" fill="black"> Face </text>
+			<text x="1410" y="450" text-anchor="start" dominant-baseline="middle" font-size="60px" stroke="none" fill="black">Face</text>
 			<line x1="1400" y1="450" x2="1200" y2="450" stroke="black" stroke-width="4" marker-end="url(#fleche)" />
-			<text x="380" y="550" text-anchor="end" dominant-baseline="middle" font-size="60px" stroke="none" fill="black"> Arête </text>
+			<text x="380" y="550" text-anchor="end" dominant-baseline="middle" font-size="60px" stroke="none" fill="black">Arête</text>
 			<line x1="400" y1="550" x2="580" y2="550" stroke="black" stroke-width="4" marker-end="url(#fleche)" />
-			<text x="1460" y="100" text-anchor="start" dominant-baseline="middle" font-size="60px" stroke="none" fill="black"> Sommet </text>
+			<text x="1460" y="100" text-anchor="start" dominant-baseline="middle" font-size="60px" stroke="none" fill="black">Sommet</text>
 			<line x1="1450" y1="100" x2="1310" y2="100" stroke="black" stroke-width="4" marker-end="url(#fleche)" />
 		{/snippet}
 	</Schéma>

@@ -70,14 +70,73 @@
 	<Paragraphe nom_du_paragraphe="On sait que : " couleur="bleu" lignes={3}>
 		<Item>les points U, V, X sont alignés</Item>
 		<Item>les points U, W, Y sont alignés</Item>
-		<Item><math><mo>(</mo><mi>WV</mi><mo>)</mo><mo>//</mo><mo>(</mo><mi>XY</mi><mo>)</mo></math></Item>
+		<Item>
+			<math>
+				<mo>(</mo>
+				<mi>WV</mi>
+				<mo>)</mo>
+				<mo>//</mo>
+				<mo>(</mo>
+				<mi>XY</mi>
+				<mo>)</mo>
+			</math>
+		</Item>
 	</Paragraphe>
 
 	<Paragraphe nom_du_paragraphe="D'après le théorème de Thalès :" couleur="bleu" lignes={6}>
 		<center>
-			<math><mfrac><mi>UX</mi><mi>UV</mi></mfrac><mo>=</mo><mfrac><mi>UY</mi><mi>UW</mi></mfrac><mo>=</mo><mfrac><mi>XY</mi><mi>VW</mi></mfrac></math> <br /><br />
-			<math><mfrac><mn>8</mn><mn>4</mn></mfrac><mo>=</mo><mfrac><mi>UY</mi><mn>4,5</mn></mfrac><mo>=</mo><mfrac><mi>XY</mi><mi>VW</mi></mfrac></math> <br /><br />
-			<math><mi>UY</mi><mo>=</mo><mfrac><mrow><mn>8</mn><mo>×</mo><mn>4,5</mn></mrow><mn>4</mn></mfrac><mo>=</mo><mn>9</mn><mspace width="1em"/><mtext>(produit en croix)</mtext></math>
+			<math>
+				<mfrac>
+					<mi>UX</mi>
+					<mi>UV</mi>
+				</mfrac>
+				<mo>=</mo>
+				<mfrac>
+					<mi>UY</mi>
+					<mi>UW</mi>
+				</mfrac>
+				<mo>=</mo>
+				<mfrac>
+					<mi>XY</mi>
+					<mi>VW</mi>
+				</mfrac>
+			</math>
+			<br />
+			<br />
+			<math>
+				<mfrac>
+					<mn>8</mn>
+					<mn>4</mn>
+				</mfrac>
+				<mo>=</mo>
+				<mfrac>
+					<mi>UY</mi>
+					<mn>4,5</mn>
+				</mfrac>
+				<mo>=</mo>
+				<mfrac>
+					<mi>XY</mi>
+					<mi>VW</mi>
+				</mfrac>
+			</math>
+			<br />
+			<br />
+			<math>
+				<mi>UY</mi>
+				<mo>=</mo>
+				<mfrac>
+					<mrow>
+						<mn>8</mn>
+						<mo>×</mo>
+						<mn>4,5</mn>
+					</mrow>
+					<mn>4</mn>
+				</mfrac>
+				<mo>=</mo>
+				<mn>9</mn>
+				<mspace width="1em" />
+				<mtext>(produit en croix)</mtext>
+			</math>
 		</center>
 	</Paragraphe>
 </Contenu>

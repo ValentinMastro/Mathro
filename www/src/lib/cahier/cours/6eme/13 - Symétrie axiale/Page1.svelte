@@ -27,8 +27,11 @@
 	<Partie numero={1} titre="Concept" />
 	<Definition lignes={3}>
 		Deux figures {@html math('(\\mathcal{F})')} et {@html math("(\\mathcal{F}')")} sont symétriques par rapport à une droite {@html math('(d)')} si, en
-		repliant le plan le long de {@html math('(d)')}, {@html math('(\\mathcal{F})')} et {@html math("(\\mathcal{F}')")} se superposent. <br />
-		{@html math('(d)')} est appelée <i>axe</i> de symétrie.
+		repliant le plan le long de {@html math('(d)')}, {@html math('(\\mathcal{F})')} et {@html math("(\\mathcal{F}')")} se superposent.
+		<br />
+		{@html math('(d)')} est appelée
+		<i>axe</i>
+		 de symétrie.
 	</Definition>
 	<Exemples />
 	<Schéma lignes={20}>

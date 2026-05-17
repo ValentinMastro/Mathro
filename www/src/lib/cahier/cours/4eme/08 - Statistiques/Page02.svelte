@@ -11,7 +11,9 @@
 	<Partie numero={1} titre="Indicateurs de position" />
 	<SousPartie numero={1} titre="Moyenne" />
 	<Definition lignes={2}>
-		<i>L'effectif total</i> d'une série statistique est le nombre de valeurs qu'elle contient.<br />
+		<i>L'effectif total</i>
+		d'une série statistique est le nombre de valeurs qu'elle contient.
+		<br />
 	</Definition>
 	<Exemples lignes={2}>
 		<Item lignes={1}>
@@ -24,10 +26,17 @@
 		</Item>
 	</Exemples>
 	<Definition lignes={2}>
-		<i>La moyenne</i> d'une série statistique est la somme de toutes les valeurs divisée par l'effectif total.
+		<i>La moyenne</i>
+		 d'une série statistique est la somme de toutes les valeurs divisée par l'effectif total.
 	</Definition>
 	<Notation>
-		On note N l'effectif total d'une série statistique et <math><mover><mi>x</mi><mo>‾</mo></mover></math> sa moyenne.
+		On note N l'effectif total d'une série statistique et <math>
+			<mover>
+				<mi>x</mi>
+				<mo>‾</mo>
+			</mover>
+		</math>
+		 sa moyenne.
 	</Notation>
 	<Exemples lignes={8}>
 		<Item lignes={2}>

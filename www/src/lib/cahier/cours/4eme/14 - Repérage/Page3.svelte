@@ -7,11 +7,73 @@
 <Contenu>
 	<Partie numero={3} titre="Dans l'espace, sur un pavé droit (3 dimensions)" />
 	<Definition lignes={6}>
-		Dans l'espace, un repère orthogonal <math><mo>(</mo><mi>O</mi><mo>,</mo><mi>I</mi><mo>,</mo><mi>J</mi><mo>,</mo><mi>K</mi><mo>)</mo></math> est constitué de plusieurs éléments :
+		Dans l'espace, un repère orthogonal <math>
+			<mo>(</mo>
+			<mi>O</mi>
+			<mo>,</mo>
+			<mi>I</mi>
+			<mo>,</mo>
+			<mi>J</mi>
+			<mo>,</mo>
+			<mi>K</mi>
+			<mo>)</mo>
+		</math>
+		est constitué de plusieurs éléments :
 		<Item>un point O appelé origine</Item>
-		<Item>l'axe des abscisses, <math><mo>(</mo><mi>OI</mi><mo>)</mo></math>, avec <math><mi>I</mi><mo>(</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo>)</mo></math></Item>
-		<Item>l'axe des ordonnées, <math><mo>(</mo><mi>OJ</mi><mo>)</mo></math>, avec <math><mi>J</mi><mo>(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo>)</mo></math></Item>
-		<Item>l'axe des cotes, ou des altitudes, <math><mo>(</mo><mi>OK</mi><mo>)</mo></math> avec <math><mi>K</mi><mo>(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>)</mo></math></Item>
+		<Item>
+			l'axe des abscisses, <math>
+				<mo>(</mo>
+				<mi>OI</mi>
+				<mo>)</mo>
+			</math>
+			, avec
+			<math>
+				<mi>I</mi>
+				<mo>(</mo>
+				<mn>1</mn>
+				<mo>,</mo>
+				<mn>0</mn>
+				<mo>,</mo>
+				<mn>0</mn>
+				<mo>)</mo>
+			</math>
+		</Item>
+		<Item>
+			l'axe des ordonnées, <math>
+				<mo>(</mo>
+				<mi>OJ</mi>
+				<mo>)</mo>
+			</math>
+			, avec
+			<math>
+				<mi>J</mi>
+				<mo>(</mo>
+				<mn>0</mn>
+				<mo>,</mo>
+				<mn>1</mn>
+				<mo>,</mo>
+				<mn>0</mn>
+				<mo>)</mo>
+			</math>
+		</Item>
+		<Item>
+			l'axe des cotes, ou des altitudes, <math>
+				<mo>(</mo>
+				<mi>OK</mi>
+				<mo>)</mo>
+			</math>
+			avec
+			<math>
+				<mi>K</mi>
+				<mo>(</mo>
+				<mn>0</mn>
+				<mo>,</mo>
+				<mn>0</mn>
+				<mo>,</mo>
+				<mn>1</mn>
+				<mo>)</mo>
+			</math>
+		</Item>
 	</Definition>
 	<Schéma lignes={10} aspectRatioSVG={1.6}>
 		{#snippet svg()}
@@ -68,14 +130,102 @@
 		{/snippet}
 		{#snippet html()}
 			<LigneVide lignes={1.35} />
-			<Item><math><mi>A</mi><mo>(</mo><mn>2</mn><mo>;</mo><mn>0</mn><mo>;</mo><mn>0</mn><mo>)</mo></math></Item>
-			<Item><math><mi>B</mi><mo>(</mo><mn>8</mn><mo>;</mo><mn>0</mn><mo>;</mo><mn>0</mn><mo>)</mo></math></Item>
-			<Item><math><mi>C</mi><mo>(</mo><mn>8</mn><mo>;</mo><mn>4</mn><mo>;</mo><mn>0</mn><mo>)</mo></math></Item>
-			<Item><math><mi>D</mi><mo>(</mo><mn>2</mn><mo>;</mo><mn>4</mn><mo>;</mo><mn>0</mn><mo>)</mo></math></Item>
-			<Item><math><mi>E</mi><mo>(</mo><mn>2</mn><mo>;</mo><mn>0</mn><mo>;</mo><mn>7</mn><mo>)</mo></math></Item>
-			<Item><math><mi>F</mi><mo>(</mo><mn>8</mn><mo>;</mo><mn>0</mn><mo>;</mo><mn>7</mn><mo>)</mo></math></Item>
-			<Item><math><mi>G</mi><mo>(</mo><mn>8</mn><mo>;</mo><mn>4</mn><mo>;</mo><mn>7</mn><mo>)</mo></math></Item>
-			<Item><math><mi>H</mi><mo>(</mo><mn>2</mn><mo>;</mo><mn>4</mn><mo>;</mo><mn>7</mn><mo>)</mo></math></Item>
+			<Item>
+				<math>
+					<mi>A</mi>
+					<mo>(</mo>
+					<mn>2</mn>
+					<mo>;</mo>
+					<mn>0</mn>
+					<mo>;</mo>
+					<mn>0</mn>
+					<mo>)</mo>
+				</math>
+			</Item>
+			<Item>
+				<math>
+					<mi>B</mi>
+					<mo>(</mo>
+					<mn>8</mn>
+					<mo>;</mo>
+					<mn>0</mn>
+					<mo>;</mo>
+					<mn>0</mn>
+					<mo>)</mo>
+				</math>
+			</Item>
+			<Item>
+				<math>
+					<mi>C</mi>
+					<mo>(</mo>
+					<mn>8</mn>
+					<mo>;</mo>
+					<mn>4</mn>
+					<mo>;</mo>
+					<mn>0</mn>
+					<mo>)</mo>
+				</math>
+			</Item>
+			<Item>
+				<math>
+					<mi>D</mi>
+					<mo>(</mo>
+					<mn>2</mn>
+					<mo>;</mo>
+					<mn>4</mn>
+					<mo>;</mo>
+					<mn>0</mn>
+					<mo>)</mo>
+				</math>
+			</Item>
+			<Item>
+				<math>
+					<mi>E</mi>
+					<mo>(</mo>
+					<mn>2</mn>
+					<mo>;</mo>
+					<mn>0</mn>
+					<mo>;</mo>
+					<mn>7</mn>
+					<mo>)</mo>
+				</math>
+			</Item>
+			<Item>
+				<math>
+					<mi>F</mi>
+					<mo>(</mo>
+					<mn>8</mn>
+					<mo>;</mo>
+					<mn>0</mn>
+					<mo>;</mo>
+					<mn>7</mn>
+					<mo>)</mo>
+				</math>
+			</Item>
+			<Item>
+				<math>
+					<mi>G</mi>
+					<mo>(</mo>
+					<mn>8</mn>
+					<mo>;</mo>
+					<mn>4</mn>
+					<mo>;</mo>
+					<mn>7</mn>
+					<mo>)</mo>
+				</math>
+			</Item>
+			<Item>
+				<math>
+					<mi>H</mi>
+					<mo>(</mo>
+					<mn>2</mn>
+					<mo>;</mo>
+					<mn>4</mn>
+					<mo>;</mo>
+					<mn>7</mn>
+					<mo>)</mo>
+				</math>
+			</Item>
 		{/snippet}
 	</Schéma>
 </Contenu>

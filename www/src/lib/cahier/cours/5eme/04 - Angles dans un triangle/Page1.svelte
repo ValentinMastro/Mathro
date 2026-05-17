@@ -22,11 +22,13 @@
 	<Propriete lignes={2}>Dans un triangle, la somme des mesures des trois angles est égale à 180°.</Propriete>
 	<Exemples lignes={4}>
 		<Item lignes={2}>
-			Si, dans le triangle ABC, {@html math('\\widehat{\\text{ABC}} = 60^\\circ')} et {@html math('\\widehat{\\text{ACB}} = 40^\\circ')}, <br />
+			Si, dans le triangle ABC, {@html math('\\widehat{\\text{ABC}} = 60^\\circ')} et {@html math('\\widehat{\\text{ACB}} = 40^\\circ')},
+			<br />
 			alors {@html math('\\widehat{\\text{BAC}} = 180 - 60 - 40 = 80^\\circ')}.
 		</Item>
 		<Item lignes={2}>
-			Si, dans le triangle DEF, {@html math('\\widehat{\\text{DEF}} = 90^\\circ')} et {@html math('\\widehat{\\text{DFE}} = 30^\\circ')}, <br />
+			Si, dans le triangle DEF, {@html math('\\widehat{\\text{DEF}} = 90^\\circ')} et {@html math('\\widehat{\\text{DFE}} = 30^\\circ')},
+			<br />
 			alors {@html math('\\widehat{\\text{EDF}} = 180 - 90 - 30 = 60^\\circ')}.
 		</Item>
 	</Exemples>
@@ -40,7 +42,8 @@
 		{#snippet html()}
 			<Texte lignes={3}>
 				Après avoir mesuré les angles au <br />
-				rapporteur, je remarque que <br />
+				rapporteur, je remarque que
+				<br />
 				{@html math(`${ABC.toFixed()}^\\circ + ${BCA.toFixed()}^\\circ + ${CAB.toFixed()}^\\circ = ${ABC + BCA + CAB}^\\circ`)}.
 			</Texte>
 		{/snippet}

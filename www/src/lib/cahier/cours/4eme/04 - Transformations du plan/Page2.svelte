@@ -41,8 +41,21 @@
 		{/snippet}
 	</Schéma>
 	<Propriete lignes={2}>
-		Si deux points <math><mi>A</mi></math> et <math><mi>A</mi><mo>′</mo></math> sont symétriques par rapport à O, <br />
-		alors O est le milieu du segment <math><mi>A</mi><mi>A</mi><mo>′</mo></math>.
+		Si deux points <math><mi>A</mi></math>
+		et
+		<math>
+			<mi>A</mi>
+			<mo>′</mo>
+		</math>
+		sont symétriques par rapport à O,
+		<br />
+		alors O est le milieu du segment
+		<math>
+			<mi>A</mi>
+			<mi>A</mi>
+			<mo>′</mo>
+		</math>
+		.
 	</Propriete>
 	<Schéma lignes={10}>
 		{#snippet svg()}

@@ -9,18 +9,33 @@
 	<Partie numero={2} titre="Arrondir un nombre décimal" />
 
 	<Definition lignes={3}>
-		<i>Arrondir</i> un nombre décimal, c’est le remplacer par un nombre <br />
-		proche plus simple, en conservant un certain <i>nombre de chiffres</i>, ou <br />
+		<i>Arrondir</i>
+		un nombre décimal, c’est le remplacer par un nombre
+		<br />
+		proche plus simple, en conservant un certain
+		<i>nombre de chiffres</i>
+		, ou
+		<br />
 		en s'arrêtant jusqu'à un chiffre donné.
 	</Definition>
 
 	<Methode lignes={6}>
 		Pour arrondir à une position donnée :
-		<Item>Repèrer le <i>chiffre à garder</i> (unité, dixième, centième…).</Item>
+		<Item>
+			Repèrer le <i>chiffre à garder</i>
+			 (unité, dixième, centième…).
+		</Item>
 		<Item lignes={3}>
-			Regarder le <i>chiffre suivant</i> :
-			<Item>s’il est <i>0,1,2,3,4</i> → rien ne change</Item>
-			<Item>s’il est <i>5,6,7,8,9</i> → on ajoute 1 au chiffre à garder.</Item>
+			Regarder le <i>chiffre suivant</i>
+			:
+			<Item>
+				s’il est <i>0,1,2,3,4</i>
+				 → rien ne change
+			</Item>
+			<Item>
+				s’il est <i>5,6,7,8,9</i>
+				 → on ajoute 1 au chiffre à garder.
+			</Item>
 		</Item>
 		<Item>Effacer les chiffres après la position donnée.</Item>
 	</Methode>

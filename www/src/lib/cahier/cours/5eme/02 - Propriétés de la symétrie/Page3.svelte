@@ -6,7 +6,8 @@
 <Contenu>
 	<Partie numero={3} titre="Propriétés de conservation" />
 	<Propriete lignes={8}>
-		Les symétries sont des <i>isométries du plan</i>, cela signifie que :
+		Les symétries sont des <i>isométries du plan</i>
+		, cela signifie que :
 		<Item lignes={2}>
 			la nature des objets est conservée <br />
 			<span style="color: blue;">(le symétrique d'un carré est un carré)</span>

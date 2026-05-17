@@ -10,7 +10,8 @@
 <Contenu>
 	<SousPartie numero={2} titre="Étendue" />
 	<Definition lignes={2}>
-		<i>L'étendue</i> d'une série statistique est la différence entre la plus grande valeur (le maximum) et la plus petite valeur (le minimum).
+		<i>L'étendue</i>
+		 d'une série statistique est la différence entre la plus grande valeur (le maximum) et la plus petite valeur (le minimum).
 	</Definition>
 	<Exemples lignes={2}>
 		<Item>
@@ -30,13 +31,18 @@
 	</Exemples>
 	<SousPartie numero={3} titre="Médiane" />
 	<Definition lignes={4}>
-		La <i>médiane</i> d'une série statistique est la valeur partageant la série en deux parties de même effectif.<br />
+		La <i>médiane</i>
+		d'une série statistique est la valeur partageant la série en deux parties de même effectif.
+		<br />
 		La première partie contient les valeurs inférieures à la médiane, la seconde partie contient les valeurs supérieures à la médiane.
 	</Definition>
 	<Exemples lignes={4}>
-		{@html math(afficher_serie(SERIE_2))} <br />
-		La médiane est {@html math(médiane(SERIE_2).toLocaleString())}. <br />
-		En effet, on peut scinder cette série en deux : <br />
+		{@html math(afficher_serie(SERIE_2))}
+		<br />
+		La médiane est {@html math(médiane(SERIE_2).toLocaleString())}.
+		<br />
+		En effet, on peut scinder cette série en deux :
+		<br />
 		{@html math(afficher_serie(SERIE_2.filter((e) => e < médiane(SERIE_2))))} et
 		{@html math(afficher_serie(SERIE_2.filter((e) => e > médiane(SERIE_2))))}
 	</Exemples>

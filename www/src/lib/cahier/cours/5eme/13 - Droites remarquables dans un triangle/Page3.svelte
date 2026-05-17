@@ -46,8 +46,10 @@
 		<Item>{@html math('(\\text{AH})')} est la hauteur issue de A</Item>
 	</Notation>
 	<Propriete lignes={2}>
-		Les 3 hauteurs d'un triangle sont concourantes en un point :<br />
-		<i title="peut se trouver à l'extérieur du triangle si celui-ci est obtus">l'orthocentre</i>.
+		Les 3 hauteurs d'un triangle sont concourantes en un point :
+		<br />
+		<i title="peut se trouver à l'extérieur du triangle si celui-ci est obtus">l'orthocentre</i>
+		.
 	</Propriete>
 	<SchémaIntéractif lignes={10} aspectRatioSVG={2} points_intéractifs={[C, D, E]}>
 		{#snippet svg()}

@@ -71,8 +71,18 @@
 		<Item lignes={2}>Un nombre sert à compter, mesurer ou comparer, et on peut l'écrire avec un ou plusieurs chiffres.</Item>
 	</Definitions>
 	<PourMieuxComprendre lignes={2}>
-		<Item>Le <u>mot</u> maison s'écrit avec 6 <u>lettres</u> : M-A-I-S-O-N.</Item>
-		<Item>Le <u>nombre</u> 396 s'écrit avec 3 <u>chiffres</u> : 3-9-6.</Item>
+		<Item>
+			Le <u>mot</u>
+			maison s'écrit avec 6
+			<u>lettres</u>
+			 : M-A-I-S-O-N.
+		</Item>
+		<Item>
+			Le <u>nombre</u>
+			396 s'écrit avec 3
+			<u>chiffres</u>
+			 : 3-9-6.
+		</Item>
 	</PourMieuxComprendre>
 	<SousPartie numero={1} titre="Tableau de numération" />
 	<Tableau colonnes={12} lignes={4}>

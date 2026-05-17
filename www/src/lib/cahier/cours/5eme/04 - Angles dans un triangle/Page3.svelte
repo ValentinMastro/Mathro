@@ -15,10 +15,13 @@
 <Contenu>
 	<Definition lignes={2}>
 		Un triangle isocèle a deux côtés de même longueur. <br />
-		Le troisième côté est appelé la <i>base</i>.
+		Le troisième côté est appelé la
+		<i>base</i>
+		.
 	</Definition>
 	<Propriete lignes={2}>
-		Un triangle isocèle possède deux angles de même mesure :<br />
+		Un triangle isocèle possède deux angles de même mesure :
+		<br />
 		il s'agit des angles adjacents à la base du triangle.
 	</Propriete>
 	<Schéma lignes={11} centré>
@@ -32,7 +35,8 @@
 		{/snippet}
 	</Schéma>
 	<Exemple lignes={2}>
-		Le triangle DEF est isocèle en {@html math('\\text{F}')} car {@html math('\\text{DF} = \\text{EF}')}.<br />
+		Le triangle DEF est isocèle en {@html math('\\text{F}')} car {@html math('\\text{DF} = \\text{EF}')}.
+		<br />
 		Les angles {@html math('\\widehat{\\text{DEF}}')} et {@html math('\\widehat{\\text{EDF}}')} sont égaux.
 	</Exemple>
 </Contenu>

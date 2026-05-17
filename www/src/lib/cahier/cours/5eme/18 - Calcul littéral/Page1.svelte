@@ -34,14 +34,22 @@
 	</Methode>
 	<Exemples lignes={6}>
 		<Item lignes={3}>
-			Tester {@html math('2(x + 3) = 2x + 6')} pour {@html math(`x = ${x}`)} : <br />
-			Membre gauche : {@html math(`2(${x} + 3) = 2 \\times ${x + 3} = ${lg1}`)}. <br />
-			Membre droit : {@html math(`2 \\times ${x} + 6 = ${2 * x} + 6 = ${ld1}`)}. → Égalité <b>{lg1 === ld1 ? 'vraie' : 'fausse'}</b>.
+			Tester {@html math('2(x + 3) = 2x + 6')} pour {@html math(`x = ${x}`)} :
+			<br />
+			Membre gauche : {@html math(`2(${x} + 3) = 2 \\times ${x + 3} = ${lg1}`)}.
+			<br />
+			Membre droit : {@html math(`2 \\times ${x} + 6 = ${2 * x} + 6 = ${ld1}`)}. → Égalité
+			<b>{lg1 === ld1 ? 'vraie' : 'fausse'}</b>
+			.
 		</Item>
 		<Item lignes={3}>
-			Tester {@html math('y^2 = 2y')} pour {@html math(`y = ${y}`)} : <br />
-			Membre gauche : {@html math(`${y}^2 = ${lg2}`)}. <br />
-			Membre droit : {@html math(`2 \\times ${y} = ${ld2}`)}. → Égalité <b>{lg2 === ld2 ? 'vraie' : 'fausse'}</b>.
+			Tester {@html math('y^2 = 2y')} pour {@html math(`y = ${y}`)} :
+			<br />
+			Membre gauche : {@html math(`${y}^2 = ${lg2}`)}.
+			<br />
+			Membre droit : {@html math(`2 \\times ${y} = ${ld2}`)}. → Égalité
+			<b>{lg2 === ld2 ? 'vraie' : 'fausse'}</b>
+			.
 		</Item>
 	</Exemples>
 	<Remarque lignes={3}>

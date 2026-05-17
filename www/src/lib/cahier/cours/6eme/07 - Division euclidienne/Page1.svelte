@@ -11,7 +11,8 @@
 <Contenu apres_un_titre>
 	<Partie numero={1} titre="Concept" />
 	<TheoremeDefinition lignes={4}>
-		À deux entiers positifs (le dividende et le diviseur), on associe <u>de façon unique</u> deux nombres entiers (le quotient et le reste) tels que :
+		À deux entiers positifs (le dividende et le diviseur), on associe <u>de façon unique</u>
+		deux nombres entiers (le quotient et le reste) tels que :
 		<Item>
 			{@html math('\\text{dividende} ~= \\text{diviseur} ~\\times \\text{quotient} ~+ \\text{reste}')}
 		</Item>

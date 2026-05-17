@@ -21,7 +21,8 @@
 <Contenu>
 	<Partie numero={3} titre="Égalités de fractions" />
 	<Propriete lignes={2}>
-		Si on multiplie le numérateur et le dénominateur <i>par le même nombre</i>, alors on obtient une deuxième fraction égale à la première.
+		Si on multiplie le numérateur et le dénominateur <i>par le même nombre</i>
+		, alors on obtient une deuxième fraction égale à la première.
 	</Propriete>
 	<Exemples lignes={6}>
 		<Item lignes={2}>

@@ -11,9 +11,15 @@
 	</Methode>
 	<Exemples lignes={4}>
 		<u>Programme de calcul :</u>
-		<Item>Choisir un nombre <span class="noir">(On note {@html math('x')} le nombre choisi.)</span></Item>
-		<Item>Le multiplier par 3 <span class="noir">({@html math('3 \\times x = 3x')})</span></Item>
-		<Item>Ajouter 5 <span class="noir">({@html math('3x + 5')})</span></Item>
+		<Item>
+			Choisir un nombre <span class="noir">(On note {@html math('x')} le nombre choisi.)</span>
+		</Item>
+		<Item>
+			Le multiplier par 3 <span class="noir">({@html math('3 \\times x = 3x')})</span>
+		</Item>
+		<Item>
+			Ajouter 5 <span class="noir">({@html math('3x + 5')})</span>
+		</Item>
 	</Exemples>
 	<Remarque lignes={2}>
 		On peut utiliser une lettre pour exprimer une propriété générale valable pour tout nombre. <br />

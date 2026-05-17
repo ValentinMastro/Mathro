@@ -8,13 +8,39 @@
 	<Partie numero={2} titre="Cosinus d'un angle aigu" />
 	<LigneVide />
 	<Definition lignes={5}>
-		Le cosinus d'un angle aigu d'un triangle rectangle est le quotient du côté adjacent par l'hypoténuse.<br />
+		Le cosinus d'un angle aigu d'un triangle rectangle est le quotient du côté adjacent par l'hypoténuse.
+		<br />
 		C'est une valeur comprise entre 0 et 1, qui permet de calculer la mesure d'un angle à partir de la longueur des côtés d'un triangle rectangle.
 	</Definition>
 	<LigneVide />
 	<Exemple lignes={2}>
-		Dans le triangle ABC rectangle en A tel que <math><mi>AB</mi><mo>=</mo><mn>3</mn><mspace width="0.2em"/><mi>cm</mi></math> et <math><mi>BC</mi><mo>=</mo><mn>5</mn><mspace width="0.2em"/><mi>cm</mi></math>, calculer
-		l'angle <math><mover><mrow><mi>A</mi><mi>B</mi><mi>C</mi></mrow><mo>^</mo></mover></math>.
+		Dans le triangle ABC rectangle en A tel que <math>
+			<mi>AB</mi>
+			<mo>=</mo>
+			<mn>3</mn>
+			<mspace width="0.2em" />
+			<mi>cm</mi>
+		</math>
+		et
+		<math>
+			<mi>BC</mi>
+			<mo>=</mo>
+			<mn>5</mn>
+			<mspace width="0.2em" />
+			<mi>cm</mi>
+		</math>
+		, calculer l'angle
+		<math>
+			<mover>
+				<mrow>
+					<mi>A</mi>
+					<mi>B</mi>
+					<mi>C</mi>
+				</mrow>
+				<mo>^</mo>
+			</mover>
+		</math>
+		.
 	</Exemple>
 	<LigneVide />
 	<Schéma lignes={10}>
@@ -44,18 +70,59 @@
 			<LigneVide />
 			<Texte>
 				<math>
-				<mi>cos</mi><mo>(</mo><mover><mrow><mi>A</mi><mi>B</mi><mi>C</mi></mrow><mo>^</mo></mover><mo>)</mo>
-				<mo>=</mo>
-				<mfrac><mi>adj</mi><mi>hyp</mi></mfrac>
-				<mo>=</mo>
-				<mfrac><mi>AB</mi><mi>AC</mi></mfrac>
-				<mo>=</mo>
-				<mfrac><mn>3</mn><mn>5</mn></mfrac>
-			</math>
+					<mi>cos</mi>
+					<mo>(</mo>
+					<mover>
+						<mrow>
+							<mi>A</mi>
+							<mi>B</mi>
+							<mi>C</mi>
+						</mrow>
+						<mo>^</mo>
+					</mover>
+					<mo>)</mo>
+					<mo>=</mo>
+					<mfrac>
+						<mi>adj</mi>
+						<mi>hyp</mi>
+					</mfrac>
+					<mo>=</mo>
+					<mfrac>
+						<mi>AB</mi>
+						<mi>AC</mi>
+					</mfrac>
+					<mo>=</mo>
+					<mfrac>
+						<mn>3</mn>
+						<mn>5</mn>
+					</mfrac>
+				</math>
 			</Texte>
 			<LigneVide />
 			<Texte>
-				donc <math><mover><mrow><mi>A</mi><mi>B</mi><mi>C</mi></mrow><mo>^</mo></mover><mo>=</mo><mi>arccos</mi><mo>(</mo><mfrac><mn>3</mn><mn>5</mn></mfrac><mo>)</mo><mo>≈</mo><mn>53</mn><mo>,</mo><mn>13</mn><mo>°</mo></math>
+				donc <math>
+					<mover>
+						<mrow>
+							<mi>A</mi>
+							<mi>B</mi>
+							<mi>C</mi>
+						</mrow>
+						<mo>^</mo>
+					</mover>
+					<mo>=</mo>
+					<mi>arccos</mi>
+					<mo>(</mo>
+					<mfrac>
+						<mn>3</mn>
+						<mn>5</mn>
+					</mfrac>
+					<mo>)</mo>
+					<mo>≈</mo>
+					<mn>53</mn>
+					<mo>,</mo>
+					<mn>13</mn>
+					<mo>°</mo>
+				</math>
 			</Texte>
 		{/snippet}
 	</Schéma>

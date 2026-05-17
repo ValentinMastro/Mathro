@@ -97,7 +97,11 @@
 	<!-- Écran 1 — Titre -->
 	<Écran couleur_fond="#1a1a2e">
 		<p class="sous-titre">Activité</p>
-		<h1 class="titre-principal">Pourquoi deux notes de musique<br />« sonnent bien » ensemble ?</h1>
+		<h1 class="titre-principal">
+			Pourquoi deux notes de musique
+			<br />
+			« sonnent bien » ensemble ?
+		</h1>
 	</Écran>
 
 	<!-- Écran 2 — Cosinus et ondes -->
@@ -141,7 +145,14 @@
 	<!-- Écran 3 — Trois graphes + audio -->
 	<Écran couleur_fond="#ffffff">
 		<h2 class="titre-écran sombre">Trois notes, trois courbes</h2>
-		<p class="consigne sombre">Appuie sur les touches <kbd>a</kbd>, <kbd>z</kbd>, <kbd>e</kbd> pour jouer les notes</p>
+		<p class="consigne sombre">
+			Appuie sur les touches <kbd>a</kbd>
+			,
+			<kbd>z</kbd>
+			,
+			<kbd>e</kbd>
+			 pour jouer les notes
+		</p>
 		<div class="graphes-trio">
 			{#each Object.entries(NOTES) as [clé, note]}
 				<div class="graphe-note">
@@ -224,8 +235,11 @@
 			<p>{@html math('2^{19} = 524\\,288')}</p>
 		</div>
 		<p class="explication">
-			En enchaînant 12 quintes (facteur {@html math('\\frac{3}{2}')}), on ne retombe pas exactement sur la note de départ.<br />
-			L'écart s'appelle le <strong>comma pythagoricien</strong>.
+			En enchaînant 12 quintes (facteur {@html math('\\frac{3}{2}')}), on ne retombe pas exactement sur la note de départ.
+			<br />
+			L'écart s'appelle le
+			<strong>comma pythagoricien</strong>
+			.
 		</p>
 	</Écran>
 </div>

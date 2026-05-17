@@ -21,7 +21,8 @@
 	<Partie numero={2} titre="Alignement et appartenance" />
 	<Definition lignes={2}>Trois points sont alignés s'il est possible de les placer sur la même droite.</Definition>
 	<Notation lignes={2}>
-		Si le point M est sur la droite (AB), on note {@html math('\\text{M} \\in (\\text{AB})')}.<br />
+		Si le point M est sur la droite (AB), on note {@html math('\\text{M} \\in (\\text{AB})')}.
+		<br />
 		Si le point A n'est pas sur le segment [BC], on note {@html math('\\text{A} \\notin [\\text{BC}]')}.
 	</Notation>
 	<Exemples lignes={5}>

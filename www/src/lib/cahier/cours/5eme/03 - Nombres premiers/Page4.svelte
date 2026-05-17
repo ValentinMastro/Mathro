@@ -15,7 +15,8 @@
 	<Paragraphe nom_du_paragraphe="Convention">1 n'est pas un nombre premier.</Paragraphe>
 	<Paragraphe nom_du_paragraphe="Liste de nombres premiers à connaître">2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37</Paragraphe>
 	<Theoreme nom_du_theoreme="Théorème fondamental de l'arithmétique" lignes={2}>
-		Tout entier supérieur ou égal à 2 peut s'écrire comme un <i>unique</i> produit croissant de nombres premiers.
+		Tout entier supérieur ou égal à 2 peut s'écrire comme un <i>unique</i>
+		 produit croissant de nombres premiers.
 	</Theoreme>
 	<Exemples lignes={4}>
 		<Item>

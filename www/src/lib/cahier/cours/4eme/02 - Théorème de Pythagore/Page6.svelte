@@ -20,8 +20,18 @@
 		{/snippet}
 	</Schéma>
 	<Texte lignes={9}>
-		<u>On sait que : </u> le triangle ABC est rectangle en A, l'hypoténuse est <math><mo>[</mo><mi>BC</mi><mo>]</mo></math>.<br />
-		<u>D'après</u> le théorème de Pythagore <br />
+		<u>On sait que :</u>
+		le triangle ABC est rectangle en A, l'hypoténuse est
+		<math>
+			<mo>[</mo>
+			<mi>BC</mi>
+			<mo>]</mo>
+		</math>
+		.
+		<br />
+		<u>D'après</u>
+		le théorème de Pythagore
+		<br />
 
 		<LatexAlign
 			lignes={7}

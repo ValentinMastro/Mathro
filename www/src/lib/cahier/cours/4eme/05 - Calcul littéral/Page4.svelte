@@ -14,11 +14,30 @@
 <Contenu>
 	<SousPartie numero={4} titre="Égalité d'expressions" />
 	<Definition lignes={2}>
-		Deux expressions littérales sont égales lorsque, <i>quelques soient les valeurs des variables choisies</i>, elles donnent le même résultat.
+		Deux expressions littérales sont égales lorsque, <i>quelques soient les valeurs des variables choisies</i>
+		, elles donnent le même résultat.
 	</Definition>
 	<Exemples lignes={6}>
 		<Item lignes={3}>
-			<math><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn><mi>a</mi></math> et <math><mi>a</mi><mo>(</mo><mi>a</mi><mo>+</mo><mn>3</mn><mo>)</mo></math> sont égales.
+			<math>
+				<msup>
+					<mi>a</mi>
+					<mn>2</mn>
+				</msup>
+				<mo>+</mo>
+				<mn>3</mn>
+				<mi>a</mi>
+			</math>
+			et
+			<math>
+				<mi>a</mi>
+				<mo>(</mo>
+				<mi>a</mi>
+				<mo>+</mo>
+				<mn>3</mn>
+				<mo>)</mo>
+			</math>
+			sont égales.
 			<Item>
 				{@html math(`a^2 + 3a = ${a}^2 + 3 \\times ${a} = \\textcolor{forestgreen}{${a * a + 3n * a}}`)}
 			</Item>
@@ -27,7 +46,24 @@
 			</Item>
 		</Item>
 		<Item lignes={3}>
-			<math><msup><mi>a</mi><mn>2</mn></msup></math> et <math><mn>2</mn><mi>a</mi></math> ne sont pas égales. En effet, si on choisit <math><mi>a</mi><mo>=</mo><mn>3</mn></math> :
+			<math>
+				<msup>
+					<mi>a</mi>
+					<mn>2</mn>
+				</msup>
+			</math>
+			et
+			<math>
+				<mn>2</mn>
+				<mi>a</mi>
+			</math>
+			ne sont pas égales. En effet, si on choisit
+			<math>
+				<mi>a</mi>
+				<mo>=</mo>
+				<mn>3</mn>
+			</math>
+			:
 			<Item>
 				{@html math(`a^2 = ${a}^2 = \\textcolor{red}{${a * a}}`)}
 			</Item>

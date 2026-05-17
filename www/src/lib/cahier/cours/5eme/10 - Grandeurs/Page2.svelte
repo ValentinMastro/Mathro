@@ -11,7 +11,8 @@
 		Le nombre {@html math('\\pi')} est une constante mathématique. C'est le coefficient de proportionnalité entre la longueur d'un cercle et son diamètre.
 	</Definition>
 	<Formules lignes={2}>
-		{@html math('\\mathcal{P}_{\\text{cercle}} = \\pi \\times \\text{diamètre}')} <br />
+		{@html math('\\mathcal{P}_{\\text{cercle}} = \\pi \\times \\text{diamètre}')}
+		<br />
 		{@html math('\\mathcal{P}_{\\text{cercle}} = 2 \\times \\pi \\times \\text{rayon}')}
 	</Formules>
 	<Exemple>Calculer le périmètre d'un cercle de rayon 5 cm.</Exemple>

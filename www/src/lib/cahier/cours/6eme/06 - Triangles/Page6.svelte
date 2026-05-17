@@ -10,9 +10,14 @@
 	<SousPartie numero={2} titre="Triangle isocèle" />
 	<Definition lignes={2}>
 		Un triangle isocèle possède deux côtés de même longueur. <br />
-		Le troisième côté est appelé le <i>base</i> du triangle isocèle.
+		Le troisième côté est appelé le
+		<i>base</i>
+		 du triangle isocèle.
 	</Definition>
-	<Propriete>Les deux angles <i>adjacents à la base</i> sont égaux.</Propriete>
+	<Propriete>
+		Les deux angles <i>adjacents à la base</i>
+		 sont égaux.
+	</Propriete>
 	<Schéma lignes={5} aspectRatioSVG={4}>
 		{#snippet svg()}
 			{@const A = { x: 800, y: 200 }}
@@ -28,7 +33,9 @@
 		{/snippet}
 	</Schéma>
 	<Texte couleur="bleu" lignes={3}>
-		Le triangle est <i>isocèle en C</i>, car les côtés {@html math('[\\text{CA}]')} et {@html math('[\\text{CB}]')} ont la même <br />
+		Le triangle est <i>isocèle en C</i>
+		, car les côtés {@html math('[\\text{CA}]')} et {@html math('[\\text{CB}]')} ont la même
+		<br />
 		longueur. De plus, les angles {@html math('\\widehat{\\text{CAB}}')} et {@html math('\\widehat{\\text{CBA}}')} sont égaux.
 	</Texte>
 </Contenu>

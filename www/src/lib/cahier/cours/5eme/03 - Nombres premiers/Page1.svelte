@@ -22,8 +22,16 @@
 <Contenu apres_un_titre>
 	<Partie numero={1} titre="Division euclidienne" />
 	<TheoremeDefinition lignes={5}>
-		À deux nombres entiers, le <i>dividende</i> et le <i>diviseur</i>, on associe deux autres nombres entiers, le <i>quotient</i> et le <i>reste</i>,
-		<u>de manière unique</u>, tels que :
+		À deux nombres entiers, le <i>dividende</i>
+		et le
+		<i>diviseur</i>
+		, on associe deux autres nombres entiers, le
+		<i>quotient</i>
+		et le
+		<i>reste</i>
+		,
+		<u>de manière unique</u>
+		, tels que :
 		<Item>{@html math('\\text{dividende} ~= \\text{diviseur} ~\\times \\text{quotient} ~+ \\text{reste}')}</Item>
 		<Item>{@html math('0 \\leqslant \\text{reste} ~< \\text{diviseur}')}</Item>
 	</TheoremeDefinition>

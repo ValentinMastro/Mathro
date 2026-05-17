@@ -19,9 +19,13 @@
 <Contenu>
 	<Partie numero={2} titre="Repérage sur une droite graduée" />
 	<Definition lignes={4}>
-		Un <i>axe</i> est composé de 3 éléments :
+		Un <i>axe</i>
+		est composé de 3 éléments :
 		<Item>une droite graduée</Item>
-		<Item><i>l'origine</i>, un point associé au nombre 0</Item>
+		<Item>
+			<i>l'origine</i>
+			, un point associé au nombre 0
+		</Item>
 		<Item>un point associé au nombre 1</Item>
 	</Definition>
 	<Exemple />
@@ -43,7 +47,8 @@
 		{/snippet}
 	</Schéma>
 	<Definition>
-		À chaque point de l'axe, on peut associer un nombre : son <i>abscisse</i>.
+		À chaque point de l'axe, on peut associer un nombre : son <i>abscisse</i>
+		.
 	</Definition>
 	<Exemple />
 	<Schéma lignes={4} aspectRatioSVG={5}>
