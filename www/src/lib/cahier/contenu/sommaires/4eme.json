@@ -104,6 +104,13 @@
 		},
 		{
 			"période": 5,
+			"numéro": 14,
+			"titre": "Repérage",
+			"catégories": ["Nombres, calcul et résolution de problèmes", "Espace et géométrie"],
+			"objectifs": []
+		},
+		{
+			"période": 5,
 			"numéro": 15,
 			"titre": "Réciproques",
 			"catégories": ["Espace et géométrie", "Grandeurs et mesures"],
