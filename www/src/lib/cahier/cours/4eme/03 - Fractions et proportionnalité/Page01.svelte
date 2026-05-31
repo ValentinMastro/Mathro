@@ -36,7 +36,7 @@
 				<mi>b</mi>
 			</mfrac>
 		</math>
-		 et se lit "a sur b".
+		et se lit "a sur b".
 	</Notation>
 
 	<Exemples lignes={3}>

@@ -18,11 +18,11 @@
 		Il est composé de trois éléments :
 		<Item>
 			son <i>sommet</i>
-			 : l'origine des deux demi-droites,
+			: l'origine des deux demi-droites,
 		</Item>
 		<Item>
 			ses deux <i>côtés</i>
-			 : les deux demi-droites,
+			: les deux demi-droites,
 		</Item>
 	</Definition>
 	<Schéma lignes={10} aspectRatioSVG={2}>

@@ -27,11 +27,11 @@
 	<Definition lignes={2}>
 		<Item>
 			Une <i>année</i>
-			 est la durée d'un tour de la Terre autour du Soleil.
+			est la durée d'un tour de la Terre autour du Soleil.
 		</Item>
 		<Item>
 			Un <i>jour</i>
-			 est la durée d'un tour complet de la Terre sur elle-même.
+			est la durée d'un tour complet de la Terre sur elle-même.
 		</Item>
 	</Definition>
 	<Schéma lignes={20} aspectRatioSVG={1} centré>

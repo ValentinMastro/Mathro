@@ -22,7 +22,7 @@
 		<math><mi>n</mi></math>
 		») est le produit de
 		<math><mi>n</mi></math>
-		 facteurs égaux à 10.
+		facteurs égaux à 10.
 	</Definition>
 	<Exemples lignes={4}>
 		<Item>

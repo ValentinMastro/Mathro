@@ -32,11 +32,11 @@
 	<Definition lignes={4}>
 		<Item lignes={2}>
 			Deux droites sont <i>parallèles</i>
-			 si elles n'ont aucun point d'intersection.
+			si elles n'ont aucun point d'intersection.
 		</Item>
 		<Item lignes={2}>
 			Lorsque deux droites possèdent un point d'intersection, elles sont <i>sécantes</i>
-			 en ce point.
+			en ce point.
 		</Item>
 	</Definition>
 	<LigneVide />

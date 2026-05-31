@@ -35,7 +35,7 @@
 		<Question numéro={3} lignes={2}>Vérifier que la C.S.G correspond à 9,2 % de (98,25 % du salaire brut - 32,45 €).</Question>
 		<Question numéro={4} lignes={2}>
 			Vérifier que le taux de prélèvement à la source de l'impôt sur le revenu est <b>d'environ</b>
-			 5,70 %.
+			5,70 %.
 		</Question>
 		<Question numéro={5} lignes={2}>Vérifier que la C.R.D.S, égal à 0,5 % de (98,25 % du salaire brut - 32,45 €), est de 13,80 €.</Question>
 		<Question numéro={6} lignes={2}>On dit parfois que &laquo; le salaire net est 80% du salaire brut &raquo;. Qu'en penser ici ?</Question>

@@ -45,11 +45,11 @@
 		On dit que :
 		<Item>
 			L'aire d'un disque s'exprime <b>en fonction de</b>
-			 son rayon.
+			son rayon.
 		</Item>
 		<Item lignes={2}>
 			La température ressentie s'exprime <b>en fonction de</b>
-			 la température ambiante et de la vitesse du vent.
+			la température ambiante et de la vitesse du vent.
 		</Item>
 	</Notation>
 </Contenu>

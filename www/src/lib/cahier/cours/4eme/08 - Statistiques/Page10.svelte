@@ -32,7 +32,7 @@
 	<LigneVide />
 	<Definition lignes={2}>
 		La <i>fréquence</i>
-		 d'une valeur d'une série est son effectif divisé par l'effectif total.
+		d'une valeur d'une série est son effectif divisé par l'effectif total.
 	</Definition>
 	<Exemples lignes={8}>
 		<table class="donnees">

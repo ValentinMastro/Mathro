@@ -27,7 +27,7 @@
 	</Exemples>
 	<Definition lignes={2}>
 		<i>La moyenne</i>
-		 d'une série statistique est la somme de toutes les valeurs divisée par l'effectif total.
+		d'une série statistique est la somme de toutes les valeurs divisée par l'effectif total.
 	</Definition>
 	<Notation>
 		On note N l'effectif total d'une série statistique et <math>
@@ -36,7 +36,7 @@
 				<mo>‾</mo>
 			</mover>
 		</math>
-		 sa moyenne.
+		sa moyenne.
 	</Notation>
 	<Exemples lignes={8}>
 		<Item lignes={2}>

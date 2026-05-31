@@ -57,7 +57,7 @@
 	<Énoncé lignes={7}>
 		<Texte lignes={2} lignes_vides={0}>
 			Utiliser la distributivité pour simplifier les calculs. <br />
-			 Montrer les étapes.
+			Montrer les étapes.
 		</Texte>
 		<Question numéro={1} lignes={1}>{@html math('21 \\times 11 + 79 \\times 11')}</Question>
 		<Question numéro={2} lignes={1}>{@html math('35 \\times 7 + 65 \\times 7')}</Question>

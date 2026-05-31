@@ -18,7 +18,7 @@
 			</td>
 			<td>
 				le nombre est pair <br />
-				 le chiffre des unités est 0, 2, 4, 6 ou 8
+				le chiffre des unités est 0, 2, 4, 6 ou 8
 			</td>
 			<td>
 				<span class="vert">102 est pair</span>
@@ -29,7 +29,7 @@
 		<LigneTableau lignes={2}>
 			<td>
 				divisible <br />
-				 par 3
+				par 3
 			</td>
 			<td>la somme de ses chiffres est divisible par 3</td>
 			<td>
@@ -41,7 +41,7 @@
 		<LigneTableau lignes={2}>
 			<td>
 				divisible <br />
-				 par 5
+				par 5
 			</td>
 			<td>le chiffre des unités est 0 ou 5</td>
 			<td>
@@ -53,7 +53,7 @@
 		<LigneTableau lignes={2}>
 			<td>
 				divisible <br />
-				 par 9
+				par 9
 			</td>
 			<td>la somme de ses chiffres est divisible par 9</td>
 			<td>
@@ -65,7 +65,7 @@
 		<LigneTableau lignes={2}>
 			<td>
 				divisible <br />
-				 par 10
+				par 10
 			</td>
 			<td>le chiffre des unités est 0</td>
 			<td>

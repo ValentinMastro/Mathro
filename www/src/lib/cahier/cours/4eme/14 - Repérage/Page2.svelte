@@ -50,7 +50,7 @@
 		À chaque point du plan, on associe deux nombres que l'on appellent ses coordonnées : son <i>abscisse</i>
 		(horizontale) et son
 		<i>ordonnée</i>
-		 (verticale).
+		(verticale).
 	</Definition>
 	<Schéma lignes={10}>
 		{#snippet svg()}

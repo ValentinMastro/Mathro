@@ -9,7 +9,7 @@
 		Soit <math><mi>a</mi></math>
 		un nombre réel non nul et
 		<math><mi>n</mi></math>
-		 un nombre entier relatif.
+		un nombre entier relatif.
 	</Definition>
 	<Texte couleur="vert">
 		<center>
@@ -71,7 +71,7 @@
 				<mn>2</mn>
 			</msup>
 		</math>
-		 est positif.
+		est positif.
 	</Propriete>
 	<Propriete lignes={3}>
 		Si <math><mi>x</mi></math>
@@ -85,11 +85,11 @@
 		est :
 		<Item>
 			positif si <math><mi>n</mi></math>
-			 est un entier pair
+			est un entier pair
 		</Item>
 		<Item>
 			négatif si <math><mi>n</mi></math>
-			 est un entier impair
+			est un entier impair
 		</Item>
 	</Propriete>
 	<Exemples lignes={3}>
@@ -108,7 +108,7 @@
 				<mo>-</mo>
 				<mn>32</mn>
 			</math>
-			 est négatif car 5 est impair.
+			est négatif car 5 est impair.
 		</Item>
 		<Item>
 			<math>
@@ -124,7 +124,7 @@
 				<mo>=</mo>
 				<mn>46656</mn>
 			</math>
-			 est positif car 6 est pair.
+			est positif car 6 est pair.
 		</Item>
 		<Item>
 			<math>
@@ -140,7 +140,7 @@
 				<mo>=</mo>
 				<mn>59049</mn>
 			</math>
-			 est positif car 10 est pair.
+			est positif car 10 est pair.
 		</Item>
 	</Exemples>
 </Contenu>

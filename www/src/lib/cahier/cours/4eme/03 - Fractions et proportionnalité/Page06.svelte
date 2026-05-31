@@ -28,7 +28,7 @@
 				<mi>p</mi>
 				<mo>%</mo>
 			</math>
-			 puis je l'ajoute à la valeur initiale
+			puis je l'ajoute à la valeur initiale
 		</Item>
 		<Item>
 			<u>OU</u>
@@ -41,7 +41,7 @@
 				<mo>)</mo>
 				<mo>%</mo>
 			</math>
-			 de la valeur initiale
+			de la valeur initiale
 		</Item>
 	</Propriete>
 

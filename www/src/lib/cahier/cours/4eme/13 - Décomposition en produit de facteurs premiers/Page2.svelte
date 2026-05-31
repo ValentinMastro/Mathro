@@ -14,7 +14,7 @@
 		</math>
 		, il existe une
 		<u>unique</u>
-		 façon de le décomposer en produit de nombres premiers.
+		façon de le décomposer en produit de nombres premiers.
 	</Paragraphe>
 	<Exemples lignes={4}>
 		<Item>

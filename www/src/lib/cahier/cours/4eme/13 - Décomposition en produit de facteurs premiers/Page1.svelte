@@ -31,7 +31,7 @@
 		<math><mi>b</mi></math>
 		par
 		<math><mi>a</mi></math>
-		 est nul.
+		est nul.
 	</Definition>
 	<Exemples lignes={5}>
 		<Item>

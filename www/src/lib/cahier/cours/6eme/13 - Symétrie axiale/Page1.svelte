@@ -31,7 +31,7 @@
 		<br />
 		{@html math('(d)')} est appelée
 		<i>axe</i>
-		 de symétrie.
+		de symétrie.
 	</Definition>
 	<Exemples />
 	<Schéma lignes={20}>

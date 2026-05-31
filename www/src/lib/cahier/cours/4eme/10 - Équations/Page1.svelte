@@ -15,7 +15,7 @@
 		<br />
 		Lorsqu'en remplaçant la valeur de l'inconnue, l'égalité est vérifiée, on dit que cette valeur est une
 		<i>solution</i>
-		 de l'équation.
+		de l'équation.
 	</Definition>
 	<Exemples lignes={18}>
 		<Item lignes={9}>

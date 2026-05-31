@@ -27,7 +27,7 @@
 				<mo>×</mo>
 				<mi>b</mi>
 			</math>
-			 est une somme.
+			est une somme.
 		</Item>
 		<Item>
 			<math>
@@ -38,7 +38,7 @@
 				<mi>b</mi>
 				<mo>)</mo>
 			</math>
-			 est un produit.
+			est un produit.
 		</Item>
 	</Exemples>
 </Contenu>

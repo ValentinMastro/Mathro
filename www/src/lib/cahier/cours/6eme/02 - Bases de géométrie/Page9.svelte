@@ -10,7 +10,7 @@
 	<SousPartie numero={3} titre="Construire une médiatrice" />
 	<Definition lignes={2}>
 		La <i>médiatrice</i>
-		 d'un segment est la droite perpendiculaire à ce segment qui passe par son milieu.
+		d'un segment est la droite perpendiculaire à ce segment qui passe par son milieu.
 	</Definition>
 	<Paragraphe nom_du_paragraphe="Consigne">
 		Tracer {@html math('\\color{red} (m)')} la médiatrice du segment {@html math('[\\text{AB}]')}.

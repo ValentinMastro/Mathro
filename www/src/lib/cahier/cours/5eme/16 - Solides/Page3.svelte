@@ -11,7 +11,7 @@
 
 	<Definition lignes={2}>
 		Un <i>cylindre</i>
-		 est un solide délimité par deux disques parallèles (les bases) et une surface latérale courbe.
+		est un solide délimité par deux disques parallèles (les bases) et une surface latérale courbe.
 	</Definition>
 
 	<Schéma lignes={7} aspectRatioSVG={3.5}>

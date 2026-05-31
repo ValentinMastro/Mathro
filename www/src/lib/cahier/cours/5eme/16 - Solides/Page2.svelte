@@ -11,7 +11,7 @@
 
 	<Definition lignes={2}>
 		Un <i>prisme droit</i>
-		 est un solide dont les deux bases sont des polygones identiques et parallèles, et dont les faces latérales sont des rectangles.
+		est un solide dont les deux bases sont des polygones identiques et parallèles, et dont les faces latérales sont des rectangles.
 	</Definition>
 	<Remarque lignes={2}>
 		<Item>Le pavé droit est un prisme droit à base rectangulaire.</Item>

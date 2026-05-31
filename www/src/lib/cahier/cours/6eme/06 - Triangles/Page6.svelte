@@ -12,11 +12,11 @@
 		Un triangle isocèle possède deux côtés de même longueur. <br />
 		Le troisième côté est appelé le
 		<i>base</i>
-		 du triangle isocèle.
+		du triangle isocèle.
 	</Definition>
 	<Propriete>
 		Les deux angles <i>adjacents à la base</i>
-		 sont égaux.
+		sont égaux.
 	</Propriete>
 	<Schéma lignes={5} aspectRatioSVG={4}>
 		{#snippet svg()}

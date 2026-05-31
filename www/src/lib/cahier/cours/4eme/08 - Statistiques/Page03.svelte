@@ -11,7 +11,7 @@
 	<SousPartie numero={2} titre="Étendue" />
 	<Definition lignes={2}>
 		<i>L'étendue</i>
-		 d'une série statistique est la différence entre la plus grande valeur (le maximum) et la plus petite valeur (le minimum).
+		d'une série statistique est la différence entre la plus grande valeur (le maximum) et la plus petite valeur (le minimum).
 	</Definition>
 	<Exemples lignes={2}>
 		<Item>

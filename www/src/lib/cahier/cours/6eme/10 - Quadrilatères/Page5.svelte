@@ -16,7 +16,7 @@
 	<SousPartie numero={4} titre="Trapèze" />
 	<Definition>
 		Un <i>trapèze</i>
-		 est un quadrilatère ayant deux côtés parallèles.
+		est un quadrilatère ayant deux côtés parallèles.
 	</Definition>
 	<Exemple />
 	<Schéma lignes={5} aspectRatioSVG={20 / 5}>
@@ -30,7 +30,7 @@
 
 	<Definition>
 		Un <i>trapèze rectangle</i>
-		 est un trapèze possédant deux angles droits.
+		est un trapèze possédant deux angles droits.
 	</Definition>
 	<Exemple />
 	<Schéma lignes={5} aspectRatioSVG={20 / 5}>

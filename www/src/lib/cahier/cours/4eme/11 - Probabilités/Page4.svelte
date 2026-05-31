@@ -42,7 +42,7 @@
 				<mo>‾</mo>
 			</mover>
 		</math>
-		 est l'évènement contraire de A.
+		est l'évènement contraire de A.
 	</Definition>
 	<Exemples lignes={6}>
 		<Item lignes={3}>
@@ -55,7 +55,7 @@
 					<mo>‾</mo>
 				</mover>
 			</math>
-			 = « Ne pas avoir un 6 » = « Avoir un 1, 2, 3, 4 ou 5 »
+			= « Ne pas avoir un 6 » = « Avoir un 1, 2, 3, 4 ou 5 »
 		</Item>
 		<Item lignes={3}>
 			Je tire au sort une lettre dans l'alphabet : <br />
@@ -67,7 +67,7 @@
 					<mo>‾</mo>
 				</mover>
 			</math>
-			 = « Ne pas avoir une consonne » = « Avoir une voyelle »
+			= « Ne pas avoir une consonne » = « Avoir une voyelle »
 		</Item>
 	</Exemples>
 	<Propriete lignes={3}>

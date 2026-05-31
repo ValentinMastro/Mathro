@@ -75,13 +75,13 @@
 			Le <u>mot</u>
 			maison s'écrit avec 6
 			<u>lettres</u>
-			 : M-A-I-S-O-N.
+			: M-A-I-S-O-N.
 		</Item>
 		<Item>
 			Le <u>nombre</u>
 			396 s'écrit avec 3
 			<u>chiffres</u>
-			 : 3-9-6.
+			: 3-9-6.
 		</Item>
 	</PourMieuxComprendre>
 	<SousPartie numero={1} titre="Tableau de numération" />

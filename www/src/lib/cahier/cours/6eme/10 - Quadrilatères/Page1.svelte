@@ -115,19 +115,19 @@
 	<Definitions lignes={4}>
 		<Item>
 			Un <i>polygone</i>
-			 est une figure fermée qui possède plusieurs côtés.
+			est une figure fermée qui possède plusieurs côtés.
 		</Item>
 		<Item>
 			Un <i>quadrilatère</i>
-			 est un polygone à quatre côtés.
+			est un polygone à quatre côtés.
 		</Item>
 		<Item>
 			Un <i>pentagone</i>
-			 est un polygone à cinq côtés.
+			est un polygone à cinq côtés.
 		</Item>
 		<Item>
 			Un <i>hexagone</i>
-			 est un polygone à six côtés.
+			est un polygone à six côtés.
 		</Item>
 	</Definitions>
 	<Exemples />

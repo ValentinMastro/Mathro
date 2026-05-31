@@ -17,7 +17,7 @@
 			</math>
 			, c'est déplacer la virgule de
 			<math><mi>n</mi></math>
-			 chiffres vers la droite.
+			chiffres vers la droite.
 		</Item>
 		<Item lignes={2}>
 			Multiplier un nombre par <math>
@@ -31,7 +31,7 @@
 			</math>
 			, c'est déplacer la virgule de
 			<math><mi>n</mi></math>
-			 chiffres vers la gauche.
+			chiffres vers la gauche.
 		</Item>
 	</Methode>
 	<Remarque>

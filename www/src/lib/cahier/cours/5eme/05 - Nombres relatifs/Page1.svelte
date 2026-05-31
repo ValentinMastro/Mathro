@@ -15,7 +15,7 @@
 		<br />
 		Un nombre
 		<i>négatif</i>
-		 est inférieur ou égal à 0.
+		est inférieur ou égal à 0.
 	</Definition>
 	<Remarque>0 est à la fois positif et négatif.</Remarque>
 	<Notation lignes={2}>
@@ -48,7 +48,7 @@
 		</Item>
 		<Item>
 			sa <i>valeur absolue</i>
-			 : un nombre positif ou nul
+			: un nombre positif ou nul
 		</Item>
 	</Definition>
 	<Exemple>

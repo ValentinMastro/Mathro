@@ -39,7 +39,7 @@
 		</Item>
 		<Item>
 			<math><mi>π</mi></math>
-			 n'est pas un nombre rationnel
+			n'est pas un nombre rationnel
 		</Item>
 	</Exemples>
 </Contenu>

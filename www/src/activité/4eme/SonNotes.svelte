@@ -151,7 +151,7 @@
 			<kbd>z</kbd>
 			,
 			<kbd>e</kbd>
-			 pour jouer les notes
+			pour jouer les notes
 		</p>
 		<div class="graphes-trio">
 			{#each Object.entries(NOTES) as [clé, note]}

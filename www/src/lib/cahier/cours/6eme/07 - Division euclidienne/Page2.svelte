@@ -60,7 +60,7 @@
 			<td>
 				La somme des chiffres
 				<br />
-				 est dans la table de 3
+				est dans la table de 3
 			</td>
 			<td class="liste">
 				<span class="vert">{@html math('51 \\longrightarrow 5 + 1 = 6')}</span>
@@ -73,7 +73,7 @@
 			<td>
 				Le chiffre des unités
 				<br />
-				 est un 0 ou un 5
+				est un 0 ou un 5
 			</td>
 			<td class="liste">
 				<span class="vert">50</span>
@@ -86,7 +86,7 @@
 			<td>
 				La somme des chiffres
 				<br />
-				 est dans la table de 9
+				est dans la table de 9
 			</td>
 			<td class="liste">
 				<span class="vert">{@html math('54 \\longrightarrow 5 + 4 = 9')}</span>
@@ -99,7 +99,7 @@
 			<td>
 				Le chiffre des unités
 				<br />
-				 est un 0
+				est un 0
 			</td>
 			<td class="liste">
 				<span class="vert">50</span>

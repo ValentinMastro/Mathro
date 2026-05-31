@@ -41,7 +41,7 @@
 	</Exemples>
 	<Definition lignes={2}>
 		Simplifier une fraction consiste à trouver un <i>facteur commun</i>
-		 entre le numérateur et le dénominateur.
+		entre le numérateur et le dénominateur.
 	</Definition>
 	<Exemples lignes={4}>
 		<Item lignes={2}>

@@ -11,7 +11,7 @@
 	<Partie numero={4} titre="Distances" />
 	<Definition lignes={2}>
 		La <i>distance entre deux points</i>
-		 est la longueur du plus court chemin entre eux.
+		est la longueur du plus court chemin entre eux.
 	</Definition>
 	<Notation>
 		La distance entre {@html math('\\text{A}')} et {@html math('\\text{B}')} se note {@html math('\\text{AB}')}, sans parenthèses ni crochets.

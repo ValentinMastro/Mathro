@@ -10,12 +10,12 @@
 		<Item lignes={2}>
 			L'
 			<i>effectif</i>
-			 d'une valeur est le nombre d'individus ayant cette valeur.
+			d'une valeur est le nombre d'individus ayant cette valeur.
 		</Item>
 		<Item lignes={2}>
 			L'
 			<i>effectif total</i>
-			 est le nombre total d'individus dans la population.
+			est le nombre total d'individus dans la population.
 		</Item>
 	</Definitions>
 

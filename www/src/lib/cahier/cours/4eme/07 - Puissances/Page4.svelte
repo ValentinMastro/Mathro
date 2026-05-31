@@ -30,7 +30,7 @@
 		</Item>
 		<Item>
 			<math><mi>n</mi></math>
-			 est un entier relatif
+			est un entier relatif
 		</Item>
 	</Definition>
 	<Exemples lignes={8}>
