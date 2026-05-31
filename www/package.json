@@ -42,6 +42,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sveltejs/adapter-node": "^5.5.4",
 		"@sveltejs/adapter-static": "^3.0.10",
 		"@vmastro/exercices": "^0.3.2",
 		"html-to-image": "^1.11.13",
