@@ -1,12 +1,29 @@
 <script lang="ts">
-	import { Contenu, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Contenu, DansLaMarge, Partie, SousPartie } from '$lib/cahier/composants/de_chapitrage/*';
 	import { CelluleTableau, Exemple, LigneTableau, Schéma, Tableau } from '$lib/cahier/composants/de_cours/*';
-	import { AxeGradué, Fleche } from '$lib/cahier/composants/svg/*';
+	import { Nombre, Slider } from '$lib/cahier/composants/de_marge/*';
+	import { AxeGradué, Fleche, Rectangle } from '$lib/cahier/composants/svg/*';
 
-	let rouge;
+	let rouge = $state(0);
+	let orange = $state(0);
+	let jaune = $state(0);
+	let vert = $state(0);
+	let bleu = $state(0);
+	let indigo = $state(0);
+	let violet = $state(0);
 
-	let valeurs = [10, 3, 4, 5, 8, 7];
+	let valeurs = $derived([rouge, orange, jaune, vert, bleu, indigo, violet]);
 </script>
+
+<DansLaMarge lignes_vides={14}>
+	<Nombre min={0} max={25} bind:valeur={rouge} label="rouge" />
+	<Nombre min={0} max={25} bind:valeur={orange} label="orange" />
+	<Nombre min={0} max={25} bind:valeur={jaune} label="jaune" />
+	<Nombre min={0} max={25} bind:valeur={vert} label="vert" />
+	<Nombre min={0} max={25} bind:valeur={bleu} label="bleu" />
+	<Nombre min={0} max={25} bind:valeur={indigo} label="indigo" />
+	<Nombre min={0} max={25} bind:valeur={violet} label="violet" />
+</DansLaMarge>
 
 <Contenu>
 	<Partie numero={2} titre="Représentations graphiques" />
@@ -48,8 +65,13 @@
 					{ x: 100, y: 0 }
 				]}
 			/>
-			{#each valeurs as valeur}
-
+			{#each valeurs as valeur, i}
+				<Rectangle
+					points={[
+						{ x: (i + 1) * 200, y: 900 },
+						{ x: (i + 1) * 200 + 100, y: 900 - valeur * 50 }
+					]}
+				/>
 			{/each}
 		{/snippet}
 	</Schéma>
