@@ -1,2 +1,3 @@
 exercices/target
 *.png
+.claude/settings.local.json
