@@ -4,13 +4,13 @@
 	import { Nombre, Slider } from '$lib/cahier/composants/de_marge/*';
 	import { AxeGradué, Fleche, Rectangle } from '$lib/cahier/composants/svg/*';
 
-	let rouge = $state(0);
-	let orange = $state(0);
-	let jaune = $state(0);
+	let rouge = $state(1);
+	let orange = $state(1);
+	let jaune = $state(1);
 	let vert = $state(0);
-	let bleu = $state(0);
-	let indigo = $state(0);
-	let violet = $state(0);
+	let bleu = $state(7);
+	let indigo = $state(3);
+	let violet = $state(2);
 
 	let valeurs = $derived([rouge, orange, jaune, vert, bleu, indigo, violet]);
 </script>
@@ -30,7 +30,7 @@
 	<SousPartie numero={1} titre="Diagrammes en barres"></SousPartie>
 
 	<Exemple lignes={3}>
-		On a demandé aux élèves d'un classe de 6ème leur couleur préférée parmi les 7 suivantes : <br />
+		On a demandé aux élèves d'une classe de 6ème leur couleur préférée parmi les 7 suivantes : <br />
 		Rouge, orange, jaune, vert, bleu, indigo, violet.
 	</Exemple>
 
