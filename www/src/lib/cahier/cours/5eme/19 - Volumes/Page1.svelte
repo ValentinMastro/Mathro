@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Chapitre, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Convention, Definition, Exemples, Item } from '$lib/cahier/composants/de_cours/*';
-	import Remarque from '$lib/cahier/composants/de_cours/Remarque.svelte';
+	import { Convention, Definition, Exemples, Item, Remarque } from '$lib/cahier/composants/de_cours/*';
 	import { math } from 'mathlifier';
 </script>
 
