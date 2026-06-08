@@ -10,7 +10,7 @@
 	<Partie numero={1} titre="Vocabulaire" />
 	<Definition lignes={2}>
 		Une expérience est <i>aléatoire</i>
-		 si on ne peut pas prévoir à l'avance son résultat.
+		si on ne peut pas prévoir à l'avance son résultat.
 	</Definition>
 	<Exemples lignes={5}>
 		<Item>Jouer au loto</Item>
