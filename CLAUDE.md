@@ -58,7 +58,7 @@ npx prettier --check .           # Prettier seul
 - `/cahier_de_cours/[niveau]` — Course notebook (dynamic by grade: 4, 5, 6)
 - `/cahier_d_exercices/[niveau]` — Exercise notebook
 
-The root layout (`+layout.svelte`) conditionally skips the standard header for paths containing `cahier` or `scratch`.
+The root layout (`+layout.svelte`) has no header: it loads the global styles and renders the page. Under `@media print` it hides everything and shows a message saying printing is disabled — PDF output goes through the custom Ctrl+P export instead.
 
 ### Core Notebook System (`www/src/lib/cahier/`)
 
