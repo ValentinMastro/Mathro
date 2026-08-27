@@ -48,7 +48,6 @@
 		"mathjs": "^15.2.0",
 		"mathlifier": "^3.5.1",
 		"vite-plugin-wasm": "^3.6.0",
-		"vite-plugin-wasm-pack": "^0.1.12",
-		"xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+		"vite-plugin-wasm-pack": "^0.1.12"
 	}
 }

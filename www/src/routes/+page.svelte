@@ -23,9 +23,6 @@
 		</div>
 	</div>
 </div>
-<div id="outils">
-	<a href="/outils">Outils</a>
-</div>
 
 <style>
 	#accueil {
@@ -58,12 +55,6 @@
 
 	a {
 		text-decoration: none;
-	}
-
-	#outils {
-		position: fixed;
-		bottom: 0;
-		left: 0;
 	}
 
 	@media (min-aspect-ratio: 1) {

@@ -57,10 +57,8 @@ npx prettier --check .           # Prettier seul
 - `/` — Homepage with links to grade levels
 - `/cahier_de_cours/[niveau]` — Course notebook (dynamic by grade: 4, 5, 6)
 - `/cahier_d_exercices/[niveau]` — Exercise notebook
-- `/outils/constitution_classes/` — Drag-and-drop class assignment tool
-- `/outils/ovnv/` — Scheduling/organization tool
 
-The root layout (`+layout.svelte`) conditionally skips the standard header for paths containing `cahier`, `scratch`, or `outils`.
+The root layout (`+layout.svelte`) conditionally skips the standard header for paths containing `cahier` or `scratch`.
 
 ### Core Notebook System (`www/src/lib/cahier/`)
 
@@ -124,10 +122,6 @@ The `lignes` prop on paragraphs specifies height in "carreaux" (grid squares). C
 **SVG geometry** (`composants/svg/`): Extensive library — `Point`, `Segment`, `Cercle`, `Droite`, `Polygone`, `AngleDroit`, `Angle`, `Grille`, `AxeGradué`, and 3D perspective shapes (`perspective_cavalière/`)
 
 **Math rendering**: Uses `mathlifier` package — pattern is `{@html math('LaTeX expression')}`
-
-### Class Assignment Tool (`www/src/lib/constitution_classes/`)
-
-Drag-and-drop interface for assigning students to classes with option constraints (Latin, Greek, LV2). Uses `PersistedState` for localStorage persistence. Supports Excel import/export.
 
 ### Keyboard Shortcuts (in notebook views)
 
