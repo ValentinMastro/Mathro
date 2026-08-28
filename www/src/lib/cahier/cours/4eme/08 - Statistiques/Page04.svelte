@@ -46,8 +46,10 @@
 			<Item bullet="➜" lignes={4}>
 				{@html math(`\\text{N}=${serie_1.length}`)} est pair, donc la médiane est entre la {@html math(`\\frac{\\text{N}}{2}`)}ème et la {@html math(
 					`(\\frac{\\text{N}}{2}+1)`
-				)}ème valeurs :<br />
-				Autrement dit, entre la {serie_1.length / 2}ème valeur et la {serie_1.length / 2 + 1}ème valeur.<br />
+				)}ème valeurs :
+				<br />
+				Autrement dit, entre la {serie_1.length / 2}ème valeur et la {serie_1.length / 2 + 1}ème valeur.
+				<br />
 				La médiane est donc {mediane_1.toLocaleString('fr-FR', { maximumFractionDigits: 3 })}.
 			</Item>
 		</Item>
@@ -62,8 +64,10 @@
 				)}
 			</Item>
 			<Item bullet="➜" lignes={3}>
-				{@html math(`\\text{N}=${serie_2.length}`)} est impair, donc la médiane est la {@html math(`\\frac{\\text{N}+1}{2}`)}ème valeur :<br />
-				Autrement dit, la {Math.floor(serie_2.length / 2) + 1}ème valeur.<br />
+				{@html math(`\\text{N}=${serie_2.length}`)} est impair, donc la médiane est la {@html math(`\\frac{\\text{N}+1}{2}`)}ème valeur :
+				<br />
+				Autrement dit, la {Math.floor(serie_2.length / 2) + 1}ème valeur.
+				<br />
 				La médiane est donc {mediane_2.toLocaleString('fr-FR', { maximumFractionDigits: 1 })}.
 			</Item>
 		</Item>

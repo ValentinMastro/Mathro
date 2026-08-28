@@ -57,23 +57,32 @@
 		{/snippet}
 	</Schéma>
 	<Texte couleur="bleu" lignes={11}>
-		Q2) D'après la <span style="color: var(--rouge)">propriété</span> : <br />
+		Q2) D'après la <span style="color: var(--rouge)">propriété</span>
+		:
+		<br />
 		<div class="center">
 			{@html math('\\textcolor{red}{\\widehat{\\text{IJK}}} + \\textcolor{darkgreen}{\\widehat{\\text{IKJ}}} + \\widehat{\\text{JIK}} = 180^\\circ')}
 		</div>
-		On remplace par les valeurs connues :<br />
+		On remplace par les valeurs connues :
+		<br />
 		<div class="center">
-			{@html math('\\textcolor{red}{90^\\circ} + \\textcolor{darkgreen}{45^\\circ} + \\widehat{\\text{JIK}} = 180^\\circ')} <br />
-			{@html math('135^\\circ + \\widehat{\\text{JIK}} = 180^\\circ')} <br />
+			{@html math('\\textcolor{red}{90^\\circ} + \\textcolor{darkgreen}{45^\\circ} + \\widehat{\\text{JIK}} = 180^\\circ')}
+			<br />
+			{@html math('135^\\circ + \\widehat{\\text{JIK}} = 180^\\circ')}
+			<br />
 		</div>
 		Pour résoudre l'addition à trou, on fait une soustraction :
 		<div class="center">
-			{@html math('\\widehat{\\text{JIK}} = 180^\\circ - 135^\\circ')} <br />
+			{@html math('\\widehat{\\text{JIK}} = 180^\\circ - 135^\\circ')}
+			<br />
 			{@html math('\\widehat{\\text{JIK}} = 45^\\circ')}
 		</div>
 		<br />
-		Q3) Ce triangle possède un angle droit et deux angles de 45°. <br />
-		IJK est donc un triangle <i>rectangle et isocèle</i>.
+		Q3) Ce triangle possède un angle droit et deux angles de 45°.
+		<br />
+		IJK est donc un triangle
+		<i>rectangle et isocèle</i>
+		.
 	</Texte>
 </Contenu>
 

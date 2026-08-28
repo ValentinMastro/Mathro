@@ -158,7 +158,10 @@
 		{#snippet html()}
 			<LigneVide lignes={3} />
 			<Texte lignes={3} addStyle="color: red;">
-				Il y a autant de chiffres après la virgule dans les <i>facteurs</i> que dans le <i>produit</i>.
+				Il y a autant de chiffres après la virgule dans les <i>facteurs</i>
+				que dans le
+				<i>produit</i>
+				.
 			</Texte>
 		{/snippet}
 	</Schéma>

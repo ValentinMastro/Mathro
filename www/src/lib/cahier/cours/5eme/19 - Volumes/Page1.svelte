@@ -1,37 +1,38 @@
 <script lang="ts">
-	import { Contenu, DansLaMarge, Partie } from '$lib/cahier/composants/de_chapitrage/*';
-	import { Convention, Definitions, Exemples, Item } from '$lib/cahier/composants/de_cours/*';
-	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
+	import { Chapitre, Contenu, Partie } from '$lib/cahier/composants/de_chapitrage/*';
+	import { Convention, Definition, Exemples, Item, Remarque } from '$lib/cahier/composants/de_cours/*';
 	import { math } from 'mathlifier';
 </script>
 
-<DansLaMarge>
-	<LigneVide lignes={8} />
-	{@html math('1 \\ell = 1 dm^3')}
-</DansLaMarge>
+<Chapitre titre="Volumes" />
 
-<Contenu>
-	<Partie numero={1} titre="Unité de volume et de contenance" />
-	<Definitions lignes={3}>
-		<Item>Le volume d'un objet mesure l'espace qu'il contient.</Item>
-		<Item lignes={2}>
-			La contenance d'un objet mesure l'espace qu'il peut contenir.
-			<span style="color: var(--bleu);">(sac, coffre de voiture, ...)</span>
-		</Item>
-	</Definitions>
+<Contenu apres_un_titre>
+	<Definition>
+		Le volume d'un solide est la mesure de l'espace qu'il délimite.
+	</Definition>
+	<Definition>
+		La contenance mesure l'espace contenu dans un solide.
+	</Definition>
+	
+	<Partie numero={1} titre="Unités de volume" />
 	<Convention lignes={2}>
-		Le volume se mesure en mètres cubes ({@html math('m^3')}).<br />
-		La contenance se mesure en litres ({@html math('\\ell')}).
+		<Item>
+			Volume en {@html math("\\text{m}^3")}
+		</Item>
+		<Item>
+			Contenance en {@html math("\\ell")}
+		</Item>
 	</Convention>
-	<Exemples lignes={3}>
+	<Remarque>
+		{@html math("\\text{1 m}^3 = 1000 \\ell")}
+	</Remarque>
+
+	<Exemples lignes={2}>
 		<Item>
-			{@html math('72,5~dam^3 = 7250000~xdm^3')}
+			15 {@html math("\\text{m}^3")} = ? {@html math("\\text{cm}^3")}
 		</Item>
 		<Item>
-			{@html math('0,01~cm^3 = 0,000~000~000~000~01~hm^3')}
-		</Item>
-		<Item>
-			{@html math('2,6~\\ell = 0,026~da\\ell')}
+			35 {@html math("\\text{d}\\ell")} = ? {@html math("\\text{k}\\ell")}
 		</Item>
 	</Exemples>
 </Contenu>

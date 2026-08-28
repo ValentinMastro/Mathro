@@ -9,7 +9,7 @@
 <DansLaMarge à_imprimer>
 	<center>
 		<Texte>
-			<b> DM n°1 </b>
+			<b>DM n°1</b>
 		</Texte>
 		<Texte>Nom</Texte>
 		<Texte>Prénom</Texte>
@@ -34,8 +34,10 @@
 	<Exercice nom_du_paragraphe="Exercice 2 : étoile à 12 branches" lignes={9.78} lignes_vides={1.5}>
 		<Question numéro={1}>Tracer un cercle {@html math('(\\mathcal{C})')} de centre {@html math('\\text{O}')} et de rayon 6 cm.</Question>
 		<Question numéro={2} lignes={3}>
-			Tracer un diamètre de {@html math('(\\mathcal{C})')} horizontal {@html math('[\\text{AG}]')}. <br />
-			Tracer un diamètre de {@html math('(\\mathcal{C})')} vertical {@html math('[\\text{DJ}]')}. <br />
+			Tracer un diamètre de {@html math('(\\mathcal{C})')} horizontal {@html math('[\\text{AG}]')}.
+			<br />
+			Tracer un diamètre de {@html math('(\\mathcal{C})')} vertical {@html math('[\\text{DJ}]')}.
+			<br />
 			Tracer les médiatrices de
 			{@html math('[\\text{OA}]')},
 			{@html math('[\\text{OD}]')},
@@ -52,11 +54,14 @@
 		<Question numéro={4} lignes={5}>
 			Sur le cercle {@html math('(\\mathcal{C})')}, {@html math('\\text{A}')} est face à {@html math('\\text{G}')}. Tracer {@html math(
 				'[\\text{AF}]'
-			)} et {@html math('[\\text{AH}]')}. <br />
+			)} et {@html math('[\\text{AH}]')}.
+			<br />
 			Sur le cercle {@html math('(\\mathcal{C})')}, {@html math('\\text{B}')} est face à {@html math('\\text{H}')}. Tracer {@html math(
 				'[\\text{BG}]'
-			)} et {@html math('[\\text{BI}]')}. <br />
-			Continuer ainsi pour les autres points, jusqu'à ce qu'une étoile à 12 branches soit formée. <br />
+			)} et {@html math('[\\text{BI}]')}.
+			<br />
+			Continuer ainsi pour les autres points, jusqu'à ce qu'une étoile à 12 branches soit formée.
+			<br />
 			La colorier comme sur la figure 2.
 		</Question>
 	</Exercice>

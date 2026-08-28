@@ -12,7 +12,8 @@
 	<Definition>Une série statistique est un ensemble de valeurs non ordonnées.</Definition>
 	<Exemples lignes={5}>
 		<Item lignes={2}>
-			J'ai lancé {effectif_total(SERIE_1)} dés à six faces et j'ai obtenu les valeurs suivantes :<br />
+			J'ai lancé {effectif_total(SERIE_1)} dés à six faces et j'ai obtenu les valeurs suivantes :
+			<br />
 			<center>{@html math(afficher_serie(SERIE_1))}</center>
 		</Item>
 		<Item lignes={3}>

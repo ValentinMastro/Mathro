@@ -9,7 +9,8 @@
 	<Partie numero={2} titre="Exemples d'exercices" />
 
 	<Paragraphe nom_du_paragraphe="Énoncé :" lignes={3} couleur="bleu">
-		Un gâteau est coupé en 4 morceaux.<br />
+		Un gâteau est coupé en 4 morceaux.
+		<br />
 		Albert a {@html math('\\frac{1}{2}')} du gâteau, Bernard a {@html math('\\frac{1}{8}')} du gâteau, Camille a {@html math('\\frac{3}{16}')} du gâteau.
 		<br />
 		Que reste-t-il pour Danielle ?

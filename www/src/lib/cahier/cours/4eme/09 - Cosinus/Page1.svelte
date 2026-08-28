@@ -3,8 +3,6 @@
 	import { Definition, Schéma, Remarque, Texte } from '$lib/cahier/composants/de_cours/*';
 	import LigneVide from '$lib/cahier/composants/LigneVide.svelte';
 
-	import { math } from 'mathlifier';
-
 	let index_selection_angle: 0 | 1 = $state(0);
 </script>
 
@@ -16,10 +14,32 @@
 		Angle choisi :
 		<br />
 		<input type="radio" value={0} id="ABC" name="angle_choisi" bind:group={index_selection_angle} />
-		<label for="ABC">{@html math('\\widehat{ABC}')}</label>
+		<label for="ABC">
+			<math>
+				<mover>
+					<mrow>
+						<mi>A</mi>
+						<mi>B</mi>
+						<mi>C</mi>
+					</mrow>
+					<mo>^</mo>
+				</mover>
+			</math>
+		</label>
 		<br />
 		<input type="radio" value={1} id="BCA" name="angle_choisi" bind:group={index_selection_angle} />
-		<label for="BCA">{@html math('\\widehat{BCA}')}</label>
+		<label for="BCA">
+			<math>
+				<mover>
+					<mrow>
+						<mi>B</mi>
+						<mi>C</mi>
+						<mi>A</mi>
+					</mrow>
+					<mo>^</mo>
+				</mover>
+			</math>
+		</label>
 	</Texte>
 </DansLaMarge>
 
@@ -29,8 +49,12 @@
 	<Definition>Le côté opposé à l'angle droit est appelé l'hypoténuse.</Definition>
 	<LigneVide />
 	<Definition lignes={3}>
-		Choisissons un des angles aigus du triangle.<br />
-		Le côté du triangle qui forme l'angle choisi et qui n'est pas l'hypoténuse est appelé le <i>côté adjacent</i>.<br />
+		Choisissons un des angles aigus du triangle.
+		<br />
+		Le côté du triangle qui forme l'angle choisi et qui n'est pas l'hypoténuse est appelé le
+		<i>côté adjacent</i>
+		.
+		<br />
 	</Definition>
 	<LigneVide />
 	<Schéma lignes={10}>
@@ -53,9 +77,7 @@
 
 			{#if index_selection_angle == 0}
 				<line x1="100" y1="100" x2="100" y2="900" stroke="red" stroke-width="8" />
-				<text x="60" y="500" font-size="55" text-anchor="middle" fill="red" transform-origin="60px 500px" transform="rotate(-90)">
-					côté adjacent
-				</text>
+				<text x="60" y="500" font-size="55" text-anchor="middle" fill="red" transform-origin="60px 500px" transform="rotate(-90)">côté adjacent</text>
 			{:else}
 				<line x1="100" y1="900" x2="700" y2="900" stroke="red" stroke-width="8" />
 				<text x="400" y="955" font-size="55" text-anchor="middle" fill="red">côté adjacent</text>
@@ -70,6 +92,7 @@
 		{/snippet}
 	</Schéma>
 	<Remarque>
-		Le côté qui "ne touche pas" l'angle droit est appelé <i>côté opposé</i>.
+		Le côté qui "ne touche pas" l'angle droit est appelé <i>côté opposé</i>
+		.
 	</Remarque>
 </Contenu>

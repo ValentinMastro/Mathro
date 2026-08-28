@@ -22,7 +22,8 @@
 	<Definition lignes={2}>Si deux droites sont sécantes, et qu'elles forment un angle droit, alors elles sont perpendiculaires.</Definition>
 	<LigneVide />
 	<Notation lignes={2}>
-		Si {@html math('(d)')} et {@html math("(d')")} sont perpendiculaires, on note {@html math("(d) \\perp (d')")}.<br />
+		Si {@html math('(d)')} et {@html math("(d')")} sont perpendiculaires, on note {@html math("(d) \\perp (d')")}.
+		<br />
 		Sur un schéma, le symbole {@html math('\\blacksquare')} ou {@html math('\\square')} indique un angle droit.
 	</Notation>
 	<LigneVide />

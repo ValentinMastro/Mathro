@@ -46,8 +46,10 @@
 		{/snippet}
 	</Schéma>
 	<Propriete lignes={2}>
-		Les 3 bissectrices d'un triangle sont concourantes en un point :<br />
-		<i title="le centre du cercle tangent aux trois côtés">le centre du cercle inscrit</i>.
+		Les 3 bissectrices d'un triangle sont concourantes en un point :
+		<br />
+		<i title="le centre du cercle tangent aux trois côtés">le centre du cercle inscrit</i>
+		.
 	</Propriete>
 	<SchémaIntéractif lignes={10} aspectRatioSVG={2} points_intéractifs={[C, D, E]}>
 		{#snippet svg()}

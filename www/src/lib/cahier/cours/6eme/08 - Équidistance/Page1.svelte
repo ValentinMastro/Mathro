@@ -81,12 +81,18 @@
 <Contenu apres_un_titre>
 	<Partie numero={1} titre="Autour du cercle" />
 	<Definitions lignes={6}>
-		Soit un point {@html math('\\text{O}')}. <br />
-		Soit une distance {@html math('r')}. <br />
-		L'ensemble des points situés à une distance {@html math('r')} du point {@html math('\\text{O}')} est appelé <br />
-		cercle de centre {@html math('\\text{O}')} et de rayon {@html math('r')}. <br />
-		L'ensemble des points situés à une distance {@html math('\\leqslant r')} du point {@html math('\\text{O}')} est appelé <br />
-		disque de centre {@html math('\\text{0}')} et de rayon {@html math('r')}. <br />
+		Soit un point {@html math('\\text{O}')}.
+		<br />
+		Soit une distance {@html math('r')}.
+		<br />
+		L'ensemble des points situés à une distance {@html math('r')} du point {@html math('\\text{O}')} est appelé
+		<br />
+		cercle de centre {@html math('\\text{O}')} et de rayon {@html math('r')}.
+		<br />
+		L'ensemble des points situés à une distance {@html math('\\leqslant r')} du point {@html math('\\text{O}')} est appelé
+		<br />
+		disque de centre {@html math('\\text{0}')} et de rayon {@html math('r')}.
+		<br />
 	</Definitions>
 
 	<Schéma lignes={10} aspectRatioSVG={2}>

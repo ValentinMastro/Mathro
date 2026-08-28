@@ -38,8 +38,10 @@
 		{/snippet}
 		{#snippet html()}
 			<Texte lignes={3} addStyle="color: var(--bleu);">
-				{@html math('[\\text{BD})')} est la bissectrice de l'angle {@html math('\\widehat{\\text{ABC}}')}, <br />
-				coupés en deux angles {@html math('\\widehat{\\text{ABD}}')} et {@html math('\\widehat{\\text{DBC}}')} <br />
+				{@html math('[\\text{BD})')} est la bissectrice de l'angle {@html math('\\widehat{\\text{ABC}}')},
+				<br />
+				coupés en deux angles {@html math('\\widehat{\\text{ABD}}')} et {@html math('\\widehat{\\text{DBC}}')}
+				<br />
 				de 45°.
 			</Texte>
 		{/snippet}

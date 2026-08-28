@@ -27,7 +27,8 @@
 		{/snippet}
 	</Schéma>
 	<Definition lignes={2}>
-		Un carré est un rectangle et un losange.<br />
+		Un carré est un rectangle et un losange.
+		<br />
 		Il hérite des propriétés du rectangle et du losange.
 	</Definition>
 	<Schéma lignes={8}>

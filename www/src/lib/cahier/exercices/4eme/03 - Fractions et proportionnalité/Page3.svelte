@@ -7,7 +7,10 @@
 <Activité numéro={3} />
 
 <Contenu>
-	<Texte lignes={2}>Dans une enseigne de restauration rapide, un menu est vendu <br />11 € TTC, répartis de la façon suivante :</Texte>
+	<Texte lignes={2}>
+		Dans une enseigne de restauration rapide, un menu est vendu <br />
+		11 € TTC, répartis de la façon suivante :
+	</Texte>
 	<MultiItem colonnes={2}>
 		<Item style="width: 45%;">TVA : 1 €</Item>
 		<Item style="width: 45%;">Matières premières : 3,38 €</Item>
@@ -25,7 +28,8 @@
 
 	<Question numéro={3} lignes={3}>
 		Supposons que tous les clients aient commandé un menu à 11 €. <br />
-		Combien de clients ont commandé ? <br />
+		Combien de clients ont commandé ?
+		<br />
 		Quel sera alors le bénéfice du magasin ?
 	</Question>
 	<Question numéro={4}>Si on commande ce menu en ligne, le prix augmente de 25 %.</Question>

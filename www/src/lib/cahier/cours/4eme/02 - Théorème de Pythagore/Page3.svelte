@@ -22,7 +22,8 @@
 <Contenu>
 	<Partie numero={2} titre="Triangle rectangle et hypoténuse" />
 	<Definition lignes={2}>
-		Un triangle rectangle est une figure à 3 côtés qui a un angle droit.<br />
+		Un triangle rectangle est une figure à 3 côtés qui a un angle droit.
+		<br />
 		L'hypoténuse d'un triangle rectangle est le côté opposé à l'angle droit.
 	</Definition>
 	<Propriete>L'hypoténuse est le côté le plus long d'un triangle rectangle.</Propriete>

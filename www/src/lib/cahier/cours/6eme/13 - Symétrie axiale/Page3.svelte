@@ -6,7 +6,8 @@
 <Contenu>
 	<Partie numero={3} titre="Propriété de conservation" />
 	<Propriete lignes={8}>
-		La symétrie axiale est une <i>isométrie du plan</i>, cela signifie que :
+		La symétrie axiale est une <i>isométrie du plan</i>
+		, cela signifie que :
 		<Item lignes={2}>
 			la nature des objets est conservée <br />
 			<span style="color: blue;">(le symétrique d'un carré est un carré)</span>

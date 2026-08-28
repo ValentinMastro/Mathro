@@ -10,7 +10,9 @@
 <Contenu apres_un_titre>
 	<Partie numero={1} titre="Droite, demi-droite, segment, milieu" />
 	<Definition lignes={2}>
-		Une <i>droite</i> est un ensemble de points alignés. <br />
+		Une <i>droite</i>
+		est un ensemble de points alignés.
+		<br />
 		Elle se prolonge à l'infini des deux côtés.
 	</Definition>
 	<Notation>Le nom d'une droite s'écrit entre parenthèses.</Notation>
@@ -28,7 +30,8 @@
 	</Exemples>
 	<Definition lignes={2}>Une demi-droite est un morceau de droite délimité par un point : l'origine.</Definition>
 	<Notation lignes={2}>
-		Une demi-droite d'origine A et de direction {@html math('x')} se note {@html math('[\\text{A}x)')}. <br />
+		Une demi-droite d'origine A et de direction {@html math('x')} se note {@html math('[\\text{A}x)')}.
+		<br />
 		Une demi-droite d'origine B passant par O se note {@html math('[\\text{BO})')}.
 	</Notation>
 	<Exemples lignes={4}>

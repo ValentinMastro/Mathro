@@ -21,8 +21,10 @@
 <Contenu>
 	<SousPartie numero={2} titre="Médiatrices dans un triangle" />
 	<Propriete lignes={2}>
-		Les 3 médiatrices d'un triangle sont concourantes en un point :<br />
-		<i title="le centre du cercle qui entoure le triangle">le centre du cercle circonscrit</i>.
+		Les 3 médiatrices d'un triangle sont concourantes en un point :
+		<br />
+		<i title="le centre du cercle qui entoure le triangle">le centre du cercle circonscrit</i>
+		.
 	</Propriete>
 
 	<SchémaIntéractif lignes={10} aspectRatioSVG={2} points_intéractifs={[A, B, C]}>

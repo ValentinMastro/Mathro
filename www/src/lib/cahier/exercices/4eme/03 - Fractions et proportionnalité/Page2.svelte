@@ -36,9 +36,13 @@
 			</LigneTableau>
 		</Tableau>
 		<Texte lignes={7}>
-			Chaque foyer fiscal a un <i>nombre de parts</i>, qui divide le revenu annuel avant l'application des taux d'imposition.<br />
-			Le nombre de parts est calculé en fonction du nombre d'adultes et d'enfants dans le foyer fiscal : <br />
-			&emsp; &starf; 1 par adulte <br />
+			Chaque foyer fiscal a un <i>nombre de parts</i>
+			, qui divide le revenu annuel avant l'application des taux d'imposition.
+			<br />
+			Le nombre de parts est calculé en fonction du nombre d'adultes et d'enfants dans le foyer fiscal :
+			<br />
+			&emsp; &starf; 1 par adulte
+			<br />
 			&emsp; &starf; 0,5 par enfant (1er et 2e), 1 par enfant (3e et suivants)
 		</Texte>
 		<Question numéro={1} lignes={2}>Si un couple a 3 enfants, quel est le nombre de parts du foyer fiscal ?</Question>

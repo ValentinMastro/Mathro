@@ -25,7 +25,8 @@
 		{/snippet}
 	</Schéma>
 	<Texte couleur="bleu" lignes={2}>
-		{@html math('\\text{AB} ~=\\text{AC} ~=\\text{BC}')} <br />
+		{@html math('\\text{AB} ~=\\text{AC} ~=\\text{BC}')}
+		<br />
 		{@html math('\\widehat{\\text{ABC}} = \\widehat{\\text{BCA}} = \\widehat{\\text{CAB}} = 60^\\circ')}
 	</Texte>
 </Contenu>

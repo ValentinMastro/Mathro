@@ -16,8 +16,12 @@
 		Prix (€), Masse (kg), Durée (h), Distance (km), Volume ({@html math('\\ell')}), Température (°C)
 	</Exemples>
 	<Definition lignes={4}>
-		Deux grandeurs sont <i>proportionnelles</i> si on passe des valeurs de l'une aux valeurs de l'autre <br />
-		en multipliant par un même nombre appelé <i>coefficient de proportionnalité</i>.
+		Deux grandeurs sont <i>proportionnelles</i>
+		si on passe des valeurs de l'une aux valeurs de l'autre
+		<br />
+		en multipliant par un même nombre appelé
+		<i>coefficient de proportionnalité</i>
+		.
 	</Definition>
 	<Exemples lignes={6}>
 		<Item lignes={2}>Le côté et le périmètre d'un carré sont proportionnels (coefficient : 4).</Item>

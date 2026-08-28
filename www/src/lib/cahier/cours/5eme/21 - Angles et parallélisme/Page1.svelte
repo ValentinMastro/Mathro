@@ -72,8 +72,12 @@
 			<!-- Numérotation des angles -->
 			<text x={1850 - 50} y={200 - 50} text-anchor="middle" font-size={120}>1</text>
 			<text x={1850 + 50} y={200 - 50} text-anchor="middle" font-size={120}>2</text>
-			<text x={1850 - 50} y={200 + 50} text-anchor="middle" font-size={120}>3</text>
-			<text x={1850 + 50} y={200 + 50} text-anchor="middle" font-size={120}>4</text>
+			<text x={1900 - 50} y={200 + 100} text-anchor="middle" font-size={120}>3</text>
+			<text x={1900 + 50} y={200 + 100} text-anchor="middle" font-size={120}>4</text>
+			<text x={2050 - 50} y={800 - 50} text-anchor="middle" font-size={120}>5</text>
+			<text x={2100 + 50} y={800 - 50} text-anchor="middle" font-size={120}>6</text>
+			<text x={2100 - 50} y={800 + 100} text-anchor="middle" font-size={120}>7</text>
+			<text x={2150 + 50} y={800 + 100} text-anchor="middle" font-size={120}>8</text>
 		{/snippet}
 	</Schéma>
 </Contenu>

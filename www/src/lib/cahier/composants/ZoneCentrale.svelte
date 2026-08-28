@@ -5,10 +5,10 @@
 	import PageDeCahier from './PageDeCahier.svelte';
 	import Scroll from './Scroll.svelte';
 
-	let PageGauche: Component = $derived(PAGES.liste[page_state.numero_de_la_page]!.composant);
-	let PageDroite: Component = $derived(PAGES.liste[page_state.numero_de_la_page + 1]!.composant);
-	let nom_fichier_gauche = $derived(PAGES.liste[page_state.numero_de_la_page]!.nom_fichier);
-	let nom_fichier_droite = $derived(PAGES.liste[page_state.numero_de_la_page + 1]!.nom_fichier);
+	let page_gauche = $derived(PAGES.liste[page_state.numero_de_la_page]);
+	let page_droite = $derived(PAGES.liste[page_state.numero_de_la_page + 1]);
+	let PageGauche: Component | undefined = $derived(page_gauche?.composant);
+	let PageDroite: Component | undefined = $derived(page_droite?.composant);
 </script>
 
 <div id="zone">
@@ -16,16 +16,20 @@
 		<input id="largeur" type="range" min="0" max="100" bind:value={page_state.largeur_plein_ecran} />
 		<Scroll />
 	{:else}
-		<div class="page-wrapper" class:zoom={page_state.zoom_page}>
-			<PageDeCahier numero_de_page={page_state.numero_de_la_page} nom_fichier={nom_fichier_gauche}>
-				<PageGauche />
-			</PageDeCahier>
-		</div>
-		<div class="page-wrapper" class:zoom={page_state.zoom_page}>
-			<PageDeCahier numero_de_page={page_state.numero_de_la_page + 1} nom_fichier={nom_fichier_droite}>
-				<PageDroite />
-			</PageDeCahier>
-		</div>
+		{#if PageGauche && page_gauche}
+			<div class="page-wrapper" class:zoom={page_state.zoom_page}>
+				<PageDeCahier numero_de_page={page_state.numero_de_la_page} nom_fichier={page_gauche.nom_fichier}>
+					<PageGauche />
+				</PageDeCahier>
+			</div>
+		{/if}
+		{#if PageDroite && page_droite}
+			<div class="page-wrapper" class:zoom={page_state.zoom_page}>
+				<PageDeCahier numero_de_page={page_state.numero_de_la_page + 1} nom_fichier={page_droite.nom_fichier}>
+					<PageDroite />
+				</PageDeCahier>
+			</div>
+		{/if}
 	{/if}
 </div>
 

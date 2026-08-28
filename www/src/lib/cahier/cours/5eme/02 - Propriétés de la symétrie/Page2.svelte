@@ -38,8 +38,11 @@
 <Contenu>
 	<Partie numero={2} titre="Symétrie centrale" />
 	<Definition lignes={3}>
-		Deux figures sont symétriques par rapport à un point O si en "pivotant le plan" autour de O, les deux figures se superposent.<br />
-		Ce point O est le <i>centre de symétrie</i>.
+		Deux figures sont symétriques par rapport à un point O si en "pivotant le plan" autour de O, les deux figures se superposent.
+		<br />
+		Ce point O est le
+		<i>centre de symétrie</i>
+		.
 	</Definition>
 	<Schéma lignes={10} aspectRatioSVG={2}>
 		{#snippet svg()}
@@ -64,7 +67,8 @@
 		{/snippet}
 	</Schéma>
 	<Propriete lignes={2}>
-		Si deux points {@html math('\\text{A}')} et {@html math("\\text{A}'")} sont symétriques par rapport à O, <br />
+		Si deux points {@html math('\\text{A}')} et {@html math("\\text{A}'")} sont symétriques par rapport à O,
+		<br />
 		alors O est le milieu du segment {@html math("\\text{AA}'")}.
 	</Propriete>
 	<Schéma lignes={10}>

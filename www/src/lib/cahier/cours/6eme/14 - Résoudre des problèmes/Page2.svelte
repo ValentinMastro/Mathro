@@ -37,7 +37,8 @@
 
 	<Methode lignes={2}>Pour calculer le pourcentage d'un nombre, on peut utiliser sa forme fractionnaire.</Methode>
 	<Exemple lignes={2}>
-		Calculons {@html math('30\\%~\\text{de}~50')}.<br />
+		Calculons {@html math('30\\%~\\text{de}~50')}.
+		<br />
 		{@html math('30\\%~\\text{de}~50 = \\frac{30}{100} \\times 50 = 30 \\times 50 \\div 100 = 15')}
 	</Exemple>
 </Contenu>

@@ -24,7 +24,9 @@
 		{/snippet}
 	</Schéma>
 	<Texte couleur="bleu" lignes={2}>
-		Le triangle est <i>rectangle en B</i>, car l'angle droit est à côté du point B. <br />
+		Le triangle est <i>rectangle en B</i>
+		, car l'angle droit est à côté du point B.
+		<br />
 		De plus, {@html math('\\widehat{\\text{ACB}}')} et {@html math('\\widehat{\\text{CAB}}')} sont complémentaires.
 	</Texte>
 </Contenu>

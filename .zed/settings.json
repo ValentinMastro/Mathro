@@ -1,0 +1,19 @@
+{
+  "lsp": {
+    "svelte-language-server": {
+      "initialization_options": {
+        "configuration": {
+          "svelte": {
+            "plugin": {
+              "svelte": {
+                "compilerWarnings": {
+                  "component_name_lowercase": "ignore"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
